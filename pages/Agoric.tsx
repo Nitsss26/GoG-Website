@@ -8,6 +8,13 @@ import Agoric3rd from '../assets/Agoric-3rd.HEIC';
 import AgoricAward from '../assets/Agoric-Award-Centurion-University.jpeg';
 import AgoricCrowd from '../assets/Agoric-Crowd.HEIC';
 import AgoricGreen from '../assets/Agoric-Green Welcome-Centurion-University.jpeg';
+import { HoverGlowBtn } from '../components/ui/MovingBorder';
+import IndianStudent1 from '../assets/IndianStudent1.png';
+import IndianStudent2 from '../assets/IndianStudent2.png';
+import IndianStudent3 from '../assets/IndianStudent3.png';
+import IndianStudent4 from '../assets/IndianStudent4.png';
+import IndianStudent5 from '../assets/IndianStudent5.png';
+import { h1 } from 'framer-motion/client';
 
 const Agoric: React.FC = () => {
     return (
@@ -66,7 +73,7 @@ const Agoric: React.FC = () => {
                             transition={{ delay: 0.2 }}
                             className="text-xl text-gray-400 mb-10 max-w-lg leading-relaxed"
                         >
-                            <strong className="text-white">Geeks of Gurukul</strong> empowers you to master the <span className="text-[#D73252]">Interchain Future</span>. Build <strong className="text-white">feature-rich applications</strong> that seamlessly manage assets for <strong className="text-white">multiple blockchains</strong>.
+                            <strong className="text-white">Geeks of Gurukul</strong> empowers you to master the <span className="text-[#D73252]">Interchain Future</span>. Build <strong className="text-white">feature-rich applications</strong> that seamlessly coordinates assets and services across <strong className="text-white">multiple blockchains</strong>.
                         </motion.p>
 
                         {/* Buttons & Tags */}
@@ -76,9 +83,11 @@ const Agoric: React.FC = () => {
                             transition={{ delay: 0.3 }}
                             className="flex flex-wrap gap-4"
                         >
-                            <button className="px-8 py-3 bg-[#D73252] text-white font-bold rounded-lg hover:bg-[#FF8787] transition-colors shadow-[0_0_20px_rgba(255,107,107,0.4)]">
-                                Explore Agoric
-                            </button>
+                            <a href="https://agoric.com/" target="_blank" rel="noopener noreferrer">
+                                <button className="px-8 py-3 bg-[#D73252] text-white font-bold rounded-lg hover:bg-[#FF8787] transition-colors shadow-[0_0_20px_rgba(255,107,107,0.4)]">
+                                    Explore Agoric
+                                </button>
+                            </a>
                         </motion.div>
                     </div>
 
@@ -140,10 +149,9 @@ const Agoric: React.FC = () => {
                         {[
                             {
                                 icon: <Box size={32} />,
-                                title: "Composable DeFi",
-                                desc: "Legos for building complex financial apps."
+                                title: "Offer Safety",
+                                desc: "Guaranteed asset protection in every smart contract trade."
                             },
-
                             {
                                 icon: <Globe size={32} />,
                                 title: "Interchain Native",
@@ -151,13 +159,13 @@ const Agoric: React.FC = () => {
                             },
                             {
                                 icon: <Code2 size={32} />,
-                                title: "Hardened JS",
+                                title: "Hardened JavaScript",
                                 desc: "Secure smart contracts in familiar JavaScript."
                             },
                             {
                                 icon: <Users size={32} />,
-                                title: "Developer First",
-                                desc: "Superior tooling and developer experience."
+                                title: "Chain Abstraction",
+                                desc: "Unified user experience across any blockchain."
                             }
                         ].map((item, i) => (
                             <div key={i} className="flex flex-col items-center text-center group">
@@ -174,6 +182,41 @@ const Agoric: React.FC = () => {
 
             <section className="py-20 bg-transparent relative z-10 border-y border-[#D73252]/20">
                 <div className="max-w-7xl mx-auto px-6">
+                    {/* NEW: Multi-chain Section */}
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl md:text-6xl font-black text-white max-w-5xl mx-auto leading-tight">
+                            We are associated with <span className="text-[#D73252]">Agoric</span> because we believe that the world is going <span className="text-[#D73252]">multi-chain</span>.
+                        </h2>
+                    </div>
+
+                    <div className="flex flex-col lg:flex-row items-center gap-12 mb-20">
+                        <div className="lg:w-1/2 order-2 lg:order-1">
+                            <h1 className="text-[#D73252] font-bold uppercase tracking-widest text-xl mb-4">
+                                Unlocking Interchain Value
+                            </h1>
+                            <p className="text-xl text-gray-400 mb-8 leading-relaxed">
+                                Users are increasingly exploring multi-chain solutions to solve their problems. Orchestration gives developers the platform to program those solutions, and access to the Total Reachable Value of the entire interchain ecosystem.
+                            </p>
+                            <div className="flex gap-12">
+                                <div>
+                                    <div className="text-4xl font-black text-white mb-1">59B+</div>
+                                    <div className="text-[#D73252] font-bold uppercase tracking-wider text-sm">IBC Market Cap</div>
+                                </div>
+                                <div>
+                                    <div className="text-4xl font-black text-white mb-1">230K</div>
+                                    <div className="text-[#D73252] font-bold uppercase tracking-wider text-sm">IBC DAU</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="lg:w-1/2 order-1 lg:order-2 flex justify-center">
+                            <img
+                                src="https://agoric.com/static/illustration-4-e19dd1bc9fa0f9c2713f20ca12a4563e.svg"
+                                alt="The world is going multi-chain"
+                                className="w-full max-w-md drop-shadow-[0_0_50px_rgba(215,50,82,0.3)]"
+                            />
+                        </div>
+                    </div>
+
                     <div className="text-center mb-16">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -185,7 +228,7 @@ const Agoric: React.FC = () => {
                         </motion.div>
                         <h2 className="text-4xl md:text-6xl font-black mb-6">Agro Fast Hack <span className="text-[#D73252]">Odisha</span></h2>
                         <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                            Organized in collaboration with <strong className="text-white">Geeks of Gurukul</strong> and <strong className="text-white">Agoric</strong> at the prestigious <strong className="text-white">Centurion University</strong>. A 36-hour non-stop marathon where students built the future of the interchain economy.
+                            Organized in collaboration with <strong className="text-white">Geeks of Gurukul</strong> and <strong className="text-white">Agoric</strong> at the prestigious <strong className="text-white">Centurion University</strong>. A 24-hour non-stop marathon where students built the future of the interchain economy.
                         </p>
                         <motion.div
                             initial={{ scale: 0.9, opacity: 0 }}
@@ -375,11 +418,50 @@ const Agoric: React.FC = () => {
                 </div>
             </section>
 
+            {/* NEW: Join Community Section */}
+            <section className="py-10 bg-transparent relative z-10">
+                <div className="max-w-7xl mx-auto px-6">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-[#D73252]/10 to-black/40 border border-[#D73252]/30 p-8 md:p-12 text-center"
+                    >
+                        <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6 relative z-10 leading-tight">
+                            Nurturing <span className="text-[#D73252]">Agoric Talent</span>: Our Student Developer Hub
+                        </h2>
+                        <p className="max-w-3xl mx-auto text-gray-300 text-base md:text-lg mb-8 relative z-10">
+                            Geeks of Gurukul provides dedicated resources, mentorship, and a vibrant community for students to master the Agoric blockchain and Hardened JavaScript.
+                        </p>
+                        <div className="flex justify-center -space-x-4 mb-8 relative z-10">
+                            {[IndianStudent1, IndianStudent2, IndianStudent3, IndianStudent4, IndianStudent5].map((avatar, i) => (
+                                <img key={i} src={avatar} alt="Student Developer" className="w-12 h-12 rounded-full border-2 border-black shadow-lg object-cover" />
+                            ))}
+                            <div className="w-12 h-12 rounded-full border-2 border-black bg-[#D73252] text-white flex items-center justify-center font-bold text-sm shadow-lg">
+                                +500
+                            </div>
+                        </div>
+
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="relative group px-8 py-3 rounded-full font-bold text-white overflow-hidden z-10"
+                        >
+                            <div className="absolute inset-0 bg-[#D73252] opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 group-hover:animate-[shimmer_1s_infinite]"></div>
+                            <span className="relative z-10 flex items-center justify-center gap-2">
+                                Join Dev Community
+                            </span>
+                        </motion.button>
+                    </motion.div>
+                </div>
+            </section>
+
             {/* SECTION 3: BOUNTIES */}
             <section className="py-20 bg-transparent border-t border-[#D73252]/20 relative z-10">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex justify-between items-center mb-12">
-                        <h2 className="text-3xl font-black">Active Bounties GoG</h2>
+                        <h2 className="text-3xl font-black">Upcoming Bounties GoG</h2>
                         <button className="text-[#D73252] font-bold flex items-center gap-2">View All <ArrowRight size={20} /></button>
                     </div>
 
@@ -400,7 +482,7 @@ const Agoric: React.FC = () => {
                                 </div>
                                 <div className="text-right">
                                     <div className="text-green-500 font-mono font-bold text-xl">{bounty.reward}</div>
-                                    <button className="text-sm text-gray-500 underline hover:text-white">Apply</button>
+                                    <button className="text-sm text-gray-500 underline hover:text-white">Coming Soon</button>
                                 </div>
                             </div>
                         ))}

@@ -55,6 +55,29 @@
         background-color: #030303;
         color: #ffffff;
         overflow-x: hidden;
+        zoom: 0.9; /* Default zoom to 90% */
+      }
+      
+      /* PERFORMANCE: GPU acceleration for animated elements */
+      canvas {
+        will-change: contents;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+      }
+      
+      /* PERFORMANCE: GPU acceleration for motion elements */
+      [class*="motion"], 
+      [class*="animate"], 
+      [class*="transition"] {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+      }
+      
+      /* PERFORMANCE: Optimized scrolling */
+      * {
+        scroll-behavior: smooth;
       }
       
       /* Custom Scrollbar */
@@ -85,6 +108,15 @@
       .animate-border-flow {
         background-size: 200% 200%;
         animation: border-flow 3s ease infinite;
+      }
+      
+      /* PERFORMANCE: Reduce motion for users who prefer it */
+      @media (prefers-reduced-motion: reduce) {
+        *, ::before, ::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
       }
     </style>
   <script type="importmap">

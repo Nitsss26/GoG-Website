@@ -8,6 +8,12 @@ import AptosHappy from '../assets/Aptos-happy-coding.jpg';
 import AptosHackathon1 from '../assets/Aptos-happy-coding.jpg'; // Placeholder: File not found
 import AptosHackathon2 from '../assets/Aptos-happy-coding.jpg'; // Placeholder: File not found
 
+import IndianStudent1 from '../assets/IndianStudent1.png';
+import IndianStudent2 from '../assets/IndianStudent2.png';
+import IndianStudent3 from '../assets/IndianStudent3.png';
+import IndianStudent4 from '../assets/IndianStudent4.png';
+import IndianStudent5 from '../assets/IndianStudent5.png';
+
 const Aptos: React.FC = () => {
     const hackathons = [
         { name: "Aptos Move Hackathon: 2026", date: "20-03-2026", location: "Global Online", desc: "Build innovative DApps with Move." },
@@ -15,8 +21,11 @@ const Aptos: React.FC = () => {
         { name: "GoG World Tour: Delhi Edition", date: "23-01-2026", location: "New Delhi, India", desc: "Connect with GoG core team and developers." },
     ];
 
+    const studentAvatars = [IndianStudent1, IndianStudent2, IndianStudent3, IndianStudent4, IndianStudent5];
+
     return (
         <section className="relative min-h-screen pt-24 pb-20 bg-transparent font-sans overflow-hidden">
+
 
             {/* Global Particle Background - Fixed at z-0 */}
             <div className="fixed inset-0 z-0 pointer-events-none">
@@ -59,12 +68,14 @@ const Aptos: React.FC = () => {
                         </motion.h2>
 
                         <div className="flex gap-6">
-                            <HoverGlowBtn className="text-xl transform -skew-x-12">
-                                BUILD WITH GoG
-                            </HoverGlowBtn>
-                            <button className="px-12 py-5 border-2 border-white/20 text-white font-bold italic transform -skew-x-12 hover:bg-white/10 transition-colors text-xl">
+                            <a href="https://aptosnetwork.com" target="_blank" rel="noopener noreferrer">
+                                <button className="px-10 py-4 bg-[#34D562] text-black font-bold text-xl rounded-full hover:scale-105 hover:shadow-[0_0_20px_rgba(52,213,98,0.5)] transition-all duration-300">
+                                    BUILD WITH APTOS
+                                </button>
+                            </a>
+                            <a href="https://aptos.dev" target="_blank" rel="noopener noreferrer" className="px-12 py-5 border-2 border-white/20 text-white font-bold italic transform -skew-x-12 hover:bg-white/10 transition-colors text-xl flex items-center justify-center">
                                 DOCS
-                            </button>
+                            </a>
                         </div>
                     </div>
 
@@ -155,32 +166,6 @@ const Aptos: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Section 4: Youth Engagement / Student Developer Hub */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-[#2DD8A7]/10 to-black/40 border border-[#2DD8A7]/30 p-12 md:p-20 text-center mb-32"
-                >
-                    <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-8 relative z-10 leading-tight">
-                        Nurturing <span className="text-[#2DD8A7]">Aptos Talent</span>: Our Student Developer Hub
-                    </h2>
-                    <p className="max-w-4xl mx-auto text-gray-300 text-lg md:text-xl mb-10 relative z-10">
-                        Geeks of Gurukul provides dedicated resources, mentorship, and a vibrant community for students to master the Aptos blockchain and the Move programming language.
-                    </p>
-                    <div className="flex justify-center -space-x-4 mb-10 relative z-10">
-                        {[...Array(5)].map((_, i) => (
-                            <img key={i} src={`https://i.pravatar.cc/150?img=${i + 30}`} alt="Student Developer" className="w-16 h-16 rounded-full border-4 border-black shadow-lg" />
-                        ))}
-                        <div className="w-16 h-16 rounded-full border-4 border-black bg-[#2DD8A7] text-black flex items-center justify-center font-bold text-lg shadow-lg">
-                            +500
-                        </div>
-                    </div>
-                    <HoverGlowBtn className="relative z-10">
-                        Explore Aptos Dev Resources
-                    </HoverGlowBtn>
-                </motion.div>
-
                 {/* Section 4.5: University Hackathons Gallery */}
                 <div className="mb-32">
                     <h2 className="text-5xl md:text-7xl font-display font-bold text-white mb-16 text-center">
@@ -218,6 +203,99 @@ const Aptos: React.FC = () => {
                     </div>
                 </div>
 
+                {/* Section 4.8: What runs on Aptos? */}
+                <div className="mb-32">
+                    <div className="text-center mb-16">
+                        <h2 className="text-5xl md:text-7xl font-display font-bold text-white mb-6">
+                            What runs on <span className="text-[#2DD8A7]">Aptos?</span>
+                        </h2>
+                        <p className="text-2xl md:text-3xl text-gray-400 italic">Just about everything.</p>
+                    </div>
+
+                    <div className="flex flex-wrap justify-center gap-8">
+                        {[
+                            {
+                                title: "Stablecoins & Payments",
+                                desc: "Aptos is home to the fastest digital dollar—with native support for USDT, USDC, and USDe, plus an expanding network of payment partners around the world.",
+                                icon: Activity
+                            },
+                            {
+                                title: "Structured Finance",
+                                desc: "Unlock institutional capital onchain. Aptos supports tokenized treasuries, credit, and other RWAs with the infra capital markets demand.",
+                                icon: Box
+                            },
+                            {
+                                title: "Decentralized Finance",
+                                desc: "Unlock the true power of DeFi: no lags, no limits. Parallel execution, sub-second finality, and composability for everything on-chain.",
+                                icon: Zap
+                            },
+                            {
+                                title: "Media & Entertainment",
+                                desc: "Create experiences that never stall. Aptos gives media and entertainment apps the speed and scale to deliver content instantly, while making ownership and rewards simple to prove and share.",
+                                icon: Users
+                            },
+                            {
+                                title: "AI & Next-Gen Apps",
+                                desc: "The next internet is here. AI, DePIN, and beyond, powered by Aptos. For builders, it’s the performance to launch what’s never been done before. For consumers, it’s apps that think faster, connect smarter, and move value instantly, without the friction.",
+                                icon: Terminal
+                            }
+                        ].map((item, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
+                                className="group relative w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-2rem)] p-8 rounded-2xl bg-[#0A0A0A] border border-white/10 hover:border-[#2DD8A7] transition-all duration-300 hover:shadow-[0_0_30px_rgba(45,216,167,0.15)] flex flex-col items-center text-center"
+                            >
+                                <div className="w-16 h-16 rounded-full bg-[#2DD8A7]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 group-hover:bg-[#2DD8A7] group-hover:text-black">
+                                    <item.icon className="w-8 h-8 text-[#2DD8A7] group-hover:text-black transition-colors" />
+                                </div>
+
+                                <h3 className="text-2xl font-bold text-white mb-4 font-display">
+                                    {item.title}
+                                </h3>
+
+                                <p className="text-gray-400 mb-8 leading-relaxed text-sm">
+                                    {item.desc}
+                                </p>
+
+                                {/* <div className="mt-auto">
+                                    <span className="text-[#2DD8A7] font-bold text-sm uppercase tracking-wider border-b border-transparent group-hover:border-[#2DD8A7] transition-all pb-1">
+                                        Learn More
+                                    </span>
+                                </div> */}
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Section 4: Youth Engagement / Student Developer Hub */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-[#2DD8A7]/10 to-black/40 border border-[#2DD8A7]/30 p-12 md:p-20 text-center mb-32"
+                >
+                    <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-8 relative z-10 leading-tight">
+                        Nurturing <span className="text-[#2DD8A7]">Aptos Talent</span>: Our Student Developer Hub
+                    </h2>
+                    <p className="max-w-4xl mx-auto text-gray-300 text-lg md:text-xl mb-10 relative z-10">
+                        Geeks of Gurukul provides dedicated resources, mentorship, and a vibrant community for students to master the Aptos blockchain and the Move programming language.
+                    </p>
+                    <div className="flex justify-center -space-x-4 mb-10 relative z-10">
+                        {studentAvatars.map((avatar, i) => (
+                            <img key={i} src={avatar} alt="Student Developer" className="w-16 h-16 rounded-full border-4 border-black shadow-lg object-cover" />
+                        ))}
+                        <div className="w-16 h-16 rounded-full border-4 border-black bg-[#2DD8A7] text-black flex items-center justify-center font-bold text-lg shadow-lg">
+                            +500
+                        </div>
+                    </div>
+                    <HoverGlowBtn className="relative z-10">
+                        Join Dev Community
+                    </HoverGlowBtn>
+                </motion.div>
+
                 {/* Section 5: Upcoming Events */}
                 <div className="mb-20">
                     <h2 className="text-5xl md:text-7xl font-display font-bold text-white mb-16 text-center">
@@ -234,7 +312,7 @@ const Aptos: React.FC = () => {
                                 className="p-8 bg-black/40 border border-white/5 rounded-2xl hover:border-[#2DD8A7]/50 hover:bg-[#2DD8A7]/5 transition-all duration-300 relative overflow-hidden group"
                             >
                                 <div className="absolute inset-0 bg-[#2DD8A7]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -skew-y-6"></div>
-                                <p className="text-sm font-mono text-[#2DD8A7] mb-4 relative z-10">{event.date} | {event.location}</p>
+                                <p className="text-sm font-mono text-[#2DD8A7] mb-4 relative z-10">comming soon | {event.location}</p>
                                 <h3 className="text-3xl font-bold text-white mb-4 font-display relative z-10 leading-tight">{event.name}</h3>
                                 <p className="text-gray-400 relative z-10">{event.desc}</p>
                                 <HoverGlowBtn className="mt-8 relative z-10 text-sm">
@@ -245,8 +323,8 @@ const Aptos: React.FC = () => {
                     </div>
                 </div>
 
-            </div >
-        </section >
+            </div>
+        </section>
     );
 };
 

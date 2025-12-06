@@ -13,19 +13,33 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({ mode, primaryCo
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
-        const ctx = canvas.getContext('2d');
+        // OPTIMIZATION: GPU acceleration hint
+        const ctx = canvas.getContext('2d', { alpha: true, willReadFrequently: false });
         if (!ctx) return;
 
         let animationFrameId: number;
         let particles: any[] = [];
         let width = window.innerWidth;
         let height = window.innerHeight;
+        let lastFrameTime = 0;
+        const TARGET_FPS = 30; // OPTIMIZATION: 30fps for background effects
+        const FRAME_INTERVAL = 1000 / TARGET_FPS;
+
+        // OPTIMIZATION: Cache background gradient
+        let bgGradient: CanvasGradient | null = null;
+
+        const createBgGradient = () => {
+            bgGradient = ctx.createRadialGradient(width / 2, height / 2, 0, width / 2, height / 2, width);
+            bgGradient.addColorStop(0, `${secondaryColor}10`);
+            bgGradient.addColorStop(1, 'transparent');
+        };
 
         const resize = () => {
             width = window.innerWidth;
             height = window.innerHeight;
             canvas.width = width;
             canvas.height = height;
+            createBgGradient();
             initParticles();
         };
 
@@ -39,6 +53,19 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({ mode, primaryCo
         };
 
         const rgbPrimary = hexToRgb(primaryColor);
+        const primaryColorString = `rgba(${rgbPrimary.r}, ${rgbPrimary.g}, ${rgbPrimary.b}`;
+
+        // OPTIMIZATION: Pre-calculate hex path for hexagons mode
+        const hexPath = new Path2D();
+        for (let i = 0; i < 6; i++) {
+            const angle = i * 2 * Math.PI / 6;
+            if (i === 0) {
+                hexPath.moveTo(Math.cos(angle), Math.sin(angle));
+            } else {
+                hexPath.lineTo(Math.cos(angle), Math.sin(angle));
+            }
+        }
+        hexPath.closePath();
 
         class Particle {
             x: number;
@@ -71,15 +98,15 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({ mode, primaryCo
                     this.speedX = Math.random() * 5 + 2;
                     this.speedY = Math.random() * 2 - 1;
                     this.size = Math.random() * 2 + 1;
-                    this.maxLife = width / this.speedX + 100; // Ensure life covers screen width
+                    this.maxLife = width / this.speedX + 100;
                 } else if (mode === 'cubes') {
                     this.size = Math.random() * 20 + 5;
                     this.speedY = Math.random() * -1 - 0.2;
                 } else if (mode === 'embers') {
                     this.x = Math.random() * width;
-                    this.y = height + Math.random() * 100; // Start below screen
-                    this.speedY = Math.random() * -0.6 - 0.3; // Very slow upward movement
-                    this.speedX = (Math.random() - 0.5) * 0.3; // Minimal drift
+                    this.y = height + Math.random() * 100;
+                    this.speedY = Math.random() * -0.6 - 0.3;
+                    this.speedX = (Math.random() - 0.5) * 0.3;
                     this.size = Math.random() * 3 + 1;
                     this.maxLife = Math.random() * 100 + 50;
                 } else if (mode === 'hexagons') {
@@ -89,7 +116,7 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({ mode, primaryCo
                     this.speedX = (Math.random() - 0.5) * 0.5;
                     this.speedY = (Math.random() - 0.5) * 0.5;
                     this.opacity = Math.random() * 0.3 + 0.1;
-                    this.maxLife = 0; // Infinite
+                    this.maxLife = 0;
                 }
             }
 
@@ -120,19 +147,15 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({ mode, primaryCo
                     if (this.x < 0) this.x = width;
                     if (this.y > height) this.y = 0;
                     if (this.y < 0) this.y = height;
-                    if (this.y < 0) this.y = height;
                 }
 
                 if (this.type === 'embers') {
-                    // Reset if out of bounds or invisible
                     if (this.y < -10 || this.opacity <= 0) {
                         this.y = height + 10;
                         this.x = Math.random() * width;
-                        this.opacity = Math.random() * 0.5 + 0.4; // Start visible
-                        this.speedY = Math.random() * -0.6 - 0.1; // Reset speed
+                        this.opacity = Math.random() * 0.5 + 0.4;
+                        this.speedY = Math.random() * -0.6 - 0.1;
                     }
-
-                    // Only fade out near the top (top 20% of screen)
                     if (this.y < height * 0.2) {
                         this.opacity -= 0.005;
                     }
@@ -148,32 +171,31 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({ mode, primaryCo
 
             draw() {
                 if (!ctx) return;
-                ctx.beginPath();
+                const safeOpacity = Math.max(0, Math.min(1, this.opacity));
 
                 if (this.type === 'cubes') {
-                    ctx.strokeStyle = `rgba(${rgbPrimary.r}, ${rgbPrimary.g}, ${rgbPrimary.b}, ${this.opacity})`;
+                    ctx.strokeStyle = `${primaryColorString}, ${safeOpacity})`;
                     ctx.lineWidth = 1;
                     ctx.strokeRect(this.x, this.y, this.size, this.size);
                 } else if (this.type === 'rain') {
-                    ctx.fillStyle = `rgba(${rgbPrimary.r}, ${rgbPrimary.g}, ${rgbPrimary.b}, ${this.opacity})`;
+                    ctx.fillStyle = `${primaryColorString}, ${safeOpacity})`;
                     ctx.fillRect(this.x, this.y, 1, this.size * 5);
                 } else if (this.type === 'comets') {
-                    const gradient = ctx.createLinearGradient(this.x, this.y, this.x - this.size * 10, this.y);
-                    gradient.addColorStop(0, `rgba(${rgbPrimary.r}, ${rgbPrimary.g}, ${rgbPrimary.b}, 1)`);
-                    gradient.addColorStop(1, 'transparent');
-                    ctx.fillStyle = gradient;
-                    ctx.fillRect(this.x - this.size * 10, this.y, this.size * 10, this.size);
+                    // OPTIMIZATION: Simplified comet rendering
+                    ctx.fillStyle = `${primaryColorString}, ${safeOpacity})`;
+                    ctx.fillRect(this.x - this.size * 8, this.y, this.size * 8, this.size);
                 } else if (this.type === 'hexagons') {
-                    ctx.strokeStyle = `rgba(${rgbPrimary.r}, ${rgbPrimary.g}, ${rgbPrimary.b}, ${this.opacity})`;
-                    ctx.lineWidth = 1.5;
-                    ctx.beginPath();
-                    for (let i = 0; i < 6; i++) {
-                        ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i * 2 * Math.PI / 6));
-                    }
-                    ctx.closePath();
-                    ctx.stroke();
+                    // OPTIMIZATION: Use pre-calculated path with transform
+                    ctx.save();
+                    ctx.translate(this.x, this.y);
+                    ctx.scale(this.size, this.size);
+                    ctx.strokeStyle = `${primaryColorString}, ${safeOpacity})`;
+                    ctx.lineWidth = 1.5 / this.size;
+                    ctx.stroke(hexPath);
+                    ctx.restore();
                 } else {
-                    ctx.fillStyle = `rgba(${rgbPrimary.r}, ${rgbPrimary.g}, ${rgbPrimary.b}, ${this.opacity})`;
+                    ctx.beginPath();
+                    ctx.fillStyle = `${primaryColorString}, ${safeOpacity})`;
                     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                     ctx.fill();
                 }
@@ -182,30 +204,37 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({ mode, primaryCo
 
         const initParticles = () => {
             particles = [];
-            const count = density;
+            // OPTIMIZATION: Cap density to prevent performance issues
+            const count = Math.min(density, 80);
             for (let i = 0; i < count; i++) {
                 particles.push(new Particle());
             }
         };
 
-        const animate = () => {
+        const animate = (currentTime: number) => {
+            animationFrameId = requestAnimationFrame(animate);
+
+            // OPTIMIZATION: Frame rate limiting
+            const deltaTime = currentTime - lastFrameTime;
+            if (deltaTime < FRAME_INTERVAL) return;
+            lastFrameTime = currentTime - (deltaTime % FRAME_INTERVAL);
+
             if (!ctx) return;
             ctx.clearRect(0, 0, width, height);
 
-            // Draw background glow
-            const gradient = ctx.createRadialGradient(width / 2, height / 2, 0, width / 2, height / 2, width);
-            gradient.addColorStop(0, `${secondaryColor}10`); // Very transparent
-            gradient.addColorStop(1, 'transparent');
-            ctx.fillStyle = gradient;
-            ctx.fillRect(0, 0, width, height);
+            // Use cached gradient
+            if (bgGradient) {
+                ctx.fillStyle = bgGradient;
+                ctx.fillRect(0, 0, width, height);
+            }
 
             particles.forEach(p => {
                 p.update();
                 p.draw();
             });
 
-            // Special Lightning Effect
-            if (mode === 'lightning' && Math.random() > 0.95) {
+            // OPTIMIZATION: Reduce lightning frequency
+            if (mode === 'lightning' && Math.random() > 0.97) {
                 ctx.strokeStyle = `rgba(255, 255, 255, ${Math.random() * 0.3})`;
                 ctx.lineWidth = 2;
                 ctx.beginPath();
@@ -219,19 +248,17 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({ mode, primaryCo
                 }
                 ctx.stroke();
             }
-
-            animationFrameId = requestAnimationFrame(animate);
         };
 
         window.addEventListener('resize', resize);
         resize();
-        animate();
+        animationFrameId = requestAnimationFrame(animate);
 
         return () => {
             window.removeEventListener('resize', resize);
             cancelAnimationFrame(animationFrameId);
         };
-    }, [mode, primaryColor, secondaryColor]);
+    }, [mode, primaryColor, secondaryColor, density]);
 
     return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-0" />;
 };

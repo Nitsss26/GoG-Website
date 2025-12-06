@@ -20,11 +20,11 @@ const Hero: React.FC = () => {
     },
     {
       src: "https://i.postimg.cc/NLhLvFND/Screenshot-2025-12-01-144234.png",
-      caption: "Team Collaboration"
+      caption: "Global Partnership"
     },
     {
       src: "https://i.postimg.cc/NfTk9Hvn/Screenshot-2025-12-01-144356.png",
-      caption: "Future of AI"
+      caption: "Decentralised Cloud 2.0 Tech"
     }
   ];
 
@@ -35,11 +35,12 @@ const Hero: React.FC = () => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120vw] h-[80vh] bg-[#34D562]/10 rounded-full blur-[150px] pointer-events-none -z-10"></div>
 
       {/* 3D Floating Token */}
-      <motion.div style={{ y: y1 }} className="absolute top-60 right-[5%] lg:right-[10%] z-0 hidden lg:block opacity-60">
-        <DecentralizedNode size={180} />
+      {/* 3D Floating Token - Asymmetrical Layout */}
+      <motion.div style={{ y: y1 }} className="absolute top-40 right-[2%] lg:right-[5%] z-0 hidden lg:block opacity-60">
+        <DecentralizedNode size={220} />
       </motion.div>
-      <motion.div style={{ y: y1 }} className="absolute top-60 left-[5%] lg:left-[10%] z-0 hidden lg:block opacity-60">
-        <DecentralizedNode size={180} />
+      <motion.div style={{ y: y1 }} className="absolute top-80 left-[1%] lg:left-[3%] z-0 hidden lg:block opacity-50">
+        <DecentralizedNode size={280} />
       </motion.div>
       {/* <motion.div style={{ y: y1 }} className="absolute top-60 right-[5%] lg:right-[10%] z-0 hidden lg:block opacity-60">
         <KoiiToken size={180} />
@@ -87,7 +88,7 @@ const Hero: React.FC = () => {
           transition={{ delay: 0.3 }}
           className="text-gray-400 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed mb-16 font-light border-l-2 border-[#34D562] pl-6 text-left md:text-center md:border-none md:pl-0 font-sans"
         >
-          Geeks of Gurukul becomes the Service Partner of Koii Network (Koii). We are thrilled to announce our latest collaboration with KN. Together, we are committed to empowering students with the skills, knowledge, and opportunities they need to excel in the rapidly evolving tech landscape.
+          Geeks of Gurukul becomes the Global Partner of Koii Network (Koii). We are thrilled to announce our latest collaboration with KN. Together, we are committed to empowering students with the skills, knowledge, and opportunities they need to excel in the rapidly evolving Web3.0 landscape.
         </motion.p>
 
         {/* Ultra-Wide Image Deck */}
@@ -147,17 +148,19 @@ const Hero: React.FC = () => {
                 <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-[#34D562]/20 to-transparent border-l border-b border-[#34D562]/20 rounded-bl-3xl"></div>
 
                 <p className="text-xl md:text-3xl text-white font-light leading-relaxed mb-12 tracking-wide font-display">
-                  "Empowering the future of digital interaction by seamlessly merging Web2 applications with Web3 native cultures, all through a single platform."
+                  "Through this strategic alliance, Geeks of Gurukul and Koii Labs are revolutionizing education. We are creating a unique ecosystem where students can 'Earn while they Learn' leveraging Koii's decentralized network to gain real-world experience and rewards."
                 </p>
 
                 <div className="flex flex-wrap items-center gap-8">
                   {/* Fixed Hover Effect Button */}
-                  <button className="group relative px-10 py-5 bg-transparent border border-[#34D562] text-[#34D562] font-bold uppercase tracking-wider overflow-hidden">
-                    <span className="absolute inset-0 w-full h-full bg-[#34D562] transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0"></span>
-                    <span className="relative z-10 group-hover:text-black transition-colors duration-300 flex items-center gap-3">
-                      Explore Koii <ExternalLink size={20} />
-                    </span>
-                  </button>
+                  <a href="https://www.koii.network/" target="_blank" rel="noopener noreferrer">
+                    <button className="group relative px-10 py-5 bg-transparent border border-[#34D562] text-[#34D562] font-bold uppercase tracking-wider overflow-hidden">
+                      <span className="absolute inset-0 w-full h-full bg-[#34D562] transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0"></span>
+                      <span className="relative z-10 group-hover:text-black transition-colors duration-300 flex items-center gap-3">
+                        Explore Koii <ExternalLink size={20} />
+                      </span>
+                    </button>
+                  </a>
 
                   <div className="flex items-center gap-3 text-sm text-gray-400 font-mono border-l border-white/20 pl-6">
                     <span className="flex h-3 w-3 relative">

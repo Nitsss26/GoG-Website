@@ -7,7 +7,7 @@ const BlueEmbers: React.FC = () => {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext('2d', { alpha: true });
         if (!ctx) return;
 
         let particles: Particle[] = [];
@@ -33,11 +33,11 @@ const BlueEmbers: React.FC = () => {
             constructor() {
                 this.x = Math.random() * canvas!.width;
                 this.y = Math.random() * canvas!.height;
-                this.size = Math.random() * 3 + 1; // Slightly larger for squares
+                this.size = Math.random() * 3 + 1;
 
                 // Float upwards slightly more than random
                 this.speedX = (Math.random() - 0.5) * 0.3;
-                this.speedY = (Math.random() - 0.8) * 0.3; // Bias upwards
+                this.speedY = (Math.random() - 0.8) * 0.3;
 
                 this.opacity = Math.random() * 0.5 + 0.1;
                 this.fadeSpeed = (Math.random() * 0.002) + 0.0005;
@@ -73,15 +73,14 @@ const BlueEmbers: React.FC = () => {
                 ctx.translate(this.x, this.y);
                 ctx.rotate(this.rotation);
 
-                // Create glowing gradient
-                // For squares, we can't easily do a radial gradient fill that looks right with rotation 
-                // without more complex canvas ops, so we'll stick to solid fill with shadow
+                // OPTIMIZATION: Removed ctx.shadowBlur (expensive)
+                // Replaced with simple fill. For "glow", we rely on the particle density and opacity.
+                // If a glow is strictly needed, a pre-rendered sprite is better, but simple fill is fastest.
 
-                ctx.shadowBlur = this.size * 4;
-                ctx.shadowColor = this.color;
-                ctx.fillStyle = `rgba(${this.color === '#0090FA' ? '0, 144, 250' : '0, 229, 255'}, ${Math.max(0, this.opacity)})`;
+                ctx.fillStyle = this.color === '#0090FA'
+                    ? `rgba(0, 144, 250, ${Math.max(0, this.opacity)})`
+                    : `rgba(0, 229, 255, ${Math.max(0, this.opacity)})`;
 
-                // Draw Square (Digital Block)
                 ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
 
                 ctx.restore();
@@ -91,7 +90,8 @@ const BlueEmbers: React.FC = () => {
         const init = () => {
             resize();
             particles = [];
-            const particleCount = Math.min((window.innerWidth * window.innerHeight) / 10000, 200);
+            // OPTIMIZATION: Reduced density slightly for performance
+            const particleCount = Math.min((window.innerWidth * window.innerHeight) / 15000, 150);
 
             for (let i = 0; i < particleCount; i++) {
                 particles.push(new Particle());
@@ -102,14 +102,14 @@ const BlueEmbers: React.FC = () => {
             if (!ctx) return;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            ctx.globalCompositeOperation = 'screen';
+            // OPTIMIZATION: Removed globalCompositeOperation 'screen' if not strictly necessary, 
+            // but it's usually okay. Keeping it simple for now.
 
             particles.forEach(p => {
                 p.update();
                 p.draw();
             });
 
-            ctx.globalCompositeOperation = 'source-over';
             animationFrameId = requestAnimationFrame(animate);
         };
 

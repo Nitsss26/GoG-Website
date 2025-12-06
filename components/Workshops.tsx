@@ -3,6 +3,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Trophy, Clock, ArrowRight, Zap, Globe, Cpu } from 'lucide-react';
 
+import IndianFace1 from '../assets/indian_face_1.png';
+import IndianFace2 from '../assets/indian_face_2.png';
+import IndianFace3 from '../assets/indian_face_3.png';
+import IndianFace4 from '../assets/indian_face_4.png';
+import IndianFace5 from '../assets/indian_face_5.png';
+
 const Workshops: React.FC = () => {
    return (
       // Changed bg-[#030303] to bg-transparent
@@ -62,9 +68,10 @@ const Workshops: React.FC = () => {
                         </div>
 
                         <div className="flex -space-x-4 mb-4">
-                           {[1, 2, 3, 4, 5].map(i => (
-                              <div key={i} className="w-10 h-10 rounded-full border-2 border-[#080808] bg-gray-800">
-                                 <img src={`https://i.pravatar.cc/100?img=${i + 10}`} className="w-full h-full rounded-full" alt="User" />
+                           {/* Indian faces */}
+                           {[IndianFace1, IndianFace2, IndianFace3, IndianFace4, IndianFace5].map((src, i) => (
+                              <div key={i} className="w-10 h-10 rounded-full border-2 border-[#080808] bg-gray-800 overflow-hidden">
+                                 <img src={src} className="w-full h-full object-cover" alt="Community member" />
                               </div>
                            ))}
                            <div className="w-10 h-10 rounded-full border-2 border-[#080808] bg-[#34D562] flex items-center justify-center text-black font-bold text-xs">

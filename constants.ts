@@ -9,11 +9,11 @@ export const NAV_ITEMS: NavItem[] = [
     href: '#',
     children: [
       { label: 'Koii Labs', href: '/blockchain/koii-labs' },
+      { label: 'Agoric', href: '/blockchain/agoric' },
       { label: 'Core Dao', href: '/blockchain/core-dao' },
       { label: 'Educhain', href: '/blockchain/educhain' },
       { label: 'Stellar', href: '/blockchain/stellar' },
       { label: 'Aptos', href: '/blockchain/aptos' },
-      { label: 'Agoric', href: '/blockchain/agoric' },
     ]
   },
   { label: 'Our Partnered Institutes', href: '/partnered-colleges' },
@@ -26,7 +26,7 @@ export const FEATURES: Feature[] = [
   {
     title: "Significant Reduction in Hardware Costs",
     icon: HardDrive,
-    description: "Slash infrastructure expenses by utilizing consumer-grade hardware and decentralized resource sharing instead of expensive data centers."
+    description: "Reduces the infrastructure expenses by utilizing consumer-grade hardware and decentralized resource sharing."
   },
   {
     title: "Scalable Crowd-Sourced Community Devices",

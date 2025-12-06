@@ -20,9 +20,9 @@ const Stellar: React.FC = () => {
     ];
 
     const youthStats = [
-        { label: "Students in Programs", value: "1800+" },
+        { label: "Students in Programs", value: "18000+" },
         { label: "Projects on Soroban", value: "50+" },
-        { label: "Community Events", value: "30+" },
+        { label: "Community Events", value: "300+" },
     ];
 
     return (
@@ -82,12 +82,12 @@ const Stellar: React.FC = () => {
                             transition={{ delay: 0.4 }}
                             className="flex gap-4"
                         >
-                            <button className="px-10 py-4 bg-[#FAB638] text-black font-bold text-lg hover:bg-[#FACC75] transition-colors skew-x-[-10deg] shadow-[0_0_30px_rgba(250,182,56,0.3)]">
+                            <a href="https://stellar.org" target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-[#FAB638] text-black font-bold text-lg hover:bg-[#FACC75] transition-colors skew-x-[-10deg] shadow-[0_0_30px_rgba(250,182,56,0.3)] inline-block">
                                 <span className="block skew-x-[10deg] flex items-center gap-2">Know More <ArrowRight size={20} /></span>
-                            </button>
-                            <button className="px-10 py-4 border border-white/20 text-white font-bold text-lg hover:bg-white/10 transition-colors skew-x-[-10deg]">
-                                <span className="block skew-x-[10deg]">Program Details</span>
-                            </button>
+                            </a>
+                            <a href="https://developers.stellar.org/docs" target="_blank" rel="noopener noreferrer" className="px-10 py-4 border border-white/20 text-white font-bold text-lg hover:bg-white/10 transition-colors skew-x-[-10deg] inline-block">
+                                <span className="block skew-x-[10deg]">View Docs</span>
+                            </a>
                         </motion.div>
                     </div>
 
@@ -228,6 +228,64 @@ const Stellar: React.FC = () => {
                     </div>
                 </section>
 
+                {/* Section: Real Use Cases (New) */}
+                <section className="py-20 w-full relative z-10">
+                    <div className="max-w-7xl mx-auto px-6">
+                        <div className="mb-16">
+                            <p className="text-[#FAB638] font-mono uppercase tracking-widest mb-4">See Stellar in action</p>
+                            <h2 className="text-5xl md:text-7xl font-display font-bold text-white mb-6">
+                                Real use cases, <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FAB638] to-[#FFE5B4]">live today</span>
+                            </h2>
+                            <p className="text-xl text-gray-400 max-w-2xl leading-relaxed">
+                                From global remittances to tokenizing treasuries, see how organizations use Stellar to deliver real-world financial services.
+                            </p>
+                        </div>
+
+                        <div className="grid md:grid-cols-3 gap-8">
+                            {[
+                                {
+                                    title: "Stellar for payments",
+                                    desc: "Scale your payments globally and expand to new markets with 24/7 settlement on the Stellar network.",
+                                    img: "https://cdn.sanity.io/images/e2r40yh6/production-i18n/c34184f7b5ff1e80fa78a700c52e4f856b961341-4200x3508.png",
+                                    link: "https://stellar.org/use-cases/payments"
+                                },
+                                {
+                                    title: "Stellar for asset tokenization",
+                                    desc: "Tokenize real-world value on the network built for asset issuance.",
+                                    img: "https://cdn.sanity.io/images/e2r40yh6/production-i18n/85b07bd18b7b74f4f25538917f2ab6bdbc4dc3d5-4200x3508.png",
+                                    link: "https://stellar.org/use-cases/tokenization"
+                                },
+                                {
+                                    title: "Where defi meets the real world",
+                                    desc: "Build the future of financial access on an unmatched network of real-world utility and scalable decentralized finance.",
+                                    img: "https://cdn.sanity.io/images/e2r40yh6/production-i18n/1a053d57535f71378e8298dc41142583bd7e4ea3-506x405.png",
+                                    link: "https://stellar.org/use-cases/defi"
+                                }
+                            ].map((item, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.2 }}
+                                    className="group relative bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-[#FAB638]/50 transition-all duration-300 hover:bg-white/10"
+                                >
+                                    <div className="h-64 w-full p-8 flex items-center justify-center bg-black/20">
+                                        <img src={item.img} alt={item.title} className="max-h-full max-w-full object-contain drop-shadow-2xl group-hover:scale-110 transition-transform duration-500" />
+                                    </div>
+                                    <div className="p-8">
+                                        <h3 className="text-2xl font-bold text-white mb-4 font-display group-hover:text-[#FAB638] transition-colors">{item.title}</h3>
+                                        <p className="text-gray-400 mb-8 leading-relaxed min-h-[80px]">{item.desc}</p>
+                                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#FAB638] font-bold uppercase tracking-wider text-sm hover:gap-4 transition-all">
+                                            View <ArrowRight size={16} />
+                                        </a>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
                 {/* Section 4: Youth Engagement / Learn & Earn */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -250,7 +308,7 @@ const Stellar: React.FC = () => {
                         ))}
                     </div>
                     <HoverGlowBtn className="relative z-10 bg-[#34D562] hover:bg-[#2bc455] text-black">
-                        Join Stellar Education Programs GoG
+                        Join Our Community
                     </HoverGlowBtn>
                 </motion.div>
 
@@ -273,7 +331,7 @@ const Stellar: React.FC = () => {
                                 transition={{ delay: i * 0.2 }}
                                 className="p-8 bg-black/40 border border-white/5 rounded-2xl hover:border-[#FAB638]/50 hover:bg-[#FAB638]/5 transition-all duration-300 relative overflow-hidden group"
                             >
-                                <p className="text-sm font-mono text-purple-400 mb-4 relative z-10">{event.date}</p>
+                                <p className="text-sm font-mono text-purple-400 mb-4 relative z-10">coming soon</p>
                                 <h3 className="text-3xl font-bold text-white mb-4 font-display relative z-10 leading-tight">{event.name}</h3>
                                 <p className="text-gray-400 relative z-10">{event.desc}</p>
                                 <HoverGlowBtn className="mt-8 relative z-10 text-sm bg-[#34D562] hover:bg-[#2bc455] text-black">

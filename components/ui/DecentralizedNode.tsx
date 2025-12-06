@@ -12,81 +12,88 @@ const DecentralizedNode: React.FC<DecentralizedNodeProps> = ({ size = 250, class
             <motion.div
                 className="relative w-full h-full"
                 style={{ transformStyle: 'preserve-3d' }}
-                animate={{ rotateY: 360 }}
-                transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
+                animate={{ rotateY: 360, rotateX: 10 }}
+                transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
             >
-                {/* Core Glow */}
+                {/* Core Glow - Pulsing */}
                 <motion.div
-                    className="absolute top-1/2 left-1/2 w-8 h-8 rounded-full bg-primary"
-                    // FIX: Replaced invalid `shadowColor` property with a CSS custom property `--tw-shadow-color` and cast style object to `React.CSSProperties` to allow for custom properties.
+                    className="absolute top-1/2 left-1/2 w-12 h-12 rounded-full bg-[#34D562]"
                     style={{
                         x: '-50%',
                         y: '-50%',
-                        boxShadow: '0 0 40px 10px var(--tw-shadow-color)',
-                        '--tw-shadow-color': '#34D562',
+                        boxShadow: '0 0 60px 20px rgba(52, 213, 98, 0.6)',
                         transform: 'translateZ(0px)',
-                    } as React.CSSProperties}
-                    animate={{ scale: [1, 1.4, 1] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                    }}
+                    animate={{ scale: [1, 1.2, 1], opacity: [0.8, 1, 0.8] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                 />
 
-                {/* Outer Ring - Y axis rotation */}
+                {/* Orbit 1: Large, Asymmetrical Arc (Thick) */}
                 <motion.div
-                    className="absolute inset-0 border-2 border-primary/20 rounded-full"
-                    style={{ transformStyle: 'preserve-3d' }}
-                    animate={{ rotateY: 360 }}
+                    className="absolute inset-0 rounded-full border-[3px] border-[#34D562]/40 border-t-transparent border-l-transparent"
+                    style={{ transformStyle: 'preserve-3d', rotateX: 70, rotateY: 10 }}
+                    animate={{ rotateZ: 360 }}
+                    transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+                >
+                    <motion.div
+                        className="absolute top-[10%] left-[10%] w-4 h-4 rounded-full bg-white shadow-[0_0_20px_rgba(255,255,255,0.8)]"
+                        animate={{ scale: [1, 1.5, 1] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                    />
+                </motion.div>
+
+                {/* Orbit 2: Medium, Off-axis, Dashed (Thinner but bright) */}
+                <motion.div
+                    className="absolute inset-[10%] rounded-full border-[2px] border-dashed border-white/60"
+                    style={{ transformStyle: 'preserve-3d', rotateX: -45, rotateY: 20 }}
+                    animate={{ rotateZ: -360 }}
+                    transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+                />
+
+                {/* Orbit 3: Vertical, Thick Glowy Ring */}
+                <motion.div
+                    className="absolute inset-[5%] rounded-full border-[4px] border-[#34D562]/20 border-r-[#34D562] border-l-[#34D562]"
+                    style={{ transformStyle: 'preserve-3d', rotateY: 90, rotateX: 10 }}
+                    animate={{ rotateZ: 360 }}
                     transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
                 >
-                    {/* Particle on this ring */}
-                    <motion.div
-                        className="absolute top-1/2 left-0 w-3 h-3 rounded-full bg-white"
-                        // FIX: Cast style object to `React.CSSProperties` to allow for custom property `--radius`.
-                        style={{ y: '-50%', transform: 'translateX(calc(var(--radius) * -1)) rotateY(90deg)', '--radius': '50%' } as React.CSSProperties}
-                        animate={{ rotateZ: 360 }}
-                        transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
-                    />
+                    {/* Satellite */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-[#34D562] rounded-full blur-sm" />
                 </motion.div>
 
-                {/* Middle Ring - X axis rotation */}
+                {/* Orbit 4: Small, Fast, Tilted */}
                 <motion.div
-                    className="absolute inset-[15%] border border-dashed border-primary/30 rounded-full"
-                    style={{ transformStyle: 'preserve-3d' }}
-                    animate={{ rotateX: 360 }}
-                    transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
-                >
-                    <motion.div
-                        className="absolute top-0 left-1/2 w-2 h-2 rounded-full bg-primary"
-                        // FIX: Cast style object to `React.CSSProperties` to allow for custom property `--radius`.
-                        style={{ x: '-50%', transform: 'translateY(calc(var(--radius) * -1)) rotateX(90deg)', '--radius': '50%' } as React.CSSProperties}
-                        animate={{ rotateZ: -360 }}
-                        transition={{ duration: 7, repeat: Infinity, ease: 'linear' }}
-                    />
-                </motion.div>
-
-                {/* Inner Ring - Z axis rotation */}
-                <motion.div
-                    className="absolute inset-[30%] border border-primary/40 rounded-full"
-                    style={{ transformStyle: 'preserve-3d' }}
-                    animate={{ rotateZ: -360 }}
-                    transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-                >
-                </motion.div>
-
-                {/* Angled Ring */}
-                <motion.div
-                    className="absolute inset-[10%] border-t-2 border-primary/50 rounded-full"
-                    style={{ transformStyle: 'preserve-3d', transform: 'rotateX(60deg) rotateY(20deg)' }}
+                    className="absolute inset-[35%] rounded-full border-[3px] border-white/30 border-b-transparent"
+                    style={{ transformStyle: 'preserve-3d', rotateX: 45, rotateY: -45 }}
                     animate={{ rotateZ: 360 }}
-                    transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
-                >
+                    transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+                />
+
+                {/* Floating Particles */}
+                {[...Array(3)].map((_, i) => (
                     <motion.div
-                        className="absolute -top-1 left-1/2 w-4 h-1 rounded-full bg-white/70"
-                        // FIX: Cast style object to `React.CSSProperties` to allow for custom property `--radius`.
-                        style={{ x: '-50%', transform: 'translateY(calc(var(--radius) * -1))', '--radius': '50%' } as React.CSSProperties}
-                        animate={{ rotateZ: 360, scaleX: [1, 0.1, 1] }}
-                        transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                        key={i}
+                        className="absolute top-1/2 left-1/2 w-2 h-2 bg-[#34D562] rounded-full"
+                        style={{
+                            x: Math.random() * 100 - 50,
+                            y: Math.random() * 100 - 50,
+                            z: Math.random() * 100 - 50,
+                        }}
+                        animate={{
+                            x: [null, Math.random() * 200 - 100],
+                            y: [null, Math.random() * 200 - 100],
+                            opacity: [0, 1, 0],
+                            scale: [0, 1.5, 0]
+                        }}
+                        transition={{
+                            duration: 3 + Math.random() * 2,
+                            repeat: Infinity,
+                            repeatType: "reverse",
+                            ease: "easeInOut",
+                            delay: i * 0.5
+                        }}
                     />
-                </motion.div>
+                ))}
 
             </motion.div>
         </div>

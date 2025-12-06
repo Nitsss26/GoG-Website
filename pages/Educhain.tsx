@@ -4,9 +4,14 @@ import { BookOpen, GraduationCap, Award, Library, Share2, Users, Code, Zap, Glob
 import { HoverGlowBtn } from '../components/ui/MovingBorder';
 import BlueEmbers from '../components/ui/BlueEmbers';
 import EduHeroImg from '../assets/EduchainXGeeksofGurukul.png';
-import EduGroup from '../assets/Educhain-group-pic.jpg';
+import EduGroup from '../assets/Educhain-group-pic.png';
 import EduHackathon from '../assets/EduchainHackathon.jpg';
 import EduHappyCoding from '../assets/Educhain-happy-coding.jpeg';
+import EduchainCertificate from '../assets/Educhain.jpeg';
+import ShivaImg from '../assets/Shiva Bhattarjee.png';
+import AshishImg from '../assets/Ashish Kumar.jpg';
+import PrithviImg from '../assets/Prithvi Sinha.jpeg';
+import HarshitaImg from '../assets/Harshita Lakhchaura.png';
 
 const Educhain: React.FC = () => {
     const timelineEvents = [
@@ -20,6 +25,25 @@ const Educhain: React.FC = () => {
         { date: "01-02-2026", name: "Future of EdTech Hackathon", desc: "Build DApps for decentralized education with GoG mentors." },
         { date: "29-02-2026", name: "EduChain Smart Contract Workshop", desc: "Hands-on session for deploying academic contracts." },
         { date: "05-03-2026", name: "GoG & EduChain Mentorship Program", desc: "Connect with industry leaders and blockchain experts." },
+    ];
+
+    const winners = [
+        { name: "Shiva Bhattacharjee", college: "Royal Global University", location: "Guwahati, Assam", prize: "$500", img: ShivaImg },
+        { name: "Ashish Kumar", college: "Millennium Group of Institutions", location: "Bhopal, MP", prize: "$250", img: AshishImg },
+        { name: "Prithvi Sinha", college: "NIT Rourkela", location: "Rourkela, Orissa", prize: "$350", img: PrithviImg },
+        { name: "Harshita Lakhchaura", college: "IIIT Bhopal", location: "Bhopal, MP", prize: "$250", img: HarshitaImg },
+    ];
+
+    const moreWinners = [
+        "PIYUSH NIRANJAN", "Priti Kumari", "Ankit Pandram", "Ashish Kumar", "Ankit Jaiswal", "Prithvi Sinha"
+    ];
+
+    const bansalWinners = [
+        "Arnav Dwivedi", "Aditya Rajput", "Aman Kushwah", "Drashti Paliwal", "Amrendra Patel", "Atul Saxena"
+    ];
+
+    const iiitWinners = [
+        "Harshita Lakhchaura", "Shreem Asati"
     ];
 
     return (
@@ -48,15 +72,19 @@ const Educhain: React.FC = () => {
                                 x Geeks of Gurukul
                             </h2>
                             <p className="text-lg text-gray-400 max-w-lg leading-relaxed mb-10">
-                                As an official partner, we are dedicated to spreading knowledge and awareness about the EduChain blockchain. We are building the decentralized future of academia.
+                                We are dedicated to spreading knowledge and awareness about the EduChain blockchain. We are building the decentralized future of academia.
                             </p>
                             <div className="flex gap-4">
-                                <button className="px-8 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all shadow-[0_0_20px_rgba(37,99,235,0.5)] hover:shadow-[0_0_30px_rgba(37,99,235,0.8)]">
-                                    Know More
-                                </button>
-                                <button className="px-8 py-3 rounded-full border border-blue-500 text-blue-400 font-bold hover:bg-blue-500/10 transition-all">
-                                    Docs
-                                </button>
+                                <a href="https://educhain.xyz/" target="_blank" rel="noopener noreferrer">
+                                    <button className="px-8 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all shadow-[0_0_20px_rgba(37,99,235,0.5)] hover:shadow-[0_0_30px_rgba(37,99,235,0.8)]">
+                                        Know More
+                                    </button>
+                                </a>
+                                <a href="https://devdocs.educhain.xyz/" target="_blank" rel="noopener noreferrer">
+                                    <button className="px-8 py-3 rounded-full border border-blue-500 text-blue-400 font-bold hover:bg-blue-500/10 transition-all">
+                                        Docs
+                                    </button>
+                                </a>
                             </div>
                         </motion.div>
                     </div>
@@ -117,7 +145,7 @@ const Educhain: React.FC = () => {
                                 CAMPUS <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">VIBES</span>
                             </h2>
                             <p className="text-xl text-gray-400 mb-8 leading-relaxed">
-                                It's not just about code; it's about the people. We are building a movement of awareness and education. From campus workshops to swag drops, the EduChain vibe is unmatched.
+                                It's not just about code it is about the people. We are building a movement of blockchain and education. From campus workshops to swag drops, the Geeks of Gurukul vibe is unmatched.
                             </p>
                             <div className="flex gap-8">
                                 <div>
@@ -133,80 +161,7 @@ const Educhain: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Section 3: Offline Impact (Consolidated Hackathons & Events) */}
-                <div className="mb-32">
-                    <div className="text-center mb-16">
-                        <h2 className="text-5xl md:text-7xl font-black text-white mb-6">OFFLINE <span className="text-blue-500">IMPACT</span></h2>
-                        <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                            We've organized massive offline hackathons, bootcamps, and awareness sessions. Real building, real connections.
-                        </p>
-                    </div>
-
-                    <div className="grid lg:grid-cols-12 gap-8">
-                        {/* Vertical Hackathon Card */}
-                        <div className="lg:col-span-5 h-[600px] relative group rounded-3xl overflow-hidden border border-white/10">
-                            <img src={EduHackathon} alt="Past Hackathon" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent p-8 flex flex-col justify-end">
-                                <div className="bg-blue-600 self-start px-4 py-1 rounded-full text-white text-xs font-bold mb-4 uppercase tracking-wider">
-                                    Past Event
-                                </div>
-                                <h3 className="text-3xl font-bold text-white mb-2">Mega Hackathon 2025</h3>
-                                <p className="text-gray-300 text-sm">24 Hours of non-stop building. Over 500 participants shipped dApps on EduChain.</p>
-                            </div>
-                        </div>
-
-                        {/* Past Events Grid */}
-                        <div className="lg:col-span-7 grid gap-6">
-                            {/* Large Event Card */}
-                            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 flex flex-col md:flex-row gap-8 items-center h-full">
-                                <img src={EduHappyCoding} alt="Workshop" className="w-full md:w-1/2 h-64 object-cover rounded-2xl" />
-                                <div>
-                                    <h3 className="text-2xl font-bold text-white mb-4">Offline Bootcamps</h3>
-                                    <p className="text-gray-400 mb-6">
-                                        Hands-on workshops where students learned Solidity and deployed their first smart contracts on EduChain.
-                                    </p>
-                                    <div className="flex gap-4 text-sm text-blue-400 font-mono">
-                                        <span className="flex items-center gap-2"><MapPin size={14} /> 5 Cities</span>
-                                        <span className="flex items-center gap-2"><Users size={14} /> 1000+ Devs</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Smaller Stats/Info Cards */}
-                            <div className="grid md:grid-cols-2 gap-6">
-                                <div className="bg-blue-900/10 border border-blue-500/20 rounded-3xl p-8">
-                                    <Calendar className="text-blue-500 mb-4" size={32} />
-                                    <h4 className="text-xl font-bold text-white mb-2">Monthly Meetups</h4>
-                                    <p className="text-gray-400 text-sm">Regular community gatherings to discuss EduChain updates.</p>
-                                </div>
-                                <div className="bg-blue-900/10 border border-blue-500/20 rounded-3xl p-8">
-                                    <Rocket className="text-blue-500 mb-4" size={32} />
-                                    <h4 className="text-xl font-bold text-white mb-2">Project Launches</h4>
-                                    <p className="text-gray-400 text-sm">10+ Student projects launched on mainnet.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Section 4: Stats (Corrected & Transparent) */}
-                <div className="mb-32">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                        {[
-                            { label: "Workshops Organized", value: "35+" },
-                            { label: "Students Trained", value: "5000+" },
-                            { label: "Hackathons", value: "15+" },
-                            { label: "Projects Built", value: "30+" }
-                        ].map((stat, i) => (
-                            <div key={i} className="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:border-blue-500/30 transition-colors">
-                                <div className="text-4xl md:text-5xl font-black text-white mb-2">{stat.value}</div>
-                                <div className="text-blue-400 text-sm uppercase tracking-widest">{stat.label}</div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Section 5: Core Features (Preserved with Line Fix) */}
+                {/* Section 3: Core Features (Moved Up) */}
                 <div className="py-20 mb-20">
                     <h2 className="text-5xl md:text-6xl font-display font-bold text-white mb-20 text-center">
                         EduChain <span className="text-blue-500">Core Features</span>
@@ -239,6 +194,177 @@ const Educhain: React.FC = () => {
                     </div>
                 </div>
 
+                {/* Section 4: Offline Impact (Consolidated Hackathons & Events) */}
+                <div className="mb-32">
+                    <div className="text-center mb-16">
+                        <h2 className="text-5xl md:text-7xl font-black text-white mb-6">OFFLINE <span className="text-blue-500">IMPACT</span></h2>
+                        <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                            We've organized massive offline hackathons, bootcamps, and awareness sessions. Real building, real connections.
+                        </p>
+                    </div>
+
+                    <div className="grid lg:grid-cols-12 gap-8">
+                        {/* Vertical Hackathon Card */}
+                        <div className="lg:col-span-5 h-[600px] relative group rounded-3xl overflow-hidden border border-white/10">
+                            <img src={EduHackathon} alt="Past Hackathon" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent p-8 flex flex-col justify-end">
+                                <div className="bg-blue-600 self-start px-4 py-1 rounded-full text-white text-xs font-bold mb-4 uppercase tracking-wider">
+                                    Past Event
+                                </div>
+                                <h3 className="text-3xl font-bold text-white mb-2">Mega Hackathon 2025</h3>
+                                <p className="text-gray-300 text-sm">24 Hours of non-stop building. Over 500 participants shipped dApps on EduChain.</p>
+                            </div>
+                        </div>
+
+                        {/* Past Events Grid */}
+                        <div className="lg:col-span-7 grid gap-6">
+                            {/* Large Event Card */}
+                            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 flex flex-col md:flex-row gap-8 items-center h-full">
+                                <img src={EduHappyCoding} alt="Workshop" className="w-full md:w-1/2 h-64 object-cover rounded-2xl" />
+                                <div>
+                                    <h3 className="text-2xl font-bold text-white mb-4">Offline Bootcamps</h3>
+                                    <p className="text-gray-400 mb-6">
+                                        Hands-on workshops where students learned Solidity and deployed their first smart contracts on EduChain.
+                                    </p>
+                                    <div className="flex gap-4 text-sm text-blue-400 font-mono">
+                                        <span className="flex items-center gap-2"><MapPin size={14} /> 7 Cities</span>
+                                        <span className="flex items-center gap-2"><Users size={14} /> 5000+ Devs</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Smaller Stats/Info Cards */}
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div className="bg-blue-900/10 border border-blue-500/20 rounded-3xl p-8">
+                                    <Calendar className="text-blue-500 mb-4" size={32} />
+                                    <h4 className="text-xl font-bold text-white mb-2">Monthly Meetups</h4>
+                                    <p className="text-gray-400 text-sm">Regular community gatherings to discuss EduChain updates.</p>
+                                </div>
+                                <div className="bg-blue-900/10 border border-blue-500/20 rounded-3xl p-8">
+                                    <Rocket className="text-blue-500 mb-4" size={32} />
+                                    <h4 className="text-xl font-bold text-white mb-2">Project Launches</h4>
+                                    <p className="text-gray-400 text-sm">10+ Student projects launched on mainnet.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Section 5: Stats (Corrected & Transparent) */}
+                <div className="mb-32">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        {[
+                            { label: "Workshops Organized", value: "35+" },
+                            { label: "Students Trained", value: "5000+" },
+                            { label: "Hackathons", value: "15+" },
+                            { label: "Projects Built", value: "300+" }
+                        ].map((stat, i) => (
+                            <div key={i} className="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:border-blue-500/30 transition-colors">
+                                <div className="text-4xl md:text-5xl font-black text-white mb-2">{stat.value}</div>
+                                <div className="text-blue-400 text-sm uppercase tracking-widest">{stat.label}</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Section: Bounty Winners */}
+                <div className="mb-32">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
+                            $20,000+ <span className="text-blue-500">BOUNTIES</span> DISTRIBUTED
+                        </h2>
+                        <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+                            During Geeks of Gurukul's association with EduChain, we have distributed over $20,000 in bounties to recognize and reward the top talent building the future of decentralized education.
+                        </p>
+                    </div>
+
+                    {/* Certificate Showcase */}
+                    <div className="flex justify-center mb-20">
+                        <div className="relative p-2 bg-white/5 rounded-3xl border border-white/10 shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500 group">
+                            <div className="absolute inset-0 bg-blue-500/20 blur-3xl -z-10 group-hover:bg-blue-500/30 transition-colors"></div>
+                            <img src={EduchainCertificate} alt="Educhain Certificate" className="rounded-2xl max-w-full md:max-w-4xl shadow-lg" />
+                        </div>
+                    </div>
+
+                    {/* Winners Grid - Enhanced Design */}
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                        {winners.map((winner, i) => (
+                            <div key={i} className="bg-[#0B1221] border border-white/10 p-6 rounded-2xl hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(37,99,235,0.2)] transition-all duration-300 group relative overflow-hidden flex flex-col items-center text-center">
+                                {/* Prize Badge */}
+                                <div className="absolute top-0 right-0 bg-blue-600 text-white text-sm font-bold px-4 py-2 rounded-bl-2xl shadow-lg z-10">
+                                    {winner.prize}
+                                </div>
+
+                                {/* Avatar with Glow */}
+                                <div className="relative mb-6">
+                                    <div className="absolute inset-0 bg-blue-500/30 blur-xl rounded-full group-hover:bg-blue-500/50 transition-all"></div>
+                                    <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-blue-500/50 relative z-10 group-hover:scale-105 transition-transform duration-300">
+                                        <img src={winner.img} alt={winner.name} className="w-full h-full object-cover" />
+                                    </div>
+                                </div>
+
+                                {/* Content */}
+                                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">{winner.name}</h3>
+                                <p className="text-blue-400 text-sm font-medium mb-1 line-clamp-1">{winner.college}</p>
+                                <p className="text-gray-500 text-xs flex items-center gap-1 justify-center">
+                                    <MapPin size={12} /> {winner.location}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* More Winners - Rising Stars Style */}
+                    <div className="bg-gradient-to-b from-white/5 to-transparent border border-white/10 rounded-3xl p-8 md:p-12">
+                        <h3 className="text-3xl font-bold text-white mb-10 text-center flex items-center justify-center gap-3">
+                            <Award className="text-blue-500" /> Rising Stars
+                        </h3>
+
+                        <div className="grid md:grid-cols-3 gap-12">
+                            {/* General Winners */}
+                            <div>
+                                <h4 className="text-lg font-bold text-blue-400 mb-6 flex items-center gap-2 border-b border-white/10 pb-2">
+                                    <Zap size={18} /> Top Contributors
+                                </h4>
+                                <div className="flex flex-wrap gap-3">
+                                    {moreWinners.map((name, i) => (
+                                        <span key={i} className="px-4 py-2 bg-white/5 hover:bg-blue-600/20 border border-white/10 hover:border-blue-500/50 rounded-full text-gray-300 text-sm transition-all cursor-default">
+                                            {name}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Bansal Group of Institutes */}
+                            <div>
+                                <h4 className="text-lg font-bold text-blue-400 mb-6 flex items-center gap-2 border-b border-white/10 pb-2">
+                                    <GraduationCap size={18} /> Bansal Group of Institutes
+                                </h4>
+                                <div className="flex flex-wrap gap-3">
+                                    {bansalWinners.map((name, i) => (
+                                        <span key={i} className="px-4 py-2 bg-white/5 hover:bg-blue-600/20 border border-white/10 hover:border-blue-500/50 rounded-full text-gray-300 text-sm transition-all cursor-default">
+                                            {name}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* IIIT Bhopal */}
+                            <div>
+                                <h4 className="text-lg font-bold text-blue-400 mb-6 flex items-center gap-2 border-b border-white/10 pb-2">
+                                    <Code size={18} /> IIIT Bhopal
+                                </h4>
+                                <div className="flex flex-wrap gap-3">
+                                    {iiitWinners.map((name, i) => (
+                                        <span key={i} className="px-4 py-2 bg-white/5 hover:bg-blue-600/20 border border-white/10 hover:border-blue-500/50 rounded-full text-gray-300 text-sm transition-all cursor-default">
+                                            {name}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 {/* Section 6: Upcoming Events (Preserved) */}
                 <div className="grid lg:grid-cols-2 gap-8 mb-20">
                     <div className="p-8 bg-white/5 backdrop-blur-sm border border-white/5 rounded-2xl text-left">
@@ -246,7 +372,7 @@ const Educhain: React.FC = () => {
                         <div className="space-y-6">
                             {upcomingEvents.map((event, i) => (
                                 <div key={i} className="pb-4 border-b border-white/5 last:border-none">
-                                    <p className="text-sm font-mono text-blue-400 mb-1">{event.date}</p>
+                                    {/* <p className="text-sm font-mono text-blue-400 mb-1">{event.date}</p> */}
                                     <p className="text-xl font-bold text-white">{event.name}</p>
                                     <p className="text-gray-500 text-sm">{event.desc}</p>
                                 </div>
@@ -255,19 +381,33 @@ const Educhain: React.FC = () => {
                     </div>
 
                     {/* Community Join Card */}
-                    <div className="p-6 bg-gradient-to-br from-blue-900/20 to-black border border-blue-500/20 rounded-2xl text-left flex flex-col justify-center items-center text-center">
-                        <h3 className="text-3xl font-bold text-white mb-2">Join the Revolution</h3>
-                        <p className="text-gray-400 mb-6 max-w-md">
-                            Be part of the first decentralized academic network. Build, learn, and grow with Geeks of Gurukul.
-                        </p>
-                        <HoverGlowBtn className="bg-blue-600 hover:bg-blue-700 text-white">
-                            Join Discord Community
-                        </HoverGlowBtn>
+                    <div className="p-8 bg-white/5 backdrop-blur-sm border border-white/5 rounded-2xl text-left flex flex-col justify-center items-center text-center relative overflow-hidden group">
+                        {/* Decorative Background Icon */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-blue-600/10 group-hover:text-blue-600/20 transition-colors duration-500 pointer-events-none">
+                            <Globe size={300} strokeWidth={0.5} />
+                        </div>
+
+                        <div className="relative z-10">
+                            <h3 className="text-4xl font-bold text-white mb-4">Join the Revolution</h3>
+                            <p className="text-gray-400 mb-8 max-w-md text-lg leading-relaxed">
+                                Be part of the first decentralized academic network. Build, learn, and grow with Geeks of Gurukul.
+                            </p>
+                            <a href="https://discord.gg/geeksofgurukul" target="_blank" rel="noopener noreferrer">
+                                <motion.button
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg transition-all shadow-[0_0_20px_rgba(37,99,235,0.5)] hover:shadow-[0_0_30px_rgba(37,99,235,0.8)] flex items-center gap-2 mx-auto"
+                                >
+                                    <Users size={20} />
+                                    Join Discord Community
+                                </motion.button>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
             </div>
-        </section>
+        </section >
     );
 };
 
