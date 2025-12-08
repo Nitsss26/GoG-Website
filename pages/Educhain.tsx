@@ -7,7 +7,7 @@ import EduHeroImg from '../assets/EduchainXGeeksofGurukul.png';
 import EduGroup from '../assets/Educhain-group-pic.png';
 import EduHackathon from '../assets/EduchainHackathon.jpg';
 import EduHappyCoding from '../assets/Educhain-happy-coding.jpeg';
-import EduchainCertificate from '../assets/Educhain.jpeg';
+import EduchainCertificate from '../assets/Educhain.png';
 import ShivaImg from '../assets/Shiva Bhattarjee.png';
 import AshishImg from '../assets/Ashish Kumar.jpg';
 import PrithviImg from '../assets/Prithvi Sinha.jpeg';
@@ -28,9 +28,9 @@ const Educhain: React.FC = () => {
     ];
 
     const winners = [
-        { name: "Shiva Bhattacharjee", college: "Royal Global University", location: "Guwahati, Assam", prize: "$500", img: ShivaImg },
-        { name: "Ashish Kumar", college: "Millennium Group of Institutions", location: "Bhopal, MP", prize: "$250", img: AshishImg },
+        // { name: "Shiva Bhattacharjee", college: "Royal Global University", location: "Guwahati, Assam", prize: "$500", img: ShivaImg },
         { name: "Prithvi Sinha", college: "NIT Rourkela", location: "Rourkela, Orissa", prize: "$350", img: PrithviImg },
+        { name: "Ashish Kumar", college: "Millennium Group of Institutions", location: "Bhopal, MP", prize: "$250", img: AshishImg },
         { name: "Harshita Lakhchaura", college: "IIIT Bhopal", location: "Bhopal, MP", prize: "$250", img: HarshitaImg },
     ];
 
@@ -227,7 +227,7 @@ const Educhain: React.FC = () => {
                                         Hands-on workshops where students learned Solidity and deployed their first smart contracts on EduChain.
                                     </p>
                                     <div className="flex gap-4 text-sm text-blue-400 font-mono">
-                                        <span className="flex items-center gap-2"><MapPin size={14} /> 7 Cities</span>
+                                        <span className="flex items-center gap-2"><MapPin size={14} /> 7 States</span>
                                         <span className="flex items-center gap-2"><Users size={14} /> 5000+ Devs</span>
                                     </div>
                                 </div>
@@ -287,7 +287,7 @@ const Educhain: React.FC = () => {
                     </div>
 
                     {/* Winners Grid - Enhanced Design */}
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                    <div className="grid md:grid-cols-3 gap-6 mb-20">
                         {winners.map((winner, i) => (
                             <div key={i} className="bg-[#0B1221] border border-white/10 p-6 rounded-2xl hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(37,99,235,0.2)] transition-all duration-300 group relative overflow-hidden flex flex-col items-center text-center">
                                 {/* Prize Badge */}

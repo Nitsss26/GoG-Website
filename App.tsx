@@ -15,6 +15,8 @@ const Agoric = lazy(() => import('./pages/Agoric'));
 const Programs = lazy(() => import('./pages/Programs'));
 const OurSocialImpact = lazy(() => import('./pages/OurSocialImpact'));
 const OurTeam = lazy(() => import('./pages/OurTeam'));
+const AboutGoG = lazy(() => import('./pages/AboutGoG'));
+const PartneredInstitutes = lazy(() => import('./pages/PartneredInstitutes'));
 
 const LoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center bg-[#030303] text-white">
@@ -54,6 +56,8 @@ const App: React.FC = () => {
             <Route path="/programs" element={<Programs />} />
             <Route path="/our-social-impact" element={<OurSocialImpact />} />
             <Route path="/teams" element={<OurTeam />} />
+            <Route path="/about-gog" element={<AboutGoG />} />
+            {/* <Route path="/partnered-colleges" element={<PartneredInstitutes />} /> */}
           </Routes>
         </Suspense>
 

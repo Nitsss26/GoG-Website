@@ -3,7 +3,7 @@ import { NavItem, Feature } from './types';
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '/' },
-  { label: 'About GoG', href: '/about' },
+  { label: 'About GoG', href: '/about-gog' },
   {
     label: 'GoG In Blockchain',
     href: '#',

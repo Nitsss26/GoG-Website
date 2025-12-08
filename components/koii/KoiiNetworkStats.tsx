@@ -76,8 +76,8 @@ const KoiiNetworkStats: React.FC = () => {
                         </div>
 
                         <div className="flex justify-center">
-                            <a href="https://discord.com/invite/koii-network" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-lg border border-[#34D562] text-[#34D562] font-bold hover:bg-[#34D562] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm w-full md:w-auto text-center">
-                                Say Hi on Discord
+                            <a href="https://discord.com/invite/gog" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-lg border border-[#34D562] text-[#34D562] font-bold hover:bg-[#34D562] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm w-full md:w-auto text-center">
+                                Join Our Community
                             </a>
                         </div>
                     </div>
@@ -110,14 +110,14 @@ const KoiiNetworkStats: React.FC = () => {
                         </div>
 
                         {/* Mainnet Badge */}
-                        <div className="absolute top-4 right-0 lg:right-4 bg-black/40 backdrop-blur-md border border-[#34D562]/30 rounded-xl p-3 flex items-center gap-3">
-                            <div className="text-right">
-                                <p className="text-[#34D562] font-bold tracking-widest text-xs">MAINNET</p>
-                                <p className="text-[10px] text-gray-400">Launched on 01-03-2025</p>
+                        <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-md border border-[#34D562]/30 rounded-xl p-3 flex items-center gap-3">
+                            <div className="text-center">
+                                <p className="text-[#34D562] font-bold tracking-widest text-sm">MAINNET</p>
+
                             </div>
-                            <div className="w-10 h-5 bg-[#34D562]/20 rounded-full relative border border-[#34D562]/50">
+                            {/* <div className="w-10 h-5 bg-[#34D562]/20 rounded-full relative border border-[#34D562]/50">
                                 <div className="absolute right-1 top-1 w-3 h-3 bg-[#34D562] rounded-full shadow-[0_0_10px_#34D562]"></div>
-                            </div>
+                            </div> */}
                         </div>
 
                         {/* Cloud2 Hello World Button (Replacing Last Updated) */}

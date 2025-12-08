@@ -241,6 +241,65 @@ const Agoric: React.FC = () => {
                         </motion.div>
                     </div>
 
+                    {/* Hackathon Timeline */}
+                    <div className="mt-16 mb-16">
+                        <h3 className="text-2xl font-bold text-white text-center mb-8">
+                            <span className="text-[#D73252]">24-Hour</span> Hackathon Timeline
+                        </h3>
+
+                        {/* Horizontal Timeline */}
+                        <div className="relative overflow-x-auto pb-8">
+                            <div className="relative flex gap-0 min-w-max px-4">
+                                {/* Main Timeline Line - inside flex container to match content width */}
+                                <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#D73252] via-[#FF6B6B] to-[#D73252] transform -translate-y-1/2 z-0" />
+
+                                {[
+                                    { time: "9:00 AM", title: "Registration & Check-in", desc: "Attendees check in and settle in", isTop: true },
+                                    { time: "10:00 AM", title: "Opening Ceremony", desc: "Welcome speech, announcements and guidelines", isTop: false },
+                                    { time: "11:00 AM - 01:00 PM", title: "Hackathon Begins", desc: "Theoretical Session", isTop: true },
+                                    { time: "01:00 PM - 02:00 PM", title: "Lunch Break", desc: "Refuel and network", isTop: false },
+                                    { time: "02:00 PM - 05:30 PM", title: "Technical Workshop", desc: "Hands-on building session", isTop: true },
+                                    { time: "5:30 PM", title: "Snacks Break", desc: "Quick refreshment", isTop: false },
+                                    { time: "8:00 PM", title: "1st Mentoring Round", desc: "Idea submission on Google form", isTop: true },
+                                    { time: "9:30 PM", title: "Dinner Break", desc: "Evening meal", isTop: false },
+                                    { time: "12:00 AM", title: "2nd Mentoring Round", desc: "Late night guidance", isTop: true },
+                                    { time: "1:00 AM", title: "Fun Activities", desc: "Games and munching", isTop: false },
+                                    { time: "9:00 AM", title: "Breakfast", desc: "Morning fuel", isTop: true },
+                                    { time: "10:00 AM", title: "Submission", desc: "Final project submission", isTop: false },
+                                    { time: "10:30 AM", title: "Judging", desc: "Project evaluation", isTop: true },
+                                    { time: "1:00 PM", title: "Closing & Results", desc: "Winners announcement", isTop: false },
+                                ].map((item, i) => (
+                                    <div key={i} className="relative flex flex-col items-center w-44 flex-shrink-0">
+                                        {/* Top Card */}
+                                        {item.isTop && (
+                                            <div className="mb-4 bg-[#1A0A0A] border border-white/10 rounded-xl p-5 w-48 min-h-[120px] text-center hover:border-[#D73252]/50 hover:shadow-[0_0_20px_rgba(215,50,82,0.2)] transition-all duration-300 group flex flex-col justify-center">
+                                                <p className="text-xs font-mono text-[#D73252] mb-1">{item.time}</p>
+                                                <h4 className="text-sm font-bold text-white mb-1 leading-tight group-hover:text-[#D73252] transition-colors">{item.title}</h4>
+                                                <p className="text-xs text-gray-500 leading-tight">{item.desc}</p>
+                                            </div>
+                                        )}
+
+                                        {/* Timeline Node */}
+                                        <div className="relative z-10 w-4 h-4 bg-[#D73252] rounded-full border-4 border-[#0F0505] shadow-[0_0_15px_rgba(215,50,82,0.5)] my-2" />
+
+                                        {/* Bottom Card */}
+                                        {!item.isTop && (
+                                            <div className="mt-4 bg-[#1A0A0A] border border-white/10 rounded-xl p-5 w-48 min-h-[120px] text-center hover:border-[#D73252]/50 hover:shadow-[0_0_20px_rgba(215,50,82,0.2)] transition-all duration-300 group flex flex-col justify-center">
+                                                <p className="text-xs font-mono text-[#D73252] mb-1">{item.time}</p>
+                                                <h4 className="text-sm font-bold text-white mb-1 leading-tight group-hover:text-[#D73252] transition-colors">{item.title}</h4>
+                                                <p className="text-xs text-gray-500 leading-tight">{item.desc}</p>
+                                            </div>
+                                        )}
+
+                                        {/* Placeholder to maintain height */}
+                                        {item.isTop && <div className="h-[120px]" />}
+                                        {!item.isTop && <div className="h-[120px] order-first" />}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
                     {/* Winners Podium Layout - FULL IMAGE CARDS */}
                     <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-16">
 
