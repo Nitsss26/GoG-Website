@@ -113,11 +113,12 @@ interface InstituteItem {
 
 // Original items - will be shuffled to separate similar institutes
 const rawItems: InstituteItem[] = [
+    { images: { mou: MGUMou, campus: MGUSlidePic2, event: MguSlidePic3 }, logo: MGU, name: "Mahatma Gandhi University", category: "University", location: "Meghalaya" },
     { images: { mou: EICT_IITG_Mou, campus: IITGuwahatiSlidePic2, event: IitGuwahatiSlidePic3 }, logo: EICT_IITG, name: "E&ICT, IIT Guwahati", category: "IIT", location: "Guwahati, Assam" },
     { images: { mou: DYPatilMou, campus: DYPatilSlidePic2, event: DyPatilSlidePic3 }, logo: DY_Patil, name: "Dr. DY Patil COEI, Pune", category: "University", location: "Pune, Maharashtra" },
     { images: { mou: OrientalMou, campus: OrientalSlidePic2, event: OrientalSlidePic3 }, logo: OrientalLogo, name: "Oriental Group of Institutions", category: "Oriental", location: "Bhopal, MP" },
     { images: { mou: OrientalUniversityMou, campus: OrientalUniversitySlidePic2, event: OrientalSlidePic3 }, logo: OrientalLogo, name: "Oriental University, Indore", category: "Oriental", location: "Indore, MP" },
-    { images: { mou: LNCTMou, campus: LNCTSLidePic2, event: LNCTThirdPic3 }, logo: LNCTLogo, name: "LNCT, Indore", category: "LNCT", location: "Indore, MP" },
+    { images: { mou: SGUMou, campus: SAMlidePic2, event: SamSlidePic3 }, logo: SGU, name: "SAM Global University", category: "University", location: "Bhopal, MP" },
     { images: { mou: SAGEMou, campus: SAGESlidePic2, event: SageSlidePic3 }, logo: SAGE, name: "SAGE University, Bhopal", category: "SAGE", location: "Bhopal, MP" },
     { images: { mou: AssamDowntownMou, campus: ADTUSlidePic2, event: AdtuSlidePic3 }, logo: AdtU, name: "Assam Downtown University", category: "Northeast", location: "Guwahati, Assam" },
     { images: { mou: DonBoscoMou, campus: DonBoscoSlidePic2, event: DonBoscoSlidePic3 }, logo: DonBosco, name: "Assam Don Bosco University", category: "Northeast", location: "Guwahati, Assam" },
@@ -125,9 +126,7 @@ const rawItems: InstituteItem[] = [
     { images: { mou: CenturionUniversityMou, campus: CUSLidePic2, event: CUSlidePic3 }, logo: CUTM, name: "Centurion University, AP", category: "Centurion", location: "Vizianagaram, AP" },
     { images: { mou: BGIMou, campus: BGISlidePic2, event: BgiSlidePic3 }, logo: BGI, name: "Bansal Group Of Institutions", category: "BGI", location: "Bhopal, MP" },
     { images: { mou: BUMou, campus: BUSlidePic2, event: BuSlidePic3 }, logo: BU, name: "Barkatullah University, Bhopal", category: "University", location: "Bhopal, MP" },
-    { images: { mou: SITEMou, campus: SITESlidePic2, event: SITESlidePic3 }, logo: SITE, name: "SITE, Nathdwara", category: "Institute", location: "Nathdwara, Rajasthan" },
     { images: { mou: CUOrissaMou, campus: CUOrissaSlidePic2, event: CUSlidePic3 }, logo: CUTM, name: "Centurion University, Orissa", category: "Centurion", location: "Bhubaneswar, Odisha" },
-    { images: { mou: WilliamCarreyMou, campus: WilliamCareySlidePic2, event: WilliamCareySlidePic3 }, logo: WCU, name: "William Carey University", category: "University", location: "Shillong, Meghalaya" },
     { images: { mou: SGSUMou, campus: SGSUSlidePic2, event: SGSUThirdPic }, logo: SGSU, name: "Scope Global Skill University", category: "University", location: "Bhopal, MP" },
     { images: { mou: MGIMou, campus: MGISlidePic2, event: MgiSlidePic3 }, logo: MGI, name: "Millennium Group Of Institutions", category: "MGI", location: "Bhopal, MP" },
     { images: { mou: TGIMou, campus: TGISlidePic2, event: TgiSlidePic3 }, logo: TGI, name: "Truba Group of Institutions", category: "TGI", location: "Bhopal, MP" },
@@ -135,8 +134,10 @@ const rawItems: InstituteItem[] = [
     { images: { mou: SITMMou, campus: SITMSlidePic2, event: SitmSlidePic3 }, logo: SITM, name: "Scholars Institute of Technology", category: "Institute", location: "Gwalior, MP" },
     { images: { mou: SIRTMou, campus: SIRTSlidePic2, event: SirtSlidePic3 }, logo: SIRT, name: "Sagar Institute of Research & Technology", category: "SIRT", location: "Bhopal, MP" },
     { images: { mou: SIRTEMou, campus: SIRTSlidePic2, event: SIRTESlidePic3 }, logo: SIRTE, name: "SIRT Excellence", category: "SIRT", location: "Bhopal, MP" },
-    { images: { mou: MGUMou, campus: MGUSlidePic2, event: MguSlidePic3 }, logo: MGU, name: "Mahatma Gandhi University", category: "University", location: "Meghalaya" },
-    { images: { mou: SGUMou, campus: SAMlidePic2, event: SamSlidePic3 }, logo: SGU, name: "SAM Global University", category: "University", location: "Bhopal, MP" },
+
+    { images: { mou: SITEMou, campus: SITESlidePic2, event: SITESlidePic3 }, logo: SITE, name: "SITE, Nathdwara", category: "Institute", location: "Nathdwara, Rajasthan" },
+    { images: { mou: LNCTMou, campus: LNCTSLidePic2, event: LNCTThirdPic3 }, logo: LNCTLogo, name: "LNCT, Indore", category: "LNCT", location: "Indore, MP" },
+    { images: { mou: WilliamCarreyMou, campus: WilliamCareySlidePic2, event: WilliamCareySlidePic3 }, logo: WCU, name: "William Carey University", category: "University", location: "Shillong, Meghalaya" },
 ];
 
 // Shuffle function that separates similar categories
@@ -164,6 +165,32 @@ function shuffleWithSeparation(items: InstituteItem[]): InstituteItem[] {
 
     return result;
 }
+
+// Simple rotating image component - only handles the image transition
+const RotatingImage: React.FC<{ images: string[]; alt: string; className: string }> = ({ images, alt, className }) => {
+    const [currentIndex, setCurrentIndex] = React.useState(0);
+
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % images.length);
+        }, 5000);
+        return () => clearInterval(interval);
+    }, [images.length]);
+
+    return (
+        <>
+            {images.map((img, i) => (
+                <img
+                    key={i}
+                    src={img}
+                    alt={alt}
+                    className={`${className} absolute inset-0 transition-opacity duration-1000 ease-in-out ${currentIndex === i ? 'opacity-100' : 'opacity-0'
+                        }`}
+                />
+            ))}
+        </>
+    );
+};
 
 const PartneredInstitutes: React.FC = () => {
     const [selectedInstitute, setSelectedInstitute] = useState<InstituteItem | null>(null);
@@ -193,7 +220,7 @@ const PartneredInstitutes: React.FC = () => {
         return images[index];
     };
 
-    const imageLabels = ["MoU Signing Ceremony", "Campus View", "Event Gallery"];
+    const imageLabels = ["MoU Signing Ceremony", "Campus View", "Institute"];
 
     return (
         <main className="relative min-h-screen bg-[#030303] text-white overflow-hidden">
@@ -211,7 +238,7 @@ const PartneredInstitutes: React.FC = () => {
                             className="inline-flex items-center gap-2 mb-6 px-6 py-2 rounded-full border border-[#34D562]/30 bg-[#34D562]/10"
                         >
                             <Handshake size={18} className="text-[#34D562]" />
-                            <span className="text-[#34D562] font-mono tracking-widest uppercase text-sm font-bold">Strategic Partnerships</span>
+                            <span className="text-[#34D562] font-mono tracking-widest uppercase text-sm font-bold">Partnerships</span>
                         </motion.div>
 
                         <motion.h1
@@ -229,7 +256,7 @@ const PartneredInstitutes: React.FC = () => {
                             transition={{ delay: 0.2 }}
                             className="text-xl text-gray-400 max-w-3xl mx-auto"
                         >
-                            Collaborating with {rawItems.length}+ premier educational institutions across India to shape the future of technology education.
+                            Collaborating with 50+ premier educational institutions across India to shape the future of technology education.
                         </motion.p>
                     </div>
 
@@ -244,7 +271,7 @@ const PartneredInstitutes: React.FC = () => {
                             { icon: Building2, value: `50+`, label: "Partner Institutes" },
                             { icon: Users, value: "300,000+", label: "Students Reached" },
                             { icon: Award, value: "40+", label: "States Covered" },
-                            { icon: GraduationCap, value: "300+", label: "Events Conducted" }
+                            { icon: GraduationCap, value: "500+", label: "Events Conducted" }
                         ].map((stat, i) => (
                             <div key={i} className="bg-[#0A0A0A]/80 border border-white/10 rounded-2xl p-6 text-center hover:border-[#34D562]/30 transition-colors">
                                 <stat.icon className="text-[#34D562] mx-auto mb-3" size={28} />
@@ -271,10 +298,10 @@ const PartneredInstitutes: React.FC = () => {
                                 className="group cursor-pointer"
                             >
                                 <div className="relative bg-[#0A0A0A] border border-white/10 rounded-3xl overflow-hidden hover:border-[#34D562]/50 transition-all duration-500 hover:shadow-[0_0_50px_rgba(52,213,98,0.15)]">
-                                    {/* Main Campus Image */}
+                                    {/* Main Image - Auto-rotating */}
                                     <div className="relative h-56 overflow-hidden">
-                                        <img
-                                            src={item.images.campus}
+                                        <RotatingImage
+                                            images={[item.images.mou, item.images.campus, item.images.event]}
                                             alt={item.name}
                                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                         />
@@ -293,13 +320,13 @@ const PartneredInstitutes: React.FC = () => {
                                     <div className="p-6">
                                         <div className="flex items-start gap-4">
                                             {/* Logo */}
-                                            <div className="w-16 h-16 bg-white rounded-xl p-2 flex-shrink-0 shadow-lg">
+                                            {/* <div className="w-16 h-16 bg-white rounded-xl p-2 flex-shrink-0 shadow-lg">
                                                 <img
                                                     src={item.logo}
                                                     alt={item.name}
                                                     className="w-full h-full object-contain"
                                                 />
-                                            </div>
+                                            </div> */}
 
                                             {/* Info */}
                                             <div className="flex-1 min-w-0">
@@ -345,17 +372,17 @@ const PartneredInstitutes: React.FC = () => {
                             initial={{ scale: 0.9, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.9, opacity: 0 }}
-                            className="relative w-full max-w-6xl bg-[#0A0A0A] border border-white/10 rounded-3xl overflow-hidden"
+                            className="relative w-full max-w-5xl max-h-[85vh] bg-[#0A0A0A] border border-white/10 rounded-2xl overflow-hidden"
                             onClick={(e) => e.stopPropagation()}
                         >
                             {/* Header */}
-                            <div className="flex items-center justify-between p-6 border-b border-white/10">
-                                <div className="flex items-center gap-4">
-                                    <div className="w-14 h-14 bg-white rounded-xl p-2">
+                            <div className="flex items-center justify-between p-4 border-b border-white/10">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-10 h-10 bg-white rounded-lg p-1.5">
                                         <img src={selectedInstitute.logo} alt="" className="w-full h-full object-contain" />
                                     </div>
                                     <div>
-                                        <h2 className="text-xl font-bold text-white">{selectedInstitute.name}</h2>
+                                        <h2 className="text-lg font-bold text-white">{selectedInstitute.name}</h2>
                                         {selectedInstitute.location && (
                                             <p className="text-sm text-gray-400">{selectedInstitute.location}</p>
                                         )}
@@ -370,35 +397,37 @@ const PartneredInstitutes: React.FC = () => {
                             </div>
 
                             {/* Main Image */}
-                            <div className="relative aspect-video bg-black">
-                                <img
-                                    src={getImageByIndex(selectedInstitute, currentImageIndex)}
-                                    alt={selectedInstitute.name}
-                                    className="w-full h-full object-contain"
-                                />
+                            <div className="w-full flex items-center justify-center bg-[#111]">
+                                <div className="relative max-w-full max-h-[60vh]">
+                                    <img
+                                        src={getImageByIndex(selectedInstitute, currentImageIndex)}
+                                        alt={selectedInstitute.name}
+                                        className="max-w-full max-h-[60vh] object-contain mx-auto"
+                                    />
 
-                                {/* Navigation */}
-                                <button
-                                    onClick={prevImage}
-                                    className="absolute left-4 top-1/2 -translate-y-1/2 p-4 bg-black/60 hover:bg-[#34D562] rounded-full transition-colors group"
-                                >
-                                    <ChevronLeft size={28} className="text-white group-hover:text-black" />
-                                </button>
-                                <button
-                                    onClick={nextImage}
-                                    className="absolute right-4 top-1/2 -translate-y-1/2 p-4 bg-black/60 hover:bg-[#34D562] rounded-full transition-colors group"
-                                >
-                                    <ChevronRight size={28} className="text-white group-hover:text-black" />
-                                </button>
+                                    {/* Navigation */}
+                                    <button
+                                        onClick={prevImage}
+                                        className="absolute left-2 top-1/2 -translate-y-1/2 p-3 bg-black/60 hover:bg-[#34D562] rounded-full transition-colors group"
+                                    >
+                                        <ChevronLeft size={24} className="text-white group-hover:text-black" />
+                                    </button>
+                                    <button
+                                        onClick={nextImage}
+                                        className="absolute right-2 top-1/2 -translate-y-1/2 p-3 bg-black/60 hover:bg-[#34D562] rounded-full transition-colors group"
+                                    >
+                                        <ChevronRight size={24} className="text-white group-hover:text-black" />
+                                    </button>
 
-                                {/* Image Label */}
-                                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 px-6 py-2 bg-[#34D562] text-black font-bold rounded-full">
-                                    {imageLabels[currentImageIndex]}
+                                    {/* Image Label */}
+                                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-5 py-2 bg-[#34D562] text-black font-bold rounded-full text-sm">
+                                        {imageLabels[currentImageIndex]}
+                                    </div>
                                 </div>
                             </div>
 
                             {/* Thumbnails */}
-                            <div className="p-6 flex justify-center gap-4">
+                            <div className="p-4 flex justify-center gap-3">
                                 {[0, 1, 2].map((i) => (
                                     <button
                                         key={i}

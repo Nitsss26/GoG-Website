@@ -57,7 +57,7 @@ const App: React.FC = () => {
             <Route path="/our-social-impact" element={<OurSocialImpact />} />
             <Route path="/teams" element={<OurTeam />} />
             <Route path="/about-gog" element={<AboutGoG />} />
-            {/* <Route path="/partnered-colleges" element={<PartneredInstitutes />} /> */}
+            <Route path="/partnered-colleges" element={<PartneredInstitutes />} />
           </Routes>
         </Suspense>
 

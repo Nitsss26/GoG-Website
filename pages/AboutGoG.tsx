@@ -7,6 +7,29 @@ import { CyberHexagon, CyberSquare } from '../components/ui/CyberShapes';
 import FounderImg from '../assets/images/founder.png';
 import F1Img from '../assets/images/f1.png';
 import F2Img from '../assets/images/f2.png';
+import S1Img from '../assets/images/s1.png';
+import S2Img from '../assets/images/s2.png';
+
+// Partner Logos
+import AdtU from '../assets/PartneredColleges/AdtU.svg';
+import BGI from '../assets/PartneredColleges/BGI.svg';
+import BU from '../assets/PartneredColleges/BU.svg';
+import CUTM from '../assets/PartneredColleges/CUTM.svg';
+import DY_Patil from '../assets/PartneredColleges/DY_Patil.svg';
+import DonBosco from '../assets/PartneredColleges/DonBosco.svg';
+import EICT_IITG from '../assets/PartneredColleges/EICT_IITG.svg';
+import LNCTLogo from '../assets/PartneredColleges/LNCTLogo.svg';
+import MGI from '../assets/PartneredColleges/MGI.svg';
+import MGU from '../assets/PartneredColleges/MGU.svg';
+import OrientalLogo from '../assets/PartneredColleges/Oriental Logo.svg';
+import SAGE from '../assets/PartneredColleges/SAGE.svg';
+import SGSU from '../assets/PartneredColleges/SGSU.svg';
+import SGU from '../assets/PartneredColleges/SGU.svg';
+import SIRT from '../assets/PartneredColleges/SIRT.svg';
+import SIRTE from '../assets/PartneredColleges/SIRT-E.svg';
+import SITM from '../assets/PartneredColleges/SITM.svg';
+import TGI from '../assets/PartneredColleges/TGI.svg';
+import WCU from '../assets/PartneredColleges/WCU.svg';
 
 const AboutGoG: React.FC = () => {
     const leaders = [
@@ -100,6 +123,201 @@ const AboutGoG: React.FC = () => {
                     ))}
                 </div>
             </div>
+
+            {/* About Content Section */}
+            <section className="py-24 px-6">
+                <div className="container mx-auto max-w-[1600px]">
+                    {/* Section Title */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-20"
+                    >
+                        <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] to-[#28a74b]">Geeks of Gurukul</span>
+                        </h2>
+                        <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                            Empowering individuals with industry-relevant skills and personalized mentorship
+                        </p>
+                    </motion.div>
+
+                    <div className="space-y-24">
+                        {/* First Block - Image Left, Text Right */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="flex flex-col lg:flex-row gap-12 items-center"
+                        >
+                            <div className="lg:w-1/2 relative group">
+                                <div className="absolute -inset-4 bg-gradient-to-r from-[#34D562]/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                <div className="relative rounded-3xl overflow-hidden border-2 border-white/10 group-hover:border-[#34D562]/50 transition-all duration-500">
+                                    {/* <img
+                                        src={S1Img}
+                                        alt="Team at Geeks of Gurukul"
+                                        className="w-full h-80 md:h-96 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                    /> */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                                </div>
+                            </div>
+                            <div className="lg:w-1/2 space-y-6">
+                                <div className="h-1 w-20 bg-gradient-to-r from-[#34D562] to-transparent rounded-full" />
+                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                                    In the current educational landscape, students from tier 2 and tier 3 cities often face significant disadvantages in terms of skill development and educational resources. The major edtech companies, despite their substantial funding, predominantly cater to tier 1 cities, leaving a significant portion of India's population underserved.
+                                </p>
+                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                                    Recognizing this gap, we founded <span className="text-[#34D562] font-semibold">Geeks of Gurukul</span> with the primary mission of <span className="text-[#34D562] font-semibold">Empowering Bharat</span>, focusing specifically on these underrepresented regions.
+                                </p>
+                            </div>
+                        </motion.div>
+
+                        {/* Second Block - Text Left, Image Right */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="flex flex-col lg:flex-row-reverse gap-12 items-center"
+                        >
+                            <div className="lg:w-1/2 relative group">
+                                <div className="absolute -inset-4 bg-gradient-to-l from-[#34D562]/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                <div className="relative rounded-3xl overflow-hidden border-2 border-white/10 group-hover:border-[#34D562]/50 transition-all duration-500">
+                                    {/* <img
+                                        src={S2Img}
+                                        alt="Modern Age Gurukul"
+                                        className="w-full h-80 md:h-96 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                    /> */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                                </div>
+                            </div>
+                            <div className="lg:w-1/2 space-y-6">
+                                <div className="h-1 w-20 bg-gradient-to-r from-[#34D562] to-transparent rounded-full" />
+                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                                    Our philosophy is rooted in the concept of the <span className="text-[#34D562] font-semibold">MODERN AGE GURUKUL</span>. This signifies our commitment to reviving the Ancient Indian Educational System, which emphasized Project-Based Learning and practical knowledge system.
+                                </p>
+                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                                    By adopting these time-tested, <span className="text-[#34D562] font-semibold">Practical Learning Techniques</span>, Geeks of Gurukul aims to provide students with the skills and knowledge that are not only relevant but also essential for <span className="text-[#34D562] font-semibold">Real-World Applications</span>.
+                                </p>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Community CTA Section */}
+            <section className="py-24 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[#34D562]/5" />
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#34D56210_1px,transparent_1px),linear-gradient(to_bottom,#34D56210_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+
+                <div className="container mx-auto px-6 max-w-[1600px] relative z-10 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="space-y-8"
+                    >
+                        <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white">
+                            Be Amongst Our 15,000+ <span className="text-[#34D562]">Gurukulites!</span>
+                        </h2>
+                        <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                            Explore Boundless Learning Together – Join Our Community Of 15,000+ Gurukulites And Embrace A Journey Of Collective Knowledge And Growth!
+                        </p>
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="mt-8 px-12 py-5 bg-[#34D562] text-black font-bold text-xl rounded-full hover:shadow-[0_0_50px_rgba(52,213,98,0.5)] transition-all duration-300"
+                        >
+                            Join Our Community
+                        </motion.button>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Partnered Institutes Section */}
+            <section className="py-24 px-6 relative overflow-hidden">
+                {/* Background Glow */}
+                <div className="absolute -left-40 top-1/2 -translate-y-1/2 w-[600px] h-[700px] bg-[#34D562]/10 rounded-full blur-[150px]" />
+
+                <div className="container mx-auto max-w-[1600px]">
+                    {/* Title */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-12"
+                    >
+                        <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-wide">
+                            <span className="border-b-4 border-[#34D562]/50 pb-2">PARTNERS</span>
+                        </h2>
+
+                        {/* Badge */}
+                        <div className="inline-block px-8 py-3 border-2 border-white/30 rounded-full">
+                            <span className="text-white font-bold tracking-widest uppercase text-sm">Partnered Institutes</span>
+                        </div>
+                    </motion.div>
+
+                    {/* Logo Grid - Staggered Honeycomb Layout */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="bg-[#0A0A0A]/50 backdrop-blur-sm border border-white/10 rounded-3xl p-6 md:p-10"
+                    >
+                        {/* Row 1 - 7 items (full width) */}
+                        <div className="flex flex-wrap justify-between gap-4 mb-8">
+                            {[AdtU, BGI, BU, CUTM, DY_Patil, EICT_IITG, DonBosco].map((logo, i) => (
+                                <motion.div
+                                    key={`row1-${i}`}
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.03 }}
+                                    whileHover={{ scale: 1.05, y: -5 }}
+                                    className="bg-white rounded-xl p-3 flex items-center justify-center flex-1 min-w-[120px] max-w-[160px] h-16 cursor-pointer shadow-lg hover:shadow-[0_10px_40px_rgba(52,213,98,0.2)] transition-all duration-300"
+                                >
+                                    <img src={logo} alt="Partner Institute" className="max-w-full max-h-full object-contain" />
+                                </motion.div>
+                            ))}
+                        </div>
+
+                        {/* Row 2 - 6 items (offset/centered) */}
+                        <div className="flex flex-wrap justify-center gap-12 mb-8 mx-auto" style={{ maxWidth: 'calc(100% - 140px)' }}>
+                            {[LNCTLogo, MGI, MGU, OrientalLogo, SAGE, SGSU].map((logo, i) => (
+                                <motion.div
+                                    key={`row2-${i}`}
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: (7 + i) * 0.03 }}
+                                    whileHover={{ scale: 1.05, y: -5 }}
+                                    className="bg-white rounded-xl p-3 flex items-center justify-center flex-1 min-w-[120px] max-w-[160px] h-16 cursor-pointer shadow-lg hover:shadow-[0_10px_40px_rgba(52,213,98,0.2)] transition-all duration-300"
+                                >
+                                    <img src={logo} alt="Partner Institute" className="max-w-full max-h-full object-contain" />
+                                </motion.div>
+                            ))}
+                        </div>
+
+                        {/* Row 3 - 6 items (full width like Row 1) */}
+                        <div className="flex flex-wrap justify-between gap-4">
+                            {[SGU, SIRT, SIRTE, SITM, TGI, WCU].map((logo, i) => (
+                                <motion.div
+                                    key={`row3-${i}`}
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: (13 + i) * 0.03 }}
+                                    whileHover={{ scale: 1.05, y: -5 }}
+                                    className="bg-white rounded-xl p-3 flex items-center justify-center flex-1 min-w-[120px] max-w-[180px] h-16 cursor-pointer shadow-lg hover:shadow-[0_10px_40px_rgba(52,213,98,0.2)] transition-all duration-300"
+                                >
+                                    <img src={logo} alt="Partner Institute" className="max-w-full max-h-full object-contain" />
+                                </motion.div>
+                            ))}
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
         </main>
     );
 };
