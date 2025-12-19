@@ -121,9 +121,9 @@ const Navbar: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[900] bg-black/95 backdrop-blur-lg flex items-center justify-center overflow-y-auto"
+            className="fixed inset-0 z-[900] bg-black/95 backdrop-blur-lg flex flex-col items-center justify-start overflow-y-auto"
           >
-            <div className="flex flex-col items-center gap-6 p-6 w-full max-w-md">
+            <div className="flex flex-col items-center gap-6 p-6 pt-36 w-full max-w-md pb-12">
               {NAV_ITEMS.map((item, i) => (
                 <div key={item.label} className="w-full flex flex-col items-center">
                   {item.children ? (

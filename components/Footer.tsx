@@ -10,8 +10,8 @@ const Footer: React.FC = () => {
       {/* Background Glow */}
       <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#34D562]/5 to-transparent pointer-events-none"></div>
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-16">
 
           {/* Brand Column */}
           <div className="lg:col-span-1">
@@ -21,13 +21,13 @@ const Footer: React.FC = () => {
             <p className="text-gray-400 text-sm leading-relaxed mb-6 border-l-2 border-[#34D562] pl-4">
               Unleash The Power Of Learning: Discover A World Of Possibilities With Our Cutting-Edge Learning Management System.
             </p>
-            <div className="pt-4 flex flex-col md:flex-row justify-between items-center gap-4 w-[200%]">
-              <p className="text-gray-500 text-xs whitespace-nowrap">© Copyright 2024 Skillscan Edtech India Private Ltd. All Rights Reserved</p>
+            <div className="pt-4 flex flex-col justify-between items-start gap-4 w-full">
+              <p className="text-gray-500 text-xs leading-relaxed">© Copyright 2024 Skillscan Edtech India Private Ltd. All Rights Reserved</p>
             </div>
           </div>
 
           {/* Connect Column */}
-          <div className="ml-24">
+          <div className="lg:ml-24">
             <h4 className="text-[#34D562] font-bold text-lg mb-6 uppercase tracking-wider">Connect</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li><a href="/Contact-Us" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Contact</a></li>
