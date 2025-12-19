@@ -4,7 +4,7 @@ import { BookOpen, GraduationCap, Award, Library, Share2, Users, Code, Zap, Glob
 import { HoverGlowBtn } from '../components/ui/MovingBorder';
 import BlueEmbers from '../components/ui/BlueEmbers';
 import EduHeroImg from '../assets/EduchainXGeeksofGurukul.png';
-import EduGroup from '../assets/Educhain-group-pic.png';
+import EduGroup from './Educhain.png';
 import EduHackathon from '../assets/EduchainHackathon.jpg';
 import EduHappyCoding from '../assets/Educhain-happy-coding.jpeg';
 import EduchainCertificate from '../assets/Educhain.png';

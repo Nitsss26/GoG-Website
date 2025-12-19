@@ -34,8 +34,8 @@ const Navbar: React.FC = () => {
         className="fixed top-6 left-0 right-0 z-[1000] flex justify-center pointer-events-none"
       >
         <div className={`pointer-events-auto transition-all duration-500 ease-in-out ${isScrolled
-            ? 'w-[90%] md:w-auto px-6 py-3 bg-[#0A0A0A]/80 backdrop-blur-xl border border-[#34D562]/20 rounded-full shadow-[0_10px_40px_-10px_rgba(52,213,98,0.2)]'
-            : 'w-[95%] px-8 py-5 bg-transparent border-none'
+          ? 'w-[90%] md:w-auto px-6 py-3 bg-[#0A0A0A]/80 backdrop-blur-xl border border-[#34D562]/20 rounded-full shadow-[0_10px_40px_-10px_rgba(52,213,98,0.2)]'
+          : 'w-[95%] px-8 py-5 bg-transparent border-none'
           }`}>
           <div className="flex items-center justify-between md:justify-center gap-12">
 
@@ -101,9 +101,9 @@ const Navbar: React.FC = () => {
 
             {/* Desktop Buttons */}
             <div className="hidden lg:flex items-center gap-3">
-              <button className="px-6 py-2.5 text-sm font-bold bg-[#34D562] text-black rounded-full hover:bg-[#28a74b] hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(52,213,98,0.4)]">
+              <a href="https://chat.whatsapp.com/FMhZXhaKZrY96vbBGUEU6c" target="_blank" rel="noopener noreferrer" className="px-6 py-2.5 text-sm font-bold bg-[#34D562] text-black rounded-full hover:bg-[#28a74b] hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(52,213,98,0.4)]">
                 Join Community
-              </button>
+              </a>
             </div>
 
             {/* Mobile Toggle */}
@@ -153,14 +153,17 @@ const Navbar: React.FC = () => {
                   )}
                 </div>
               ))}
-              <motion.button
+              <motion.a
+                href="https://chat.whatsapp.com/FMhZXhaKZrY96vbBGUEU6c"
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5 }}
                 className="mt-8 px-8 py-4 bg-[#34D562] text-black font-bold rounded-full text-xl"
               >
                 Join Community
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
         )}

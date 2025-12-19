@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { Rocket, Code2, Server, Globe, Trophy, Users, Zap, Star, ArrowRight, ArrowRightLeft, Coins, Banknote } from 'lucide-react';
 import { HoverGlowBtn } from '../components/ui/MovingBorder';
 import ParticleBackground from '../components/ui/ParticleBackground';
-import StellarAward from '../assets/Stellar-Award.jpg'; // Using the 6MB file
+import StellarBanner from './Steller.png'; // Using the 6MB file
 import StellarCrowd from '../assets/Steller-Crowd-main.jpg'; // Using the 3MB file
-import StellarBanner from '../assets/Steller-with-banner.png';
+import StellarAward from '../assets/Steller-with-banner.png';
 import Steller from '../assets/Steller-Crowd.jpg';
 import StellarAward1 from '../assets/Steller-Award.png'; // Using the 6MB file
 

@@ -6,8 +6,8 @@ import Agoric1st from '../assets/Agoric-1st.HEIC';
 import Agoric2nd from '../assets/Agoric-2nd.HEIC';
 import Agoric3rd from '../assets/Agoric-3rd.HEIC';
 import AgoricAward from '../assets/Agoric-Award-Centurion-University.jpeg';
-import AgoricCrowd from '../assets/Agoric-Crowd.HEIC';
-import AgoricGreen from '../assets/Agoric-Green Welcome-Centurion-University.jpeg';
+import AgoricGreen from '../assets/Agoric-Crowd.HEIC';
+import AgoricCrowd from './Agoric-codingg.png';
 import { HoverGlowBtn } from '../components/ui/MovingBorder';
 import IndianStudent1 from '../assets/IndianStudent1.png';
 import IndianStudent2 from '../assets/IndianStudent2.png';
@@ -453,7 +453,7 @@ const Agoric: React.FC = () => {
                             },
                             {
                                 img: AgoricCrowd,
-                                title: "Community Gathering",
+                                title: "Live Coding",
                                 desc: "Builders and enthusiasts uniting for the interchain future."
                             }
 

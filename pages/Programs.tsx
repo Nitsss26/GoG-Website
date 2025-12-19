@@ -95,15 +95,15 @@ const Programs: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-[#030303] via-[#030303]/80 to-[#030303]" />
 
                 {/* Extra Embers for Hero */}
-                <GreenEmbers2 density={6.5} className="absolute inset-0 z-[5]" />
+                <GreenEmbers2 density={16.5} className="absolute inset-0 z-[5]" />
 
                 {/* Decorative Cyber Shapes */}
-                <div className="absolute top-28 left-10 opacity-80 hidden lg:block pointer-events-none">
+                {/* <div className="absolute top-28 left-10 opacity-80 hidden lg:block pointer-events-none">
                     <CyberHexagon size={250} />
                 </div>
                 <div className="absolute bottom-16 right-10 opacity-80 hidden lg:block pointer-events-none">
                     <CyberSquare size={300} />
-                </div>
+                </div> */}
 
                 <div className="container mx-auto relative z-10 text-center max-w-5xl">
                     <motion.div

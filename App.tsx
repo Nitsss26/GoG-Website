@@ -6,6 +6,7 @@ import { motion, useScroll, useSpring } from 'framer-motion';
 import ScrollToTop from './components/ScrollToTop';
 
 // Lazy Load Pages
+const Home = lazy(() => import('./pages/Home'));
 const KoiiLabs = lazy(() => import('./pages/KoiiLabs'));
 const CoreDao = lazy(() => import('./pages/CoreDao'));
 const Educhain = lazy(() => import('./pages/Educhain'));
@@ -46,7 +47,7 @@ const App: React.FC = () => {
 
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
-            <Route path="/" element={<KoiiLabs />} />
+            <Route path="/" element={<Home />} />
             <Route path="/blockchain/koii-labs" element={<KoiiLabs />} />
             <Route path="/blockchain/core-dao" element={<CoreDao />} />
             <Route path="/blockchain/educhain" element={<Educhain />} />

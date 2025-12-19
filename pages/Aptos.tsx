@@ -3,10 +3,11 @@ import { motion } from 'framer-motion';
 import { MoveRight, Zap, Code, Box, Terminal, Activity, Users } from 'lucide-react';
 import { HoverGlowBtn } from '../components/ui/MovingBorder';
 import ParticleBackground from '../components/ui/ParticleBackground';
-import AptosCrowd from '../assets/Aptos-Crowd1.png';
+import AptosCrowd from './Aptos1.jpg';
+import AptosCrowd2 from './Aptos3.png';
 import AptosHappy from '../assets/Aptos-happy-coding.jpg';
-import AptosHackathon1 from '../assets/Aptos-happy-coding.jpg'; // Placeholder: File not found
-import AptosHackathon2 from '../assets/Aptos-happy-coding.jpg'; // Placeholder: File not found
+import AptosHackathon1 from './Aptos2.png'; // Placeholder: File not found
+import AptosHackathon2 from './Aptos4.jpg'; // Placeholder: File not found
 
 import IndianStudent1 from '../assets/IndianStudent1.png';
 import IndianStudent2 from '../assets/IndianStudent2.png';
@@ -174,7 +175,7 @@ const Aptos: React.FC = () => {
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
                             { img: AptosHackathon1, title: "University Hackathon", desc: "Students building next-gen DApps." },
-                            { img: AptosCrowd, title: "Community Meetup", desc: "Growing the Aptos ecosystem together." },
+                            { img: AptosCrowd2, title: "Community Meetup", desc: "Growing the Aptos ecosystem together." },
                             { img: AptosHackathon2, title: "Dev Challenge", desc: "Pushing the boundaries of Move." }
                         ].map((item, i) => (
                             <motion.div

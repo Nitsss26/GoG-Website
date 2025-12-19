@@ -11,20 +11,20 @@ const Hero: React.FC = () => {
   // Updated image paths as requested
   const HERO_IMAGES = [
     {
-      src: "https://i.postimg.cc/FscVdLQ5/Screenshot-2025-12-01-144334.png",
-      caption: "Signing Ceremony"
+      src: "https://i.postimg.cc/SN5ZMFQ5/Gemini-Generated-Image-mtd0u1mtd0u1mtd0.png",
+      caption: "Decentralised Cloud 2.0 Tech"
     },
     {
       src: "https://i.postimg.cc/vH9tgVwS/Screenshot-2025-12-01-144313.png",
-      caption: "Strategic Partnership"
-    },
-    {
-      src: "https://i.postimg.cc/NLhLvFND/Screenshot-2025-12-01-144234.png",
       caption: "Global Partnership"
     },
     {
+      src: "https://i.postimg.cc/NLhLvFND/Screenshot-2025-12-01-144234.png",
+      caption: "Synergistic Collaboration"
+    },
+    {
       src: "https://i.postimg.cc/NfTk9Hvn/Screenshot-2025-12-01-144356.png",
-      caption: "Decentralised Cloud 2.0 Tech"
+      caption: "Signing Ceremony"
     }
   ];
 
