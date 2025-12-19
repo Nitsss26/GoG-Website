@@ -13,7 +13,7 @@ import RoboticsImg from '../assets/robotics.png';
 
 const FutureWithTech: React.FC = () => {
     const technologies = [
-        { title: "Drone Technology", desc: "Revolutionize industries with cutting-edge capabilities", image: DroneImg, color: "from-emerald-500 to-green-600" },
+        { title: "Drone Technology", desc: "Revolutionize industries with cutting edge capabilities", image: DroneImg, color: "from-emerald-500 to-green-600" },
         { title: "Blockchain", desc: "Secure decentralized ledger technology", image: BlockchainImg, color: "from-cyan-500 to-blue-600" },
         { title: "AR/VR Reality", desc: "Immersive augmented and virtual experiences", image: VRImg, color: "from-purple-500 to-pink-600" },
         { title: "Robotics & AI", desc: "Advanced automation powering the future", image: RoboticsImg, color: "from-orange-500 to-red-600" },
@@ -37,7 +37,7 @@ const FutureWithTech: React.FC = () => {
                         <span className="text-[#34D562]">Tech</span>
                     </h2>
                     <p className="text-gray-400 text-lg max-w-xl mx-auto">
-                        Embrace cutting-edge technologies driving innovation
+                        Embrace cutting edge technologies driving innovation
                     </p>
                 </motion.div>
 
