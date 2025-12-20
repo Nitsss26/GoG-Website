@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-6">
-              <img src="/assets/images/logo.png" alt="Logo" className="h-8" />
+              <img src="https://i.postimg.cc/4NdhCzDD/logo-(2).png" alt="Logo" className="h-8" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6 border-l-2 border-[#34D562] pl-4">
               Unleash The Power Of Learning: Discover A World Of Possibilities With Our Cutting-Edge Learning Management System.
