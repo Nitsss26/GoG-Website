@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
 
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 cursor-pointer">
-              <img src="https://www.geeksofgurukul.com/assets/logo-De_KmFRw.svg" alt="GoG Logo" className="h-8 md:h-10" />
+              <img src="assets/images/logo.svg" alt="GoG Logo" className="h-8 md:h-10" />
             </Link>
 
             {/* Desktop Links - Capsule Style */}
