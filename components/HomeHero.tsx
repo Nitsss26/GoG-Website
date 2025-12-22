@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { ChevronRight, Globe, Trophy, Play, Medal, Coins, Zap, Code, Rocket, GraduationCap, Shield, Brain, Stethoscope, Cpu, School } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronRight, Globe, Trophy, Play, Medal, Coins, Zap, Code, Rocket, GraduationCap, Shield, Brain, Stethoscope, Cpu, School, X } from 'lucide-react';
 
 // @ts-ignore
 import HeroCreative from '../assets/hero_center_creative.png';
@@ -63,6 +63,7 @@ const GreenEmbers: React.FC = () => {
 };
 
 const HomeHero: React.FC = () => {
+    const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
     const allStats = [
         { value: "#1", label: "Top Placement in All Streams", icon: <Trophy size={18} className="text-[#34D562]" /> },
@@ -276,9 +277,12 @@ const HomeHero: React.FC = () => {
                                     </span>
                                 </button>
 
-                                <button className="px-7 py-3.5 bg-white/5 hover:bg-white/10 text-white font-semibold text-sm rounded-full border border-white/10 hover:border-[#34D562]/50 transition-all flex items-center gap-2">
+                                <button
+                                    onClick={() => setIsVideoModalOpen(true)}
+                                    className="px-7 py-3.5 bg-white/5 hover:bg-white/10 text-white font-semibold text-sm rounded-full border border-white/10 hover:border-[#34D562]/50 transition-all flex items-center gap-2"
+                                >
                                     <Play size={14} className="text-[#34D562]" />
-                                    Watch Demo
+                                    Watch Video
                                 </button>
                             </motion.div>
 
@@ -490,6 +494,52 @@ const HomeHero: React.FC = () => {
                     </div>
                 </motion.div>
             </section>
+
+            {/* Video Modal */}
+            <AnimatePresence>
+                {isVideoModalOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[2000] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+                        onClick={() => setIsVideoModalOpen(false)}
+                    >
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                            className="relative w-full max-w-2xl bg-[#0A0A0A] rounded-2xl border border-[#34D562]/30 shadow-[0_0_50px_rgba(52,213,98,0.2)] overflow-hidden"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            {/* Close Button */}
+                            <button
+                                onClick={() => setIsVideoModalOpen(false)}
+                                className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/50 border border-white/20 flex items-center justify-center text-white hover:text-[#34D562] hover:border-[#34D562]/50 transition-all"
+                            >
+                                <X size={20} />
+                            </button>
+
+                            {/* Video Container */}
+                            <div className="p-4 pt-14">
+                                <iframe
+                                    src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7348953207278116864?compact=1"
+                                    className="w-full aspect-video rounded-lg"
+                                    frameBorder="0"
+                                    allowFullScreen
+                                    title="Geeks of Gurukul Video"
+                                />
+                            </div>
+
+                            {/* Modal Footer */}
+                            <div className="p-4 pt-0 text-center">
+                                <p className="text-gray-400 text-sm">Geeks of Gurukul - Empowering Education</p>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 };

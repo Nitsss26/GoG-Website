@@ -2,6 +2,7 @@ import React from 'react';
 import HomeHero from '../components/HomeHero';
 import HomeAwardsPremium from '../components/HomeAwardsPremium';
 import FutureWithTech from '../components/FutureWithTech';
+import TeamVideos from '../components/TeamVideos';
 
 const Home: React.FC = () => {
     return (
@@ -11,6 +12,7 @@ const Home: React.FC = () => {
             {/* Awards section now comes before Future with Tech */}
             <HomeAwardsPremium />
             <FutureWithTech />
+            <TeamVideos />
         </main>
     );
 };
