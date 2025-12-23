@@ -126,7 +126,7 @@ const rawItems: InstituteItem[] = [
     { images: { mou: CenturionUniversityMou, campus: CUSLidePic2, event: CUSlidePic3 }, logo: CUTM, name: "Centurion University, AP", category: "Centurion", location: "Vizianagaram, AP" },
     { images: { mou: BGIMou, campus: BGISlidePic2, event: BgiSlidePic3 }, logo: BGI, name: "Bansal Group Of Institutions", category: "BGI", location: "Bhopal, MP" },
     { images: { mou: BUMou, campus: BUSlidePic2, event: BuSlidePic3 }, logo: BU, name: "Barkatullah University, Bhopal", category: "University", location: "Bhopal, MP" },
-    { images: { mou: CUOrissaMou, campus: CUOrissaSlidePic2, event: CUSlidePic3 }, logo: CUTM, name: "Centurion University, Orissa", category: "Centurion", location: "Bhubaneswar, Odisha" },
+    { images: { mou: CUOrissaMou, campus: CUOrissaSlidePic2, event: CUSlidePic3 }, logo: CUTM, name: "Centurion University, Odisha", category: "Centurion", location: "Bhubaneswar, Odisha" },
     { images: { mou: SGSUMou, campus: SGSUSlidePic2, event: SGSUThirdPic }, logo: SGSU, name: "Scope Global Skill University", category: "University", location: "Bhopal, MP" },
     { images: { mou: MGIMou, campus: MGISlidePic2, event: MgiSlidePic3 }, logo: MGI, name: "Millennium Group Of Institutions", category: "MGI", location: "Bhopal, MP" },
     { images: { mou: TGIMou, campus: TGISlidePic2, event: TgiSlidePic3 }, logo: TGI, name: "Truba Group of Institutions", category: "TGI", location: "Bhopal, MP" },

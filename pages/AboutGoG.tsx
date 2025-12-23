@@ -12,7 +12,7 @@ import S2Img from '../assets/team/2nd.jpg';
 import RajImg from '../assets/team/raj-kumar-sahoo.jpg';
 import VivekImg from '../assets/team/vivek-yadav.jpg';
 import AyushImg from '../assets/team/ayush-chauhan.jpg';
-import SachinImg from '../assets/team/sachin-kumar-gupta.jpg';
+import SachinImg from '../assets/team/sachin-kumar-gupta.png';
 import VipulImg from '../assets/team/vipul-parmar.png';
 
 // Partner Logos
@@ -156,7 +156,7 @@ const AboutGoG: React.FC = () => {
                                     <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
                                     <img src={RajImg} alt="Raj Kumar Sahoo" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
                                 </div>
-                                <h3 className="text-2xl font-bold text-white mb-2">Raj Kumar Sahoo</h3>
+                                <h3 className="text-2xl font-bold text-white mb-2">Mr. Raj Kumar Sahoo</h3>
                                 <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">Associate Director Business & Operations</p>
                                 <div className="relative max-w-sm">
                                     <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
@@ -198,7 +198,7 @@ const AboutGoG: React.FC = () => {
                                 <Award size={18} className="text-[#34D562]" />
                                 <span className="text-[#34D562] font-mono tracking-widest uppercase text-sm font-bold">Academic Leaders</span>
                             </div>
-                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Heads of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] to-[#28a74b]">Institute</span></h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Leadership <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] to-[#28a74b]">Team</span></h2>
                         </motion.div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -215,9 +215,9 @@ const AboutGoG: React.FC = () => {
                                     <img src={AyushImg} alt="Ayush Chauhan" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
                                 </div>
                                 <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-center transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                                    <div className="inline-block px-4 py-1 bg-[#34D562] text-black font-bold text-[10px] tracking-wider uppercase rounded-full mb-3 shadow-[0_0_10px_rgba(52,213,98,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">Leadership</div>
-                                    <h3 className="text-2xl font-bold text-white mb-1">Ayush Chauhan</h3>
-                                    <p className="text-[#34D562] text-sm font-mono uppercase tracking-wide">Head of Institute</p>
+                                    <div className="inline-block px-4 py-1 bg-[#34D562] text-black font-bold text-[10px] tracking-wider uppercase rounded-full mb-3 shadow-[0_0_10px_rgba(52,213,98,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">HOI</div>
+                                    <h3 className="text-2xl font-bold text-white mb-1">Mr. Ayush Chauhan</h3>
+                                    <p className="text-[#34D562] text-lg font-bold font-mono uppercase tracking-wide">Head of Institute</p>
                                 </div>
                             </motion.div>
 
@@ -234,9 +234,9 @@ const AboutGoG: React.FC = () => {
                                     <img src={SachinImg} alt="Sachin Kumar Gupta" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
                                 </div>
                                 <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-center transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                                    <div className="inline-block px-4 py-1 bg-[#34D562] text-black font-bold text-[10px] tracking-wider uppercase rounded-full mb-3 shadow-[0_0_10px_rgba(52,213,98,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">Leadership</div>
-                                    <h3 className="text-2xl font-bold text-white mb-1">Sachin Kumar Gupta</h3>
-                                    <p className="text-[#34D562] text-sm font-mono uppercase tracking-wide">Head of Institute</p>
+                                    <div className="inline-block px-4 py-1 bg-[#34D562] text-black font-bold text-[10px] tracking-wider uppercase rounded-full mb-3 shadow-[0_0_10px_rgba(52,213,98,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">HOI</div>
+                                    <h3 className="text-2xl font-bold text-white mb-1">Mr. Sachin Kumar Gupta</h3>
+                                    <p className="text-[#34D562] text-lg font-bold font-mono uppercase tracking-wide">Head of Institute</p>
                                 </div>
                             </motion.div>
 
@@ -253,9 +253,9 @@ const AboutGoG: React.FC = () => {
                                     <img src={VipulImg} alt="Vipul Parmar" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
                                 </div>
                                 <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-center transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                                    <div className="inline-block px-4 py-1 bg-[#34D562] text-black font-bold text-[10px] tracking-wider uppercase rounded-full mb-3 shadow-[0_0_10px_rgba(52,213,98,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">Leadership</div>
-                                    <h3 className="text-2xl font-bold text-white mb-1">Vipul Parmar</h3>
-                                    <p className="text-[#34D562] text-sm font-mono uppercase tracking-wide">Head of Institute</p>
+                                    <div className="inline-block px-4 py-1 bg-[#34D562] text-black font-bold text-[10px] tracking-wider uppercase rounded-full mb-3 shadow-[0_0_10px_rgba(52,213,98,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">HOI</div>
+                                    <h3 className="text-2xl font-bold text-white mb-1">Mr. Vipul Parmar</h3>
+                                    <p className="text-[#34D562] text-lg font-bold font-mono uppercase tracking-wide">Head of Institute</p>
                                 </div>
                             </motion.div>
                         </div>
