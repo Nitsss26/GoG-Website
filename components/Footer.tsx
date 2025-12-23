@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Twitter, Linkedin, Facebook, Instagram, Mail, Phone, ExternalLink } from 'lucide-react';
 import { SOCIAL_LINKS } from '../constants';
 
@@ -30,9 +31,9 @@ const Footer: React.FC = () => {
           <div className="lg:ml-24">
             <h4 className="text-[#34D562] font-bold text-lg mb-6 uppercase tracking-wider">Connect</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
-              <li><a href="/Contact-Us" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Contact</a></li>
-              <li><a href="/about" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> About Us</a></li>
-              <li><a href="/programs" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Programs</a></li>
+              <li><Link to="/contact-us" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Contact</Link></li>
+              <li><Link to="/about-gog" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> About Us</Link></li>
+              <li><Link to="/programs" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Programs</Link></li>
             </ul>
           </div>
 
@@ -40,9 +41,9 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-[#34D562] font-bold text-lg mb-6 uppercase tracking-wider">Resources</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
-              <li><a href="/FAQ-conditions" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> FAQ</a></li>
-              <li><a href="/privacy-policy" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Privacy & Policy</a></li>
-              <li><a href="/terms-condition" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Terms & Conditions</a></li>
+              <li><Link to="/faq" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> FAQ</Link></li>
+              <li><Link to="/privacy-policy" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Privacy & Policy</Link></li>
+              <li><Link to="/terms-conditions" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Terms & Conditions</Link></li>
             </ul>
           </div>
 
@@ -51,13 +52,17 @@ const Footer: React.FC = () => {
             <h4 className="text-[#34D562] font-bold text-lg mb-6 uppercase tracking-wider">Get In Touch</h4>
 
             <div className="flex gap-4 mb-8">
-              <a href="#" className="w-10 h-10 rounded-full bg-[#34D562]/10 flex items-center justify-center text-[#34D562] hover:bg-[#34D562] hover:text-black transition-all transform hover:scale-110"><Linkedin size={18} /></a>
-              <a href="#" className="w-10 h-10 rounded-full bg-[#34D562]/10 flex items-center justify-center text-[#34D562] hover:bg-[#34D562] hover:text-black transition-all transform hover:scale-110"><Twitter size={18} /></a>
-              <a href="#" className="w-10 h-10 rounded-full bg-[#34D562]/10 flex items-center justify-center text-[#34D562] hover:bg-[#34D562] hover:text-black transition-all transform hover:scale-110"><Instagram size={18} /></a>
-              <a href="#" className="w-10 h-10 rounded-full bg-[#34D562]/10 flex items-center justify-center text-[#34D562] hover:bg-[#34D562] hover:text-black transition-all transform hover:scale-110"><Facebook size={18} /></a>
+              <a href="https://www.linkedin.com/company/geeks-of-gurukul/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#34D562]/10 flex items-center justify-center text-[#34D562] hover:bg-[#34D562] hover:text-black transition-all transform hover:scale-110"><Linkedin size={18} /></a>
+              <a href="https://x.com/geeksofgurukul/status/1674057698843795461?mx=2" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#34D562]/10 flex items-center justify-center text-[#34D562] hover:bg-[#34D562] hover:text-black transition-all transform hover:scale-110"><Twitter size={18} /></a>
+              <a href="https://www.instagram.com/geeksofgurukul/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#34D562]/10 flex items-center justify-center text-[#34D562] hover:bg-[#34D562] hover:text-black transition-all transform hover:scale-110"><Instagram size={18} /></a>
+              <a href="https://www.facebook.com/geeksofgurukul" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#34D562]/10 flex items-center justify-center text-[#34D562] hover:bg-[#34D562] hover:text-black transition-all transform hover:scale-110"><Facebook size={18} /></a>
             </div>
 
-            <div className="space-y-3 text-sm">
+            <div className="space-y-4 text-sm">
+              {/* <p className="flex items-start gap-3 text-gray-300 group hover:text-[#34D562] transition-colors cursor-pointer leading-relaxed">
+                <span className="mt-1"><ExternalLink size={16} className="text-[#34D562]" /></span>
+                04, 258/3D, 4th Cross Rd, Opposite Narmada Tiffins, Agara Village, Rajeev Gandhi Nagar, HSR Layout, Bengaluru, Karnataka 560102
+              </p> */}
               <p className="flex items-center gap-3 text-gray-300 group hover:text-[#34D562] transition-colors cursor-pointer">
                 <Phone size={16} className="text-[#34D562]" /> +91 9109976089
               </p>

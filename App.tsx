@@ -18,6 +18,10 @@ const OurSocialImpact = lazy(() => import('./pages/OurSocialImpact'));
 const OurTeam = lazy(() => import('./pages/OurTeam'));
 const AboutGoG = lazy(() => import('./pages/AboutGoG'));
 const PartneredInstitutes = lazy(() => import('./pages/PartneredInstitutes'));
+const ContactUs = lazy(() => import('./pages/ContactUs'));
+const FAQ = lazy(() => import('./pages/FAQ'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
 
 const LoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center bg-[#030303] text-white">
@@ -59,6 +63,10 @@ const App: React.FC = () => {
             <Route path="/teams" element={<OurTeam />} />
             <Route path="/about-gog" element={<AboutGoG />} />
             <Route path="/partnered-colleges" element={<PartneredInstitutes />} />
+            <Route path="/contact-us" element={<ContactUs />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-conditions" element={<TermsAndConditions />} />
           </Routes>
         </Suspense>
 

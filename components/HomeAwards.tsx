@@ -68,7 +68,7 @@ const HomeAwards: React.FC = () => {
                     >
                         {/* Title */}
                         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight italic tracking-wide text-[#34D562]">
-                            "The Best Ed-Tech Game Changer <br /> Of the Year 2025"
+                            "The Best Ed-Tech Game Changer Of the Year 2025"
                         </h2>
 
                         {/* Dotted separator or decorative line could go here */}

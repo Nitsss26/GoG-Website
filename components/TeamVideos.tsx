@@ -1,29 +1,27 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Volume2, VolumeX, Users, Sparkles } from 'lucide-react';
 
 interface VideoCardProps {
     embedUrl: string;
     index: number;
-    isPlaying: boolean;
-    onHover: (index: number | null) => void;
+    isActive: boolean;
 }
 
-const VideoCard: React.FC<VideoCardProps> = ({ embedUrl, index, isPlaying, onHover }) => {
+const VideoCard = React.forwardRef<HTMLIFrameElement, VideoCardProps>(({ embedUrl, index, isActive }, ref) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            onMouseEnter={() => onHover(index)}
-            onMouseLeave={() => onHover(null)}
             className="relative group cursor-pointer"
         >
             {/* Card Container - 9:16 aspect ratio for vertical videos */}
-            <div className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black/40 border border-white/10 group-hover:border-[#34D562]/50 transition-all duration-300 shadow-lg group-hover:shadow-[0_0_30px_rgba(52,213,98,0.2)]">
+            <div className={`relative aspect-[9/16] rounded-2xl overflow-hidden bg-black/40 border border-white/10 group-hover:border-[#34D562]/50 transition-all duration-500 shadow-lg group-hover:shadow-[0_0_30px_rgba(52,213,98,0.2)] ${isActive ? '' : 'grayscale'}`}>
                 {/* LinkedIn Embed */}
                 <iframe
+                    ref={ref}
                     src={embedUrl}
                     className="absolute inset-0 w-full h-full"
                     frameBorder="0"
@@ -38,10 +36,55 @@ const VideoCard: React.FC<VideoCardProps> = ({ embedUrl, index, isPlaying, onHov
             </div>
         </motion.div>
     );
-};
+});
+
+VideoCard.displayName = 'VideoCard'; // Add display name for forwardRef component
 
 const TeamVideos: React.FC = () => {
-    const [activeVideo, setActiveVideo] = useState<number | null>(null);
+    const [activeVideos, setActiveVideos] = useState<Set<number>>(new Set());
+    const sectionRef = useRef<HTMLElement>(null);
+    const iframeRefs = useRef<(HTMLIFrameElement | null)[]>([]);
+
+    useEffect(() => {
+        // Poll for active element changes to detect which iframe is focused
+        const checkFocus = () => {
+            const activeElement = document.activeElement;
+
+            // Check if the active element is one of our video iframes
+            iframeRefs.current.forEach((iframe, index) => {
+                if (iframe && activeElement === iframe) {
+                    setActiveVideos(prev => {
+                        // Only update if not already active to avoid loop
+                        if (!prev.has(index)) {
+                            return new Set([...prev, index]);
+                        }
+                        return prev;
+                    });
+                }
+            });
+        };
+
+        const intervalId = setInterval(checkFocus, 500);
+
+        // Detect clicks outside the video section to reset grayscale
+        const handleDocumentClick = (e: MouseEvent) => {
+            if (sectionRef.current && !sectionRef.current.contains(e.target as Node)) {
+                // Clicked outside video section - reset all to grayscale
+                setActiveVideos(new Set());
+
+                // Also blur the active element if it's an iframe to allow re-focusing
+                if (document.activeElement instanceof HTMLIFrameElement) {
+                    (document.activeElement as HTMLElement).blur();
+                }
+            }
+        };
+
+        document.addEventListener('click', handleDocumentClick);
+        return () => {
+            clearInterval(intervalId);
+            document.removeEventListener('click', handleDocumentClick);
+        };
+    }, []);
 
     const videos = [
         {
@@ -63,7 +106,7 @@ const TeamVideos: React.FC = () => {
     ];
 
     return (
-        <section className="relative py-10 md:py-16 overflow-hidden bg-[#030303]">
+        <section ref={sectionRef} className="relative py-10 md:py-16 overflow-hidden bg-[#030303]">
             {/* Background Effects */}
             <div className="absolute inset-0 pointer-events-none">
                 {/* Gradient Orbs */}
@@ -109,10 +152,10 @@ const TeamVideos: React.FC = () => {
                     {videos.map((video, index) => (
                         <VideoCard
                             key={index}
+                            ref={(el) => (iframeRefs.current[index] = el)}
                             embedUrl={video.embedUrl}
                             index={index}
-                            isPlaying={activeVideo === index}
-                            onHover={setActiveVideo}
+                            isActive={activeVideos.has(index)}
                         />
                     ))}
                 </div>

@@ -22,12 +22,12 @@ const SocialImpactCard: React.FC<{
             className={`flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 items-center bg-[#0A0A0A]/50 backdrop-blur-sm border border-white/10 p-6 rounded-3xl hover:border-[#34D562]/30 transition-colors duration-300`}
         >
             <div className="w-full md:w-1/2">
-                <div className="relative group overflow-hidden rounded-2xl bg-black/50">
-                    <div className="absolute inset-0 bg-[#34D562]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay"></div>
+                <div className="relative group overflow-hidden rounded-[3rem] bg-black/50 border-4 border-[#34D562]/30 transition-all duration-500 shadow-[0_0_30px_rgba(52,213,98,0.1)] group-hover:shadow-[0_0_50px_rgba(52,213,98,0.3)]">
+                    <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay"></div>
                     <img
                         src={image}
                         alt={alt}
-                        className="w-full h-64 md:h-80 object-contain transform group-hover:scale-105 transition-transform duration-700"
+                        className="w-full h-64 md:h-80 object-cover object-top transform grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                     />
                 </div>
             </div>

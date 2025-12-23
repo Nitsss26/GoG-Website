@@ -510,7 +510,7 @@ const HomeHero: React.FC = () => {
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.9, opacity: 0 }}
                             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                            className="relative w-full max-w-2xl bg-[#0A0A0A] rounded-2xl border border-[#34D562]/30 shadow-[0_0_50px_rgba(52,213,98,0.2)] overflow-hidden"
+                            className="relative w-full max-w-6xl bg-[#0A0A0A] rounded-2xl border border-[#34D562]/30 shadow-[0_0_50px_rgba(52,213,98,0.2)] overflow-hidden"
                             onClick={(e) => e.stopPropagation()}
                         >
                             {/* Close Button */}
@@ -534,7 +534,7 @@ const HomeHero: React.FC = () => {
 
                             {/* Modal Footer */}
                             <div className="p-4 pt-0 text-center">
-                                <p className="text-gray-400 text-sm">Geeks of Gurukul - Empowering Education</p>
+                                <p className="text-gray-400 text-sm">Geeks of Gurukul - Empowering Bharat</p>
                             </div>
                         </motion.div>
                     </motion.div>

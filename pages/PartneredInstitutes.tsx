@@ -91,7 +91,7 @@ import SirtSlidePic3 from "../assets/SlideShow_Third_Pic/SIRT.png";
 import SkitmSlidePic3 from "../assets/SlideShow_Third_Pic/SKITM.png";
 import TgiSlidePic3 from "../assets/SlideShow_Third_Pic/TGI.png";
 import WilliamCareySlidePic3 from "../assets/SlideShow_Third_Pic/WCU.png";
-import SGSUThirdPic from "../assets/SlideShow_Third_Pic/SGSU.png";
+import SGSUThirdPic from "../assets/SlideShow_Third_Pic/SGSU-logo.png";
 import OrientalSlidePic3 from "../assets/SlideShow_Third_Pic/OGIB_3rd.png";
 import LNCTThirdPic3 from "../assets/SlideShow_Third_Pic/LNCT_3rd.png";
 import SitmSlidePic3 from "../assets/SlideShow_Third_Pic/SITM.png";
@@ -229,7 +229,7 @@ const PartneredInstitutes: React.FC = () => {
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#34D56208_1px,transparent_1px),linear-gradient(to_bottom,#34D56208_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 px-6">
+            <section className="relative pt-32">
                 <div className="container mx-auto max-w-7xl relative z-10">
                     <div className="text-center mb-16">
                         <motion.div
@@ -256,21 +256,21 @@ const PartneredInstitutes: React.FC = () => {
                             transition={{ delay: 0.2 }}
                             className="text-xl text-gray-400 max-w-3xl mx-auto"
                         >
-                            Collaborating with 50+ premier educational institutions across India to shape the future of technology education.
+                            Collaborating with 8+ premier educational institutions across India to shape the future of technology education.
                         </motion.p>
                     </div>
 
                     {/* Stats Row */}
-                    <motion.div
+                    {/* <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
                         className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
                     >
                         {[
-                            { icon: Building2, value: `50+`, label: "Partner Institutes" },
-                            { icon: Users, value: "300,000+", label: "Students Reached" },
-                            { icon: Award, value: "40+", label: "States Covered" },
+                            { icon: Building2, value: `80+`, label: "Partner Institutes" },
+                            { icon: Users, value: "300K+", label: "Students Reached" },
+                            { icon: Award, value: "15+", label: "States Covered" },
                             { icon: GraduationCap, value: "500+", label: "Events Conducted" }
                         ].map((stat, i) => (
                             <div key={i} className="bg-[#0A0A0A]/80 border border-white/10 rounded-2xl p-6 text-center hover:border-[#34D562]/30 transition-colors">
@@ -279,7 +279,7 @@ const PartneredInstitutes: React.FC = () => {
                                 <div className="text-sm text-gray-400">{stat.label}</div>
                             </div>
                         ))}
-                    </motion.div>
+                    </motion.div> */}
                 </div>
             </section>
 
@@ -300,10 +300,10 @@ const PartneredInstitutes: React.FC = () => {
                                 <div className="relative bg-[#0A0A0A] border border-white/10 rounded-3xl overflow-hidden hover:border-[#34D562]/50 transition-all duration-500 hover:shadow-[0_0_50px_rgba(52,213,98,0.15)]">
                                     {/* Main Image - Auto-rotating */}
                                     <div className="relative h-56 overflow-hidden">
-                                        <RotatingImage
-                                            images={[item.images.mou, item.images.campus, item.images.event]}
+                                        <img
+                                            src={item.images.mou}
                                             alt={item.name}
-                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                            className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent" />
 
@@ -342,8 +342,12 @@ const PartneredInstitutes: React.FC = () => {
                                         {/* Image Previews */}
                                         <div className="flex gap-2 mt-4">
                                             {[item.images.mou, item.images.campus, item.images.event].map((img, i) => (
-                                                <div key={i} className="flex-1 h-16 rounded-lg overflow-hidden border border-white/10 group-hover:border-[#34D562]/30 transition-colors">
-                                                    <img src={img} alt="" className="w-full h-full object-cover" />
+                                                <div key={i} className={`flex-1 h-16 rounded-lg overflow-hidden border border-white/10 group-hover:border-[#34D562]/30 transition-colors ${i === 2 ? 'bg-white/5' : ''}`}>
+                                                    <img
+                                                        src={img}
+                                                        alt=""
+                                                        className={`w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500 ${i === 2 ? 'object-contain object-center p-1' : 'object-cover object-top'}`}
+                                                    />
                                                 </div>
                                             ))}
                                         </div>

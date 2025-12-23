@@ -183,7 +183,7 @@ const HomeAwardsPremium: React.FC = () => {
                         </div>
 
                         <h3 className="text-3xl md:text-4xl font-bold text-[#34D562] italic mb-8 leading-tight">
-                            "The Best Ed-Tech Game Changer<br />Of the Year 2025"
+                            "The Best Ed-Tech Game Changer Of the Year 2025"
                         </h3>
 
                         <div className="relative">
