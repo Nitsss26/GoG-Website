@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
           ? 'w-[90%] md:w-auto px-6 py-3 bg-[#0A0A0A]/80 backdrop-blur-xl border border-[#34D562]/20 rounded-full shadow-[0_10px_40px_-10px_rgba(52,213,98,0.2)]'
           : 'w-[95%] px-8 py-5 bg-transparent border-none'
           }`}>
-          <div className="flex items-center justify-between md:justify-center gap-12">
+          <div className="flex items-center justify-between md:justify-center gap-4 xl:gap-8 2xl:gap-12">
 
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 cursor-pointer">
@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
                 >
                   {item.children ? (
                     <button
-                      className="relative px-5 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors flex items-center gap-1"
+                      className="relative px-3 xl:px-4 2xl:px-5 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors flex items-center gap-1"
                     >
                       <span className="relative z-10">{item.label}</span>
                       <ChevronDown size={14} className={`transition-transform duration-300 ${activeDropdown === item.label ? 'rotate-180' : ''}`} />
@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
                   ) : (
                     <Link
                       to={item.href}
-                      className="relative px-5 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors block"
+                      className="relative px-3 xl:px-4 2xl:px-5 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors block"
                     >
                       <span className="relative z-10">{item.label}</span>
                       {/* Hover Pill */}

@@ -292,9 +292,11 @@ const Aptos: React.FC = () => {
                             +500
                         </div>
                     </div>
-                    <HoverGlowBtn className="relative z-10">
-                        Join Dev Community
-                    </HoverGlowBtn>
+                    <a href="https://chat.whatsapp.com/FMhZXhaKZrY96vbBGUEU6c" target="_blank" rel="noopener noreferrer">
+                        <HoverGlowBtn className="relative z-10">
+                            Join Dev Community
+                        </HoverGlowBtn>
+                    </a>
                 </motion.div>
 
                 {/* Section 5: Upcoming Events */}

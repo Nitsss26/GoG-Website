@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Check, ArrowRight, MapPin } from 'lucide-react';
 
+import { Link } from 'react-router-dom';
+
 interface ProgramSectionProps {
     title: string;
     image: string;
@@ -30,17 +32,27 @@ const ProgramSection: React.FC<ProgramSectionProps> = ({
         offset: ["start end", "end start"]
     });
 
-    const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+    // Only apply parallax on desktop
+    const [isDesktop, setIsDesktop] = React.useState(false);
+
+    React.useEffect(() => {
+        const checkDesktop = () => setIsDesktop(window.innerWidth >= 1024);
+        checkDesktop();
+        window.addEventListener('resize', checkDesktop);
+        return () => window.removeEventListener('resize', checkDesktop);
+    }, []);
+
+    const y = useTransform(scrollYProgress, [0, 1], isDesktop ? [100, -100] : [0, 0]);
     const scrollOpacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
     const opacity = index === 0 ? 1 : scrollOpacity;
 
     return (
-        <section ref={ref} className="relative py-12 md:py-20 w-full overflow-hidden">
+        <section ref={ref} className="relative py-8 md:py-16 w-full overflow-hidden">
             {/* Background Elements */}
             <div className={`absolute top-1/2 ${isEven ? 'left-0' : 'right-0'} w-[500px] h-[500px] bg-[#34D562]/5 blur-[120px] rounded-full -translate-y-1/2 pointer-events-none`} />
 
             <div className="container mx-auto px-6">
-                <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 lg:gap-20`}>
+                <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-8 lg:gap-20`}>
 
                     {/* Image Side */}
                     <motion.div
@@ -122,12 +134,12 @@ const ProgramSection: React.FC<ProgramSectionProps> = ({
                             </div>
 
                             {/* CTA */}
-                            <button className="group relative px-8 py-4 bg-[#34D562] text-black font-bold rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(52,213,98,0.6)]">
+                            <Link to="/contact-us" className="inline-block group relative px-8 py-4 bg-[#34D562] text-black font-bold rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(52,213,98,0.6)]">
                                 <div className="absolute inset-0 bg-gradient-to-r from-[#28a74b] to-[#34D562] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                 <span className="relative z-10 flex items-center gap-2">
                                     Know More <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </span>
-                            </button>
+                            </Link>
                         </motion.div>
                     </div>
 

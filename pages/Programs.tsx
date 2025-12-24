@@ -152,9 +152,9 @@ const Programs: React.FC = () => {
                 <div className="container mx-auto px-6 relative z-10 text-center">
                     <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">Ready to Start Your Journey?</h2>
                     <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">Join thousands of students transforming their careers with Geeks of Gurukul.</p>
-                    <button className="px-10 py-5 bg-[#34D562] text-black font-bold text-xl rounded-full hover:scale-105 hover:shadow-[0_0_50px_rgba(52,213,98,0.5)] transition-all duration-300">
-                        Apply Now
-                    </button>
+                    <a href="https://chat.whatsapp.com/FMhZXhaKZrY96vbBGUEU6c" target="_blank" rel="noopener noreferrer" className="inline-block px-10 py-5 bg-[#34D562] text-black font-bold text-xl rounded-full hover:scale-105 hover:shadow-[0_0_50px_rgba(52,213,98,0.5)] transition-all duration-300">
+                        Join Now
+                    </a>
                 </div>
             </section>
         </main>

@@ -76,7 +76,7 @@ const KoiiNetworkStats: React.FC = () => {
                         </div>
 
                         <div className="flex justify-center">
-                            <a href="https://discord.com/invite/gog" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-lg border border-[#34D562] text-[#34D562] font-bold hover:bg-[#34D562] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm w-full md:w-auto text-center">
+                            <a href="https://chat.whatsapp.com/FMhZXhaKZrY96vbBGUEU6c" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-lg border border-[#34D562] text-[#34D562] font-bold hover:bg-[#34D562] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm w-full md:w-auto text-center">
                                 Join Our Community
                             </a>
                         </div>

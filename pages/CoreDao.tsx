@@ -99,7 +99,7 @@ const CoreDao: React.FC = () => {
                     </div>
 
                     {/* Right: Visual Composition */}
-                    <div className="relative h-[500px] w-full flex items-center justify-center">
+                    <div className="relative lg:h-[500px] w-full flex flex-col lg:block items-center justify-center gap-6 lg:gap-0 mt-8 lg:mt-0">
                         {/* Background SVG Glow */}
                         <div className="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none">
                             <img src={CoreLogo} alt="Core Background" className="w-[400px] h-[400px] animate-pulse-slow blur-xl" />
@@ -110,7 +110,7 @@ const CoreDao: React.FC = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4 }}
-                            className="absolute top-10 left-0 w-[70%] h-[280px] rounded-2xl overflow-hidden border-2 border-[#FF9211] shadow-[0_0_30px_rgba(255,146,17,0.3)] z-20 group"
+                            className="relative lg:absolute lg:top-10 lg:left-0 w-full lg:w-[70%] h-[280px] rounded-2xl overflow-hidden border-2 border-[#FF9211] shadow-[0_0_30px_rgba(255,146,17,0.3)] z-20 group"
                         >
                             <img src={CoreCrowd} alt="Core Workshop" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-4">
@@ -123,7 +123,7 @@ const CoreDao: React.FC = () => {
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6 }}
-                            className="absolute bottom-10 right-0 w-[65%] h-[240px] rounded-2xl overflow-hidden border-2 border-[#FF9211] shadow-[0_0_30px_rgba(255,146,17,0.3)] z-30 group"
+                            className="relative lg:absolute lg:bottom-10 lg:right-0 w-full lg:w-[65%] h-[240px] rounded-2xl overflow-hidden border-2 border-[#FF9211] shadow-[0_0_30px_rgba(255,146,17,0.3)] z-30 group"
                         >
                             <img src={CoreReward} alt="Hackathon Winners" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-4 text-right">
@@ -135,7 +135,7 @@ const CoreDao: React.FC = () => {
                         <motion.div
                             animate={{ y: [0, -10, 0] }}
                             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute top-0 -right-10 bg-white/5 backdrop-blur-md border border-[#FF9211] p-4 rounded-xl z-40 shadow-xl"
+                            className="hidden lg:block absolute top-0 -right-10 bg-white/5 backdrop-blur-md border border-[#FF9211] p-4 rounded-xl z-40 shadow-xl"
                         >
                             <div className="flex items-center gap-3 ">
                                 <img src={CoreLogo} alt="Core" className="w-8 h-8" />
@@ -149,7 +149,7 @@ const CoreDao: React.FC = () => {
                         <motion.div
                             animate={{ y: [0, -10, 0] }}
                             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute top-80 mt-20 mr-56 right-60 bg-white/5 backdrop-blur-md border border-[#FF9211] p-4 rounded-xl z-40 shadow-xl"
+                            className="hidden lg:block absolute top-80 mt-20 mr-56 right-60 bg-white/5 backdrop-blur-md border border-[#FF9211] p-4 rounded-xl z-40 shadow-xl"
                         >
                             <div className="flex items-center gap-3 ">
                                 <img src={CoreLogo} alt="Core" className="w-8 h-8" />
@@ -217,9 +217,9 @@ const CoreDao: React.FC = () => {
                 <section className="py-20 bg-transparent relative overflow-hidden z-10 mb-20">
                     <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
                         <div className="relative">
-                            <div className="grid grid-cols-2 gap-4">
-                                <img src="https://i.postimg.cc/WbJhZ6xC/IMG-0240.avif" className="w-full h-64 object-cover rounded-lg rotate-2 hover:rotate-0 transition-all duration-500" alt="Pizza" />
-                                <img src="https://i.postimg.cc/R0GFmPnK/IMG-0241.avif" className="w-full h-64 object-cover rounded-lg -rotate-2 hover:rotate-0 transition-all duration-500 mt-8" alt="Group Selfie" />
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <img src="https://i.postimg.cc/WbJhZ6xC/IMG-0240.avif" className="w-full h-64 md:h-64 object-cover rounded-lg rotate-0 md:rotate-2 hover:rotate-0 transition-all duration-500" alt="Pizza" />
+                                <img src="https://i.postimg.cc/R0GFmPnK/IMG-0241.avif" className="w-full h-64 md:h-64 object-cover rounded-lg rotate-0 md:-rotate-2 hover:rotate-0 transition-all duration-500 mt-4 md:mt-8" alt="Group Selfie" />
                             </div>
                             <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#FF9211] rounded-full blur-[80px] opacity-50" />
                         </div>
@@ -346,9 +346,11 @@ const CoreDao: React.FC = () => {
                             +1K
                         </div>
                     </div>
-                    <HoverGlowBtn className="relative z-10 bg-[#FF9211] text-black hover:bg-white">
-                        Join Our CoreDAO Community
-                    </HoverGlowBtn>
+                    <a href="https://chat.whatsapp.com/FMhZXhaKZrY96vbBGUEU6c" target="_blank" rel="noopener noreferrer">
+                        <HoverGlowBtn className="relative z-10 bg-[#FF9211] text-black hover:bg-white">
+                            Join Our CoreDAO Community
+                        </HoverGlowBtn>
+                    </a>
                 </motion.div>
 
                 {/* Section 5: Upcoming Events & Collaborations */}

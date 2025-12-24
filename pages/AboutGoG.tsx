@@ -9,6 +9,7 @@ import F1Img from '../assets/images/f1.png';
 import F2Img from '../assets/images/f2.png';
 import S1Img from '../assets/team/1st.jpg';
 import S2Img from '../assets/team/2nd.jpg';
+import S3Img from '../assets/team/3rd.jpg';
 import RajImg from '../assets/team/raj-kumar-sahoo.jpg';
 import VivekImg from '../assets/team/vivek-yadav.jpg';
 import AyushImg from '../assets/team/ayush-chauhan.jpg';
@@ -296,7 +297,7 @@ const AboutGoG: React.FC = () => {
                                     <img
                                         src={S1Img}
                                         alt="Team at Geeks of Gurukul"
-                                        className="w-full h-80 md:h-96 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                        className="w-full h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] object-cover object-top transform group-hover:scale-105 transition-all duration-700 filter grayscale group-hover:grayscale-0"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                                 </div>
@@ -326,7 +327,7 @@ const AboutGoG: React.FC = () => {
                                     <img
                                         src={S2Img}
                                         alt="Modern Age Gurukul"
-                                        className="w-full h-80 md:h-96 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                        className="w-full h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] object-cover object-top transform group-hover:scale-105 transition-all duration-700 filter grayscale group-hover:grayscale-0"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                                 </div>
@@ -341,6 +342,36 @@ const AboutGoG: React.FC = () => {
                                 </p>
                             </div>
                         </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="flex flex-col lg:flex-row gap-12 items-center"
+                        >
+                            <div className="lg:w-1/2 relative group">
+                                <div className="absolute -inset-4 bg-gradient-to-r from-[#34D562]/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                <div className="relative rounded-3xl overflow-hidden border-2 border-white/10 group-hover:border-[#34D562]/50 transition-all duration-500">
+                                    <img
+                                        src={S3Img}
+                                        alt="Team at Geeks of Gurukul"
+                                        className="w-full h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] object-cover object-top transform group-hover:scale-105 transition-all duration-700 filter grayscale group-hover:grayscale-0"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                                </div>
+                            </div>
+                            <div className="lg:w-1/2 space-y-6">
+                                <div className="h-1 w-20 bg-gradient-to-r from-[#34D562] to-transparent rounded-full" />
+                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                                    At <span className="text-[#34D562] font-semibold">Geeks of Gurukul</span>, we believe in the philosophy of <span className="text-[#34D562] font-semibold">"Work Hard, Party Harder"</span>. Our team of passionate IITians knows that building the future of education requires not just dedication, but also a vibrant culture of celebration and joy.
+                                </p>
+                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                                    From intense brainstorming sessions to unforgettable parties, we bond over shared successes and create memories that last forever. We are not just colleagues; we are a <span className="text-[#34D562] font-semibold">Family</span> that celebrates every milestone together, fueling our drive to innovate.
+                                </p>
+                            </div>
+                        </motion.div>
+
                     </div>
                 </div>
             </section>
@@ -363,13 +394,16 @@ const AboutGoG: React.FC = () => {
                         <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
                             Explore Boundless Learning Together – Join Our Community Of 15,000+ Gurukulites And Embrace A Journey Of Collective Knowledge And Growth!
                         </p>
-                        <motion.button
+                        <motion.a
+                            href="https://chat.whatsapp.com/FMhZXhaKZrY96vbBGUEU6c"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="mt-8 px-12 py-5 bg-[#34D562] text-black font-bold text-xl rounded-full hover:shadow-[0_0_50px_rgba(52,213,98,0.5)] transition-all duration-300"
+                            className="inline-block mt-8 px-12 py-5 bg-[#34D562] text-black font-bold text-xl rounded-full hover:shadow-[0_0_50px_rgba(52,213,98,0.5)] transition-all duration-300"
                         >
                             Join Our Community
-                        </motion.button>
+                        </motion.a>
                     </motion.div>
                 </div>
             </section>
@@ -398,59 +432,76 @@ const AboutGoG: React.FC = () => {
                     </motion.div>
 
                     {/* Logo Grid - Staggered Honeycomb Layout */}
+                    {/* --- Mobile/Tablet Layout (Symmetrical Grid) --- */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="bg-[#0A0A0A]/50 backdrop-blur-sm border border-white/10 rounded-3xl p-6 md:p-10"
+                        className="lg:hidden bg-[#0A0A0A]/50 backdrop-blur-sm border border-white/10 rounded-3xl p-6"
                     >
-                        {/* Row 1 - 7 items (full width) */}
-                        <div className="flex flex-wrap justify-between gap-4 mb-8">
+                        <div className="flex flex-wrap justify-center gap-6">
+                            {[
+                                AdtU, BGI, BU, CUTM, DY_Patil, EICT_IITG, DonBosco,
+                                LNCTLogo, MGI, MGU, OrientalLogo, SAGE, SGSU,
+                                SGU, SIRT, SIRTE, SITM, TGI, WCU
+                            ].map((logo, i) => (
+                                <motion.div
+                                    key={`mobile-${i}`}
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.02 }}
+                                    whileHover={{ scale: 1.1 }}
+                                    className="flex items-center justify-center w-[calc(50%-1rem)] md:w-[calc(33.33%-1.5rem)] h-24"
+                                >
+                                    <img src={logo} alt="Partner Institute" className="w-full h-full object-contain" />
+                                </motion.div>
+                            ))}
+                        </div>
+                    </motion.div>
+
+                    {/* --- Laptop/Desktop Layout (Staggered Honeycomb) --- */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="hidden lg:block bg-[#0A0A0A]/50 backdrop-blur-sm border border-white/10 rounded-3xl p-10"
+                    >
+                        {/* Row 1 - 7 items (Spread) */}
+                        <div className="flex justify-between gap-6 mb-10">
                             {[AdtU, BGI, BU, CUTM, DY_Patil, EICT_IITG, DonBosco].map((logo, i) => (
                                 <motion.div
-                                    key={`row1-${i}`}
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.03 }}
-                                    whileHover={{ scale: 1.05, y: -5 }}
-                                    className="bg-white rounded-xl p-3 flex items-center justify-center flex-1 min-w-[120px] max-w-[160px] h-16 cursor-pointer shadow-lg hover:shadow-[0_10px_40px_rgba(52,213,98,0.2)] transition-all duration-300"
+                                    key={`d-row1-${i}`}
+                                    whileHover={{ scale: 1.15, y: -5 }}
+                                    className="flex items-center justify-center w-52 h-28 cursor-pointer transition-all duration-300"
                                 >
-                                    <img src={logo} alt="Partner Institute" className="max-w-full max-h-full object-contain" />
+                                    <img src={logo} alt="Partner" className="w-full h-full object-contain" />
                                 </motion.div>
                             ))}
                         </div>
 
-                        {/* Row 2 - 6 items (offset/centered) */}
-                        <div className="flex flex-wrap justify-center gap-12 mb-8 mx-auto" style={{ maxWidth: 'calc(100% - 140px)' }}>
+                        {/* Row 2 - 6 items (Centered/Indented) */}
+                        <div className="flex justify-center gap-20 mb-10 px-12">
                             {[LNCTLogo, MGI, MGU, OrientalLogo, SAGE, SGSU].map((logo, i) => (
                                 <motion.div
-                                    key={`row2-${i}`}
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: (7 + i) * 0.03 }}
-                                    whileHover={{ scale: 1.05, y: -5 }}
-                                    className="bg-white rounded-xl p-3 flex items-center justify-center flex-1 min-w-[120px] max-w-[160px] h-16 cursor-pointer shadow-lg hover:shadow-[0_10px_40px_rgba(52,213,98,0.2)] transition-all duration-300"
+                                    key={`d-row2-${i}`}
+                                    whileHover={{ scale: 1.15, y: -5 }}
+                                    className="flex items-center justify-center w-52 h-28 cursor-pointer transition-all duration-300"
                                 >
-                                    <img src={logo} alt="Partner Institute" className="max-w-full max-h-full object-contain" />
+                                    <img src={logo} alt="Partner" className="w-full h-full object-contain" />
                                 </motion.div>
                             ))}
                         </div>
 
-                        {/* Row 3 - 6 items (full width like Row 1) */}
-                        <div className="flex flex-wrap justify-between gap-4">
+                        {/* Row 3 - 6 items (Spread) */}
+                        <div className="flex justify-between gap-6 px-8">
                             {[SGU, SIRT, SIRTE, SITM, TGI, WCU].map((logo, i) => (
                                 <motion.div
-                                    key={`row3-${i}`}
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: (13 + i) * 0.03 }}
-                                    whileHover={{ scale: 1.05, y: -5 }}
-                                    className="bg-white rounded-xl p-3 flex items-center justify-center flex-1 min-w-[120px] max-w-[180px] h-16 cursor-pointer shadow-lg hover:shadow-[0_10px_40px_rgba(52,213,98,0.2)] transition-all duration-300"
+                                    key={`d-row3-${i}`}
+                                    whileHover={{ scale: 1.15, y: -5 }}
+                                    className="flex items-center justify-center w-52 h-28 cursor-pointer transition-all duration-300"
                                 >
-                                    <img src={logo} alt="Partner Institute" className="max-w-full max-h-full object-contain" />
+                                    <img src={logo} alt="Partner" className="w-full h-full object-contain" />
                                 </motion.div>
                             ))}
                         </div>
@@ -481,7 +532,7 @@ const LeadershipCard: React.FC<LeadershipCardProps> = ({ image, name, role, quot
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, delay: index * 0.1 }}
-            className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-10 lg:gap-16 items-stretch bg-[#0A0A0A]/50 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden hover:border-[#34D562]/40 transition-all duration-500 group`}
+            className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-6 lg:gap-16 items-stretch bg-[#0A0A0A]/50 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden hover:border-[#34D562]/40 transition-all duration-500 group`}
         >
             {/* Image Section */}
             <div className="lg:w-1/3 p-6 relative">
@@ -491,17 +542,17 @@ const LeadershipCard: React.FC<LeadershipCardProps> = ({ image, name, role, quot
                 </div>
 
                 {/* Image Container */}
-                <div className="relative h-full min-h-[400px]">
+                <div className="relative w-full h-auto aspect-[4/5] md:min-h-[400px] lg:h-[500px] lg:aspect-auto">
                     {/* Glow Effect */}
                     <div className="absolute inset-0 bg-[#34D562] rounded-2xl blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-700" />
 
                     {/* Image with Border */}
-                    <div className="relative h-full rounded-2xl overflow-hidden border-2 border-[#34D562]/30 group-hover:border-[#34D562] transition-all duration-500">
+                    <div className="relative h-full w-full rounded-2xl overflow-hidden border-2 border-[#34D562]/30 group-hover:border-[#34D562] transition-all duration-500">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
                         <img
                             src={image}
                             alt={name}
-                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 filter grayscale group-hover:grayscale-0"
                         />
 
                         {/* Bottom Info Overlay */}
@@ -662,7 +713,7 @@ export default AboutGoG;
 //                         {/* Card 1 */}
 //                         <div className="group relative">
 //                             <div className="absolute -inset-1 bg-gradient-to-b from-[#34D562]/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-//                             <div className="relative h-[500px] rounded-3xl overflow-hidden border border-white/10 group-hover:border-[#34D562]/50 transition-colors bg-[#0A0A0A]">
+//                             <div className="relative h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] rounded-3xl overflow-hidden border border-white/10 group-hover:border-[#34D562]/50 transition-colors bg-[#0A0A0A]">
 //                                 <img src={F1Img} alt="Vikas Yadav" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700" />
 //                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90" />
 //                                 <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -676,8 +727,8 @@ export default AboutGoG;
 //                         {/* Card 2 - Main Founder */}
 //                         <div className="group relative md:-mt-12">
 //                             <div className="absolute -inset-1 bg-gradient-to-b from-[#34D562] to-[#28a74b] rounded-3xl opacity-20 blur-xl group-hover:opacity-30 transition-opacity" />
-//                             <div className="relative h-[550px] rounded-3xl overflow-hidden border-2 border-[#34D562] bg-[#0A0A0A] shadow-[0_0_50px_rgba(52,213,98,0.15)]">
-//                                 <img src={FounderImg} alt="Founder" className="w-full h-full object-cover object-top" />
+//                             <div className="relative h-[350px] md:h-[450px] lg:h-[500px] xl:h-[550px] rounded-3xl overflow-hidden border-2 border-[#34D562] bg-[#0A0A0A] shadow-[0_0_50px_rgba(52,213,98,0.15)]">
+<img src={FounderImg} alt="Founder" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700" />
 //                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 //                                 <div className="absolute bottom-0 left-0 right-0 p-8 text-center">
 //                                     <div className="inline-block px-4 py-1 rounded-full bg-[#34D562] text-black font-bold text-xs mb-4">FOUNDER</div>
@@ -694,7 +745,7 @@ export default AboutGoG;
 //                         {/* Card 3 */}
 //                         <div className="group relative">
 //                             <div className="absolute -inset-1 bg-gradient-to-b from-[#34D562]/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-//                             <div className="relative h-[500px] rounded-3xl overflow-hidden border border-white/10 group-hover:border-[#34D562]/50 transition-colors bg-[#0A0A0A]">
+//                             <div className="relative h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] rounded-3xl overflow-hidden border border-white/10 group-hover:border-[#34D562]/50 transition-colors bg-[#0A0A0A]">
 //                                 <img src={F2Img} alt="CPO" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700" />
 //                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90" />
 //                                 <div className="absolute bottom-0 left-0 right-0 p-8">

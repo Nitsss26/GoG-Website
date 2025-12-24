@@ -299,17 +299,19 @@ const Stellar: React.FC = () => {
                     <p className="max-w-4xl mx-auto text-gray-300 text-lg md:text-xl mb-10 relative z-10">
                         Through our collaboration, Geeks of Gurukul offers students unique opportunities to learn about Stellar and earn Lumens (XLM) through educational modules and hands-on projects.
                     </p>
-                    <div className="grid grid-cols-3 gap-8 justify-center items-center mb-10 relative z-10">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-center mb-10 relative z-10">
                         {youthStats.map((stat, i) => (
                             <div key={i} className="bg-white/5 p-6 rounded-xl border border-white/10">
-                                <h3 className="text-5xl font-bold text-white mb-2">{stat.value}</h3>
+                                <h3 className="text-3xl md:text-5xl font-bold text-white mb-2">{stat.value}</h3>
                                 <p className="text-gray-400 uppercase text-sm">{stat.label}</p>
                             </div>
                         ))}
                     </div>
-                    <HoverGlowBtn className="relative z-10 bg-[#34D562] hover:bg-[#2bc455] text-black">
-                        Join Our Community
-                    </HoverGlowBtn>
+                    <a href="https://chat.whatsapp.com/FMhZXhaKZrY96vbBGUEU6c" target="_blank" rel="noopener noreferrer">
+                        <HoverGlowBtn className="relative z-10 bg-[#34D562] hover:bg-[#2bc455] text-black">
+                            Join Our Community
+                        </HoverGlowBtn>
+                    </a>
                 </motion.div>
 
                 {/* Section 5: Upcoming Events */}

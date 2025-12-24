@@ -501,17 +501,19 @@ const Agoric: React.FC = () => {
                             </div>
                         </div>
 
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="relative group px-8 py-3 rounded-full font-bold text-white overflow-hidden z-10"
-                        >
-                            <div className="absolute inset-0 bg-[#D73252] opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <div className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 group-hover:animate-[shimmer_1s_infinite]"></div>
-                            <span className="relative z-10 flex items-center justify-center gap-2">
-                                Join Dev Community
-                            </span>
-                        </motion.button>
+                        <a href="https://chat.whatsapp.com/FMhZXhaKZrY96vbBGUEU6c" target="_blank" rel="noopener noreferrer">
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="relative group px-8 py-3 rounded-full font-bold text-white overflow-hidden z-10"
+                            >
+                                <div className="absolute inset-0 bg-[#D73252] opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <div className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 group-hover:animate-[shimmer_1s_infinite]"></div>
+                                <span className="relative z-10 flex items-center justify-center gap-2">
+                                    Join Dev Community
+                                </span>
+                            </motion.button>
+                        </a>
                     </motion.div>
                 </div>
             </section>

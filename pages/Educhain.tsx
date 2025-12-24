@@ -56,7 +56,7 @@ const Educhain: React.FC = () => {
 
             <div className="w-[95%] max-w-[1600px] mx-auto relative z-10">
 
-                {/* Section 1: Hero - Refined Layout */}
+                {/* Section 1: Hero - Refined Layout - Floating Icons Hidden on Mobile */}
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-12 min-h-[70vh] mb-20 relative">
                     {/* Left: Text Content */}
                     <div className="lg:w-[45%] z-20 text-left pl-8 lg:pl-20">
@@ -107,11 +107,11 @@ const Educhain: React.FC = () => {
                                 className="w-[400px] md:w-[500px] h-auto object-contain relative z-10 rounded-2xl border-2 border-blue-500/50 shadow-[0_0_30px_rgba(0,144,250,0.3)] bg-black/20 backdrop-blur-sm"
                             />
 
-                            {/* Floating Icons */}
+                            {/* Floating Icons - HIDDEN ON MOBILE */}
                             <motion.div
                                 animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
                                 transition={{ duration: 4, repeat: Infinity }}
-                                className="absolute -top-12 -right-8 bg-black/80 backdrop-blur border border-blue-500/50 p-4 rounded-xl text-blue-400 shadow-xl z-20"
+                                className="hidden md:block absolute -top-12 -right-8 bg-black/80 backdrop-blur border border-blue-500/50 p-4 rounded-xl text-blue-400 shadow-xl z-20"
                             >
                                 <GraduationCap size={32} />
                             </motion.div>
@@ -119,7 +119,7 @@ const Educhain: React.FC = () => {
                             <motion.div
                                 animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
                                 transition={{ duration: 5, repeat: Infinity, delay: 1 }}
-                                className="absolute -bottom-8 -left-8 bg-black/80 backdrop-blur border border-blue-500/50 p-4 rounded-xl text-cyan-400 shadow-xl z-20"
+                                className="hidden md:block absolute -bottom-8 -left-8 bg-black/80 backdrop-blur border border-blue-500/50 p-4 rounded-xl text-cyan-400 shadow-xl z-20"
                             >
                                 <Cpu size={32} />
                             </motion.div>
@@ -168,8 +168,8 @@ const Educhain: React.FC = () => {
                     </h2>
 
                     <div className="relative">
-                        {/* Center Line */}
-                        <div className="absolute left-1/2 -translate-x-1/2 h-full w-[2px] bg-gradient-to-b from-blue-500 via-blue-500/50 to-transparent"></div>
+                        {/* Center Line - Hidden on Mobile */}
+                        <div className="hidden md:block absolute left-1/2 -translate-x-1/2 h-full w-[2px] bg-gradient-to-b from-blue-500 via-blue-500/50 to-transparent"></div>
 
                         {timelineEvents.map((item, i) => (
                             <motion.div
@@ -177,18 +177,20 @@ const Educhain: React.FC = () => {
                                 initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ margin: "-100px" }}
-                                className={`flex items-center justify-between mb-24 ${i % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} group`}
+                                // Changed layout: flex-col on mobile, regular alternating row on desktop
+                                className={`flex flex-col md:flex-row items-center justify-between mb-12 md:mb-24 gap-6 md:gap-0 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} group`}
                             >
-                                {/* Card */}
-                                <div className="w-[42%] bg-black/40 border border-white/10 p-8 rounded-2xl relative text-left hover:border-blue-500/50 transition-colors shadow-2xl">
-                                    <div className={`absolute top-1/2 -translate-y-1/2 w-6 h-6 bg-blue-500 rounded-full border-4 border-black z-10 ${i % 2 === 0 ? '-right-[calc(8%+13px)]' : '-left-[calc(8%+13px)]'} group-hover:scale-125 transition-transform shadow-[0_0_20px_rgba(0,100,255,0.4)]`}></div>
+                                {/* Card - w-full on mobile currently distorted */}
+                                <div className="w-full md:w-[42%] bg-black/40 border border-white/10 p-8 rounded-2xl relative text-left hover:border-blue-500/50 transition-colors shadow-2xl">
+                                    {/* Timeline Dot - Hidden on Mobile */}
+                                    <div className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-6 h-6 bg-blue-500 rounded-full border-4 border-black z-10 ${i % 2 === 0 ? '-right-[calc(8%+13px)]' : '-left-[calc(8%+13px)]'} group-hover:scale-125 transition-transform shadow-[0_0_20px_rgba(0,100,255,0.4)]`}></div>
                                     <item.icon size={32} className="text-blue-500 mb-4" />
                                     <h3 className="text-2xl font-bold text-white mb-2 font-serif">{item.title}</h3>
                                     <p className="text-gray-400 text-base leading-relaxed">{item.desc}</p>
                                 </div>
 
-                                {/* Spacer */}
-                                <div className="w-[42%]"></div>
+                                {/* Spacer for desktop alignment */}
+                                <div className="hidden md:block w-[42%]"></div>
                             </motion.div>
                         ))}
                     </div>
@@ -392,14 +394,14 @@ const Educhain: React.FC = () => {
                             <p className="text-gray-400 mb-8 max-w-md text-lg leading-relaxed">
                                 Be part of the first decentralized academic network. Build, learn, and grow with Geeks of Gurukul.
                             </p>
-                            <a href="https://discord.gg/geeksofgurukul" target="_blank" rel="noopener noreferrer">
+                            <a href="https://chat.whatsapp.com/FMhZXhaKZrY96vbBGUEU6c" target="_blank" rel="noopener noreferrer">
                                 <motion.button
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     className="px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg transition-all shadow-[0_0_20px_rgba(37,99,235,0.5)] hover:shadow-[0_0_30px_rgba(37,99,235,0.8)] flex items-center gap-2 mx-auto"
                                 >
                                     <Users size={20} />
-                                    Join Discord Community
+                                    Join Community
                                 </motion.button>
                             </a>
                         </div>

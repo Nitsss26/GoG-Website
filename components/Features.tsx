@@ -128,7 +128,7 @@ const Features: React.FC = () => {
             <div className="w-full h-full relative group">
               {/* Simulated Image */}
               <img
-                src="https://www.geeksofgurukul.com/assets/koii_group_photo-vLGd_EbM.svg"
+                src="/assets/images/koii_group_photo.svg"
                 alt="Koii Labs Community"
                 className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700"
               />
@@ -138,19 +138,19 @@ const Features: React.FC = () => {
 
               {/* Content Overlay */}
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 pointer-events-none">
-                <h3 className="text-5xl md:text-7xl font-display font-bold text-white mb-4 tracking-tighter mix-blend-overlay">
+                <h3 className="text-3xl md:text-5xl lg:text-7xl font-display font-bold text-white mb-4 tracking-tighter mix-blend-overlay">
                   GLOBAL COMMUNITY
                 </h3>
 
               </div>
 
               {/* Arrows */}
-              <button className="absolute left-8 top-1/2 -translate-y-1/2 p-4 bg-black/50 backdrop-blur-md rounded-full text-white hover:bg-[#34D562] hover:text-black transition-all border border-white/10 z-20 pointer-events-auto cursor-pointer">
+              {/* <button className="absolute left-8 top-1/2 -translate-y-1/2 p-4 bg-black/50 backdrop-blur-md rounded-full text-white hover:bg-[#34D562] hover:text-black transition-all border border-white/10 z-20 pointer-events-auto cursor-pointer">
                 <ChevronLeft size={32} />
               </button>
               <button className="absolute right-8 top-1/2 -translate-y-1/2 p-4 bg-black/50 backdrop-blur-md rounded-full text-white hover:bg-[#34D562] hover:text-black transition-all border border-white/10 z-20 pointer-events-auto cursor-pointer">
                 <ChevronRight size={32} />
-              </button>
+              </button> */}
             </div>
           </motion.div>
         </div>
