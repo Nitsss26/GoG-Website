@@ -291,18 +291,18 @@ const AboutGoG: React.FC = () => {
                             transition={{ duration: 0.6 }}
                             className="flex flex-col lg:flex-row gap-12 items-center"
                         >
-                            <div className="lg:w-1/2 relative group">
+                            <div className="lg:w-4/12 relative group">
                                 <div className="absolute -inset-4 bg-gradient-to-r from-[#34D562]/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                                 <div className="relative rounded-3xl overflow-hidden border-2 border-white/10 group-hover:border-[#34D562]/50 transition-all duration-500">
                                     <img
                                         src={S1Img}
                                         alt="Team at Geeks of Gurukul"
-                                        className="w-full h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] object-cover object-top transform group-hover:scale-105 transition-all duration-700 filter grayscale group-hover:grayscale-0"
+                                        className="w-full h-[300px] md:h-[350px] lg:h-[350px] object-cover object-center transform group-hover:scale-105 transition-all duration-700 filter grayscale group-hover:grayscale-0"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                                 </div>
                             </div>
-                            <div className="lg:w-1/2 space-y-6">
+                            <div className="lg:w-8/12 space-y-6">
                                 <div className="h-1 w-20 bg-gradient-to-r from-[#34D562] to-transparent rounded-full" />
                                 <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
                                     In the current educational landscape, students from tier 2 and tier 3 cities often face significant disadvantages in terms of skill development and educational resources. The major edtech companies, despite their substantial funding, predominantly cater to tier 1 cities, leaving a significant portion of India's population underserved.
@@ -321,18 +321,18 @@ const AboutGoG: React.FC = () => {
                             transition={{ duration: 0.6 }}
                             className="flex flex-col lg:flex-row-reverse gap-12 items-center"
                         >
-                            <div className="lg:w-1/2 relative group">
+                            <div className="lg:w-4/12 relative group">
                                 <div className="absolute -inset-4 bg-gradient-to-l from-[#34D562]/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                                 <div className="relative rounded-3xl overflow-hidden border-2 border-white/10 group-hover:border-[#34D562]/50 transition-all duration-500">
                                     <img
                                         src={S2Img}
                                         alt="Modern Age Gurukul"
-                                        className="w-full h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] object-cover object-top transform group-hover:scale-105 transition-all duration-700 filter grayscale group-hover:grayscale-0"
+                                        className="w-full h-[300px] md:h-[350px] lg:h-[350px] object-cover object-center transform group-hover:scale-105 transition-all duration-700 filter grayscale group-hover:grayscale-0"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                                 </div>
                             </div>
-                            <div className="lg:w-1/2 space-y-6">
+                            <div className="lg:w-8/12 space-y-6">
                                 <div className="h-1 w-20 bg-gradient-to-r from-[#34D562] to-transparent rounded-full" />
                                 <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
                                     Our philosophy is rooted in the concept of the <span className="text-[#34D562] font-semibold">MODERN AGE GURUKUL</span>. This signifies our commitment to reviving the Ancient Indian Educational System, which emphasized Project-Based Learning and practical knowledge system.
@@ -350,18 +350,18 @@ const AboutGoG: React.FC = () => {
                             transition={{ duration: 0.6 }}
                             className="flex flex-col lg:flex-row gap-12 items-center"
                         >
-                            <div className="lg:w-1/2 relative group">
+                            <div className="lg:w-4/12 relative group">
                                 <div className="absolute -inset-4 bg-gradient-to-r from-[#34D562]/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                                 <div className="relative rounded-3xl overflow-hidden border-2 border-white/10 group-hover:border-[#34D562]/50 transition-all duration-500">
                                     <img
                                         src={S3Img}
                                         alt="Team at Geeks of Gurukul"
-                                        className="w-full h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] object-cover object-top transform group-hover:scale-105 transition-all duration-700 filter grayscale group-hover:grayscale-0"
+                                        className="w-full h-[300px] md:h-[350px] lg:h-[350px] object-cover object-center transform group-hover:scale-105 transition-all duration-700 filter grayscale group-hover:grayscale-0"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                                 </div>
                             </div>
-                            <div className="lg:w-1/2 space-y-6">
+                            <div className="lg:w-8/12 space-y-6">
                                 <div className="h-1 w-20 bg-gradient-to-r from-[#34D562] to-transparent rounded-full" />
                                 <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
                                     At <span className="text-[#34D562] font-semibold">Geeks of Gurukul</span>, we believe in the philosophy of <span className="text-[#34D562] font-semibold">"Work Hard, Party Harder"</span>. Our team of passionate IITians knows that building the future of education requires not just dedication, but also a vibrant culture of celebration and joy.
