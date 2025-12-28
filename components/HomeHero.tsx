@@ -94,7 +94,7 @@ const HomeHero: React.FC = () => {
     const featureIcons = [
         { icon: Brain, label: "AI/ML" },
         { icon: Code, label: "Web3" },
-        { icon: Stethoscope, label: "MBBS" },
+        { icon: Stethoscope, label: "Medical" },
         { icon: GraduationCap, label: "PG Courses" },
         { icon: Cpu, label: "Tech Programs" },
     ];
@@ -220,7 +220,7 @@ const HomeHero: React.FC = () => {
                                 </span>
                                 <span className="text-[#34D562] font-semibold text-xs tracking-wider uppercase">Now Enrolling</span>
                                 <div className="h-3 w-px bg-[#34D562]/40" />
-                                <span className="text-white/50 text-xs">Batch 2026</span>
+                                <span className="text-white/50 text-xs">Series 2026</span>
                             </motion.div>
 
                             {/* Title */}

@@ -5,7 +5,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'About GoG', href: '/about-gog' },
   {
-    label: 'GoG In Blockchain',
+    label: 'Web 3.0',
     href: '#',
     children: [
       { label: 'Koii Labs', href: '/blockchain/koii-labs' },
@@ -18,7 +18,7 @@ export const NAV_ITEMS: NavItem[] = [
   },
   { label: 'Our Partnered Institutes', href: '/partnered-colleges' },
   { label: 'Our Team', href: '/teams' },
-  { label: 'Our Social Impact', href: '/our-social-impact' },
+  { label: 'B2G Initiatives', href: '/our-social-impact' },
   { label: 'Programs', href: '/programs' },
 ];
 
