@@ -32,16 +32,16 @@ const Programs: React.FC = () => {
             title: "Co-Branded Degree Programs (UG / PG)",
             // Image: Grand Historic University with Quad
             image: Program2Img,
-            badge: "In Collaboration With E&ICT, IIT Guwahati",
+            badge: "Industrial Curriculum Training",
             duration: "2 to 4 years",
             eligibility: "B.Tech/M.Tech/MBA/BBA/MCA/BCA/BSc/MSc",
             outcome: "Paid Internships & Jobs",
             checklist: [
-                "All The Benefits Of Integrated Degree Program.",
-                "Semester Completion Certification & ID Card From EICT IIT Guwahati.",
-                "Guest Lectures From IIT Guwahati Faculty And Industry Experts From Top MNCs.",
-                "1 Month Campus Immersion Program In IIT Guwahati Campus Every Year.",
-                "Semester Wise Marksheet And Alumni Status From EICT IIT Guwahati."
+                "Industrial Circulation intricated with University Curriculum.",
+                "IIT (BTech + MTech) Alumni Teach Offline Classes With Industry Expertise.",
+                "End To End Placement Preparation With Project Based Learning.",
+                "100% Internship From 4th Sem, Jobs From 7th Sem.",
+                "Industry Projects, Soft Skills, And Expert Guest Sessions Provided."
             ]
         },
         {

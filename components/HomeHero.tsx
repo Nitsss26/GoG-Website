@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Globe, Trophy, Play, Medal, Coins, Zap, Code, Rocket, GraduationCap, Shield, Brain, Stethoscope, Cpu, School, X } from 'lucide-react';
 
@@ -63,6 +64,7 @@ const GreenEmbers: React.FC = () => {
 };
 
 const HomeHero: React.FC = () => {
+    const navigate = useNavigate();
     const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
     const allStats = [
@@ -270,7 +272,10 @@ const HomeHero: React.FC = () => {
                                 transition={{ delay: 0.4 }}
                                 className="flex flex-wrap gap-3 pt-2"
                             >
-                                <button className="group px-7 py-3.5 bg-[#34D562] hover:bg-[#2bc255] text-black font-bold text-sm rounded-full transition-all duration-300 shadow-[0_0_30px_rgba(52,213,98,0.4)]">
+                                <button
+                                    onClick={() => navigate('/programs')}
+                                    className="relative z-50 group px-7 py-3.5 bg-[#34D562] hover:bg-[#2bc255] text-black font-bold text-sm rounded-full transition-all duration-300 shadow-[0_0_30px_rgba(52,213,98,0.4)]"
+                                >
                                     <span className="flex items-center gap-2">
                                         Explore Our Programs
                                         <ChevronRight className="w-4 h-4" />

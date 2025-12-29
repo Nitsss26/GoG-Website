@@ -151,9 +151,9 @@ const AboutGoG: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.1 }}
-                                className="flex flex-col items-center text-center group bg-[#0A0A0A]/40 backdrop-blur-sm p-8 rounded-3xl border border-white/5 hover:border-[#34D562]/30 transition-all duration-500 hover:bg-[#34D562]/5"
+                                className="flex flex-col items-center text-center group bg-[#0A0A0A]/40 backdrop-blur-sm p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/50 transition-all duration-500 hover:bg-[#34D562]/5"
                             >
-                                <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-white/10 group-hover:border-[#34D562] transition-colors duration-500">
+                                <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
                                     <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
                                     <img src={RajImg} alt="Raj Kumar Sahoo" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
                                 </div>
@@ -171,9 +171,9 @@ const AboutGoG: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.2 }}
-                                className="flex flex-col items-center text-center group bg-[#0A0A0A]/40 backdrop-blur-sm p-8 rounded-3xl border border-white/5 hover:border-[#34D562]/30 transition-all duration-500 hover:bg-[#34D562]/5"
+                                className="flex flex-col items-center text-center group bg-[#0A0A0A]/40 backdrop-blur-sm p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/50 transition-all duration-500 hover:bg-[#34D562]/5"
                             >
-                                <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-white/10 group-hover:border-[#34D562] transition-colors duration-500">
+                                <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
                                     <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
                                     <img src={VivekImg} alt="Mr Vivek Yadav" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
                                 </div>
@@ -266,7 +266,7 @@ const AboutGoG: React.FC = () => {
 
             {/* About Content Section */}
             <section className="py-24 px-6">
-                <div className="container mx-auto max-w-[1600px]">
+                <div className="container mx-auto max-w-[1400px] px-6">
                     {/* Section Title */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -314,34 +314,6 @@ const AboutGoG: React.FC = () => {
                         </motion.div>
 
                         {/* Second Block - Text Left, Image Right */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                            className="flex flex-col lg:flex-row-reverse gap-12 items-center"
-                        >
-                            <div className="lg:w-4/12 relative group">
-                                <div className="absolute -inset-4 bg-gradient-to-l from-[#34D562]/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                                <div className="relative rounded-3xl overflow-hidden border-2 border-white/10 group-hover:border-[#34D562]/50 transition-all duration-500">
-                                    <img
-                                        src={S2Img}
-                                        alt="Modern Age Gurukul"
-                                        className="w-full h-[300px] md:h-[350px] lg:h-[350px] object-cover object-center transform group-hover:scale-105 transition-all duration-700 filter grayscale group-hover:grayscale-0"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                                </div>
-                            </div>
-                            <div className="lg:w-8/12 space-y-6">
-                                <div className="h-1 w-20 bg-gradient-to-r from-[#34D562] to-transparent rounded-full" />
-                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                                    Our philosophy is rooted in the concept of the <span className="text-[#34D562] font-semibold">MODERN AGE GURUKUL</span>. This signifies our commitment to reviving the Ancient Indian Educational System, which emphasized Project-Based Learning and practical knowledge system.
-                                </p>
-                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                                    By adopting these time-tested, <span className="text-[#34D562] font-semibold">Practical Learning Techniques</span>, Geeks of Gurukul aims to provide students with the skills and knowledge that are not only relevant but also essential for <span className="text-[#34D562] font-semibold">Real-World Applications</span>.
-                                </p>
-                            </div>
-                        </motion.div>
 
                         <motion.div
                             initial={{ opacity: 0, y: 40 }}
@@ -350,6 +322,15 @@ const AboutGoG: React.FC = () => {
                             transition={{ duration: 0.6 }}
                             className="flex flex-col lg:flex-row gap-12 items-center"
                         >
+                            <div className="lg:w-8/12 space-y-6">
+                                <div className="h-1 w-20 bg-gradient-to-r from-[#34D562] to-transparent rounded-full" />
+                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                                    At <span className="text-[#34D562] font-semibold">Geeks of Gurukul</span>, we believe in the philosophy of <span className="text-[#34D562] font-semibold">"Work Hard, Party Harder"</span>. Our team of passionate IITians knows that building the future of education requires not just dedication, but also a vibrant culture of celebration and joy.
+                                </p>
+                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                                    From intense brainstorming sessions to unforgettable parties, we bond over shared successes and create memories that last forever. We are not just colleagues; we are a <span className="text-[#34D562] font-semibold">Family</span> that celebrates every milestone together, fueling our drive to innovate.
+                                </p>
+                            </div>
                             <div className="lg:w-4/12 relative group">
                                 <div className="absolute -inset-4 bg-gradient-to-r from-[#34D562]/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                                 <div className="relative rounded-3xl overflow-hidden border-2 border-white/10 group-hover:border-[#34D562]/50 transition-all duration-500">
@@ -361,16 +342,40 @@ const AboutGoG: React.FC = () => {
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                                 </div>
                             </div>
+
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="flex flex-col lg:flex-row-reverse gap-12 items-center"
+                        >
                             <div className="lg:w-8/12 space-y-6">
                                 <div className="h-1 w-20 bg-gradient-to-r from-[#34D562] to-transparent rounded-full" />
                                 <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                                    At <span className="text-[#34D562] font-semibold">Geeks of Gurukul</span>, we believe in the philosophy of <span className="text-[#34D562] font-semibold">"Work Hard, Party Harder"</span>. Our team of passionate IITians knows that building the future of education requires not just dedication, but also a vibrant culture of celebration and joy.
+                                    Our philosophy is rooted in the concept of the <span className="text-[#34D562] font-semibold">MODERN AGE GURUKUL</span>. This signifies our commitment to reviving the Ancient Indian Educational System, which emphasized Project-Based Learning and practical knowledge system.
                                 </p>
                                 <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                                    From intense brainstorming sessions to unforgettable parties, we bond over shared successes and create memories that last forever. We are not just colleagues; we are a <span className="text-[#34D562] font-semibold">Family</span> that celebrates every milestone together, fueling our drive to innovate.
+                                    By adopting these time-tested, <span className="text-[#34D562] font-semibold">Practical Learning Techniques</span>, Geeks of Gurukul aims to provide students with the skills and knowledge that are not only relevant but also essential for <span className="text-[#34D562] font-semibold">Real-World Applications</span>.
                                 </p>
                             </div>
+                            <div className="lg:w-4/12 relative group">
+                                <div className="absolute -inset-4 bg-gradient-to-l from-[#34D562]/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                <div className="relative rounded-3xl overflow-hidden border-2 border-white/10 group-hover:border-[#34D562]/50 transition-all duration-500">
+                                    <img
+                                        src={S2Img}
+                                        alt="Modern Age Gurukul"
+                                        className="w-full h-[300px] md:h-[350px] lg:h-[350px] object-cover object-center transform group-hover:scale-105 transition-all duration-700 filter grayscale group-hover:grayscale-0"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                                </div>
+                            </div>
+
                         </motion.div>
+
+
 
                     </div>
                 </div>
