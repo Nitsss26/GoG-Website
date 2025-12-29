@@ -199,7 +199,7 @@ const AboutGoG: React.FC = () => {
                                     <img src={NiteshImg} alt="Mr. Nitesh" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
                                 </div>
                                 <h3 className="text-2xl font-bold text-white mb-2">Mr. Nitesh</h3>
-                                <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">Technical Lead</p>
+                                <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">Tech Lead</p>
                                 <div className="relative max-w-xl">
                                     <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
                                     <p className="text-gray-400 italic relative z-10 leading-relaxed">"Great technology solves problems; great education creates the problem solvers."</p>

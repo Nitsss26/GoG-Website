@@ -197,15 +197,15 @@ const HomeAwardsPremium: React.FC = () => {
                             <span className="text-[#34D562] text-sm font-semibold tracking-wide">🏆 OFFICIAL RECOGNITION</span>
                         </div>
 
-                        <h3 className="text-3xl md:text-4xl font-bold text-[#34D562] mb-8 leading-tight">
-                            "The Best Ed-Tech Game Changer Of the Year 2025"
+                        <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 leading-tight">
+                            The Best <span className="text-[#34D562]">Ed-Tech Game Changer </span> <span> Of the Year 2025</span>
                         </h3>
 
                         <div className="relative">
                             <div className="absolute -left-8 -top-4 text-6xl text-[#FFD700]/30">"</div>
                             <p className="text-white/80 text-lg leading-relaxed pl-4">
-                                Hon'ble Deputy Chief Minister of Madhya Pradesh & Renowned Bollywood Actress
-                                Minissha Lamba awarded Geeks of Gurukul <span className="text-[#34D562] font-semibold">The BIG Impact Award 2025</span> for
+                                <span className="text-[#FFD700] font-semibold">Hon'ble Deputy Chief Minister Shri Rajendra Shukla Ji</span> & Renowned Bollywood Actress
+                                Minissha Lamba awarded Geeks of Gurukul <span className="text-white font-bold">The BIG Impact Award 2025</span> for
                                 revolutionizing technology education in India.
                             </p>
                             <div className="absolute -right-4 -bottom-6 text-6xl text-[#FFD700]/30">"</div>
@@ -241,11 +241,15 @@ const HomeAwardsPremium: React.FC = () => {
                             <span className="text-[#34D562]">Government of Madhya Pradesh</span>
                         </h3>
 
-                        <p className="text-white/80 text-lg leading-relaxed mb-8">
-                            We are deeply honored to be appointed as the Technical Advisor to the Government of Madhya Pradesh.
-                            It was a privilege to meet with the <span className="text-[#FFD700] font-semibold">Hon'ble Governor, Shri Mangu Lal Patel Ji</span>,
-                            to discuss strategic initiatives for revolutionizing technology education and empowering the youth of Bharat.
-                        </p>
+                        <div className="relative mb-8">
+                            <div className="absolute -left-8 -top-4 text-6xl text-[#FFD700]/30">"</div>
+                            <p className="text-white/80 text-lg leading-relaxed pl-4">
+                                We are deeply honored to be appointed as the Technical Advisor to the Government of Madhya Pradesh.
+                                It was a privilege to meet with the <span className="text-[#FFD700] font-semibold">Hon'ble Governor, Shri Mangu Lal Patel Ji</span>,
+                                to discuss strategic initiatives for revolutionizing technology education and empowering the youth of Bharat.
+                            </p>
+                            <div className="absolute -right-4 -bottom-6 text-6xl text-[#FFD700]/30">"</div>
+                        </div>
 
                         <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                             <div className="px-6 py-3 bg-white/5 border border-white/10 rounded-full flex items-center gap-2">
