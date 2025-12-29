@@ -12,7 +12,7 @@ import S2Img from '../assets/team/2nd.jpg';
 import S3Img from '../assets/team/3rd.jpg';
 import RajImg from '../assets/team/raj-kumar-sahoo.jpg';
 import VivekImg from '../assets/team/vivek-yadav.jpg';
-import NiteshImg from '../assets/Team/Nitesh.jpg';
+import NiteshImg from '../assets/team/Nitesh.jpg';
 import AyushImg from '../assets/team/ayush-chauhan.jpg';
 import SachinImg from '../assets/team/sachin-kumar-gupta.png';
 import VipulImg from '../assets/team/vipul-parmar.png';
