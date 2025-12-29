@@ -136,7 +136,7 @@ const Programs: React.FC = () => {
             </div>
 
             {/* Programs Sections - Negative margin to pull up */}
-            <div className="relative z-10 space-y-0 -mt-10 md:-mt-20">
+            <div className="relative z-10 space-y-0 -mt-4 md:-mt-8">
                 {programs.map((program, index) => (
                     <ProgramSection
                         key={index}
@@ -147,7 +147,7 @@ const Programs: React.FC = () => {
             </div>
 
             {/* Bottom CTA */}
-            <section className="py-20 relative overflow-hidden">
+            <section className="py-20 relative overflow-hidden mt-32 ">
                 <div className="absolute inset-0 bg-[#34D562]/5" />
                 <div className="container mx-auto px-6 relative z-10 text-center">
                     <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">Ready to Start Your Journey?</h2>

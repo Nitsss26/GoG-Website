@@ -9,6 +9,8 @@ import AwardsImage from '../assets/images/AwardsImage.png';
 import AwardsImage2 from '../assets/images/AwardsImage2.png';
 // @ts-ignore
 import Home2 from '../assets/Home2.jpg';
+// @ts-ignore
+import GovAssoc2 from '../assets/gov_association2.jpg';
 
 // Green Embers Canvas
 const GreenEmbers: React.FC = () => {
@@ -69,12 +71,22 @@ const GreenEmbers: React.FC = () => {
 
 const HomeAwardsPremium: React.FC = () => {
     const [currentImage, setCurrentImage] = useState(0);
+    const [currentGovImage, setCurrentGovImage] = useState(0);
     const images = [AwardsImage, AwardsImage2];
+    const govImages = [Home2, GovAssoc2];
 
-    // Auto-rotate images every 4 seconds
+    // Auto-rotate award images every 4 seconds
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentImage((prev) => (prev + 1) % images.length);
+        }, 4000);
+        return () => clearInterval(interval);
+    }, []);
+
+    // Auto-rotate government images every 4 seconds
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentGovImage((prev) => (prev + 1) % govImages.length);
         }, 4000);
         return () => clearInterval(interval);
     }, []);
@@ -185,7 +197,7 @@ const HomeAwardsPremium: React.FC = () => {
                             <span className="text-[#34D562] text-sm font-semibold tracking-wide">🏆 OFFICIAL RECOGNITION</span>
                         </div>
 
-                        <h3 className="text-3xl md:text-4xl font-bold text-[#34D562] italic mb-8 leading-tight">
+                        <h3 className="text-3xl md:text-4xl font-bold text-[#34D562] mb-8 leading-tight">
                             "The Best Ed-Tech Game Changer Of the Year 2025"
                         </h3>
 
@@ -221,7 +233,7 @@ const HomeAwardsPremium: React.FC = () => {
                         className="text-center md:text-left order-2 md:order-1"
                     >
                         <div className="inline-block px-4 py-2 bg-[#34D562]/10 border border-[#34D562]/30 rounded-full mb-6">
-                            <span className="text-[#34D562] text-sm font-semibold tracking-wide">🤝 GOVERNMENT COLLABORATION</span>
+                            <span className="text-[#34D562] text-sm font-semibold tracking-wide">🤝 GOVERNMENT ASSOCIATION</span>
                         </div>
 
                         <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
@@ -263,13 +275,20 @@ const HomeAwardsPremium: React.FC = () => {
                         {/* Main Image Container */}
                         <div className="relative bg-gradient-to-br from-[#FFD700]/20 to-transparent p-2 rounded-lg">
                             <div className="border-4 border-[#FFD700] rounded-lg overflow-hidden shadow-[0_0_60px_rgba(255,215,0,0.3)]">
-                                {/* Image */}
+                                {/* Image Slideshow */}
                                 <div className="relative h-[350px] bg-gradient-to-br from-[#1a1a2e] to-[#16213e]">
-                                    <img
-                                        src={Home2}
-                                        alt="Meeting with Hon'ble Governor of MP"
-                                        className="absolute inset-0 w-full h-full object-cover object-top"
-                                    />
+                                    <AnimatePresence mode="wait">
+                                        <motion.img
+                                            key={currentGovImage}
+                                            src={govImages[currentGovImage]}
+                                            alt="Government Association"
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
+                                            transition={{ duration: 0.5 }}
+                                            className="absolute inset-0 w-full h-full object-cover object-top"
+                                        />
+                                    </AnimatePresence>
 
                                     {/* Overlay Badge */}
                                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">

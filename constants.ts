@@ -2,7 +2,6 @@ import { Database, Cpu, Globe, Zap, Users, HardDrive, Share2, Layers } from 'luc
 import { NavItem, Feature } from './types';
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Home', href: '/' },
   { label: 'About GoG', href: '/about-gog' },
   {
     label: 'Web 3.0',

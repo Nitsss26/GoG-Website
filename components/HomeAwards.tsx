@@ -67,7 +67,7 @@ const HomeAwards: React.FC = () => {
                         className="flex flex-col justify-center items-center text-center mx-auto w-full space-y-8"
                     >
                         {/* Title */}
-                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight italic tracking-wide text-[#34D562]">
+                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wide text-[#34D562]">
                             "The Best Ed-Tech Game Changer Of the Year 2025"
                         </h2>
 

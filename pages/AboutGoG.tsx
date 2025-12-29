@@ -12,6 +12,7 @@ import S2Img from '../assets/team/2nd.jpg';
 import S3Img from '../assets/team/3rd.jpg';
 import RajImg from '../assets/team/raj-kumar-sahoo.jpg';
 import VivekImg from '../assets/team/vivek-yadav.jpg';
+import NiteshImg from '../assets/Team/Nitesh.jpg';
 import AyushImg from '../assets/team/ayush-chauhan.jpg';
 import SachinImg from '../assets/team/sachin-kumar-gupta.png';
 import VipulImg from '../assets/team/vipul-parmar.png';
@@ -42,10 +43,10 @@ const AboutGoG: React.FC = () => {
         {
             image: FounderImg,
             name: "Mr. Chintan Vatsa Jha",
-            role: "Founder",
+            role: "Chief Executive Officer",
             quote: "Our Vision Is To Empower Learners Across India By Building A Future-Ready Ecosystem That Blends Ancient Wisdom With Modern Technology. At Geeks of Gurukul, We Believe In Equipping You With Real-World Skills, Industry Exposure, And Mentorship That Truly Makes A Difference. We're not just creating coders or engineers—we're nurturing innovators, creators, and leaders of tomorrow.",
             highlight: "Keep Exploring, Keep Building, And Let's Redefine Education Together.",
-            badge: "Founder",
+            badge: "CEO",
             linkedin: "#"
         },
         {
@@ -144,7 +145,7 @@ const AboutGoG: React.FC = () => {
                             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Management <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] to-[#28a74b]">Team</span></h2>
                         </motion.div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
                             {/* Raj Kumar Sahoo */}
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
@@ -158,8 +159,8 @@ const AboutGoG: React.FC = () => {
                                     <img src={RajImg} alt="Raj Kumar Sahoo" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
                                 </div>
                                 <h3 className="text-2xl font-bold text-white mb-2">Mr. Raj Kumar Sahoo</h3>
-                                <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">Associate Director Business & Operations</p>
-                                <div className="relative max-w-sm">
+                                <p className="text-[#34D562] font-mono text-xs mb-6 uppercase tracking-wider font-semibold">Associate Director Business & Operations</p>
+                                <div className="relative max-w-xl">
                                     <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
                                     <p className="text-gray-400 italic relative z-10 leading-relaxed">"Driving growth through efficient operations and strategic partnerships."</p>
                                 </div>
@@ -179,9 +180,29 @@ const AboutGoG: React.FC = () => {
                                 </div>
                                 <h3 className="text-2xl font-bold text-white mb-2">Mr. Vivek Yadav</h3>
                                 <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">HR and Admin Head</p>
-                                <div className="relative max-w-sm">
+                                <div className="relative max-w-xl">
                                     <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
                                     <p className="text-gray-400 italic relative z-10 leading-relaxed">"Building a culture of excellence and inclusivity for our team and students."</p>
+                                </div>
+                            </motion.div>
+
+                            {/* Nitesh - Technical Lead */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.3 }}
+                                className="flex flex-col items-center text-center group bg-[#0A0A0A]/40 backdrop-blur-sm p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/50 transition-all duration-500 hover:bg-[#34D562]/5"
+                            >
+                                <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
+                                    <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
+                                    <img src={NiteshImg} alt="Mr. Nitesh" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
+                                </div>
+                                <h3 className="text-2xl font-bold text-white mb-2">Mr. Nitesh</h3>
+                                <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">Technical Lead</p>
+                                <div className="relative max-w-xl">
+                                    <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
+                                    <p className="text-gray-400 italic relative z-10 leading-relaxed">"Great technology solves problems; great education creates the problem solvers."</p>
                                 </div>
                             </motion.div>
                         </div>

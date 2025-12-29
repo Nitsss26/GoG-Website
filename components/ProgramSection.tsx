@@ -44,7 +44,8 @@ const ProgramSection: React.FC<ProgramSectionProps> = ({
 
     const y = useTransform(scrollYProgress, [0, 1], isDesktop ? [100, -100] : [0, 0]);
     const scrollOpacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
-    const opacity = index === 0 ? 1 : scrollOpacity;
+    // Always show first 2 items and on mobile, use scroll opacity only on desktop
+    const opacity = (index === 0 || index === 1 || !isDesktop) ? 1 : scrollOpacity;
 
     return (
         <section ref={ref} className="relative py-8 md:py-16 w-full overflow-hidden">

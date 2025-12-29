@@ -1,53 +1,125 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import GreenEmbers from '../components/ui/GreenEmbers';
+
+// Import existing images
 import EduMinAssam from '../assets/OurSocialImpact/EduMinAssam.jpg';
 import MP_Assam from '../assets/OurSocialImpact/MP_Assam.jpg';
 import IAS_Anil_Kumar_Jha from '../assets/OurSocialImpact/IAS_Anil_Kumar_Jha.jpg';
 import MrKeshabMahanta from '../assets/OurSocialImpact/MrKeshabMahanta.png';
 
-const SocialImpactCard: React.FC<{
+// Import new images from Gov folder
+// @ts-ignore
+import CharanDasMahant from '../assets/Gov/Charan Das Mahant.png';
+// @ts-ignore
+import AnilFirojiya from '../assets/Gov/Anil Firojiya.jpg';
+// @ts-ignore
+import JYOTSNA from '../assets/Gov/JYOTSNA.png';
+// @ts-ignore
+import JitendraParashar from '../assets/Gov/Jitendra Parashar.jpg';
+// @ts-ignore
+import IAS_Awanish from '../assets/Gov/IAS Awanish Sharan.jpg';
+
+interface OfficialCardProps {
     image: string;
-    alt: string;
-    text: React.ReactNode;
-    reverse?: boolean;
+    name: string;
+    designation: string;
     index: number;
-}> = ({ image, alt, text, reverse, index }) => {
+}
+
+const GovernmentOfficialCard: React.FC<OfficialCardProps> = ({ image, name, designation, index }) => {
     return (
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={index === 0 ? { opacity: 1, y: 0 } : undefined}
-            whileInView={index !== 0 ? { opacity: 1, y: 0 } : undefined}
-            viewport={{ once: true, amount: 0.1 }}
-            className={`flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 items-center bg-[#0A0A0A]/50 backdrop-blur-sm border border-white/10 p-6 rounded-3xl hover:border-[#34D562]/30 transition-colors duration-300`}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ delay: index * 0.1, duration: 0.5 }}
+            className="group relative bg-[#0A0A0A]/60 backdrop-blur-sm rounded-2xl overflow-hidden border-4 border-[#34D562] hover:border-[#34D562] hover:shadow-[0_0_40px_rgba(52,213,98,0.4)] transition-all duration-500"
         >
-            <div className="w-full md:w-1/2">
-                <div className="relative group overflow-hidden rounded-[3rem] bg-black/50 border-4 border-[#34D562]/30 transition-all duration-500 shadow-[0_0_30px_rgba(52,213,98,0.1)] group-hover:shadow-[0_0_50px_rgba(52,213,98,0.3)]">
-                    <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay"></div>
-                    <img
-                        src={image}
-                        alt={alt}
-                        className="w-full h-64 md:h-80 object-cover object-top transform grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                    />
-                </div>
+            {/* Image Container */}
+            <div className="relative h-80 overflow-hidden">
+                <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay" />
+                <img
+                    src={image}
+                    alt={name}
+                    className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transform group-hover:scale-110 transition-all duration-700"
+                />
+                {/* Lighter Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
             </div>
-            <div className="w-full md:w-1/2">
-                <p className="text-lg text-gray-300 leading-relaxed font-sans text-justify">
-                    {text}
+
+            {/* Text Content */}
+            <div className="p-6 space-y-3">
+                <h3 className="text-xl font-bold text-white group-hover:text-[#34D562] transition-colors duration-300">
+                    {name}
+                </h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                    {designation}
                 </p>
             </div>
+
+            {/* Corner Accent */}
+            <div className="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-[#34D562]/50 group-hover:border-[#34D562] transition-colors" />
         </motion.div>
     );
 };
 
 const OurSocialImpact: React.FC = () => {
+    const officials = [
+        {
+            image: CharanDasMahant,
+            name: "Charan Das Mahant",
+            designation: "Former Lok Sabha Speaker, Government of Chhattisgarh | Former Cabinet Minister, Government of India"
+        },
+        {
+            image: EduMinAssam,
+            name: "Dr. Ranoj Pegu",
+            designation: "Hon'ble Education Minister, Government of Assam | Transforming Education Through Technology"
+        },
+        {
+            image: MrKeshabMahanta,
+            name: "Mr. Keshab Mahanta",
+            designation: "Hon'ble Minister of Revenue & Disaster Management, IT, Science & Technology, Government of Assam"
+        },
+        {
+            image: AnilFirojiya,
+            name: "Anil Firojiya",
+            designation: "Member of Parliament | Parliamentary Committee on Tourism and Culture, Government of India"
+        },
+        {
+            image: JYOTSNA,
+            name: "Smt. Jyotsna Charandas Mahant",
+            designation: "Member of Parliament (Lok Sabha), Korba | Standing Committee on Coal, Mines and Steel"
+        },
+        {
+            image: MP_Assam,
+            name: "Shri Ranjit Dutta",
+            designation: "Hon'ble Member of Parliament, Assam | Former Minister of Sericulture, Handloom & Textiles"
+        },
+        {
+            image: IAS_Anil_Kumar_Jha,
+            name: "IAS Anil Kumar Jha",
+            designation: "Cane Commissioner, Government of India | Former Joint Secretary, Ministry of Agriculture"
+        },
+        {
+            image: JitendraParashar,
+            name: "Mr. Jitendra Parashar",
+            designation: "Joint Director, Information Technology Department | Government of Madhya Pradesh"
+        },
+        {
+            image: IAS_Awanish,
+            name: "IAS Awanish Sharan",
+            designation: "Chief Executive Officer, Skill Development Mission | Government of Chhattisgarh"
+        }
+    ];
+
     return (
         <main className="relative min-h-screen bg-[#030303] text-white overflow-hidden pt-40 pb-20">
             <GreenEmbers />
 
             <div className="w-[95%] max-w-[1400px] mx-auto relative z-10 px-4">
                 {/* Header */}
-                <div className="text-center mb-20">
+                <div className="text-center mb-16">
                     <motion.h1
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -65,53 +137,17 @@ const OurSocialImpact: React.FC = () => {
                     </motion.p>
                 </div>
 
-                {/* Content Grid */}
-                <div className="space-y-12">
-                    <SocialImpactCard
-                        index={0}
-                        image={EduMinAssam}
-                        alt="Education Minister Assam"
-                        text={
-                            <>
-                                We had the privilege of meeting <strong className="text-white">Dr. Ranoj Pegu</strong>, <strong className="text-[#34D562]">Education Minister of Assam</strong>, to discuss how <strong className="text-white">Geeks of Gurukul</strong> can transform higher education through <strong className="text-[#34D562]">blockchain technology</strong>. His focus on transparency, security, and skill-based learning aligns with our mission to make degrees and academic credentials more secure and globally recognized.
-                            </>
-                        }
-                    />
-
-                    <SocialImpactCard
-                        index={1}
-                        image={MP_Assam}
-                        alt="MP Assam"
-                        reverse={true}
-                        text={
-                            <>
-                                We had the honour of meeting <strong className="text-white">Shri Ranjit Dutta</strong>, <strong className="text-[#34D562]">Honourable MP of Assam</strong>, to discuss how Geeks of Gurukul and our IITian team can innovate the sericulture industry through technology. As former Minister of Sericulture, Handloom & Textiles, Irrigation, and Welfare of Minorities, Shri Dutta’s initiatives like Silk Mark Expo, yarn banks, and block-cluster training have empowered rural artisans. We're building a tech-enabled platform to elevate Assam's sericulture ecosystem.
-                            </>
-                        }
-                    />
-
-                    <SocialImpactCard
-                        index={2}
-                        image={IAS_Anil_Kumar_Jha}
-                        alt="IAS Anil Kumar Jha"
-                        text={
-                            <>
-                                Had the honour of meeting <strong className="text-white">IAS Anil Kumar Jha</strong>, <strong className="text-[#34D562]">Cane Commissioner</strong>, whose deep insight into rural India and bold vision for agri-tech left a lasting impression. From his role as Joint Secretary to leading reforms in Bihar, he’s driven systemic transformation. His focus on tech-based algorithms to enhance the agriculture ecosystem signals a strong move toward <strong className="text-[#34D562]">smart farming</strong> 🚜🌱
-                            </>
-                        }
-                    />
-
-                    <SocialImpactCard
-                        index={3}
-                        image={MrKeshabMahanta}
-                        alt="Mr. Keshab Mahanta"
-                        reverse={true}
-                        text={
-                            <>
-                                The Geeks of Gurukul team had the honour of meeting <strong className="text-white">Mr. Keshab Mahanta</strong>, <strong className="text-[#34D562]">Hon'ble Minister of Revenue & Disaster Management</strong>, IT, Science & Technology, and Climate Change, Government of Assam. We discussed empowering Assam's youth with emerging, industry-relevant technologies to boost employability and future readiness. Geeks of Gurukul is proud to be expanding across Northeast India, driving digital and technological growth in the region.
-                            </>
-                        }
-                    />
+                {/* 3x3 Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {officials.map((official, index) => (
+                        <GovernmentOfficialCard
+                            key={index}
+                            index={index}
+                            image={official.image}
+                            name={official.name}
+                            designation={official.designation}
+                        />
+                    ))}
                 </div>
             </div>
         </main>
