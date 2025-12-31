@@ -1,0 +1,13 @@
+# Robots.txt for Geeks of Gurukul
+# Allow search engines to crawl all pages
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.geeksofgurukul.com/sitemap.xml
+
+# Disallow admin/internal paths (if any)
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
