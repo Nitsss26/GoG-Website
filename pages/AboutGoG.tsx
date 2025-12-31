@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import LeadershipCard from '../components/LeadershipCard';
 import { Quote, Linkedin, Circle, Sparkles, Award, Users } from 'lucide-react';
 import GreenEmbers from '../components/ui/GreenEmbers';
 import GreenEmbers2 from '../components/ui/GreenEmbers2';
@@ -44,19 +45,19 @@ const AboutGoG: React.FC = () => {
             image: FounderImg,
             name: "Mr. Chintan Vatsa Jha",
             role: "Chief Executive Officer",
-            quote: "Our Vision Is To Empower Learners Across India By Building A Future-Ready Ecosystem That Blends Ancient Wisdom With Modern Technology. At Geeks of Gurukul, We Believe In Equipping You With Real-World Skills, Industry Exposure, And Mentorship That Truly Makes A Difference. We're not just creating coders or engineers—we're nurturing innovators, creators, and leaders of tomorrow.",
+            quote: "Our Vision Is To Empower Learners Across India By Building A Future-Ready Ecosystem That Blends Ancient Wisdom With Modern Technology. At Geeks of Gurukul, We Believe In Equipping You With Real-World Skills, Industry Exposure, And Mentorship That Truly Makes A Difference.",
             highlight: "Keep Exploring, Keep Building, And Let's Redefine Education Together.",
             badge: "CEO",
-            linkedin: "#"
+            linkedin: "https://www.linkedin.com/in/chintan-vatsa-jha-0a7496a8/"
         },
         {
             image: F2Img,
             name: "Mr. Ajay Katana",
             role: "Chief Technology Officer",
-            quote: " In Today's Rapidly Evolving Technological Landscape, It's Crucial To Stay Appropriately Skilled And Up-To-Date With Dynamic Market Trends. At Geeks Of Gurukul, We Pride Ourselves On Teaching Students The Latest, Most In-Demand Technologies, Ensuring That You Are Well-Prepared And Job-Ready For Your Dream Companies.",
+            quote: " In Today's Rapidly Evolving Technological Landscape, It's Crucial To Stay Appropriately Skilled And Up-To-Date With Dynamic Market Trends. At Geeks Of Gurukul, We Pride GoG On Teaching Students The Latest, Most In-Demand Technologies, So That You Are Well-Prepared For Your Dream Job.",
             highlight: "Stay Innovative, Stay Determined, And Together, Let's Shape A Brighter Future.",
             badge: "CTO",
-            linkedin: "#"
+            linkedin: "https://www.linkedin.com/in/ajay987/"
         },
         {
             image: F1Img,
@@ -124,163 +125,181 @@ const AboutGoG: React.FC = () => {
 
             {/* Leadership Cards */}
             <div className="container mx-auto px-6 pb-32 relative z-10">
-                <div className="space-y-16 w-full max-w-[1600px] mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full max-w-[1600px] mx-auto">
                     {leaders.map((leader, index) => (
                         <LeadershipCard key={index} {...leader} index={index} />
                     ))}
+                </div>
 
 
-                    {/* --- Management Team --- */}
-                    <div className="mt-32 mb-32">
+                {/* --- Management Team --- */}
+                <div className="mt-32 mb-32">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-16"
+                    >
+                        <div className="inline-flex items-center gap-2 mb-6 px-6 py-2 rounded-full border border-[#34D562]/30 bg-[#34D562]/10">
+                            <Sparkles size={18} className="text-[#34D562]" />
+                            <span className="text-[#34D562] font-mono tracking-widest uppercase text-sm font-bold">Our Pillars</span>
+                        </div>
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Management <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] to-[#28a74b]">Team</span></h2>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
+                        {/* Raj Kumar Sahoo */}
                         <motion.div
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-center mb-16"
+                            transition={{ delay: 0.1 }}
+                            className="flex flex-col items-center text-center group bg-[#0A0A0A]/40 backdrop-blur-sm p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/50 transition-all duration-500 hover:bg-[#34D562]/5"
                         >
-                            <div className="inline-flex items-center gap-2 mb-6 px-6 py-2 rounded-full border border-[#34D562]/30 bg-[#34D562]/10">
-                                <Sparkles size={18} className="text-[#34D562]" />
-                                <span className="text-[#34D562] font-mono tracking-widest uppercase text-sm font-bold">Our Pillars</span>
+                            <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
+                                <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
+                                <img src={RajImg} alt="Raj Kumar Sahoo" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
                             </div>
-                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Management <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] to-[#28a74b]">Team</span></h2>
+                            <h3 className="text-2xl font-bold text-white mb-2">Mr. Raj Kumar Sahoo</h3>
+                            <p className="text-[#34D562] font-mono text-xs mb-6 uppercase tracking-wider font-semibold">Associate Director Business & Operations</p>
+                            <div className="relative max-w-xl">
+                                <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
+                                <p className="text-gray-400 italic relative z-10 leading-relaxed">"Driving growth through efficient operations and strategic partnerships."</p>
+                            </div>
+                            <a href="https://www.linkedin.com/in/raj-kumar-sahoo-b04688130/" target="_blank" rel="noopener noreferrer" className="mt-4 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg">
+                                <Linkedin size={20} />
+                            </a>
                         </motion.div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
-                            {/* Raj Kumar Sahoo */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.1 }}
-                                className="flex flex-col items-center text-center group bg-[#0A0A0A]/40 backdrop-blur-sm p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/50 transition-all duration-500 hover:bg-[#34D562]/5"
-                            >
-                                <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
-                                    <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
-                                    <img src={RajImg} alt="Raj Kumar Sahoo" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
-                                </div>
-                                <h3 className="text-2xl font-bold text-white mb-2">Mr. Raj Kumar Sahoo</h3>
-                                <p className="text-[#34D562] font-mono text-xs mb-6 uppercase tracking-wider font-semibold">Associate Director Business & Operations</p>
-                                <div className="relative max-w-xl">
-                                    <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
-                                    <p className="text-gray-400 italic relative z-10 leading-relaxed">"Driving growth through efficient operations and strategic partnerships."</p>
-                                </div>
-                            </motion.div>
+                        {/* Vivek Yadav */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                            className="flex flex-col items-center text-center group bg-[#0A0A0A]/40 backdrop-blur-sm p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/50 transition-all duration-500 hover:bg-[#34D562]/5"
+                        >
+                            <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
+                                <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
+                                <img src={VivekImg} alt="Mr Vivek Yadav" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
+                            </div>
+                            <h3 className="text-2xl font-bold text-white mb-2">Mr. Vivek Yadav</h3>
+                            <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">HR and Admin Head</p>
+                            <div className="relative max-w-xl">
+                                <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
+                                <p className="text-gray-400 italic relative z-10 leading-relaxed">"Building a culture of excellence and inclusivity for our team and students."</p>
+                            </div>
+                            <a href="https://www.linkedin.com/in/vivek-yadav-b6aa0b298/" target="_blank" rel="noopener noreferrer" className="mt-4 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg">
+                                <Linkedin size={20} />
+                            </a>
+                        </motion.div>
 
-                            {/* Vivek Yadav */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.2 }}
-                                className="flex flex-col items-center text-center group bg-[#0A0A0A]/40 backdrop-blur-sm p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/50 transition-all duration-500 hover:bg-[#34D562]/5"
-                            >
-                                <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
-                                    <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
-                                    <img src={VivekImg} alt="Mr Vivek Yadav" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
-                                </div>
-                                <h3 className="text-2xl font-bold text-white mb-2">Mr. Vivek Yadav</h3>
-                                <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">HR and Admin Head</p>
-                                <div className="relative max-w-xl">
-                                    <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
-                                    <p className="text-gray-400 italic relative z-10 leading-relaxed">"Building a culture of excellence and inclusivity for our team and students."</p>
-                                </div>
-                            </motion.div>
-
-                            {/* Nitesh - Technical Lead */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.3 }}
-                                className="flex flex-col items-center text-center group bg-[#0A0A0A]/40 backdrop-blur-sm p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/50 transition-all duration-500 hover:bg-[#34D562]/5"
-                            >
-                                <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
-                                    <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
-                                    <img src={NiteshImg} alt="Mr. Nitesh" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
-                                </div>
-                                <h3 className="text-2xl font-bold text-white mb-2">Mr. Nitesh</h3>
-                                <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">Tech Lead</p>
-                                <div className="relative max-w-xl">
-                                    <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
-                                    <p className="text-gray-400 italic relative z-10 leading-relaxed">"Great technology solves problems; great education creates the problem solvers."</p>
-                                </div>
-                            </motion.div>
-                        </div>
+                        {/* Nitesh - Technical Lead */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.3 }}
+                            className="flex flex-col items-center text-center group bg-[#0A0A0A]/40 backdrop-blur-sm p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/50 transition-all duration-500 hover:bg-[#34D562]/5"
+                        >
+                            <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
+                                <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
+                                <img src={NiteshImg} alt="Mr. Nitesh" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
+                            </div>
+                            <h3 className="text-2xl font-bold text-white mb-2">Mr. Nitesh</h3>
+                            <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">Tech Lead</p>
+                            <div className="relative max-w-xl">
+                                <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
+                                <p className="text-gray-400 italic relative z-10 leading-relaxed">"Great technology solves problems; great education creates the problem solvers."</p>
+                            </div>
+                            <a href="https://www.linkedin.com/in/nitesh-shr-304539281/" target="_blank" rel="noopener noreferrer" className="mt-4 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg">
+                                <Linkedin size={20} />
+                            </a>
+                        </motion.div>
                     </div>
+                </div>
 
-                    {/* --- Leadership Team --- */}
-                    <div className="mb-20">
+                {/* --- Leadership Team --- */}
+                <div className="mb-20">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-16"
+                    >
+                        <div className="inline-flex items-center gap-2 mb-6 px-6 py-2 rounded-full border border-[#34D562]/30 bg-[#34D562]/10">
+                            <Award size={18} className="text-[#34D562]" />
+                            <span className="text-[#34D562] font-mono tracking-widest uppercase text-sm font-bold">Academic Leaders</span>
+                        </div>
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Leadership <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] to-[#28a74b]">Team</span></h2>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {/* Ayush Chauhan */}
                         <motion.div
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-center mb-16"
+                            transition={{ delay: 0.1 }}
+                            className="group relative bg-[#0A0A0A] rounded-2xl overflow-hidden border border-white/5 hover:border-[#34D562]/30 transition-all duration-500 shadow-lg hover:shadow-[0_0_30px_rgba(52,213,98,0.15)]"
                         >
-                            <div className="inline-flex items-center gap-2 mb-6 px-6 py-2 rounded-full border border-[#34D562]/30 bg-[#34D562]/10">
-                                <Award size={18} className="text-[#34D562]" />
-                                <span className="text-[#34D562] font-mono tracking-widest uppercase text-sm font-bold">Academic Leaders</span>
+                            <a href="https://www.linkedin.com/in/ayush-chouhan-8b68a2287/" target="_blank" rel="noopener noreferrer" className="absolute top-4 right-4 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg z-30">
+                                <Linkedin size={18} />
+                            </a>
+                            <div className="h-96 overflow-hidden relative">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-80" />
+                                <img src={AyushImg} alt="Ayush Chauhan" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
                             </div>
-                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Leadership <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] to-[#28a74b]">Team</span></h2>
+                            <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-center transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                <div className="inline-block px-4 py-1 bg-[#34D562] text-black font-bold text-[10px] tracking-wider uppercase rounded-full mb-3 shadow-[0_0_10px_rgba(52,213,98,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">HOI</div>
+                                <h3 className="text-2xl font-bold text-white mb-1">Mr. Ayush Chauhan</h3>
+                                <p className="text-[#34D562] text-lg font-bold font-mono uppercase tracking-wide">Head of Institute</p>
+                            </div>
                         </motion.div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {/* Ayush Chauhan */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.1 }}
-                                className="group relative bg-[#0A0A0A] rounded-2xl overflow-hidden border border-white/5 hover:border-[#34D562]/30 transition-all duration-500 shadow-lg hover:shadow-[0_0_30px_rgba(52,213,98,0.15)]"
-                            >
-                                <div className="h-96 overflow-hidden relative">
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-80" />
-                                    <img src={AyushImg} alt="Ayush Chauhan" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
-                                </div>
-                                <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-center transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                                    <div className="inline-block px-4 py-1 bg-[#34D562] text-black font-bold text-[10px] tracking-wider uppercase rounded-full mb-3 shadow-[0_0_10px_rgba(52,213,98,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">HOI</div>
-                                    <h3 className="text-2xl font-bold text-white mb-1">Mr. Ayush Chauhan</h3>
-                                    <p className="text-[#34D562] text-lg font-bold font-mono uppercase tracking-wide">Head of Institute</p>
-                                </div>
-                            </motion.div>
+                        {/* Sachin Kumar Gupta */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                            className="group relative bg-[#0A0A0A] rounded-2xl overflow-hidden border border-white/5 hover:border-[#34D562]/30 transition-all duration-500 shadow-lg hover:shadow-[0_0_30px_rgba(52,213,98,0.15)]"
+                        >
+                            <a href="https://www.linkedin.com/in/sachin-kumar-gupta-12bbb427a/" target="_blank" rel="noopener noreferrer" className="absolute top-4 right-4 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg z-30">
+                                <Linkedin size={18} />
+                            </a>
+                            <div className="h-96 overflow-hidden relative">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-80" />
+                                <img src={SachinImg} alt="Sachin Kumar Gupta" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
+                            </div>
+                            <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-center transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                <div className="inline-block px-4 py-1 bg-[#34D562] text-black font-bold text-[10px] tracking-wider uppercase rounded-full mb-3 shadow-[0_0_10px_rgba(52,213,98,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">HOI</div>
+                                <h3 className="text-2xl font-bold text-white mb-1">Mr. Sachin Kumar Gupta</h3>
+                                <p className="text-[#34D562] text-lg font-bold font-mono uppercase tracking-wide">Head of Institute</p>
+                            </div>
+                        </motion.div>
 
-                            {/* Sachin Kumar Gupta */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.2 }}
-                                className="group relative bg-[#0A0A0A] rounded-2xl overflow-hidden border border-white/5 hover:border-[#34D562]/30 transition-all duration-500 shadow-lg hover:shadow-[0_0_30px_rgba(52,213,98,0.15)]"
-                            >
-                                <div className="h-96 overflow-hidden relative">
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-80" />
-                                    <img src={SachinImg} alt="Sachin Kumar Gupta" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
-                                </div>
-                                <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-center transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                                    <div className="inline-block px-4 py-1 bg-[#34D562] text-black font-bold text-[10px] tracking-wider uppercase rounded-full mb-3 shadow-[0_0_10px_rgba(52,213,98,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">HOI</div>
-                                    <h3 className="text-2xl font-bold text-white mb-1">Mr. Sachin Kumar Gupta</h3>
-                                    <p className="text-[#34D562] text-lg font-bold font-mono uppercase tracking-wide">Head of Institute</p>
-                                </div>
-                            </motion.div>
-
-                            {/* Vipul Parmar */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.3 }}
-                                className="group relative bg-[#0A0A0A] rounded-2xl overflow-hidden border border-white/5 hover:border-[#34D562]/30 transition-all duration-500 shadow-lg hover:shadow-[0_0_30px_rgba(52,213,98,0.15)]"
-                            >
-                                <div className="h-96 overflow-hidden relative">
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-80" />
-                                    <img src={VipulImg} alt="Vipul Parmar" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
-                                </div>
-                                <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-center transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                                    <div className="inline-block px-4 py-1 bg-[#34D562] text-black font-bold text-[10px] tracking-wider uppercase rounded-full mb-3 shadow-[0_0_10px_rgba(52,213,98,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">HOI</div>
-                                    <h3 className="text-2xl font-bold text-white mb-1">Mr. Vipul Parmar</h3>
-                                    <p className="text-[#34D562] text-lg font-bold font-mono uppercase tracking-wide">Head of Institute</p>
-                                </div>
-                            </motion.div>
-                        </div>
+                        {/* Vipul Parmar */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.3 }}
+                            className="group relative bg-[#0A0A0A] rounded-2xl overflow-hidden border border-white/5 hover:border-[#34D562]/30 transition-all duration-500 shadow-lg hover:shadow-[0_0_30px_rgba(52,213,98,0.15)]"
+                        >
+                            <a href="#" className="absolute top-4 right-4 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg z-30">
+                                <Linkedin size={18} />
+                            </a>
+                            <div className="h-96 overflow-hidden relative">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-80" />
+                                <img src={VipulImg} alt="Vipul Parmar" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
+                            </div>
+                            <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-center transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                <div className="inline-block px-4 py-1 bg-[#34D562] text-black font-bold text-[10px] tracking-wider uppercase rounded-full mb-3 shadow-[0_0_10px_rgba(52,213,98,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">HOI</div>
+                                <h3 className="text-2xl font-bold text-white mb-1">Mr. Vipul Parmar</h3>
+                                <p className="text-[#34D562] text-lg font-bold font-mono uppercase tracking-wide">Head of Institute</p>
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>
@@ -534,7 +553,7 @@ const AboutGoG: React.FC = () => {
                     </motion.div>
                 </div>
             </section>
-        </main>
+        </main >
     );
 };
 
@@ -549,85 +568,71 @@ interface LeadershipCardProps {
     index: number;
 }
 
-const LeadershipCard: React.FC<LeadershipCardProps> = ({ image, name, role, quote, highlight, badge, linkedin, index }) => {
-    const isReversed = index % 2 === 1;
-
+const LeadershipCard_Old: React.FC<LeadershipCardProps> = ({ image, name, role, quote, highlight, badge, linkedin, index }) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, delay: index * 0.1 }}
-            className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-6 lg:gap-16 items-stretch bg-[#0A0A0A]/50 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden hover:border-[#34D562]/40 transition-all duration-500 group`}
+            className="flex flex-col h-full bg-[#0A0A0A]/50 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden hover:border-[#34D562]/40 transition-all duration-500 group"
         >
             {/* Image Section */}
-            <div className="lg:w-1/3 p-6 relative">
+            <div className="relative w-full aspect-[4/5] overflow-hidden">
                 {/* Badge */}
                 <div className="absolute top-4 left-4 z-20 bg-[#34D562] text-black px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide shadow-[0_0_20px_rgba(52,213,98,0.5)]">
                     {badge}
                 </div>
 
-                {/* Image Container */}
-                <div className="relative w-full h-auto aspect-[4/5] md:min-h-[400px] lg:h-[500px] lg:aspect-auto">
-                    {/* Glow Effect */}
-                    <div className="absolute inset-0 bg-[#34D562] rounded-2xl blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-700" />
+                {/* Image Overlay Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
 
-                    {/* Image with Border */}
-                    <div className="relative h-full w-full rounded-2xl overflow-hidden border-2 border-[#34D562]/30 group-hover:border-[#34D562] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
-                        <img
-                            src={image}
-                            alt={name}
-                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 filter grayscale group-hover:grayscale-0"
-                        />
+                <img
+                    src={image}
+                    alt={name}
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 filter grayscale group-hover:grayscale-0"
+                />
 
-                        {/* Bottom Info Overlay */}
-                        <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
-                            <div className="flex items-center gap-3">
-                                <a
-                                    href={linkedin}
-                                    className="p-3 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300"
-                                >
-                                    <Linkedin size={20} />
-                                </a>
-                                <div className="flex-1">
-                                    <h3 className="text-2xl font-display font-bold text-white mb-1">{name}</h3>
-                                    <p className="text-sm text-gray-400 font-mono tracking-wide">{role}</p>
-                                </div>
-                            </div>
+                {/* Bottom Info Overlay (Name/Role on Image) */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 z-20 bg-gradient-to-t from-black to-transparent pt-20">
+                    <div className="flex items-end justify-between gap-4">
+                        <div>
+                            <h3 className="text-2xl font-display font-bold text-white mb-1 group-hover:text-[#34D562] transition-colors">{name}</h3>
+                            <p className="text-sm text-gray-300 font-mono tracking-wide bg-black/50 backdrop-blur-md inline-block px-3 py-1 rounded-lg border border-white/10">{role}</p>
                         </div>
+                        <a
+                            href={linkedin}
+                            className="p-3 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg"
+                        >
+                            <Linkedin size={20} />
+                        </a>
                     </div>
                 </div>
             </div>
 
             {/* Content Section */}
-            <div className="lg:w-2/3 p-6 lg:p-10 flex flex-col justify-center space-y-6">
-                {/* Quote Icon */}
-                <div className="relative">
-                    <Quote className="text-[#34D562]/30 w-16 h-16" />
+            <div className="p-8 flex flex-col flex-grow justify-between space-y-6 relative overflow-hidden">
+                {/* Background Decor */}
+                <div className="absolute -right-12 -top-12 opacity-5 pointer-events-none">
+                    <Quote className="text-[#34D562] w-48 h-48 rotate-180" />
                 </div>
 
                 {/* Quote Text */}
-                <div className="space-y-6">
-                    <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light italic relative pl-4">
-                        <span className="absolute -left-2 top-0 text-[#34D562]/50 text-4xl">"</span>
+                <div className="relative z-10">
+                    <Quote className="text-[#34D562]/40 w-10 h-10 mb-4" />
+                    <p className="text-gray-300 italic leading-relaxed text-lg">
                         {quote}
-                        <span className="text-[#34D562]/50 text-4xl">"</span>
                     </p>
+                </div>
 
-                    {/* Highlight */}
-                    <div className="flex items-start gap-3 bg-[#34D562]/10 border border-[#34D562]/30 rounded-xl p-6">
-                        <Sparkles className="text-[#34D562] mt-1 flex-shrink-0" size={24} />
-                        <p className="text-xl md:text-2xl text-[#34D562] font-display font-medium leading-relaxed">
+                {/* Highlight */}
+                <div className="mt-auto pt-6 border-t border-white/10">
+                    <div className="flex items-start gap-3 bg-[#34D562]/5 border border-[#34D562]/20 rounded-xl p-4 group-hover:bg-[#34D562]/10 transition-colors">
+                        <Sparkles className="text-[#34D562] mt-1 flex-shrink-0" size={18} />
+                        <p className="text-[#34D562] font-medium leading-normal text-sm md:text-xs">
                             {highlight}
                         </p>
                     </div>
-                </div>
-
-                {/* Decorative Bottom Line */}
-                <div className="flex items-center gap-4 pt-6 border-t border-white/10">
-                    <div className="flex-1 h-1 bg-gradient-to-r from-[#34D562] to-transparent rounded-full" />
-                    <Award className="text-[#34D562]" size={24} />
                 </div>
             </div>
         </motion.div>

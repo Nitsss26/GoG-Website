@@ -204,7 +204,7 @@ const HomeAwardsPremium: React.FC = () => {
                         <div className="relative">
                             <div className="absolute -left-8 -top-4 text-6xl text-[#FFD700]/30">"</div>
                             <p className="text-white/80 text-lg leading-relaxed pl-4">
-                                <span className="text-[#FFD700] font-semibold">Hon'ble Deputy Chief Minister Shri Rajendra Shukla Ji</span> & Renowned Bollywood Actress
+                                <span className="text-[#FFD700] font-semibold">Hon'ble Deputy Chief Minister of MP Shri Rajendra Shukla Ji</span> & Renowned Bollywood Actress
                                 Minissha Lamba awarded Geeks of Gurukul <span className="text-white font-bold">The BIG Impact Award 2025</span> for
                                 revolutionizing technology education in India.
                             </p>
@@ -245,7 +245,7 @@ const HomeAwardsPremium: React.FC = () => {
                             <div className="absolute -left-8 -top-4 text-6xl text-[#FFD700]/30">"</div>
                             <p className="text-white/80 text-lg leading-relaxed pl-4">
                                 We are deeply honored to be appointed as the Technical Advisor to the Government of Madhya Pradesh.
-                                It was a privilege to meet with the <span className="text-[#FFD700] font-semibold">Hon'ble Governor, Shri Mangu Lal Patel Ji</span>,
+                                It was a privilege to meet with the <span className="text-[#FFD700] font-semibold">Hon'ble Governor, Shri Mangubhai C. Patel Ji</span>,
                                 to discuss strategic initiatives for revolutionizing technology education and empowering the youth of Bharat.
                             </p>
                             <div className="absolute -right-4 -bottom-6 text-6xl text-[#FFD700]/30">"</div>

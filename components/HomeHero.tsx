@@ -97,8 +97,8 @@ const HomeHero: React.FC = () => {
         { icon: Brain, label: "AI/ML" },
         { icon: Code, label: "Web3" },
         { icon: Stethoscope, label: "Medical" },
-        { icon: GraduationCap, label: "PG Courses" },
-        { icon: Cpu, label: "Tech Programs" },
+        { icon: GraduationCap, label: "Drone Technology" },
+        { icon: Cpu, label: "Robotics" },
     ];
 
     return (
@@ -262,7 +262,7 @@ const HomeHero: React.FC = () => {
                                 className="text-gray-400 text-sm leading-relaxed max-w-md"
                             >
                                 India's Premier Education Platform delivering <span className="text-[#34D562] font-semibold">offline & online programs</span> in
-                                AI, ML, Web3, PG Courses & more. Our <span className="text-[#34D562] font-semibold">250+ IIT mentors</span> teach at 30+ partnered institutes across India.
+                                AI, ML, Web3, AR/VR, Robotics & more. Our <span className="text-[#34D562] font-semibold">250+ IIT mentors</span> teach at 30+ partnered institutes across India.
                             </motion.p>
 
                             {/* CTA Buttons - Removed overlapping stars */}
