@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import GreenEmbers from '../components/ui/GreenEmbers';
-import { Linkedin } from 'lucide-react';
+
 
 // Import images
 import AnchitSir from '../assets/Team of IITians/Anchit_Sir_IIT Kharagpur.png';
@@ -32,6 +32,37 @@ import VarunSir from '../assets/Team of IITians/Varun_Sir_NIT Warangal.png';
 import SatyamSir from '../assets/Team of IITians/Satyam_Sir_IIT Roorkee.png';
 import AjaySir from '../assets/Team of IITians/Ajay_Sir_IIT Roorkee.png';
 
+// New Members Imports
+import HimanshuVerma from '../assets/Team of IITians/Himanshu Verma.jpg';
+import NallaKarunakarRao from '../assets/Team of IITians/Nalla Karunakar Rao.jpeg';
+import AdityaKrGautam from '../assets/Team of IITians/Aditya Kr Gautam.jpg';
+import AmitSinghPatel from '../assets/Team of IITians/Amit Singh Patel.png';
+import ManeeshPatel from '../assets/Team of IITians/Maneesh Patel.jpg';
+import VivekHaldkar from '../assets/Team of IITians/Vivek Haldkar.png';
+import AvikalShrivastava from '../assets/Team of IITians/Avikal Shrivastava.png';
+import MrigankaShekharBarman from '../assets/Team of IITians/Mriganka Shekhar Barman.jpg';
+import SumitMaity from '../assets/Team of IITians/Sumit Maity.jpeg';
+import VinaypratapSalve from '../assets/Team of IITians/Vinaypratap Salve.jpg';
+import PranjulSahu from '../assets/Team of IITians/Pranjul Sahu.png';
+import DeepeshKumarVerma from '../assets/Team of IITians/Deepesh Kumar Verma.png';
+import KandulaRevanth from '../assets/Team of IITians/Kandula Revanth.jpg';
+import PronayDey from '../assets/Team of IITians/Pronay Dey.jpeg';
+import ShivangSrivastava from '../assets/Team of IITians/Shivang Srivastava.jpeg';
+import ShivangiMehta from '../assets/Team of IITians/Shivangi Mehta.jpg';
+import AmanMeena from '../assets/Team of IITians/Aman Meena.jpg';
+import SushantBaranawal from '../assets/Team of IITians/Sushant Baranawal.png';
+import VermanKumar from '../assets/Team of IITians/Verman Kumar.png';
+import RahulKumar from '../assets/Team of IITians/Rahul Kumar.jpg';
+import ShekharKumar from '../assets/Team of IITians/Shekhar Kumar.jpg';
+import HemalParmar from '../assets/Team of IITians/Hemal Parmar.jpg';
+import ChandanKumar from '../assets/Team of IITians/Chandan Kumar.jpg';
+import ShankarPal from '../assets/Team of IITians/Shankar Pal.jpeg';
+import AbhaJaiswal from '../assets/Team of IITians/Abha Jaiswal.jpeg';
+import VadithyaVishalNayak from '../assets/Team of IITians/Vadithya Vishal Nayak.jpg';
+import NamanKumarSahu from '../assets/Team of IITians/Naman Kumar Sahu.jpg';
+import AnkitSingh from '../assets/Team of IITians/Ankit Singh.jpeg';
+import RaviBhushanPratap from '../assets/Team of IITians/Ravi Bhushan Pratap.jpg';
+
 // Import Logos
 import IITKharagpurLogo from '../assets/IITLogo/IITKharagpurLogo.png';
 import IITGuwahatiLogo from '../assets/IITLogo/IITGuwahatiLogo.png';
@@ -43,6 +74,8 @@ import IITDhanbadLogo from '../assets/IITLogo/IITDhanbadLogo.png';
 import IITRoorkeeLogo from '../assets/IITLogo/IITRoorkeeLogo.png';
 import IITBombayLogo from '../assets/IITLogo/IITBombayLogo.png';
 import NITWarangalLogo from '../assets/IITLogo/NITWarangalLogo.png';
+import IITBHULogo from '../assets/IITLogo/IITBHULogo.png';
+import IITKanpurLogo from '../assets/IITLogo/IITKanpurLogo.png';
 
 const teamMembers = [
     { name: "Anchit Sir", role: "Professor & SDE", alumni: "IIT Kharagpur", image: AnchitSir, logo: IITKharagpurLogo, linkedin: "https://www.linkedin.com/in/anchit-ranjan-046578163/" },
@@ -72,6 +105,37 @@ const teamMembers = [
     { name: "Jithendra Sir", role: "Professor & SDE", alumni: "IIT Kharagpur", image: JithendraSir, logo: IITKharagpurLogo, linkedin: "https://www.linkedin.com/in/guguloth-jithender-2730a2245/" },
     { name: "Ajay Sir", role: "Professor & SDE", alumni: "IIT Roorkee", image: AjaySir, logo: IITRoorkeeLogo, linkedin: "https://www.linkedin.com/in/ajay-bagul-2a9340202/" },
     { name: "Kanchan Ma'am", role: "Professor & SDE", alumni: "IIT Kharagpur", image: KanchanMaam, logo: IITKharagpurLogo, linkedin: "https://www.linkedin.com/in/kanchan-verma-85935115b" },
+
+    // New Members
+    { name: "Himanshu Verma", role: "Professor & SDE", alumni: "NIT Warangal", image: HimanshuVerma, logo: NITWarangalLogo },
+    { name: "Nalla Karunakar Rao", role: "Professor & SDE", alumni: "IIT Kharagpur", image: NallaKarunakarRao, logo: IITKharagpurLogo },
+    { name: "Aditya Kr Gautam", role: "Professor & SDE", alumni: "IIT BHU Varanasi", image: AdityaKrGautam, logo: IITBHULogo },
+    { name: "Amit Singh Patel", role: "Professor & SDE", alumni: "IIT Guwahati", image: AmitSinghPatel, logo: IITGuwahatiLogo },
+    { name: "Maneesh Patel", role: "Professor & SDE", alumni: "IIT (BHU) Varanasi", image: ManeeshPatel, logo: IITBHULogo },
+    { name: "Vivek Haldkar", role: "Professor & SDE", alumni: "IIT Kharagpur", image: VivekHaldkar, logo: IITKharagpurLogo },
+    { name: "Avikal Shrivastava", role: "Professor & SDE", alumni: "IIT Kharagpur", image: AvikalShrivastava, logo: IITKharagpurLogo },
+    { name: "Mriganka Shekhar Barman", role: "Professor & SDE", alumni: "IIT Kanpur", image: MrigankaShekharBarman, logo: IITKanpurLogo },
+    { name: "Sumit Maity", role: "Professor & SDE", alumni: "IIT Kharagpur", image: SumitMaity, logo: IITKharagpurLogo },
+    { name: "Vinaypratap Salve", role: "Professor & SDE", alumni: "IIT Kharagpur", image: VinaypratapSalve, logo: IITKharagpurLogo },
+    { name: "Pranjul Sahu", role: "Professor & SDE", alumni: "IIT Guwahati", image: PranjulSahu, logo: IITGuwahatiLogo },
+    { name: "Deepesh Kumar Verma", role: "Professor & SDE", alumni: "IIT BHU", image: DeepeshKumarVerma, logo: IITBHULogo },
+    { name: "Kandula Revanth", role: "Professor & SDE", alumni: "IIT Kharagpur", image: KandulaRevanth, logo: IITKharagpurLogo },
+    { name: "Pronay Dey", role: "Professor & SDE", alumni: "IIT Guwahati", image: PronayDey, logo: IITGuwahatiLogo },
+    { name: "Shivang Srivastava", role: "Professor & SDE", alumni: "IIT Guwahati", image: ShivangSrivastava, logo: IITGuwahatiLogo },
+    { name: "Shivangi Mehta", role: "Professor & SDE", alumni: "Unknown", image: ShivangiMehta, logo: IITKharagpurLogo },
+    { name: "Aman Meena", role: "Professor & SDE", alumni: "IIT Kharagpur", image: AmanMeena, logo: IITKharagpurLogo },
+    { name: "Sushant Baranawal", role: "Professor & SDE", alumni: "IIT BHU", image: SushantBaranawal, logo: IITBHULogo },
+    { name: "Verman Kumar", role: "Professor & SDE", alumni: "IIT BHU Varanasi", image: VermanKumar, logo: IITBHULogo },
+    { name: "Rahul Kumar", role: "Professor & SDE", alumni: "IIT Guwahati", image: RahulKumar, logo: IITGuwahatiLogo },
+    { name: "Shekhar Kumar", role: "Professor & SDE", alumni: "IIT Kharagpur", image: ShekharKumar, logo: IITKharagpurLogo },
+    { name: "Hemal Parmar", role: "Professor & SDE", alumni: "IIT Kanpur", image: HemalParmar, logo: IITKanpurLogo },
+    { name: "Chandan Kumar", role: "Professor & SDE", alumni: "IIT Delhi", image: ChandanKumar, logo: IITKharagpurLogo },
+    { name: "Shankar Pal", role: "Professor & SDE", alumni: "IIT Kanpur", image: ShankarPal, logo: IITKanpurLogo },
+    { name: "Abha Jaiswal", role: "Professor & SDE", alumni: "IIT BHU Varanasi", image: AbhaJaiswal, logo: IITBHULogo },
+    { name: "Vadithya Vishal Nayak", role: "Professor & SDE", alumni: "IIT Kharagpur", image: VadithyaVishalNayak, logo: IITKharagpurLogo },
+    { name: "Naman Kumar Sahu", role: "Professor & SDE", alumni: "IIT Kharagpur", image: NamanKumarSahu, logo: IITKharagpurLogo },
+    { name: "Ankit Singh", role: "Professor & SDE", alumni: "Unknown", image: AnkitSingh, logo: IITKharagpurLogo },
+    { name: "Ravi Bhushan Pratap", role: "Professor & SDE", alumni: "IIT Guwahati", image: RaviBhushanPratap, logo: IITGuwahatiLogo },
 ];
 
 const OurTeam: React.FC = () => {
@@ -102,10 +166,7 @@ const OurTeam: React.FC = () => {
                 {/* Team Grid */}
                 <div className="flex flex-wrap justify-center gap-8">
                     {teamMembers.map((member, index) => (
-                        <motion.a
-                            href={member.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <motion.div
                             key={index}
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={index < 8 ? { opacity: 1, scale: 1 } : undefined}
@@ -121,10 +182,6 @@ const OurTeam: React.FC = () => {
                                     alt={member.name}
                                     className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110"
                                 />
-                                {/* LinkedIn Icon (Always Visible) */}
-                                <div className="absolute top-3 right-3 p-1.5 bg-white/10 backdrop-blur-md rounded-lg text-white hover:bg-[#0077b5] transition-colors z-10">
-                                    <Linkedin size={18} />
-                                </div>
                             </div>
 
                             {/* Info */}
@@ -146,7 +203,7 @@ const OurTeam: React.FC = () => {
                                     </div>
                                 </div>
                             </div>
-                        </motion.a>
+                        </motion.div>
                     ))}
                 </div>
             </div>

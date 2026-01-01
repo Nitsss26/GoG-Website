@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import GreenEmbers from '../components/ui/GreenEmbers';
+import PageSEO from '../components/PageSEO';
 
 // Import existing images
 import EduMinAssam from '../assets/OurSocialImpact/EduMinAssam.jpg';

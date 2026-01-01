@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Activity, Network, Box, Shield, Code2, Users, Trophy, ArrowRight, Zap, Globe } from 'lucide-react';
 import ParticleBackground from '../components/ui/ParticleBackground';
@@ -15,6 +15,180 @@ import IndianStudent3 from '../assets/IndianStudent3.png';
 import IndianStudent4 from '../assets/IndianStudent4.png';
 import IndianStudent5 from '../assets/IndianStudent5.png';
 import { h1 } from 'framer-motion/client';
+
+const HackathonTimeline = React.memo(() => {
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const isDraggingRef = useRef(false);
+    const [scrollProgress, setScrollProgress] = useState(0);
+
+    const handleScroll = () => {
+        if (!isDraggingRef.current && scrollContainerRef.current) {
+            const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+            const scrollableWidth = scrollWidth - clientWidth;
+            if (scrollableWidth > 0) {
+                const progress = (scrollLeft / scrollableWidth) * 100;
+                setScrollProgress(progress);
+            }
+        }
+    };
+
+    const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = parseFloat(e.target.value);
+        setScrollProgress(value);
+        if (scrollContainerRef.current) {
+            const { scrollWidth, clientWidth } = scrollContainerRef.current;
+            const scrollableWidth = scrollWidth - clientWidth;
+            scrollContainerRef.current.scrollLeft = (value / 100) * scrollableWidth;
+        }
+    };
+
+    return (
+        <div className="mt-16 mb-16 relative">
+            <h3 className="text-2xl font-bold text-white text-center mb-12">
+                <span className="text-[#D73252]">24-Hour</span> Hackathon Timeline
+            </h3>
+
+            {/* Custom Style for Scrollbar & Slider */}
+            <style>{`
+                .scrollbar-hide::-webkit-scrollbar {
+                    display: none;
+                }
+                .scrollbar-hide {
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                }
+                /* Custom Range Slider Styling */
+                .agoric-slider {
+                    -webkit-appearance: none;
+                    width: 100%;
+                    height: 6px;
+                    border-radius: 5px;
+                    background: rgba(255, 255, 255, 0.1);
+                    outline: none;
+                    transition: background 0.3s;
+                }
+                .agoric-slider::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: #D73252;
+                    border: 4px solid #000;
+                    cursor: pointer;
+                    box-shadow: 0 0 20px rgba(215, 50, 82, 0.6);
+                    transition: transform 0.2s, box-shadow 0.2s;
+                    margin-top: -18px; /* Centers thumb on track */
+                }
+                .agoric-slider::-webkit-slider-thumb:hover {
+                    transform: scale(1.1);
+                    box-shadow: 0 0 30px rgba(215, 50, 82, 0.8), 0 0 10px rgba(255, 255, 255, 0.5);
+                }
+                .agoric-slider::-moz-range-thumb {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: #D73252;
+                    border: 4px solid #000;
+                    cursor: pointer;
+                    box-shadow: 0 0 20px rgba(215, 50, 82, 0.6);
+                    transition: transform 0.2s, box-shadow 0.2s;
+                }
+                .agoric-slider::-moz-range-track {
+                    width: 100%;
+                    height: 6px;
+                    cursor: pointer;
+                    background: rgba(255, 255, 255, 0.1);
+                    border-radius: 5px;
+                }
+            `}</style>
+
+            {/* Horizontal Timeline Container */}
+            <div
+                ref={scrollContainerRef}
+                onScroll={handleScroll}
+                className="relative overflow-x-auto pb-12 scrollbar-hide cursor-grab active:cursor-grabbing"
+            >
+                <div className="relative flex gap-0 min-w-max px-4">
+                    {/* Main Timeline Line */}
+                    <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D73252] to-transparent transform -translate-y-1/2 z-0 opacity-50" />
+
+                    {[
+                        { time: "9:00 AM", title: "Registration & Check-in", desc: "Attendees check in and settle in", isTop: true },
+                        { time: "10:00 AM", title: "Opening Ceremony", desc: "Welcome speech, announcements and guidelines", isTop: false },
+                        { time: "11:00 AM - 01:00 PM", title: "Hackathon Begins", desc: "Theoretical Session", isTop: true },
+                        { time: "01:00 PM - 02:00 PM", title: "Lunch Break", desc: "Refuel and network", isTop: false },
+                        { time: "02:00 PM - 05:30 PM", title: "Technical Workshop", desc: "Hands-on building session", isTop: true },
+                        { time: "5:30 PM", title: "Snacks Break", desc: "Quick refreshment", isTop: false },
+                        { time: "8:00 PM", title: "1st Mentoring Round", desc: "Idea submission on Google form", isTop: true },
+                        { time: "9:30 PM", title: "Dinner Break", desc: "Evening meal", isTop: false },
+                        { time: "12:00 AM", title: "2nd Mentoring Round", desc: "Late night guidance", isTop: true },
+                        { time: "1:00 AM", title: "Fun Activities", desc: "Games and munching", isTop: false },
+                        { time: "9:00 AM", title: "Breakfast", desc: "Morning fuel", isTop: true },
+                        { time: "10:00 AM", title: "Submission", desc: "Final project submission", isTop: false },
+                        { time: "10:30 AM", title: "Judging", desc: "Project evaluation", isTop: true },
+                        { time: "1:00 PM", title: "Closing & Results", desc: "Winners announcement", isTop: false },
+                    ].map((item, i) => (
+                        <div key={i} className="relative flex flex-col items-center w-56 flex-shrink-0 group">
+                            {/* Top Card */}
+                            {item.isTop && (
+                                <div className="mb-6 bg-[#1A0A0A]/80 backdrop-blur-sm border border-white/5 rounded-2xl p-6 w-52 min-h-[140px] text-center hover:border-[#D73252] hover:bg-[#D73252]/10 hover:shadow-[0_0_30px_rgba(215,50,82,0.15)] transition-all duration-300 flex flex-col justify-center transform group-hover:-translate-y-2">
+                                    <p className="text-xs font-mono text-[#D73252] mb-2 tracking-widest">{item.time}</p>
+                                    <h4 className="text-base font-bold text-white mb-2 leading-tight">{item.title}</h4>
+                                    <p className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors leading-relaxed">{item.desc}</p>
+                                </div>
+                            )}
+
+                            {/* Timeline Node */}
+                            <div className="relative z-10 w-6 h-6 bg-[#0F0505] rounded-full border-2 border-[#D73252] shadow-[0_0_15px_rgba(215,50,82,0.8)] my-2 group-hover:scale-125 group-hover:bg-[#D73252] transition-all duration-300">
+                                <div className="absolute inset-0 rounded-full bg-[#D73252] opacity-0 group-hover:animate-ping" />
+                            </div>
+
+                            {/* Bottom Card */}
+                            {!item.isTop && (
+                                <div className="mt-6 bg-[#1A0A0A]/80 backdrop-blur-sm border border-white/5 rounded-2xl p-6 w-52 min-h-[140px] text-center hover:border-[#D73252] hover:bg-[#D73252]/10 hover:shadow-[0_0_30px_rgba(215,50,82,0.15)] transition-all duration-300 flex flex-col justify-center transform group-hover:translate-y-2">
+                                    <p className="text-xs font-mono text-[#D73252] mb-2 tracking-widest">{item.time}</p>
+                                    <h4 className="text-base font-bold text-white mb-2 leading-tight">{item.title}</h4>
+                                    <p className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors leading-relaxed">{item.desc}</p>
+                                </div>
+                            )}
+
+                            {/* Placeholder to maintain height */}
+                            {item.isTop && <div className="h-[140px]" />}
+                            {!item.isTop && <div className="h-[140px] order-first" />}
+
+                            {/* Connecting Line to Node */}
+                            <div className={`absolute left-1/2 w-[1px] bg-gradient-to-b from-[#D73252]/50 to-transparent h-6 -z-10 ${item.isTop ? 'bottom-[50%] translate-y-4' : 'top-[50%] -translate-y-4 rotate-180'}`} />
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Modern Custom Slider Control */}
+            <div className="max-w-2xl mx-auto px-6 mt-4 md:mt-8">
+                <div className="relative flex items-center justify-center">
+                    {/* Decorative Glow behind slider */}
+                    <div className="absolute w-full h-1 bg-[#D73252] blur-md opacity-20" />
+
+                    <input
+                        type="range"
+                        min="0"
+                        max="100"
+                        step="0.1"
+                        value={scrollProgress}
+                        onPointerDown={() => { isDraggingRef.current = true; }}
+                        onPointerUp={() => { isDraggingRef.current = false; }}
+                        onChange={handleSliderChange}
+                        className="agoric-slider"
+                    />
+                </div>
+                <div className="text-center mt-3 text-xs text-gray-500 font-mono tracking-widest uppercase opacity-60">
+                    Drag to Explore Timeline
+                </div>
+            </div>
+        </div>
+    );
+});
 
 const Agoric: React.FC = () => {
     return (
@@ -242,63 +416,7 @@ const Agoric: React.FC = () => {
                     </div>
 
                     {/* Hackathon Timeline */}
-                    <div className="mt-16 mb-16">
-                        <h3 className="text-2xl font-bold text-white text-center mb-8">
-                            <span className="text-[#D73252]">24-Hour</span> Hackathon Timeline
-                        </h3>
-
-                        {/* Horizontal Timeline */}
-                        <div className="relative overflow-x-auto pb-8">
-                            <div className="relative flex gap-0 min-w-max px-4">
-                                {/* Main Timeline Line - inside flex container to match content width */}
-                                <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#D73252] via-[#FF6B6B] to-[#D73252] transform -translate-y-1/2 z-0" />
-
-                                {[
-                                    { time: "9:00 AM", title: "Registration & Check-in", desc: "Attendees check in and settle in", isTop: true },
-                                    { time: "10:00 AM", title: "Opening Ceremony", desc: "Welcome speech, announcements and guidelines", isTop: false },
-                                    { time: "11:00 AM - 01:00 PM", title: "Hackathon Begins", desc: "Theoretical Session", isTop: true },
-                                    { time: "01:00 PM - 02:00 PM", title: "Lunch Break", desc: "Refuel and network", isTop: false },
-                                    { time: "02:00 PM - 05:30 PM", title: "Technical Workshop", desc: "Hands-on building session", isTop: true },
-                                    { time: "5:30 PM", title: "Snacks Break", desc: "Quick refreshment", isTop: false },
-                                    { time: "8:00 PM", title: "1st Mentoring Round", desc: "Idea submission on Google form", isTop: true },
-                                    { time: "9:30 PM", title: "Dinner Break", desc: "Evening meal", isTop: false },
-                                    { time: "12:00 AM", title: "2nd Mentoring Round", desc: "Late night guidance", isTop: true },
-                                    { time: "1:00 AM", title: "Fun Activities", desc: "Games and munching", isTop: false },
-                                    { time: "9:00 AM", title: "Breakfast", desc: "Morning fuel", isTop: true },
-                                    { time: "10:00 AM", title: "Submission", desc: "Final project submission", isTop: false },
-                                    { time: "10:30 AM", title: "Judging", desc: "Project evaluation", isTop: true },
-                                    { time: "1:00 PM", title: "Closing & Results", desc: "Winners announcement", isTop: false },
-                                ].map((item, i) => (
-                                    <div key={i} className="relative flex flex-col items-center w-44 flex-shrink-0">
-                                        {/* Top Card */}
-                                        {item.isTop && (
-                                            <div className="mb-4 bg-[#1A0A0A] border border-white/10 rounded-xl p-5 w-48 min-h-[120px] text-center hover:border-[#D73252]/50 hover:shadow-[0_0_20px_rgba(215,50,82,0.2)] transition-all duration-300 group flex flex-col justify-center">
-                                                <p className="text-xs font-mono text-[#D73252] mb-1">{item.time}</p>
-                                                <h4 className="text-sm font-bold text-white mb-1 leading-tight group-hover:text-[#D73252] transition-colors">{item.title}</h4>
-                                                <p className="text-xs text-gray-500 leading-tight">{item.desc}</p>
-                                            </div>
-                                        )}
-
-                                        {/* Timeline Node */}
-                                        <div className="relative z-10 w-4 h-4 bg-[#D73252] rounded-full border-4 border-[#0F0505] shadow-[0_0_15px_rgba(215,50,82,0.5)] my-2" />
-
-                                        {/* Bottom Card */}
-                                        {!item.isTop && (
-                                            <div className="mt-4 bg-[#1A0A0A] border border-white/10 rounded-xl p-5 w-48 min-h-[120px] text-center hover:border-[#D73252]/50 hover:shadow-[0_0_20px_rgba(215,50,82,0.2)] transition-all duration-300 group flex flex-col justify-center">
-                                                <p className="text-xs font-mono text-[#D73252] mb-1">{item.time}</p>
-                                                <h4 className="text-sm font-bold text-white mb-1 leading-tight group-hover:text-[#D73252] transition-colors">{item.title}</h4>
-                                                <p className="text-xs text-gray-500 leading-tight">{item.desc}</p>
-                                            </div>
-                                        )}
-
-                                        {/* Placeholder to maintain height */}
-                                        {item.isTop && <div className="h-[120px]" />}
-                                        {!item.isTop && <div className="h-[120px] order-first" />}
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
+                    <HackathonTimeline />
 
                     {/* Winners Podium Layout - FULL IMAGE CARDS */}
                     <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-16">

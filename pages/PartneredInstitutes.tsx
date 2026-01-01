@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GraduationCap, X, ChevronLeft, ChevronRight, Building2, Users, Award, Handshake, Eye } from 'lucide-react';
 import GreenEmbers from '../components/ui/GreenEmbers';
+import PageSEO from '../components/PageSEO';
 
 //College Mou Pics
 import AssamDowntownMou from "../assets/Mou_New_Pics/Assam_downtown_Mou_enhanced.webp";

@@ -220,7 +220,7 @@ const AboutGoG: React.FC = () => {
                 </div>
 
                 {/* --- Leadership Team --- */}
-                <div className="mb-20">
+                <div className="-mb-12">
                     <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
@@ -360,7 +360,7 @@ const AboutGoG: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="flex flex-col lg:flex-row gap-12 items-center"
+                            className="flex flex-col-reverse lg:flex-row gap-12 items-center"
                         >
                             <div className="lg:w-8/12 space-y-6">
                                 <div className="h-1 w-20 bg-gradient-to-r from-[#34D562] to-transparent rounded-full" />
@@ -390,7 +390,7 @@ const AboutGoG: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="flex flex-col lg:flex-row-reverse gap-12 items-center"
+                            className="flex flex-col-reverse lg:flex-row-reverse gap-12 items-center"
                         >
                             <div className="lg:w-8/12 space-y-6">
                                 <div className="h-1 w-20 bg-gradient-to-r from-[#34D562] to-transparent rounded-full" />
