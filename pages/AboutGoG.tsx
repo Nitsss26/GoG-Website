@@ -44,10 +44,10 @@ const AboutGoG: React.FC = () => {
         {
             image: FounderImg,
             name: "Mr. Chintan Vatsa Jha",
-            role: "Chief Executive Officer",
+            role: "Founder",
             quote: "Our Vision Is To Empower Learners Across India By Building A Future-Ready Ecosystem That Blends Ancient Wisdom With Modern Technology. At Geeks of Gurukul, We Believe In Equipping You With Real-World Skills, Industry Exposure, And Mentorship That Truly Makes A Difference.",
             highlight: "Keep Exploring, Keep Building, And Let's Redefine Education Together.",
-            badge: "CEO",
+            badge: "Founder",
             linkedin: "https://www.linkedin.com/in/chintan-vatsa-jha-0a7496a8/"
         },
         {

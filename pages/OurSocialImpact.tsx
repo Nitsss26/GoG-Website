@@ -69,7 +69,7 @@ const OurSocialImpact: React.FC = () => {
     const officials = [
         {
             image: CharanDasMahant,
-            name: "Charan Das Mahant",
+            name: "Dr. Charan Das Mahant",
             designation: "Former Lok Sabha Speaker, Government of Chhattisgarh | Former Cabinet Minister, Government of India"
         },
         {
@@ -84,7 +84,7 @@ const OurSocialImpact: React.FC = () => {
         },
         {
             image: AnilFirojiya,
-            name: "Anil Firojiya",
+            name: "Shri Anil Firojiya",
             designation: "Member of Parliament | Parliamentary Committee on Tourism and Culture, Government of India"
         },
         {
@@ -99,7 +99,7 @@ const OurSocialImpact: React.FC = () => {
         },
         {
             image: IAS_Anil_Kumar_Jha,
-            name: "IAS Anil Kumar Jha",
+            name: "IAS Mr. Anil Kumar Jha",
             designation: "Cane Commissioner, Government of India | Former Joint Secretary, Ministry of Agriculture"
         },
         {
@@ -109,7 +109,7 @@ const OurSocialImpact: React.FC = () => {
         },
         {
             image: IAS_Awanish,
-            name: "IAS Awanish Sharan",
+            name: "IAS Mr. Awanish Sharan",
             designation: "Chief Executive Officer, Skill Development Mission | Government of Chhattisgarh"
         }
     ];
