@@ -100,6 +100,10 @@ import BuSlidePic3 from "../assets/SlideShow_Third_Pic/BU.png";
 import SamSlidePic3 from "../assets/SlideShow_Third_Pic/SGU.png";
 import SIRTESlidePic3 from "../assets/SlideShow_Third_Pic/SIRT-E.png";
 
+import GYANVEER_LOGO from "./GYANVEER_LOGO.png"
+import GYANVEER_SLIDE from "./GYANVEER.jpg"
+import GYANVEERMou from "./GYANVEERMoU.jpeg"
+
 interface InstituteItem {
     images: {
         mou: string;
@@ -117,6 +121,7 @@ const rawItems: InstituteItem[] = [
     { images: { mou: MGUMou, campus: MGUSlidePic2, event: MguSlidePic3 }, logo: MGU, name: "Mahatma Gandhi University", category: "University", location: "Meghalaya" },
     { images: { mou: EICT_IITG_Mou, campus: IITGuwahatiSlidePic2, event: IitGuwahatiSlidePic3 }, logo: EICT_IITG, name: "E&ICT, IIT Guwahati", category: "IIT", location: "Guwahati, Assam" },
     { images: { mou: DYPatilMou, campus: DYPatilSlidePic2, event: DyPatilSlidePic3 }, logo: DY_Patil, name: "Dr. DY Patil COEI, Pune", category: "University", location: "Pune, Maharashtra" },
+    { images: { mou: GYANVEERMou, campus: GYANVEER_SLIDE, event: GYANVEER_LOGO }, logo: GYANVEER_LOGO, name: "Gyanveer University, Sagar", category: "University", location: "Sagar, MP" },
     { images: { mou: OrientalMou, campus: OrientalSlidePic2, event: OrientalSlidePic3 }, logo: OrientalLogo, name: "Oriental Group of Institutions", category: "Oriental", location: "Bhopal, MP" },
     { images: { mou: OrientalUniversityMou, campus: OrientalUniversitySlidePic2, event: OrientalSlidePic3 }, logo: OrientalLogo, name: "Oriental University, Indore", category: "Oriental", location: "Indore, MP" },
     { images: { mou: SGUMou, campus: SAMlidePic2, event: SamSlidePic3 }, logo: SGU, name: "SAM Global University", category: "University", location: "Bhopal, MP" },
