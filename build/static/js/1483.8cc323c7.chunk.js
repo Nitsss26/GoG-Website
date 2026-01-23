@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkschool_dashoboard=self.webpackChunkschool_dashoboard||[]).push([[1483],{91483:(o,s,e)=>{e.r(s),e.d(s,{default:()=>d});e(65043);var a=e(70579);const d=function(){return(0,a.jsx)("div",{children:"end of year"})}}}]);
+//# sourceMappingURL=1483.8cc323c7.chunk.js.map

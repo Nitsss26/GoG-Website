@@ -18,6 +18,7 @@ const OurSocialImpact = lazy(() => import('./pages/OurSocialImpact'));
 const OurTeam = lazy(() => import('./pages/OurTeam'));
 const AboutGoG = lazy(() => import('./pages/AboutGoG'));
 const PartneredInstitutes = lazy(() => import('./pages/PartneredInstitutes'));
+const Admissions = lazy(() => import('./pages/Admissions'));
 const ContactUs = lazy(() => import('./pages/ContactUs'));
 const FAQ = lazy(() => import('./pages/FAQ'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
@@ -64,6 +65,7 @@ const App: React.FC = () => {
             <Route path="/about-gog" element={<AboutGoG />} />
             <Route path="/partnered-colleges" element={<PartneredInstitutes />} />
             <Route path="/contact-us" element={<ContactUs />} />
+            <Route path="/admissions" element={<Admissions />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-conditions" element={<TermsAndConditions />} />

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkschool_dashoboard=self.webpackChunkschool_dashoboard||[]).push([[4539],{64539:(s,e,a)=>{a.r(e),a.d(e,{default:()=>o});a(65043);var t=a(91688),c=a(94778),n=a(70579);const o=function(){const{id:s}=(0,t.useParams)();return(0,n.jsx)("div",{children:s?(0,n.jsx)(c.A,{id:s}):(0,n.jsxs)("div",{className:"content__container text-center",children:["No Class Details yet"," "]})})}}}]);
+//# sourceMappingURL=4539.7cc4d492.chunk.js.map

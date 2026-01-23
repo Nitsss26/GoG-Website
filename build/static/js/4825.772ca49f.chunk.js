@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkschool_dashoboard=self.webpackChunkschool_dashoboard||[]).push([[4825],{4825:(o,s,e)=>{e.r(s),e.d(s,{default:()=>a});e(65043);var r=e(70579);const a=function(){return(0,r.jsx)("div",{children:"Store"})}}}]);
+//# sourceMappingURL=4825.772ca49f.chunk.js.map
