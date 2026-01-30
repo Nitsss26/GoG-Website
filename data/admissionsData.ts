@@ -37,10 +37,10 @@ export const courseInfo = {
 
 // --- UNIVERSITY VISION & MISSION ---
 export const universityAbout = {
-    vision: `A globally accredited human resource center of excellence catalyzing “sustainable livelihoods” in the “less developed markets across the globe”.`,
-    vision2025: `100,000 to be skilled annually. To be achieved through institutional approach to skill development, excellence in pedagogy, and innovation in delivery.`,
+    vision: `A globally accredited skilled university catalyzing sustainable livelihoods and economic empowerment in emerging technologies worldwide.`,
+    vision2025: `Empowering 100,000 lives annually through an institutionalized approach to skill development, pedagogical excellence, and innovative delivery models.`,
     mission: `Provision of quality, globally accredited academic programmes in technology and management. Provision of globally accredited employability training for less endowed segments of the population. Promotion of entrepreneurial culture and enterprise in the target areas.`,
-    history: `Centurion University of Technology and Management (CUTM) is a pioneer in skill-integrated higher education. Recognized by UNESCO and awarded NAAC 'A' Grade, the Vizianagaram campus is designed to foster innovation in AI, Robotics, and IoT.`
+    history: `Centurion University of Technology and Management (CUTM) is a pioneer in skill-integrated higher education. Recognized by UNESCO and awarded NAAC 'A+' Grade, the Vizianagaram campus is designed to foster innovation in AI, Robotics, and IoT.`
 };
 
 // --- HERO STATS ---
@@ -48,7 +48,7 @@ export const heroStats = [
     { value: "36 LPA", label: "Highest Package" },
     { value: "100%", label: "Placement Support" },
     { value: "240K+", label: "Students Enrolled" },
-    { value: "NAAC 'A'", label: "Accredited University" }
+    { value: "NAAC 'A+'", label: "Accredited University" }
 ];
 
 // --- RANKINGS & AWARDS ---
@@ -57,26 +57,26 @@ export const rankings = [
         title: "World University Rankings 2026",
         rank: "98th",
         context: "in India",
-        source: "Times Higher Education",
+        source: "Times Higher Education Rankings 2026",
         icon: Globe
     },
     {
         title: "Interdisciplinary Science",
         rank: "48th",
         context: "in India",
-        source: "THE Rankings 2025",
+        source: "Times Higher Education Rankings 2025",
         icon: Microscope
     },
     {
         title: "Global Impact",
         rank: "1501+",
         context: "Worldwide",
-        source: "THE World Rankings",
+        source: "Times Higher Education World Rankings 2026",
         icon: Globe
     },
     {
         title: "Accreditation",
-        rank: "Grade 'A'",
+        rank: "Grade 'A+'",
         context: "NAAC",
         source: "Govt. of India",
         icon: Award
@@ -145,7 +145,10 @@ export const curriculum = [
             { title: "Engineering Mathematics I", code: "AM25B103" },
             { title: "Digital Logic Design", code: "AM25B104" }
         ],
-        labs: ["Python Basics for AI/ML", "C Programming Lab"]
+        labs: ["Python Basics for AI/ML", "C Programming Lab"],
+        activities: ["Freshers Party", "Ice Breaking Session", "Club Orientation"],
+        phase: "Admission Phase",
+        guidance: "Orientation & Goal Setting"
     },
     {
         semester: "Semester 2",
@@ -156,7 +159,10 @@ export const curriculum = [
             { title: "Probability & Statistics", code: "AM25B203" },
             { title: "Computer Organization", code: "AM25B204" }
         ],
-        labs: ["Matrix Ops in Python", "Advanced Python Lab"]
+        labs: ["Matrix Ops in Python", "Advanced Python Lab"],
+        activities: ["24-Hour Hackathon", "Coding Contest", "Gaming Night"],
+        phase: "Foundations",
+        guidance: "Mentorship Allocation"
     },
     {
         semester: "Semester 3",
@@ -167,7 +173,10 @@ export const curriculum = [
             { title: "Operating Systems", code: "AM25B303" },
             { title: "Exploratory Data Analysis", code: "AM25B304" }
         ],
-        labs: ["DSA Lab", "Data Cleaning Pipelines"]
+        labs: ["DSA Lab", "Data Cleaning Pipelines"],
+        activities: ["Industrial Visit to Vizag Steel Plant", "Tech Talk by Industry Experts"],
+        phase: "Practical Learning",
+        guidance: "Live Projects & Labs"
     },
     {
         semester: "Semester 4",
@@ -178,7 +187,10 @@ export const curriculum = [
             { title: "Software Engineering", code: "AM25B403" },
             { title: "Big Data Technologies", code: "AM25B404" }
         ],
-        labs: ["Regression/Classification Lab", "Neural Networks Lab"]
+        labs: ["Regression/Classification Lab", "Neural Networks Lab"],
+        activities: ["LIVE INDUSTRY INTERNSHIP (Paid)", "Project Showcase"],
+        phase: "Industry Exposure",
+        guidance: "Internship Guide & Prep"
     },
     {
         semester: "Semester 5",
@@ -188,7 +200,10 @@ export const curriculum = [
             { title: "Unsupervised Learning", code: "AM25B502" },
             { title: "Cloud Computing for AI", code: "AM25B503" }
         ],
-        labs: ["NLP with Transformers", "Clustering & Dim. Reduction"]
+        labs: ["NLP with Transformers", "Clustering & Dim. Reduction"],
+        activities: ["Robotics Workshop", "Annual Tech Fest", "AI Model Deployment"],
+        phase: "Specialization",
+        guidance: "Research Methodology"
     },
     {
         semester: "Semester 6",
@@ -198,7 +213,10 @@ export const curriculum = [
             { title: "Reinforcement Learning", code: "AM25B602" },
             { title: "AI Ethics & Governance", code: "AM25B603" }
         ],
-        labs: ["RL Agents Workshop", "Big Data Pipelines"]
+        labs: ["RL Agents Workshop", "Big Data Pipelines"],
+        activities: ["Research Paper Publication", "Patent Filing Support"],
+        phase: "Innovation",
+        guidance: "Patent & Paper Support"
     },
     {
         semester: "Semester 7",
@@ -207,7 +225,10 @@ export const curriculum = [
             { title: "Generative AI & LLMs", code: "AM25B701" },
             { title: "Edge AI & IoT", code: "AM25B702" }
         ],
-        labs: ["IoT Deployment", "Ethical AI Audit"]
+        labs: ["IoT Deployment", "Ethical AI Audit"],
+        activities: ["Startup Pitch Day", "Funding Round", "Incubation Support"],
+        phase: "Pre-Placement",
+        guidance: "Resume Building & Mock Interviews"
     },
     {
         semester: "Semester 8",
@@ -216,7 +237,10 @@ export const curriculum = [
             { title: "Industry Internship", code: "AM25B801" },
             { title: "Major Capstone Project II", code: "AM25B802" }
         ],
-        labs: ["GenAI Model Fine-tuning", "Final Project"]
+        labs: ["GenAI Model Fine-tuning", "Final Project"],
+        activities: ["CAMPUS PLACEMENTS", "Farewell Party", "Alumni Connect"],
+        phase: "Career Launch",
+        guidance: "Final Placement Drive"
     }
 ];
 
@@ -226,7 +250,7 @@ export const comparisonData = [
     { feature: "Practical Labs", gog: "40% Time in Labs + Live Projects", others: "Mostly Theory" },
     { feature: "Faculty", gog: "IIT Alumni & Industry Experts", others: "Academic Only" },
     { feature: "Placements", gog: "100% Support till Placed", others: "Limited Support" },
-    { feature: "Certifications", gog: "Degree + Industry Certs (AWS/Google)", others: "Degree Only" },
+    { feature: "Certifications", gog: "Degree + Industry Certifications (AWS/Google)", others: "Degree Only" },
     { feature: "Campus Immersion", gog: "Product Labs & Hackathons", others: "Standard Classes" }
 ];
 
@@ -267,16 +291,16 @@ export const placementStats = {
 
 // --- AMENITIES ---
 export const amenities = [
-    { icon: Home, name: "Hostels", desc: "Separate AC/Non-AC hostels (3/4 sharing)" },
-    { icon: Coffee, name: "Cafeteria & Market", desc: "Subsidized healthy food & daily needs" },
-    { icon: Dumbbell, name: "Gymnasiums", desc: "Indoor & open-air fitness centers" },
-    { icon: Activity, name: "Sports Complex", desc: "Cricket, Volleyball, Tennis, Basketball" },
-    { icon: Stethoscope, name: "Medical Centre", desc: "Health center with doctors on campus" },
-    { icon: Wifi, name: "IT Infrastructure", desc: "High-speed Wi-Fi across campus" },
-    { icon: Bus, name: "Transport", desc: "Bus services for students & staff" },
-    { icon: Landmark, name: "Banks/ATMs", desc: "On-campus banking facilities" },
-    { icon: Building, name: "Auditorium", desc: "For events, festivals & presentations" },
-    { icon: BookOpen, name: "Library", desc: "Well-stocked with journals & magazines" }
+    { icon: Home, name: "Hostels", desc: "Separate AC/Non-AC hostels (3/4 sharing)", image: "/assets/CenturionUniversity/Hostels.JPG" },
+    { icon: Coffee, name: "Cafeteria & Market", desc: "Subsidized healthy food & daily needs", image: "/assets/CenturionUniversity/Cafeteria.jpg" },
+    { icon: Dumbbell, name: "Gymnasiums", desc: "Indoor & open-air fitness centers", image: "/assets/CenturionUniversity/Gymnasiums.jpg" },
+    { icon: Activity, name: "Sports Complex", desc: "Cricket, Volleyball, Tennis, Basketball", image: "/assets/CenturionUniversity/Sports Complex.jpg" },
+    { icon: Stethoscope, name: "Medical Centre", desc: "Health center with doctors on campus", image: "/assets/CenturionUniversity/Medical Center.JPG" },
+    { icon: Wifi, name: "IT Infrastructure", desc: "High-speed Wi-Fi across campus", image: "/assets/CenturionUniversity/IT Infrastructure.jpg" },
+    { icon: Bus, name: "Transport", desc: "Bus services for students & staff", image: "/assets/CenturionUniversity/Transport.JPG" },
+    { icon: Landmark, name: "Banks/ATMs", desc: "On-campus banking facilities", image: "/assets/CenturionUniversity/ATM&Bank.png" },
+    { icon: Building, name: "Auditorium", desc: "For events, festivals & presentations", image: "/assets/CenturionUniversity/Auditorium.png" },
+    { icon: BookOpen, name: "Library", desc: "Well-stocked with journals & magazines", image: "/assets/CenturionUniversity/Library.jpg" }
 ];
 
 // --- CLUBS ---
@@ -295,7 +319,7 @@ export const nearbyPlaces = [
         dist: "5 KM",
         type: "Heritage",
         desc: "Historic fort with Goddess Lakshmi & Lord Hanuman temples.",
-        img: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&q=80&w=800" // Reliable Fort Image
+        img: "https://th-i.thgim.com/public/incoming/kz9a9c/article68704249.ece/alternates/LANDSCAPE_1200/VSP05_Vizianagaram%20Fort%2015.JPG" // Reliable Fort Image
     },
     {
         name: "Punyagiri Temple",
@@ -309,31 +333,31 @@ export const nearbyPlaces = [
         dist: "15 KM",
         type: "Nature",
         desc: "Picturesque water body in the hills, great for photos.",
-        img: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&q=80&w=800" // Reliable Nature/Lake Image
+        img: "https://www.yovizag.com/wp-content/uploads/2016/09/thatipudi-reservoir.webp" // Reliable Nature/Lake Image
     },
     {
         name: "Bheemili Beach",
         dist: "45 KM",
         type: "Adventure",
         desc: "Scenic historic beach near Vizianagaram.",
-        img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800" // Beach
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT26RlJTPhANtXTnQ-woq_hMuzWCtVb5JgJdA&s" // Beach
     },
     {
         name: "Lambasingi",
         dist: "60 KM",
         type: "Nature",
         desc: "Kashmir of Andhra Pradesh with misty valleys.",
-        img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800" // Misty Valley
+        img: "https://assets.shortpedia.com/uploads/2021/04/06/1617706907.jpg" // Misty Valley
     }
 ];
 
 // --- MEDIA ---
 export const mediaLinks = [
-    { title: "Drone Mfg Unit Inauguration", source: "The Hindu", date: "Jan 2025", link: "#", desc: "Union Minister inaugurates unit." },
-    { title: "Semiconductor Partnership", source: "The Hindu", date: "June 2025", link: "#", desc: "Partnership with Marquee Semiconductors." },
-    { title: "Chip Mfg Initiative", source: "The Hindu", date: "Aug 2025", link: "#", desc: "Plans for chip manufacturing unit." },
-    { title: "Highest Package 16 LPA", source: "Collegedunia", date: "Sept 2025", link: "#", desc: "2025 Placement Report highlights." },
-    { title: "Healthcare Education", source: "The Hindu", date: "July 2025", link: "#", desc: "Chancellor emphasizes upskilling." }
+    { title: "Drone Mfg Unit Inauguration", source: "The Hindu", date: "Jan 2025", link: "https://www.thehindu.com/news/national/andhra-pradesh/union-civil-aviation-minister-opens-drone-manufacturing-unit-at-cutm-in-vizianagaram/article69088888.ece", desc: "Union Minister inaugurates unit." },
+    { title: "Semiconductor Partnership", source: "The Hindu", date: "June 2025", link: "https://www.thehindu.com/news/national/andhra-pradesh/cutm-partners-with-marquee-semiconductors-to-improve-semiconductor-curriculum/article69740327.ece", desc: "Partnership with Marquee Semiconductors." },
+    { title: "Chip Mfg Initiative", source: "The Hindu", date: "Aug 2025", link: "https://www.thehindu.com/news/national/union-minister-ashwini-vaishnaw-briefing-after-cabinet-decisions-on-august-12-2025/article69923650.ece", desc: "Plans for chip manufacturing unit." },
+    { title: "Highest Package 16 LPA", source: "Collegedunia", date: "Sept 2025", link: "https://collegedunia.com/news/cutm-placement-report-2025-alertid-138733", desc: "2025 Placement Report highlights." },
+    { title: "Healthcare Education", source: "The Hindu", date: "July 2025", link: "https://www.thehindu.com/news/national/andhra-pradesh/healthcare-staff-must-upskill-cutm-chancellor/article69850295.ece", desc: "Chancellor emphasizes upskilling." }
 ];
 
 // --- FAQ ---
@@ -360,7 +384,7 @@ export const faqs = [
     },
     {
         q: "Is the degree recognized?",
-        a: "Absolutely. It is a UGC-recognized B.Tech degree from Centurion University (NAAC 'A')."
+        a: "Absolutely. It is a UGC-recognized B.Tech degree from Centurion University (NAAC 'A+')."
     }
 ];
 
@@ -387,40 +411,43 @@ export const testimonials = [
 // --- NEW DATA WITH VALIDATED IMAGES ---
 
 export const studentVlogs = [
-    { id: 1, title: "A Day in Life at GOG", thumbnail: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&q=80&w=800", views: "12K", duration: "4:20" },
-    { id: 2, title: "Hackathon Highlights 2024", thumbnail: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800", views: "8.5K", duration: "3:10" },
-    { id: 3, title: "Hostel & Food Tour", thumbnail: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&q=80&w=800", views: "15K", duration: "5:45" },
-    { id: 4, title: "My Internship at Amazon", thumbnail: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800", views: "22K", duration: "6:00" },
+    { id: 1, title: "Success Story from BGI Institute", thumbnail: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&q=80&w=800", views: "12K", duration: "0:20", video: "/assets/CenturionUniversity/Geeks of Gurukul __ Inspiring Testimonials from BGI Institute Students 2!.mp4" },
+    { id: 2, title: "Journey from SIRT", thumbnail: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800", views: "22K", duration: "0:16", video: "/assets/CenturionUniversity/Geeks of Gurukul __ Inspiring Testimonials from SIRT Students 3!.mp4" },
+    { id: 3, title: "Student Feedback - SAM Group", thumbnail: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&q=80&w=800", views: "15K", duration: "0:11", video: "/assets/CenturionUniversity/Geeks of Gurukul __ Inspiring Testimonials from SAM Group Students 3!.mp4" },
+    { id: 4, title: "Experience at BGI Institute", thumbnail: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800", views: "8.5K", duration: "0:25", video: "/assets/CenturionUniversity/Geeks of Gurukul __ Inspiring Testimonials from SAM Group Students 2!.mp4" },
 ];
 
 export const alumniSuccess = [
-    { name: "Rahul Sharma", company: "Google", role: "SDE II", package: "45 LPA", image: "/assets/Centurion/students/student-1.jpg", year: "2023" },
-    { name: "Priya Patel", company: "Microsoft", role: "Cloud Engineer", package: "42 LPA", image: "/assets/Centurion/students/student-2.jpg", year: "2023" },
-    { name: "Amit Kumar", company: "Amazon", role: "SDE I", package: "38 LPA", image: "/assets/Centurion/students/student-3.jpg", year: "2024" },
-    { name: "Varun Gupta", company: "Atlassian", role: "Product Manager", package: "36 LPA", image: "/assets/Centurion/students/student-4.jpg", year: "2022" },
+    { name: "Rahul Sharma", company: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg", role: "SDE II", package: "45 LPA", image: "/assets/Centurion/students/student-1.jpg", year: "2023", imgPos: "object-top" },
+    { name: "Priya Patel", company: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg", role: "Cloud Engineer", package: "42 LPA", image: "/assets/Centurion/students/student-2.jpg", year: "2023", imgPos: "object-top" },
+    { name: "Amit Kumar", company: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg", role: "SDE I", package: "38 LPA", image: "/assets/Centurion/students/student-3.jpg", year: "2024" },
+    { name: "Varun Gupta", company: "Infosys", logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg", role: "Product Manager", package: "36 LPA", image: "/assets/Centurion/students/student-4.jpg", year: "2022" },
 ];
 
 export const recruiterTestimonials = [
     {
-        name: "Anjali Singh",
-        role: "HR Director",
-        company: "Microsoft",
-        logo: "https://logo.clearbit.com/microsoft.com",
-        quote: "GoG graduates have an exceptional grasp of practical coding distinct from typical freshers. They are project-ready from Day 1."
+        name: "Sunny Garg",
+        role: "Co-Founder & CEO",
+        company: "Crib",
+        image: "https://images.yourstory.com/cs/images/undefined/SunnyGargFounderofYourShellsoldtoStanzaLiving-1639976349657.jpg",
+        logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX10FVuos4JXU1dzSr56qCdPJoBu8PIHK5Iw&s",
+        quote: "The developers from Geeks of Gurukul, trained by a team of IITians, were ready to tackle projects immediately. Their hands-on approach and deep understanding of trending technologies ensured they seamlessly integrated into our team."
     },
     {
-        name: "Vikram Malhotra",
-        role: "Talent Acquisition",
-        company: "Amazon",
-        logo: "https://logo.clearbit.com/amazon.com",
-        quote: "We've hired 15+ students from Gurukul this year. Their problem-solving skills in DSA and System Design are top-notch."
+        name: "Rishikesh Gupta",
+        role: "Founder",
+        company: "Hilfee",
+        image: "https://i.postimg.cc/gjfWFqZF/1000195739.jpg",
+        logo: "https://static-asset.inc42.com/logo/hilfee.png",
+        quote: "Geeks of Gurukul has delivered exceptional graduates who are of top-notch quality. Their ability to handle projects from day one reflects their rigorous training and deep knowledge of current technologies."
     },
     {
-        name: "David Chen",
-        role: "Engineering Lead",
-        company: "Google",
-        logo: "https://logo.clearbit.com/google.com",
-        quote: "The curriculum at GoG is perfectly aligned with what we look for. It's rare to find students who know standard dev practices so well."
+        name: "Ashok Kumar",
+        role: "Lead Data Scientist",
+        company: "Beem",
+        image: "https://i.postimg.cc/zvHsjbPH/1000195738.jpg",
+        logo: "https://mms.businesswire.com/media/20240201741058/en/2018083/5/Beem_App_Logo.jpg",
+        quote: "We hired a few developers from Geeks of Gurukul and have been pleasantly surprised by their performance. What truly stands out is their insatiable curiosity to tackle complex problems head-on."
     }
 ];
 
@@ -432,8 +459,45 @@ export const careerPathData = [
     { year: 5, role: "Placement", salary: "Goal", desc: "Launch Your Dream Career" }
 ];
 
+// --- NEW MARQUEE DATA ---
+export const internsSuccess = [
+    { name: "Alok Kumar Yadav", role: "AI Developer", image: "/assets/Images-Intern/AI Developer - Alok kumar Yadav.jpg" },
+    { name: "Harshal Harne", role: "Amazon Intern", image: "/assets/Images-Intern/Amazon Intern - harshal harne.JPG" },
+    { name: "Akshat Gupta", role: "Cyber Security", image: "/assets/Images-Intern/Cyber Security - Akshat Gupta.jpg" },
+    { name: "Md Afzal", role: "Data Analytics", image: "/assets/Images-Intern/Data Analytics - Md Afzal.jpg" },
+    { name: "Arun VK", role: "Data Science", image: "/assets/Images-Intern/Data Science - Arun VK.jpg" },
+    { name: "Arisha Pare", role: "Google Intern", image: "/assets/Images-Intern/Google Intern- Arisha Pare.jpg" },
+    { name: "Abhay Kumar", role: "Java Developer", image: "/assets/Images-Intern/Java Developer - Abhay Kumar.jpg" },
+    { name: "Babita Singh", role: "Java Developer", image: "/assets/Images-Intern/Java Developer - Babita Singh.jpg" },
+    { name: "Suman Singh", role: "Java Developer", image: "/assets/Images-Intern/Java Developer- Suman Singh.jpg" },
+    { name: "Pavan Kumar", role: "Python Developer", image: "/assets/Images-Intern/Python Developer - Pavan Kumar.jpg" },
+    { name: "Rizawan Ansari", role: "Python Developer", image: "/assets/Images-Intern/Python Developer- Rizawan Ansari.jpg" },
+    { name: "Aastha Jain", role: "Web Development", image: "/assets/Images-Intern/Web Developement- Aastha Jain.jpg" },
+    { name: "Devendra Nagar", role: "Web Developer", image: "/assets/Images-Intern/Web Developer - Devendra Nagar.png" },
+    { name: "Ranjan Kumar", role: "Web Developer", image: "/assets/Images-Intern/Web Developer - Ranjan kumar.jpg" },
+];
+
+export const placementsSuccess = [
+    { name: "Bhavna", role: "SDE-I", image: "/assets/Images-Placement/Bhavna.jpg" },
+    { name: "Bilal", role: "Python Developer", image: "/assets/Images-Placement/Bilal.jpg" },
+    { name: "Chetna Lade", role: ".NET Developer", image: "/assets/Images-Placement/Chetna Lade.jpg" },
+    { name: "Deepansh Patel", role: "React Developer", image: "/assets/Images-Placement/Deepansh Patel.jpg" },
+    { name: "Kanak Kishore", role: "Data Engineer", image: "/assets/Images-Placement/Kanak Kishore.jpg" },
+    { name: "Kartik", role: "Backend Developer", image: "/assets/Images-Placement/Kartik.jpg" },
+    { name: "Kaveri Galfat", role: "Full Stack Dev", image: "/assets/Images-Placement/Kaveri Galfat.jpg" },
+    { name: "Lakshna Tomar", role: "Java Developer", image: "/assets/Images-Placement/Lakshna Tomar.jpg" },
+    { name: "Prabhat Kumar", role: "DevOps Engineer", image: "/assets/Images-Placement/Prabhat Kumar.jpg" },
+    { name: "Priyambada", role: "Cloud Engineer", image: "/assets/Images-Placement/Priyambada.jpg" },
+    { name: "Shivam Sahu", role: "SDE-II", image: "/assets/Images-Placement/Shivam Sahu.jpg" },
+    { name: "Shivam Singh", role: "Frontend Dev", image: "/assets/Images-Placement/Shivam Singh.jpg" },
+    { name: "Shubham Pawar", role: "System Analyst", image: "/assets/Images-Placement/Shubham Pawar.jpg" },
+    { name: "Srajal Mishra", role: "AI Researcher", image: "/assets/Images-Placement/Srajal Mishra.jpg" },
+];
+
 export const blogUpdates = [
-    { title: "GoG Students Win Smart India Hackathon 2024 in Mumbai", category: "Achievement", date: "2 days ago", image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=400" },
-    { title: "Placement Report: Avg. Package hits 7.2 LPA", category: "Placements", date: "1 week ago", image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=400" },
-    { title: "New AI/ML Lab Inaugurated by IITian & Industry Experts", category: "Campus", date: "2 weeks ago", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400" }
+    { title: "Open Campus partners with MP Govt & Geeks of Gurukul", category: "Global Tech", date: "Jan 10, 2026", image: "/assets/Press/opencampus.png", link: "https://radarseluma.disway.id/life-style/read/704665/open-campus-partners-with-government-of-madhya-pradesh-and-geeks-of-gurukul-to-digitize-50-million-academic" },
+    { title: "15 Students from Scope University Get Stipend Internships at GoG", category: "Internships", date: "July 25, 2025", image: "/assets/Press/itdc.png", link: "https://itdcindia.com/tag/geeks-of-gurukul/" },
+    { title: "Oriental Group of Institutes and Geeks of Gurukul Host Madhya Pradesh's Inaugural Blockchain Hackathon", category: "Blockchain Event", date: "April 29, 2025", image: "/assets/Press/oriental-hackathon.png", link: "https://www.facebook.com/orientalgroupofinstitutes/posts/oriental-group-of-institutes-and-geeks-of-gurukul-host-madhya-pradeshs-inaugural/725465156481377/" },
+
+
 ];

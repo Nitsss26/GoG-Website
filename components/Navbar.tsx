@@ -1,21 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Menu, X, ChevronDown, Sparkles } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import { NAV_ITEMS } from '../constants';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [hidePrimaryNav, setHidePrimaryNav] = useState(false);
+  const location = useLocation();
+
+  // Check if on Admissions page where StickyNav exists
+  const isAdmissionsPage = location.pathname === '/admissions';
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      // Hide primary navbar when StickyNav would be visible (on Admissions page, after 600px scroll)
+      if (isAdmissionsPage && window.scrollY > 600) {
+        setHidePrimaryNav(true);
+      } else {
+        setHidePrimaryNav(false);
+      }
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isAdmissionsPage]);
 
   const handleDropdownEnter = (label: string) => {
     setActiveDropdown(label);
@@ -29,8 +41,8 @@ const Navbar: React.FC = () => {
     <>
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: "circOut" }}
+        animate={{ y: hidePrimaryNav ? -100 : 0, opacity: hidePrimaryNav ? 0 : 1 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
         className="fixed top-6 left-0 right-0 z-[1000] flex justify-center pointer-events-none"
       >
         <div className={`pointer-events-auto transition-all duration-500 ease-in-out ${isScrolled
@@ -101,9 +113,17 @@ const Navbar: React.FC = () => {
 
             {/* Desktop Buttons */}
             <div className="hidden lg:flex items-center gap-3">
-              <a href="https://chat.whatsapp.com/FMhZXhaKZrY96vbBGUEU6c" target="_blank" rel="noopener noreferrer" className="px-6 py-2.5 text-sm font-bold bg-[#34D562] text-black rounded-full hover:bg-[#28a74b] hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(52,213,98,0.4)]">
-                Join Community
-              </a>
+              <Link to="/admissions" className="relative group px-6 py-2.5 text-sm font-bold bg-[#34D562] text-black rounded-full hover:bg-[#28a74b] hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(52,213,98,0.4)] flex items-center gap-2 overflow-hidden">
+                <span className="relative z-10 flex items-center gap-2">
+                  <Sparkles size={16} className="animate-pulse text-yellow-700 fill-yellow-400" />
+                  Admissions Open
+                  <span className="flex h-2 w-2 relative">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-400"></span>
+                  </span>
+                </span>
+                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+              </Link>
             </div>
 
             {/* Mobile Toggle */}
@@ -153,17 +173,20 @@ const Navbar: React.FC = () => {
                   )}
                 </div>
               ))}
-              <motion.a
-                href="https://chat.whatsapp.com/FMhZXhaKZrY96vbBGUEU6c"
-                target="_blank"
-                rel="noopener noreferrer"
+              <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="mt-8 px-8 py-4 bg-[#34D562] text-black font-bold rounded-full text-xl"
+                className="w-full flex justify-center"
               >
-                Join Community
-              </motion.a>
+                <Link
+                  to="/admissions"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="mt-8 px-8 py-4 bg-[#34D562] text-black font-bold rounded-full text-xl flex items-center gap-2"
+                >
+                  <Sparkles size={24} className="animate-pulse text-yellow-700 fill-yellow-400" /> Admissions Open
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         )}

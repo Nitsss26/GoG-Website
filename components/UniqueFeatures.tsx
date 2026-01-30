@@ -7,43 +7,159 @@ import {
     studentVlogs, careerPathData, alumniSuccess, recruiterTestimonials, blogUpdates
 } from '../data/admissionsData';
 
-export const StudentVlogs = () => (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {studentVlogs.map((vlog) => (
-            <div key={vlog.id} className="relative aspect-video rounded-xl overflow-hidden group cursor-pointer border border-white/10 hover:border-[#34D562] transition-colors shadow-lg">
-                <img src={vlog.thumbnail} alt={vlog.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-[#34D562] flex items-center justify-center text-black shadow-lg transform group-hover:scale-110 transition-transform duration-300">
-                        <Play size={20} fill="currentColor" />
-                    </div>
-                </div>
-                <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 to-transparent">
-                    <p className="text-white font-bold text-sm leading-tight mb-1 line-clamp-2">{vlog.title}</p>
-                    <span className="text-xs text-gray-300 flex items-center gap-1">
-                        <MonitorPlay size={10} className="text-[#34D562]" /> {vlog.duration}
-                    </span>
-                </div>
-            </div>
-        ))}
-    </div>
-);
+// @ts-ignore
+export const StudentVlogs = () => {
+    const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
-export const VirtualTour = () => (
-    <div className="relative h-[400px] rounded-3xl overflow-hidden border border-white/10 group cursor-pointer shadow-2xl">
-        <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1600" alt="Campus 360" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-75 group-hover:brightness-50" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
-            <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(52,213,98,0.3)]">
-                <Globe size={40} className="text-[#34D562]" />
+    return (
+        <>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                {studentVlogs.map((vlog) => (
+                    <div
+                        key={vlog.id}
+                        onClick={() => setActiveVideo(vlog.video || null)}
+                        className="relative aspect-[9/16] rounded-2xl overflow-hidden group cursor-pointer border border-white/10 hover:border-[#34D562] hover:shadow-[0_0_40px_rgba(52,213,98,0.3)] transition-all duration-500 shadow-xl"
+                    >
+                        {/* Video Preview (First Frame / Hover Play) */}
+                        <video
+                            src={`${vlog.video}#t=1`}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            muted
+                            loop
+                            playsInline
+                            preload="metadata"
+                            onMouseEnter={(e) => e.currentTarget.play()}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.pause();
+                                e.currentTarget.currentTime = 1;
+                            }}
+                        />
+
+                        {/* Overlays */}
+                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors pointer-events-none" />
+                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div className="w-12 h-12 rounded-full bg-[#34D562] flex items-center justify-center text-black shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                                <Play size={20} fill="currentColor" />
+                            </div>
+                        </div>
+                        <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none">
+                            <p className="text-white font-bold text-sm leading-tight mb-1 line-clamp-2">{vlog.title}</p>
+                            <div className="flex items-center justify-between">
+                                <span className="text-xs text-gray-300 flex items-center gap-1">
+                                    <MonitorPlay size={10} className="text-[#34D562]" /> {vlog.duration}
+                                </span>
+                                <div className="h-0.5 w-0 group-hover:w-12 bg-[#34D562] transition-all duration-500 rounded-full" />
+                            </div>
+                        </div>
+                    </div>
+                ))}
             </div>
-            <h3 className="text-4xl font-bold text-white mb-2">Virtual Campus Tour</h3>
-            <p className="text-gray-300 max-w-md mx-auto mb-6">Experience our labs, hostels, and smart classrooms in 360° before you arrive.</p>
-            <button className="bg-[#34D562] text-black font-bold py-3 px-8 rounded-full hover:bg-white transition-colors flex items-center gap-2">
-                Start Exploring <ArrowRight size={18} />
-            </button>
-        </div>
-    </div>
-);
+
+            <AnimatePresence>
+                {activeVideo && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
+                        onClick={() => setActiveVideo(null)}
+                    >
+                        <motion.div
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.8, opacity: 0 }}
+                            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                            className="relative w-full max-w-sm aspect-[9/16] bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <button
+                                onClick={() => setActiveVideo(null)}
+                                className="absolute top-4 right-4 z-10 w-10 h-10 bg-black/60 hover:bg-[#34D562] text-white hover:text-black rounded-full flex items-center justify-center transition-all"
+                            >
+                                <X size={20} />
+                            </button>
+                            <video
+                                src={activeVideo}
+                                controls
+                                autoPlay
+                                className="w-full h-full object-contain"
+                            />
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </>
+    );
+};
+
+export const VirtualTour = () => {
+    const [isVideoOpen, setIsVideoOpen] = useState(false);
+
+    return (
+        <>
+            <div className="relative h-[400px] rounded-3xl overflow-hidden border border-white/10 group cursor-pointer shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1600" alt="Campus 360" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-75 group-hover:brightness-50" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+                    <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(52,213,98,0.3)]">
+                        <Globe size={40} className="text-[#34D562]" />
+                    </div>
+                    <h3 className="text-4xl font-bold text-white mb-2">Virtual Campus Tour</h3>
+                    <p className="text-gray-300 max-w-md mx-auto mb-6">Experience our labs, hostels, and smart classrooms in 360° before you arrive.</p>
+                    <button
+                        onClick={() => setIsVideoOpen(true)}
+                        className="bg-[#34D562] text-black font-bold py-3 px-8 rounded-full hover:bg-white transition-colors flex items-center gap-2"
+                    >
+                        Start Exploring <ArrowRight size={18} />
+                    </button>
+                </div>
+            </div>
+
+            {/* Video Modal */}
+            <AnimatePresence>
+                {isVideoOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+                        onClick={() => setIsVideoOpen(false)}
+                    >
+                        <motion.div
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.8, opacity: 0 }}
+                            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                            className="relative w-full max-w-4xl bg-[#111] rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            {/* Close Button */}
+                            <button
+                                onClick={() => setIsVideoOpen(false)}
+                                className="absolute top-4 right-4 z-10 w-10 h-10 bg-black/60 hover:bg-[#34D562] text-white hover:text-black rounded-full flex items-center justify-center transition-all"
+                            >
+                                <X size={20} />
+                            </button>
+                            {/* Video Embed */}
+                            <div className="aspect-video">
+                                <iframe
+                                    width="100%"
+                                    height="100%"
+                                    src="https://www.youtube.com/embed/fEqgl_ZU2_0?si=9Yc06bPTdhf_81M1&autoplay=1"
+                                    title="Campus Tour Video"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerPolicy="strict-origin-when-cross-origin"
+                                    allowFullScreen
+                                    className="w-full h-full"
+                                />
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </>
+    );
+};
 
 export const CareerVisualizer = () => (
     <div className="relative py-8 overflow-x-auto">
@@ -109,23 +225,34 @@ export const ScholarshipStats = () => {
 };
 
 export const AlumniNetwork = () => (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
         {alumniSuccess.map((alum, i) => (
-            <div key={i} className="bg-[#111] border border-white/10 p-5 rounded-2xl hover:border-[#34D562]/50 transition-all hover:bg-white/5 group">
-                <div className="flex items-center gap-4 mb-4">
-                    <img src={alum.image} alt={alum.name} className="w-16 h-16 rounded-xl border-2 border-[#34D562] object-cover" />
-                    <div className="min-w-0">
-                        <h4 className="text-white font-bold text-sm truncate">{alum.name}</h4>
-                        <p className="text-[#34D562] text-xs font-mono truncate">{alum.company}</p>
+            <div key={i} className="bg-[#111] border border-white/10 p-3 md:p-5 rounded-xl md:rounded-2xl hover:border-[#34D562]/50 transition-all hover:bg-white/5 group flex flex-col h-full">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-4 mb-3 md:mb-4 text-center md:text-left">
+                    <div className="relative shrink-0">
+                        <img
+                            src={alum.image}
+                            alt={alum.name}
+                            className={`w-12 h-12 md:w-20 md:h-20 rounded-lg md:rounded-xl border-2 border-[#34D562] object-cover ${alum.imgPos || 'object-center'}`}
+                        />
+                    </div>
+                    <div className="min-w-0 w-full">
+                        <h4 className="text-white font-bold text-xs md:text-lg truncate mb-1">{alum.name}</h4>
+                        {/* @ts-ignore */}
+                        {alum.logo && (
+                            <div className="h-6 md:h-8 flex items-center bg-white px-1.5 md:px-2 rounded md:rounded-md mx-auto md:mx-0 w-fit">
+                                <img src={alum.logo} alt={alum.company} className="h-4 md:h-6 object-contain" />
+                            </div>
+                        )}
                     </div>
                 </div>
-                <div className="space-y-2">
-                    <div className="bg-white/5 px-3 py-2 rounded flex justify-between items-center text-xs">
-                        <span className="text-gray-400">Role</span>
-                        <span className="text-white font-medium max-w-[100px] truncate block text-right">{alum.role}</span>
+                <div className="space-y-1.5 md:space-y-2 mt-auto">
+                    <div className="bg-white/5 px-2 py-1.5 md:px-3 md:py-2 rounded flex justify-between items-center text-[10px] md:text-xs">
+                        <span className="text-gray-400 hidden md:block">Role</span>
+                        <span className="text-white font-medium truncate block w-full text-center md:text-right">{alum.role}</span>
                     </div>
-                    <div className="bg-[#34D562]/10 px-3 py-2 rounded flex justify-between items-center text-xs border border-[#34D562]/20">
-                        <span className="text-gray-400">Package</span>
+                    <div className="bg-[#34D562]/10 px-2 py-1.5 md:px-3 md:py-2 rounded flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs border border-[#34D562]/20">
+                        <span className="text-gray-400 hidden md:block">Package</span>
                         <span className="text-[#34D562] font-bold">{alum.package}</span>
                     </div>
                 </div>
@@ -137,14 +264,31 @@ export const AlumniNetwork = () => (
 export const RecruiterTestimonials = () => (
     <div className="grid md:grid-cols-3 gap-6">
         {recruiterTestimonials.map((item, i) => (
-            <div key={i} className="bg-white p-8 rounded-2xl shadow-xl relative">
-                <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#34D562] rounded-full flex items-center justify-center text-black font-serif text-3xl font-bold">"</div>
-                <img src={item.logo} alt={item.company} className="h-8 mb-6 object-contain opacity-80" />
-                <p className="text-gray-600 mb-6 italic leading-relaxed">"{item.quote}"</p>
-                <div className="border-t border-gray-100 pt-4">
-                    <p className="font-bold text-black">{item.name}</p>
-                    <p className="text-sm text-gray-500">{item.role}</p>
-                </div>
+            <div key={i} className="bg-[#111] border border-white/10 p-8 rounded-2xl shadow-xl relative mt-8 hover:border-[#34D562]/50 transition-all duration-300 hover:bg-white/5 group">
+                <div className="absolute -top-6 -left-4 w-12 h-12 bg-[#34D562] rounded-full flex items-center justify-center text-black font-serif text-3xl font-bold shadow-lg shadow-[#34D562]/20">"</div>
+
+                {/* Profile Image or Company Logo */}
+                {/* @ts-ignore */}
+                {item.image ? (
+                    <div className="flex items-center gap-6 mb-8">
+                        <div className="relative">
+                            <div className="absolute inset-0 bg-[#34D562] rounded-full blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                            <img src={item.image} alt={item.name} className="w-24 h-24 rounded-full object-cover border-2 border-[#34D562] relative z-10" />
+                        </div>
+                        <div>
+                            <p className="font-bold text-white text-xl mb-1">{item.name}</p>
+                            <p className="text-sm text-gray-400 font-medium mb-2">{item.role}</p>
+                            {/* @ts-ignore */}
+                            {item.logo && (
+                                <img src={item.logo} alt={item.company} className="h-12 w-auto object-contain mt-3 rounded-md" />
+                            )}
+                        </div>
+                    </div>
+                ) : (
+                    <img src={item.logo} alt={item.company} className="h-12 w-auto object-contain mt-3 rounded-md" />
+                )}
+
+                <p className="text-gray-300 mb-2 italic leading-relaxed text-lg font-light">"{item.quote}"</p>
             </div>
         ))}
     </div>
@@ -153,20 +297,26 @@ export const RecruiterTestimonials = () => (
 export const BlogUpdates = () => (
     <div className="grid md:grid-cols-3 gap-8">
         {blogUpdates.map((post, i) => (
-            <div key={i} className="group cursor-pointer">
-                <div className="rounded-xl overflow-hidden mb-4 relative aspect-video">
+            <a
+                key={i}
+                href={(post as any).link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group cursor-pointer block"
+            >
+                <div className="rounded-xl overflow-hidden mb-4 relative aspect-video border border-white/5 group-hover:border-[#34D562]/30 transition-all">
                     <img src={post.image} alt={post.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                    <div className="absolute top-4 left-4 bg-[#34D562] text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                    <div className="absolute top-4 left-4 bg-[#34D562] text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
                         {post.category}
                     </div>
                 </div>
                 <div className="flex items-center gap-2 text-gray-500 text-xs mb-2">
-                    <Calendar size={12} /> {post.date}
+                    <Calendar size={12} className="text-[#34D562]" /> {post.date}
                 </div>
-                <h4 className="text-white font-bold text-lg group-hover:text-[#34D562] transition-colors leading-tight">
+                <h4 className="text-white font-bold text-lg group-hover:text-[#34D562] transition-colors leading-tight line-clamp-2">
                     {post.title}
                 </h4>
-            </div>
+            </a>
         ))}
     </div>
 );
@@ -174,7 +324,7 @@ export const BlogUpdates = () => (
 export const ChatBot = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
-        <div className="fixed bottom-8 right-8 z-50">
+        <div className="fixed bottom-24 right-4 md:bottom-8 md:right-8 z-50">
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -185,7 +335,7 @@ export const ChatBot = () => {
                     >
                         <div className="bg-[#003366] p-4 flex justify-between items-center">
                             <h4 className="text-white font-bold flex items-center gap-2">
-                                <MessageCircle size={18} /> Admissions AI
+                                <MessageCircle size={18} />GoG Admissions AI
                             </h4>
                             <button onClick={() => setIsOpen(false)} className="text-white/80 hover:text-white"><X size={18} /></button>
                         </div>
