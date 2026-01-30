@@ -291,7 +291,7 @@ const StickyBottomActions = ({ isVisible, onApplyClick }: { isVisible: boolean, 
                     Apply Now
                 </button>
                 <a
-                    href="/assets/CenturionUniversity/2-Brochure-1.pdf"
+                    href="/assets/CenturionUniversity/2-brochure-1.pdf"
                     download="Centurion_University_Brochure.pdf"
                     className="flex-1 py-3 bg-white/10 text-white font-bold rounded-lg border border-white/10 text-center flex items-center justify-center"
                 >
@@ -413,7 +413,7 @@ const Admissions = () => {
                             <button onClick={() => setIsApplyOpen(true)} className="flex-1 py-3 md:py-4 bg-[#34D562] text-black font-extrabold text-xs md:text-lg rounded-xl md:rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,213,98,0.3)] whitespace-nowrap">
                                 Apply Now
                             </button>
-                            <a href="/assets/CenturionUniversity/2-Brochure-1.pdf" download="Centurion_University_Brochure.pdf" className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-xs md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap">
+                            <a href="/assets/CenturionUniversity/2-brochure-1.pdf" download="Centurion_University_Brochure.pdf" className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-xs md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap">
                                 Brochure
                             </a>
                         </motion.div>
@@ -484,7 +484,7 @@ const Admissions = () => {
                                     {[
                                         { src: "/assets/Centurion/campus-entrance.jpg", label: "Main Entrance" },
                                         { src: "/assets/Centurion/campus-wide.jpg", label: "Campus Aerial" },
-                                        { src: "/assets/CenturionUniversity/3.JPG", label: "Tech Park" },
+                                        { src: "/assets/CenturionUniversity/3.jpg", label: "Tech Park" },
                                         { src: "/assets/CenturionUniversity/2.jpg", label: "Student Hub" }
                                     ].map((img, idx) => (
                                         <div key={idx} className="rounded-2xl overflow-hidden border border-white/10 shadow-xl aspect-square relative group">
@@ -554,7 +554,7 @@ const Admissions = () => {
                                                 <img src={GoGLogo} className="h-6 w-auto object-contain" alt="GoG" />
                                             </div>
 
-                                            <div className="flex items-center justify-between w-full md:w-auto gap-4">
+                                            <div className="flex items-center justify-between w-full md:w-full gap-4">
                                                 <span className="font-bold text-white text-sm md:text-base leading-tight">{row.gog}</span>
                                                 <div className="shrink-0 w-6 h-6 rounded-full border border-[#34D562] flex items-center justify-center text-[#34D562]">
                                                     <Check size={14} strokeWidth={3} />
@@ -565,7 +565,7 @@ const Admissions = () => {
                                         {/* Traditional Column */}
                                         <div className="col-span-4 p-4 md:p-6 flex flex-col md:flex-row items-center justify-between gap-4 opacity-70 md:opacity-100">
                                             <div className="md:hidden text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-1">Traditional Colleges</div>
-                                            <div className="flex items-center justify-between w-full md:w-auto gap-4">
+                                            <div className="flex items-center justify-between w-full md:w-full gap-4">
                                                 <span className="text-gray-500 text-sm md:text-base leading-tight">{row.others}</span>
                                                 <X size={20} className="text-red-500 shrink-0" strokeWidth={3} />
                                             </div>

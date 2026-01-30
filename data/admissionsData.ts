@@ -291,16 +291,16 @@ export const placementStats = {
 
 // --- AMENITIES ---
 export const amenities = [
-    { icon: Home, name: "Hostels", desc: "Separate AC/Non-AC hostels (3/4 sharing)", image: "/assets/CenturionUniversity/Hostels.JPG" },
-    { icon: Coffee, name: "Cafeteria & Market", desc: "Subsidized healthy food & daily needs", image: "/assets/CenturionUniversity/Cafeteria.jpg" },
-    { icon: Dumbbell, name: "Gymnasiums", desc: "Indoor & open-air fitness centers", image: "/assets/CenturionUniversity/Gymnasiums.jpg" },
-    { icon: Activity, name: "Sports Complex", desc: "Cricket, Volleyball, Tennis, Basketball", image: "/assets/CenturionUniversity/Sports Complex.jpg" },
-    { icon: Stethoscope, name: "Medical Centre", desc: "Health center with doctors on campus", image: "/assets/CenturionUniversity/Medical Center.JPG" },
-    { icon: Wifi, name: "IT Infrastructure", desc: "High-speed Wi-Fi across campus", image: "/assets/CenturionUniversity/IT Infrastructure.jpg" },
-    { icon: Bus, name: "Transport", desc: "Bus services for students & staff", image: "/assets/CenturionUniversity/Transport.JPG" },
-    { icon: Landmark, name: "Banks/ATMs", desc: "On-campus banking facilities", image: "/assets/CenturionUniversity/ATM&Bank.png" },
-    { icon: Building, name: "Auditorium", desc: "For events, festivals & presentations", image: "/assets/CenturionUniversity/Auditorium.png" },
-    { icon: BookOpen, name: "Library", desc: "Well-stocked with journals & magazines", image: "/assets/CenturionUniversity/Library.jpg" }
+    { icon: Home, name: "Hostels", desc: "Separate AC/Non-AC hostels (3/4 sharing)", image: "/assets/CenturionUniversity/hostels.jpg" },
+    { icon: Coffee, name: "Cafeteria & Market", desc: "Subsidized healthy food & daily needs", image: "/assets/CenturionUniversity/cafeteria.jpg" },
+    { icon: Dumbbell, name: "Gymnasiums", desc: "Indoor & open-air fitness centers", image: "/assets/CenturionUniversity/gymnasiums.jpg" },
+    { icon: Activity, name: "Sports Complex", desc: "Cricket, Volleyball, Tennis, Basketball", image: "/assets/CenturionUniversity/sports-complex.jpg" },
+    { icon: Stethoscope, name: "Medical Centre", desc: "Health center with doctors on campus", image: "/assets/CenturionUniversity/medical-center.jpg" },
+    { icon: Wifi, name: "IT Infrastructure", desc: "High-speed Wi-Fi across campus", image: "/assets/CenturionUniversity/it-infrastructure.jpg" },
+    { icon: Bus, name: "Transport", desc: "Bus services for students & staff", image: "/assets/CenturionUniversity/transport.jpg" },
+    { icon: Landmark, name: "Banks/ATMs", desc: "On-campus banking facilities", image: "/assets/CenturionUniversity/atmandbank.png" },
+    { icon: Building, name: "Auditorium", desc: "For events, festivals & presentations", image: "/assets/CenturionUniversity/auditorium.png" },
+    { icon: BookOpen, name: "Library", desc: "Well-stocked with journals & magazines", image: "/assets/CenturionUniversity/library.jpg" }
 ];
 
 // --- CLUBS ---
@@ -411,10 +411,10 @@ export const testimonials = [
 // --- NEW DATA WITH VALIDATED IMAGES ---
 
 export const studentVlogs = [
-    { id: 1, title: "Success Story from BGI Institute", thumbnail: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&q=80&w=800", views: "12K", duration: "0:20", video: "/assets/CenturionUniversity/Geeks of Gurukul __ Inspiring Testimonials from BGI Institute Students 2!.mp4" },
-    { id: 2, title: "Journey from SIRT", thumbnail: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800", views: "22K", duration: "0:16", video: "/assets/CenturionUniversity/Geeks of Gurukul __ Inspiring Testimonials from SIRT Students 3!.mp4" },
-    { id: 3, title: "Student Feedback - SAM Group", thumbnail: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&q=80&w=800", views: "15K", duration: "0:11", video: "/assets/CenturionUniversity/Geeks of Gurukul __ Inspiring Testimonials from SAM Group Students 3!.mp4" },
-    { id: 4, title: "Experience at BGI Institute", thumbnail: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800", views: "8.5K", duration: "0:25", video: "/assets/CenturionUniversity/Geeks of Gurukul __ Inspiring Testimonials from SAM Group Students 2!.mp4" },
+    { id: 1, title: "Success Story from BGI Institute", thumbnail: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&q=80&w=800", views: "12K", duration: "0:20", video: "/assets/CenturionUniversity/testimonial-bgi.mp4" },
+    { id: 2, title: "Journey from SIRT", thumbnail: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800", views: "22K", duration: "0:16", video: "/assets/CenturionUniversity/testimonial-sirt.mp4" },
+    { id: 3, title: "Student Feedback - SAM Group", thumbnail: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&q=80&w=800", views: "15K", duration: "0:11", video: "/assets/CenturionUniversity/testimonial-sam-3.mp4" },
+    { id: 4, title: "Experience at BGI Institute", thumbnail: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800", views: "8.5K", duration: "0:25", video: "/assets/CenturionUniversity/testimonial-sam-2.mp4" },
 ];
 
 export const alumniSuccess = [
