@@ -485,7 +485,7 @@ const Admissions = () => {
                                         { src: "/assets/Centurion/campus-entrance.jpg", label: "Main Entrance" },
                                         { src: "/assets/Centurion/campus-wide.jpg", label: "Campus Aerial" },
                                         { src: "/assets/CenturionUniversity/3.JPG", label: "Tech Park" },
-                                        { src: "/assets/CenturionUniversity/2.JPG", label: "Student Hub" }
+                                        { src: "/assets/CenturionUniversity/2.jpg", label: "Student Hub" }
                                     ].map((img, idx) => (
                                         <div key={idx} className="rounded-2xl overflow-hidden border border-white/10 shadow-xl aspect-square relative group">
                                             <img
