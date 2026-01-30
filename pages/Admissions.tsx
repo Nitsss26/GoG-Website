@@ -286,14 +286,14 @@ const StickyBottomActions = ({ isVisible, onApplyClick }: { isVisible: boolean, 
             <div className="flex gap-3">
                 <button
                     onClick={onApplyClick}
-                    className="flex-1 py-3 bg-[#34D562] text-black font-bold rounded-lg shadow-[0_0_15px_rgba(52,213,98,0.3)]"
+                    className="flex-1 py-3 bg-[#34D562] text-2xl text-black font-bold rounded-lg shadow-[0_0_15px_rgba(52,213,98,0.3)]"
                 >
                     Apply Now
                 </button>
                 <a
                     href="/assets/CenturionUniversity/2-brochure-1.pdf"
                     download="Centurion_University_Brochure.pdf"
-                    className="flex-1 py-3 bg-white/10 text-white font-bold rounded-lg border border-white/10 text-center flex items-center justify-center"
+                    className="flex-1 py-3 bg-white/10 text-white text-2xl font-bold rounded-lg border border-white/10 text-center flex items-center justify-center"
                 >
                     Brochure
                 </a>
@@ -364,39 +364,28 @@ const Admissions = () => {
             <ApplyForm isOpen={isApplyOpen} onClose={() => setIsApplyOpen(false)} />
 
             {/* ===== 1. HERO SECTION (PROFESSIONAL & FULL WIDTH) ===== */}
-            <section className="relative min-h-[64vh] md:min-h-screen flex items-center justify-center overflow-hidden">
+            <section className="relative min-h-[68vh] md:min-h-[110vh] lg:min-h-[115vh] flex items-center justify-center overflow-hidden">
                 {/* Background Effects */}
                 <HeroSlider />
 
                 <div className="container mx-auto px-4 relative z-10 w-full max-w-7xl">
-                    <div className="flex flex-col items-center text-center max-w-5xl mx-auto pt-16 md:pt-32 pb-8 md:pb-16">
+                    <div className="flex flex-col items-center text-center max-w-5xl mx-auto pt-28 md:pt-48 pb-12 md:pb-32">
                         {/* 1. Badge */}
                         <motion.div
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="hidden md:inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-white/10 border border-white/20 mb-3 md:mb-6 backdrop-blur-md"
+                            className="hidden md:inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-white/10 border border-white/20 mb-8 md:mb-12 backdrop-blur-md"
                         >
                             <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#34D562] animate-pulse" />
                             <span className="text-white text-[10px] md:text-xs font-bold tracking-widest uppercase">Admissions Open 2026</span>
                         </motion.div>
 
-                        {/* 2. Logos */}
-                        <motion.div
-                            initial={{ opacity: 0, y: -20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 }}
-                            className="inline-flex items-center justify-center gap-3 md:gap-6 mb-6 md:mb-8 mt-4 md:mt-7 bg-white/95 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-3 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/20"
-                        >
-                            <img src="/assets/CenturionUniversity/logo.png" alt="Centurion University" className="h-8 md:h-14 object-contain" />
-                            <span className="text-gray-400 font-bold text-sm md:text-xl">X</span>
-                            <img src="https://i.postimg.cc/4NdhCzDD/logo-(2).png" alt="Geeks of Gurukul" className="h-7 md:h-8 object-contain" />
-                        </motion.div>
 
                         <motion.h1
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.1, duration: 0.8 }}
-                            className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight md:leading-[0.9] mb-6 md:mb-6 tracking-tighter"
+                            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight md:leading-[0.9] mb-6 md:mb-6 tracking-tighter"
                         >
                             B.Tech in Computer Science<br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">(AI & ML)</span>
@@ -408,7 +397,7 @@ const Admissions = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4 }}
-                            className="flex flex-row justify-center gap-3 w-full max-w-lg mx-auto -mb-8 md:-mb-8 mt-6 md:mt-4 px-4 md:px-0"
+                            className="flex flex-row justify-center gap-3 w-full max-w-lg mx-auto -mb-8 md:-mb-16 mt-6 md:mt-4 px-4 md:px-0"
                         >
                             <button onClick={() => setIsApplyOpen(true)} className="flex-1 py-3 md:py-4 bg-[#34D562] text-black font-extrabold text-xs md:text-lg rounded-xl md:rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,213,98,0.3)] whitespace-nowrap">
                                 Apply Now
@@ -528,11 +517,15 @@ const Admissions = () => {
                             {/* Header */}
                             <div className="hidden md:grid grid-cols-12 border-b border-white/10 items-center bg-[#111]">
                                 <div className="col-span-4 text-gray-400 font-bold uppercase tracking-wider text-sm p-6">Feature</div>
-                                <div className="col-span-4 text-[#34D562] font-bold text-lg p-6 bg-[#34D562]/10 border-x border-[#34D562]/20 relative flex items-center gap-3 justify-center">
+                                <div className="col-span-4 text-[#34D562] font-bold text-lg p-6 bg-[#34D562]/10 border-x border-[#34D562]/20 relative flex items-center gap-6 justify-center">
                                     <div className="absolute top-0 left-0 w-full h-1 bg-[#34D562]" />
-                                    <img src="/assets/Centurion/university-logo.png" className="h-12 rounded-2xl" alt="Centurion" />
-                                    <X size={14} className="text-gray-400" />
-                                    <img src={GoGLogo} className="h-12 rounded-2xl" alt="Geeks of Gurukul" />
+                                    <div className="bg-white px-4 py-2 rounded-2xl shadow-xl border border-white/20 flex items-center justify-center h-14 w-32 shrink-0">
+                                        <img src="/assets/Centurion/university-logo.png" className="h-full w-auto object-contain" alt="Centurion" />
+                                    </div>
+                                    <X size={16} className="text-gray-400 shrink-0" />
+                                    <div className="bg-white px-4 py-2 rounded-2xl shadow-xl border border-white/20 flex items-center justify-center h-14 w-32 shrink-0">
+                                        <img src={GoGLogo} className="h-9 w-auto object-contain text-black" alt="Geeks of Gurukul" />
+                                    </div>
                                 </div>
                                 <div className="col-span-4 text-gray-500 font-bold text-sm p-6">Traditional Colleges</div>
                             </div>
@@ -548,10 +541,14 @@ const Admissions = () => {
                                         {/* GOG Column (Highlighted) */}
                                         <div className="col-span-4 p-4 md:p-6 bg-[#34D562]/10 md:bg-[#34D562]/5 border-x border-[#34D562]/10 flex flex-col md:flex-row items-center justify-between gap-4 relative">
                                             {/* Mobile Logo Label */}
-                                            <div className="md:hidden flex items-center gap-3 opacity-90 mb-2 border-b border-[#34D562]/10 pb-2 w-full justify-center">
-                                                <img src="/assets/Centurion/university-logo.png" className="h-8 w-auto object-contain" alt="Centurion" />
-                                                <X size={10} className="text-gray-400" />
-                                                <img src={GoGLogo} className="h-6 w-auto object-contain" alt="GoG" />
+                                            <div className="md:hidden flex items-center gap-4 mb-6 border-b border-[#34D562]/10 pb-6 w-full justify-center">
+                                                <div className="bg-white px-1 py-1.5 rounded-xl shadow-lg border border-white/10 flex items-center justify-center h-12 w-24 shrink-0">
+                                                    <img src="/assets/Centurion/university-logo.png" className="h-full w-auto object-contain" alt="Centurion" />
+                                                </div>
+                                                <X size={16} className="text-gray-400 shrink-0" />
+                                                <div className="bg-white px-1 py-1.5 rounded-xl shadow-lg border border-white/10 flex items-center justify-center h-12 w-24 shrink-0">
+                                                    <img src={GoGLogo} className="h-full w-auto object-contain" alt="GoG" />
+                                                </div>
                                             </div>
 
                                             <div className="flex items-center justify-between w-full md:w-full gap-4">

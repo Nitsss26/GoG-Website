@@ -99,7 +99,11 @@ export const StickyNav = ({ onApplyClick }: StickyNavProps) => {
 
                                 {/* Logo */}
                                 <Link to="/" className="flex items-center gap-2 cursor-pointer shrink-0">
-                                    <img src="https://i.postimg.cc/4NdhCzDD/logo-(2).png" alt="GoG Logo" className="h-10" />
+                                    <div className="flex items-center gap-1.5 md:gap-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
+                                        <img src="/assets/CenturionUniversity/logo.png" alt="Centurion University" className="h-9 md:h-12 object-contain" />
+                                        <span className="text-gray-400 font-bold text-[8px] md:text-sm">X</span>
+                                        <img src="https://i.postimg.cc/4NdhCzDD/logo-(2).png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
+                                    </div>
                                 </Link>
 
                                 {/* Nav Links */}
