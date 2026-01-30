@@ -286,14 +286,14 @@ const StickyBottomActions = ({ isVisible, onApplyClick }: { isVisible: boolean, 
             <div className="flex gap-3">
                 <button
                     onClick={onApplyClick}
-                    className="flex-1 py-3 bg-[#34D562] text-2xl text-black font-bold rounded-lg shadow-[0_0_15px_rgba(52,213,98,0.3)]"
+                    className="flex-1 py-3 bg-[#34D562] text-black font-bold rounded-lg shadow-[0_0_15px_rgba(52,213,98,0.3)]"
                 >
                     Apply Now
                 </button>
                 <a
                     href="/assets/CenturionUniversity/2-brochure-1.pdf"
                     download="Centurion_University_Brochure.pdf"
-                    className="flex-1 py-3 bg-white/10 text-white text-2xl font-bold rounded-lg border border-white/10 text-center flex items-center justify-center"
+                    className="flex-1 py-3 bg-white/10 text-white font-bold rounded-lg border border-white/10 text-center flex items-center justify-center"
                 >
                     Brochure
                 </a>
@@ -399,11 +399,11 @@ const Admissions = () => {
                             transition={{ delay: 0.4 }}
                             className="flex flex-row justify-center gap-3 w-full max-w-lg mx-auto -mb-8 md:-mb-16 mt-6 md:mt-4 px-4 md:px-0"
                         >
-                            <button onClick={() => setIsApplyOpen(true)} className="flex-1 py-3 md:py-4 bg-[#34D562] text-black font-extrabold text-xs md:text-lg rounded-xl md:rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,213,98,0.3)] whitespace-nowrap">
+                            <button onClick={() => setIsApplyOpen(true)} className="flex-1 py-3 md:py-4 bg-[#34D562] text-black font-extrabold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,213,98,0.3)] whitespace-nowrap">
                                 Apply Now
                             </button>
-                            <a href="/assets/CenturionUniversity/2-brochure-1.pdf" download="Centurion_University_Brochure.pdf" className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-xs md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap">
-                                Brochure
+                            <a href="/assets/CenturionUniversity/2-brochure-1.pdf" download="Centurion_University_Brochure.pdf" className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap">
+                                Download Brochure
                             </a>
                         </motion.div>
                     </div>
