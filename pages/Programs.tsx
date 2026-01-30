@@ -57,7 +57,7 @@ const Programs: React.FC = () => {
                 "Aptitude, Reasoning, And Communication For Career Readiness.",
                 "End To End Placement Preparation With Project Based Learning.",
                 "100% Internship And Placement From 4th Semester Onward.",
-                "IIT/IIM & MAANG Experts Will Teach Offline."
+                "IIT & MAANG Experts Will Teach Offline."
             ]
         },
         {

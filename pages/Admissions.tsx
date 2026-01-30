@@ -77,7 +77,7 @@ const StackedCarousel = () => {
         { title: "Future-Proof Career", desc: "Launch into high-growth AI roles.", icon: Rocket },
         { title: "Prestigious Certification", desc: "Degree from NAAC 'A+' University.", icon: Award },
         { title: "Advanced Curriculum", desc: "Real-time project implementation.", icon: BookOpen },
-        { title: "Faculty of IITians", desc: "Learn from IIT/IIM experts.", icon: Users },
+        { title: "Faculty of IITians", desc: "Learn from IIT experts.", icon: Users },
         { title: "Vibrant Networking", desc: "Connect with industry leaders.", icon: Globe },
         { title: "Internship Assurance", desc: "100% internship support.", icon: Building },
         { title: "Placement Assurance", desc: "100% placement support.", icon: Shield },
