@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, HelpCircle } from 'lucide-react';
 import GreenEmbers from '../components/ui/GreenEmbers';
+import SEO from '../components/SEO';
 
 const FAQ = () => {
     useEffect(() => {
@@ -68,6 +69,12 @@ const FAQ = () => {
 
     return (
         <div className="min-h-screen bg-[#030303] text-white relative overflow-hidden">
+            <SEO
+                title="Frequently Asked Questions"
+                description="Find answers to common questions about Geeks of Gurukul programs, workshops, certifications, and support."
+                keywords="FAQ, frequently asked questions, GoG support, workshop questions"
+                canonical="/faq"
+            />
             <GreenEmbers density={0.5} />
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#34D56208_1px,transparent_1px),linear-gradient(to_bottom,#34D56208_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
@@ -106,8 +113,8 @@ const FAQ = () => {
                             <button
                                 onClick={() => toggleFAQ(index)}
                                 className={`w-full text-left rounded-2xl py-5 px-6 md:px-8 flex justify-between items-center transition-all duration-300 ${faq.isOpen
-                                        ? 'bg-[#34D562] text-black shadow-[0_0_30px_rgba(52,213,98,0.3)]'
-                                        : 'bg-[#0A0A0A] border border-white/10 text-white hover:border-[#34D562]/50 hover:bg-[#34D562]/5'
+                                    ? 'bg-[#34D562] text-black shadow-[0_0_30px_rgba(52,213,98,0.3)]'
+                                    : 'bg-[#0A0A0A] border border-white/10 text-white hover:border-[#34D562]/50 hover:bg-[#34D562]/5'
                                     }`}
                             >
                                 <span className={`flex-grow pr-4 font-bold text-lg md:text-xl`}>{faq.question}</span>

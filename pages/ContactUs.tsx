@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Loader2, MessageSquare, Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
 import GreenEmbers from '../components/ui/GreenEmbers';
+import SEO from '../components/SEO';
 
 const ContactUs = () => {
     const [formData, setFormData] = useState({
@@ -95,6 +96,12 @@ const ContactUs = () => {
 
     return (
         <div className="min-h-screen bg-[#030303] text-white relative overflow-hidden">
+            <SEO
+                title="Contact Us"
+                description="Get in touch with Geeks of Gurukul. Reach out for admissions, partnerships, or any queries. We're here to help!"
+                keywords="contact geeks of gurukul, GoG support, admissions inquiry"
+                canonical="/contact-us"
+            />
             <GreenEmbers density={0.5} />
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#34D56208_1px,transparent_1px),linear-gradient(to_bottom,#34D56208_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 

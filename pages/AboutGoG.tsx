@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import LeadershipCard from '../components/LeadershipCard';
 import { Quote, Linkedin, Circle, Sparkles, Award, Users } from 'lucide-react';
+import SEO from '../components/SEO';
 import GreenEmbers from '../components/ui/GreenEmbers';
 import GreenEmbers2 from '../components/ui/GreenEmbers2';
 import { CyberHexagon, CyberSquare } from '../components/ui/CyberShapes';
@@ -74,6 +75,12 @@ const AboutGoG: React.FC = () => {
         <main className="relative min-h-screen bg-[#030303] overflow-hidden">
             {/* Background Effects */}
             <GreenEmbers />
+            <SEO
+                title="About GoG"
+                description="Learn about Geeks of Gurukul's mission, vision, and leadership team. Meet the founders and visionaries driving innovation in education across India."
+                keywords="about geeks of gurukul, GoG leadership, founders, education platform India"
+                canonical="/about-gog"
+            />
 
             {/* Hero Section */}
             <div className="relative pt-32 pb-20 px-6 min-h-[60vh] flex items-center justify-center overflow-hidden">

@@ -724,7 +724,7 @@ const Admissions = () => {
                             <div className="flex gap-8 mb-8">
                                 <div>
                                     <div className="text-5xl font-bold text-white mb-1">{placementStats.highest}</div>
-                                    <div className="text-sm text-gray-500 uppercase tracking-wider">Highest CTC</div>
+                                    <div className="text-sm text-gray-500 uppercase tracking-wider">Potential CTC</div>
                                 </div>
                                 <div className="w-px bg-white/10" />
                                 <div>
@@ -747,7 +747,7 @@ const Admissions = () => {
                             </h4>
                             <div className="flex justify-center items-center">
                                 <img
-                                    src="/assets/Centurion/recruiter-logos.png"
+                                    src="/assets/CenturionUniversity/place.png"
                                     alt="Top Recruiters"
                                     className="w-full h-auto object-contain"
                                 />
@@ -786,10 +786,10 @@ const Admissions = () => {
 
                         <SuccessTicker />
                         {/* Alumni */}
-                        <div>
+                        {/* <div>
                             <SectionHeader title="Alumni Hall of Fame" subtitle="Our graduates work at the world's best companies." />
                             <AlumniNetwork />
-                        </div>
+                        </div> */}
 
                         {/* Recruiters */}
                         <div>

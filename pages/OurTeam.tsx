@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import GreenEmbers from '../components/ui/GreenEmbers';
+import SEO from '../components/SEO';
 
 
 // Import images
@@ -142,6 +143,12 @@ const OurTeam: React.FC = () => {
     return (
         <main className="relative min-h-screen bg-[#030303] text-white overflow-hidden pt-40 pb-20">
             <GreenEmbers />
+            <SEO
+                title="Our Team"
+                description="Meet the leadership and management team behind Geeks of Gurukul. 250+ IIT alumni mentors from IIT Kharagpur, IIT Bombay, IIT Madras and more."
+                keywords="GoG team, IIT mentors, IIT alumni, education team India, faculty"
+                canonical="/teams"
+            />
 
             <div className="w-[95%] max-w-[1600px] mx-auto relative z-10 px-4">
                 {/* Header */}

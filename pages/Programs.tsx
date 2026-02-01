@@ -4,6 +4,7 @@ import ProgramSection from '../components/ProgramSection';
 import GreenEmbers from '../components/ui/GreenEmbers';
 import GreenEmbers2 from '../components/ui/GreenEmbers2';
 import { CyberHexagon, CyberSquare } from '../components/ui/CyberShapes';
+import SEO from '../components/SEO';
 
 import Program1Img from '../assets/1st.png';
 import Program2Img from '../assets/2nd.png';
@@ -80,6 +81,12 @@ const Programs: React.FC = () => {
 
     return (
         <main className="relative min-h-screen bg-[#030303] overflow-hidden">
+            <SEO
+                title="Programs"
+                description="Browse all educational programs including AI, ML, Data Science, Full-Stack Development, UG/PG integrated degrees and medical technical training with IIT mentors."
+                keywords="educational programs, AI courses, ML programs, data science, full-stack development, IIT mentors"
+                canonical="/programs"
+            />
             {/* Normal Density Embers */}
             <GreenEmbers />
 

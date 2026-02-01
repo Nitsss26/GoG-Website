@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { motion, useScroll, useSpring } from 'framer-motion';
@@ -39,42 +40,44 @@ const App: React.FC = () => {
   });
 
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="bg-[#030303] min-h-screen text-white font-sans selection:bg-[#34D562] selection:text-black overflow-x-hidden">
-        {/* Scroll Progress Bar */}
-        <motion.div
-          className="fixed top-0 left-0 right-0 h-1 bg-[#34D562] origin-left z-[2000] shadow-[0_0_15px_#34D562]"
-          style={{ scaleX }}
-        />
+    <HelmetProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="bg-[#030303] min-h-screen text-white font-sans selection:bg-[#34D562] selection:text-black overflow-x-hidden">
+          {/* Scroll Progress Bar */}
+          <motion.div
+            className="fixed top-0 left-0 right-0 h-1 bg-[#34D562] origin-left z-[2000] shadow-[0_0_15px_#34D562]"
+            style={{ scaleX }}
+          />
 
-        <Navbar />
+          <Navbar />
 
-        <Suspense fallback={<LoadingFallback />}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/blockchain/koii-labs" element={<KoiiLabs />} />
-            <Route path="/blockchain/core-dao" element={<CoreDao />} />
-            <Route path="/blockchain/educhain" element={<Educhain />} />
-            <Route path="/blockchain/stellar" element={<Stellar />} />
-            <Route path="/blockchain/aptos" element={<Aptos />} />
-            <Route path="/blockchain/agoric" element={<Agoric />} />
-            <Route path="/programs" element={<Programs />} />
-            <Route path="/our-social-impact" element={<OurSocialImpact />} />
-            <Route path="/teams" element={<OurTeam />} />
-            <Route path="/about-gog" element={<AboutGoG />} />
-            <Route path="/partnered-colleges" element={<PartneredInstitutes />} />
-            <Route path="/contact-us" element={<ContactUs />} />
-            <Route path="/admissions" element={<Admissions />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms-conditions" element={<TermsAndConditions />} />
-          </Routes>
-        </Suspense>
+          <Suspense fallback={<LoadingFallback />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/blockchain/koii-labs" element={<KoiiLabs />} />
+              <Route path="/blockchain/core-dao" element={<CoreDao />} />
+              <Route path="/blockchain/educhain" element={<Educhain />} />
+              <Route path="/blockchain/stellar" element={<Stellar />} />
+              <Route path="/blockchain/aptos" element={<Aptos />} />
+              <Route path="/blockchain/agoric" element={<Agoric />} />
+              <Route path="/programs" element={<Programs />} />
+              <Route path="/our-social-impact" element={<OurSocialImpact />} />
+              <Route path="/teams" element={<OurTeam />} />
+              <Route path="/about-gog" element={<AboutGoG />} />
+              <Route path="/partnered-colleges" element={<PartneredInstitutes />} />
+              <Route path="/contact-us" element={<ContactUs />} />
+              <Route path="/admissions" element={<Admissions />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-conditions" element={<TermsAndConditions />} />
+            </Routes>
+          </Suspense>
 
-        <Footer />
-      </div>
-    </Router>
+          <Footer />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 };
 
