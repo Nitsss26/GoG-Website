@@ -188,7 +188,7 @@ export const CareerVisualizer = () => (
 export const ScholarshipStats = () => {
     const [marks, setMarks] = useState(85);
     const scholarship = marks > 95 ? "50%" : marks > 90 ? "30%" : marks > 85 ? "20%" : marks > 80 ? "10%" : "0%";
-    const savings = marks > 95 ? "₹2.5 Lakhs" : marks > 90 ? "₹1.5 Lakhs" : marks > 85 ? "₹1 Lakh" : marks > 80 ? "₹50,000" : "₹0";
+    const savings = marks > 95 ? "₹2.5 Lakhs" : marks > 90 ? "₹1.5 Lakhs" : marks > 85 ? "₹1 Lakh" : marks > 80 ? "₹50K" : "₹0";
 
     return (
         <div className="bg-[#111] border border-white/10 rounded-2xl p-8 max-w-2xl mx-auto">

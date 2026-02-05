@@ -9,7 +9,7 @@ import {
     Building, MonitorPlay, Award, Globe, Music, Camera, Heart, UserCheck, FileText, GraduationCap, Briefcase, MessageCircle, TrendingUp, Coins, Sparkles, Trophy, Scale
 } from 'lucide-react';
 import GreenEmbers from '../components/ui/GreenEmbers';
-import PageSEO from '../components/PageSEO';
+import SEO from '../components/SEO';
 import {
     courseInfo, rankings, mediaLinks, amenities,
     nearbyPlaces, curriculum, faculty, comparisonData,
@@ -354,7 +354,11 @@ const Admissions = () => {
 
     return (
         <div className="min-h-screen bg-[#000000] text-white font-sans selection:bg-[#34D562] selection:text-black overflow-x-hidden">
-            <PageSEO title="B.Tech AI Admissions 2026 | Centurion University" description="Apply for B.Tech in CSE (AI & ML). India's most advanced industry-integrated curriculum." />
+            <SEO
+                title="B.Tech AI Admissions 2026 | Centurion University"
+                description="Apply for Centurion University's industry-integrated B.Tech in CSE (AI & ML). 100% placement support and curriculum designed by IIT mentors."
+                canonical="/admissions"
+            />
 
             <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
                 <GreenEmbers />

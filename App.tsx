@@ -7,6 +7,7 @@ import { motion, useScroll, useSpring } from 'framer-motion';
 import ScrollToTop from './components/ScrollToTop';
 
 // Lazy Load Pages
+const Courses = lazy(() => import('./pages/Courses'));
 const Home = lazy(() => import('./pages/Home'));
 const KoiiLabs = lazy(() => import('./pages/KoiiLabs'));
 const CoreDao = lazy(() => import('./pages/CoreDao'));
@@ -68,6 +69,7 @@ const App: React.FC = () => {
               <Route path="/partnered-colleges" element={<PartneredInstitutes />} />
               <Route path="/contact-us" element={<ContactUs />} />
               <Route path="/admissions" element={<Admissions />} />
+              <Route path="/courses" element={<Courses />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-conditions" element={<TermsAndConditions />} />
