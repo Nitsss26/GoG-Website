@@ -15,11 +15,10 @@ import {
     nearbyPlaces, curriculum, faculty, comparisonData,
     heroStats, admissionSteps, feeStructure, placementStats,
     clubs, faqs, testimonials, universityAbout,
-    studentVlogs, alumniSuccess, recruiterTestimonials, careerPathData, blogUpdates
-} from '../data/admissionsData';
+    studentVlogs, alumniSuccess, recruiterTestimonials, careerPathData, blogUpdates, heroImages
+} from '../data/gyanveerData';
 
 // Import assets
-import CUTMLogo from "../assets/PartneredColleges/CUTM.svg";
 import GoGLogo from "../assets/gog-logo.png";
 import {
     StudentVlogs, VirtualTour, CareerVisualizer, ScholarshipStats, AlumniNetwork, RecruiterTestimonials, BlogUpdates, ChatBot
@@ -189,11 +188,8 @@ const CertificatePreview = () => (
         {/* Content */}
         <div className="text-center relative z-10">
             <div className="flex justify-center mb-4 md:mb-6 gap-4 md:gap-8 items-center">
-                {/* University Logo Mockup */}
-                <div className="text-[#003366] font-serif font-bold text-xl md:text-2xl border-2 border-[#003366] p-1 md:p-2 flex flex-col items-center scale-90">
-                    <span>CUTM</span>
-                    <span className="text-[8px] md:text-[10px] uppercase tracking-widest text-black">Estd 2010</span>
-                </div>
+                {/* University Logo */}
+                <img src="https://www.gyanveeruniversity.edu.in/assets/img/logo/logo-gv.png" alt="Gyanveer University" className="h-12 md:h-16 object-contain" />
             </div>
 
             <h3 className="text-[#003366] font-serif font-bold text-xl md:text-4xl mb-1">CERTIFICATE OF COMPLETION</h3>
@@ -203,14 +199,14 @@ const CertificatePreview = () => (
 
             <p className="text-gray-700 text-sm md:text-lg max-w-2xl mx-auto mb-4 md:mb-6 leading-tight">
                 has successfully completed the 4-Year B.Tech Program in <br />
-                <span className="font-bold text-black">Computer Science & Engineering (AI & ML)</span>
+                <span className="font-bold text-black">Computer Science & Engineering (Full Stack Development)</span>
             </p>
 
             <div className="flex justify-between items-end mt-4 md:mt-8 px-2 md:px-10">
                 <div className="text-center">
                     <div className="h-8 w-16 md:h-12 md:w-24 border-b-2 border-black mb-1 md:mb-2 mx-auto"></div>
                     <p className="font-bold text-[#003366] text-[10px] md:text-base">Registrar</p>
-                    <p className="text-[8px] md:text-xs text-gray-500">Centurion University</p>
+                    <p className="text-[8px] md:text-xs text-gray-500">Gyanveer University</p>
                 </div>
                 {/* Geeks of Gurukul Badge */}
                 <div className="text-center">
@@ -291,11 +287,10 @@ const StickyBottomActions = ({ isVisible, onApplyClick }: { isVisible: boolean, 
                     Apply Now
                 </button>
                 <a
-                    href="/assets/CenturionUniversity/2-brochure-1.pdf"
-                    download="Centurion_University_Brochure.pdf"
+                    href="#"
                     className="flex-1 py-3 bg-white/10 text-white font-bold rounded-lg border border-white/10 text-center flex items-center justify-center"
                 >
-                    Brochure
+                    Admission Guide
                 </a>
             </div>
         </div>
@@ -346,7 +341,7 @@ const PlacementSlideshow = () => {
     );
 };
 
-const Admissions = () => {
+const Gyanveer = () => {
     const [activeFaq, setActiveFaq] = useState<number | null>(null);
     const [activeSem, setActiveSem] = useState(0);
     const [isApplyOpen, setIsApplyOpen] = useState(false);
@@ -355,22 +350,31 @@ const Admissions = () => {
     return (
         <div className="min-h-screen bg-[#000000] text-white font-sans selection:bg-[#34D562] selection:text-black overflow-x-hidden">
             <SEO
-                title="B.Tech AI Admissions 2026 | Centurion University"
-                description="Apply for Centurion University's industry-integrated B.Tech in CSE (AI & ML). 100% placement support and curriculum designed by IIT mentors."
-                canonical="/admissions"
+                title="B.Tech Computer Science Admissions 2026 | Gyanveer University Sagar"
+                description="Apply for Gyanveer University's industry-integrated B.Tech in CSE. 100% placement support and curriculum designed by IIT mentors."
+                canonical="/gyanveer"
             />
 
             <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
                 <GreenEmbers />
             </div>
 
-            <StickyNav onApplyClick={() => setIsApplyOpen(true)} />
+            <StickyNav
+                onApplyClick={() => setIsApplyOpen(true)}
+                logo={
+                    <div className="flex items-center gap-1.5 md:gap-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
+                        <img src="https://www.gyanveeruniversity.edu.in/assets/img/logo/logo-gv.png" alt="Gyanveer University" className="h-9 md:h-12 object-contain" />
+                        <span className="text-gray-400 font-bold text-[8px] md:text-sm">X</span>
+                        <img src={GoGLogo} alt="Geeks of Gurukul" className="h-6 md:h-8 object-contain" />
+                    </div>
+                }
+            />
             <ApplyForm isOpen={isApplyOpen} onClose={() => setIsApplyOpen(false)} />
 
             {/* ===== 1. HERO SECTION (PROFESSIONAL & FULL WIDTH) ===== */}
             <section className="relative min-h-[68vh] md:min-h-[110vh] lg:min-h-[115vh] flex items-center justify-center overflow-hidden">
                 {/* Background Effects */}
-                <HeroSlider />
+                <HeroSlider images={heroImages} />
 
                 <div className="container mx-auto px-4 relative z-10 w-full max-w-7xl">
                     <div className="flex flex-col items-center text-center max-w-5xl mx-auto pt-28 md:pt-48 pb-12 md:pb-32">
@@ -392,7 +396,7 @@ const Admissions = () => {
                             className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight md:leading-[0.9] mb-6 md:mb-6 tracking-tighter"
                         >
                             B.Tech in Computer Science<br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">(AI & ML)</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">Engineering ( AI-ML )</span>
                         </motion.h1>
 
 
@@ -406,8 +410,8 @@ const Admissions = () => {
                             <button onClick={() => setIsApplyOpen(true)} className="flex-1 py-3 md:py-4 bg-[#34D562] text-black font-extrabold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,213,98,0.3)] whitespace-nowrap">
                                 Apply Now
                             </button>
-                            <a href="/assets/CenturionUniversity/2-brochure-1.pdf" download="Centurion_University_Brochure.pdf" className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap">
-                                Download Brochure
+                            <a href="#" className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap">
+                                Admission Guide
                             </a>
                         </motion.div>
                     </div>
@@ -439,13 +443,15 @@ const Admissions = () => {
                 <div className="container mx-auto px-4 max-w-7xl">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div>
-                            <div className="flex items-center gap-4 mb-6">
-                                <img src="/assets/Centurion/university-logo.png" alt="Centurion University" className="h-16 w-auto rounded-2xl bg-white p-2" />
-                                <div className="h-10 w-px bg-white/20" />
-                                <span className="text-xl font-bold text-amber-400">NAAC 'A+' Grade University</span>
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="p-2.5 bg-white rounded-xl shadow-xl flex items-center justify-center shrink-0 min-w-[120px]">
+                                    <img src="https://www.gyanveeruniversity.edu.in/assets/img/logo/logo-gv.png" alt="Gyanveer University" className="h-10 md:h-14 object-contain" />
+                                </div>
+                                <div className="h-12 w-px bg-white/10" />
+                                <span className="text-lg md:text-xl font-bold text-amber-400 leading-tight">UGC Approved <br className="md:hidden" />University</span>
                             </div>
-                            <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-                                A <span className="text-[#34D562]">Globally Accredited</span> <br />Skilled University.
+                            <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-[1.1] tracking-tight">
+                                The <span className="text-[#34D562]">Premier Research Hub</span> <br />of Bundelkhand.
                             </h2>
                             <p className="text-gray-400 mb-6 leading-relaxed text-lg">
                                 {universityAbout.vision}
@@ -474,21 +480,16 @@ const Admissions = () => {
                             <div className="relative py-8">
                                 {/* 2x2 Grid Layout */}
                                 <div className="grid grid-cols-2 gap-4 w-full">
-                                    {[
-                                        { src: "/assets/Centurion/campus-entrance.jpg", label: "Main Entrance" },
-                                        { src: "/assets/Centurion/campus-wide.jpg", label: "Campus Aerial" },
-                                        { src: "/assets/CenturionUniversity/3.jpg", label: "Tech Park" },
-                                        { src: "/assets/CenturionUniversity/2.jpg", label: "Student Hub" }
-                                    ].map((img, idx) => (
+                                    {amenities.slice(0, 4).map((amenity, idx) => (
                                         <div key={idx} className="rounded-2xl overflow-hidden border border-white/10 shadow-xl aspect-square relative group">
                                             <img
-                                                src={img.src}
-                                                alt={img.label}
+                                                src={amenity.image}
+                                                alt={amenity.name}
                                                 className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
                                             <div className="absolute bottom-3 left-3">
-                                                <p className="text-white font-bold text-sm tracking-wide">{img.label}</p>
+                                                <p className="text-white font-bold text-sm tracking-wide">{amenity.name}</p>
                                             </div>
                                         </div>
                                     ))}
@@ -502,7 +503,7 @@ const Admissions = () => {
             {/* ===== VIRTUAL CAMPUS TOUR ===== */}
             <section className="py-16 bg-[#050505]">
                 <div className="container mx-auto px-4 max-w-7xl">
-                    <VirtualTour bgImage="/assets/Centurion/campus-wide.jpg" />
+                    <VirtualTour bgImage={heroImages[0]} />
                 </div>
             </section>
 
@@ -524,7 +525,7 @@ const Admissions = () => {
                                 <div className="col-span-4 text-[#34D562] font-bold text-lg p-6 bg-[#34D562]/10 border-x border-[#34D562]/20 relative flex items-center gap-6 justify-center">
                                     <div className="absolute top-0 left-0 w-full h-1 bg-[#34D562]" />
                                     <div className="bg-white px-4 py-2 rounded-2xl shadow-xl border border-white/20 flex items-center justify-center h-14 w-32 shrink-0">
-                                        <img src="/assets/Centurion/university-logo.png" className="h-full w-auto object-contain" alt="Centurion" />
+                                        <img src="https://www.gyanveeruniversity.edu.in/assets/img/logo/logo-gv.png" alt="Gyanveer University" className="h-full w-auto object-contain" />
                                     </div>
                                     <X size={16} className="text-gray-400 shrink-0" />
                                     <div className="bg-white px-4 py-2 rounded-2xl shadow-xl border border-white/20 flex items-center justify-center h-14 w-32 shrink-0">
@@ -546,8 +547,8 @@ const Admissions = () => {
                                         <div className="col-span-4 p-4 md:p-6 bg-[#34D562]/10 md:bg-[#34D562]/5 border-x border-[#34D562]/10 flex flex-col md:flex-row items-center justify-between gap-4 relative">
                                             {/* Mobile Logo Label */}
                                             <div className="md:hidden flex items-center gap-4 mb-6 border-b border-[#34D562]/10 pb-6 w-full justify-center">
-                                                <div className="bg-white px-1 py-1.5 rounded-xl shadow-lg border border-white/10 flex items-center justify-center h-12 w-24 shrink-0">
-                                                    <img src="/assets/Centurion/university-logo.png" className="h-full w-auto object-contain" alt="Centurion" />
+                                                <div className="bg-white px-2 py-1 rounded-xl shadow-lg border border-white/10 flex items-center justify-center h-12 w-24 shrink-0">
+                                                    <img src="https://www.gyanveeruniversity.edu.in/assets/img/logo/logo-gv.png" alt="Gyanveer University" className="h-full w-auto object-contain" />
                                                 </div>
                                                 <X size={16} className="text-gray-400 shrink-0" />
                                                 <div className="bg-white px-1 py-1.5 rounded-xl shadow-lg border border-white/10 flex items-center justify-center h-12 w-24 shrink-0">
@@ -731,8 +732,8 @@ const Admissions = () => {
                                 </p>
                             </div>
 
-                            <a href="/assets/CenturionUniversity/Placement Brochure.pdf" download="Placement_Brochure_2025.pdf" className="flex items-center gap-2 px-6 py-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors text-white font-semibold w-fit">
-                                <Download size={18} /> Download Placement Report 2025
+                            <a href="#" className="flex items-center gap-2 px-6 py-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors text-white font-semibold w-fit">
+                                <Download size={18} /> Download Placement Report 2026
                             </a>
 
 
@@ -962,7 +963,7 @@ const Admissions = () => {
             {/* ===== 5. CAMPUS LIFE & CLUBS (Updated) ===== */}
             < section id="campus-life" className="py-24 bg-[#0A0A0A] scroll-mt-[300px]" >
                 <div className="container mx-auto px-4 max-w-7xl">
-                    <SectionHeader title="Campus Life" subtitle="Explore Vizianagaram & Beyond." />
+                    <SectionHeader title="Campus Life" subtitle="Explore Sagar & Beyond." />
 
                     {/* Amenities Grid */}
                     <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-16">
@@ -1197,8 +1198,8 @@ const Admissions = () => {
                                 <MapPin size={24} />
                             </div>
                             <h4 className="text-white font-bold mb-2">Visit Campus</h4>
-                            <p className="text-gray-400 text-sm">Centurion University,</p>
-                            <p className="text-gray-400 text-sm">Vizianagaram, AP</p>
+                            <p className="text-gray-400 text-sm">Gyanveer University,</p>
+                            <p className="text-gray-400 text-sm">Mara Imaliya, Sagar, MP</p>
                         </div>
                     </div>
                 </div>
@@ -1212,4 +1213,4 @@ const Admissions = () => {
 
 
 
-export default Admissions;
+export default Gyanveer;

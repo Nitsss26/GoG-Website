@@ -42,7 +42,7 @@ export const coursesData: CourseCardData[] = [
         specialisations: 5,
         certifications: 12,
         fees: "₹1.25 Lakhs/Year",
-        link: "/admissions",
+        link: "/centurion",
         isExternal: false
     },
     {
@@ -51,68 +51,68 @@ export const coursesData: CourseCardData[] = [
         location: "Bhopal, MP",
         programName: "B.Tech in Artificial Intelligence",
         approvals: "AICTE | UGC Approved",
-        logo: SAGE,
+        logo: "/assets/SAGE/sage-bhopal-logo.png",
         image: SAGESlide,
         specialisations: 4,
         certifications: 10,
         fees: "₹80,000/Year",
-        link: "/courses/sage-bhopal",
+        link: "/sagebhopal",
         isExternal: false
     },
-    {
-        id: "sage-indore",
-        universityName: "SAGE University, Indore",
-        location: "Indore, MP",
-        programName: "B.Tech in Data Science",
-        approvals: "AICTE | UGC Approved",
-        logo: SAGE,
-        image: SAGEIndoreSlide,
-        specialisations: 6,
-        certifications: 10,
-        fees: "₹90,000/Year",
-        link: "/courses/sage-indore", // Placeholder
-        isExternal: false
-    },
+    // {
+    //     id: "sage-indore",
+    //     universityName: "SAGE University, Indore",
+    //     location: "Indore, MP",
+    //     programName: "B.Tech in Data Science",
+    //     approvals: "AICTE | UGC Approved",
+    //     logo: SAGE,
+    //     image: SAGEIndoreSlide,
+    //     specialisations: 6,
+    //     certifications: 10,
+    //     fees: "₹90,000/Year",
+    //     link: "/courses/sage-indore", // Placeholder
+    //     isExternal: false
+    // },
     {
         id: "gyanveer",
         universityName: "Gyanveer University",
         location: "Sagar, MP",
         programName: "B.Tech Programs",
         approvals: "UGC Approved",
-        logo: GyanveerLogo,
+        logo: "/assets/Gyanveer/gyanveer-logo.png",
         image: GyanveerCampus,
         specialisations: 3,
         certifications: 8,
         fees: "₹60,000/Year",
-        link: "#",
-        isExternal: false
-    },
-    {
-        id: "sigu",
-        universityName: "SIGU (SAM Global)",
-        location: "Bhopal, MP",
-        programName: "B.Tech in Emerging Tech",
-        approvals: "UGC Approved",
-        logo: SGU, // Correct SAM Logo
-        image: SAMSlide, // Correct SAM Campus
-        specialisations: 5,
-        certifications: 8,
-        fees: "₹55,000/Year",
-        link: "#",
-        isExternal: false
-    },
-    {
-        id: "scope",
-        universityName: "SCOPE Global Skills",
-        location: "Bhopal, MP",
-        programName: "B.Tech in Al/ML",
-        approvals: "NSDC Partner",
-        logo: SGSU, // Correct Scope Logo
-        image: ScopeCampus,
-        specialisations: 4,
-        certifications: 15,
-        fees: "Check Website",
-        link: "#",
+        link: "/gyanveer",
         isExternal: false
     }
+    // {
+    //     id: "sigu",
+    //     universityName: "SIGU (SAM Global)",
+    //     location: "Bhopal, MP",
+    //     programName: "B.Tech in Emerging Tech",
+    //     approvals: "UGC Approved",
+    //     logo: SGU, // Correct SAM Logo
+    //     image: SAMSlide, // Correct SAM Campus
+    //     specialisations: 5,
+    //     certifications: 8,
+    //     fees: "₹55,000/Year",
+    //     link: "#",
+    //     isExternal: false
+    // },
+    // {
+    //     id: "scope",
+    //     universityName: "SCOPE Global Skills",
+    //     location: "Bhopal, MP",
+    //     programName: "B.Tech in Al/ML",
+    //     approvals: "NSDC Partner",
+    //     logo: SGSU, // Correct Scope Logo
+    //     image: ScopeCampus,
+    //     specialisations: 4,
+    //     certifications: 15,
+    //     fees: "Check Website",
+    //     link: "#",
+    //     isExternal: false
+    // }
 ];

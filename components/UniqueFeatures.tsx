@@ -92,13 +92,14 @@ export const StudentVlogs = () => {
     );
 };
 
-export const VirtualTour = () => {
+export const VirtualTour = ({ bgImage }: { bgImage?: string }) => {
     const [isVideoOpen, setIsVideoOpen] = useState(false);
+    const defaultBg = "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1600";
 
     return (
         <>
-            <div className="relative h-[400px] rounded-3xl overflow-hidden border border-white/10 group cursor-pointer shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1600" alt="Campus 360" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-75 group-hover:brightness-50" />
+            <div className="relative h-[400px] rounded-3xl overflow-hidden border border-white/10 group cursor-pointer shadow-2xl bg-[#0A0A0A]">
+                <img src={bgImage || defaultBg} alt="Campus 360" className="w-full h-full object-cover object-center scale-110 transition-transform duration-700 group-hover:scale-125 filter brightness-75 group-hover:brightness-50" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
                     <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(52,213,98,0.3)]">
                         <Globe size={40} className="text-[#34D562]" />

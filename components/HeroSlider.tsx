@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const images = [
+const defaultImages = [
     '/assets/Centurion/campus-wide.jpg',
     '/assets/Centurion/campus-entrance.jpg',
     '/assets/Centurion/campus-glass.jpg',
     '/assets/Centurion/campus-wide.jpg'
 ];
 
-export const HeroSlider = () => {
+interface HeroSliderProps {
+    images?: string[];
+}
+
+export const HeroSlider = ({ images = defaultImages }: HeroSliderProps) => {
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
@@ -16,7 +20,7 @@ export const HeroSlider = () => {
             setIndex((prev) => (prev + 1) % images.length);
         }, 4000); // Change every 4 seconds
         return () => clearInterval(timer);
-    }, []);
+    }, [images.length]);
 
     return (
         <div className="absolute inset-0 z-0 overflow-hidden">

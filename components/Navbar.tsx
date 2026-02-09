@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
   const location = useLocation();
 
   // Check if on Admissions page where StickyNav exists
-  const isAdmissionsPage = location.pathname === '/admissions';
+  const isAdmissionsPage = ['/centurion', '/sagebhopal', '/gyanveer'].includes(location.pathname);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,9 +53,21 @@ const Navbar: React.FC = () => {
 
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 cursor-pointer pointer-events-auto">
-              {isAdmissionsPage ? (
+              {location.pathname === '/centurion' ? (
                 <div className="flex items-center gap-1.5 md:gap-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
                   <img src="/assets/CenturionUniversity/logo.png" alt="Centurion University" className="h-9 md:h-12 object-contain" />
+                  <span className="text-gray-400 font-bold text-[8px] md:text-sm">X</span>
+                  <img src="https://i.postimg.cc/4NdhCzDD/logo-(2).png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
+                </div>
+              ) : location.pathname === '/sagebhopal' ? (
+                <div className="flex items-center gap-1.5 md:gap-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
+                  <img src="/assets/SAGE/sage-bhopal-logo.png" alt="SAGE University" className="h-9 md:h-12 object-contain" />
+                  <span className="text-gray-400 font-bold text-[8px] md:text-sm">X</span>
+                  <img src="https://i.postimg.cc/4NdhCzDD/logo-(2).png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
+                </div>
+              ) : location.pathname === '/gyanveer' ? (
+                <div className="flex items-center gap-1.5 md:gap-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
+                  <img src="https://www.gyanveeruniversity.edu.in/assets/img/logo/logo-gv.png" alt="Gyanveer University" className="h-9 md:h-12 object-contain" />
                   <span className="text-gray-400 font-bold text-[8px] md:text-sm">X</span>
                   <img src="https://i.postimg.cc/4NdhCzDD/logo-(2).png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
                 </div>
@@ -121,7 +133,7 @@ const Navbar: React.FC = () => {
 
             {/* Desktop Buttons */}
             <div className="hidden lg:flex items-center gap-3">
-              <Link to="/admissions" className="relative group px-6 py-2.5 text-sm font-bold bg-[#34D562] text-black rounded-full hover:bg-[#28a74b] hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(52,213,98,0.4)] flex items-center gap-2 overflow-hidden">
+              <Link to="/courses" className="relative group px-6 py-2.5 text-sm font-bold bg-[#34D562] text-black rounded-full hover:bg-[#28a74b] hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(52,213,98,0.4)] flex items-center gap-2 overflow-hidden">
                 <span className="relative z-10 flex items-center gap-2">
                   <Sparkles size={16} className="animate-pulse text-yellow-700 fill-yellow-400" />
                   Admissions Open
@@ -188,7 +200,7 @@ const Navbar: React.FC = () => {
                 className="w-full flex justify-center"
               >
                 <Link
-                  to="/admissions"
+                  to="/courses"
                   onClick={() => setMobileMenuOpen(false)}
                   className="mt-8 px-8 py-4 bg-[#34D562] text-black font-bold rounded-full text-xl flex items-center gap-2"
                 >

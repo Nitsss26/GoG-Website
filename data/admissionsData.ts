@@ -281,8 +281,8 @@ export const faculty = [
 
 // --- PLACEMENTS ---
 export const placementStats = {
-    highest: "36 LPA",
-    average: "6.5 LPA",
+    highest: "HIGH",
+    average: "BEST",
     median: "5.5 LPA",
     companies: ["Google", "Microsoft", "Amazon", "Accenture", "Infosys", "Mindtree", "Capgemini", "IBM", "Optum", "HCL", "TCS", "Wipro",],
     hiringPartners: 200,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import LeadershipCard from '../components/LeadershipCard';
-import { Quote, Linkedin, Circle, Sparkles, Award, Users } from 'lucide-react';
+import { Quote, Linkedin, Circle, Sparkles, Award, Users, Target } from 'lucide-react';
 import SEO from '../components/SEO';
 import GreenEmbers from '../components/ui/GreenEmbers';
 import GreenEmbers2 from '../components/ui/GreenEmbers2';
@@ -18,6 +18,23 @@ import NiteshImg from '../assets/team/Nitesh.jpg';
 import AyushImg from '../assets/team/ayush-chauhan.jpg';
 import SachinImg from '../assets/team/sachin-kumar-gupta.png';
 import VipulImg from '../assets/team/vipul-parmar.png';
+
+// Operation Managers
+import JyotiprakashImg from '../assets/Operation_Managers/Jyotiprakash_Maharana.jpg';
+import MayankImg from '../assets/Operation_Managers/Mayank_Sharma.png';
+import SakshiImg from '../assets/Operation_Managers/Sakshi_Rathore.png';
+import SatishImg from '../assets/Operation_Managers/Satish_Nagar.png';
+import VinayakImg from '../assets/Operation_Managers/Vinayak_Soni.png';
+import AniketImg from '../assets/Operation_Managers/Aniket_Chouhan.png';
+import ArpitImg from '../assets/Operation_Managers/Arpit_Pandey.png';
+import DevendraImg from '../assets/Operation_Managers/Devendra_Yadav.png';
+import HarshImg from '../assets/Operation_Managers/Harsh_Sahu.png';
+import PankajImg from '../assets/Operation_Managers/Pankaj_Mewada.png';
+import PrinceImg from '../assets/Operation_Managers/Prince_Patel.png';
+import ShivankImg from '../assets/Operation_Managers/Shivank_Singh.png';
+import SumitImg from '../assets/Operation_Managers/Sumit_Dwivedi.png';
+import SunilImg from '../assets/Operation_Managers/Sunil_Shah.png';
+import SusmitaImg from '../assets/Operation_Managers/Susmita_Sahoo.png';
 
 // Partner Logos
 import AdtU from '../assets/PartneredColleges/AdtU.svg';
@@ -69,6 +86,24 @@ const AboutGoG: React.FC = () => {
             badge: "COO",
             linkedin: "#"
         }
+    ];
+
+    const operationManagers = [
+        { name: "Mr. Jyotiprakash Maharana", image: JyotiprakashImg },
+        { name: "Mr. Mayank Sharma", image: MayankImg },
+        { name: "Ms. Sakshi Rathore", image: SakshiImg },
+        { name: "Mr. Satish Nagar", image: SatishImg },
+        { name: "Mr. Vinayak Soni", image: VinayakImg },
+        { name: "Mr. Aniket Chouhan", image: AniketImg },
+        { name: "Mr. Arpit Pandey", image: ArpitImg },
+        { name: "Mr. Devendra Yadav", image: DevendraImg },
+        { name: "Mr. Harsh Sahu", image: HarshImg },
+        { name: "Mr. Pankaj Mewada", image: PankajImg },
+        { name: "Mr. Prince Patel", image: PrinceImg },
+        { name: "Mr. Shivank Singh", image: ShivankImg },
+        { name: "Mr. Sumit Dwivedi", image: SumitImg },
+        { name: "Mr. Sunil Shah", image: SunilImg },
+        { name: "Ms. Susmita Sahoo", image: SusmitaImg }
     ];
 
     return (
@@ -307,6 +342,48 @@ const AboutGoG: React.FC = () => {
                                 <p className="text-[#34D562] text-lg font-bold font-mono uppercase tracking-wide">Head of Institute</p>
                             </div>
                         </motion.div>
+                    </div>
+                </div>
+
+                {/* --- Operation Managers (OMs) --- */}
+                <div className="mt-40 -mb-20">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-16"
+                    >
+                        <div className="inline-flex items-center gap-2 mb-6 px-6 py-2 rounded-full border border-[#34D562]/30 bg-[#34D562]/10">
+                            <Target size={18} className="text-[#34D562]" />
+                            <span className="text-[#34D562] font-mono tracking-widest uppercase text-sm font-bold">Operations Team</span>
+                        </div>
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Operation <span className="text-[#34D562]">Managers</span></h2>
+                    </motion.div>
+
+                    <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-6 max-w-[1600px] mx-auto">
+                        {operationManagers.map((om, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
+                                className="group relative bg-[#0A0A0A] rounded-xl md:rounded-2xl overflow-hidden border border-white/5 hover:border-[#34D562]/30 transition-all duration-500 shadow-lg hover:shadow-[0_0_30px_rgba(52,213,98,0.15)]"
+                            >
+                                <div className="h-32 md:h-80 overflow-hidden relative">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-80" />
+                                    <img
+                                        src={om.image}
+                                        alt={om.name}
+                                        className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105"
+                                    />
+                                </div>
+                                <div className="absolute bottom-0 left-0 right-0 p-1.5 md:p-4 z-20 text-center transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+                                    <div className="hidden md:inline-block px-3 py-0.5 bg-[#34D562] text-black font-bold text-[8px] tracking-wider uppercase rounded-full mb-2 shadow-[0_0_10px_rgba(52,213,98,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Operation Manager</div>
+                                    <h3 className="text-[7px] md:text-lg font-bold text-white leading-tight">{om.name}</h3>
+                                </div>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </div>
