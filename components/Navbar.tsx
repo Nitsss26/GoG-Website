@@ -133,7 +133,7 @@ const Navbar: React.FC = () => {
 
             {/* Desktop Buttons */}
             <div className="hidden lg:flex items-center gap-3">
-              <Link to="/courses" className="relative group px-6 py-2.5 text-sm font-bold bg-[#34D562] text-black rounded-full hover:bg-[#28a74b] hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(52,213,98,0.4)] flex items-center gap-2 overflow-hidden">
+              <Link to="/" className="relative group px-6 py-2.5 text-sm font-bold bg-[#34D562] text-black rounded-full hover:bg-[#28a74b] hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(52,213,98,0.4)] flex items-center gap-2 overflow-hidden">
                 <span className="relative z-10 flex items-center gap-2">
                   <Sparkles size={16} className="animate-pulse text-yellow-700 fill-yellow-400" />
                   Admissions Open
