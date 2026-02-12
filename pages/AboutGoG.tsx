@@ -35,6 +35,17 @@ import ShivankImg from '../assets/Operation_Managers/Shivank_Singh.png';
 import SumitImg from '../assets/Operation_Managers/Sumit_Dwivedi.png';
 import SunilImg from '../assets/Operation_Managers/Sunil_Shah.png';
 import SusmitaImg from '../assets/Operation_Managers/Susmita_Sahoo.png';
+import KartikImg from '../assets/Operation_Managers/Kartik_Verma.png';
+import SwayamImg from '../assets/Operation_Managers/Swayam_Meshram.png';
+import YaminiImg from '../assets/Operation_Managers/Yamini_Ziniwal.png';
+import ZaidImg from '../assets/Operation_Managers/Zaid_Ahmad_khan.png';
+import AdityaVImg from '../assets/Operation_Managers/Aditya_Vishwakarma.png';
+import MimanshaImg from '../assets/Operation_Managers/Mimansha_Thakur.png';
+import PriyanshuImg from '../assets/Operation_Managers/Priyanshu_Goswami.png';
+import SwatiImg from '../assets/Operation_Managers/Swati_Rai.png';
+import AnkitImg from '../assets/Operation_Managers/Ankit_Nagdiya.png';
+import ShivaniImg from '../assets/Operation_Managers/Shivani_Chourasiya.png';
+
 
 // Partner Logos
 import AdtU from '../assets/PartneredColleges/AdtU.svg';
@@ -89,6 +100,10 @@ const AboutGoG: React.FC = () => {
     ];
 
     const operationManagers = [
+        { name: "Mr. Kartik Verma", image: KartikImg },
+        { name: "Mr. Swayam Meshram", image: SwayamImg },
+        { name: "Ms. Yamini Ziniwal", image: YaminiImg },
+        { name: "Mr. Zaid Ahmad Khan", image: ZaidImg },
         { name: "Mr. Jyotiprakash Maharana", image: JyotiprakashImg },
         { name: "Mr. Mayank Sharma", image: MayankImg },
         { name: "Ms. Sakshi Rathore", image: SakshiImg },
@@ -103,7 +118,13 @@ const AboutGoG: React.FC = () => {
         { name: "Mr. Shivank Singh", image: ShivankImg },
         { name: "Mr. Sumit Dwivedi", image: SumitImg },
         { name: "Mr. Sunil Shah", image: SunilImg },
-        { name: "Ms. Susmita Sahoo", image: SusmitaImg }
+        { name: "Ms. Susmita Sahoo", image: SusmitaImg },
+        { name: "Mr. Aditya Vishwakarma", image: AdityaVImg },
+        { name: "Ms. Mimansha Thakur", image: MimanshaImg },
+        { name: "Mr. Priyanshu Goswami", image: PriyanshuImg },
+        { name: "Ms. Swati Rai", image: SwatiImg },
+        { name: "Mr. Ankit Nagdiya", image: AnkitImg },
+        { name: "Ms. Shivani Chourasiya", image: ShivaniImg }
     ];
 
     return (
@@ -117,10 +138,10 @@ const AboutGoG: React.FC = () => {
                 canonical="/about-gog"
             />
 
-            {/* Hero Section */}
-            <div className="relative pt-32 pb-20 px-6 min-h-[60vh] flex items-center justify-center overflow-hidden">
-                {/* Background Grid */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#34D56210_1px,transparent_1px),linear-gradient(to_bottom,#34D56210_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+            {/* ===== Unified About Section ===== */}
+            <section className="relative pt-32 pb-24 px-6 overflow-hidden">
+                {/* Background Grid - Spans entire section */}
+                <div className="absolute top-0 inset-x-0 h-[550px] bg-[linear-gradient(to_right,#34D56225_1px,transparent_1px),linear-gradient(to_bottom,#34D56225_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
                 {/* Halogen Glow */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#34D562]/20 blur-[150px] rounded-full pointer-events-none" />
@@ -128,45 +149,184 @@ const AboutGoG: React.FC = () => {
                 {/* Extra Embers */}
                 <GreenEmbers2 density={3} className="absolute inset-0 z-[5]" />
 
-                {/* Decorative Shapes */}
+                <div className="container mx-auto max-w-[1400px] relative z-10">
+                    {/* Header Content */}
+                    <div className="text-center max-w-5xl mx-auto mb-20">
+                        {/* <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 1 }}
+                            className="inline-block mb-6 px-6 py-2 rounded-full border border-[#34D562]/30 bg-[#34D562]/10 backdrop-blur-md shadow-[0_0_20px_rgba(52,213,98,0.3)]"
+                        >
+                            <span className="text-[#34D562] font-mono tracking-widest uppercase text-sm font-bold flex items-center gap-2">
+                                <Users size={16} />
+                                About GoG
+                            </span>
+                        </motion.div> */}
 
+                        <motion.h1
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-tight drop-shadow-[0_0_15px_rgba(52,213,98,0.3)]"
+                        >
+                            About <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-[#28a74b] to-[#34D562]">Geeks of Gurukul</span>
+                        </motion.h1>
+
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed -mb-6"
+                        >
+                            Empowering individuals with industry-relevant skills and personalized mentorship
+                        </motion.p>
+                    </div>
+
+                    {/* Content Blocks */}
+                    <div className="space-y-24">
+                        {/* First Block - Image Left, Text Right */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="flex flex-col lg:flex-row gap-12 items-center"
+                        >
+                            <div className="lg:w-4/12 relative group">
+                                <div className="absolute -inset-4 bg-gradient-to-r from-[#34D562]/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                <div className="relative rounded-3xl overflow-hidden border-2 border-white/10 group-hover:border-[#34D562]/50 transition-all duration-500">
+                                    <img
+                                        src={S1Img}
+                                        alt="Team at Geeks of Gurukul"
+                                        className="w-full h-[300px] md:h-[350px] lg:h-[350px] object-cover object-center transform group-hover:scale-105 transition-all duration-700 filter grayscale group-hover:grayscale-0"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                                </div>
+                            </div>
+                            <div className="lg:w-8/12 space-y-6 pl-8">
+                                <div className="h-1 w-20 bg-gradient-to-r from-[#34D562] to-transparent rounded-full" />
+                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-4xl">
+                                    In the current <span className="text-[#34D562] font-semibold">educational landscape</span>, students from <span className="text-[#34D562] font-semibold">tier 2 and tier 3 cities</span> often face significant disadvantages in terms of skill development and educational resources. The <br /> major edtech companies, despite their substantial funding, predominantly cater to tier 1 <br /> cities, leaving a significant portion of India's population underserved.
+                                </p>
+                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-4xl">
+                                    Recognizing this gap, we founded <span className="text-[#34D562] font-semibold whitespace-nowrap">Geeks of Gurukul</span> with the primary mission of <span className="text-[#34D562] font-semibold whitespace-nowrap">Empowering Bharat</span>, focusing specifically on these underrepresented regions.
+                                </p>
+                            </div>
+                        </motion.div>
+
+                        {/* Second Block - Text Left, Image Right */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="flex flex-col-reverse lg:flex-row gap-12 items-center"
+                        >
+                            <div className="lg:w-8/12 space-y-6">
+                                <div className="h-1 w-20 bg-gradient-to-r from-[#34D562] to-transparent rounded-full" />
+                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                                    At <span className="text-[#34D562] font-semibold">Geeks of Gurukul</span>, we believe in the philosophy of <span className="text-[#34D562] font-semibold">"Work Hard, Party Harder"</span>. Our team of passionate IITians knows that building the future of education requires not just dedication, but also a vibrant culture of celebration and joy.
+                                </p>
+                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                                    From intense brainstorming sessions to unforgettable parties, we bond over shared successes and create memories that last forever. We are not just colleagues; we are a <span className="text-[#34D562] font-semibold">Family</span> that celebrates every milestone together, fueling our drive to innovate.
+                                </p>
+                            </div>
+                            <div className="lg:w-4/12 relative group">
+                                <div className="absolute -inset-4 bg-gradient-to-r from-[#34D562]/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                <div className="relative rounded-3xl overflow-hidden border-2 border-white/10 group-hover:border-[#34D562]/50 transition-all duration-500">
+                                    <img
+                                        src={S3Img}
+                                        alt="Team at Geeks of Gurukul"
+                                        className="w-full h-[300px] md:h-[350px] lg:h-[350px] object-cover object-center transform group-hover:scale-105 transition-all duration-700 filter grayscale group-hover:grayscale-0"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                                </div>
+                            </div>
+                        </motion.div>
+
+
+                        {/* <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="flex flex-col-reverse lg:flex-row-reverse gap-12 items-center"
+                        >
+                            <div className="lg:w-8/12 space-y-6">
+                                <div className="h-1 w-20 bg-gradient-to-r from-[#34D562] to-transparent rounded-full" />
+                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                                    Our philosophy is rooted in the concept of the <span className="text-[#34D562] font-semibold">MODERN AGE GURUKUL</span>. This signifies our commitment to reviving the Ancient Indian Educational System, which emphasized Project-Based Learning and practical knowledge system.
+                                </p>
+                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                                    By adopting these time-tested, <span className="text-[#34D562] font-semibold">Practical Learning Techniques</span>, Geeks of Gurukul aims to provide students with the skills and knowledge that are not only relevant but also essential for <span className="text-[#34D562] font-semibold">Real-World Applications</span>.
+                                </p>
+                            </div>
+                            <div className="lg:w-4/12 relative group">
+                                <div className="absolute -inset-4 bg-gradient-to-l from-[#34D562]/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                <div className="relative rounded-3xl overflow-hidden border-2 border-white/10 group-hover:border-[#34D562]/50 transition-all duration-500">
+                                    <img
+                                        src={S2Img}
+                                        alt="Modern Age Gurukul"
+                                        className="w-full h-[300px] md:h-[350px] lg:h-[350px] object-cover object-center transform group-hover:scale-105 transition-all duration-700 filter grayscale group-hover:grayscale-0"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                                </div>
+                            </div>
+
+                        </motion.div> */}
+                    </div>
+                </div>
+            </section >
+
+            {/* ===== Message From The Guiding Team ===== */}
+            < div className="relative py-20 px-6 overflow-hidden" >
+                {/* Background Grid */}
+                < div className="absolute inset-0 bg-[linear-gradient(to_right,#34D56225_1px,transparent_1px),linear-gradient(to_bottom,#34D56225_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)] pointer-events-none" />
+
+                {/* Halogen Glow */}
+                < div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#34D562]/15 blur-[150px] rounded-full pointer-events-none" />
 
                 <div className="container mx-auto relative z-10 text-center max-w-5xl">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
                         transition={{ duration: 1 }}
                         className="inline-block mb-6 px-6 py-2 rounded-full border border-[#34D562]/30 bg-[#34D562]/10 backdrop-blur-md shadow-[0_0_20px_rgba(52,213,98,0.3)]"
                     >
                         <span className="text-[#34D562] font-mono tracking-widest uppercase text-sm font-bold flex items-center gap-2">
                             <Users size={16} />
-                            About GoG
+                            Pathfinders
                         </span>
                     </motion.div>
 
-                    <motion.h1
+                    <motion.h2
                         initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-tight drop-shadow-[0_0_15px_rgba(52,213,98,0.3)]"
+                        className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight drop-shadow-[0_0_15px_rgba(52,213,98,0.3)]"
                     >
                         Message From The <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-[#28a74b] to-[#34D562]">Guiding Team</span>
-                    </motion.h1>
+                    </motion.h2>
 
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.4 }}
                         className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed"
                     >
                         Meet the visionaries driving innovation and excellence at Geeks of Gurukul.
                     </motion.p>
                 </div>
-            </div>
+            </div >
 
             {/* Leadership Cards */}
-            <div className="container mx-auto px-6 pb-32 relative z-10">
+            < div className="container mx-auto px-6 pb-32 relative z-10" >
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full max-w-[1600px] mx-auto">
                     {leaders.map((leader, index) => (
                         <LeadershipCard key={index} {...leader} index={index} />
@@ -346,7 +506,7 @@ const AboutGoG: React.FC = () => {
                 </div>
 
                 {/* --- Operation Managers (OMs) --- */}
-                <div className="mt-40 -mb-20">
+                <div className="mt-40 mb-5">
                     <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
@@ -368,7 +528,7 @@ const AboutGoG: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
-                                className="group relative bg-[#0A0A0A] rounded-xl md:rounded-2xl overflow-hidden border border-white/5 hover:border-[#34D562]/30 transition-all duration-500 shadow-lg hover:shadow-[0_0_30px_rgba(52,213,98,0.15)]"
+                                className="group relative bg-[#0A0A0A] rounded-xl md:rounded-2xl overflow-hidden border border-white/5 hover:border-[#34D562]/30 transition-all duration-500 shadow-lg hover:shadow-[0_0_30px_rgba(52,213,98,0.15)] last:col-start-2 lg:last:col-start-auto"
                             >
                                 <div className="h-32 md:h-80 overflow-hidden relative">
                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-80" />
@@ -386,127 +546,10 @@ const AboutGoG: React.FC = () => {
                         ))}
                     </div>
                 </div>
-            </div>
-
-            {/* About Content Section */}
-            <section className="py-24 px-6">
-                <div className="container mx-auto max-w-[1400px] px-6">
-                    {/* Section Title */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-center mb-20"
-                    >
-                        <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] to-[#28a74b]">Geeks of Gurukul</span>
-                        </h2>
-                        <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                            Empowering individuals with industry-relevant skills and personalized mentorship
-                        </p>
-                    </motion.div>
-
-                    <div className="space-y-24">
-                        {/* First Block - Image Left, Text Right */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                            className="flex flex-col lg:flex-row gap-12 items-center"
-                        >
-                            <div className="lg:w-4/12 relative group">
-                                <div className="absolute -inset-4 bg-gradient-to-r from-[#34D562]/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                                <div className="relative rounded-3xl overflow-hidden border-2 border-white/10 group-hover:border-[#34D562]/50 transition-all duration-500">
-                                    <img
-                                        src={S1Img}
-                                        alt="Team at Geeks of Gurukul"
-                                        className="w-full h-[300px] md:h-[350px] lg:h-[350px] object-cover object-center transform group-hover:scale-105 transition-all duration-700 filter grayscale group-hover:grayscale-0"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                                </div>
-                            </div>
-                            <div className="lg:w-8/12 space-y-6">
-                                <div className="h-1 w-20 bg-gradient-to-r from-[#34D562] to-transparent rounded-full" />
-                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                                    In the current educational landscape, students from tier 2 and tier 3 cities often face significant disadvantages in terms of skill development and educational resources. The major edtech companies, despite their substantial funding, predominantly cater to tier 1 cities, leaving a significant portion of India's population underserved.
-                                </p>
-                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                                    Recognizing this gap, we founded <span className="text-[#34D562] font-semibold">Geeks of Gurukul</span> with the primary mission of <span className="text-[#34D562] font-semibold">Empowering Bharat</span>, focusing specifically on these underrepresented regions.
-                                </p>
-                            </div>
-                        </motion.div>
-
-                        {/* Second Block - Text Left, Image Right */}
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                            className="flex flex-col-reverse lg:flex-row gap-12 items-center"
-                        >
-                            <div className="lg:w-8/12 space-y-6">
-                                <div className="h-1 w-20 bg-gradient-to-r from-[#34D562] to-transparent rounded-full" />
-                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                                    At <span className="text-[#34D562] font-semibold">Geeks of Gurukul</span>, we believe in the philosophy of <span className="text-[#34D562] font-semibold">"Work Hard, Party Harder"</span>. Our team of passionate IITians knows that building the future of education requires not just dedication, but also a vibrant culture of celebration and joy.
-                                </p>
-                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                                    From intense brainstorming sessions to unforgettable parties, we bond over shared successes and create memories that last forever. We are not just colleagues; we are a <span className="text-[#34D562] font-semibold">Family</span> that celebrates every milestone together, fueling our drive to innovate.
-                                </p>
-                            </div>
-                            <div className="lg:w-4/12 relative group">
-                                <div className="absolute -inset-4 bg-gradient-to-r from-[#34D562]/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                                <div className="relative rounded-3xl overflow-hidden border-2 border-white/10 group-hover:border-[#34D562]/50 transition-all duration-500">
-                                    <img
-                                        src={S3Img}
-                                        alt="Team at Geeks of Gurukul"
-                                        className="w-full h-[300px] md:h-[350px] lg:h-[350px] object-cover object-center transform group-hover:scale-105 transition-all duration-700 filter grayscale group-hover:grayscale-0"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                                </div>
-                            </div>
-
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                            className="flex flex-col-reverse lg:flex-row-reverse gap-12 items-center"
-                        >
-                            <div className="lg:w-8/12 space-y-6">
-                                <div className="h-1 w-20 bg-gradient-to-r from-[#34D562] to-transparent rounded-full" />
-                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                                    Our philosophy is rooted in the concept of the <span className="text-[#34D562] font-semibold">MODERN AGE GURUKUL</span>. This signifies our commitment to reviving the Ancient Indian Educational System, which emphasized Project-Based Learning and practical knowledge system.
-                                </p>
-                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                                    By adopting these time-tested, <span className="text-[#34D562] font-semibold">Practical Learning Techniques</span>, Geeks of Gurukul aims to provide students with the skills and knowledge that are not only relevant but also essential for <span className="text-[#34D562] font-semibold">Real-World Applications</span>.
-                                </p>
-                            </div>
-                            <div className="lg:w-4/12 relative group">
-                                <div className="absolute -inset-4 bg-gradient-to-l from-[#34D562]/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                                <div className="relative rounded-3xl overflow-hidden border-2 border-white/10 group-hover:border-[#34D562]/50 transition-all duration-500">
-                                    <img
-                                        src={S2Img}
-                                        alt="Modern Age Gurukul"
-                                        className="w-full h-[300px] md:h-[350px] lg:h-[350px] object-cover object-center transform group-hover:scale-105 transition-all duration-700 filter grayscale group-hover:grayscale-0"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                                </div>
-                            </div>
-
-                        </motion.div>
-
-
-
-                    </div>
-                </div>
-            </section>
+            </div >
 
             {/* Community CTA Section */}
-            <section className="py-24 relative overflow-hidden">
+            < section className="py-24 relative overflow-hidden" >
                 <div className="absolute inset-0 bg-[#34D562]/5" />
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#34D56210_1px,transparent_1px),linear-gradient(to_bottom,#34D56210_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
@@ -535,12 +578,12 @@ const AboutGoG: React.FC = () => {
                         </motion.a>
                     </motion.div>
                 </div>
-            </section>
+            </section >
 
             {/* Partnered Institutes Section */}
-            <section className="py-24 px-6 relative overflow-hidden">
+            < section className="py-24 px-6 relative overflow-hidden" >
                 {/* Background Glow */}
-                <div className="absolute -left-40 top-1/2 -translate-y-1/2 w-[600px] h-[700px] bg-[#34D562]/10 rounded-full blur-[150px]" />
+                < div className="absolute -left-40 top-1/2 -translate-y-1/2 w-[600px] h-[700px] bg-[#34D562]/10 rounded-full blur-[150px]" />
 
                 <div className="container mx-auto max-w-[1600px]">
                     {/* Title */}
@@ -636,7 +679,7 @@ const AboutGoG: React.FC = () => {
                         </div>
                     </motion.div>
                 </div>
-            </section>
+            </section >
         </main >
     );
 };
@@ -1004,20 +1047,20 @@ export default AboutGoG;
 //                                 whileInView={{ opacity: 1, y: 0 }}
 //                                 viewport={{ once: true }}
 //                                 transition={{ duration: 0.6 }}
-//                                 className="flex flex-col lg:flex-row gap-12 items-center"
+//                                 className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center"
 //                             >
-//                                 <div className="lg:w-1/2 relative group">
+//                                 <div className="lg:w-5/12 relative group">
 //                                     <div className="absolute -inset-4 bg-gradient-to-r from-[#34D562]/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 //                                     <div className="relative rounded-3xl overflow-hidden border-2 border-white/10 group-hover:border-[#34D562]/50 transition-all duration-500">
 //                                         <img
-//                                             src={Img1}
-//                                             alt="Team at Geeks of Gurukul"
-//                                             className="w-full h-80 md:h-96 object-cover transform group-hover:scale-105 transition-transform duration-700"
+//                                             src="/assets/images/founders.jpg"
+//                                             alt="Geeks of Gurukul Founders"
+//                                             className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
 //                                         />
-//                                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+//                                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
 //                                     </div>
 //                                 </div>
-//                                 <div className="lg:w-1/2 space-y-6">
+//                                 <div className="lg:w-7/12 space-y-6 lg:pl-16">
 //                                     <h3 className="text-2xl font-bold text-white">Empowering <span className="text-[#34D562]">Bharat</span></h3>
 //                                     <div className="h-1 w-20 bg-gradient-to-r from-[#34D562] to-transparent rounded-full" />
 //                                     <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
