@@ -12,7 +12,7 @@ import {
 
 // --- BASIC INFO ---
 export const courseInfo = {
-    name: "B.Tech in Computer Science Engineering ( AI-ML )",
+    name: "B.TECH CSE & B.TECH CSE (AI-ML)",
     specialization: "AI & ML",
     university: "Gyanveer University",
     universitySub: "Sagar",
@@ -94,7 +94,7 @@ export const rankings = [
 export const feeStructure = {
     qualifierFee: "₹99",
     seatBooking: "₹10,000",
-    tuitionPerYear: "₹95,000",
+    tuitionPerYear: "₹80,000",
     hostelPerYear: "₹45,000 - ₹65,000",
     scholarships: [
         { percentage: "10% OFF", type: "Early Bird", criteria: "Register before May 31st" },

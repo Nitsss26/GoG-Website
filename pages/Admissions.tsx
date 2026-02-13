@@ -593,13 +593,13 @@ const Admissions = () => {
                             <div className="p-8 bg-[#0a0a0a] border border-white/10 rounded-3xl shadow-2xl relative group overflow-hidden">
                                 <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
 
-                                <div className="flex justify-between items-end mb-4 relative z-10">
+                                <div className="flex flex-row justify-between items-end mb-4 relative z-10 gap-2">
                                     <div>
-                                        <h4 className="text-gray-400 text-sm uppercase tracking-widest font-bold mb-1">Annual Tuition Fee</h4>
-                                        <div className="text-5xl font-display font-bold text-white">{feeStructure.tuitionPerYear}</div>
+                                        <h4 className="text-gray-400 text-[10px] md:text-sm uppercase tracking-widest font-bold mb-1">Annual Tuition Fee</h4>
+                                        <div className="text-3xl md:text-5xl font-display font-bold text-white leading-none pb-1">{feeStructure.tuitionPerYear}</div>
                                     </div>
-                                    <div className="text-right">
-                                        <div className="inline-block px-3 py-1 bg-[#34D562]/20 text-[#34D562] text-xs font-bold rounded-full border border-[#34D562]/30 mb-2">
+                                    <div className="text-right pb-1">
+                                        <div className="inline-block px-2 py-1 md:px-3 bg-[#34D562]/20 text-[#34D562] text-[10px] md:text-xs font-bold rounded-full border border-[#34D562]/30 mb-1 md:mb-2 whitespace-nowrap">
                                             <span className="text-amber-400">NAAC 'A+'</span> Accredited
                                         </div>
                                     </div>

@@ -177,55 +177,53 @@ const ImageCard = ({ img, title, subtitle }: { img?: string; title: string; subt
     </div>
 );
 
+// --- 5. ACTUAL CERTIFICATE IMAGE ---
+// --- 5. HYPER-MODERN LUXURY CERTIFICATE FRAME ---
 const CertificatePreview = () => (
-    <div className="relative bg-white text-black py-6 px-6 md:py-10 md:px-16 rounded-lg shadow-2xl border-4 border-[#34D562]/20 max-w-6xl mx-auto overflow-hidden transform scale-[0.85] md:scale-110 origin-center transition-transform duration-500">
-        {/* Borders */}
-        <div className="absolute top-0 left-0 w-8 h-8 md:w-16 md:h-16 border-t-8 border-l-8 border-[#003366] rounded-tl-2xl md:rounded-tl-3xl" />
-        <div className="absolute top-0 right-0 w-8 h-8 md:w-16 md:h-16 border-t-8 border-r-8 border-[#003366] rounded-tr-2xl md:rounded-tr-3xl" />
-        <div className="absolute bottom-0 left-0 w-8 h-8 md:w-16 md:h-16 border-b-8 border-l-8 border-[#003366] rounded-bl-2xl md:rounded-bl-3xl" />
-        <div className="absolute bottom-0 right-0 w-8 h-8 md:w-16 md:h-16 border-b-8 border-r-8 border-[#003366] rounded-br-2xl md:rounded-br-3xl" />
+    <div className="relative group max-w-5xl mx-auto py-12 px-4 md:px-12">
+        {/* Animated Background Glows */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-64 h-64 bg-[#34D562]/10 blur-[100px] rounded-full animate-pulse" />
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-64 h-64 bg-emerald-500/10 blur-[100px] rounded-full animate-pulse delay-700" />
 
-        {/* Content */}
-        <div className="text-center relative z-10">
-            <div className="flex justify-center mb-4 md:mb-6 gap-4 md:gap-8 items-center">
-                {/* University Logo */}
-                <img src="https://www.gyanveeruniversity.edu.in/assets/img/logo/logo-gv.png" alt="Gyanveer University" className="h-12 md:h-16 object-contain" />
-            </div>
+        {/* The Frame Container */}
+        <div className="relative p-1 rounded-[2.5rem] bg-gradient-to-br from-white/20 via-white/5 to-white/20 shadow-2xl backdrop-blur-sm overflow-hidden group-hover:shadow-[#34D562]/10 transition-shadow duration-700">
 
-            <h3 className="text-[#003366] font-serif font-bold text-xl md:text-4xl mb-1">CERTIFICATE OF COMPLETION</h3>
-            <p className="text-gray-600 italic text-xs md:text-base mb-2 md:mb-4">This is to certify that Mr./Ms.</p>
+            {/* Animated Border Sweep */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#34D562]/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1500 ease-in-out pointer-events-none" />
 
-            <div className="text-3xl md:text-5xl font-script text-[#34D562] font-bold mb-2 md:mb-4">Aditya Verma</div>
+            {/* Inner Content Case */}
+            <div className="relative bg-[#0a0a0a] rounded-[2.3rem] p-4 md:p-8 overflow-hidden">
 
-            <p className="text-gray-700 text-sm md:text-lg max-w-2xl mx-auto mb-4 md:mb-6 leading-tight">
-                has successfully completed the 4-Year B.Tech Program in <br />
-                <span className="font-bold text-black">Computer Science & Engineering (Full Stack Development)</span>
-            </p>
+                {/* Decorative Floating Accents */}
+                <div className="absolute top-6 left-6 w-12 h-12 border-t-2 border-l-2 border-[#34D562] opacity-40 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute bottom-6 right-6 w-12 h-12 border-b-2 border-r-2 border-[#34D562] opacity-40 group-hover:opacity-100 transition-opacity" />
 
-            <div className="flex justify-between items-end mt-4 md:mt-8 px-2 md:px-10">
-                <div className="text-center">
-                    <div className="h-8 w-16 md:h-12 md:w-24 border-b-2 border-black mb-1 md:mb-2 mx-auto"></div>
-                    <p className="font-bold text-[#003366] text-[10px] md:text-base">Registrar</p>
-                    <p className="text-[8px] md:text-xs text-gray-500">Gyanveer University</p>
-                </div>
-                {/* Geeks of Gurukul Badge */}
-                <div className="text-center">
-                    <span className="text-sm md:text-xl font-bold text-black flex items-center gap-1">
-                        <span className="text-[#34D562]">Geeks</span>ofGurukul
-                    </span>
-                </div>
-                <div className="text-center">
-                    <div className="h-8 w-16 md:h-12 md:w-24 border-b-2 border-black mb-1 md:mb-2 mx-auto"></div>
-                    <p className="font-bold text-[#003366] text-[10px] md:text-base">Program Director</p>
-                    <p className="text-[8px] md:text-xs text-gray-500">Geeks of Gurukul</p>
+                {/* Glass Card for Certificate */}
+                <div className="relative rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] bg-white p-1 md:p-1.5 transition-transform duration-700 group-hover:scale-[1.01]">
+                    {/* Security Hologram Effect Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[#34D562]/5 via-transparent to-emerald-500/5 pointer-events-none mix-blend-overlay" />
+
+                    <img
+                        src="/assets/Gyanveer/degree_certificate.png"
+                        alt="Degree Certificate"
+                        className="w-full h-auto object-contain relative z-0"
+                    />
+
+                    {/* Luxury Shine Sweep */}
+                    <div className="absolute top-0 -left-full w-2/3 h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-25deg] group-hover:translate-x-[300%] transition-transform duration-1000 ease-in-out pointer-events-none z-20" />
                 </div>
             </div>
         </div>
 
-        {/* Shine Effect */}
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 animate-shine pointer-events-none" />
+        {/* Minimal Floating Badge instead of caption */}
+        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-black/80 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl flex items-center gap-3 z-30 group-hover:border-[#34D562]/30 transition-colors">
+            <div className="w-2 h-2 rounded-full bg-[#34D562] animate-pulse" />
+            <span className="text-[10px] md:text-xs font-bold text-gray-300 uppercase tracking-widest">Verified Digital Credential</span>
+        </div>
     </div>
 );
+
+
 
 
 
@@ -393,10 +391,10 @@ const Gyanveer = () => {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.1, duration: 0.8 }}
-                            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight md:leading-[0.9] mb-6 md:mb-6 tracking-tighter"
+                            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight md:leading-[1.1] mb-6 md:mb-6 tracking-tighter"
                         >
-                            B.Tech in Computer Science<br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">Engineering ( AI-ML )</span>
+                            B.TECH <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">CSE</span><br />
+                            B.TECH <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">CSE (AI-ML)</span>
                         </motion.h1>
 
 

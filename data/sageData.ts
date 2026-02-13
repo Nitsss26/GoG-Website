@@ -94,7 +94,7 @@ export const rankings = [
 export const feeStructure = {
     qualifierFee: "₹99",
     seatBooking: "₹10,000",
-    tuitionPerYear: "₹1,00,000",
+    tuitionPerYear: "₹1,30,000",
     hostelPerYear: "₹50,000 - ₹70,000",
     scholarships: [
         { percentage: "10% OFF", type: "Early Bird", criteria: "Pay before May 31st" },
