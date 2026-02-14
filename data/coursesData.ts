@@ -31,20 +31,20 @@ export interface CourseCardData {
 }
 
 export const coursesData: CourseCardData[] = [
-    {
-        id: "centurion-btech",
-        universityName: "Centurion University",
-        location: "Vizianagaram, AP",
-        programName: "B.Tech CSE (AI & ML)",
-        approvals: "NAAC 'A+' | UGC Approved",
-        logo: Centurion,
-        image: CenturionSlide,
-        specialisations: 5,
-        certifications: 12,
-        fees: "₹1.75 Lakhs/Year",
-        link: "/centurion",
-        isExternal: false
-    },
+    // {
+    //     id: "centurion-btech",
+    //     universityName: "Centurion University",
+    //     location: "Vizianagaram, AP",
+    //     programName: "B.Tech CSE (AI & ML)",
+    //     approvals: "NAAC 'A+' | UGC Approved",
+    //     logo: Centurion,
+    //     image: CenturionSlide,
+    //     specialisations: 5,
+    //     certifications: 12,
+    //     fees: "₹1.75 Lakhs/Year",
+    //     link: "/centurion",
+    //     isExternal: false
+    // },
     {
         id: "sage-bhopal",
         universityName: "SAGE University, Bhopal",
