@@ -378,7 +378,13 @@ const SageBhopal = () => {
                     </div>
                 }
             />
-            <ApplyForm isOpen={isApplyOpen} onClose={() => setIsApplyOpen(false)} />
+            <ApplyForm
+                isOpen={isApplyOpen}
+                onClose={() => setIsApplyOpen(false)}
+                universityName="Sage University Bhopal"
+                courses={["B.Tech Full Stack Development"]}
+                redirectUrl="https://admission.sageuniversity.edu.in/?utm_source=Website-Lead&utm_medium=Google&utm_campaign=Admissions-2024&_gl=1*f5pca6*_gcl_au*NjA5MjUwMTY4LjE3NzEwNzgwNTYuNjY0NjQyMzQuMTc3MTA3ODA1Ny4xNzcxMDc4MDY2"
+            />
 
             {/* ===== 1. HERO SECTION (PROFESSIONAL & FULL WIDTH) ===== */}
             <section className="relative min-h-[68vh] md:min-h-[110vh] lg:min-h-[115vh] flex items-center justify-center overflow-hidden">
@@ -402,10 +408,9 @@ const SageBhopal = () => {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.1, duration: 0.8 }}
-                            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight md:leading-[0.9] mb-6 md:mb-6 tracking-tighter"
+                            className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight md:leading-[0.9] mb-6 md:mb-6 tracking-tighter whitespace-nowrap"
                         >
-                            B.Tech in Computer Science<br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">(Full Stack Development)</span>
+                            B.Tech <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">Full Stack Development</span>
                         </motion.h1>
 
 

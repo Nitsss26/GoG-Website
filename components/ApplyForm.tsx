@@ -1,34 +1,65 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, CheckCircle, ChevronDown } from 'lucide-react';
+import { X, CheckCircle, ChevronDown, Circle, Check } from 'lucide-react';
 
 interface ApplyFormProps {
     isOpen: boolean;
     onClose: () => void;
+    universityName?: string;
+    courses?: string[];
+    redirectUrl?: string;
 }
 
-export const ApplyForm = ({ isOpen, onClose }: ApplyFormProps) => {
+export const ApplyForm = ({ isOpen, onClose, universityName, courses, redirectUrl }: ApplyFormProps) => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         contact: '',
         subject: '',
-        college: '',
+        college: universityName || '',
         remarks: ''
     });
 
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [error, setError] = useState('');
+
+    useEffect(() => {
+        if (isOpen && universityName) {
+            setFormData(prev => ({ ...prev, college: universityName }));
+        }
+    }, [isOpen, universityName]);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+
+        // Validation
+        if (!formData.name || !formData.email || !formData.contact || !formData.subject) {
+            setError('Please fill all mandatory fields.');
+            return;
+        }
+
+        if (!universityName && !formData.college) {
+            setError('Please select a preferred college.');
+            return;
+        }
+
+        setError('');
+
         // Simulate API call
         setTimeout(() => {
             setIsSubmitted(true);
             setTimeout(() => {
-                setIsSubmitted(false);
-                onClose();
-                setFormData({ name: '', email: '', contact: '', subject: '', college: '', remarks: '' });
-            }, 3000);
+                if (redirectUrl) {
+                    window.location.href = redirectUrl;
+                } else {
+                    setIsSubmitted(false);
+                    onClose();
+                    setFormData({
+                        name: '', email: '', contact: '', subject: '',
+                        college: universityName || '', remarks: ''
+                    });
+                }
+            }, 2000);
         }, 1000);
     };
 
@@ -62,7 +93,9 @@ export const ApplyForm = ({ isOpen, onClose }: ApplyFormProps) => {
 
                         <div className="p-8">
                             <h2 className="text-2xl font-bold text-white mb-2">Apply Now</h2>
-                            <p className="text-gray-400 text-sm mb-6">Start your journey with India's Skilled University.</p>
+                            <p className="text-gray-400 text-sm mb-6">
+                                {universityName ? `Start your journey with ${universityName}.` : "Start your journey with India's Skilled University."}
+                            </p>
 
                             {isSubmitted ? (
                                 <div className="flex flex-col items-center justify-center py-12 text-center">
@@ -70,13 +103,21 @@ export const ApplyForm = ({ isOpen, onClose }: ApplyFormProps) => {
                                         <CheckCircle size={40} />
                                     </div>
                                     <h3 className="text-xl font-bold text-white mb-2">Application Received!</h3>
-                                    <p className="text-gray-400">Our admissions team will contact you shortly.</p>
+                                    <p className="text-gray-400">
+                                        {redirectUrl ? "Redirecting you to the university portal..." : "Our admissions team will contact you shortly."}
+                                    </p>
                                 </div>
                             ) : (
                                 <form onSubmit={handleSubmit} className="space-y-4">
+                                    {error && (
+                                        <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-500 text-xs font-bold text-center">
+                                            {error}
+                                        </div>
+                                    )}
+
                                     {/* Name */}
                                     <div>
-                                        <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Full Name</label>
+                                        <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Full Name *</label>
                                         <input
                                             required
                                             type="text"
@@ -90,7 +131,7 @@ export const ApplyForm = ({ isOpen, onClose }: ApplyFormProps) => {
                                     <div className="grid grid-cols-2 gap-4">
                                         {/* Email */}
                                         <div>
-                                            <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Email</label>
+                                            <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Email *</label>
                                             <input
                                                 required
                                                 type="email"
@@ -102,7 +143,7 @@ export const ApplyForm = ({ isOpen, onClose }: ApplyFormProps) => {
                                         </div>
                                         {/* Contact */}
                                         <div>
-                                            <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Phone</label>
+                                            <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Phone *</label>
                                             <input
                                                 required
                                                 type="tel"
@@ -116,51 +157,81 @@ export const ApplyForm = ({ isOpen, onClose }: ApplyFormProps) => {
 
                                     {/* Subject Selection */}
                                     <div>
-                                        <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Subject of Interest</label>
-                                        <div className="relative">
-                                            <select
-                                                required
-                                                value={formData.subject}
-                                                onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                                                className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:border-[#34D562] focus:outline-none transition-colors appearance-none cursor-pointer"
-                                            >
-                                                <option value="" disabled className="bg-[#111] text-white">Select Program</option>
-                                                <option value="B.TECH" className="bg-[#111] text-white">B.TECH</option>
-                                                <option value="B.COM" className="bg-[#111] text-white">B.COM</option>
-                                            </select>
-                                            <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" size={18} />
-                                        </div>
+                                        <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Subject of Interest *</label>
+                                        {courses ? (
+                                            <div className="space-y-2">
+                                                {courses.map((course) => (
+                                                    <label
+                                                        key={course}
+                                                        className={`flex items-center gap-3 p-3 rounded-lg border transition-all cursor-pointer ${formData.subject === course
+                                                                ? 'bg-[#34D562]/10 border-[#34D562] text-white'
+                                                                : 'bg-white/5 border-white/10 text-gray-400 hover:border-white/20'
+                                                            }`}
+                                                    >
+                                                        <div className={`w-5 h-5 rounded-full border flex items-center justify-center transition-colors ${formData.subject === course ? 'border-[#34D562] bg-[#34D562]' : 'border-white/30'
+                                                            }`}>
+                                                            {formData.subject === course && <Check size={12} className="text-black font-bold" />}
+                                                        </div>
+                                                        <input
+                                                            type="radio"
+                                                            className="hidden"
+                                                            name="subject"
+                                                            value={course}
+                                                            checked={formData.subject === course}
+                                                            onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                                                        />
+                                                        <span className="text-sm font-medium">{course}</span>
+                                                    </label>
+                                                ))}
+                                            </div>
+                                        ) : (
+                                            <div className="relative">
+                                                <select
+                                                    required
+                                                    value={formData.subject}
+                                                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                                                    className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:border-[#34D562] focus:outline-none transition-colors appearance-none cursor-pointer"
+                                                >
+                                                    <option value="" disabled className="bg-[#111] text-white">Select Program</option>
+                                                    <option value="B.TECH" className="bg-[#111] text-white">B.TECH</option>
+                                                    <option value="B.COM" className="bg-[#111] text-white">B.COM</option>
+                                                </select>
+                                                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" size={18} />
+                                            </div>
+                                        )}
                                     </div>
 
-                                    {/* Conditional College Selection */}
-                                    <AnimatePresence>
-                                        {formData.subject && (
-                                            <motion.div
-                                                initial={{ opacity: 0, height: 0 }}
-                                                animate={{ opacity: 1, height: "auto" }}
-                                                exit={{ opacity: 0, height: 0 }}
-                                                className="overflow-hidden"
-                                            >
-                                                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1 mt-2">Preferred College</label>
-                                                <div className="relative">
-                                                    <select
-                                                        required
-                                                        value={formData.college}
-                                                        onChange={(e) => setFormData({ ...formData, college: e.target.value })}
-                                                        className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:border-[#34D562] focus:outline-none transition-colors appearance-none cursor-pointer"
-                                                    >
-                                                        <option value="" disabled className="bg-[#111] text-white">Select Campus</option>
-                                                        <option value="Centurion University" className="bg-[#111] text-white">Centurion University</option>
-                                                        <option value="Sage Bhopal" className="bg-[#111] text-white">Sage Bhopal</option>
-                                                        <option value="Sage Indore" className="bg-[#111] text-white">Sage Indore</option>
-                                                        <option value="Gyanveer" className="bg-[#111] text-white">Gyanveer</option>
-                                                        <option value="SIGU" className="bg-[#111] text-white">SIGU</option>
-                                                    </select>
-                                                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" size={18} />
-                                                </div>
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
+                                    {/* Conditional College Selection (Hidden if universityName is provided) */}
+                                    {!universityName && (
+                                        <AnimatePresence>
+                                            {formData.subject && (
+                                                <motion.div
+                                                    initial={{ opacity: 0, height: 0 }}
+                                                    animate={{ opacity: 1, height: "auto" }}
+                                                    exit={{ opacity: 0, height: 0 }}
+                                                    className="overflow-hidden"
+                                                >
+                                                    <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1 mt-2">Preferred College *</label>
+                                                    <div className="relative">
+                                                        <select
+                                                            required
+                                                            value={formData.college}
+                                                            onChange={(e) => setFormData({ ...formData, college: e.target.value })}
+                                                            className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:border-[#34D562] focus:outline-none transition-colors appearance-none cursor-pointer"
+                                                        >
+                                                            <option value="" disabled className="bg-[#111] text-white">Select Campus</option>
+                                                            <option value="Centurion University" className="bg-[#111] text-white">Centurion University</option>
+                                                            <option value="Sage Bhopal" className="bg-[#111] text-white">Sage Bhopal</option>
+                                                            <option value="Sage Indore" className="bg-[#111] text-white">Sage Indore</option>
+                                                            <option value="Gyanveer" className="bg-[#111] text-white">Gyanveer</option>
+                                                            <option value="SIGU" className="bg-[#111] text-white">SIGU</option>
+                                                        </select>
+                                                        <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" size={18} />
+                                                    </div>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    )}
 
                                     {/* Remarks */}
                                     <div>

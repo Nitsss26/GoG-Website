@@ -19,32 +19,7 @@ import AyushImg from '../assets/team/ayush-chauhan.jpg';
 import SachinImg from '../assets/team/sachin-kumar-gupta.png';
 import VipulImg from '../assets/team/vipul-parmar.png';
 
-// Operation Managers
-import JyotiprakashImg from '../assets/Operation_Managers/Jyotiprakash_Maharana.jpg';
-import MayankImg from '../assets/Operation_Managers/Mayank_Sharma.png';
-import SakshiImg from '../assets/Operation_Managers/Sakshi_Rathore.png';
-import SatishImg from '../assets/Operation_Managers/Satish_Nagar.png';
-import VinayakImg from '../assets/Operation_Managers/Vinayak_Soni.png';
-import AniketImg from '../assets/Operation_Managers/Aniket_Chouhan.png';
-import ArpitImg from '../assets/Operation_Managers/Arpit_Pandey.png';
-import DevendraImg from '../assets/Operation_Managers/Devendra_Yadav.png';
-import HarshImg from '../assets/Operation_Managers/Harsh_Sahu.png';
-import PankajImg from '../assets/Operation_Managers/Pankaj_Mewada.png';
-import PrinceImg from '../assets/Operation_Managers/Prince_Patel.png';
-import ShivankImg from '../assets/Operation_Managers/Shivank_Singh.png';
-import SumitImg from '../assets/Operation_Managers/Sumit_Dwivedi.png';
-import SunilImg from '../assets/Operation_Managers/Sunil_Shah.png';
-import SusmitaImg from '../assets/Operation_Managers/Susmita_Sahoo.png';
-import KartikImg from '../assets/Operation_Managers/Kartik_Verma.png';
-import SwayamImg from '../assets/Operation_Managers/Swayam_Meshram.png';
-import YaminiImg from '../assets/Operation_Managers/Yamini_Ziniwal.png';
-import ZaidImg from '../assets/Operation_Managers/Zaid_Ahmad_khan.png';
-import AdityaVImg from '../assets/Operation_Managers/Aditya_Vishwakarma.png';
-import MimanshaImg from '../assets/Operation_Managers/Mimansha_Thakur.png';
-import PriyanshuImg from '../assets/Operation_Managers/Priyanshu_Goswami.png';
-import SwatiImg from '../assets/Operation_Managers/Swati_Rai.png';
-import AnkitImg from '../assets/Operation_Managers/Ankit_Nagdiya.png';
-import ShivaniImg from '../assets/Operation_Managers/Shivani_Chourasiya.png';
+
 
 
 // Partner Logos
@@ -99,33 +74,7 @@ const AboutGoG: React.FC = () => {
         }
     ];
 
-    const operationManagers = [
-        { name: "Mr. Kartik Verma", image: KartikImg },
-        { name: "Mr. Swayam Meshram", image: SwayamImg },
-        { name: "Ms. Yamini Ziniwal", image: YaminiImg },
-        { name: "Mr. Zaid Ahmad Khan", image: ZaidImg },
-        { name: "Mr. Jyotiprakash Maharana", image: JyotiprakashImg },
-        { name: "Mr. Mayank Sharma", image: MayankImg },
-        { name: "Ms. Sakshi Rathore", image: SakshiImg },
-        { name: "Mr. Satish Nagar", image: SatishImg },
-        { name: "Mr. Vinayak Soni", image: VinayakImg },
-        { name: "Mr. Aniket Chouhan", image: AniketImg },
-        { name: "Mr. Arpit Pandey", image: ArpitImg },
-        { name: "Mr. Devendra Yadav", image: DevendraImg },
-        { name: "Mr. Harsh Sahu", image: HarshImg },
-        { name: "Mr. Pankaj Mewada", image: PankajImg },
-        { name: "Mr. Prince Patel", image: PrinceImg },
-        { name: "Mr. Shivank Singh", image: ShivankImg },
-        { name: "Mr. Sumit Dwivedi", image: SumitImg },
-        { name: "Mr. Sunil Shah", image: SunilImg },
-        { name: "Ms. Susmita Sahoo", image: SusmitaImg },
-        { name: "Mr. Aditya Vishwakarma", image: AdityaVImg },
-        { name: "Ms. Mimansha Thakur", image: MimanshaImg },
-        { name: "Mr. Priyanshu Goswami", image: PriyanshuImg },
-        { name: "Ms. Swati Rai", image: SwatiImg },
-        { name: "Mr. Ankit Nagdiya", image: AnkitImg },
-        { name: "Ms. Shivani Chourasiya", image: ShivaniImg }
-    ];
+
 
     return (
         <main className="relative min-h-screen bg-[#030303] overflow-hidden">
@@ -505,47 +454,6 @@ const AboutGoG: React.FC = () => {
                     </div>
                 </div>
 
-                {/* --- Operation Managers (OMs) --- */}
-                <div className="mt-40 mb-5">
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        className="text-center mb-16"
-                    >
-                        <div className="inline-flex items-center gap-2 mb-6 px-6 py-2 rounded-full border border-[#34D562]/30 bg-[#34D562]/10">
-                            <Target size={18} className="text-[#34D562]" />
-                            <span className="text-[#34D562] font-mono tracking-widest uppercase text-sm font-bold">Operations Team</span>
-                        </div>
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Operation <span className="text-[#34D562]">Managers</span></h2>
-                    </motion.div>
-
-                    <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-6 max-w-[1600px] mx-auto">
-                        {operationManagers.map((om, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
-                                className="group relative bg-[#0A0A0A] rounded-xl md:rounded-2xl overflow-hidden border border-white/5 hover:border-[#34D562]/30 transition-all duration-500 shadow-lg hover:shadow-[0_0_30px_rgba(52,213,98,0.15)] last:col-start-2 lg:last:col-start-auto"
-                            >
-                                <div className="h-32 md:h-80 overflow-hidden relative">
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-80" />
-                                    <img
-                                        src={om.image}
-                                        alt={om.name}
-                                        className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105"
-                                    />
-                                </div>
-                                <div className="absolute bottom-0 left-0 right-0 p-1.5 md:p-4 z-20 text-center transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
-                                    <div className="hidden md:inline-block px-3 py-0.5 bg-[#34D562] text-black font-bold text-[8px] tracking-wider uppercase rounded-full mb-2 shadow-[0_0_10px_rgba(52,213,98,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Operation Manager</div>
-                                    <h3 className="text-[7px] md:text-lg font-bold text-white leading-tight">{om.name}</h3>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
             </div >
 
             {/* Community CTA Section */}

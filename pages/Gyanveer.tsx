@@ -367,7 +367,13 @@ const Gyanveer = () => {
                     </div>
                 }
             />
-            <ApplyForm isOpen={isApplyOpen} onClose={() => setIsApplyOpen(false)} />
+            <ApplyForm
+                isOpen={isApplyOpen}
+                onClose={() => setIsApplyOpen(false)}
+                universityName="Gyanveer University"
+                courses={["B.Tech CSE", "B.Tech CSE (AI-ML)"]}
+                redirectUrl="https://www.gyanveeruniversity.edu.in/Pages/Registration.aspx"
+            />
 
             {/* ===== 1. HERO SECTION (PROFESSIONAL & FULL WIDTH) ===== */}
             <section className="relative min-h-[68vh] md:min-h-[110vh] lg:min-h-[115vh] flex items-center justify-center overflow-hidden">
