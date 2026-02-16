@@ -6,6 +6,7 @@ import Centurion from "../assets/PartneredColleges/CUTM.svg";
 import SGSU from "../assets/PartneredColleges/SCOPE_Logo.svg";
 import SGU from "../assets/PartneredColleges/SGU.svg";
 import GyanveerLogo from "../assets/PartneredColleges/Gyanveer_Logo.png";
+import SageIndoreLogo from "../assets/PartneredColleges/Sage_Indore.png";
 
 // College Images (Campus)
 import SAGESlide from "../assets/Partnered_College_Pics/SAGE.jpg";
@@ -49,7 +50,7 @@ export const coursesData: CourseCardData[] = [
         id: "sage-bhopal",
         universityName: "SAGE University, Bhopal",
         location: "Bhopal, MP",
-        programName: "B.Tech CS (Full Stack Development)",
+        programName: "B.Tech Full Stack Development & B.Tech AI-ML",
         approvals: "AICTE | UGC Approved",
         logo: "/assets/SAGE/sage-bhopal-logo.png",
         image: SAGESlide,
@@ -59,25 +60,11 @@ export const coursesData: CourseCardData[] = [
         link: "/sagebhopal",
         isExternal: false
     },
-    // {
-    //     id: "sage-indore",
-    //     universityName: "SAGE University, Indore",
-    //     location: "Indore, MP",
-    //     programName: "B.Tech in Data Science",
-    //     approvals: "AICTE | UGC Approved",
-    //     logo: SAGE,
-    //     image: SAGEIndoreSlide,
-    //     specialisations: 6,
-    //     certifications: 10,
-    //     fees: "₹90,000/Year",
-    //     link: "/courses/sage-indore", // Placeholder
-    //     isExternal: false
-    // },
     {
         id: "gyanveer",
         universityName: "Gyanveer University",
         location: "Sagar, MP",
-        programName: "B.TECH CSE & B.TECH CSE (AI-ML)",
+        programName: "B.Tech CSE & B.Tech CSE (AI-ML)",
         approvals: "UGC Approved",
         logo: "/assets/Gyanveer/gyanveer-logo.png",
         image: GyanveerCampus,
@@ -86,7 +73,22 @@ export const coursesData: CourseCardData[] = [
         fees: "₹80,000/Year",
         link: "/gyanveer",
         isExternal: false
-    }
+    },
+    {
+        id: "sage-indore",
+        universityName: "SAGE University, Indore",
+        location: "Indore, MP",
+        programName: "B.Tech Full Stack Development",
+        approvals: "AICTE | UGC Approved",
+        logo: SageIndoreLogo,
+        image: SAGEIndoreSlide,
+        specialisations: 6,
+        certifications: 10,
+        fees: "₹XX,XXX/Year",
+        link: "#", // Placeholder
+        isExternal: false
+    },
+
     // {
     //     id: "sigu",
     //     universityName: "SIGU (SAM Global)",
@@ -101,18 +103,18 @@ export const coursesData: CourseCardData[] = [
     //     link: "#",
     //     isExternal: false
     // },
-    // {
-    //     id: "scope",
-    //     universityName: "SCOPE Global Skills",
-    //     location: "Bhopal, MP",
-    //     programName: "B.Tech in Al/ML",
-    //     approvals: "NSDC Partner",
-    //     logo: SGSU, // Correct Scope Logo
-    //     image: ScopeCampus,
-    //     specialisations: 4,
-    //     certifications: 15,
-    //     fees: "Check Website",
-    //     link: "#",
-    //     isExternal: false
-    // }
+    {
+        id: "scope",
+        universityName: "SCOPE Global Skills University",
+        location: "Bhopal, MP",
+        programName: "B.Tech Al-DS & BCA Cyber Security \n BCA AI-ML",
+        approvals: "NSDC Partner",
+        logo: SGSU, // Correct Scope Logo
+        image: ScopeCampus,
+        specialisations: 4,
+        certifications: 15,
+        fees: "₹XX,XXX/Year",
+        link: "#",
+        isExternal: false
+    }
 ];

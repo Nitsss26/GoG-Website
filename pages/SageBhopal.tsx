@@ -382,7 +382,7 @@ const SageBhopal = () => {
                 isOpen={isApplyOpen}
                 onClose={() => setIsApplyOpen(false)}
                 universityName="Sage University Bhopal"
-                courses={["B.Tech Full Stack Development"]}
+                courses={["B.Tech Full Stack Development", "B.Tech AI-ML"]}
                 redirectUrl="https://admission.sageuniversity.edu.in/?utm_source=Website-Lead&utm_medium=Google&utm_campaign=Admissions-2024&_gl=1*f5pca6*_gcl_au*NjA5MjUwMTY4LjE3NzEwNzgwNTYuNjY0NjQyMzQuMTc3MTA3ODA1Ny4xNzcxMDc4MDY2"
             />
 
@@ -411,6 +411,8 @@ const SageBhopal = () => {
                             className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight md:leading-[0.9] mb-6 md:mb-6 tracking-tighter whitespace-nowrap"
                         >
                             B.Tech <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">Full Stack Development</span>
+                            <br />
+                            B.Tech <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">AI-ML</span>
                         </motion.h1>
 
 

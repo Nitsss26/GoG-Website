@@ -84,7 +84,7 @@ const Courses = () => {
 
             {/* Course Grid */}
             <div className="container mx-auto px-4 md:px-8 pb-32 z-10 relative">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="flex flex-wrap justify-center gap-8">
                     {filteredCourses.map((course, index) => (
                         <CourseCard key={course.id} course={course} index={index} onClick={() => handleCardClick(course.link, course.isExternal)} />
                     ))}
@@ -115,7 +115,7 @@ const CourseCard = ({ course, index, onClick }: { course: CourseCardData, index:
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
             whileHover={{ y: -8 }}
-            className="group relative bg-[#0A0A0A] rounded-2xl overflow-hidden border border-white/10 hover:border-[#34D562]/50 transition-all duration-300 shadow-xl cursor-pointer flex flex-col h-full"
+            className="group relative bg-[#0A0A0A] rounded-2xl overflow-hidden border border-white/10 hover:border-[#34D562]/50 transition-all duration-300 shadow-xl cursor-pointer flex flex-col h-full w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.4rem)]"
             onClick={onClick}
         >
             {/* Image Section */}
@@ -153,7 +153,7 @@ const CourseCard = ({ course, index, onClick }: { course: CourseCardData, index:
                     {course.location}
                 </div>
 
-                <h4 className="text-lg font-medium text-gray-200 mb-2 border-b border-white/10 pb-3">
+                <h4 className="text-lg font-medium text-gray-200 mb-2 border-b border-white/10 pb-3 whitespace-pre-line">
                     {course.programName}
                 </h4>
 

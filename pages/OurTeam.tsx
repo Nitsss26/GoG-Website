@@ -64,6 +64,10 @@ import VadithyaVishalNayak from '../assets/Team of IITians/Vadithya Vishal Nayak
 import NamanKumarSahu from '../assets/Team of IITians/Naman Kumar Sahu.jpg';
 import AnkitSingh from '../assets/Team of IITians/Ankit Singh.jpeg';
 import RaviBhushanPratap from '../assets/Team of IITians/Ravi Bhushan Pratap.jpg';
+import AyushSahu from '../assets/Team of IITians/Ayush_Sahu_IIT_Tirupati.jpg';
+import AnirudhMahato from '../assets/Team of IITians/Anirudh_Mahato_IIT_Kharagpur.png';
+import BaddigamSiddardhareddy from '../assets/Team of IITians/Baddigam_Siddardhareddy_IIT_Guwahati.jpeg';
+import RaviRanjanKumar from '../assets/Team of IITians/Ravi_Ranjan_Kumar_IIT_Guwahati.jpg';
 
 // Operation Managers
 import JyotiprakashImg from '../assets/Operation_Managers/Jyotiprakash_Maharana.jpg';
@@ -105,6 +109,7 @@ import IITBombayLogo from '../assets/IITLogo/IITBombayLogo.png';
 import NITWarangalLogo from '../assets/IITLogo/NITWarangalLogo.png';
 import IITBHULogo from '../assets/IITLogo/IITBHULogo.png';
 import IITKanpurLogo from '../assets/IITLogo/IITKanpurLogo.png';
+import IITTirupatiLogo from '../assets/IITLogo/IITTirupatiLogo.png';
 
 const teamMembers = [
     { name: "Anchit Sir", role: "Professor & SDE", alumni: "IIT Kharagpur", image: AnchitSir, logo: IITKharagpurLogo, linkedin: "https://www.linkedin.com/in/anchit-ranjan-046578163/" },
@@ -165,6 +170,10 @@ const teamMembers = [
     { name: "Naman Kumar Sahu", role: "Professor & SDE", alumni: "IIT Kharagpur", image: NamanKumarSahu, logo: IITKharagpurLogo },
     { name: "Ankit Singh", role: "Professor & SDE", alumni: "Unknown", image: AnkitSingh, logo: IITKharagpurLogo },
     { name: "Ravi Bhushan Pratap", role: "Professor & SDE", alumni: "IIT Guwahati", image: RaviBhushanPratap, logo: IITGuwahatiLogo },
+    { name: "Ayush Sahu", role: "Professor & SDE", alumni: "IIT Tirupati", image: AyushSahu, logo: IITTirupatiLogo },
+    { name: "Anirudh Mahato", role: "Professor & SDE", alumni: "IIT Kharagpur", image: AnirudhMahato, logo: IITKharagpurLogo },
+    { name: "Baddigam Siddardhareddy", role: "Professor & SDE", alumni: "IIT Guwahati", image: BaddigamSiddardhareddy, logo: IITGuwahatiLogo },
+    { name: "Ravi Ranjan Kumar", role: "Professor & SDE", alumni: "IIT Guwahati", image: RaviRanjanKumar, logo: IITGuwahatiLogo },
 ];
 
 const operationManagers = [
