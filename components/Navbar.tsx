@@ -4,6 +4,11 @@ import { Menu, X, ChevronDown, Sparkles } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { NAV_ITEMS } from '../constants';
 
+// Import Logos
+import ScopeLogo from '../assets/PartneredColleges/SCOPE_Logo.svg';
+import SageIndoreLogo from '../assets/PartneredColleges/Sage_Indore.png';
+import GoGLogo from '../assets/gog-logo.png';
+
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -73,15 +78,15 @@ const Navbar: React.FC = () => {
                 </div>
               ) : location.pathname === '/sageindore' ? (
                 <div className="flex items-center gap-1.5 md:gap-4 bg-white backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
-                  <img src="/assets/PartneredColleges/Sage_Indore.png" alt="SAGE University Indore" className="h-9 md:h-12 object-contain" />
+                  <img src={SageIndoreLogo} alt="SAGE University Indore" className="h-9 md:h-12 object-contain" />
                   <span className="text-gray-400 font-bold text-[8px] md:text-sm">X</span>
-                  <img src="https://i.postimg.cc/4NdhCzDD/logo-(2).png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
+                  <img src={GoGLogo} alt="Geeks of Gurukul" className="h-6 md:h-8 object-contain" />
                 </div>
               ) : location.pathname === '/scope' ? (
                 <div className="flex items-center gap-1.5 md:gap-4 bg-white backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
-                  <img src="/assets/PartneredColleges/SCOPE_Logo.svg" alt="SCOPE Global Skills University" className="h-9 md:h-12 object-contain" />
+                  <img src={ScopeLogo} alt="SCOPE Global Skills University" className="h-9 md:h-12 object-contain" />
                   <span className="text-gray-400 font-bold text-[8px] md:text-sm">X</span>
-                  <img src="https://i.postimg.cc/4NdhCzDD/logo-(2).png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
+                  <img src={GoGLogo} alt="Geeks of Gurukul" className="h-6 md:h-8 object-contain" />
                 </div>
               ) : (
                 <img src="https://i.postimg.cc/4NdhCzDD/logo-(2).png" alt="GoG Logo" className="h-8 md:h-10" />
