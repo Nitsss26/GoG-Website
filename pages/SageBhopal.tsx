@@ -525,7 +525,7 @@ const SageBhopal = () => {
             {/* ===== VIRTUAL CAMPUS TOUR ===== */}
             <section className="py-16 bg-[#050505]">
                 <div className="container mx-auto px-4 max-w-7xl">
-                    <VirtualTour bgImage={heroImages[0]} />
+                    <VirtualTour bgImage={heroImages[0]} tourUrl="https://sageuniversity.edu.in/virtual-tour/index.htm" />
                 </div>
             </section>
 
@@ -716,20 +716,8 @@ const SageBhopal = () => {
                 </div>
             </section >
 
-            {/* ===== 5. CERTIFICATE PREVIEW (Moved & Resized) ===== */}
-            < section className="py-24 bg-[#050505] overflow-hidden" >
-                <div className="container mx-auto px-4 max-w-7xl text-center">
-                    <SectionHeader title="Earn a Degree that Matters" subtitle="UGC Recognized. NAAC 'A+' Accredited. Industry Trusted." />
 
-                    <div className="relative mt-12 mx-auto max-w-5xl">
-                        {/* Ambient Glow */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[#34D562]/20 blur-[120px] rounded-full pointer-events-none" />
-                        <div className="transform scale-100 md:scale-110">
-                            <CertificatePreview />
-                        </div>
-                    </div>
-                </div>
-            </section >
+
 
             {/* ===== 5. PLACEMENTS & PARTNERS (New High-Impact Section) ===== */}
             < section id="placements" className="py-20 bg-[#020202] border-y border-white/5 relative overflow-hidden scroll-mt-[300px]" >

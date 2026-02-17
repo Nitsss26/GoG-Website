@@ -92,9 +92,17 @@ export const StudentVlogs = () => {
     );
 };
 
-export const VirtualTour = ({ bgImage }: { bgImage?: string }) => {
+export const VirtualTour = ({ bgImage, tourUrl, embedHtml }: { bgImage?: string; tourUrl?: string; embedHtml?: string }) => {
     const [isVideoOpen, setIsVideoOpen] = useState(false);
     const defaultBg = "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1600";
+
+    const handleClick = () => {
+        if (tourUrl) {
+            window.open(tourUrl, '_blank', 'noopener,noreferrer');
+        } else {
+            setIsVideoOpen(true);
+        }
+    };
 
     return (
         <>
@@ -107,7 +115,7 @@ export const VirtualTour = ({ bgImage }: { bgImage?: string }) => {
                     <h3 className="text-4xl font-bold text-white mb-2">Virtual Campus Tour</h3>
                     <p className="text-gray-300 max-w-md mx-auto mb-6">Experience our labs, hostels, and smart classrooms in 360° before you arrive.</p>
                     <button
-                        onClick={() => setIsVideoOpen(true)}
+                        onClick={handleClick}
                         className="bg-[#34D562] text-black font-bold py-3 px-8 rounded-full hover:bg-white transition-colors flex items-center gap-2"
                     >
                         Start Exploring <ArrowRight size={18} />
@@ -115,7 +123,7 @@ export const VirtualTour = ({ bgImage }: { bgImage?: string }) => {
                 </div>
             </div>
 
-            {/* Video Modal */}
+            {/* Video / Embed Modal */}
             <AnimatePresence>
                 {isVideoOpen && (
                     <motion.div
@@ -140,19 +148,23 @@ export const VirtualTour = ({ bgImage }: { bgImage?: string }) => {
                             >
                                 <X size={20} />
                             </button>
-                            {/* Video Embed */}
+                            {/* Content */}
                             <div className="aspect-video">
-                                <iframe
-                                    width="100%"
-                                    height="100%"
-                                    src="https://www.youtube.com/embed/fEqgl_ZU2_0?si=9Yc06bPTdhf_81M1&autoplay=1"
-                                    title="Campus Tour Video"
-                                    frameBorder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    referrerPolicy="strict-origin-when-cross-origin"
-                                    allowFullScreen
-                                    className="w-full h-full"
-                                />
+                                {embedHtml ? (
+                                    <div className="w-full h-full" dangerouslySetInnerHTML={{ __html: embedHtml }} />
+                                ) : (
+                                    <iframe
+                                        width="100%"
+                                        height="100%"
+                                        src="https://www.youtube.com/embed/fEqgl_ZU2_0?si=9Yc06bPTdhf_81M1&autoplay=1"
+                                        title="Campus Tour Video"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        allowFullScreen
+                                        className="w-full h-full"
+                                    />
+                                )}
                             </div>
                         </motion.div>
                     </motion.div>

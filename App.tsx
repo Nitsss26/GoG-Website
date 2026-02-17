@@ -23,6 +23,8 @@ const PartneredInstitutes = lazy(() => import('./pages/PartneredInstitutes'));
 const Admissions = lazy(() => import('./pages/Admissions'));
 const SageBhopal = lazy(() => import('./pages/SageBhopal'));
 const Gyanveer = lazy(() => import('./pages/Gyanveer'));
+const SageIndore = lazy(() => import('./pages/SageIndore'));
+const Scope = lazy(() => import('./pages/Scope'));
 const ContactUs = lazy(() => import('./pages/ContactUs'));
 const FAQ = lazy(() => import('./pages/FAQ'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
@@ -72,7 +74,9 @@ const App: React.FC = () => {
               <Route path="/contact-us" element={<ContactUs />} />
               <Route path="/centurion" element={<Admissions />} />
               <Route path="/sagebhopal" element={<SageBhopal />} />
+              <Route path="/sageindore" element={<SageIndore />} />
               <Route path="/gyanveer" element={<Gyanveer />} />
+              <Route path="/scope" element={<Scope />} />
               <Route path="/courses" element={<Courses />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />

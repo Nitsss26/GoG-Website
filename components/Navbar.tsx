@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
   const location = useLocation();
 
   // Check if on Admissions page where StickyNav exists
-  const isAdmissionsPage = ['/centurion', '/sagebhopal', '/gyanveer'].includes(location.pathname);
+  const isAdmissionsPage = ['/centurion', '/sagebhopal', '/gyanveer', '/sageindore', '/scope'].includes(location.pathname);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,6 +68,18 @@ const Navbar: React.FC = () => {
               ) : location.pathname === '/gyanveer' ? (
                 <div className="flex items-center gap-1.5 md:gap-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
                   <img src="https://www.gyanveeruniversity.edu.in/assets/img/logo/logo-gv.png" alt="Gyanveer University" className="h-9 md:h-12 object-contain" />
+                  <span className="text-gray-400 font-bold text-[8px] md:text-sm">X</span>
+                  <img src="https://i.postimg.cc/4NdhCzDD/logo-(2).png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
+                </div>
+              ) : location.pathname === '/sageindore' ? (
+                <div className="flex items-center gap-1.5 md:gap-4 bg-white backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
+                  <img src="/assets/PartneredColleges/Sage_Indore.png" alt="SAGE University Indore" className="h-9 md:h-12 object-contain" />
+                  <span className="text-gray-400 font-bold text-[8px] md:text-sm">X</span>
+                  <img src="https://i.postimg.cc/4NdhCzDD/logo-(2).png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
+                </div>
+              ) : location.pathname === '/scope' ? (
+                <div className="flex items-center gap-1.5 md:gap-4 bg-white backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
+                  <img src="/assets/PartneredColleges/SCOPE_Logo.svg" alt="SCOPE Global Skills University" className="h-9 md:h-12 object-contain" />
                   <span className="text-gray-400 font-bold text-[8px] md:text-sm">X</span>
                   <img src="https://i.postimg.cc/4NdhCzDD/logo-(2).png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
                 </div>

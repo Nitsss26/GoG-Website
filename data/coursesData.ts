@@ -79,13 +79,13 @@ export const coursesData: CourseCardData[] = [
         universityName: "SAGE University, Indore",
         location: "Indore, MP",
         programName: "B.Tech Full Stack Development",
-        approvals: "AICTE | UGC Approved",
+        approvals: "NAAC A+ | UGC Approved",
         logo: SageIndoreLogo,
         image: SAGEIndoreSlide,
         specialisations: 6,
         certifications: 10,
-        fees: "₹XX,XXX/Year",
-        link: "#", // Placeholder
+        fees: "₹1,30,000/Year",
+        link: "/sageindore",
         isExternal: false
     },
 
@@ -113,8 +113,8 @@ export const coursesData: CourseCardData[] = [
         image: ScopeCampus,
         specialisations: 4,
         certifications: 15,
-        fees: "₹XX,XXX/Year",
-        link: "#",
+        fees: "₹40,000/Year Staring..",
+        link: "/scope",
         isExternal: false
     }
 ];

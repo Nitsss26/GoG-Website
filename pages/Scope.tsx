@@ -12,13 +12,14 @@ import GreenEmbers from '../components/ui/GreenEmbers';
 import SEO from '../components/SEO';
 import {
     courseInfo, rankings, mediaLinks, amenities,
-    nearbyPlaces, curriculum, faculty, comparisonData,
-    heroStats, admissionSteps, feeStructure, placementStats,
+    nearbyPlaces, curricula, courses, faculty, comparisonData,
+    heroStats, admissionSteps, feeStructures, placementStats,
     clubs, faqs, testimonials, universityAbout,
     studentVlogs, alumniSuccess, recruiterTestimonials, careerPathData, blogUpdates, heroImages
-} from '../data/gyanveerData';
+} from '../data/scopeData';
 
 // Import assets
+import ScopeLogo from "../assets/PartneredColleges/SCOPE_Logo.svg";
 import GoGLogo from "../assets/gog-logo.png";
 import {
     StudentVlogs, VirtualTour, CareerVisualizer, ScholarshipStats, AlumniNetwork, RecruiterTestimonials, BlogUpdates, ChatBot
@@ -177,53 +178,58 @@ const ImageCard = ({ img, title, subtitle }: { img?: string; title: string; subt
     </div>
 );
 
-// --- 5. ACTUAL CERTIFICATE IMAGE ---
-// --- 5. HYPER-MODERN LUXURY CERTIFICATE FRAME ---
 const CertificatePreview = () => (
-    <div className="relative group max-w-5xl mx-auto py-12 px-4 md:px-12">
-        {/* Animated Background Glows */}
-        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-64 h-64 bg-[#34D562]/10 blur-[100px] rounded-full animate-pulse" />
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-64 h-64 bg-emerald-500/10 blur-[100px] rounded-full animate-pulse delay-700" />
+    <div className="relative bg-white text-black py-6 px-6 md:py-10 md:px-16 rounded-lg shadow-2xl border-4 border-[#34D562]/20 max-w-6xl mx-auto overflow-hidden transform scale-[0.85] md:scale-110 origin-center transition-transform duration-500">
+        {/* Borders */}
+        <div className="absolute top-0 left-0 w-8 h-8 md:w-16 md:h-16 border-t-8 border-l-8 border-[#003366] rounded-tl-2xl md:rounded-tl-3xl" />
+        <div className="absolute top-0 right-0 w-8 h-8 md:w-16 md:h-16 border-t-8 border-r-8 border-[#003366] rounded-tr-2xl md:rounded-tr-3xl" />
+        <div className="absolute bottom-0 left-0 w-8 h-8 md:w-16 md:h-16 border-b-8 border-l-8 border-[#003366] rounded-bl-2xl md:rounded-bl-3xl" />
+        <div className="absolute bottom-0 right-0 w-8 h-8 md:w-16 md:h-16 border-b-8 border-r-8 border-[#003366] rounded-br-2xl md:rounded-br-3xl" />
 
-        {/* The Frame Container */}
-        <div className="relative p-1 rounded-[2.5rem] bg-gradient-to-br from-white/20 via-white/5 to-white/20 shadow-2xl backdrop-blur-sm overflow-hidden group-hover:shadow-[#34D562]/10 transition-shadow duration-700">
+        {/* Content */}
+        <div className="text-center relative z-10">
+            <div className="flex justify-center mb-4 md:mb-6 gap-4 md:gap-8 items-center">
+                {/* University Logo Mockup */}
+                <div className="text-[#1e3a5f] font-serif font-bold text-xl md:text-2xl border-2 border-[#1e3a5f] p-1 md:p-2 flex flex-col items-center scale-90">
+                    <span>SGSU</span>
+                    <span className="text-[8px] md:text-[10px] uppercase tracking-widest text-black">Estd 2019</span>
+                </div>
+            </div>
 
-            {/* Animated Border Sweep */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#34D562]/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1500 ease-in-out pointer-events-none" />
+            <h3 className="text-[#003366] font-serif font-bold text-xl md:text-4xl mb-1">CERTIFICATE OF COMPLETION</h3>
+            <p className="text-gray-600 italic text-xs md:text-base mb-2 md:mb-4">This is to certify that Mr./Ms.</p>
 
-            {/* Inner Content Case */}
-            <div className="relative bg-[#0a0a0a] rounded-[2.3rem] p-4 md:p-8 overflow-hidden">
+            <div className="text-3xl md:text-5xl font-script text-[#34D562] font-bold mb-2 md:mb-4">Aditya Verma</div>
 
-                {/* Decorative Floating Accents */}
-                <div className="absolute top-6 left-6 w-12 h-12 border-t-2 border-l-2 border-[#34D562] opacity-40 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute bottom-6 right-6 w-12 h-12 border-b-2 border-r-2 border-[#34D562] opacity-40 group-hover:opacity-100 transition-opacity" />
+            <p className="text-gray-700 text-sm md:text-lg max-w-2xl mx-auto mb-4 md:mb-6 leading-tight">
+                has successfully completed the 4-Year B.Tech Program in <br />
+                <span className="font-bold text-black">Computer Science & Engineering (Full Stack Development)</span>
+            </p>
 
-                {/* Glass Card for Certificate */}
-                <div className="relative rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] bg-white p-1 md:p-1.5 transition-transform duration-700 group-hover:scale-[1.01]">
-                    {/* Security Hologram Effect Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-tr from-[#34D562]/5 via-transparent to-emerald-500/5 pointer-events-none mix-blend-overlay" />
-
-                    <img
-                        src="/assets/Gyanveer/degree_certificate.png"
-                        alt="Degree Certificate"
-                        className="w-full h-auto object-contain relative z-0"
-                    />
-
-                    {/* Luxury Shine Sweep */}
-                    <div className="absolute top-0 -left-full w-2/3 h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-25deg] group-hover:translate-x-[300%] transition-transform duration-1000 ease-in-out pointer-events-none z-20" />
+            <div className="flex justify-between items-end mt-4 md:mt-8 px-2 md:px-10">
+                <div className="text-center">
+                    <div className="h-8 w-16 md:h-12 md:w-24 border-b-2 border-black mb-1 md:mb-2 mx-auto"></div>
+                    <p className="font-bold text-[#1e3a5f] text-[10px] md:text-base">Registrar</p>
+                    <p className="text-[8px] md:text-xs text-gray-500">SCOPE Global Skills University</p>
+                </div>
+                {/* Geeks of Gurukul Badge */}
+                <div className="text-center">
+                    <span className="text-sm md:text-xl font-bold text-black flex items-center gap-1">
+                        <span className="text-[#34D562]">Geeks</span>ofGurukul
+                    </span>
+                </div>
+                <div className="text-center">
+                    <div className="h-8 w-16 md:h-12 md:w-24 border-b-2 border-black mb-1 md:mb-2 mx-auto"></div>
+                    <p className="font-bold text-[#003366] text-[10px] md:text-base">Program Director</p>
+                    <p className="text-[8px] md:text-xs text-gray-500">Geeks of Gurukul</p>
                 </div>
             </div>
         </div>
 
-        {/* Minimal Floating Badge instead of caption */}
-        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-black/80 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl flex items-center gap-3 z-30 group-hover:border-[#34D562]/30 transition-colors">
-            <div className="w-2 h-2 rounded-full bg-[#34D562] animate-pulse" />
-            <span className="text-[10px] md:text-xs font-bold text-gray-300 uppercase tracking-widest">Verified Digital Credential</span>
-        </div>
+        {/* Shine Effect */}
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 animate-shine pointer-events-none" />
     </div>
 );
-
-
 
 
 
@@ -284,12 +290,17 @@ const StickyBottomActions = ({ isVisible, onApplyClick }: { isVisible: boolean, 
                 >
                     Apply Now
                 </button>
-                <a
-                    href="#"
+                <button
+                    onClick={() => {
+                        const link = document.createElement('a');
+                        link.href = '#';
+                        link.click();
+                        alert('Admission guide will be sent to your email.');
+                    }}
                     className="flex-1 py-3 bg-white/10 text-white font-bold rounded-lg border border-white/10 text-center flex items-center justify-center"
                 >
-                    Admission Guide
-                </a>
+                    Brochure
+                </button>
             </div>
         </div>
     );
@@ -339,18 +350,21 @@ const PlacementSlideshow = () => {
     );
 };
 
-const Gyanveer = () => {
+const Scope = () => {
     const [activeFaq, setActiveFaq] = useState<number | null>(null);
     const [activeSem, setActiveSem] = useState(0);
+    const [activeCourse, setActiveCourse] = useState('btech-aids');
     const [isApplyOpen, setIsApplyOpen] = useState(false);
-    const [selectedAmenity, setSelectedAmenity] = useState<typeof amenities[0] | null>(null);
+
+    const currentCurriculum = curricula[activeCourse] || [];
+    const currentFee = feeStructures[activeCourse];
 
     return (
         <div className="min-h-screen bg-[#000000] text-white font-sans selection:bg-[#34D562] selection:text-black overflow-x-hidden">
             <SEO
-                title="B.Tech Computer Science Admissions 2026 | Gyanveer University Sagar"
-                description="Apply for Gyanveer University's industry-integrated B.Tech in CSE. 100% placement support and curriculum designed by IIT mentors."
-                canonical="/gyanveer"
+                title="B.Tech AI-DS | BCA Programs 2026 | SCOPE Global Skills University Bhopal"
+                description="Apply for SCOPE Global Skills University's industry-integrated B.Tech AI-DS, BCA Cyber Security & BCA AI-ML programs. 100% placement support."
+                canonical="/scope"
             />
 
             <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
@@ -360,8 +374,8 @@ const Gyanveer = () => {
             <StickyNav
                 onApplyClick={() => setIsApplyOpen(true)}
                 logo={
-                    <div className="flex items-center gap-1.5 md:gap-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
-                        <img src="https://www.gyanveeruniversity.edu.in/assets/img/logo/logo-gv.png" alt="Gyanveer University" className="h-9 md:h-12 object-contain" />
+                    <div className="flex items-center gap-1.5 md:gap-4 bg-white backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
+                        <img src={ScopeLogo} alt="SCOPE Global Skills University" className="h-9 md:h-12 object-contain" />
                         <span className="text-gray-400 font-bold text-[8px] md:text-sm">X</span>
                         <img src={GoGLogo} alt="Geeks of Gurukul" className="h-6 md:h-8 object-contain" />
                     </div>
@@ -370,9 +384,9 @@ const Gyanveer = () => {
             <ApplyForm
                 isOpen={isApplyOpen}
                 onClose={() => setIsApplyOpen(false)}
-                universityName="Gyanveer University"
-                courses={["B.Tech CSE", "B.Tech CSE (AI-ML)"]}
-                redirectUrl="https://www.gyanveeruniversity.edu.in/Pages/Registration.aspx"
+                universityName="SCOPE Global Skills University"
+                courses={["B.Tech AI-DS", "BCA Cyber Security", "BCA AI-ML"]}
+                redirectUrl="https://sgsuniversity.ac.in/enquire-now/"
             />
 
             {/* ===== 1. HERO SECTION (PROFESSIONAL & FULL WIDTH) ===== */}
@@ -397,10 +411,11 @@ const Gyanveer = () => {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.1, duration: 0.8 }}
-                            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight md:leading-[1.1] mb-6 md:mb-6 tracking-tighter"
+                            className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight md:leading-[0.95] mb-6 md:mb-6 tracking-tighter drop-shadow-[0_4px_30px_rgba(0,0,0,0.8)]"
                         >
-                            B.TECH <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">CSE</span><br />
-                            B.TECH <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">CSE (AI-ML)</span>
+                            B.Tech <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">AI-DS</span> | BCA <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">Cyber Security</span>
+                            <br />
+                            BCA <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">AI-ML</span>
                         </motion.h1>
 
 
@@ -414,9 +429,12 @@ const Gyanveer = () => {
                             <button onClick={() => setIsApplyOpen(true)} className="flex-1 py-3 md:py-4 bg-[#34D562] text-black font-extrabold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,213,98,0.3)] whitespace-nowrap">
                                 Apply Now
                             </button>
-                            <a href="#" className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap">
-                                Admission Guide
-                            </a>
+                            <button
+                                onClick={() => alert('Brochure will be available soon.')}
+                                className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap"
+                            >
+                                <Download size={20} className="mr-2" /> Download Brochure
+                            </button>
                         </motion.div>
                     </div>
 
@@ -447,15 +465,13 @@ const Gyanveer = () => {
                 <div className="container mx-auto px-4 max-w-7xl">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div>
-                            <div className="flex items-center gap-4 mb-8">
-                                <div className="p-2.5 bg-white rounded-xl shadow-xl flex items-center justify-center shrink-0 min-w-[120px]">
-                                    <img src="https://www.gyanveeruniversity.edu.in/assets/img/logo/logo-gv.png" alt="Gyanveer University" className="h-10 md:h-14 object-contain" />
-                                </div>
-                                <div className="h-12 w-px bg-white/10" />
-                                <span className="text-lg md:text-xl font-bold text-amber-400 leading-tight">UGC Approved <br className="md:hidden" />University</span>
+                            <div className="flex items-center gap-4 mb-6">
+                                <img src={ScopeLogo} alt="SCOPE Global Skills University" className="h-16 w-auto rounded-2xl bg-white p-2" />
+                                <div className="h-10 w-px bg-white/20" />
+                                <span className="text-xl font-bold text-amber-400">UGC Recognized University</span>
                             </div>
-                            <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-[1.1] tracking-tight">
-                                The <span className="text-[#34D562]">Premier Research Hub</span> <br />of Bundelkhand.
+                            <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                                Central India's <span className="text-[#34D562]">Skill-Based University</span>
                             </h2>
                             <p className="text-gray-400 mb-6 leading-relaxed text-lg">
                                 {universityAbout.vision}
@@ -484,16 +500,21 @@ const Gyanveer = () => {
                             <div className="relative py-8">
                                 {/* 2x2 Grid Layout */}
                                 <div className="grid grid-cols-2 gap-4 w-full">
-                                    {amenities.slice(0, 4).map((amenity, idx) => (
+                                    {[
+                                        { src: "https://images.shiksha.com/mediadata/images/1755771831phpk8rDwI.jpeg", label: "Sports Facility" },
+                                        { src: "https://images.shiksha.com/mediadata/images/1755771831phpk8rDwI.jpeg", label: "Transport" },
+                                        { src: "https://images.shiksha.com/mediadata/images/1692888045phpePncGN.jpeg", label: "Yoga Club" },
+                                        { src: "https://images.shiksha.com/mediadata/images/1692888027phpsmbR71.jpeg", label: "Dance Club" }
+                                    ].map((img, idx) => (
                                         <div key={idx} className="rounded-2xl overflow-hidden border border-white/10 shadow-xl aspect-square relative group">
                                             <img
-                                                src={amenity.image}
-                                                alt={amenity.name}
+                                                src={img.src}
+                                                alt={img.label}
                                                 className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
                                             <div className="absolute bottom-3 left-3">
-                                                <p className="text-white font-bold text-sm tracking-wide">{amenity.name}</p>
+                                                <p className="text-white font-bold text-sm tracking-wide">{img.label}</p>
                                             </div>
                                         </div>
                                     ))}
@@ -507,7 +528,7 @@ const Gyanveer = () => {
             {/* ===== VIRTUAL CAMPUS TOUR ===== */}
             <section className="py-16 bg-[#050505]">
                 <div className="container mx-auto px-4 max-w-7xl">
-                    <VirtualTour bgImage={heroImages[0]} embedHtml='<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29187.463730901898!2d78.607885!3d23.874261!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3979294c98ad3a3f%3A0xb42aed2b03d2cf0f!2sGyanveer%20University!5e0!3m2!1sen!2sin!4v1771294012132!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' />
+                    <VirtualTour bgImage={heroImages[0]} tourUrl="https://sgsuniversity.ac.in/contact/" />
                 </div>
             </section>
 
@@ -529,7 +550,7 @@ const Gyanveer = () => {
                                 <div className="col-span-4 text-[#34D562] font-bold text-lg p-6 bg-[#34D562]/10 border-x border-[#34D562]/20 relative flex items-center gap-6 justify-center">
                                     <div className="absolute top-0 left-0 w-full h-1 bg-[#34D562]" />
                                     <div className="bg-white px-4 py-2 rounded-2xl shadow-xl border border-white/20 flex items-center justify-center h-14 w-32 shrink-0">
-                                        <img src="https://www.gyanveeruniversity.edu.in/assets/img/logo/logo-gv.png" alt="Gyanveer University" className="h-full w-auto object-contain" />
+                                        <img src={ScopeLogo} className="h-full w-auto object-contain" alt="SCOPE" />
                                     </div>
                                     <X size={16} className="text-gray-400 shrink-0" />
                                     <div className="bg-white px-4 py-2 rounded-2xl shadow-xl border border-white/20 flex items-center justify-center h-14 w-32 shrink-0">
@@ -552,7 +573,7 @@ const Gyanveer = () => {
                                             {/* Mobile Logo Label */}
                                             <div className="md:hidden flex items-center gap-4 mb-6 border-b border-[#34D562]/10 pb-6 w-full justify-center">
                                                 <div className="bg-white px-2 py-1 rounded-xl shadow-lg border border-white/10 flex items-center justify-center h-12 w-24 shrink-0">
-                                                    <img src="https://www.gyanveeruniversity.edu.in/assets/img/logo/logo-gv.png" alt="Gyanveer University" className="h-full w-auto object-contain" />
+                                                    <img src={ScopeLogo} className="h-full w-auto object-contain" alt="SCOPE" />
                                                 </div>
                                                 <X size={16} className="text-gray-400 shrink-0" />
                                                 <div className="bg-white px-1 py-1.5 rounded-xl shadow-lg border border-white/10 flex items-center justify-center h-12 w-24 shrink-0">
@@ -595,17 +616,29 @@ const Gyanveer = () => {
                         {/* Fee Structure */}
                         <div>
                             <SectionHeader title="Fee Structure" subtitle="Transparent & Value-Driven." />
+                            {/* Course Tabs */}
+                            <div className="flex flex-wrap gap-2 mb-6">
+                                {courses.map((c) => (
+                                    <button
+                                        key={c.id}
+                                        onClick={() => { setActiveCourse(c.id); setActiveSem(0); }}
+                                        className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${activeCourse === c.id ? 'bg-[#34D562] text-black' : 'bg-white/10 text-gray-400 hover:bg-white/20'}`}
+                                    >
+                                        {c.name}
+                                    </button>
+                                ))}
+                            </div>
                             <div className="p-8 bg-[#0a0a0a] border border-white/10 rounded-3xl shadow-2xl relative group overflow-hidden">
                                 <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
 
                                 <div className="flex justify-between items-end mb-4 relative z-10">
                                     <div>
                                         <h4 className="text-gray-400 text-sm uppercase tracking-widest font-bold mb-1">Annual Tuition Fee</h4>
-                                        <div className="text-5xl font-display font-bold text-white">{feeStructure.tuitionPerYear}</div>
+                                        <div className="text-5xl font-display font-bold text-white">{currentFee.tuitionPerYear}</div>
                                     </div>
                                     <div className="text-right">
                                         <div className="inline-block px-3 py-1 bg-[#34D562]/20 text-[#34D562] text-xs font-bold rounded-full border border-[#34D562]/30 mb-2">
-                                            <span className="text-amber-400">NAAC 'A+'</span> Accredited
+                                            <span className="text-amber-400">UGC</span> Recognized
                                         </div>
                                     </div>
                                 </div>
@@ -614,11 +647,11 @@ const Gyanveer = () => {
                                 <div className="space-y-6 relative z-10">
                                     <div className="flex justify-between items-center p-4 bg-white/5 rounded-xl border border-white/5">
                                         <span className="text-gray-300 font-medium">Seat Booking Fee <span className="text-xs text-gray-500 block">(Adjustable in Semester 1)</span></span>
-                                        <span className="text-white text-xl font-bold">{feeStructure.seatBooking}</span>
+                                        <span className="text-white text-xl font-bold">{currentFee.seatBooking}</span>
                                     </div>
                                     <div className="flex justify-between items-center p-4 bg-[#34D562]/10 rounded-xl border border-[#34D562]/20">
-                                        <span className="text-[#34D562] font-medium">Qualifier Test Fee</span>
-                                        <span className="text-[#34D562] text-xl font-bold">{feeStructure.qualifierFee}</span>
+                                        <span className="text-[#34D562] font-medium">Admission Test Fee</span>
+                                        <span className="text-[#34D562] text-xl font-bold">{currentFee.qualifierFee}</span>
                                     </div>
                                 </div>
 
@@ -698,20 +731,6 @@ const Gyanveer = () => {
                 </div>
             </section >
 
-            {/* ===== 5. CERTIFICATE PREVIEW (Moved & Resized) ===== */}
-            < section className="py-24 bg-[#050505] overflow-hidden" >
-                <div className="container mx-auto px-4 max-w-7xl text-center">
-                    <SectionHeader title="Earn a Degree that Matters" subtitle="UGC Recognized. NAAC 'A+' Accredited. Industry Trusted." />
-
-                    <div className="relative mt-12 mx-auto max-w-5xl">
-                        {/* Ambient Glow */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[#34D562]/20 blur-[120px] rounded-full pointer-events-none" />
-                        <div className="transform scale-100 md:scale-110">
-                            <CertificatePreview />
-                        </div>
-                    </div>
-                </div>
-            </section >
 
             {/* ===== 5. PLACEMENTS & PARTNERS (New High-Impact Section) ===== */}
             < section id="placements" className="py-20 bg-[#020202] border-y border-white/5 relative overflow-hidden scroll-mt-[300px]" >
@@ -736,9 +755,12 @@ const Gyanveer = () => {
                                 </p>
                             </div>
 
-                            <a href="#" className="flex items-center gap-2 px-6 py-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors text-white font-semibold w-fit">
-                                <Download size={18} /> Download Placement Report 2026
-                            </a>
+                            <button
+                                onClick={() => alert('Placement report will be available soon.')}
+                                className="flex items-center gap-2 px-6 py-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors text-white font-semibold w-fit"
+                            >
+                                <Download size={18} /> Download Placement Report 2025
+                            </button>
 
 
                         </div>
@@ -817,12 +839,25 @@ const Gyanveer = () => {
             {/* ===== 4. DENSE CURRICULUM (Funkie Roadmap) ===== */}
             < section id="curriculum" className="py-24 bg-[#050505] scroll-mt-[300px]" >
                 <div className="container mx-auto px-4 max-w-7xl">
-                    <SectionHeader title="8 Semester Roadmap" subtitle="Detailed breakdown of your 4-year journey." />
+                    <SectionHeader title={`${courses.find(c => c.id === activeCourse)?.name || 'Course'} Roadmap`} subtitle="Detailed breakdown of your academic journey." />
+
+                    {/* Course Tabs for Curriculum */}
+                    <div className="flex flex-wrap gap-2 mb-8">
+                        {courses.map((c) => (
+                            <button
+                                key={c.id}
+                                onClick={() => { setActiveCourse(c.id); setActiveSem(0); }}
+                                className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${activeCourse === c.id ? 'bg-[#34D562] text-black' : 'bg-white/10 text-gray-400 hover:bg-white/20'}`}
+                            >
+                                {c.name}
+                            </button>
+                        ))}
+                    </div>
 
                     <div className="flex flex-col lg:flex-row gap-6">
                         {/* Sidebar Tabs */}
                         <div className="lg:w-1/4 flex lg:flex-col gap-1 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 h-full">
-                            {curriculum.map((sem, i) => (
+                            {currentCurriculum.map((sem, i) => (
                                 <button
                                     key={i}
                                     onClick={() => setActiveSem(i)}
@@ -854,7 +889,7 @@ const Gyanveer = () => {
                                     </div>
 
                                     <div className="flex justify-between items-baseline mb-6 border-b border-white/10 pb-4 relative z-10">
-                                        <h3 className="text-2xl font-bold text-white">{curriculum[activeSem].theme}</h3>
+                                        <h3 className="text-2xl font-bold text-white">{currentCurriculum[activeSem].theme}</h3>
                                         <span className="text-[#34D562] font-mono text-sm px-3 py-1 bg-[#34D562]/10 rounded-full">24 Credits</span>
                                     </div>
 
@@ -864,7 +899,7 @@ const Gyanveer = () => {
                                                 <BookOpen size={16} className="text-[#34D562]" /> Core Subjects
                                             </h4>
                                             <div className="grid gap-2">
-                                                {curriculum[activeSem].subjects.map((sub, i) => (
+                                                {currentCurriculum[activeSem].subjects.map((sub, i) => (
                                                     <div key={i} className="flex justify-between items-center p-3 bg-black/40 rounded border border-white/5 hover:border-[#34D562]/20 transition-colors">
 
                                                         <span className="text-gray-300 text-sm font-medium flex items-center gap-2">
@@ -883,7 +918,7 @@ const Gyanveer = () => {
                                                     <Code size={16} className="text-[#34D562]" /> Practical Labs
                                                 </h4>
                                                 <div className="grid gap-2">
-                                                    {curriculum[activeSem].labs.map((lab, i) => (
+                                                    {currentCurriculum[activeSem].labs.map((lab, i) => (
                                                         <div key={i} className="flex items-center gap-3 p-3 bg-black/40 rounded border border-white/5 hover:bg-[#34D562]/5 transition-colors">
                                                             <div className="w-1.5 h-1.5 rounded-full bg-[#34D562]" />
                                                             <span className="text-gray-300 text-sm">{lab}</span>
@@ -904,7 +939,7 @@ const Gyanveer = () => {
                                             </h4>
                                             <div className="flex flex-wrap gap-3">
                                                 {/* @ts-ignore - activities added in data */}
-                                                {curriculum[activeSem].activities && curriculum[activeSem].activities.map((act: string, i: number) => (
+                                                {currentCurriculum[activeSem].activities && currentCurriculum[activeSem].activities.map((act: string, i: number) => (
                                                     <span key={i} className="px-4 py-2 bg-black/40 border border-white/10 rounded-lg text-sm text-gray-300 flex items-center gap-2 group-hover:border-[#34D562]/30 transition-colors">
                                                         <CheckCircle size={14} className="text-[#34D562]" /> {act}
                                                     </span>
@@ -922,7 +957,7 @@ const Gyanveer = () => {
                             <span className="text-[#34D562]">Your Journey</span> to Success
                         </h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                            {curriculum.map((sem, i) => (
+                            {currentCurriculum.map((sem, i) => (
                                 <button
                                     key={i}
                                     onClick={() => setActiveSem(i)}
@@ -967,113 +1002,27 @@ const Gyanveer = () => {
             {/* ===== 5. CAMPUS LIFE & CLUBS (Updated) ===== */}
             < section id="campus-life" className="py-24 bg-[#0A0A0A] scroll-mt-[300px]" >
                 <div className="container mx-auto px-4 max-w-7xl">
-                    <SectionHeader title="Campus Life" subtitle="Explore Sagar & Beyond." />
+                    <SectionHeader title="Campus Life" subtitle="World-Class Facilities at SGSU." />
 
-                    {/* Amenities Grid */}
-                    <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-16">
+                    {/* Amenities Grid - Icon Only (5 per row) */}
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-16">
                         {amenities.map((item, i) => (
-                            <div
-                                key={i}
-                                className="relative group cursor-pointer h-full"
-                                onClick={() => setSelectedAmenity(item)}
-                            >
-                                <div className="h-full bg-[#0F0F0F] rounded-2xl overflow-hidden border border-white/5 group-hover:border-[#34D562]/50 transition-all duration-500 shadow-lg group-hover:shadow-[0_0_30px_rgba(52,213,98,0.15)] relative">
-
-                                    {/* Image Section */}
-                                    <div className="relative h-40 overflow-hidden">
-                                        <img
-                                            src={item.image}
-                                            alt={item.name}
-                                            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                                        />
-                                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500" />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F] via-transparent to-transparent opacity-90" />
-
-                                        {/* Floating Icon */}
-                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-black/30 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 text-white opacity-0 group-hover:opacity-100 group-hover:scale-100 scale-50 transition-all duration-500 delay-100 group-hover:bg-[#34D562] group-hover:text-black group-hover:border-[#34D562]">
-                                            <item.icon size={20} />
-                                        </div>
+                            <div key={i} className="relative group h-full">
+                                <div className="h-full bg-[#0F0F0F] rounded-2xl border border-white/5 group-hover:border-[#34D562]/50 transition-all duration-500 p-6 flex flex-col items-center text-center">
+                                    <div className="w-14 h-14 bg-[#1A1A1A] rounded-xl border border-white/5 flex items-center justify-center text-[#34D562] mb-4 group-hover:bg-[#34D562] group-hover:text-black transition-all duration-300 shadow-lg">
+                                        <item.icon size={24} />
                                     </div>
-
-                                    {/* Content Section */}
-                                    <div className="p-5 flex flex-col items-center text-center relative z-10 -mt-6">
-                                        {/* Static Icon (Visible initially) */}
-                                        <div className="w-12 h-12 bg-[#1A1A1A] rounded-xl border border-white/5 flex items-center justify-center text-[#34D562] mb-3 group-hover:w-0 group-hover:opacity-0 overflow-hidden transition-all duration-300 shadow-lg">
-                                            <item.icon size={22} />
-                                        </div>
-
-                                        <h3 className="text-white font-bold text-lg mb-1 group-hover:text-[#34D562] transition-colors duration-300">
-                                            {item.name}
-                                        </h3>
-                                        <p className="text-gray-500 text-xs font-medium leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
-                                            {item.desc}
-                                        </p>
-                                    </div>
-
-                                    {/* Bottom Detail */}
-                                    <div className="absolute bottom-0 left-0 w-full h-1 bg-[#34D562] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
+                                    <h3 className="text-white font-bold text-sm mb-1 group-hover:text-[#34D562] transition-colors duration-300">
+                                        {item.name}
+                                    </h3>
+                                    <p className="text-gray-500 text-xs font-medium leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                                        {item.desc}
+                                    </p>
+                                    <div className="absolute bottom-0 left-0 w-full h-1 bg-[#34D562] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center rounded-b-2xl" />
                                 </div>
                             </div>
                         ))}
                     </div>
-
-                    {/* Amenity Image Modal - Centered with Blur Background */}
-                    <AnimatePresence>
-                        {selectedAmenity && (
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                className="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-black/70 backdrop-blur-md"
-                                onClick={() => setSelectedAmenity(null)}
-                            >
-                                <motion.div
-                                    initial={{ scale: 0.7, opacity: 0 }}
-                                    animate={{ scale: 1, opacity: 1 }}
-                                    exit={{ scale: 0.7, opacity: 0 }}
-                                    transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                                    className="relative w-[90%] md:w-[70%] lg:w-[60%] max-h-[85vh] bg-[#111] rounded-3xl overflow-hidden border border-[#34D562]/30 shadow-[0_0_80px_rgba(52,213,98,0.3)]"
-                                    onClick={(e) => e.stopPropagation()}
-                                >
-                                    {/* Close Button */}
-                                    <button
-                                        onClick={() => setSelectedAmenity(null)}
-                                        className="absolute top-4 right-4 z-20 w-12 h-12 bg-black/60 hover:bg-[#34D562] text-white hover:text-black rounded-full flex items-center justify-center transition-all border border-white/20"
-                                    >
-                                        <X size={24} />
-                                    </button>
-
-                                    {/* Large Image */}
-                                    <div className="relative h-[50vh] md:h-[60vh] bg-black overflow-hidden">
-                                        {/* Blurred Background */}
-                                        <div
-                                            className="absolute inset-0 bg-cover bg-center opacity-40 blur-2xl scale-110"
-                                            style={{ backgroundImage: `url(${selectedAmenity.image})` }}
-                                        />
-
-                                        {/* Main Image - Full View */}
-                                        <img
-                                            src={selectedAmenity.image}
-                                            alt={selectedAmenity.name}
-                                            className="relative w-full h-full object-contain z-10 p-4"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent z-20" />
-                                    </div>
-
-                                    {/* Content */}
-                                    <div className="p-6 md:p-8">
-                                        <div className="flex items-center gap-4 mb-3">
-                                            <div className="w-14 h-14 bg-[#34D562]/20 rounded-xl flex items-center justify-center text-[#34D562]">
-                                                <selectedAmenity.icon size={28} />
-                                            </div>
-                                            <h3 className="text-2xl md:text-3xl font-bold text-white">{selectedAmenity.name}</h3>
-                                        </div>
-                                        <p className="text-gray-400 text-lg">{selectedAmenity.desc}</p>
-                                    </div>
-                                </motion.div>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
 
                     {/* Success Ticker (Interns & Placements) */}
 
@@ -1202,8 +1151,8 @@ const Gyanveer = () => {
                                 <MapPin size={24} />
                             </div>
                             <h4 className="text-white font-bold mb-2">Visit Campus</h4>
-                            <p className="text-gray-400 text-sm">Gyanveer University,</p>
-                            <p className="text-gray-400 text-sm">Mara Imaliya, Sagar, MP</p>
+                            <p className="text-gray-400 text-sm">SCOPE Global Skills University,</p>
+                            <p className="text-gray-400 text-sm">Ratibad, Bhopal, MP</p>
                         </div>
                     </div>
                 </div>
@@ -1217,4 +1166,4 @@ const Gyanveer = () => {
 
 
 
-export default Gyanveer;
+export default Scope;
