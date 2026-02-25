@@ -232,10 +232,10 @@ const Culture: React.FC = () => {
                         <BentoCard className="md:col-span-6 md:row-span-1">
                             <img src={Event3} alt="Modern Age Gurukul" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                            {/* <div className="absolute bottom-6 left-6 right-6">
-                                <p className="text-white font-black uppercase text-sm tracking-wider">Modern Age Gurukul</p>
-                                <p className="text-gray-400 text-xs font-medium mt-1">Of Bharat — #geeks_of_gurukul</p>
-                            </div> */}
+                            <div className="absolute bottom-6 left-6">
+                                <p className="text-white font-black uppercase text-sm tracking-wider">Electric Energy</p>
+                                <p className="text-gray-400 text-xs font-medium mt-1">Celebrating every milestone</p>
+                            </div>
                         </BentoCard>
 
                         {/* 9. Group Photo — Event4 */}
