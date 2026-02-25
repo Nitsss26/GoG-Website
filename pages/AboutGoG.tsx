@@ -17,7 +17,7 @@ import VivekImg from '../assets/team/vivek-yadav.jpg';
 import NiteshImg from '../assets/team/Nitesh.jpg';
 import AyushImg from '../assets/team/ayush-chauhan.jpg';
 import SachinImg from '../assets/team/sachin-kumar-gupta.png';
-import VipulImg from '../assets/team/vipul-parmar.png';
+import VipulImg from '../assets/team/sid2.png';
 
 
 
@@ -443,11 +443,11 @@ const AboutGoG: React.FC = () => {
                             </a>
                             <div className="h-96 overflow-hidden relative">
                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-80" />
-                                <img src={VipulImg} alt="Vipul Parmar" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
+                                <img src={VipulImg} alt="Sidhartha Paikaray" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
                             </div>
                             <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-center transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                                 <div className="inline-block px-4 py-1 bg-[#34D562] text-black font-bold text-[10px] tracking-wider uppercase rounded-full mb-3 shadow-[0_0_10px_rgba(52,213,98,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">HOI</div>
-                                <h3 className="text-2xl font-bold text-white mb-1">Mr. Vipul Parmar</h3>
+                                <h3 className="text-2xl font-bold text-white mb-1">Mr. Sidhartha Paikaray</h3>
                                 <p className="text-[#34D562] text-lg font-bold font-mono uppercase tracking-wide">Head of Institute</p>
                             </div>
                         </motion.div>

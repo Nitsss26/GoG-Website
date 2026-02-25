@@ -38,9 +38,9 @@ export const courseInfo = {
 
 // --- COURSES (for tab switching) ---
 export const courses = [
-    { id: "btech-aids", name: "B.Tech AI-DS", duration: "4 Years (8 Semesters)", fee: "₹80,000/Year" },
-    { id: "bca-cyber", name: "BCA Cyber Security", duration: "3 Years (6 Semesters)", fee: "₹40,000/Year" },
-    { id: "bca-aiml", name: "BCA AI-ML", duration: "3 Years (6 Semesters)", fee: "₹40,000/Year" }
+    { id: "btech-aids", name: "B.Tech AI-DS", duration: "4 Years (8 Semesters)", fee: "₹95,000/Year" },
+    { id: "bca-cyber", name: "BCA Cyber Security", duration: "3 Years (6 Semesters)", fee: "₹50,000/Year" },
+    { id: "bca-aiml", name: "BCA AI-ML", duration: "3 Years (6 Semesters)", fee: "₹50,000/Year" }
 ];
 
 // --- UNIVERSITY VISION & MISSION ---
@@ -110,7 +110,7 @@ export const feeStructures: Record<string, {
     "btech-aids": {
         qualifierFee: "₹99",
         seatBooking: "₹5,000",
-        tuitionPerYear: "₹80,000",
+        tuitionPerYear: "₹95,000",
         hostelPerYear: "₹50,000 - ₹70,000",
         scholarships: [
             { percentage: "10% OFF", type: "Early Bird", criteria: "Pay before May 31st" },
@@ -118,14 +118,14 @@ export const feeStructures: Record<string, {
         ],
         emiOptions: {
             provider: "GrayQuest / Propelld",
-            amount: "₹6,667 / month",
+            amount: "₹7,917 / month",
             tenure: "12 Months"
         }
     },
     "bca-cyber": {
         qualifierFee: "₹99",
         seatBooking: "₹5,000",
-        tuitionPerYear: "₹40,000",
+        tuitionPerYear: "₹50,000",
         hostelPerYear: "₹50,000 - ₹70,000",
         scholarships: [
             { percentage: "10% OFF", type: "Early Bird", criteria: "Pay before May 31st" },
@@ -133,14 +133,14 @@ export const feeStructures: Record<string, {
         ],
         emiOptions: {
             provider: "GrayQuest / Propelld",
-            amount: "₹3,333 / month",
+            amount: "₹4,167 / month",
             tenure: "12 Months"
         }
     },
     "bca-aiml": {
         qualifierFee: "₹99",
         seatBooking: "₹5,000",
-        tuitionPerYear: "₹40,000",
+        tuitionPerYear: "₹50,000",
         hostelPerYear: "₹50,000 - ₹70,000",
         scholarships: [
             { percentage: "10% OFF", type: "Early Bird", criteria: "Pay before May 31st" },
@@ -148,7 +148,7 @@ export const feeStructures: Record<string, {
         ],
         emiOptions: {
             provider: "GrayQuest / Propelld",
-            amount: "₹3,333 / month",
+            amount: "₹4,167 / month",
             tenure: "12 Months"
         }
     }
@@ -620,7 +620,7 @@ export const faqs = [
     },
     {
         q: "What is the fee structure?",
-        a: "B.Tech AI-DS: ₹80,000 per year. BCA programs: ₹40,000 per year. One-time seat booking fee: ₹5,000. Admission test fee: ₹99."
+        a: "B.Tech AI-DS: ₹95,000 per year. BCA programs: ₹50,000 per year. One-time registration fee: ₹5,000. Admission test fee: ₹99."
     },
     {
         q: "Is SGSU a recognized university?",

@@ -18,7 +18,16 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Our Partnered Institutes', href: '/partnered-colleges' },
   { label: 'Our Team', href: '/teams' },
   { label: 'B2G Initiatives', href: '/our-social-impact' },
-  { label: 'Programs', href: '/programs' },
+  {
+    label: 'More',
+    href: '#',
+    children: [
+      { label: 'Events', href: '/events' },
+      { label: 'Our Culture', href: '/culture' },
+      { label: 'Careers', href: '/careers' },
+      { label: 'Programs', href: '/programs' },
+    ]
+  },
 ];
 
 export const FEATURES: Feature[] = [

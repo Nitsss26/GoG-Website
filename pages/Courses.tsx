@@ -107,7 +107,7 @@ const Courses = () => {
 };
 
 // Extracted Card Component for cleanness
-const CourseCard = ({ course, index, onClick }: { course: CourseCardData, index: number, onClick: () => void }) => {
+const CourseCard = ({ course, index, onClick }: { course: any, index: number, onClick: () => void }) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 30 }}

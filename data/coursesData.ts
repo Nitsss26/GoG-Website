@@ -113,7 +113,7 @@ export const coursesData: CourseCardData[] = [
         image: ScopeCampus,
         specialisations: 4,
         certifications: 15,
-        fees: "₹40,000/Year Staring..",
+        fees: "₹50,000/Year Starting..",
         link: "/scope",
         isExternal: false
     }

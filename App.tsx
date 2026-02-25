@@ -26,9 +26,12 @@ const Gyanveer = lazy(() => import('./pages/Gyanveer'));
 const SageIndore = lazy(() => import('./pages/SageIndore'));
 const Scope = lazy(() => import('./pages/Scope'));
 const ContactUs = lazy(() => import('./pages/ContactUs'));
+const Events = lazy(() => import('./pages/Events'));
 const FAQ = lazy(() => import('./pages/FAQ'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
+const Culture = lazy(() => import('./pages/Culture'));
+const Careers = lazy(() => import('./pages/Careers'));
 
 const LoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center bg-[#030303] text-white">
@@ -77,10 +80,13 @@ const App: React.FC = () => {
               <Route path="/sageindore" element={<SageIndore />} />
               <Route path="/gyanveer" element={<Gyanveer />} />
               <Route path="/scope" element={<Scope />} />
+              <Route path="/events" element={<Events />} />
               <Route path="/courses" element={<Courses />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-conditions" element={<TermsAndConditions />} />
+              <Route path="/culture" element={<Culture />} />
+              <Route path="/careers" element={<Careers />} />
             </Routes>
           </Suspense>
 
