@@ -413,7 +413,7 @@ const GridBackground = () => (
 
 const Events: React.FC = () => {
     const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
-    const [is3D, setIs3D] = useState(false);
+    const [is3D, setIs3D] = useState(true);
     const sceneRef = useRef<HTMLDivElement>(null);
     const [sceneRotation, setSceneRotation] = useState({ x: 0, y: 0 });
 
@@ -488,15 +488,7 @@ const Events: React.FC = () => {
                             Workshops, seminars, and training programmes empowering the next generation of tech leaders across India's universities.
                         </motion.p>
 
-                        {/* View Toggle */}
-                        <motion.div
-                            className="flex justify-center mt-8"
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.3 }}
-                        >
-                            <ViewToggle is3D={is3D} onToggle={() => setIs3D(!is3D)} />
-                        </motion.div>
+
 
                     </div>
                 </div>
@@ -505,7 +497,7 @@ const Events: React.FC = () => {
             </section>
 
             {/* ═══════ Events Grid ═══════ */}
-            <section className="relative py-6 md:py-10">
+            <section className="relative py-10 md:py-16">
                 <div className="container mx-auto px-4 max-w-7xl relative z-10">
 
                     {/* 3D Scene Container */}

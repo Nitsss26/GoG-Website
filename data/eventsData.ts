@@ -228,20 +228,20 @@ export const eventsData: EventData[] = [
         ]
     },
     {
-        id: 'sirt-sage-blockchain-bootcamp',
-        title: 'SIRT Sage Group of Institution — Blockchain Bootcamp',
+        id: 'bansal-blockchain-bootcamp',
+        title: 'Bansal Group of Institution — Blockchain Bootcamp',
         tag: 'Bootcamp',
         tagline: 'Decentralized Future Starts Here',
-        shortDescription: 'An intensive hands-on bootcamp at SIRT Sage Group of Institution covering Blockchain fundamentals, distributed ledger technology, consensus mechanisms, and smart contract development with real-world industry use cases.',
+        shortDescription: 'An intensive hands-on bootcamp at Bansal Group of Institution covering Blockchain fundamentals, distributed ledger technology, consensus mechanisms, and smart contract development with real-world industry use cases.',
         date: 'September 2025',
-        venue: 'SIRT Sage Group of Institution, Bhopal',
-        organizedBy: 'Geeks of Gurukul × SIRT Sage Group of Institution',
-        inAssociationWith: 'SIRT Sage Group of Institution',
+        venue: 'Bansal Group of Institution, Bhopal',
+        organizedBy: 'Geeks of Gurukul × Bansal Group of Institution',
+        inAssociationWith: 'Bansal Group of Institution',
         cardImage: Bansal_1,
         isActive: false,
         subEvents: [
             {
-                id: 'sirt-sage-blockchain',
+                id: 'bansal-blockchain',
                 title: 'Blockchain Technology Bootcamp',
                 summary: 'An immersive bootcamp that introduces students to the core principles of Blockchain technology — from distributed ledgers and consensus mechanisms to building and deploying smart contracts. Participants explored decentralized application architectures, cryptographic hashing, and real-world blockchain use cases across industries.',
                 sessions: [

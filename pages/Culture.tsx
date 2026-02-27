@@ -145,7 +145,7 @@ const GridBackground = () => (
 );
 
 const Culture: React.FC = () => {
-    const [is3D, setIs3D] = useState(false);
+    const [is3D, setIs3D] = useState(true);
     const sceneRef = useRef<HTMLDivElement>(null);
 
     // 3D Motion Values for smooth parallax
@@ -270,19 +270,12 @@ const Culture: React.FC = () => {
                         subtitle="We don't just build careers — we build memories. Every celebration, every milestone, every shared laugh makes us who we are."
                     />
 
-                    {/* View Toggle */}
-                    <motion.div
-                        className="flex justify-center mb-10"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.3 }}
-                    >
-                        <ViewToggle is3D={is3D} onToggle={() => setIs3D(!is3D)} />
-                    </motion.div>
+
 
 
                     {/* 3D Scene Container */}
                     <div
+                        className="mt-8 md:mt-12"
                         ref={sceneRef}
                         onMouseMove={handleSceneMouseMove}
                         onMouseLeave={handleSceneMouseLeave}
