@@ -361,7 +361,7 @@ const AboutGoG: React.FC = () => {
                             <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">Tech Lead</p>
                             <div className="relative max-w-xl">
                                 <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
-                                <p className="text-gray-400 italic relative z-10 leading-relaxed">"Great technology solves problems; great education creates the problem solvers."</p>
+                                <p className="text-gray-400 italic relative z-10 leading-relaxed">"Building products to empower students and drive the growth of Bharat."</p>
                             </div>
                             <a href="https://www.linkedin.com/in/nitesh-shr-304539281/" target="_blank" rel="noopener noreferrer" className="mt-4 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg">
                                 <Linkedin size={20} />
@@ -385,27 +385,28 @@ const AboutGoG: React.FC = () => {
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Leadership <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] to-[#28a74b]">Team</span></h2>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
                         {/* Ayush Chauhan */}
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="group relative bg-[#0A0A0A] rounded-2xl overflow-hidden border border-white/5 hover:border-[#34D562]/30 transition-all duration-500 shadow-lg hover:shadow-[0_0_30px_rgba(52,213,98,0.15)]"
+                            className="flex flex-col items-center text-center group bg-[#0A0A0A]/40 backdrop-blur-sm p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/50 transition-all duration-500 hover:bg-[#34D562]/5"
                         >
-                            <a href="https://www.linkedin.com/in/ayush-chouhan-8b68a2287/" target="_blank" rel="noopener noreferrer" className="absolute top-4 right-4 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg z-30">
-                                <Linkedin size={18} />
-                            </a>
-                            <div className="h-96 overflow-hidden relative">
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-80" />
+                            <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
+                                <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
                                 <img src={AyushImg} alt="Ayush Chauhan" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
                             </div>
-                            <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-center transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                                <div className="inline-block px-4 py-1 bg-[#34D562] text-black font-bold text-[10px] tracking-wider uppercase rounded-full mb-3 shadow-[0_0_10px_rgba(52,213,98,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">HOI</div>
-                                <h3 className="text-2xl font-bold text-white mb-1">Mr. Ayush Chauhan</h3>
-                                <p className="text-[#34D562] text-lg font-bold font-mono uppercase tracking-wide">Head of Institute</p>
+                            <h3 className="text-2xl font-bold text-white mb-2">Mr. Ayush Chauhan</h3>
+                            <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">Head of Institute</p>
+                            <div className="relative max-w-xl">
+                                <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
+                                <p className="text-gray-400 italic relative z-10 leading-relaxed">"Driving operational excellence and empowering our educators to deliver their best."</p>
                             </div>
+                            <a href="https://www.linkedin.com/in/ayush-chouhan-8b68a2287/" target="_blank" rel="noopener noreferrer" className="mt-4 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg">
+                                <Linkedin size={20} />
+                            </a>
                         </motion.div>
 
                         {/* Sachin Kumar Gupta */}
@@ -414,42 +415,44 @@ const AboutGoG: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="group relative bg-[#0A0A0A] rounded-2xl overflow-hidden border border-white/5 hover:border-[#34D562]/30 transition-all duration-500 shadow-lg hover:shadow-[0_0_30px_rgba(52,213,98,0.15)]"
+                            className="flex flex-col items-center text-center group bg-[#0A0A0A]/40 backdrop-blur-sm p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/50 transition-all duration-500 hover:bg-[#34D562]/5"
                         >
-                            <a href="https://www.linkedin.com/in/sachin-kumar-gupta-12bbb427a/" target="_blank" rel="noopener noreferrer" className="absolute top-4 right-4 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg z-30">
-                                <Linkedin size={18} />
-                            </a>
-                            <div className="h-96 overflow-hidden relative">
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-80" />
+                            <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
+                                <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
                                 <img src={SachinImg} alt="Sachin Kumar Gupta" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
                             </div>
-                            <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-center transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                                <div className="inline-block px-4 py-1 bg-[#34D562] text-black font-bold text-[10px] tracking-wider uppercase rounded-full mb-3 shadow-[0_0_10px_rgba(52,213,98,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">HOI</div>
-                                <h3 className="text-2xl font-bold text-white mb-1">Mr. Sachin Kumar Gupta</h3>
-                                <p className="text-[#34D562] text-lg font-bold font-mono uppercase tracking-wide">Head of Institute</p>
+                            <h3 className="text-2xl font-bold text-white mb-2">Mr. Sachin Kumar Gupta</h3>
+                            <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">Head of Institute</p>
+                            <div className="relative max-w-xl">
+                                <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
+                                <p className="text-gray-400 italic relative z-10 leading-relaxed">"Ensuring seamless institute operations and fostering a collaborative academic environment."</p>
                             </div>
+                            <a href="https://www.linkedin.com/in/sachin-kumar-gupta-12bbb427a/" target="_blank" rel="noopener noreferrer" className="mt-4 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg">
+                                <Linkedin size={20} />
+                            </a>
                         </motion.div>
 
-                        {/* Vipul Parmar */}
+                        {/* Sidhartha Paikaray */}
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.3 }}
-                            className="group relative bg-[#0A0A0A] rounded-2xl overflow-hidden border border-white/5 hover:border-[#34D562]/30 transition-all duration-500 shadow-lg hover:shadow-[0_0_30px_rgba(52,213,98,0.15)]"
+                            className="flex flex-col items-center text-center group bg-[#0A0A0A]/40 backdrop-blur-sm p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/50 transition-all duration-500 hover:bg-[#34D562]/5"
                         >
-                            <a href="#" className="absolute top-4 right-4 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg z-30">
-                                <Linkedin size={18} />
-                            </a>
-                            <div className="h-96 overflow-hidden relative">
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-80" />
+                            <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
+                                <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
                                 <img src={VipulImg} alt="Sidhartha Paikaray" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
                             </div>
-                            <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-center transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                                <div className="inline-block px-4 py-1 bg-[#34D562] text-black font-bold text-[10px] tracking-wider uppercase rounded-full mb-3 shadow-[0_0_10px_rgba(52,213,98,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">HOI</div>
-                                <h3 className="text-2xl font-bold text-white mb-1">Mr. Sidhartha Paikaray</h3>
-                                <p className="text-[#34D562] text-lg font-bold font-mono uppercase tracking-wide">Head of Institute</p>
+                            <h3 className="text-2xl font-bold text-white mb-2">Mr. Sidhartha Paikaray</h3>
+                            <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">Head of Institute</p>
+                            <div className="relative max-w-xl">
+                                <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
+                                <p className="text-gray-400 italic relative z-10 leading-relaxed">"Leading with a focus on efficient management and empowering our academic teams."</p>
                             </div>
+                            <a href="#" className="mt-4 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg">
+                                <Linkedin size={20} />
+                            </a>
                         </motion.div>
                     </div>
                 </div>

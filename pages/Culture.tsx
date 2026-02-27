@@ -1,9 +1,10 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useRef, useState, useCallback, useEffect } from 'react';
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
 import { Gift, Star, Zap, Pizza, Play, Award, Camera, Heart, Users, Coffee, Sparkles, PartyPopper, Trophy } from 'lucide-react';
 import SEO from '../components/SEO';
 import GreenEmbers from '../components/ui/GreenEmbers';
 import GreenEmbers2 from '../components/ui/GreenEmbers2';
+import ViewToggle from '../components/ViewToggle';
 
 // --- ASSETS ---
 
@@ -44,9 +45,23 @@ const BirthdayImg = 'https://i.ibb.co/vCKF0tN3/Birthday.avif';
 const Birthday2Img = 'https://i.ibb.co/wFC7d4bz/Birthday-2.avif';
 const PizzaImg = 'https://i.ibb.co/KpNjgXF3/IMG-9235.avif';
 
+// New Culture images from Our_Culture/a/
+// @ts-ignore
+import CultureA1 from '../assets/Our_Culture/a/IMG_6005.JPG';
+// @ts-ignore
+import CultureA2 from '../assets/Our_Culture/a/IMG_6009.JPG';
+// @ts-ignore
+import CultureA3 from '../assets/Our_Culture/a/IMG_6084.JPG';
+// @ts-ignore
+import CultureA4 from '../assets/Our_Culture/a/IMG_6130.JPG';
+// @ts-ignore
+import CultureA5 from '../assets/Our_Culture/a/IMG_6146.JPG';
+// @ts-ignore
+import CultureA6 from '../assets/Our_Culture/a/IMG_8035.JPG';
+
 // --- COMPONENTS ---
 
-const BentoCard = ({ children, className = '', depth = 0.15 }: { children: React.ReactNode; className?: string; depth?: number }) => {
+const BentoCard = ({ children, className = '', depth = 0.15, disableParallax = false }: { children: React.ReactNode; className?: string; depth?: number; disableParallax?: boolean }) => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
     const y = useTransform(scrollYProgress, [0, 1], [40 * depth, -40 * depth]);
@@ -54,7 +69,7 @@ const BentoCard = ({ children, className = '', depth = 0.15 }: { children: React
     return (
         <motion.div
             ref={ref}
-            style={{ y }}
+            style={{ y: disableParallax ? 0 : y }}
             initial={{ opacity: 0, scale: 0.97, y: 30 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
@@ -130,6 +145,107 @@ const GridBackground = () => (
 );
 
 const Culture: React.FC = () => {
+    const [is3D, setIs3D] = useState(false);
+    const sceneRef = useRef<HTMLDivElement>(null);
+
+    // 3D Motion Values for smooth parallax
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+
+    const springConfig = { damping: 30, stiffness: 60, mass: 1 };
+    const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [6, -6]), springConfig);
+    const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-8, 8]), springConfig);
+
+    const handleSceneMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+        if (!is3D || !sceneRef.current) return;
+        const rect = sceneRef.current.getBoundingClientRect();
+        const mX = (e.clientX - rect.left) / rect.width - 0.5;
+        const mY = (e.clientY - rect.top) / rect.height - 0.5;
+        mouseX.set(mX);
+        mouseY.set(mY);
+    }, [is3D, mouseX, mouseY]);
+
+    const handleSceneMouseLeave = useCallback(() => {
+        mouseX.set(0);
+        mouseY.set(0);
+    }, [mouseX, mouseY]);
+
+    // Pure 3D depth for culture bento grid — no layout shifts
+    // Cards get different Z depths to create layered diorama effect
+    const getCulture3DTransform = (index: number) => {
+        // High-impact alternating row depths to match "Out-of-the-Box" Events style.
+        // Even rows pop out significantly (+120), odd rows recede deeply (-80).
+        // Added scale adjustments to enhance the perspective illusion.
+        const layerData = [
+            { z: 120, s: 1.05 }, // 0: Hero wide (Row 1&2 Forward)
+            { z: 100, s: 1.04 }, // 1: Join tribe (Row 1 Forward)
+            { z: -80, s: 0.94 }, // 2: Pizza (Row 2 Backward)
+            { z: 90, s: 1.03 },  // 3: Holi (Row 3 Forward)
+            { z: 90, s: 1.03 },  // 4: Team Lunch (Row 3 Forward)
+            { z: 90, s: 1.03 },  // 5: Birthday (Row 3 Forward)
+            { z: -90, s: 0.92 }, // 6: Dance Floor (Row 4 Backward)
+            { z: -90, s: 0.92 }, // 7: Gurukul Pride (Row 4 Backward)
+            { z: 100, s: 1.04 }, // 8: Group Photo (Row 5 Forward)
+            { z: 100, s: 1.04 }, // 9: Birthday 2 (Row 5 Forward)
+            { z: 100, s: 1.04 }, // 10: Memories (Row 5 Forward)
+            { z: -70, s: 0.95 }, // 11: Good Times (Row 6 Backward)
+            { z: -70, s: 0.95 }, // 12: Fun Hour (Row 6 Backward)
+            { z: -70, s: 0.95 }, // 13: Happy Moments (Row 6 Backward)
+            { z: 80, s: 1.02 },  // 14: Chill Zone (Row 7 Forward)
+            { z: 80, s: 1.02 },  // 15: Work & Play (Row 7 Forward)
+            { z: 80, s: 1.02 }   // 16: Vibe (Row 7 Forward)
+        ];
+        return layerData[index] || { z: 0, s: 1 };
+    };
+
+    // Wrapper for 3D depth on individual cards
+    // NOTE: This wrapper must capture the grid span classes to prevent layout collapse
+    const Card3DWrapper = ({ children, index, className = "" }: { children: React.ReactNode; index: number; className?: string }) => {
+        const t = getCulture3DTransform(index);
+
+        if (!is3D) return <div className={className}>{children}</div>;
+
+        return (
+            <motion.div
+                className={`w-full h-full ${className}`}
+                animate={{
+                    z: t.z,
+                    scale: t.s,
+                }}
+                transition={{
+                    type: 'spring',
+                    stiffness: 45,
+                    damping: 20,
+                    delay: index * 0.015,
+                }}
+                style={{
+                    transformStyle: 'preserve-3d',
+                    zIndex: Math.floor(t.z) + 1000,
+                    borderRadius: '2rem',
+                    boxShadow: t.z > 0
+                        ? `0 ${20 + t.z * 0.4}px ${40 + t.z * 0.5}px rgba(0,0,0,0.5), 0 0 ${15 + t.z * 0.3}px rgba(52,213,98,0.15)`
+                        : 'none'
+                }}
+            >
+                <div className="w-full h-full hover:!scale-[1.03] transition-transform duration-300 relative group/card">
+                    {/* Dynamic Glow Shadow */}
+                    <div
+                        className="absolute inset-4 -z-10 bg-[#34D562]/10 blur-2xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 rounded-3xl"
+                        style={{ transform: 'translateZ(-20px)' }}
+                    />
+
+                    {React.Children.map(children, child => {
+                        if (React.isValidElement(child)) {
+                            // @ts-ignore
+                            return React.cloneElement(child, { disableParallax: true });
+                        }
+                        return child;
+                    })}
+                </div>
+            </motion.div>
+        );
+    };
+
     return (
         <main className="bg-[#030303] text-white overflow-x-hidden min-h-screen">
             <SEO
@@ -154,119 +270,221 @@ const Culture: React.FC = () => {
                         subtitle="We don't just build careers — we build memories. Every celebration, every milestone, every shared laugh makes us who we are."
                     />
 
-                    {/* ── BENTO GRID: 11 Team Moment Assets ── */}
-                    <div className="grid grid-cols-1 md:grid-cols-12 gap-5 auto-rows-[280px] md:auto-rows-[300px]">
+                    {/* View Toggle */}
+                    <motion.div
+                        className="flex justify-center mb-10"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                    >
+                        <ViewToggle is3D={is3D} onToggle={() => setIs3D(!is3D)} />
+                    </motion.div>
 
-                        {/* 1. HERO — Party Video (wide) */}
-                        <BentoCard className="md:col-span-8 md:row-span-2" depth={0.1}>
-                            <video
-                                src={PartyStream}
-                                autoPlay muted loop playsInline
-                                className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-700"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                            <div className="absolute bottom-10 left-10">
-                                <div className="flex items-center gap-3 mb-3">
-                                    <div className="p-2.5 bg-[#34D562] rounded-xl">
-                                        <Play size={16} className="text-black fill-black" />
-                                    </div>
-                                    <span className="text-[#34D562] font-bold uppercase text-[10px] tracking-widest">Party Moments</span>
-                                </div>
-                                <h3 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight leading-none">
-                                    Happiness<br />Engine
-                                </h3>
+
+                    {/* 3D Scene Container */}
+                    <div
+                        ref={sceneRef}
+                        onMouseMove={handleSceneMouseMove}
+                        onMouseLeave={handleSceneMouseLeave}
+                        style={{
+                            perspective: is3D ? '1200px' : 'none',
+                            perspectiveOrigin: '50% 50%',
+                        }}
+                    >
+                        <motion.div
+                            style={{
+                                rotateX,
+                                rotateY,
+                                transformStyle: 'preserve-3d'
+                            }}
+                        >
+
+                            {/* ── BENTO GRID: 11 Team Moment Assets ── */}
+                            <div className="grid grid-cols-1 md:grid-cols-12 gap-5 auto-rows-[280px] md:auto-rows-[300px]">
+
+                                {/* 1. HERO — Party Video (wide) */}
+                                <Card3DWrapper index={0} className="md:col-span-8 md:row-span-2">
+                                    <BentoCard className="w-full h-full" depth={0.1}>
+                                        <video
+                                            src={PartyStream}
+                                            autoPlay muted loop playsInline
+                                            className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-700"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                                        <div className="absolute bottom-10 left-10">
+                                            <div className="flex items-center gap-3 mb-3">
+                                                <div className="p-2.5 bg-[#34D562] rounded-xl">
+                                                    <Play size={16} className="text-black fill-black" />
+                                                </div>
+                                                <span className="text-[#34D562] font-bold uppercase text-[10px] tracking-widest">Party Moments</span>
+                                            </div>
+                                            <h3 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight leading-none">
+                                                Happiness<br />Engine
+                                            </h3>
+                                        </div>
+                                    </BentoCard>
+                                </Card3DWrapper>
+
+                                {/* 2. Join The Tribe — Party3 */}
+                                <Card3DWrapper index={1} className="md:col-span-4 md:row-span-1">
+                                    <BentoCard className="w-full h-full">
+                                        <img src={Party3} alt="Join The Tribe" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                                        <div className="absolute inset-0 border-4 border-[#34D562]/15 rounded-[2rem] m-2 pointer-events-none" />
+                                        <div className="absolute bottom-6 left-6">
+                                            <span className="text-white font-black uppercase text-sm tracking-widest">Join The Family</span>
+                                        </div>
+                                    </BentoCard>
+                                </Card3DWrapper>
+
+                                {/* 3. Pizza Fridays */}
+                                <Card3DWrapper index={2} className="md:col-span-4 md:row-span-1">
+                                    <BentoCard className="w-full h-full">
+                                        <img src={PizzaImg} alt="Pizza Friday" className="w-full h-full object-cover group-hover:opacity-40 transition-opacity duration-500" />
+                                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                            <Pizza className="text-[#34D562] w-16 h-16 drop-shadow-[0_0_20px_rgba(52,213,98,0.5)]" />
+                                        </div>
+                                        <GlassLabel text="Pizza Fridays" icon={Zap} />
+                                    </BentoCard>
+                                </Card3DWrapper>
+
+                                {/* 4. Holi Colors — Party1 */}
+                                <Card3DWrapper index={3} className="md:col-span-4 md:row-span-1">
+                                    <BentoCard className="w-full h-full">
+                                        <img src={Party1} alt="Holi Celebrations" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                                        <GlassLabel text="Holi Colors" icon={PartyPopper} />
+                                    </BentoCard>
+                                </Card3DWrapper>
+
+                                {/* 5. Team Lunch — Event1 */}
+                                <Card3DWrapper index={4} className="md:col-span-4 md:row-span-1">
+                                    <BentoCard className="w-full h-full">
+                                        <img src={Event1} alt="Team Lunch Outing" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                                        <GlassLabel text="Team Outing" icon={Users} />
+                                    </BentoCard>
+                                </Card3DWrapper>
+
+                                {/* 6. Birthday Series */}
+                                <Card3DWrapper index={5} className="md:col-span-4 md:row-span-1">
+                                    <BentoCard className="w-full h-full">
+                                        <img src={BirthdayImg} alt="Birthday Celebration" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                                        <GlassLabel text="Birthday Series" icon={Gift} />
+                                    </BentoCard>
+                                </Card3DWrapper>
+
+                                {/* 7. Dance Floor — Event2 */}
+                                <Card3DWrapper index={6} className="md:col-span-6 md:row-span-1">
+                                    <BentoCard className="w-full h-full">
+                                        <img src={Event2} alt="Team Dancing" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                                        <div className="absolute bottom-6 left-6">
+                                            <p className="text-white font-black uppercase text-sm tracking-wider">Dance Floor</p>
+                                            <p className="text-gray-400 text-xs font-medium mt-1">Where work meets play</p>
+                                        </div>
+                                    </BentoCard>
+                                </Card3DWrapper>
+
+                                {/* 8. Gurukul Pride — Event3 */}
+                                <Card3DWrapper index={7} className="md:col-span-6 md:row-span-1">
+                                    <BentoCard className="w-full h-full">
+                                        <img src={Event3} alt="Modern Age Gurukul" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                                        <div className="absolute bottom-6 left-6">
+                                            <p className="text-white font-black uppercase text-sm tracking-wider">Superb Energy</p>                                            <p className="text-gray-400 text-xs font-medium mt-1">Celebrating every milestone</p>
+                                        </div>
+                                    </BentoCard>
+                                </Card3DWrapper>
+
+                                {/* 9. Group Photo — Event4 */}
+                                <Card3DWrapper index={8} className="md:col-span-4 md:row-span-1">
+                                    <BentoCard className="w-full h-full">
+                                        <img src={Event4} alt="Team Group Photo" className="w-full h-full object-cover" />
+                                        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-500" />
+                                        <div className="absolute inset-0 flex items-end p-6">
+                                            <div className="p-4 bg-black/50 backdrop-blur-md rounded-2xl border border-white/5 w-full text-center">
+                                                <p className="text-white font-bold text-xs uppercase tracking-widest">The Crew</p>
+                                            </div>
+                                        </div>
+                                    </BentoCard>
+                                </Card3DWrapper>
+
+                                {/* 10. Birthday 2 */}
+                                <Card3DWrapper index={9} className="md:col-span-4 md:row-span-1">
+                                    <BentoCard className="w-full h-full">
+                                        <img src={Birthday2Img} alt="Birthday Celebration" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                                        <div className="absolute top-5 right-5 bg-[#34D562] p-2 rounded-full shadow-lg shadow-[#34D562]/30">
+                                            <Star size={12} fill="white" className="text-white" />
+                                        </div>
+                                        <div className="absolute bottom-6 left-6">
+                                            <p className="text-white font-bold uppercase text-[10px] tracking-widest">Celebrations</p>
+                                        </div>
+                                    </BentoCard>
+                                </Card3DWrapper>
+
+                                {/* 11. Memories — Party2 */}
+                                <Card3DWrapper index={10} className="md:col-span-4 md:row-span-1">
+                                    <BentoCard className="w-full h-full">
+                                        <img src={Party2} alt="Team Memories" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                                        <GlassLabel text="Memories" icon={Camera} />
+                                    </BentoCard>
+                                </Card3DWrapper>
+
+                                {/* ── Row 5: New Culture Images (1-3) ── */}
+                                <Card3DWrapper index={11} className="md:col-span-4 md:row-span-1">
+                                    <BentoCard className="w-full h-full">
+                                        <img src={CultureA1} alt="Good Times" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                                        <GlassLabel text="Good Times" icon={Heart} />
+                                    </BentoCard>
+                                </Card3DWrapper>
+
+                                <Card3DWrapper index={12} className="md:col-span-4 md:row-span-1">
+                                    <BentoCard className="w-full h-full">
+                                        <img src={CultureA2} alt="Fun Hour" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                                        <GlassLabel text="Fun Hour" icon={Coffee} />
+                                    </BentoCard>
+                                </Card3DWrapper>
+
+                                <Card3DWrapper index={13} className="md:col-span-4 md:row-span-1">
+                                    <BentoCard className="w-full h-full">
+                                        <img src={CultureA6} alt="Happy Moments" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                                        <GlassLabel text="Happy Moments" icon={Star} />
+                                    </BentoCard>
+                                </Card3DWrapper>
+
+                                {/* ── Row 6: New Culture Images (4-6) ── */}
+                                <Card3DWrapper index={14} className="md:col-span-4 md:row-span-1">
+                                    <BentoCard className="w-full h-full">
+                                        <img src={CultureA4} alt="Chill Zone" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                                        <GlassLabel text="Chill Zone" icon={Zap} />
+                                    </BentoCard>
+                                </Card3DWrapper>
+
+                                <Card3DWrapper index={15} className="md:col-span-4 md:row-span-1">
+                                    <BentoCard className="w-full h-full">
+                                        <img src={CultureA5} alt="Work Hard Play Hard" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                                        <GlassLabel text="Work & Play" icon={Award} />
+                                    </BentoCard>
+                                </Card3DWrapper>
+
+                                <Card3DWrapper index={16} className="md:col-span-4 md:row-span-1">
+                                    <BentoCard className="w-full h-full">
+                                        <img src={CultureA3} alt="Vibes" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                                        <GlassLabel text="Vibe" icon={Sparkles} />
+                                    </BentoCard>
+                                </Card3DWrapper>
                             </div>
-                        </BentoCard>
-
-                        {/* 2. Join The Tribe — Party3 */}
-                        <BentoCard className="md:col-span-4 md:row-span-1">
-                            <img src={Party3} alt="Join The Tribe" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                            <div className="absolute inset-0 border-4 border-[#34D562]/15 rounded-[2rem] m-2 pointer-events-none" />
-                            <div className="absolute bottom-6 left-6">
-                                <span className="text-white font-black uppercase text-sm tracking-widest">Join The Family</span>
-                            </div>
-                        </BentoCard>
-
-                        {/* 3. Pizza Fridays */}
-                        <BentoCard className="md:col-span-4 md:row-span-1">
-                            <img src={PizzaImg} alt="Pizza Friday" className="w-full h-full object-cover group-hover:opacity-40 transition-opacity duration-500" />
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                <Pizza className="text-[#34D562] w-16 h-16 drop-shadow-[0_0_20px_rgba(52,213,98,0.5)]" />
-                            </div>
-                            <GlassLabel text="Pizza Fridays" icon={Zap} />
-                        </BentoCard>
-
-                        {/* 4. Holi Colors — Party1 */}
-                        <BentoCard className="md:col-span-4 md:row-span-1">
-                            <img src={Party1} alt="Holi Celebrations" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                            <GlassLabel text="Holi Colors" icon={PartyPopper} />
-                        </BentoCard>
-
-                        {/* 5. Team Lunch — Event1 */}
-                        <BentoCard className="md:col-span-4 md:row-span-1">
-                            <img src={Event1} alt="Team Lunch Outing" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                            <GlassLabel text="Team Outing" icon={Users} />
-                        </BentoCard>
-
-                        {/* 6. Birthday Series */}
-                        <BentoCard className="md:col-span-4 md:row-span-1">
-                            <img src={BirthdayImg} alt="Birthday Celebration" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                            <GlassLabel text="Birthday Series" icon={Gift} />
-                        </BentoCard>
-
-                        {/* 7. Dance Floor — Event2 (wide) */}
-                        <BentoCard className="md:col-span-6 md:row-span-1">
-                            <img src={Event2} alt="Team Dancing" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                            <div className="absolute bottom-6 left-6">
-                                <p className="text-white font-black uppercase text-sm tracking-wider">Dance Floor</p>
-                                <p className="text-gray-400 text-xs font-medium mt-1">Where work meets play</p>
-                            </div>
-                        </BentoCard>
-
-                        {/* 8. Gurukul Pride — Event3 (wide) */}
-                        <BentoCard className="md:col-span-6 md:row-span-1">
-                            <img src={Event3} alt="Modern Age Gurukul" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                            <div className="absolute bottom-6 left-6">
-                                <p className="text-white font-black uppercase text-sm tracking-wider">Electric Energy</p>
-                                <p className="text-gray-400 text-xs font-medium mt-1">Celebrating every milestone</p>
-                            </div>
-                        </BentoCard>
-
-                        {/* 9. Group Photo — Event4 */}
-                        <BentoCard className="md:col-span-4 md:row-span-1">
-                            <img src={Event4} alt="Team Group Photo" className="w-full h-full object-cover" />
-                            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-500" />
-                            <div className="absolute inset-0 flex items-end p-6">
-                                <div className="p-4 bg-black/50 backdrop-blur-md rounded-2xl border border-white/5 w-full text-center">
-                                    <p className="text-white font-bold text-xs uppercase tracking-widest">The Crew</p>
-                                </div>
-                            </div>
-                        </BentoCard>
-
-                        {/* 10. Birthday 2 */}
-                        <BentoCard className="md:col-span-4 md:row-span-1">
-                            <img src={Birthday2Img} alt="Birthday Celebration" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                            <div className="absolute top-5 right-5 bg-[#34D562] p-2 rounded-full shadow-lg shadow-[#34D562]/30">
-                                <Star size={12} fill="white" className="text-white" />
-                            </div>
-                            <div className="absolute bottom-6 left-6">
-                                <p className="text-white font-bold uppercase text-[10px] tracking-widest">Celebrations</p>
-                            </div>
-                        </BentoCard>
-
-                        {/* 11. Memories — Party2 */}
-                        <BentoCard className="md:col-span-4 md:row-span-1">
-                            <img src={Party2} alt="Team Memories" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                            <GlassLabel text="Memories" icon={Camera} />
-                        </BentoCard>
+                        </motion.div>
                     </div>
                 </div>
             </section>

@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { X, Calendar, MapPin, Users, ArrowRight, Sparkles, ChevronRight, BookOpen, Eye } from 'lucide-react';
 import SEO from '../components/SEO';
 import GreenEmbers from '../components/ui/GreenEmbers';
 import GreenEmbers2 from '../components/ui/GreenEmbers2';
+import ViewToggle from '../components/ViewToggle';
 import { eventsData, EventData } from '../data/eventsData';
 
 /* ───────────────────────────────── helpers ───────────────────────────────── */
@@ -86,7 +87,7 @@ const EventModal: React.FC<{ event: EventData; onClose: () => void }> = ({ event
                         <div className="flex-1">
                             <div className="flex items-center gap-2 mb-3">
                                 <span className="px-3 py-1 bg-[#34D562]/10 text-[#34D562] text-xs font-semibold rounded-full border border-[#34D562]/20 tracking-wider">
-                                    PM-Usha Programme
+                                    {event.isActive ? 'PM-Usha Programme' : event.tag}
                                 </span>
                             </div>
                             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight tracking-tight">
@@ -159,14 +160,48 @@ const EventModal: React.FC<{ event: EventData; onClose: () => void }> = ({ event
                                     </p>
                                 </div>
 
-                                {/* Sessions */}
+                                {/* Image Gallery — above outcomes */}
                                 <div className="mb-10">
                                     <div className="flex items-center gap-2 mb-5">
+                                        <Eye className="w-5 h-5 text-[#34D562]" />
+                                        <h4 className="text-base font-semibold text-white uppercase tracking-wider">Event Gallery</h4>
+                                    </div>
+                                    <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+                                        {subEvent.images.map((img, imgIdx) => (
+                                            <motion.div
+                                                key={imgIdx}
+                                                className="group relative aspect-[4/3] rounded-xl overflow-hidden border border-white/5 hover:border-[#34D562]/30 transition-all duration-500 w-[calc(50%-6px)] md:w-[calc(33.333%-11px)]"
+                                                initial={{ opacity: 0, scale: 0.95 }}
+                                                whileInView={{ opacity: 1, scale: 1 }}
+                                                transition={{ delay: imgIdx * 0.05 }}
+                                                viewport={{ once: true }}
+                                            >
+                                                <img
+                                                    src={img}
+                                                    alt={`${subEvent.title} - Image ${imgIdx + 1}`}
+                                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                                    loading="lazy"
+                                                />
+                                                {/* Hover overlay */}
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                                <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                                                    <span className="text-white/80 text-xs font-medium">
+                                                        {subEvent.title.split(' ').slice(0, 4).join(' ')}
+                                                    </span>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Sessions & Learning Outcomes — always even count */}
+                                <div>
+                                    <div className="flex items-center gap-2 mb-5">
                                         <BookOpen className="w-5 h-5 text-[#34D562]" />
-                                        <h4 className="text-base font-semibold text-white uppercase tracking-wider">Sessions & Learning Outcomes</h4>
+                                        <h4 className="text-base font-semibold text-white uppercase tracking-wider">Event Outcomes</h4>
                                     </div>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                        {subEvent.sessions.map((session, sIdx) => (
+                                        {subEvent.sessions.slice(0, subEvent.sessions.length % 2 === 0 ? subEvent.sessions.length : subEvent.sessions.length - 1).map((session, sIdx) => (
                                             <motion.div
                                                 key={sIdx}
                                                 className="group relative bg-white/[0.02] hover:bg-white/[0.05] border border-white/5 hover:border-[#34D562]/20 rounded-xl p-4 transition-all duration-300"
@@ -187,40 +222,6 @@ const EventModal: React.FC<{ event: EventData; onClose: () => void }> = ({ event
                                                             {session.learningOutcome}
                                                         </p>
                                                     </div>
-                                                </div>
-                                            </motion.div>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                {/* Image Gallery */}
-                                <div>
-                                    <div className="flex items-center gap-2 mb-5">
-                                        <Eye className="w-5 h-5 text-[#34D562]" />
-                                        <h4 className="text-base font-semibold text-white uppercase tracking-wider">Event Gallery</h4>
-                                    </div>
-                                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-                                        {subEvent.images.map((img, imgIdx) => (
-                                            <motion.div
-                                                key={imgIdx}
-                                                className="group relative aspect-[4/3] rounded-xl overflow-hidden border border-white/5 hover:border-[#34D562]/30 transition-all duration-500"
-                                                initial={{ opacity: 0, scale: 0.95 }}
-                                                whileInView={{ opacity: 1, scale: 1 }}
-                                                transition={{ delay: imgIdx * 0.05 }}
-                                                viewport={{ once: true }}
-                                            >
-                                                <img
-                                                    src={img}
-                                                    alt={`${subEvent.title} - Image ${imgIdx + 1}`}
-                                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                                    loading="lazy"
-                                                />
-                                                {/* Hover overlay */}
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                                <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                                                    <span className="text-white/80 text-xs font-medium">
-                                                        {subEvent.title.split(' ').slice(0, 4).join(' ')}
-                                                    </span>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -328,48 +329,48 @@ const EventCard: React.FC<{ event: EventData; onClick: () => void }> = ({ event,
                 {/* Cyber HUD elements removed */}
 
                 {/* Content Overlay */}
-                <div className="relative h-full flex flex-col justify-end p-8 z-30" style={{ transform: "translateZ(40px)" }}>
+                <div className="relative h-full flex flex-col justify-between p-8 z-30" style={{ transform: "translateZ(40px)" }}>
 
-                    {/* Tech Badges Row */}
-                    <div className="flex items-center gap-3 mb-6">
-                        <div className="px-3 py-1 bg-[#34D562] border border-[#34D562] shadow-[0_0_15px_rgba(52,213,98,0.4)]">
-                            <span className="text-black text-[9px] font-black uppercase tracking-tighter italic">University Workshops</span>
+                    {/* Top — Badge + Status + Title (all stacked from top) */}
+                    <div>
+                        {/* Tech Badges Row */}
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="px-3 py-1 bg-[#34D562] border border-[#34D562] shadow-[0_0_15px_rgba(52,213,98,0.4)]">
+                                <span className="text-black text-[9px] font-black uppercase tracking-tighter italic">{event.tag}</span>
+                            </div>
+                            <div className="h-4 w-px bg-white/10" />
+                            <div className="flex items-center gap-1.5 opacity-80">
+                                <Calendar className="w-3.5 h-3.5 text-[#34D562]" />
+                                <span className="text-white text-[10px] font-extrabold tracking-[0.2em]">{event.date.toUpperCase()}</span>
+                            </div>
                         </div>
-                        <div className="h-4 w-px bg-white/10" />
-                        <div className="flex items-center gap-1.5 opacity-80">
-                            <Calendar className="w-3.5 h-3.5 text-[#34D562]" />
-                            <span className="text-white text-[10px] font-extrabold tracking-[0.2em]">{event.date.toUpperCase()}</span>
-                        </div>
-                    </div>
 
-                    {/* Title & Description Block */}
-                    <div className="space-y-3 mb-28">
-                        <div className="flex items-center gap-2 mb-1">
-                            <div className="w-1.5 h-1.5 rounded-full bg-yellow-500 animate-pulse" />
-                            <span className="text-[#34D562] text-[10px] font-bold tracking-widest uppercase">Program Active</span>
+                        {/* Status Indicator */}
+                        <div className="flex items-center gap-2 mb-3">
+                            <div className={`w-1.5 h-1.5 rounded-full ${event.isActive ? 'bg-yellow-500 animate-pulse' : 'bg-[#34D562]'}`} />
+                            <span className={`text-[10px] font-bold tracking-widest uppercase ${event.isActive ? 'text-[#34D562]' : 'text-white'}`}>
+                                {event.isActive ? 'Program Active' : 'Completed'}
+                            </span>
                         </div>
-                        <h3 className="text-2xl md:text-3xl font-black text-white leading-[0.9] tracking-tighter uppercase italic group-hover:text-[#34D562] transition-colors duration-400">
-                            {event.title.split(' ').slice(0, 5).join(' ')}<br />
-                            {/* <span className=" bg-clip-text bg-gradient-to-r from-white to-white/20">EVENTS</span> */}
+
+                        {/* Title */}
+                        <h3 className="text-base md:text-lg font-black text-white leading-[1.1] tracking-tighter uppercase italic group-hover:text-[#34D562] transition-colors duration-400">
+                            {event.title}
                         </h3>
-                        {/* <p className="text-gray-400 text-[11px] leading-relaxed line-clamp-2 max-w-[85%] font-medium tracking-wide">
-                            {event.shortDescription}
-                        </p> */}
                     </div>
 
-                    {/* Footer Row */}
+                    {/* Bottom — Footer (pinned) */}
                     <div className="flex items-center justify-between pt-6 border-t border-white/10">
-                        <div className="flex flex-col gap-1">
-                            {/* <span className="text-gray-600 text-[9px] font-bold uppercase tracking-widest leading-none">Geo.Coord</span> */}
-                            <div className="flex items-center gap-1.5 text-white">
-                                <MapPin className="w-3 h-3 text-[#34D562]" />
-                                <span className="text-[10px] font-black italic">BARKATULLAH UNIVERSITY</span>
+                        <div className="flex flex-col gap-1 max-w-[55%]">
+                            <div className="flex items-start gap-1.5 text-white">
+                                <MapPin className="w-3 h-3 text-[#34D562] shrink-0 mt-0.5" />
+                                <span className="text-[9px] font-black italic leading-tight">{event.venue.split(',')[0].toUpperCase()}</span>
                             </div>
                         </div>
 
                         <motion.div
                             whileHover={{ x: 5 }}
-                            className="flex items-center gap-3 text-white font-black group/btn overflow-hidden"
+                            className="flex items-center gap-3 text-white font-black group/btn overflow-hidden shrink-0"
                         >
                             <span className="text-[11px] tracking-tighter italic">LAUNCH.VIEW</span>
                             <div className="p-2 bg-[#34D562] text-black shadow-[0_0_15px_rgba(52,213,98,0.5)]">
@@ -412,6 +413,30 @@ const GridBackground = () => (
 
 const Events: React.FC = () => {
     const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
+    const [is3D, setIs3D] = useState(false);
+    const sceneRef = useRef<HTMLDivElement>(null);
+    const [sceneRotation, setSceneRotation] = useState({ x: 0, y: 0 });
+
+    const handleSceneMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+        if (!is3D || !sceneRef.current) return;
+        const rect = sceneRef.current.getBoundingClientRect();
+        const x = ((e.clientY - rect.top) / rect.height - 0.5) * -8;
+        const y = ((e.clientX - rect.left) / rect.width - 0.5) * 12;
+        setSceneRotation({ x, y });
+    }, [is3D]);
+
+    const handleSceneMouseLeave = useCallback(() => {
+        setSceneRotation({ x: 0, y: 0 });
+    }, []);
+
+    // 3D depth layers — cards stay flat, only Z-depth creates layering
+    // Scene-level mouse parallax reveals the depth = clean 3D illusion
+    const getCard3DTransform = (idx: number) => {
+        const row = Math.floor(idx / 3);
+        const zDepth = row % 2 === 0 ? 80 : -60;  // alternate rows forward/back
+        const scaleBase = row % 2 === 0 ? 1.03 : 0.96;
+        return { z: zDepth, scale: scaleBase };
+    };
 
     return (
         <div className="min-h-screen bg-[#030303] text-white font-sans selection:bg-[#34D562] selection:text-black overflow-x-hidden">
@@ -463,6 +488,16 @@ const Events: React.FC = () => {
                             Workshops, seminars, and training programmes empowering the next generation of tech leaders across India's universities.
                         </motion.p>
 
+                        {/* View Toggle */}
+                        <motion.div
+                            className="flex justify-center mt-8"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.3 }}
+                        >
+                            <ViewToggle is3D={is3D} onToggle={() => setIs3D(!is3D)} />
+                        </motion.div>
+
                     </div>
                 </div>
 
@@ -473,18 +508,65 @@ const Events: React.FC = () => {
             <section className="relative py-6 md:py-10">
                 <div className="container mx-auto px-4 max-w-7xl relative z-10">
 
-                    {/* Cards grid — 3 per row, currently 1 centered */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {/* Center the single card in a 3-column grid */}
-                        {eventsData.length === 1 && <div className="hidden md:block" />}
-                        {eventsData.map((event) => (
-                            <EventCard
-                                key={event.id}
-                                event={event}
-                                onClick={() => setSelectedEvent(event)}
-                            />
-                        ))}
-                        {eventsData.length === 1 && <div className="hidden md:block" />}
+                    {/* 3D Scene Container */}
+                    <div
+                        ref={sceneRef}
+                        onMouseMove={handleSceneMouseMove}
+                        onMouseLeave={handleSceneMouseLeave}
+                        style={{
+                            perspective: is3D ? '1200px' : 'none',
+                            perspectiveOrigin: '50% 50%',
+                        }}
+                    >
+                        <motion.div
+                            animate={{
+                                rotateX: is3D ? sceneRotation.x : 0,
+                                rotateY: is3D ? sceneRotation.y : 0,
+                            }}
+                            transition={{ type: 'spring', stiffness: 50, damping: 30 }}
+                            style={{ transformStyle: is3D ? 'preserve-3d' : 'flat' }}
+                        >
+                            {/* Cards flex container for perfect bottom-row centering */}
+                            <div className={`flex flex-wrap justify-center transition-all duration-700 gap-8 ${is3D
+                                ? 'md:gap-10 lg:gap-14'
+                                : ''
+                                }`}>
+                                {eventsData.map((event, idx) => {
+                                    const t = getCard3DTransform(idx);
+                                    return (
+                                        <motion.div
+                                            key={event.id}
+                                            animate={{
+                                                z: is3D ? t.z : 0,
+                                                scale: is3D ? t.scale : 1,
+                                            }}
+                                            transition={{
+                                                type: 'spring',
+                                                stiffness: 60,
+                                                damping: 18,
+                                                delay: idx * 0.06,
+                                            }}
+                                            style={{
+                                                transformStyle: 'preserve-3d',
+                                                boxShadow: is3D
+                                                    ? `0 ${25 + Math.abs(t.z) * 0.6}px ${50 + Math.abs(t.z) * 1.2}px rgba(0,0,0,0.7), 0 0 ${40 + Math.abs(t.z) * 0.5}px rgba(52,213,98,${t.z > 0 ? '0.15' : '0.05'})`
+                                                    : 'none',
+                                                borderRadius: is3D ? '1.5rem' : undefined,
+                                            }}
+                                            className={`transition-all duration-700 flex justify-center w-full ${is3D
+                                                ? 'md:w-[calc(50%-1.25rem)] lg:w-[calc(33.3333%-2.3333rem)] hover:!scale-110 hover:!z-[100]'
+                                                : 'md:w-[calc(33.3333%-1.3333rem)]'
+                                                }`}
+                                        >
+                                            <EventCard
+                                                event={event}
+                                                onClick={() => setSelectedEvent(event)}
+                                            />
+                                        </motion.div>
+                                    );
+                                })}
+                            </div>
+                        </motion.div>
                     </div>
 
                     {/* Coming Soon placeholder */}
