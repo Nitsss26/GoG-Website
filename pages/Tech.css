@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    margin: 0;
+    padding: 0;
+    width: 100% !important;
+    min-height: 100vh;
+    zoom: 1 !important; /* Force zoom to 1 to avoid black bars from zoom mismatch */
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+}
+
+:root {
+  /* WARM PALETTE (used for hero overlays + section accents) */
+  --sunset-amber: #FF8C42;
+  --sunset-coral: #FF6B6B;
+  --sunset-gold: #FFB347;
+  --warm-sky: #E8956D;
+
+  /* DARK PALETTE (main UI color scheme) */
+  --bg-dark: #0B0F14;
+  --bg-card: #131920;
+  --bg-elevated: #1A2332;
+
+  /* TEAL PALETTE (holographic) */
+  --teal: #00E5FF;
+  --teal-mid: #00BCD4;
+  --teal-soft: #B2EBF2;
+  --teal-glow: rgba(0, 229, 255, 0.12);
+  --teal-border: rgba(0, 229, 255, 0.2);
+
+  /* TEXT */
+  --text-primary: #F8FAFF;
+  --text-secondary: #8FA3B1;
+  --text-dim: #4A5C6A;
+}
+
+/* TYPOGRAPHY UTILITIES */
+.font-clash { font-family: 'Clash Display', sans-serif; }
+.font-dm { font-family: 'DM Sans', sans-serif; }
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+
+/* 
+   STRICT VIEWPORT COVER STRATEGY FOR CANVAS
+*/
+.hero-canvas-wrap {
+    position: fixed;
+    top: -1%;
+    left: -1%;
+    width: 102%;
+    height: 102%;
+    z-index: 0;
+    background: #000;
+}
+
+.canvas-full {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block;
+    filter: brightness(0.8) contrast(1.1) saturate(1.1);
+}
+
+/* 
+   DRONE LOADER ANIMATIONS 
+*/
+@keyframes spin-drone {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.drone-spinner {
+  animation: spin-drone 3s linear infinite;
+}
+
+/* 
+   GRADIENT TEXT CLASSES 
+*/
+.text-gradient-teal-amber {
+  background: linear-gradient(135deg, var(--teal) 0%, var(--sunset-amber) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-teal {
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-soft) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 
+   BUTTON STYLES 
+*/
+.btn-primary-teal {
+  background: var(--teal);
+  color: var(--bg-dark);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-teal:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 20px var(--teal-glow);
+}
+
+.btn-outline-white {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-white:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* 
+   GLASS & CARD BASE STYLES
+*/
+.nexus-card {
+  background: var(--bg-card);
+  border: 1px solid var(--teal-border);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.nexus-card:hover {
+  border-color: rgba(0, 229, 255, 0.45);
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.1), 0 8px 32px rgba(0, 0, 0, 0.4);
+  transform: translateY(-4px);
+}
+
+.nexus-pill {
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  background: rgba(0, 229, 255, 0.05);
+}
+
+/* GSAP Start States (for manual prevention of FOUC if needed) */
+.hero-line-1, .hero-line-2, .hero-line-3, .hero-line-4, 
+.domain-pills, .hero-body, .cta-row, .hero-stats {
+  opacity: 0;
+}
+
+/* Drone propeller setup */
+.drone-arm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 60px;
+  background: var(--teal);
+  transform-origin: top center;
+}
+.drone-propeller {
+  position: absolute;
+  top: 60px;
+  left: -9px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--teal);
+  border-radius: 50%;
+}
+
+/* Glass Panels */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(24px);
+  border: 1px solid var(--border-glass);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(0, 242, 255, 0.3);
+  transform: translateY(-5px);
+}
+
+/* Professional Typography */
+.text-gradient-teal {
+  background: linear-gradient(135deg, #00F2FF 0%, #0066FF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-glow-teal {
+  text-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+}
+
+/* Buttons */
+.nexus-btn-primary {
+  background: var(--teal-primary);
+  color: #000;
+  padding: 0.875rem 2rem;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px var(--teal-glow);
+}
+
+.nexus-btn-primary:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 40px rgba(0, 242, 255, 0.3);
+}
+
+/* Ticker Animation */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 30s linear infinite;
+}
+
+/* Form Styling */
+.input-nexus {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.input-nexus:focus {
+  outline: none;
+  border-color: var(--teal-primary);
+}
+
+/* Product Section Layout */
+.product-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  padding: 4rem 0;
+}
+
+.tag-nexus {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--teal-glow);
+  color: var(--teal-primary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  border-radius: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}

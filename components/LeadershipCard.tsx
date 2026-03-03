@@ -20,7 +20,7 @@ const LeadershipCard: React.FC<LeadershipCardProps> = ({ image, name, role, quot
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, delay: index * 0.1 }}
-            className="flex flex-col h-full bg-[#0A0A0A]/50 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden hover:border-[#34D562]/40 transition-all duration-500 group"
+            className="flex flex-col h-full bg-[#0F1310]/80 backdrop-blur-xl border border-[#34D562]/30 rounded-3xl overflow-hidden hover:border-[#34D562]/60 transition-all duration-500 group shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_0_30px_rgba(52,213,98,0.2)]"
         >
             {/* Image Section - Compact Aspect Ratio */}
             <div className="relative w-full aspect-[4/4.5] overflow-hidden">

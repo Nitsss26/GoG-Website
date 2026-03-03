@@ -305,7 +305,7 @@ const AboutGoG: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="flex flex-col items-center text-center group bg-[#0A0A0A]/40 backdrop-blur-sm p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/50 transition-all duration-500 hover:bg-[#34D562]/5"
+                            className="flex flex-col items-center text-center group bg-[#0F1310]/100 backdrop-blur-xl p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/60 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_0_30px_rgba(52,213,98,0.2)]"
                         >
                             <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
                                 <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
@@ -328,7 +328,7 @@ const AboutGoG: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="flex flex-col items-center text-center group bg-[#0A0A0A]/40 backdrop-blur-sm p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/50 transition-all duration-500 hover:bg-[#34D562]/5"
+                            className="flex flex-col items-center text-center group bg-[#0F1310]/100 backdrop-blur-xl p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/60 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_0_30px_rgba(52,213,98,0.2)]"
                         >
                             <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
                                 <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
@@ -351,7 +351,7 @@ const AboutGoG: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.3 }}
-                            className="flex flex-col items-center text-center group bg-[#0A0A0A]/40 backdrop-blur-sm p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/50 transition-all duration-500 hover:bg-[#34D562]/5"
+                            className="flex flex-col items-center text-center group bg-[#0F1310]/100 backdrop-blur-xl p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/60 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_0_30px_rgba(52,213,98,0.2)]"
                         >
                             <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
                                 <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
@@ -392,7 +392,7 @@ const AboutGoG: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="flex flex-col items-center text-center group bg-[#0A0A0A]/40 backdrop-blur-sm p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/50 transition-all duration-500 hover:bg-[#34D562]/5"
+                            className="flex flex-col items-center text-center group bg-[#0F1310]/100 backdrop-blur-xl p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/60 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_0_30px_rgba(52,213,98,0.2)]"
                         >
                             <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
                                 <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
@@ -415,7 +415,7 @@ const AboutGoG: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="flex flex-col items-center text-center group bg-[#0A0A0A]/40 backdrop-blur-sm p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/50 transition-all duration-500 hover:bg-[#34D562]/5"
+                            className="flex flex-col items-center text-center group bg-[#0F1310]/100 backdrop-blur-xl p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/60 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_0_30px_rgba(52,213,98,0.2)]"
                         >
                             <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
                                 <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
@@ -438,7 +438,7 @@ const AboutGoG: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.3 }}
-                            className="flex flex-col items-center text-center group bg-[#0A0A0A]/40 backdrop-blur-sm p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/50 transition-all duration-500 hover:bg-[#34D562]/5"
+                            className="flex flex-col items-center text-center group bg-[#0F1310]/100 backdrop-blur-xl p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/60 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_0_30px_rgba(52,213,98,0.2)]"
                         >
                             <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
                                 <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />

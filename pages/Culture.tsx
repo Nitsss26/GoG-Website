@@ -31,6 +31,8 @@ import Event2 from '../assets/Our_Culture/IMG_6058.JPG';
 import Event3 from '../assets/Our_Culture/IMG_6077.JPG';
 // @ts-ignore
 import Event4 from '../assets/Our_Culture/IMG_6157.JPG';
+// @ts-ignore
+import GoodTimesNew from '../assets/Our_Culture/a/good_times_new.jpg';
 
 // Certificates
 // @ts-ignore
@@ -39,6 +41,14 @@ import ManagerMonth from '../assets/Our_Culture/Operation_manager_of_month.png';
 import ProfMonth from '../assets/Our_Culture/Professor_of_month.png';
 // @ts-ignore
 import EmployeeMonth from '../assets/Our_Culture/certificate_employee_of_month.png';
+
+// Additional Recent Certifications
+// @ts-ignore
+import Prof1 from '../assets/Our_Culture/Prof1.png';
+// @ts-ignore
+import Prof2 from '../assets/Our_Culture/Prof2.png';
+// @ts-ignore
+import Prof3 from '../assets/Our_Culture/Prof3.png';
 
 // HEIC → hosted AVIF links
 const BirthdayImg = 'https://i.ibb.co/vCKF0tN3/Birthday.avif';
@@ -69,11 +79,11 @@ const BentoCard = ({ children, className = '', depth = 0.15, disableParallax = f
     return (
         <motion.div
             ref={ref}
-            style={{ y: disableParallax ? 0 : y }}
-            initial={{ opacity: 0, scale: 0.97, y: 30 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            style={{ y: (disableParallax) ? 0 : y }}
+            initial={disableParallax ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.97, y: 30 }}
+            whileInView={disableParallax ? { opacity: 1, scale: 1, y: 0 } : { opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            transition={disableParallax ? { duration: 0 } : { duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className={`relative group overflow-hidden rounded-[2rem] bg-[#0A0A0A] border border-white/[0.06] hover:border-[#34D562]/30 transition-all duration-700 shadow-2xl ${className}`}
         >
             {children}
@@ -145,7 +155,7 @@ const GridBackground = () => (
 );
 
 const Culture: React.FC = () => {
-    const [is3D, setIs3D] = useState(true);
+    const [is3D, setIs3D] = useState(false);
     const sceneRef = useRef<HTMLDivElement>(null);
 
     // 3D Motion Values for smooth parallax
@@ -203,7 +213,19 @@ const Culture: React.FC = () => {
     const Card3DWrapper = ({ children, index, className = "" }: { children: React.ReactNode; index: number; className?: string }) => {
         const t = getCulture3DTransform(index);
 
-        if (!is3D) return <div className={className}>{children}</div>;
+        if (!is3D) {
+            return (
+                <div className={className}>
+                    {React.Children.map(children, child => {
+                        if (React.isValidElement(child)) {
+                            // @ts-ignore
+                            return React.cloneElement(child, { disableParallax: true });
+                        }
+                        return child;
+                    })}
+                </div>
+            );
+        }
 
         return (
             <motion.div
@@ -430,7 +452,7 @@ const Culture: React.FC = () => {
                                 {/* ── Row 5: New Culture Images (1-3) ── */}
                                 <Card3DWrapper index={11} className="md:col-span-4 md:row-span-1">
                                     <BentoCard className="w-full h-full">
-                                        <img src={CultureA1} alt="Good Times" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                        <img src={GoodTimesNew} alt="Good Times" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                                         <GlassLabel text="Good Times" icon={Heart} />
                                     </BentoCard>
@@ -501,27 +523,7 @@ const Culture: React.FC = () => {
 
 
 
-                        {/* 2. Operation Manager — Portrait (3:4) */}
-                        <div className="lg:col-span-4 mt-7">
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.1 }}
-                                className="relative aspect-[3/4] rounded-[2rem] overflow-hidden border border-white/[0.06] hover:border-[#34D562]/30 bg-[#080808] shadow-xl group transition-all duration-700"
-                            >
-                                <img
-                                    src={ManagerMonth}
-                                    alt="Operation Manager of the Month"
-                                    className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-700"
-                                />
-                                <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent transition-opacity duration-500">
-                                    <div className="p-3 bg-black/60 backdrop-blur-md rounded-xl border border-white/5 text-center">
-                                        <span className="text-[#34D562] font-bold uppercase text-[9px] tracking-widest leading-none">Operation Manager</span>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </div>
+
 
                         {/* 1. Certificate Ceremony Video — Vertical (9:16) */}
                         <div className="lg:col-span-3 mt-7">
@@ -547,7 +549,27 @@ const Culture: React.FC = () => {
                                 </div> */}
                             </motion.div>
                         </div>
-
+                        {/* 2. Operation Manager — Portrait (3:4) */}
+                        <div className="lg:col-span-4 mt-7">
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.1 }}
+                                className="relative aspect-[3/4] rounded-[2rem] overflow-hidden border border-white/[0.06] hover:border-[#34D562]/30 bg-[#080808] shadow-xl group transition-all duration-700"
+                            >
+                                <img
+                                    src={ManagerMonth}
+                                    alt="Operation Manager of the Month"
+                                    className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-700"
+                                />
+                                <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent transition-opacity duration-500">
+                                    <div className="p-3 bg-black/60 backdrop-blur-md rounded-xl border border-white/5 text-center">
+                                        <span className="text-[#34D562] font-bold uppercase text-[9px] tracking-widest leading-none">Operation Manager</span>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
                         {/* 3. Landscape Pair — Professor & Employee (16:9 stack) */}
                         <div className="lg:col-span-5 flex flex-col gap-6">
                             {/* Professor */}
@@ -591,6 +613,43 @@ const Culture: React.FC = () => {
                             </motion.div>
                         </div>
                     </div>
+
+                    {/* ── NEW ROW: 3 Additional Images ── */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start mt-6">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="relative aspect-[4/3] rounded-[2rem] overflow-hidden border border-white/[0.06] hover:border-[#34D562]/30 bg-[#080808] shadow-xl group transition-all duration-700"
+                        >
+                            <img src={Prof1} alt="Recent Recognition 1" className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 p-2" />
+                            <div className="absolute inset-0 border-[4px] border-[#34D562]/10 rounded-[2rem] pointer-events-none" />
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            className="relative aspect-[4/3] rounded-[2rem] overflow-hidden border border-white/[0.06] hover:border-[#34D562]/30 bg-[#080808] shadow-xl group transition-all duration-700"
+                        >
+                            <img src={Prof2} alt="Recent Recognition 2" className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 p-2" />
+                            <div className="absolute inset-0 border-[4px] border-[#34D562]/10 rounded-[2rem] pointer-events-none" />
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="relative aspect-[4/3] rounded-[2rem] overflow-hidden border border-white/[0.06] hover:border-[#34D562]/30 bg-[#080808] shadow-xl group transition-all duration-700"
+                        >
+                            <img src={Prof3} alt="Recent Recognition 3" className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 p-2" />
+                            <div className="absolute inset-0 border-[4px] border-[#34D562]/10 rounded-[2rem] pointer-events-none" />
+                        </motion.div>
+                    </div>
+
                 </div>
             </section>
 

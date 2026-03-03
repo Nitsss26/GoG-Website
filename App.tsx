@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -32,11 +32,22 @@ const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
 const Culture = lazy(() => import('./pages/Culture'));
 const Careers = lazy(() => import('./pages/Careers'));
+const Tech = lazy(() => import('./pages/Tech'));
 
 const LoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center bg-[#030303] text-white">
     <div className="animate-pulse text-[#34D562] font-mono text-xl">Loading...</div>
   </div>
+);
+
+const MainLayout = () => (
+  <>
+    <Navbar />
+    <Suspense fallback={<LoadingFallback />}>
+      <Outlet />
+    </Suspense>
+    <Footer />
+  </>
 );
 
 const App: React.FC = () => {
@@ -58,10 +69,16 @@ const App: React.FC = () => {
             style={{ scaleX }}
           />
 
-          <Navbar />
+          <Routes>
+            {/* Standalone Routes without Navbar/Footer */}
+            <Route path="/tech" element={
+              <Suspense fallback={<LoadingFallback />}>
+                <Tech />
+              </Suspense>
+            } />
 
-          <Suspense fallback={<LoadingFallback />}>
-            <Routes>
+            {/* Main Website Routes with Navbar & Footer */}
+            <Route element={<MainLayout />}>
               <Route path="/" element={<Home />} />
               <Route path="/blockchain/koii-labs" element={<KoiiLabs />} />
               <Route path="/blockchain/core-dao" element={<CoreDao />} />
@@ -87,10 +104,8 @@ const App: React.FC = () => {
               <Route path="/terms-conditions" element={<TermsAndConditions />} />
               <Route path="/culture" element={<Culture />} />
               <Route path="/careers" element={<Careers />} />
-            </Routes>
-          </Suspense>
-
-          <Footer />
+            </Route>
+          </Routes>
         </div>
       </Router>
     </HelmetProvider>
