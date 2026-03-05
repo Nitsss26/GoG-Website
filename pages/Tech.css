@@ -276,3 +276,31 @@
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
+/* 
+   MOBILE RESPONSIVENESS FIXES
+*/
+@media (max-width: 768px) {
+  .hero-line-2, .hero-line-3, .hero-line-4 {
+    letter-spacing: -0.02em;
+  }
+  
+  .scene-overlay h2 {
+    letter-spacing: -0.01em;
+  }
+
+  /* Ensure FixedElements don't consume too much space */
+  .fixed.top-4.left-4 {
+    height: 48px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-body {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .status-pill {
+    margin-bottom: 1.5rem;
+  }
+}

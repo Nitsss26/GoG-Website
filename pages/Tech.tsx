@@ -47,12 +47,12 @@ const FixedElements = () => {
             />
 
             {/* Top-Left Logo */}
-            <div className="fixed top-6 left-6 z-[1000] flex items-center h-16 pointer-events-auto group cursor-pointer">
+            <div className="fixed top-4 left-4 md:top-6 md:left-6 z-[1000] flex items-center h-12 md:h-16 pointer-events-auto group cursor-pointer">
                 <a href="/" className="flex items-center">
                     <img
                         src="https://i.ibb.co/j95yW7dm/nexus-logo.png"
                         alt="nexus-logo"
-                        className="h-20 w-auto transition-all duration-300 group-hover:scale-105 drop-shadow-[0_0_30px_rgba(0,229,255,0.4)]"
+                        className="h-12 md:h-20 w-auto transition-all duration-300 group-hover:scale-105 drop-shadow-[0_0_30px_rgba(0,229,255,0.4)]"
                     />
                 </a>
             </div>
@@ -84,12 +84,14 @@ const FixedElements = () => {
             </div>
 
             {/* Top-Right CTA */}
-            <div className="fixed top-8 right-8 z-[1000] pointer-events-auto">
+            <div className="fixed top-5 right-4 md:top-8 md:right-8 z-[1000] pointer-events-auto">
                 <button
                     onClick={() => scrollToSection('contact-footer')}
-                    className="bg-white hover:bg-[#00E5FF] text-[#0B0F14] font-dm font-semibold rounded-full px-8 py-3 text-sm flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,229,255,0.5)] border border-white/20 hover:border-[#00E5FF] uppercase tracking-widest"
+                    className="bg-white hover:bg-[#00E5FF] text-[#0B0F14] font-dm font-semibold rounded-full px-4 py-2 md:px-8 md:py-3 text-[10px] md:text-sm flex items-center gap-1 md:gap-2 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,229,255,0.5)] border border-white/20 hover:border-[#00E5FF] uppercase tracking-widest"
                 >
-                    Begin Your Project <ArrowRight size={16} />
+                    <span className="hidden xs:inline">Begin Your Project</span>
+                    <span className="xs:hidden">Begin</span>
+                    <ArrowRight size={14} className="md:w-4 md:h-4" />
                 </button>
             </div>
         </>
@@ -224,10 +226,10 @@ const HeroSection = () => {
                 </div>
 
                 <div className="mb-8">
-                    <div className="hero-line-1 font-dm font-light text-[1.2rem] text-[#8FA3B1] tracking-[0.35em] uppercase mb-4">WELCOME TO</div>
-                    <div className="hero-line-2 font-clash text-[clamp(3.5rem,7vw,7rem)] leading-[0.9] text-[#F8FAFF]">THE NEXUS</div>
-                    <div className="hero-line-3 font-clash text-[clamp(3.5rem,7vw,7rem)] leading-[0.9] text-[#F8FAFF]">TECHNOLOGY</div>
-                    <div className="hero-line-4 font-clash text-[clamp(3.5rem,7vw,7rem)] leading-[0.9] text-gradient-teal-amber pb-2">CAMPUS.</div>
+                    <div className="hero-line-1 font-dm font-light text-[0.9rem] md:text-[1.2rem] text-[#8FA3B1] tracking-[0.25em] md:tracking-[0.35em] uppercase mb-4">WELCOME TO</div>
+                    <div className="hero-line-2 font-clash text-[clamp(2.5rem,8vw,7rem)] leading-[0.9] text-[#F8FAFF]">THE NEXUS</div>
+                    <div className="hero-line-3 font-clash text-[clamp(2.5rem,8vw,7rem)] leading-[0.9] text-[#F8FAFF]">TECHNOLOGY</div>
+                    <div className="hero-line-4 font-clash text-[clamp(2.5rem,8vw,7rem)] leading-[0.9] text-gradient-teal-amber pb-2">CAMPUS.</div>
                 </div>
 
                 <div className="domain-pills flex flex-wrap gap-2 mb-8">
@@ -411,67 +413,65 @@ const CanvasScrollSection = () => {
 
                 <div className="absolute inset-0 bg-black/40 pointer-events-none" />
 
-                <div className="absolute inset-0 pointer-events-none">
-                    <div className="scene-overlay flex absolute inset-0 flex-col items-center justify-center text-center p-6" data-start="0.0" data-end="0.12" style={{ opacity: 1 }}>
-                        <span className="font-semibold text-xs text-white border border-[#00E5FF]/20 bg-[#00E5FF]/2 rounded-full px-4 py-1.5 mb-6 uppercase tracking-[0.3em]">MISSION: DIGITALIZING BHARAT</span>
-                        <h2 className="font-clash text-[8vw] md:text-7xl leading-[0.9] text-white">ENGINEERING<br />THE NEW <span className="text-gradient-teal-amber">ERA.</span></h2>
-                        <p className="font-dm font-light text-xl text-white mt-8 max-w-2xl">Providing world-class technology solutions for the Bharat of tomorrow.</p>
-                        <div className="mt-12 group flex items-center gap-3">
-                            <div className="w-12 h-[1px] bg-[#00E5FF]/50" />
-                            <span className="font-mono text-[10px] text-[#00E5FF] animate-pulse">SCROLL TO DISCOVER PHASE 1.0</span>
-                            <div className="w-12 h-[1px] bg-[#00E5FF]/50" />
-                        </div>
-                    </div>
-
-                    <div className="scene-overlay flex absolute inset-0 p-16 md:p-24 flex-col justify-start items-start mt-16" data-start="0.12" data-end="0.25" style={{ opacity: 0 }}>
-                        {/* <span className="font-mono text-xs border border-white/20 bg-white/5 rounded-full px-4 py-1.5 mb-6">CORE ARCHITECTURE</span> */}
-                        <h2 className="font-clash text-[7vw] leading-[0.85] text-white">VISIONARY</h2>
-                        <h2 className="font-clash text-[7vw] leading-[0.85] text-white">AI-TECH SOLUTION</h2>
-                        <h2 className="font-clash text-[7vw] leading-[0.85] text-gradient-teal-amber mb-6">BUILT FOR BHARAT.</h2>
-                        <p className="font-dm font-light text-xl text-white max-w-xl leading-relaxed">
-                            Empowering Governments, Startups, and Tech Giants with resilient digital ecosystems that scale across the nation.
-                        </p>
-                    </div>
-
-                    <div className="scene-overlay flex absolute inset-0 p-16 md:p-24 flex-col justify-center items-center text-center" data-start="0.25" data-end="0.4" style={{ opacity: 0 }}>
-                        <span className="font-mono text-xs text-[#00E5FF] tracking-widest uppercase mb-6">GOVTECH · AI-POWERED · NATION SCALE</span>
-                        <h2 className="font-clash text-[8vw] md:text-6xl leading-[0.9] text-white">THE NATION<br />DESERVES<br /><span className="text-[#00E5FF]">INTELLIGENT</span><br /><span className="text-gradient-warm">TECHNOLOGY.</span></h2>
-                        <p className="font-dm font-light text-xl text-white my-8 max-w-lg">Custom-engineered by the best minds in the country. Delivered with precision.</p>
-                    </div>
-
-                    <div className="scene-overlay flex absolute inset-0 p-16 md:p-24 flex-col justify-center items-start" data-start="0.4" data-end="0.6" style={{ opacity: 0 }}>
-                        <span className="font-mono text-xs border border-white/20 bg-white/5 rounded-full px-4 py-1.5 mb-6">TRUSTED BY THE SYSTEM</span>
-                        <h2 className="font-clash text-[6vw] leading-[0.9] text-white">WE BUILD FOR</h2>
-                        <h2 className="font-clash text-[7vw] leading-[0.9] text-gradient-teal-amber mb-10">THE GOVERNMENT.</h2>
-                        <div className="flex flex-col gap-4">
-                            {["AgriScan — AI for Indian Farmers", "Secure Blockchain Credentialing", "High-Scale Management Platforms"].map((tag, i) => (
-                                <div key={i} className="flex items-center gap-4 bg-[#131920]/80 backdrop-blur-md border-l-4 border-l-[#00E5FF] px-6 py-4 rounded-r-lg w-max">
-                                    <span className="text-[#00E5FF]">→</span>
-                                    <span className="font-mono text-sm text-[#F8FAFF]">{tag}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div className="scene-overlay flex absolute inset-0 p-16 md:p-24 flex-col justify-center items-center text-center" data-start="0.6" data-end="0.8" style={{ opacity: 0 }}>
-                        <h2 className="font-clash text-[9vw] leading-[0.85] text-white">AI-Tech Solutions</h2>
-                        <h2 className="font-clash text-[9vw] leading-[0.85] text-gradient-teal-amber mb-12">FOR THE NEW ERA.</h2>
-                        <button
-                            onClick={() => document.getElementById('contact-footer')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="bg-gradient-to-r from-[#00E5FF] to-[#FF8C42] text-[#0B0F14] font-clash font-semibold text-2xl md:text-3xl rounded-full px-12 py-6 shadow-[0_0_40px_rgba(255,140,66,0.4)] hover:scale-105 transition-transform pointer-events-auto"
-                        >
-                            START THE DIGITAL TRANSFORMATION →
-                        </button>
-                    </div>
-
-                    <div className="scene-overlay flex absolute inset-0 p-16 md:p-24 flex-col justify-end items-center text-center pb-24" data-start="0.8" data-end="0.95" style={{ opacity: 0 }}>
-                        <span className="font-clash text-2xl text-[#00E5FF] tracking-widest mb-4">THE GLOBAL STAGE AWAITS</span>
-                        <p className="font-dm font-light text-2xl text-white mb-6">Your vision. Our technology. Built in Bharat, for the World.</p>
-                        <a href="#" className="font-mono text-sm text-[#00E5FF] underline underline-offset-4 hover:text-white transition-colors">geeksofgurukul.com</a>
+                <div className="scene-overlay flex absolute inset-0 flex-col items-center justify-center text-center p-4 md:p-6" data-start="0.0" data-end="0.12" style={{ opacity: 1 }}>
+                    <span className="font-semibold text-[10px] md:text-xs text-white border border-[#00E5FF]/20 bg-[#00E5FF]/2 rounded-full px-3 py-1 md:px-4 md:py-1.5 mb-4 md:mb-6 uppercase tracking-[0.2em] md:tracking-[0.3em]">MISSION: DIGITALIZING BHARAT</span>
+                    <h2 className="font-clash text-[10vw] md:text-7xl leading-[0.9] text-white">ENGINEERING<br />THE NEW <span className="text-gradient-teal-amber">ERA.</span></h2>
+                    <p className="font-dm font-light text-base md:text-xl text-white mt-4 md:mt-8 max-w-2xl px-4 md:px-0">Providing world-class technology solutions for the Bharat of tomorrow.</p>
+                    <div className="mt-8 md:mt-12 group flex items-center gap-3">
+                        <div className="w-8 md:w-12 h-[1px] bg-[#00E5FF]/50" />
+                        <span className="font-mono text-[9px] md:text-[10px] text-[#00E5FF] animate-pulse">SCROLL TO DISCOVER</span>
+                        <div className="w-8 md:w-12 h-[1px] bg-[#00E5FF]/50" />
                     </div>
                 </div>
+
+                <div className="scene-overlay flex absolute inset-0 p-6 md:p-24 flex-col justify-start items-start mt-20 md:mt-16" data-start="0.12" data-end="0.25" style={{ opacity: 0 }}>
+                    <h2 className="font-clash text-[10vw] md:text-[7vw] leading-[0.85] text-white">VISIONARY</h2>
+                    <h2 className="font-clash text-[10vw] md:text-[7vw] leading-[0.85] text-white">AI-TECH SOLUTION</h2>
+                    <h2 className="font-clash text-[10vw] md:text-[7vw] leading-[0.85] text-gradient-teal-amber mb-4 md:mb-6">BUILT FOR BHARAT.</h2>
+                    <p className="font-dm font-light text-base md:text-xl text-white max-w-xl leading-relaxed pr-4 md:pr-0">
+                        Empowering Governments, Startups, and Tech Giants with resilient digital ecosystems that scale across the nation.
+                    </p>
+                </div>
+
+                <div className="scene-overlay flex absolute inset-0 p-6 md:p-24 flex-col justify-center items-center text-center" data-start="0.25" data-end="0.4" style={{ opacity: 0 }}>
+                    <span className="font-mono text-[10px] md:text-xs text-[#00E5FF] tracking-widest uppercase mb-4 md:mb-6">GOVTECH · AI-POWERED · NATION SCALE</span>
+                    <h2 className="font-clash text-[10vw] md:text-6xl leading-[0.9] text-white">THE NATION<br />DESERVES<br /><span className="text-[#00E5FF]">INTELLIGENT</span><br /><span className="text-gradient-warm">TECHNOLOGY.</span></h2>
+                    <p className="font-dm font-light text-base md:text-xl text-white my-4 md:my-8 max-w-lg px-4 md:px-0">Custom-engineered by the best minds in the country. Delivered with precision.</p>
+                </div>
+
+                <div className="scene-overlay flex absolute inset-0 p-6 md:p-24 flex-col justify-center items-start" data-start="0.4" data-end="0.6" style={{ opacity: 0 }}>
+                    <span className="font-mono text-[10px] md:text-xs border border-white/20 bg-white/5 rounded-full px-3 py-1 md:px-4 md:py-1.5 mb-4 md:mb-6">TRUSTED BY THE SYSTEM</span>
+                    <h2 className="font-clash text-[10vw] md:text-[6vw] leading-[0.9] text-white">WE BUILD FOR</h2>
+                    <h2 className="font-clash text-[12vw] md:text-[7vw] leading-[0.9] text-gradient-teal-amber mb-6 md:mb-10">THE GOVERNMENT.</h2>
+                    <div className="flex flex-col gap-3 md:gap-4 w-full md:w-auto">
+                        {["AgriScan — AI for Indian Farmers", "Secure Blockchain Credentialing", "High-Scale Management Platforms"].map((tag, i) => (
+                            <div key={i} className="flex items-center gap-3 md:gap-4 bg-[#131920]/80 backdrop-blur-md border-l-4 border-l-[#00E5FF] px-4 py-3 md:px-6 md:py-4 rounded-r-lg w-full md:w-max">
+                                <span className="text-[#00E5FF]">→</span>
+                                <span className="font-mono text-[11px] md:text-sm text-[#F8FAFF]">{tag}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="scene-overlay flex absolute inset-0 p-6 md:p-24 flex-col justify-center items-center text-center" data-start="0.6" data-end="0.8" style={{ opacity: 0 }}>
+                    <h2 className="font-clash text-[12vw] md:text-[9vw] leading-[0.85] text-white">AI-Tech Solutions</h2>
+                    <h2 className="font-clash text-[12vw] md:text-[9vw] leading-[0.85] text-gradient-teal-amber mb-8 md:mb-12">FOR THE NEW ERA.</h2>
+                    <button
+                        onClick={() => document.getElementById('contact-footer')?.scrollIntoView({ behavior: 'smooth' })}
+                        className="bg-gradient-to-r from-[#00E5FF] to-[#FF8C42] text-[#0B0F14] font-clash font-semibold text-xl md:text-3xl rounded-full px-8 py-4 md:px-12 md:py-6 shadow-[0_0_40px_rgba(255,140,66,0.4)] hover:scale-105 transition-transform pointer-events-auto"
+                    >
+                        START TRANSFORMATION →
+                    </button>
+                </div>
+
+                <div className="scene-overlay flex absolute inset-0 p-6 md:p-24 flex-col justify-end items-center text-center pb-12 md:pb-24" data-start="0.8" data-end="0.95" style={{ opacity: 0 }}>
+                    <span className="font-clash text-xl md:text-2xl text-[#00E5FF] tracking-widest mb-2 md:mb-4">THE GLOBAL STAGE AWAITS</span>
+                    <p className="font-dm font-light text-xl md:text-2xl text-white mb-4 md:mb-6">Your vision. Our technology. Built in Bharat.</p>
+                    <a href="#" className="font-mono text-xs md:text-sm text-[#00E5FF] underline underline-offset-4 hover:text-white transition-colors">geeksofgurukul.com</a>
+                </div>
             </div>
-        </section>
+        </div>
+        </section >
     );
 };
 
