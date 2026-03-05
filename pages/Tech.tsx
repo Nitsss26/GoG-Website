@@ -470,8 +470,7 @@ const CanvasScrollSection = () => {
                     <a href="#" className="font-mono text-xs md:text-sm text-[#00E5FF] underline underline-offset-4 hover:text-white transition-colors">geeksofgurukul.com</a>
                 </div>
             </div>
-        </div>
-        </section >
+        </section>
     );
 };
 
