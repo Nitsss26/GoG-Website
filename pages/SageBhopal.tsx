@@ -27,7 +27,6 @@ import {
 import { HeroSlider } from '../components/HeroSlider';
 import { ApplyForm } from '../components/ApplyForm';
 import { StickyNav } from '../components/StickyNav';
-import { SuccessTicker } from '../components/SuccessTicker';
 
 // --- SUB-COMPONENTS ---
 const SectionHeader = ({ title, subtitle, light = false }: { title: string; subtitle?: string; light?: boolean }) => (
@@ -796,7 +795,6 @@ const SageBhopal = () => {
                         </div>
 
 
-                        <SuccessTicker />
                         {/* Alumni */}
                         {/* <div>
                             <SectionHeader title="Alumni Hall of Fame" subtitle="Our graduates work at the world's best companies." />
