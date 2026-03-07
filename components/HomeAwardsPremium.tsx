@@ -11,6 +11,8 @@ import AwardsImage2 from '../assets/images/AwardsImage2.png';
 import Home2 from '../assets/Home2.jpg';
 // @ts-ignore
 import GovAssoc2 from '../assets/gov_association2.jpg';
+// @ts-ignore
+import AICTEAppreciation from '../assets/aicte_appreciation.png.jpg';
 
 // Green Embers Canvas
 const GreenEmbers: React.FC = () => {
@@ -223,7 +225,7 @@ const HomeAwardsPremium: React.FC = () => {
                 </div>
 
                 {/* --- NEW SECTION: Technical Advisor --- */}
-                <div className="mt-32 -mb-16 grid md:grid-cols-2 gap-12 items-center">
+                <div className="mt-32 grid md:grid-cols-2 gap-12 items-center">
 
                     {/* LEFT: Text Content */}
                     <motion.div
@@ -318,6 +320,81 @@ const HomeAwardsPremium: React.FC = () => {
                         </div>
                     </motion.div>
 
+                </div>
+
+                {/* --- AICTE Appreciation Section --- */}
+                <div className="mt-32 grid md:grid-cols-2 gap-12 items-center">
+                    {/* LEFT: Image with Frame (Gold) */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="relative order-1"
+                    >
+                        {/* Decorative Elements - Gold */}
+                        <div className="absolute -top-8 -left-8 w-16 h-28 transform scale-x-[-1]">
+                            <svg viewBox="0 0 80 130" fill="none" className="w-full h-full">
+                                <path d="M40 0 C40 60, 0 80, 0 130" stroke="#FFD700" strokeWidth="3" fill="none" opacity="0.6" />
+                                <path d="M50 10 C50 50, 20 70, 10 120" stroke="#FFD700" strokeWidth="2" fill="none" opacity="0.4" />
+                            </svg>
+                        </div>
+
+                        {/* Main Image Container */}
+                        <div className="relative bg-gradient-to-br from-[#FFD700]/20 to-transparent p-2 rounded-lg">
+                            <div className="border-4 border-[#FFD700] rounded-lg overflow-hidden shadow-[0_0_60px_rgba(255,215,0,0.3)]">
+                                <div className="relative h-[450px] bg-gradient-to-br from-[#1a1a2e] to-[#16213e]">
+                                    <img
+                                        src={AICTEAppreciation}
+                                        alt="AICTE Letter of Appreciation"
+                                        className="absolute inset-0 w-full h-full object-cover object-center"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Decorative Bottom Right */}
+                        <div className="absolute -bottom-8 -right-8 w-16 h-28 rotate-180 transform scale-x-[-1]">
+                            <svg viewBox="0 0 80 130" fill="none" className="w-full h-full">
+                                <path d="M40 0 C40 60, 0 80, 0 130" stroke="#FFD700" strokeWidth="3" fill="none" opacity="0.6" />
+                            </svg>
+                        </div>
+                    </motion.div>
+
+                    {/* RIGHT: Text Content */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="text-center md:text-left order-2"
+                    >
+                        <div className="inline-block px-4 py-2 bg-[#34D562]/10 border border-[#34D562]/30 rounded-full mb-6">
+                            <span className="text-[#34D562] text-sm font-semibold tracking-wide">🏆 ACADEMIC RECOGNITION</span>
+                        </div>
+
+                        <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+                            Letter of Appreciation <br />
+                            <span className="text-[#34D562]">from AICTE</span>
+                        </h3>
+
+                        <div className="relative mb-8">
+                            <div className="absolute -left-8 -top-4 text-6xl text-[#FFD700]/30">"</div>
+                            <p className="text-white/80 text-lg leading-relaxed pl-4">
+                                We are deeply honored to receive the Letter of Appreciation from AICTE.
+                                It was a privilege to be felicitated by <span className="text-[#FFD700] font-semibold">Hon’ble Chairman, Shri TG Sitharam Ji</span>,
+                                recognizing our contributions to education using technology with our team of IITians at Geeks of Gurukul.
+                            </p>
+                            <div className="absolute -right-4 -bottom-6 text-6xl text-[#FFD700]/30">"</div>
+                        </div>
+
+                        <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+                            <div className="px-6 py-3 bg-white/5 border border-white/10 rounded-full flex items-center gap-2">
+                                <span className="text-white/90 text-sm font-medium">🎓 Educational Excellence</span>
+                            </div>
+                            <div className="px-6 py-3 bg-white/5 border border-white/10 rounded-full flex items-center gap-2">
+                                <span className="text-white/90 text-sm font-medium">🚀 Tech in Education</span>
+                            </div>
+                        </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

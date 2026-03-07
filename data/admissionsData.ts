@@ -462,11 +462,11 @@ export const careerPathData = [
 // --- NEW MARQUEE DATA ---
 export const internsSuccess = [
     { name: "Alok Kumar Yadav", role: "AI Developer", image: "/assets/Images-Intern/AI Developer - Alok kumar Yadav.jpg" },
-    { name: "Harshal Harne", role: "Amazon Intern", image: "/assets/Images-Intern/Amazon Intern - harshal harne.JPG" },
+    { name: "Harshal Harne", role: "Python Intern", image: "/assets/Images-Intern/Amazon Intern - harshal harne.JPG" },
     { name: "Akshat Gupta", role: "Cyber Security", image: "/assets/Images-Intern/Cyber Security - Akshat Gupta.jpg" },
     { name: "Md Afzal", role: "Data Analytics", image: "/assets/Images-Intern/Data Analytics - Md Afzal.jpg" },
-    { name: "Arun VK", role: "Data Science", image: "/assets/Images-Intern/Data Science - Arun VK.jpg" },
-    { name: "Arisha Pare", role: "Google Intern", image: "/assets/Images-Intern/Google Intern- Arisha Pare.jpg" },
+    { name: "Arun VK", role: "Data Science Intern", image: "/assets/Images-Intern/Data Science - Arun VK.jpg" },
+    { name: "Arisha Pare", role: "Python Intern", image: "/assets/Images-Intern/Google Intern- Arisha Pare.jpg" },
     { name: "Abhay Kumar", role: "Java Developer", image: "/assets/Images-Intern/Java Developer - Abhay Kumar.jpg" },
     { name: "Babita Singh", role: "Java Developer", image: "/assets/Images-Intern/Java Developer - Babita Singh.jpg" },
     { name: "Suman Singh", role: "Java Developer", image: "/assets/Images-Intern/Java Developer- Suman Singh.jpg" },
