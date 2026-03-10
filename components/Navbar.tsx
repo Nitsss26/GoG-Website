@@ -150,9 +150,9 @@ const Navbar: React.FC = () => {
 
             {/* Desktop Buttons */}
             <div className="hidden lg:flex items-center gap-3">
-              <Link to="/courses" className="relative group px-6 py-2.5 text-sm font-bold bg-[#34D562] text-black rounded-full hover:bg-[#28a74b] hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(52,213,98,0.4)] flex items-center gap-2 overflow-hidden">
+              <Link to="/courses" className="relative group px-4 py-2 text-sm font-bold bg-[#34D562] text-black rounded-full hover:bg-[#28a74b] hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(52,213,98,0.4)] flex items-center gap-2 overflow-hidden">
                 <span className="relative z-10 flex items-center gap-2">
-                  <Sparkles size={16} className="animate-pulse text-yellow-700 fill-yellow-400" />
+                  <Sparkles size={14} className="animate-pulse text-yellow-700 fill-yellow-400" />
                   Admissions Open
                   <span className="flex h-2 w-2 relative">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
@@ -161,6 +161,16 @@ const Navbar: React.FC = () => {
                 </span>
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
               </Link>
+
+              <a
+                href="https://oms.geeksofgurukul.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative group px-4 py-2 text-sm font-bold bg-[#34D562]/10 text-white border border-[#34D562]/30 rounded-full hover:bg-[#34D562]/20 hover:scale-105 transition-all duration-300 shadow-[0_0_15px_rgba(52,213,98,0.2)] flex items-center gap-2 overflow-hidden"
+              >
+                <span className="relative z-10">SignIn</span>
+                <div className="absolute inset-0 bg-[#34D562]/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+              </a>
             </div>
 
             {/* Mobile Toggle */}
@@ -214,12 +224,21 @@ const Navbar: React.FC = () => {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="w-full flex justify-center"
+                className="w-full flex flex-col items-center gap-4"
               >
+                <a
+                  href="https://oms.geeksofgurukul.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-8 py-3 bg-white/10 text-white border border-white/20 font-bold rounded-full text-lg hover:bg-white/20 transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+                >
+                  SignIn
+                </a>
                 <Link
                   to="/courses"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="mt-8 px-8 py-4 bg-[#34D562] text-black font-bold rounded-full text-xl flex items-center gap-2"
+                  className="px-8 py-4 bg-[#34D562] text-black font-bold rounded-full text-xl flex items-center gap-2"
                 >
                   <Sparkles size={24} className="animate-pulse text-yellow-700 fill-yellow-400" /> Admissions Open
                 </Link>

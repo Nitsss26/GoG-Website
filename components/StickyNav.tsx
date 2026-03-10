@@ -127,14 +127,23 @@ export const StickyNav = ({ onApplyClick, logo }: StickyNavProps) => {
                                     ))}
                                 </div>
 
-                                {/* Apply Now Button */}
-                                <div className="flex items-center">
+                                {/* Buttons */}
+                                <div className="flex items-center gap-3">
                                     <button
                                         onClick={onApplyClick}
-                                        className="px-6 py-2.5 text-sm font-bold bg-[#34D562] text-black rounded-full hover:bg-[#28a74b] hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(52,213,98,0.4)]"
+                                        className="px-4 py-2 text-sm font-bold bg-[#34D562] text-black rounded-full hover:bg-[#28a74b] hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(52,213,98,0.4)]"
                                     >
                                         Apply Now
                                     </button>
+
+                                    {/* <a 
+                                        href="https://oms.geeksofgurukul.com" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        className="px-4 py-2 text-sm font-bold bg-[#34D562]/10 text-white border border-[#34D562]/30 rounded-full hover:bg-[#34D562]/20 hover:scale-105 transition-all duration-300 shadow-[0_0_15px_rgba(52,213,98,0.2)]"
+                                    >
+                                        OMS Portal
+                                    </a> */}
                                 </div>
 
                             </div>
