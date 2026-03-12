@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-    Play, MonitorPlay, Globe, ArrowRight, TrendingUp, Calculator, MessageCircle, X, Calendar, Send, Loader2
+    Play, MonitorPlay, Globe, ArrowRight, TrendingUp, Calculator, MessageCircle, X, Calendar, Send, Loader2, Sparkles
 } from 'lucide-react';
 import {
     studentVlogs, careerPathData, alumniSuccess, recruiterTestimonials, blogUpdates
@@ -198,20 +198,22 @@ export const CareerVisualizer = () => (
     </div>
 );
 
-export const ScholarshipStats = () => {
+export const ScholarshipStats = ({ tuitionFee = 130000 }: { tuitionFee?: number }) => {
     const [marks, setMarks] = useState(85);
-    const scholarship = marks > 95 ? "50%" : marks > 90 ? "30%" : marks > 85 ? "20%" : marks > 80 ? "10%" : "0%";
-    const savings = marks > 95 ? "₹2.5 Lakhs" : marks > 90 ? "₹1.5 Lakhs" : marks > 85 ? "₹1 Lakh" : marks > 80 ? "₹50K" : "₹0";
+    const scholarshipPercent = marks > 95 ? 15 : marks > 90 ? 10 : marks > 85 ? 7 : marks > 80 ? 5 : 0;
+    const scholarship = scholarshipPercent + "%";
+    const savingsAmount = (tuitionFee * scholarshipPercent) / 100;
+    const savings = "₹" + savingsAmount.toLocaleString('en-IN');
 
     return (
-        <div className="bg-[#111] border border-white/10 rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                <Calculator className="text-[#34D562]" /> Scholarship Calculator
+        <div className="bg-[#111] border border-white/10 rounded-2xl p-5 md:p-6 max-w-2xl mx-auto shadow-2xl">
+            <h3 className="text-lg md:text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Calculator className="text-[#34D562]" size={20} /> Scholarship Calculator
             </h3>
-            <div className="mb-8">
-                <div className="flex justify-between text-gray-400 mb-2">
-                    <span>12th Grade / JEE Score</span>
-                    <span className="text-white font-bold">{marks}%</span>
+            <div className="mb-6">
+                <div className="flex justify-between text-gray-400 mb-1">
+                    <span className="text-xs md:text-sm">12th Grade / JEE Score</span>
+                    <span className="text-[#34D562] font-semibold text-sm">{marks}%</span>
                 </div>
                 <input
                     type="range"
@@ -219,20 +221,26 @@ export const ScholarshipStats = () => {
                     max="100"
                     value={marks}
                     onChange={(e) => setMarks(parseInt(e.target.value))}
-                    className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-[#34D562]"
+                    className="w-full h-1.5 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-[#34D562]"
                 />
             </div>
-            <div className="grid grid-cols-2 gap-4">
-                <div className="bg-[#34D562]/10 p-4 rounded-xl border border-[#34D562]/20 text-center">
-                    <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Scholarship</p>
-                    <p className="text-[#34D562] text-3xl font-bold">{scholarship}</p>
+            <div className="grid grid-cols-2 gap-3">
+                <div className="bg-[#34D562]/10 p-3.5 rounded-xl border border-[#34D562]/20 text-center">
+                    <p className="text-gray-400 text-xs uppercase tracking-widest mb-1">Scholarship</p>
+                    <p className="text-[#34D562] text-2xl md:text-3xl font-bold">{scholarship}</p>
                 </div>
-                <div className="bg-white/5 p-4 rounded-xl border border-white/10 text-center">
-                    <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">You Save</p>
-                    <p className="text-white text-3xl font-bold">{savings}</p>
+                <div className="bg-white/5 p-3.5 rounded-xl border border-white/10 text-center">
+                    <p className="text-gray-400 text-xs uppercase tracking-widest mb-1">Total Savings</p>
+                    <p className="text-white text-2xl md:text-3xl font-bold">{savings}</p>
                 </div>
             </div>
-            <p className="text-xs text-gray-500 mt-4 text-center">*Estimated based on current merit policies. T&C apply.</p>
+            <div className="mt-5 flex flex-col gap-2">
+                <div className="flex items-center gap-2 text-[#34D562] text-xs font-bold bg-[#34D562]/10 p-2 rounded-lg border border-[#34D562]/20">
+                    <Sparkles size={14} className="shrink-0" />
+                    <span>Early Bird Discount: First 100 Students get ₹99 Test Fee Waiver!</span>
+                </div>
+                <p className="text-[11px] text-gray-400 text-center italic tracking-wide"><span className="text-red-500 font-bold">*</span> Based on current tuition fee structure. T&C apply.</p>
+            </div>
         </div>
     );
 };

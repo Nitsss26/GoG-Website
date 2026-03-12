@@ -18,7 +18,7 @@ const SEO: React.FC<SEOProps> = ({
     description,
     keywords,
     canonical,
-    ogImage = 'https://i.postimg.cc/4NdhCzDD/logo-(2).png'
+    ogImage = 'https://i.ibb.co/dJVbhnf7/logo-2.png'
 }) => {
     const fullTitle = title.includes('Geeks of Gurukul') ? title : `${title} - Geeks of Gurukul`;
     const siteUrl = 'https://www.geeksofgurukul.com';

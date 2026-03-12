@@ -97,8 +97,8 @@ export const feeStructure = {
     tuitionPerYear: "₹1,30,000",
     hostelPerYear: "₹50,000 - ₹70,000",
     scholarships: [
-        { percentage: "10% OFF", type: "Early Bird", criteria: "Pay before May 31st" },
-        { percentage: "Up to 50%", type: "Merit Based", criteria: "Top scorers in Qualifier Test" }
+        { percentage: "15% OFF", type: "Merit Based", criteria: "Score > 95% in 12th" },
+        { percentage: "10% OFF", type: "Merit Based", criteria: "Score > 90% in 12th" }
     ],
     emiOptions: {
         provider: "GrayQuest / Propelld",
@@ -324,35 +324,35 @@ export const nearbyPlaces = [
         dist: "46 KM",
         type: "Heritage",
         desc: "UNESCO World Heritage Site with ancient Buddhist monuments dating to 3rd century BCE.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Sanchi_Stupa_from_the_Southern_gateway%2C_Stupa_No._1.jpg/1280px-Sanchi_Stupa_from_the_Southern_gateway%2C_Stupa_No._1.jpg"
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/East_Gateway_-_Stupa_1_-_Sanchi_Hill_2013-02-21_4398.JPG/500px-East_Gateway_-_Stupa_1_-_Sanchi_Hill_2013-02-21_4398.JPG"
     },
     {
         name: "Bhimbetka Caves",
         dist: "45 KM",
         type: "Heritage",
         desc: "UNESCO site with prehistoric rock art dating back 30,000 years.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Rock_Shelter_15%2C_Bhimbetka_02.jpg/1280px-Rock_Shelter_15%2C_Bhimbetka_02.jpg"
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Bhimbetka_Caves%2C_Madhya_Pradesh.jpg/1280px-Bhimbetka_Caves%2C_Madhya_Pradesh.jpg"
     },
     {
         name: "Upper Lake (Bada Talab)",
         dist: "In City",
         type: "Nature",
         desc: "Asia's largest artificial lake, perfect for boating and sunset views.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Upper_Lake%2C_Bhopal%2C_India.jpg/1280px-Upper_Lake%2C_Bhopal%2C_India.jpg"
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Bada_talab%28upper_lake%29_Bhopal.jpg/1280px-Bada_talab%28upper_lake%29_Bhopal.jpg"
     },
     {
         name: "Bhojpur Temple",
         dist: "30 KM",
         type: "Spiritual",
         desc: "Ancient Shiva temple with one of the largest Shivlingas in India.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Bhojeshwar_Temple_2.jpg/1280px-Bhojeshwar_Temple_2.jpg"
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTZffNZqRVVXHaqVfoQtBsf1nlxg3-Vvcn8A&s"
     },
     {
         name: "Pachmarhi",
         dist: "194 KM",
         type: "Hill Station",
         desc: "Queen of Satpura - Madhya Pradesh's only hill station with waterfalls.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Bee_Falls_Pachmarhi.jpg/1280px-Bee_Falls_Pachmarhi.jpg"
+        img: "https://visitmyculture.com/assets/img/1753964841pachmarhi-honeymoon-tour1.webp"
     }
 ];
 

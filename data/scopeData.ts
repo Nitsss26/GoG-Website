@@ -113,8 +113,8 @@ export const feeStructures: Record<string, {
         tuitionPerYear: "₹95,000",
         hostelPerYear: "₹50,000 - ₹70,000",
         scholarships: [
-            { percentage: "10% OFF", type: "Early Bird", criteria: "Pay before May 31st" },
-            { percentage: "Up to 50%", type: "Merit Based", criteria: "Top scorers in Qualifier Test" }
+            { percentage: "15% OFF", type: "Merit Based", criteria: "Score > 95% in 12th" },
+            { percentage: "10% OFF", type: "Merit Based", criteria: "Score > 90% in 12th" }
         ],
         emiOptions: {
             provider: "GrayQuest / Propelld",
@@ -128,8 +128,8 @@ export const feeStructures: Record<string, {
         tuitionPerYear: "₹50,000",
         hostelPerYear: "₹50,000 - ₹70,000",
         scholarships: [
-            { percentage: "10% OFF", type: "Early Bird", criteria: "Pay before May 31st" },
-            { percentage: "Up to 50%", type: "Merit Based", criteria: "Top scorers in Qualifier Test" }
+            { percentage: "15% OFF", type: "Merit Based", criteria: "Score > 95% in 12th" },
+            { percentage: "10% OFF", type: "Merit Based", criteria: "Score > 90% in 12th" }
         ],
         emiOptions: {
             provider: "GrayQuest / Propelld",
@@ -143,8 +143,8 @@ export const feeStructures: Record<string, {
         tuitionPerYear: "₹50,000",
         hostelPerYear: "₹50,000 - ₹70,000",
         scholarships: [
-            { percentage: "10% OFF", type: "Early Bird", criteria: "Pay before May 31st" },
-            { percentage: "Up to 50%", type: "Merit Based", criteria: "Top scorers in Qualifier Test" }
+            { percentage: "15% OFF", type: "Merit Based", criteria: "Score > 95% in 12th" },
+            { percentage: "10% OFF", type: "Merit Based", criteria: "Score > 90% in 12th" }
         ],
         emiOptions: {
             provider: "GrayQuest / Propelld",

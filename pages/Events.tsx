@@ -20,6 +20,9 @@ const SectionDivider = () => (
 /* ────────────────────────── Event Detail Modal ──────────────────────────── */
 
 const EventModal: React.FC<{ event: EventData; onClose: () => void }> = ({ event, onClose }) => {
+    const [selectedSubEventId, setSelectedSubEventId] = useState<string | null>(null);
+    const isPmUsha = event.id === 'pm-usha-bu-2026';
+
     // Lock body scroll when modal open
     useEffect(() => {
         document.body.style.overflow = 'hidden';
@@ -106,12 +109,22 @@ const EventModal: React.FC<{ event: EventData; onClose: () => void }> = ({ event
                         </div>
 
                         {/* Close button */}
-                        <button
-                            onClick={onClose}
-                            className="flex-shrink-0 w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-200 hover:rotate-90"
-                        >
-                            <X className="w-5 h-5" />
-                        </button>
+                        <div className="flex items-center gap-3">
+                            {isPmUsha && selectedSubEventId && (
+                                <button
+                                    onClick={() => setSelectedSubEventId(null)}
+                                    className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#34D562] text-xs font-bold hover:bg-white/10 transition-all flex items-center gap-2"
+                                >
+                                    <ChevronRight className="w-4 h-4 rotate-180" /> Back to Programs
+                                </button>
+                            )}
+                            <button
+                                onClick={onClose}
+                                className="flex-shrink-0 w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-200 hover:rotate-90"
+                            >
+                                <X className="w-5 h-5" />
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -135,100 +148,176 @@ const EventModal: React.FC<{ event: EventData; onClose: () => void }> = ({ event
                         </div>
 
                         {/* Sub Events */}
-                        {event.subEvents.map((subEvent, subIdx) => (
-                            <div key={subEvent.id}>
-                                {subIdx > 0 && <SectionDivider />}
+                        {isPmUsha && !selectedSubEventId ? (
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-12 max-w-5xl mx-auto">
+                                {event.subEvents.map((sub, idx) => (
+                                    <motion.div
+                                        key={sub.id}
+                                        onClick={() => setSelectedSubEventId(sub.id)}
+                                        className="group relative cursor-pointer aspect-[16/10] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] bg-[#0a0a0a]"
+                                        initial={{ opacity: 0, scale: 0.9, y: 40 }}
+                                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                                        transition={{ delay: idx * 0.2, duration: 0.8, ease: "easeOut" }}
+                                        whileHover={{ y: -15, scale: 1.02 }}
+                                    >
+                                        {/* Dynamic Border Glow */}
+                                        <div className="absolute inset-0 bg-gradient-to-r from-[#34D562]/20 via-transparent to-[#34D562]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                                {/* Sub-event header */}
-                                <div className="mb-8">
-                                    <div className="flex items-center gap-3 mb-3">
-                                        <div className="w-8 h-8 rounded-lg bg-[#34D562]/10 border border-[#34D562]/20 flex items-center justify-center">
-                                            <span className="text-[#34D562] font-bold text-sm">{subIdx + 1}</span>
+                                        {/* Background Image Layer */}
+                                        <div className="absolute inset-0 z-0 scale-105 group-hover:scale-110 transition-transform duration-[2s]">
+                                            <img
+                                                src={sub.images[0]}
+                                                alt={sub.title}
+                                                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+                                            />
+                                            {/* Mirror-like Glass Overlay */}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90" />
                                         </div>
-                                        <span className="text-[#34D562]/60 text-xs font-semibold uppercase tracking-[0.2em]">Event Module</span>
-                                    </div>
-                                    <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight">
-                                        {subEvent.title}
-                                    </h3>
-                                </div>
 
-                                {/* Summary */}
-                                <div className="relative mb-8">
-                                    <div className="absolute left-0 top-0 bottom-0 w-1 rounded-full bg-gradient-to-b from-[#34D562] via-[#34D562]/40 to-transparent" />
-                                    <p className="pl-6 text-gray-300 leading-relaxed text-base md:text-lg">
-                                        {subEvent.summary}
-                                    </p>
-                                </div>
-
-                                {/* Image Gallery — above outcomes */}
-                                <div className="mb-10">
-                                    <div className="flex items-center gap-2 mb-5">
-                                        <Eye className="w-5 h-5 text-[#34D562]" />
-                                        <h4 className="text-base font-semibold text-white uppercase tracking-wider">Event Gallery</h4>
-                                    </div>
-                                    <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-                                        {subEvent.images.map((img, imgIdx) => (
+                                        {/* Floating Content Layer */}
+                                        <div className="relative z-10 h-full p-10 flex flex-col justify-between items-start">
                                             <motion.div
-                                                key={imgIdx}
-                                                className="group relative aspect-[4/3] rounded-xl overflow-hidden border border-white/5 hover:border-[#34D562]/30 transition-all duration-500 w-[calc(50%-6px)] md:w-[calc(33.333%-11px)]"
-                                                initial={{ opacity: 0, scale: 0.95 }}
-                                                whileInView={{ opacity: 1, scale: 1 }}
-                                                transition={{ delay: imgIdx * 0.05 }}
-                                                viewport={{ once: true }}
+                                                initial={{ x: -20, opacity: 0 }}
+                                                animate={{ x: 0, opacity: 1 }}
+                                                transition={{ delay: 0.5 + idx * 0.2 }}
+                                                className="px-4 py-1.5 bg-black/40 backdrop-blur-xl border border-white/10 rounded-full flex items-center justify-between w-full"
                                             >
-                                                <img
-                                                    src={img}
-                                                    alt={`${subEvent.title} - Image ${imgIdx + 1}`}
-                                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                                    loading="lazy"
-                                                />
-                                                {/* Hover overlay */}
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                                <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                                                    <span className="text-white/80 text-xs font-medium">
-                                                        {subEvent.title.split(' ').slice(0, 4).join(' ')}
-                                                    </span>
+                                                <div className="flex items-center gap-2">
+                                                    <div className="w-2 h-2 rounded-full bg-[#34D562] animate-pulse" />
+                                                    <span className="text-white/80 text-[10px] font-black tracking-widest uppercase">PM-USHA</span>
                                                 </div>
+                                                {sub.date && (
+                                                    <span className="text-[#34D562] text-[9px] font-bold tracking-tighter uppercase italic">{sub.date}</span>
+                                                )}
                                             </motion.div>
-                                        ))}
-                                    </div>
-                                </div>
 
-                                {/* Sessions & Learning Outcomes — always even count */}
-                                <div>
-                                    <div className="flex items-center gap-2 mb-5">
-                                        <BookOpen className="w-5 h-5 text-[#34D562]" />
-                                        <h4 className="text-base font-semibold text-white uppercase tracking-wider">Event Outcomes</h4>
-                                    </div>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                        {subEvent.sessions.slice(0, subEvent.sessions.length % 2 === 0 ? subEvent.sessions.length : subEvent.sessions.length - 1).map((session, sIdx) => (
-                                            <motion.div
-                                                key={sIdx}
-                                                className="group relative bg-white/[0.02] hover:bg-white/[0.05] border border-white/5 hover:border-[#34D562]/20 rounded-xl p-4 transition-all duration-300"
-                                                initial={{ opacity: 0, y: 10 }}
-                                                whileInView={{ opacity: 1, y: 0 }}
-                                                transition={{ delay: sIdx * 0.03 }}
-                                                viewport={{ once: true }}
-                                            >
-                                                <div className="flex items-start gap-3">
-                                                    <span className="flex-shrink-0 w-6 h-6 rounded-md bg-[#34D562]/10 flex items-center justify-center text-[#34D562] text-xs font-bold mt-0.5">
-                                                        {sIdx + 1}
-                                                    </span>
-                                                    <div>
-                                                        <h5 className="text-white text-sm font-semibold leading-snug mb-1 group-hover:text-[#34D562] transition-colors duration-200">
-                                                            {session.title}
-                                                        </h5>
-                                                        <p className="text-gray-500 text-xs leading-relaxed">
-                                                            {session.learningOutcome}
-                                                        </p>
-                                                    </div>
+                                            <div className="w-full mt-auto">
+                                                {/* Title - Reduced size more for perfection */}
+                                                <h3 className="text-lg md:text-xl font-black text-white leading-tight tracking-tight uppercase italic mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,1)] group-hover:text-[#34D562] transition-colors duration-500">
+                                                    {sub.title}
+                                                </h3>
+
+                                                {/* Hyper-Button CTA - Enhanced for "WOW" factor */}
+                                                <div className="relative group/btn w-full">
+                                                    <div className="absolute -inset-1 bg-[#34D562]/40 rounded-xl blur-md opacity-20 group-hover:opacity-100 transition duration-500" />
+                                                    <button className="relative w-full py-3.5 bg-gradient-to-r from-[#34D562] to-[#2eb554] text-black rounded-xl font-black text-[10px] uppercase tracking-[0.25em] flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_4px_15px_rgba(0,0,0,0.3)] group-hover:shadow-[0_8px_25px_rgba(52,213,98,0.5)] group-hover:scale-[1.03]">
+                                                        Click here to view details
+                                                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                                    </button>
                                                 </div>
-                                            </motion.div>
-                                        ))}
-                                    </div>
-                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Outer Glass Frame */}
+                                        <div className="absolute inset-0 border-[3px] border-white/5 rounded-[2rem] group-hover:border-[#34D562]/30 transition-colors duration-500 pointer-events-none z-20" />
+
+                                        {/* Scanline Effect on Hover */}
+                                        <div className="absolute inset-0 w-full h-1 bg-white/10 -translate-y-full group-hover:animate-scanline pointer-events-none z-30" />
+                                    </motion.div>
+                                ))}
                             </div>
-                        ))}
+                        ) : (
+                            (isPmUsha ? event.subEvents.filter(s => s.id === selectedSubEventId) : event.subEvents).map((subEvent, subIdx) => (
+                                <div key={subEvent.id}>
+                                    {(subIdx > 0 || (isPmUsha && selectedSubEventId)) && <SectionDivider />}
+
+                                    {/* Sub-event header */}
+                                    <div className="mb-8">
+                                        <div className="flex items-center gap-3 mb-3">
+                                            <div className="w-8 h-8 rounded-lg bg-[#34D562]/10 border border-[#34D562]/20 flex items-center justify-center">
+                                                <span className="text-[#34D562] font-bold text-sm">{subIdx + 1}</span>
+                                            </div>
+                                            <span className="text-[#34D562]/60 text-xs font-semibold uppercase tracking-[0.2em]">Event Module</span>
+                                        </div>
+                                        <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight">
+                                            {subEvent.title}
+                                        </h3>
+                                        {subEvent.date && (
+                                            <div className="mt-2 flex items-center gap-2">
+                                                <Calendar className="w-4 h-4 text-[#34D562]/60" />
+                                                <span className="text-[#34D562] font-semibold text-sm italic">{subEvent.date}</span>
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    {/* Summary */}
+                                    <div className="relative mb-8">
+                                        <div className="absolute left-0 top-0 bottom-0 w-1 rounded-full bg-gradient-to-b from-[#34D562] via-[#34D562]/40 to-transparent" />
+                                        <p className="pl-6 text-gray-300 leading-relaxed text-base md:text-lg">
+                                            {subEvent.summary}
+                                        </p>
+                                    </div>
+
+                                    {/* Image Gallery — above outcomes */}
+                                    <div className="mb-10">
+                                        <div className="flex items-center gap-2 mb-5">
+                                            <Eye className="w-5 h-5 text-[#34D562]" />
+                                            <h4 className="text-base font-semibold text-white uppercase tracking-wider">Event Gallery</h4>
+                                        </div>
+                                        <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+                                            {subEvent.images.map((img, imgIdx) => (
+                                                <motion.div
+                                                    key={imgIdx}
+                                                    className="group relative aspect-[4/3] rounded-xl overflow-hidden border border-white/5 hover:border-[#34D562]/30 transition-all duration-500 w-[calc(50%-6px)] md:w-[calc(33.333%-11px)]"
+                                                    initial={{ opacity: 0, scale: 0.95 }}
+                                                    whileInView={{ opacity: 1, scale: 1 }}
+                                                    transition={{ delay: imgIdx * 0.05 }}
+                                                    viewport={{ once: true }}
+                                                >
+                                                    <img
+                                                        src={img}
+                                                        alt={`${subEvent.title} - Image ${imgIdx + 1}`}
+                                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                                        loading="lazy"
+                                                    />
+                                                    {/* Hover overlay */}
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                                    <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                                                        <span className="text-white/80 text-xs font-medium">
+                                                            {subEvent.title.split(' ').slice(0, 4).join(' ')}
+                                                        </span>
+                                                    </div>
+                                                </motion.div>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* Sessions & Learning Outcomes — always even count */}
+                                    <div>
+                                        <div className="flex items-center gap-2 mb-5">
+                                            <BookOpen className="w-5 h-5 text-[#34D562]" />
+                                            <h4 className="text-base font-semibold text-white uppercase tracking-wider">Event Outcomes</h4>
+                                        </div>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                            {subEvent.sessions.slice(0, subEvent.sessions.length % 2 === 0 ? subEvent.sessions.length : subEvent.sessions.length - 1).map((session, sIdx) => (
+                                                <motion.div
+                                                    key={sIdx}
+                                                    className="group relative bg-white/[0.02] hover:bg-white/[0.05] border border-white/5 hover:border-[#34D562]/20 rounded-xl p-4 transition-all duration-300"
+                                                    initial={{ opacity: 0, y: 10 }}
+                                                    whileInView={{ opacity: 1, y: 0 }}
+                                                    transition={{ delay: sIdx * 0.03 }}
+                                                    viewport={{ once: true }}
+                                                >
+                                                    <div className="flex items-start gap-3">
+                                                        <span className="flex-shrink-0 w-6 h-6 rounded-md bg-[#34D562]/10 flex items-center justify-center text-[#34D562] text-xs font-bold mt-0.5">
+                                                            {sIdx + 1}
+                                                        </span>
+                                                        <div>
+                                                            <h5 className="text-white text-sm font-semibold leading-snug mb-1 group-hover:text-[#34D562] transition-colors duration-200">
+                                                                {session.title}
+                                                            </h5>
+                                                            <p className="text-gray-500 text-xs leading-relaxed">
+                                                                {session.learningOutcome}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </motion.div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            ))
+                        )}
 
                     </div>
                 </div>
@@ -597,6 +686,14 @@ const Events: React.FC = () => {
                 }
                 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
                     background: rgba(52, 213, 98, 0.4);
+                }
+                @keyframes scanline {
+                    0% { transform: translateY(-100%); opacity: 0; }
+                    50% { opacity: 0.5; }
+                    100% { transform: translateY(1000%); opacity: 0; }
+                }
+                .animate-scanline {
+                    animation: scanline 8s linear infinite;
                 }
             `}</style>
         </div>

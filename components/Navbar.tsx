@@ -62,19 +62,19 @@ const Navbar: React.FC = () => {
                 <div className="flex items-center gap-1.5 md:gap-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
                   <img src="/assets/CenturionUniversity/logo.png" alt="Centurion University" className="h-9 md:h-12 object-contain" />
                   <span className="text-gray-400 font-bold text-[8px] md:text-sm">X</span>
-                  <img src="https://i.postimg.cc/4NdhCzDD/logo-(2).png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
+                  <img src="https://i.ibb.co/dJVbhnf7/logo-2.png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
                 </div>
               ) : location.pathname === '/sagebhopal' ? (
                 <div className="flex items-center gap-1.5 md:gap-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
                   <img src="/assets/SAGE/sage-bhopal-logo.png" alt="SAGE University" className="h-9 md:h-12 object-contain" />
                   <span className="text-gray-400 font-bold text-[8px] md:text-sm">X</span>
-                  <img src="https://i.postimg.cc/4NdhCzDD/logo-(2).png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
+                  <img src="https://i.ibb.co/dJVbhnf7/logo-2.png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
                 </div>
               ) : location.pathname === '/gyanveer' ? (
                 <div className="flex items-center gap-1.5 md:gap-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
                   <img src="https://www.gyanveeruniversity.edu.in/assets/img/logo/logo-gv.png" alt="Gyanveer University" className="h-9 md:h-12 object-contain" />
                   <span className="text-gray-400 font-bold text-[8px] md:text-sm">X</span>
-                  <img src="https://i.postimg.cc/4NdhCzDD/logo-(2).png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
+                  <img src="https://i.ibb.co/dJVbhnf7/logo-2.png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
                 </div>
               ) : location.pathname === '/sageindore' ? (
                 <div className="flex items-center gap-1.5 md:gap-4 bg-white backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
                   <img src={GoGLogo} alt="Geeks of Gurukul" className="h-6 md:h-8 object-contain" />
                 </div>
               ) : (
-                <img src="https://i.postimg.cc/4NdhCzDD/logo-(2).png" alt="GoG Logo" className="h-8 md:h-10" />
+                <img src="https://i.ibb.co/dJVbhnf7/logo-2.png" alt="GoG Logo" className="h-8 md:h-10" />
               )}
             </Link>
 

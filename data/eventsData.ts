@@ -17,6 +17,15 @@ import IKS_Img6 from '../assets/PM-USHA/Role_of_IKS_(Indian_Knowledge_System)_in
 import IKS_Img7 from '../assets/PM-USHA/Role_of_IKS_(Indian_Knowledge_System)_in_Environmental_Science/Screenshot 2026-02-18 081047.png';
 import IKS_Img8 from '../assets/PM-USHA/Role_of_IKS_(Indian_Knowledge_System)_in_Environmental_Science/Screenshot 2026-02-18 081927.png';
 
+// Barkatullah University — National Workshop on Green Energy
+import Green_Img1 from '../assets/PM-USHA/National_Workshop_on_Green_Energy/IMG-20260224-WA0286.jpg';
+import Green_Img2 from '../assets/PM-USHA/National_Workshop_on_Green_Energy/IMG-20260224-WA0616.jpg';
+import Green_Img3 from '../assets/PM-USHA/National_Workshop_on_Green_Energy/Screenshot 2026-03-12 083538.png';
+import Green_Img4 from '../assets/PM-USHA/National_Workshop_on_Green_Energy/Screenshot 2026-03-12 083842.png';
+import Green_Img5 from '../assets/PM-USHA/National_Workshop_on_Green_Energy/Screenshot 2026-03-12 084109.png';
+import Green_Img6 from '../assets/PM-USHA/National_Workshop_on_Green_Energy/Screenshot 2026-03-12 084231.png';
+import Green_Img7 from '../assets/PM-USHA/National_Workshop_on_Green_Energy/Screenshot 2026-03-12 084317.png';
+
 // Bansal Group of Institution
 // @ts-ignore
 import Bansal_1 from '../assets/Events/Bansal_Group_of_Institution/20231206_112710.jpg';
@@ -109,6 +118,7 @@ export interface EventSession {
 export interface SubEvent {
     id: string;
     title: string;
+    date?: string;
     summary: string;
     sessions: EventSession[];
     images: string[];
@@ -136,7 +146,7 @@ export const eventsData: EventData[] = [
         title: 'Barkatullah University CRISP — PM–Usha Programmes',
         tag: 'Workshop',
         tagline: 'Education, Employment & Entrepreneurship for Viksit Bharat 2047',
-        shortDescription: 'An International Seminar under PM-Usha Scheme organized at Barkatullah University, Bhopal covering Application of AI in Environmental Science and Role of Indian Knowledge Systems featuring faculty workshops, hands-on sessions, and expert panels.',
+        shortDescription: 'Seminars/Workshops/Events under PM-Usha Scheme organized at Barkatullah University, Bhopal covering Application of AI in Environmental Science and Role of Indian Knowledge Systems featuring faculty workshops, National Workshop on Green Energy, hands-on sessions and expert panels.',
         date: '3 – 7 February 2026',
         venue: 'Barkatullah University, Bhopal',
         organizedBy: 'Geeks of Gurukul × Barkatullah University',
@@ -147,6 +157,7 @@ export const eventsData: EventData[] = [
             {
                 id: 'ai-env-science',
                 title: 'Application of Artificial Intelligence in Environmental Science',
+                date: '3 – 7 February 2026',
                 summary: 'This intensive programme explored the transformative potential of Artificial Intelligence in understanding and addressing environmental challenges. Participants engaged with cutting-edge AI tools and methodologies applied to climate prediction, water resource management, sustainable agriculture, biodiversity conservation, and disaster resilience. The sessions bridged the gap between traditional ecological knowledge and modern computational intelligence, empowering attendees to leverage AI for real-world environmental problem-solving. From demystifying AI fundamentals to designing collaborative solutions, this programme equipped faculty and researchers with actionable insights and hands-on experience in AI-driven environmental analysis.',
                 sessions: [
                     {
@@ -183,11 +194,12 @@ export const eventsData: EventData[] = [
                     },
 
                 ],
-                images: [AI_Img1, AI_Img2, AI_Img3, AI_Img6, AI_Img4, AI_Img5,]
+                images: [AI_Img4, AI_Img2, AI_Img3, AI_Img1, AI_Img6, AI_Img5,]
             },
             {
                 id: 'iks-env-science',
                 title: 'Role of Indian Knowledge Systems (IKS) in Environmental Science',
+                date: '10 – 11 February 2026',
                 summary: 'This programme delved into the rich heritage of Indian Knowledge Systems and their profound relevance to modern environmental science and AI. Participants explored how ancient Indian sciences — from Sanskrit\'s precision grammar influencing NLP to Ayurvedic diagnostic frameworks paralleling AI-assisted healthcare — offer timeless wisdom that complements contemporary technology. The sessions covered the intersection of IKS with ecology, ethics, digital preservation, and responsible AI development, culminating in a holistic vision for integrating traditional knowledge with cutting-edge innovation for a sustainable future.',
                 sessions: [
                     {
@@ -224,6 +236,35 @@ export const eventsData: EventData[] = [
                     }
                 ],
                 images: [IKS_Img6, IKS_Img7, IKS_Img8, IKS_Img1, IKS_Img2, IKS_Img4,]
+            },
+            {
+                id: 'green-energy-bu',
+                title: 'National Workshop on Green Energy',
+                date: '23 – 24 February 2026',
+                summary: 'The National Workshop on Green Energy at Barkatullah University focused on the critical role of sustainable energy in India\'s future. This comprehensive event covered the fundamentals of renewable energy systems, including EV/Hybrid vehicle technology, wind energy generation, and innovative sustainable infrastructure like biodegradable roads. A major highlight was the Student Project Showcase, where young innovators presented hands-on models such as Sodium-Ion Batteries and Solar Insect Lights, demonstrating exceptional creativity and technical prowess. The workshop honored the best projects with awards, fostering a culture of innovation and environmental responsibility among students.',
+                sessions: [
+                    {
+                        title: 'EV/Hybrid Vehicles: Driving the Carbon-Neutral Future',
+                        learningOutcome: 'Explain the working principles, advantages, and future potential of electric and hybrid vehicles in reducing carbon emissions. (Speaker: Dr. Bhupendra Singh, RGPV)'
+                    },
+                    {
+                        title: 'Harnessing the Wind: Large-Scale Renewable Power',
+                        learningOutcome: 'Analyze the fundamentals of wind energy systems and their role in large-scale renewable power generation. (Speaker: Abhishek Raj, IIT Roorkee / SGSU)'
+                    },
+                    {
+                        title: 'Sustainable Infrastructure: Biodegradable & Plastic Roads',
+                        learningOutcome: 'Assess innovative road construction materials that promote waste utilization and environmental sustainability. (Speaker: Ravi Bhusan Pratap, IIT Guwahati / SGSU)'
+                    },
+                    {
+                        title: 'Energy Security & Green Horizons',
+                        learningOutcome: 'Identify various green energy sources and evaluate their contribution to energy security and environmental protection. (Speaker: Amit Singh Patel, IIT Guwahati / BGI)'
+                    },
+                    {
+                        title: 'Student Project Showcase & Innovation Awards',
+                        learningOutcome: 'Witness a display of student-led innovations, from Sodium-Ion battery working models to Solar-powered solutions, with awards presented to the most impactful projects.'
+                    }
+                ],
+                images: [Green_Img3, Green_Img1, Green_Img2, Green_Img4, Green_Img5, Green_Img6, Green_Img7]
             }
         ]
     },

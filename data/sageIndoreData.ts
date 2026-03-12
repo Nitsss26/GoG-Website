@@ -92,13 +92,13 @@ export const rankings = [
 
 // --- FEES & SCHOLARSHIPS ---
 export const feeStructure = {
-    qualifierFee: "₹1,300",
+    qualifierFee: "₹99",
     seatBooking: "₹5,000",
     tuitionPerYear: "₹1,30,000",
     hostelPerYear: "₹50,000 - ₹70,000",
     scholarships: [
-        { percentage: "10% OFF", type: "Early Bird", criteria: "Pay before May 31st" },
-        { percentage: "Up to 50%", type: "Merit Based", criteria: "Top scorers in Qualifier Test" }
+        { percentage: "15% OFF", type: "Merit Based", criteria: "Score > 95% in 12th" },
+        { percentage: "10% OFF", type: "Merit Based", criteria: "Score > 90% in 12th" }
     ],
     emiOptions: {
         provider: "GrayQuest / Propelld",

@@ -592,56 +592,75 @@ const Gyanveer = () => {
                 <div className="container mx-auto px-4 max-w-7xl relative z-10">
                     <div className="grid lg:grid-cols-2 gap-20">
                         {/* Fee Structure */}
-                        <div>
+                        <div className="flex flex-col h-full">
                             <SectionHeader title="Fee Structure" subtitle="Transparent & Value-Driven." />
-                            <div className="p-8 bg-[#0a0a0a] border border-white/10 rounded-3xl shadow-2xl relative group overflow-hidden">
+                            <div className="flex-1 p-6 bg-[#0a0a0a] border border-white/10 rounded-3xl shadow-2xl relative group overflow-hidden flex flex-col justify-between">
                                 <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
 
-                                <div className="flex justify-between items-end mb-4 relative z-10">
-                                    <div>
-                                        <h4 className="text-gray-400 text-sm uppercase tracking-widest font-bold mb-1">Annual Tuition Fee</h4>
-                                        <div className="text-5xl font-display font-bold text-white">{feeStructure.tuitionPerYear}</div>
-                                    </div>
-                                    <div className="text-right">
-                                        <div className="inline-block px-3 py-1 bg-[#34D562]/20 text-[#34D562] text-xs font-bold rounded-full border border-[#34D562]/30 mb-2">
-                                            <span className="text-amber-400">NAAC 'A+'</span> Accredited
+                                <div className="relative z-10">
+                                    <div className="flex justify-between items-end mb-4">
+                                        <div>
+                                            <h4 className="text-gray-400 text-xs uppercase tracking-widest font-bold mb-1">Annual Tuition Fee</h4>
+                                            <div className="text-4xl font-display font-bold text-white">{feeStructure.tuitionPerYear}</div>
+                                        </div>
+                                        <div className="text-right">
+                                            <div className="inline-block px-3 py-1 bg-[#34D562]/20 text-[#34D562] text-xs font-bold rounded-full border border-[#34D562]/30 mb-1">
+                                                <span className="text-amber-400">NAAC 'A+'</span> Accredited
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <p className="text-sm text-gray-500 mb-10 text-right italic"><span className="text-red-500">*</span> Excluding Hostel & Mess Charges</p>
+                                    <p className="text-[10px] text-gray-500 mb-6 text-right italic"><span className="text-red-500">*</span> Excluding Hostel & Mess Charges</p>
 
-                                <div className="space-y-6 relative z-10">
-                                    <div className="flex justify-between items-center p-4 bg-white/5 rounded-xl border border-white/5">
-                                        <span className="text-gray-300 font-medium">Seat Booking Fee <span className="text-xs text-gray-500 block">(Adjustable in Semester 1)</span></span>
-                                        <span className="text-white text-xl font-bold">{feeStructure.seatBooking}</span>
-                                    </div>
-                                    <div className="flex justify-between items-center p-4 bg-[#34D562]/10 rounded-xl border border-[#34D562]/20">
-                                        <span className="text-[#34D562] font-medium">Qualifier Test Fee</span>
-                                        <span className="text-[#34D562] text-xl font-bold">{feeStructure.qualifierFee}</span>
+                                    <div className="grid grid-cols-2 gap-4">
+                                        <div className="p-3 bg-white/5 rounded-xl border border-white/5">
+                                            <span className="text-gray-400 text-[10px] uppercase tracking-wider block mb-1">Seat Booking Fee</span>
+                                            <span className="text-white text-lg font-bold">{feeStructure.seatBooking}</span>
+                                        </div>
+                                        <div className="p-3 bg-[#34D562]/10 rounded-xl border border-[#34D562]/20">
+                                            <span className="text-[#34D562] text-[10px] uppercase tracking-wider block mb-1">Qualifier Test Fee</span>
+                                            <span className="text-[#34D562] text-lg font-bold">{feeStructure.qualifierFee}</span>
+                                        </div>
                                     </div>
                                 </div>
 
                                 {/* Financial Aid / Bottom Filler */}
-                                <div className="mt-8 pt-8 border-t border-white/10 relative z-10">
-                                    <h4 className="text-white font-bold mb-4 flex items-center gap-2">
-                                        <Briefcase size={18} className="text-[#34D562]" /> Financial Aid Available
-                                    </h4>
-                                    <div className="grid grid-cols-2 gap-4">
-                                        <div className="text-sm text-gray-400 flex items-center gap-2">
-                                            <CheckCircle size={14} className="text-[#34D562]" /> Merit Scholarships
-                                        </div>
-                                        <div className="text-sm text-gray-400 flex items-center gap-2">
-                                            <CheckCircle size={14} className="text-[#34D562]" /> Easy EMI Options
-                                        </div>
-                                        <div className="text-sm text-gray-400 flex items-center gap-2">
-                                            <CheckCircle size={14} className="text-[#34D562]" /> Education Loans
-                                        </div>
-                                        <div className="text-sm text-gray-400 flex items-center gap-2">
-                                            <CheckCircle size={14} className="text-[#34D562]" /> Early Bird Offers
+                                <div className="mt-6 pt-6 border-t border-white/10 relative z-10 flex-1 flex flex-col gap-6">
+                                    <div>
+                                        <h4 className="text-white text-base font-bold mb-4 flex items-center gap-2">
+                                            <Briefcase size={20} className="text-[#34D562]" /> Financial Aid Available
+                                        </h4>
+                                        <div className="grid grid-cols-2 gap-x-4 gap-y-3 mb-2">
+                                            <div className="text-xs text-gray-400 flex items-center gap-2">
+                                                <CheckCircle size={14} className="text-[#34D562]" /> Merit Scholarships
+                                            </div>
+                                            <div className="text-xs text-gray-400 flex items-center gap-2">
+                                                <CheckCircle size={14} className="text-[#34D562]" /> Easy EMI Options
+                                            </div>
+                                            <div className="text-xs text-gray-400 flex items-center gap-2">
+                                                <CheckCircle size={14} className="text-[#34D562]" /> Education Loans
+                                            </div>
+                                            <div className="text-xs text-gray-400 flex items-center gap-2">
+                                                <CheckCircle size={14} className="text-[#34D562]" /> Early Bird Offers
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="mt-8">
-                                        <ScholarshipStats />
+                                    <div className="mt-auto">
+                                        <ScholarshipStats tuitionFee={parseInt(feeStructure.tuitionPerYear.replace(/[₹,]/g, ''))} />
+                                        <div className="mt-4 flex flex-wrap items-center justify-between gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl shadow-xl relative overflow-hidden group">
+                                            <div className="absolute top-0 right-0 w-24 h-24 bg-[#34D562]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                                            <div className="flex-1 min-w-[200px]">
+                                                <p className="text-[11px] text-gray-400 uppercase tracking-[0.2em] font-bold mb-2">Avail Discounts</p>
+                                                <p className="text-xs text-gray-300 leading-relaxed">
+                                                    Contact <span className="text-[#34D562] font-bold">+91 91524 72392</span> or <span className="text-[#34D562] font-bold">+91 93371 89115</span> to know more about <span className="text-white font-semibold">Early Bird & Merit</span>.
+                                                </p>
+                                            </div>
+                                            <button 
+                                                onClick={() => setIsApplyOpen(true)}
+                                                className="whitespace-nowrap px-6 py-2.5 text-xs font-bold bg-[#34D562] text-black rounded-full hover:bg-[#28a74b] hover:scale-105 transition-all duration-300 shadow-[0_0_15px_rgba(52,213,98,0.3)]"
+                                            >
+                                                Apply Now
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
