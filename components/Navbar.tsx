@@ -44,6 +44,19 @@ const Navbar: React.FC = () => {
 
   return (
     <>
+      {/* Top Right Employee Login - Small & Subtle */}
+      <div className="fixed top-4 right-4 z-[1100] hidden lg:block">
+        <a
+          href="https://oms.geeksofgurukul.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-3 py-1 bg-black/20 backdrop-blur-md border border-[#34D562]/30 rounded-full text-[9px] font-black text-[#34D562] transition-all duration-300 uppercase tracking-[0.2em] shadow-2xl flex items-center gap-2 group"
+        >
+          <div className="w-1 h-1 rounded-full bg-[#34D562] transition-colors" />
+          Employee Login
+        </a>
+      </div>
+
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: hidePrimaryNav ? -100 : 0, opacity: hidePrimaryNav ? 0 : 1 }}
@@ -62,19 +75,19 @@ const Navbar: React.FC = () => {
                 <div className="flex items-center gap-1.5 md:gap-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
                   <img src="/assets/CenturionUniversity/logo.png" alt="Centurion University" className="h-9 md:h-12 object-contain" />
                   <span className="text-gray-400 font-bold text-[8px] md:text-sm">X</span>
-                  <img src="https://i.ibb.co/dJVbhnf7/logo-2.png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
+                  <img src="https://i.ibb.co/QFQL6V9q/logo-2.png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
                 </div>
               ) : location.pathname === '/sagebhopal' ? (
                 <div className="flex items-center gap-1.5 md:gap-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
                   <img src="/assets/SAGE/sage-bhopal-logo.png" alt="SAGE University" className="h-9 md:h-12 object-contain" />
                   <span className="text-gray-400 font-bold text-[8px] md:text-sm">X</span>
-                  <img src="https://i.ibb.co/dJVbhnf7/logo-2.png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
+                  <img src="https://i.ibb.co/QFQL6V9q/logo-2.png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
                 </div>
               ) : location.pathname === '/gyanveer' ? (
                 <div className="flex items-center gap-1.5 md:gap-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
                   <img src="https://www.gyanveeruniversity.edu.in/assets/img/logo/logo-gv.png" alt="Gyanveer University" className="h-9 md:h-12 object-contain" />
                   <span className="text-gray-400 font-bold text-[8px] md:text-sm">X</span>
-                  <img src="https://i.ibb.co/dJVbhnf7/logo-2.png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
+                  <img src="https://i.ibb.co/QFQL6V9q/logo-2.png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
                 </div>
               ) : location.pathname === '/sageindore' ? (
                 <div className="flex items-center gap-1.5 md:gap-4 bg-white backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
@@ -89,7 +102,7 @@ const Navbar: React.FC = () => {
                   <img src={GoGLogo} alt="Geeks of Gurukul" className="h-6 md:h-8 object-contain" />
                 </div>
               ) : (
-                <img src="https://i.ibb.co/dJVbhnf7/logo-2.png" alt="GoG Logo" className="h-8 md:h-10" />
+                <img src="https://i.ibb.co/QFQL6V9q/logo-2.png" alt="GoG Logo" className="h-8 md:h-10" />
               )}
             </Link>
 
@@ -162,15 +175,6 @@ const Navbar: React.FC = () => {
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
               </Link>
 
-              <a
-                href="https://oms.geeksofgurukul.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative group px-4 py-2 text-sm font-bold bg-[#34D562]/10 text-white border border-[#34D562]/30 rounded-full hover:bg-[#34D562]/20 hover:scale-105 transition-all duration-300 shadow-[0_0_15px_rgba(52,213,98,0.2)] flex items-center gap-2 overflow-hidden"
-              >
-                <span className="relative z-10">SignIn</span>
-                <div className="absolute inset-0 bg-[#34D562]/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-              </a>
             </div>
 
             {/* Mobile Toggle */}
@@ -233,7 +237,7 @@ const Navbar: React.FC = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className="px-8 py-3 bg-white/10 text-white border border-white/20 font-bold rounded-full text-lg hover:bg-white/20 transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)]"
                 >
-                  SignIn
+                  Employee Login
                 </a>
                 <Link
                   to="/courses"
