@@ -33,7 +33,7 @@ const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
 const Culture = lazy(() => import('./pages/Culture'));
 const Careers = lazy(() => import('./pages/Careers'));
 const Tech = lazy(() => import('./pages/Tech'));
-const EventDetail = lazy(() => import('./pages/EventDetail'));
+// const EventDetail = lazy(() => import('./pages/EventDetail'));
 
 const LoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center bg-[#030303] text-white">
@@ -99,7 +99,7 @@ const App: React.FC = () => {
               <Route path="/gyanveer" element={<Gyanveer />} />
               <Route path="/scope" element={<Scope />} />
               <Route path="/events" element={<Events />} />
-              <Route path="/events/:id" element={<EventDetail />} />
+              {/* <Route path="/events/:id" element={<EventDetail />} /> */}
               <Route path="/courses" element={<Courses />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
