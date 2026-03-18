@@ -342,7 +342,7 @@ export const BlogUpdates = () => (
     </div>
 );
 
-export const ChatBot = () => {
+export const ChatBot = ({ universityName, tuitionFee }: { universityName?: string, tuitionFee?: string }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState<{ type: 'ai' | 'user', text: string }[]>([
         { type: 'ai', text: "Hi! I'm the GoG Admissions Assistant. I can help you with Fee Structure, Syllabus, or Placements. What would you like to know?" }
@@ -372,11 +372,11 @@ export const ChatBot = () => {
                 "No problem at all! Feel free to keep chatting if you have more queries."
             ],
             identity: [
-                "I'm the GoG Admissions AI, a specialized assistant designed to help you with everything related to our B.Tech AI & ML program.",
-                "You can call me the GoG Assistant! I've been trained on our university data to provide you with instant answers.",
-                "I'm an AI guide for Geeks of Gurukul. My job is to help you understand our curriculum, fees, and career paths!",
-                "I am your virtual admissions counselor here to explain why Centurion x GoG is the best choice for AI & ML.",
-                "Think of me as your first point of contact for GoG admissions. I can help with scholarships, jobs, and syllabus details!"
+                `I'm the GoG Admissions AI, specialized in helping you with our B.Tech AI & ML program${universityName ? ` at ${universityName}` : ''}.`,
+                `You can call me the GoG Assistant! I've been trained on ${universityName || 'our university'} data to provide you with instant answers.`,
+                `I'm an AI guide for Geeks of Gurukul. My job is to help you understand ${universityName ? `the ${universityName}` : 'our'} curriculum, fees, and career paths!`,
+                `I am your virtual admissions counselor here to explain why ${universityName ? `${universityName} x GoG` : 'Centurion x GoG'} is the best choice for AI & ML.`,
+                `Think of me as your first point of contact for ${universityName || 'GoG'} admissions. I can help with scholarships, jobs, and syllabus details!`
             ],
             human: [
                 "I'm doing great, thank you for asking! Ready to help you with your admissions. How about you?",
@@ -393,11 +393,11 @@ export const ChatBot = () => {
                 "Take care! Remember, admissions for 2026 are currently open. Catch you later!"
             ],
             fees: [
-                "Based on the available information, the annual tuition fee is ₹1,25,000. For more details, you can refer to the 'Fee Structure' section in the website.",
-                "The current academic fee is ₹1.25 Lakhs per year. Detailed breakdowns including hostel charges are available in our 'Fee & Admissions' section.",
-                "Our B.Tech AI program fee is ₹1,25,000 annually. Feel free to check the 'Fee Structure' table on this page for seat booking details.",
-                "For the 2026 session, the annual tuition is set at ₹1,25,000. You might want to look at the 'Fee' section for scholarship impact!",
-                "The investment for this program is ₹1,25,000 per year. You can find more regarding payment modes in the 'Fee Structure' area below."
+                `Based on the available information, the annual tuition fee ${universityName ? `at ${universityName}` : ''} is ${tuitionFee || '₹1,25,000'}. For more details, you can refer to the 'Fee Structure' section.`,
+                `The current academic fee ${universityName ? `for ${universityName}` : ''} is ${tuitionFee || '₹1.25 Lakhs'} per year. Detailed breakdowns are available in our 'Fee & Admissions' section.`,
+                `Our B.Tech AI program fee ${universityName ? `at ${universityName}` : ''} is ${tuitionFee || '₹1,25,000'} annually. Check the 'Fee Structure' table on this page for details.`,
+                `For the 2026 session, the annual tuition ${universityName ? `at ${universityName}` : ''} is set at ${tuitionFee || '₹1,25,000'}. You might want to look at the 'Fee' section!`,
+                `The investment for this program ${universityName ? `at ${universityName}` : ''} is ${tuitionFee || '₹1,25,000'} per year. You can find more in the 'Fee Structure' area below.`
             ],
             placements: [
                 "Our placement records show a highest package of 36 LPA and a 6.5 LPA average. You can refer to the 'Placements' section for the full recruiter list.",

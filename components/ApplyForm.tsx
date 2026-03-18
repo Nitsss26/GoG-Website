@@ -20,6 +20,7 @@ export const ApplyForm = ({ isOpen, onClose, universityName, courses, redirectUr
         remarks: ''
     });
 
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [error, setError] = useState('');
 
@@ -29,7 +30,7 @@ export const ApplyForm = ({ isOpen, onClose, universityName, courses, redirectUr
         }
     }, [isOpen, universityName]);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         // Validation
@@ -44,9 +45,23 @@ export const ApplyForm = ({ isOpen, onClose, universityName, courses, redirectUr
         }
 
         setError('');
+        setIsSubmitting(true);
 
-        // Simulate API call
-        setTimeout(() => {
+        try {
+            // Updated to production URL
+            const response = await fetch('https://gog.app.n8n.cloud/webhook/submit-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                throw new Error('Something went wrong. Please contact +91 91524 72392 or +91 93371 89115');
+            }
+
+            console.log('n8n submission successful');
             setIsSubmitted(true);
             setTimeout(() => {
                 if (redirectUrl) {
@@ -60,7 +75,12 @@ export const ApplyForm = ({ isOpen, onClose, universityName, courses, redirectUr
                     });
                 }
             }, 2000);
-        }, 1000);
+        } catch (err: any) {
+            console.error('Submission error:', err);
+            setError('Something went wrong. Please contact +91 91524 72392 or +91 93371 89115');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -246,9 +266,17 @@ export const ApplyForm = ({ isOpen, onClose, universityName, courses, redirectUr
 
                                     <button
                                         type="submit"
-                                        className="w-full py-4 bg-[#34D562] text-black font-bold text-lg rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_20px_rgba(52,213,98,0.3)] mt-4"
+                                        disabled={isSubmitting}
+                                        className={`w-full py-4 bg-[#34D562] text-black font-bold text-lg rounded-xl transition-all hover:scale-[1.02] shadow-[0_0_20px_rgba(52,213,98,0.3)] mt-4 flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[#2dbd56]'}`}
                                     >
-                                        Submit Application
+                                        {isSubmitting ? (
+                                            <>
+                                                <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin" />
+                                                Submitting...
+                                            </>
+                                        ) : (
+                                            'Submit Application'
+                                        )}
                                     </button>
                                 </form>
                             )}

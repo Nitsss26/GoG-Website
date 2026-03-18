@@ -27,6 +27,7 @@ import {
 import { HeroSlider } from '../components/HeroSlider';
 import { ApplyForm } from '../components/ApplyForm';
 import { StickyNav } from '../components/StickyNav';
+import { SuccessTicker } from '@/components/SuccessTicker';
 
 // --- SUB-COMPONENTS ---
 const SectionHeader = ({ title, subtitle, light = false }: { title: string; subtitle?: string; light?: boolean }) => (
@@ -831,7 +832,7 @@ const SageIndore = () => {
                     </div>
                 </div>
             </section >
-
+            {/* <SuccessTicker /> */}
             {/* ===== 8. BLOG & UPDATES (Moved Here) ===== */}
             < section className="py-24 bg-[#050505] border-t border-white/5" >
                 <div className="container mx-auto px-4 max-w-7xl">
@@ -1236,7 +1237,7 @@ const SageIndore = () => {
             </section >
 
 
-            <ChatBot />
+            <ChatBot universityName="SAGE University Indore" tuitionFee="₹1,30,000" />
         </div >
     );
 };

@@ -27,6 +27,7 @@ import {
 import { HeroSlider } from '../components/HeroSlider';
 import { ApplyForm } from '../components/ApplyForm';
 import { StickyNav } from '../components/StickyNav';
+import { SuccessTicker } from '@/components/SuccessTicker';
 
 // --- SUB-COMPONENTS ---
 const SectionHeader = ({ title, subtitle, light = false }: { title: string; subtitle?: string; light?: boolean }) => (
@@ -687,7 +688,7 @@ const Scope = () => {
                                                     Contact <span className="text-[#34D562] font-bold">+91 91524 72392</span> or <span className="text-[#34D562] font-bold">+91 93371 89115</span> to know more about <span className="text-white font-semibold">Early Bird & Merit</span>.
                                                 </p>
                                             </div>
-                                            <button 
+                                            <button
                                                 onClick={() => setIsApplyOpen(true)}
                                                 className="whitespace-nowrap px-6 py-2.5 text-xs font-bold bg-[#34D562] text-black rounded-full hover:bg-[#28a74b] hover:scale-105 transition-all duration-300 shadow-[0_0_15px_rgba(52,213,98,0.3)]"
                                             >
@@ -844,7 +845,7 @@ const Scope = () => {
                     </div>
                 </div>
             </section >
-
+            {/* <SuccessTicker /> */}
             {/* ===== 8. BLOG & UPDATES (Moved Here) ===== */}
             < section className="py-24 bg-[#050505] border-t border-white/5" >
                 <div className="container mx-auto px-4 max-w-7xl">
@@ -1176,7 +1177,7 @@ const Scope = () => {
             </section >
 
 
-            <ChatBot />
+            <ChatBot universityName="SCOPE Global Skills University" tuitionFee="₹95,000 (B.Tech) / ₹50,000 (BCA)" />
         </div >
     );
 };

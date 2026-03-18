@@ -44,11 +44,11 @@ import EmployeeMonth from '../assets/Our_Culture/certificate_employee_of_month.p
 
 // Additional Recent Certifications
 // @ts-ignore
-import Prof1 from '../assets/Our_Culture/Prof1.png';
+import Prof1 from '../assets/Our_Culture/pic-1.png';
 // @ts-ignore
-import Prof2 from '../assets/Our_Culture/Prof2.png';
+import Prof2 from '../assets/Our_Culture/pic-2.png';
 // @ts-ignore
-import Prof3 from '../assets/Our_Culture/Prof3.png';
+import Prof3 from '../assets/Our_Culture/pic-3.png';
 
 // HEIC → hosted AVIF links
 const BirthdayImg = 'https://i.ibb.co/vCKF0tN3/Birthday.avif';
@@ -615,7 +615,7 @@ const Culture: React.FC = () => {
                     </div>
 
                     {/* ── NEW ROW: 3 Additional Images ── */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start mt-6">
+                    {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start mt-6">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -648,7 +648,7 @@ const Culture: React.FC = () => {
                             <img src={Prof3} alt="Recent Recognition 3" className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 p-2" />
                             <div className="absolute inset-0 border-[4px] border-[#34D562]/10 rounded-[2rem] pointer-events-none" />
                         </motion.div>
-                    </div>
+                    </div> */}
 
                 </div>
             </section>

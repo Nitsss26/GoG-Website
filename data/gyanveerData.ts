@@ -379,6 +379,10 @@ export const faqs = [
         a: "The program focuses on industry-ready skills with emphasis on AI, Web Dev, and Machine Learning integrated with GoG's lab-led training."
     },
     {
+        q: "What is the fee structure?",
+        a: "Tuition Fee is ₹80,000 per year. Hostel fees range from ₹45k to ₹65k. Seat booking fee is ₹10,000."
+    },
+    {
         q: "Are there hostel facilities for outstation students?",
         a: "Yes, the university provides separate hostels for boys and girls with all modern amenities at the Mara Imaliya campus."
     },

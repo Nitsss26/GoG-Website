@@ -378,7 +378,7 @@ export const faqs = [
     },
     {
         q: "What is the fee structure?",
-        a: "Tuition Fee is ₹1,00,000 per year. Hostel fees range from ₹50k to ₹70k depending on AC/Non-AC choice. Seat booking fee is ₹10,000."
+        a: "Tuition Fee is ₹1,30,000 per year. Hostel fees range from ₹50k to ₹70k depending on AC/Non-AC choice. Seat booking fee is ₹10,000."
     },
     {
         q: "Are scholarships available?",

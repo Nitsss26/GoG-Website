@@ -17,7 +17,7 @@ import {
     clubs, faqs, testimonials, universityAbout,
     studentVlogs, alumniSuccess, recruiterTestimonials, careerPathData, blogUpdates
 } from '../data/admissionsData';
-
+import { SuccessTicker } from '@/components/SuccessTicker';
 // Import assets
 import CUTMLogo from "../assets/PartneredColleges/CUTM.svg";
 import GoGLogo from "../assets/gog-logo.png";
@@ -798,7 +798,7 @@ const Admissions = () => {
                     </div>
                 </div>
             </section >
-
+            {/* <SuccessTicker /> */}
             {/* ===== 8. BLOG & UPDATES (Moved Here) ===== */}
             < section className="py-24 bg-[#050505] border-t border-white/5" >
                 <div className="container mx-auto px-4 max-w-7xl">
@@ -1203,7 +1203,7 @@ const Admissions = () => {
             </section >
 
 
-            <ChatBot />
+            <ChatBot universityName="Centurion University" tuitionFee="₹1,75,000" />
         </div >
     );
 };
