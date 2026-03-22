@@ -3,9 +3,10 @@ import React, { useEffect, useRef } from 'react';
 
 interface GreenEmbersProps {
   density?: number;
+  direction?: 'drift' | 'up';
 }
 
-const GreenEmbers: React.FC<GreenEmbersProps> = ({ density = 1 }) => {
+const GreenEmbers: React.FC<GreenEmbersProps> = ({ density = 1, direction = 'drift' }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -43,8 +44,13 @@ const GreenEmbers: React.FC<GreenEmbersProps> = ({ density = 1 }) => {
         this.size = Math.random() * 2 + 0.5;
         this.glowSize = this.size * 3; // Pre-calculated
 
-        this.speedX = (Math.random() - 0.5) * 0.2;
-        this.speedY = (Math.random() - 0.5) * 0.2;
+        if (direction === 'up') {
+          this.speedX = (Math.random() - 0.5) * 0.4;
+          this.speedY = (Math.random() * -1.5) - 0.5; // Faster upward speed
+        } else {
+          this.speedX = (Math.random() - 0.5) * 0.2;
+          this.speedY = (Math.random() - 0.5) * 0.2;
+        }
 
         this.opacity = Math.random() * 0.5 + 0.1;
         this.fadeSpeed = (Math.random() * 0.002) + 0.0005;
@@ -61,8 +67,16 @@ const GreenEmbers: React.FC<GreenEmbersProps> = ({ density = 1 }) => {
 
         if (this.x < -20) this.x = canvas!.width + 20;
         if (this.x > canvas!.width + 20) this.x = -20;
-        if (this.y < -20) this.y = canvas!.height + 20;
-        if (this.y > canvas!.height + 20) this.y = -20;
+
+        if (direction === 'up') {
+          if (this.y < -20) {
+            this.y = canvas!.height + 20;
+            this.x = Math.random() * canvas!.width;
+          }
+        } else {
+          if (this.y < -20) this.y = canvas!.height + 20;
+          if (this.y > canvas!.height + 20) this.y = -20;
+        }
       }
 
       draw() {
@@ -97,8 +111,8 @@ const GreenEmbers: React.FC<GreenEmbersProps> = ({ density = 1 }) => {
     const init = () => {
       resize();
       particles = [];
-      // OPTIMIZATION: Cap particle count
-      const particleCount = Math.min((window.innerWidth * window.innerHeight) / 9000, 200) * density;
+      const baseCount = Math.floor((canvas.width * canvas.height) / 8000);
+      const particleCount = Math.min(1000, baseCount * density * (direction === 'up' ? 1.5 : 1));
 
       for (let i = 0; i < particleCount; i++) {
         particles.push(new Particle());

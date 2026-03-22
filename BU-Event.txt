@@ -1,0 +1,153 @@
+# Inauguration of Training Programme  --> Start with this section
+
+The training programme on “Application of AI and Role of Indian Knowledge System in Environmental Science” was formally inaugurated at Barkatullah University under the PM-UShA scheme. The inauguration ceremony was graced by distinguished academicians Prof. Neeraj Gaur, Prof. Ruchi Ghosh Dastidar, and Prof. Praveen Tamot as the Chief Guests and Dr. Abhilasha Bhawsar, Head of the Department. The session marked the commencement of the workshop with insightful addresses emphasizing the relevance of artificial intelligence and Indian Knowledge Systems in addressing present-day environmental challenges.
+
+Img1.png, Img2.png --> Use these images
+
+#Relevance to the PM-UShA Scheme
+
+
+The workshop was aligned with the objectives of the PM-UShA Scheme by promoting multidisciplinary learning, skill development, and the integration of Artificial Intelligence and Indian Knowledge System to enhance quality and innovation in higher education.
+
+Integrated AI, environmental science, and Indian Knowledge Systems
+Promoted multidisciplinary and holistic learning
+Strengthened research orientation and digital skills
+Encouraged experiential and outcome-based learning as per NEP-2020
+Supported sustainability and societal relevance
+
+#Objectives of the Workshop
+
+The key objectives of workshop were :
+
+Introduce AI applications in environmental science
+Promote Indian Knowledge Systems (IKS)
+Encourage multidisciplinary learning
+Develop analytical and critical thinking skills
+Support experiential and outcome-based learning
+Foster ethical and sustainable practices
+
+#Guest Felicitation  Ceremony
+
+As a mark of respect and appreciation, a felicitation ceremony was organized to honor the distinguished guests. The no to single use plastic was practised during the event. The guests were felicitated with 
+Jute Bag 
+Memento 
+Sapling
+Booklets and
+Pen
+symbolizing sustainability and knowledge sharing. The flow of the event was also provided to the guests for their reference. This gesture reflected the organizers’ gratitude for the guests’ valuable presence and contributions to the training programme.
+
+Img3.png, Img4.png --> Use these images
+
+#Felicitation for Resource Person 
+
+The trainers were felicitated with thoughtfully curated mementos that included 
+Booklets, 
+Pens, 
+Jute Bags, and 
+Commemorative Mementos 
+as a token of appreciation for their valuable contributions and efforts during the training programme.
+
+Img5.png, Img6.png --> Use these images
+
+
+# Hands-on Training & Practical  Exposure
+
+AI-Based Presentation Tools (Gamma AI & Presentation.ai)
+  The workshop demonstrated:
+How to write effective prompts
+How to define presentation goals, audience, and tone
+How AI converts prompts into slides, visuals, and structured content automatically
+
+Prompt Writing Skills
+ Special focus was given to teaching participants how to:
+Write clear and specific prompts
+Generate content for presentations, reports, and technical documentation efficiently
+
+Cursor AI for Development Projects
+ Participants were introduced to Cursor AI, an AI-powered code editor that helps in building:
+Complete AI/ML projects (data preprocessing, model building, training, and evaluation)
+Full-stack Web Development projects using prompt-based coding assistance
+
+# Outcomes and Learning Impact
+
+Understanding of AI applications in environmental science
+Hands-on exposure to AI tools for rapid content and project creation
+Ability to create presentations in 2–3 minutes using Gamma AI and Presentation.ai
+Improved prompt-writing skills for better AI outputs
+Introduction to Cursor AI for AI/ML and web development projects
+Enhanced analytical, critical thinking, and multidisciplinary learning
+Awareness of ethical and sustainable AI practices
+
+# Resource Persons (Trainers)
+
+Mr. Ankit Singh
+(Alumni IIT Delhi)
+Ankit.png
+
+Mr. Sahil Rajendra
+(Alumni IIT Kharagpur)
+Sahil.png
+
+Mr. Ayush Sahu
+Alumni IIT Tirupati
+Ayush.png
+
+Mr. Abhishek Raj
+(Alumni IIT Roorkee)
+Abhishek.png
+
+Mr. Ravi Bhushan Pratap
+Alumni IIT Guwahati
+Ravi.png
+
+Mr. Sujal Verma
+Alumni IIT Roorkee
+
+
+# Photo Gallery - Inauguration of Programme
+
+Img7.png to Img11.png
+
+
+
+#Theme and Relevance of the Workshop
+
+The workshop aimed to integrate modern AI-based tools with traditional Indian ecological knowledge to develop a comprehensive understanding of environmental challenges and sustainable solutions.
+
+The relevance of the workshop lies in addressing contemporary issues such as climate change, resource management, biodiversity conservation, and disaster resilience. While artificial intelligence provides advanced capabilities for data analysis, prediction, and visualization, Indian Knowledge Systems contribute ethical, sustainable, and culturally rooted perspectives. Through conceptual discussions and hands-on activities, the workshop enabled participants to understand and apply these integrated approaches in real-world environmental contexts, making it highly relevant for students and researchers in environmental science.
+
+
+
+#Alignment with the Academic Curriculum
+
+The workshop was closely aligned with the NEP-2020 and academic curriculum of the Department of Environmental Sciences and Limnology, Barkatullah University, complementing core subjects by integrating contemporary AI applications with environmental and ecological studies. It strengthened conceptual understanding while promoting practical and interdisciplinary learning.
+
+Bridged theory with practice through AI-based environmental applications
+Encouraged interdisciplinary thinking across life sciences and technology
+Supported experiential learning via hands-on activities and case discussions
+
+
+# Photo Gallery - Training Sessions
+Img12.png to Img18.png
+
+
+#Training Module & Content
+
+Event Flow with Timeline					
+Event : Application of AI (Artifical Intelligence) and role of IKS in Environmental Science				Department Name : Environmental Sciences and Limnology	
+Module Wise Topics					
+Module	Day	Duration	Topics	Learning Objectives	
+Module 1	Day 1 (Tuesday)	120	Understanding the Planet: Past Wisdom and Present Challenges	Understand environmental challenges by integrating modern science with ancient Indian ecological wisdom.	
+Module 2	Day 1 (Tuesday)	120	Demystifying AI: How Intelligent Systems Engage with Nature	"Develop a clear, non‑technical understanding of AI and its role in addressing environmental issues."	
+Module 3	Day 2 (Wednesday)	120	"AI for Earth Systems: Climate, Water, and Food Security"	"Explore how AI supports climate prediction, water management, and sustainable agriculture."	
+Module 4	Day 2 (Wednesday)	120	"Ancient Roots, Modern Intelligence: IKS Meets AI"	Appreciate the relevance of Indian Knowledge Systems and their integration with modern AI tools.	
+Module 5	Day 3 (Thursday)	120	Watching the Earth Live: AI‑Driven Environmental Insights	Gain hands‑on experience in visually analyzing real‑world environmental data using AI platforms.	
+Module 6 (Hands On)	Day 3 (Thursday)	120	Connecting Knowledge to Conservation	Consolidate foundational concepts and understand AI applications in biodiversity conservation.	
+Module 7	Day 4 (Friday)	120	"Risk, Responsibility, and Resilience in the Age of AI"	Understand the role of AI in disaster management along with ethical and sustainability considerations.	
+Module 8 (Hands On)	Day 4 (Friday)	120	From Ideas to Impact: Designing Solutions for Nature	Apply AI and IKS concepts collaboratively to design conceptual solutions for environmental problems.	
+Module 9	Day 5 (Saturday)	120	"Purpose, Pathways, and Perspectives"	"Explore future academic, career, and societal pathways in AI‑enabled environmental science."	
+Module 10 (Revision & valedictory)	Day 5 (Saturday)	120	"Integrating It All: Reflection, Revision, and the Road Ahead"	"Synthesize all learning outcomes to form a holistic perspective on AI, IKS, and environmental sustainability."	
+
+# Photo Gallery - Valedictory & Certification Distribution
+
+Img19.png to Img24.png
