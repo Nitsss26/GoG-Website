@@ -644,15 +644,15 @@ export const eventsData: EventData[] = [
 
     {
         id: 'msit-web3-session',
-        title: 'Maharaja Surajmal Institute of Technology — Web3.0 Session',
+        title: 'Web3.0 & Blockchain Session',
         tag: 'Session',
         tagline: 'The Next Internet Revolution',
         shortDescription: 'A technical deep-dive into the world of Web3.0, exploring decentralized applications and the future of digital ownership at MSIT Delhi.',
         date: 'November 2025',
-        venue: 'MSIT, Delhi',
+        venue: 'Maharaja Surajmal Institute of Technology, Delhi',
         organizedBy: 'Geeks of Gurukul × MSIT',
         inAssociationWith: 'MSIT Delhi',
-        cardImage: MSIT_1,
+        cardImage: MSIT_3,
         isActive: false,
         subEvents: [
             {
@@ -667,14 +667,43 @@ export const eventsData: EventData[] = [
             }
         ]
     },
+
+    {
+        id: 'ustm-data-analytics-workshop',
+        title: 'Data Analytics Workshop',
+        tag: 'Workshop',
+        tagline: 'Data Science for Meghalaya',
+        shortDescription: 'Technical sessions at USTM exploring advanced data analytics, predictive modeling, and business intelligence.',
+        date: 'April 2025',
+        venue: 'University of Science and Technology Meghalaya ',
+        organizedBy: 'Geeks of Gurukul × USTM',
+        inAssociationWith: 'USTM',
+        cardImage: USTM_2,
+        isActive: false,
+        subEvents: [
+            {
+                id: 'ustm-data',
+                title: 'Advanced Data Analytics',
+                summary: 'A deep dive into statistical modeling and the use of data for strategic decision-making in various industries.',
+                sessions: [
+                    { title: 'Predictive Modeling with Scikit-learn', learningOutcome: 'Build and evaluate predictive models using Python tools.' },
+                    { title: 'BI Dashboards with Tableau', learningOutcome: 'Create interactive visualizations to communicate data insights.' },
+                    { title: 'Data Cleaning and Preprocessing', learningOutcome: 'Master the techniques for handling missing data and outliers in large volumes.' },
+                    { title: 'Storytelling with Data', learningOutcome: 'Learn to create compelling narratives from complex statistical findings.' }
+                ],
+                images: [USTM_1, USTM_2, USTM_3, USTM_4]
+            }
+        ]
+    },
+
     {
         id: 'nri-group-web3-bootcamp',
-        title: 'NRI Group of Institutes — Web3.0 Bootcamp',
+        title: 'Web3.0 & Blockchain Bootcamp',
         tag: 'Bootcamp',
         tagline: 'Mastering the Decentralized Web',
         shortDescription: 'A hands-on bootcamp at NRI Group of Institutes covering the full spectrum of Web3 development from smart contracts to frontend integration.',
         date: 'November 2025',
-        venue: 'NRI Group, Bhopal',
+        venue: 'NRI Group of Institutes, Bhopal',
         organizedBy: 'Geeks of Gurukul × NRI Group',
         inAssociationWith: 'NRI Group of Institutes',
         cardImage: NRI_6,
@@ -692,48 +721,21 @@ export const eventsData: EventData[] = [
                     { title: 'Decentralized Finance (DeFi) Models', learningOutcome: 'Explore the mechanics of AMMs, lending protocols, and yield aggregators.' },
                     { title: 'DAO Governance Frameworks', learningOutcome: 'Understand how decentralized communities manage resources and make decisions.' }
                 ],
-                images: [NRI_6, NRI_7, NRI_8, NRI_4, NRI_5, NRI_1, NRI_2, NRI_3]
-            }
-        ]
-    },
-    {
-        id: 'ustm-data-analytics-workshop',
-        title: 'University of Science and Technology — Data Analytics Workshop',
-        tag: 'Workshop',
-        tagline: 'Data Science for Meghalaya',
-        shortDescription: 'Technical sessions at USTM exploring advanced data analytics, predictive modeling, and business intelligence.',
-        date: 'April 2025',
-        venue: 'USTM, Meghalaya',
-        organizedBy: 'Geeks of Gurukul × USTM',
-        inAssociationWith: 'USTM',
-        cardImage: USTM_1,
-        isActive: false,
-        subEvents: [
-            {
-                id: 'ustm-data',
-                title: 'Advanced Data Analytics',
-                summary: 'A deep dive into statistical modeling and the use of data for strategic decision-making in various industries.',
-                sessions: [
-                    { title: 'Predictive Modeling with Scikit-learn', learningOutcome: 'Build and evaluate predictive models using Python tools.' },
-                    { title: 'BI Dashboards with Tableau', learningOutcome: 'Create interactive visualizations to communicate data insights.' },
-                    { title: 'Data Cleaning and Preprocessing', learningOutcome: 'Master the techniques for handling missing data and outliers in large volumes.' },
-                    { title: 'Storytelling with Data', learningOutcome: 'Learn to create compelling narratives from complex statistical findings.' }
-                ],
-                images: [USTM_1, USTM_2, USTM_3, USTM_4]
+                images: [NRI_6, NRI_7, NRI_8, NRI_1, NRI_5, NRI_2]
             }
         ]
     },
     {
         id: 'oriental-group-ml-sessions',
-        title: 'Oriental Group of Institutions — Machine Learning Sessions',
-        tag: 'Sessions',
+        title: 'Machine Learning Bootcamp',
+        tag: 'Bootcamp',
         tagline: 'Neural Networks, Real Impact',
         shortDescription: 'Technical sessions at Oriental Group of Institutions diving deep into Machine Learning algorithms, mathematical foundations, and practical applications in predictive analytics.',
         date: 'October 2024',
         venue: 'Oriental Group of Institutions, Bhopal',
         organizedBy: 'Geeks of Gurukul × Oriental Group of Institutions',
         inAssociationWith: 'Oriental Group of Institutions',
-        cardImage: Oriental_PNG,
+        cardImage: 'https://i.postimg.cc/HxZFSqBw/IMG-7710.avif',
         isActive: false,
         subEvents: [
             {
@@ -769,15 +771,15 @@ export const eventsData: EventData[] = [
     },
     {
         id: 'sagar-institute-fullstack-bootcamp',
-        title: 'Sagar Institute of Science Technology and Research — Full Stack Development Bootcamp',
-        tag: 'Bootcamp',
+        title: 'Web Development Workshop',
+        tag: 'Workshop',
         tagline: 'Code. Deploy. Scale.',
         shortDescription: 'A multi-day hands-on bootcamp at Sagar Institute of Science Technology and Research covering full-stack web development with modern frameworks, responsive UI design, and backend API development.',
         date: 'April 2024',
         venue: 'Sagar Institute of Science Technology and Research, Bhopal',
         organizedBy: 'Geeks of Gurukul × Sagar Institute of Science Technology and Research',
         inAssociationWith: 'Sagar Institute of Science Technology and Research',
-        cardImage: Sagar_1,
+        cardImage: Sagar_7,
         isActive: false,
         subEvents: [
             {
@@ -810,13 +812,13 @@ export const eventsData: EventData[] = [
                         learningOutcome: 'Learn to package and deploy applications consistently across different environments.'
                     }
                 ],
-                images: [Sagar_1, Sagar_2, Sagar_3, Sagar_4, Sagar_5, Sagar_6, Sagar_7, Sagar_8]
+                images: [Sagar_1, Sagar_2, Sagar_3, Sagar_4, Sagar_5, Sagar_6, Sagar_7, Sagar_8, Sagar_2]
             }
         ]
     },
     {
         id: 'sam-global-cybersecurity-workshop',
-        title: 'SAM Global University — Cybersecurity Workshop',
+        title: 'Cybersecurity Workshop',
         tag: 'Workshop',
         tagline: 'Defend. Detect. Disrupt.',
         shortDescription: 'A practical workshop at SAM Global University exploring cybersecurity fundamentals, threat analysis, network security protocols, and ethical hacking practices.',
@@ -854,12 +856,39 @@ export const eventsData: EventData[] = [
         ]
     },
     {
+        id: 'rgu-web3-bootcamp',
+        title: 'Web3.0 & Blockchain Bootcamp',
+        tag: 'Bootcamp',
+        tagline: 'Unleashing Web3 in Guwahati',
+        shortDescription: 'A multi-day bootcamp at Royal Global University focused on building the next generation of Web3 developers in Assam.',
+        date: 'July 2023',
+        venue: 'Royal Global University, Guwahati',
+        organizedBy: 'Geeks of Gurukul × RGU',
+        inAssociationWith: 'Royal Global University',
+        cardImage: RGU_1,
+        isActive: false,
+        subEvents: [
+            {
+                id: 'rgu-web3',
+                title: 'Web3 Development Intensive',
+                summary: 'Participants delved into the intricacies of smart contract development and the economic models of decentralized networks.',
+                sessions: [
+                    { title: 'Tokenomics Design', learningOutcome: 'Learn the principles of designing sustainable economic models for tokens.' },
+                    { title: 'DAO Governance Models', learningOutcome: 'Analyze different structures for decentralized autonomous organizations.' },
+                    { title: 'IPFS and Decentralized Storage', learningOutcome: 'Learn to store and retrieve data without relying on central servers.' },
+                    { title: 'Web3 Security Patterns', learningOutcome: 'Implement industry-standard practices to secure decentralized applications.' }
+                ],
+                images: [RGU_1, RGU_2, RGU_3, RGU_4]
+            }
+        ]
+    },
+    {
         id: 'sirt-sage-python-automation-workshop',
-        title: 'SIRT Sage Group of Institution — Python Automation Workshop',
+        title: 'Python Automation Workshop',
         tag: 'Workshop',
         tagline: 'Automate Everything',
         shortDescription: 'A hands-on workshop at SIRT Sage Group of Institution exploring Python programming, scripting for automation, and building intelligent bots for productivity tasks.',
-        date: 'August 2022',
+        date: 'August 2023',
         venue: 'SIRT Sage Group of Institution, Bhopal',
         organizedBy: 'Geeks of Gurukul × SIRT Sage Group of Institution',
         inAssociationWith: 'SIRT Sage Group of Institution',
@@ -892,36 +921,10 @@ export const eventsData: EventData[] = [
             }
         ]
     },
-    {
-        id: 'rgu-web3-bootcamp',
-        title: 'Royal Global University — Web3.0 Bootcamp',
-        tag: 'Bootcamp',
-        tagline: 'Unleashing Web3 in Guwahati',
-        shortDescription: 'A multi-day bootcamp at Royal Global University focused on building the next generation of Web3 developers in Assam.',
-        date: 'July 2024',
-        venue: 'RGU, Guwahati',
-        organizedBy: 'Geeks of Gurukul × RGU',
-        inAssociationWith: 'Royal Global University',
-        cardImage: RGU_1,
-        isActive: false,
-        subEvents: [
-            {
-                id: 'rgu-web3',
-                title: 'Web3 Development Intensive',
-                summary: 'Participants delved into the intricacies of smart contract development and the economic models of decentralized networks.',
-                sessions: [
-                    { title: 'Tokenomics Design', learningOutcome: 'Learn the principles of designing sustainable economic models for tokens.' },
-                    { title: 'DAO Governance Models', learningOutcome: 'Analyze different structures for decentralized autonomous organizations.' },
-                    { title: 'IPFS and Decentralized Storage', learningOutcome: 'Learn to store and retrieve data without relying on central servers.' },
-                    { title: 'Web3 Security Patterns', learningOutcome: 'Implement industry-standard practices to secure decentralized applications.' }
-                ],
-                images: [RGU_1, RGU_2, RGU_3, RGU_4]
-            }
-        ]
-    },
+
     {
         id: 'adbu-web3-workshop',
-        title: 'Assam Don Bosco University — Web3.0 Workshop',
+        title: 'Web3.0 & Blockchain Workshop',
         tag: 'Workshop',
         tagline: 'Guwahati Goes Decentralized',
         shortDescription: 'Empowering students in Northeast India with Web3.0 skills, covering dApp development and the decentralized web at ADBU.',

@@ -106,9 +106,10 @@ const EventPage: React.FC = () => {
             if (foundEvent) {
                 setEvent(foundEvent);
                 // Check if it's a BU or PM-UShA event to enable premium view by default
-                const isBU = foundEvent.title.toLowerCase().includes('barkatullah') || 
+                const isBU = (foundEvent.title.toLowerCase().includes('barkatullah') || 
                              foundEvent.id.includes('usha') || 
-                             foundEvent.id.toLowerCase().includes('bu-');
+                             foundEvent.id.toLowerCase().includes('bu-')) && 
+                             !foundEvent.id.toLowerCase().includes('adbu');
                 setIsPremiumDesign(isBU);
             }
         }
@@ -134,7 +135,7 @@ const EventPage: React.FC = () => {
             />
 
             {/* Design Toggle Floating Button - Only for BU events */}
-            {(event.title.toLowerCase().includes('barkatullah') || event.id.includes('usha') || event.id.toLowerCase().includes('bu-')) && (
+            {((event.title.toLowerCase().includes('barkatullah') || event.id.includes('usha') || event.id.toLowerCase().includes('bu-')) && !event.id.toLowerCase().includes('adbu')) && (
                 <div className="fixed bottom-8 right-8 z-[100]">
                     <button
                         onClick={() => setIsPremiumDesign(!isPremiumDesign)}

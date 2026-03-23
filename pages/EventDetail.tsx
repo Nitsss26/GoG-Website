@@ -101,8 +101,9 @@ const EventDetail: React.FC = () => {
             if (foundEvent) {
                 setEvent(foundEvent);
                 // Check if it's a BU event to determine default design
-                const isBU = foundEvent.title.toLowerCase().includes('barkatullah') ||
-                    foundEvent.id.toLowerCase().includes('bu-');
+                const isBU = (foundEvent.title.toLowerCase().includes('barkatullah') ||
+                    foundEvent.id.toLowerCase().includes('bu-')) && 
+                    !foundEvent.id.toLowerCase().includes('adbu');
                 const isPmUsha = foundEvent.id === 'pm-usha-bu-2026';
 
                 // BU events are premium by default, EXCEPT for the main PM-UShA landing which defaults to classic as requested

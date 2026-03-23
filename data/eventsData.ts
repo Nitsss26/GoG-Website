@@ -121,6 +121,8 @@ import IPS_3 from '../assets/Events/Institute_of_Engineering_and_Science_IPS_Aca
 // @ts-ignore
 import IPS_4 from '../assets/Events/Institute_of_Engineering_and_Science_IPS_Academy/IMG-20231209-WA0048.jpg';
 
+import IPS_5 from '../assets/ch.jpg';
+
 // Oriental Group of Institution — HEIC files → AVIF hosted links + 1 PNG
 // @ts-ignore
 import Oriental_PNG from '../assets/Events/Oriental_Group_of_Institution/Screenshot 2026-02-26 082114.png';
@@ -508,7 +510,7 @@ import Irfan_Img from '../assets/PM-USHA/International_Seminar_on_Education,_Emp
 export const eventsData: EventData[] = [
     {
         id: 'pm-usha-bu-2026',
-        title: 'BARKATULLAH UNIVERSITY BHOPAL — PM-UShA PROGRAM',
+        title: 'PM-UShA PROGRAMS',
         tag: 'Workshop',
         tagline: 'Empowering the Future: Green Energy, IKS & AI',
         shortDescription: 'A flagship series of training workshops organized under the PM-UShA scheme at Barkatullah University, focusing on Green Energy, Indian Knowledge Systems, Artificial Intelligence, Career Counselling, Faculty Development Program, and Research Methodology, International Seminar on Education, Employment and Entrepreneurship for Vikshit Bharat 2047.',
@@ -1142,8 +1144,110 @@ export const eventsData: EventData[] = [
         ]
     },
     {
+        id: 'iit-mandi-web3-blockchain',
+        title: 'WEB 3.0 & BLOCKCHAIN WORKSHOP',
+        tag: 'Workshop',
+        tagline: 'Building the Decentralized Future',
+        shortDescription: 'An exclusive dual-track programme at IIT Mandi delving into the core of Web 3.0 and Blockchain technology. Featuring expert-led sessions on decentralized systems and smart contract audits.',
+        date: 'June 2024',
+        venue: 'IIT Mandi, Himachal Pradesh',
+        organizedBy: 'Geeks of Gurukul × IIT Mandi',
+        inAssociationWith: 'IIT Mandi Catalyst',
+        cardImage: IITM_5,
+        videoUrls: [IITM_V1, IITM_V2],
+        isActive: false,
+        subEvents: [
+            {
+                id: 'iitm-web3',
+                title: 'Web 3.0 & Blockchain Deep Dive',
+                summary: 'A comprehensive workshop exploring the fundamentals of Web 3.0, decentralized finance, and the technical architecture of modern blockchain networks. Students gained hands-on experience with decentralized identity and smart contract security.',
+                sessions: [
+                    { title: 'The Web 3.0 Paradigm Shift', learningOutcome: 'Understand the evolution from centralized to decentralized web architectures.' },
+                    { title: 'Blockchain Consensus & Governance', learningOutcome: 'Analyze different consensus mechanisms and their impact on network security.' },
+                    { title: 'Smart Contract Auditing', learningOutcome: 'Identify common vulnerabilities in smart contracts and learn best practices for audits.' },
+                    { title: 'Decentralized Identity', learningOutcome: 'Understand the concept of decentralized identity and its applications.' },
+                    { title: 'Decentralized Autonomous Organizations (DAOs)', learningOutcome: 'Understand the governance models and operational structures of community-led organizations.' },
+                    { title: 'Web3 Ecosystem and Future Trends', learningOutcome: 'Explore the broader impact of Web3 on digital ownership, privacy, and the next-generation internet.' }
+                ],
+                images: [IITM_1, IITM_5, IITM_3, IITM_4, IITM_6, IITM_2]
+            }
+        ]
+    },
+    {
+        id: 'iiit-bhopal-blockchain',
+        title: 'BLOCKCHAIN TECHNICAL BOOTCAMP',
+        tag: 'Bootcamp',
+        tagline: 'Future of Fintech',
+        shortDescription: 'A specialized session at IIIT Bhopal exploring the intersection of Blockchain and Financial Technology.',
+        date: 'October 2025',
+        venue: 'IIIT Bhopal',
+        organizedBy: 'Geeks of Gurukul × IIIT Bhopal',
+        inAssociationWith: 'IIIT Bhopal',
+        cardImage: IIITB_1,
+        isActive: false,
+        subEvents: [
+            {
+                id: 'iiitb-blockchain',
+                title: 'Blockchain & Fintech Innovation',
+                summary: 'Discussing the role of decentralized ledger technology in revolutionizing banking, payments, and trade finance.',
+                sessions: [
+                    { title: 'DeFi Protocols Explained', learningOutcome: 'Understand how decentralized finance protocols operate without intermediaries.' },
+                    { title: 'RegTech & Compliance', learningOutcome: 'Explore the regulatory landscape for blockchain technologies.' },
+                    { title: 'Web3 and Identity', learningOutcome: 'Explore decentralized identity solutions and self-sovereign data management.' },
+                    { title: 'Smart Contract Auditing Fundamentals', learningOutcome: 'Learn the basics of identifying and mitigating vulnerabilities in blockchain code.' }
+                ],
+                images: [IIITB_4, IIITB_2, IIITB_3, IIITB_1]
+            }
+        ]
+    },
+
+
+
+
+
+
+    {
+        id: 'ips-academy-ai-seminar',
+        title: 'ARTIFICIAL INTELLIGENCE SEMINAR',
+        tag: 'Seminar',
+        tagline: 'Intelligence Reimagined',
+        shortDescription: 'A focused seminar at Institute of Engineering and Science IPS Academy exploring the foundations of Artificial Intelligence, neural networks, and its transformative impact on modern engineering industries.',
+        date: 'March 2025',
+        venue: 'Institute of Engineering and Science IPS Academy, Indore',
+        organizedBy: 'Geeks of Gurukul × Institute of Engineering and Science IPS Academy',
+        inAssociationWith: 'Institute of Engineering and Science IPS Academy',
+        cardImage: IPS_5,
+        isActive: false,
+        subEvents: [
+            {
+                id: 'ips-ai',
+                title: 'Artificial Intelligence Seminar',
+                summary: 'A comprehensive seminar exploring the core concepts of Artificial Intelligence, including machine learning, neural networks, and problem-solving through intelligent agents. Students delved into industry-leading AI models and analyzed their applications in real-world scenarios.',
+                sessions: [
+                    {
+                        title: 'Foundations of Artificial Intelligence',
+                        learningOutcome: 'Understand the core principles, history, and different paradigms of AI systems.'
+                    },
+                    {
+                        title: 'Neural Networks & Deep Learning',
+                        learningOutcome: 'Explore the architecture of artificial neural networks and how they learn from large datasets.'
+                    },
+                    {
+                        title: 'Natural Language Processing (NLP)',
+                        learningOutcome: 'Understand how AI models process and generate human language for various applications.'
+                    },
+                    {
+                        title: 'AI Ethics and Future Impact',
+                        learningOutcome: 'Discuss the ethical considerations and societal implications of rapidly advancing AI technologies.'
+                    }
+                ],
+                images: [IPS_4, IPS_1, IPS_2, IPS_3]
+            }
+        ]
+    },
+    {
         id: 'bansal-blockchain-bootcamp',
-        title: 'BANSAL GROUP OF INSTITUTIONS — BLOCKCHAIN BOOTCAMP',
+        title: 'WEB3.0 & BLOCKCHAIN BOOTCAMP',
         tag: 'Bootcamp',
         tagline: 'Decentralized Future Starts Here',
         shortDescription: 'An intensive hands-on bootcamp at Bansal Group of Institutions covering Blockchain fundamentals, distributed ledger technology, consensus mechanisms, and smart contract development with real-world industry use cases.',
@@ -1189,105 +1293,9 @@ export const eventsData: EventData[] = [
         ]
     },
     {
-        id: 'iit-mandi-web3-blockchain',
-        title: 'IIT MANDI — WEB 3.0 & BLOCKCHAIN WORKSHOP',
-        tag: 'Workshop',
-        tagline: 'Building the Decentralized Future',
-        shortDescription: 'An exclusive dual-track programme at IIT Mandi delving into the core of Web 3.0 and Blockchain technology. Featuring expert-led sessions on decentralized systems and smart contract audits.',
-        date: 'June 2024',
-        venue: 'IIT Mandi, Himachal Pradesh',
-        organizedBy: 'Geeks of Gurukul × IIT Mandi',
-        inAssociationWith: 'IIT Mandi Catalyst',
-        cardImage: IITM_1,
-        videoUrls: [IITM_V1, IITM_V2],
-        isActive: false,
-        subEvents: [
-            {
-                id: 'iitm-web3',
-                title: 'Web 3.0 & Blockchain Deep Dive',
-                summary: 'A comprehensive workshop exploring the fundamentals of Web 3.0, decentralized finance, and the technical architecture of modern blockchain networks. Students gained hands-on experience with decentralized identity and smart contract security.',
-                sessions: [
-                    { title: 'The Web 3.0 Paradigm Shift', learningOutcome: 'Understand the evolution from centralized to decentralized web architectures.' },
-                    { title: 'Blockchain Consensus & Governance', learningOutcome: 'Analyze different consensus mechanisms and their impact on network security.' },
-                    { title: 'Smart Contract Auditing', learningOutcome: 'Identify common vulnerabilities in smart contracts and learn best practices for audits.' },
-                    { title: 'Decentralized Identity', learningOutcome: 'Understand the concept of decentralized identity and its applications.' },
-                    { title: 'Decentralized Autonomous Organizations (DAOs)', learningOutcome: 'Understand the governance models and operational structures of community-led organizations.' },
-                    { title: 'Web3 Ecosystem and Future Trends', learningOutcome: 'Explore the broader impact of Web3 on digital ownership, privacy, and the next-generation internet.' }
-                ],
-                images: [IITM_1, IITM_5, IITM_3, IITM_4, IITM_6, IITM_2]
-            }
-        ]
-    },
-    {
-        id: 'ips-academy-ai-seminar',
-        title: 'INSTITUTE OF ENGINEERING AND SCIENCE IPS ACADEMY — ARTIFICIAL INTELLIGENCE SEMINAR',
-        tag: 'Seminar',
-        tagline: 'Intelligence Reimagined',
-        shortDescription: 'A focused seminar at Institute of Engineering and Science IPS Academy exploring the foundations of Artificial Intelligence, neural networks, and its transformative impact on modern engineering industries.',
-        date: 'March 2025',
-        venue: 'Institute of Engineering and Science IPS Academy, Indore',
-        organizedBy: 'Geeks of Gurukul × Institute of Engineering and Science IPS Academy',
-        inAssociationWith: 'Institute of Engineering and Science IPS Academy',
-        cardImage: IPS_4,
-        isActive: false,
-        subEvents: [
-            {
-                id: 'ips-ai',
-                title: 'Artificial Intelligence Seminar',
-                summary: 'A comprehensive seminar exploring the core concepts of Artificial Intelligence, including machine learning, neural networks, and problem-solving through intelligent agents. Students delved into industry-leading AI models and analyzed their applications in real-world scenarios.',
-                sessions: [
-                    {
-                        title: 'Foundations of Artificial Intelligence',
-                        learningOutcome: 'Understand the core principles, history, and different paradigms of AI systems.'
-                    },
-                    {
-                        title: 'Neural Networks & Deep Learning',
-                        learningOutcome: 'Explore the architecture of artificial neural networks and how they learn from large datasets.'
-                    },
-                    {
-                        title: 'Natural Language Processing (NLP)',
-                        learningOutcome: 'Understand how AI models process and generate human language for various applications.'
-                    },
-                    {
-                        title: 'AI Ethics and Future Impact',
-                        learningOutcome: 'Discuss the ethical considerations and societal implications of rapidly advancing AI technologies.'
-                    }
-                ],
-                images: [IPS_4, IPS_1, IPS_2, IPS_3]
-            }
-        ]
-    },
-    {
-        id: 'iiit-bhopal-blockchain',
-        title: 'IIIT BHOPAL — BLOCKCHAIN TECHNICAL SESSION',
-        tag: 'Session',
-        tagline: 'Future of Fintech',
-        shortDescription: 'A specialized session at IIIT Bhopal exploring the intersection of Blockchain and Financial Technology.',
-        date: 'October 2025',
-        venue: 'IIIT Bhopal',
-        organizedBy: 'Geeks of Gurukul × IIIT Bhopal',
-        inAssociationWith: 'IIIT Bhopal',
-        cardImage: IIITB_1,
-        isActive: false,
-        subEvents: [
-            {
-                id: 'iiitb-blockchain',
-                title: 'Blockchain & Fintech Innovation',
-                summary: 'Discussing the role of decentralized ledger technology in revolutionizing banking, payments, and trade finance.',
-                sessions: [
-                    { title: 'DeFi Protocols Explained', learningOutcome: 'Understand how decentralized finance protocols operate without intermediaries.' },
-                    { title: 'RegTech & Compliance', learningOutcome: 'Explore the regulatory landscape for blockchain technologies.' },
-                    { title: 'Web3 and Identity', learningOutcome: 'Explore decentralized identity solutions and self-sovereign data management.' },
-                    { title: 'Smart Contract Auditing Fundamentals', learningOutcome: 'Learn the basics of identifying and mitigating vulnerabilities in blockchain code.' }
-                ],
-                images: [IIITB_4, IIITB_2, IIITB_3, IIITB_1]
-            }
-        ]
-    },
-    {
         id: 'chirayu-blockchain-bootcamp',
-        title: 'CHIRAYU UNIVERSITY — BLOCKCHAIN BOOTCAMP',
-        tag: 'Bootcamp',
+        title: 'AI & BLOCKCHAIN WORKSHOP',
+        tag: 'Workshop',
         tagline: 'Architecting Trust',
         shortDescription: 'An intensive bootcamp focusing on blockchain architecture, cryptographic proofs, and enterprise blockchain solutions at Chirayu University.',
         date: 'November 2025',
@@ -1311,38 +1319,10 @@ export const eventsData: EventData[] = [
             }
         ]
     },
-    {
-        id: 'himalayan-blockchain-workshop',
-        title: 'Himalayan University — Blockchain & Web3 Workshop',
-        tag: 'Workshop',
-        tagline: 'Decentralizing the Himalayas',
-        shortDescription: 'A comprehensive workshop at Himalayan University exploring Blockchain technology, Web3 fundamentals, and decentralized application development.',
-        date: 'December 2024',
-        venue: 'Himalayan University, Arunachal Pradesh',
-        organizedBy: 'Geeks of Gurukul × Himalayan University',
-        inAssociationWith: 'Himalayan University',
-        cardImage: Himalayan_1,
-        isActive: false,
-        subEvents: [
-            {
-                id: 'himalayan-web3',
-                title: 'Blockchain & Web3 Foundations',
-                summary: 'A technical workshop covering the essentials of blockchain architecture and the transition to Web3.',
-                sessions: [
-                    { title: 'Introduction to Web3', learningOutcome: 'Understand the core concepts of the decentralized web.' },
-                    { title: 'Smart Contract Basics', learningOutcome: 'Learn the fundamentals of writing smart contracts.' },
-                    { title: 'DeFi and Yield Farming', learningOutcome: 'Understand decentralized liquidity pools and modern financial instruments.' },
-                    { title: 'Web3 Infrastructure and Nodes', learningOutcome: 'Explore the hardware and software layers that support decentralized networks.' },
-                    { title: 'Governance and Consensus Models', learningOutcome: 'A deep dive into how decisions are made across distributed communities.' },
-                    { title: 'Building Your First dApp', learningOutcome: 'Learn the end-to-end process of developing and deploying a decentralized application.' }
-                ],
-                images: [Himalayan_1, Himalayan_2, Himalayan_3, Himalayan_4, Himalayan_5, Himalayan_6]
-            }
-        ]
-    },
+
     {
         id: 'mit-shillong-aiml',
-        title: 'MIT Shillong — AI & ML Bootcamp',
+        title: 'AI & Machin Learning Bootcamp',
         tag: 'Bootcamp',
         tagline: 'Intelligence from the Hills',
         shortDescription: 'A comprehensive AI & ML bootcamp at MIT Shillong, covering supervised learning, neural networks, and computer vision.',
@@ -1350,7 +1330,7 @@ export const eventsData: EventData[] = [
         venue: 'MIT Shillong, Meghalaya',
         organizedBy: 'Geeks of Gurukul × MIT Shillong',
         inAssociationWith: 'MIT Shillong',
-        cardImage: MITS_1,
+        cardImage: MITS_6,
         isActive: false,
         subEvents: [
             {
@@ -1369,10 +1349,11 @@ export const eventsData: EventData[] = [
             }
         ]
     },
+
     {
         id: 'srkgi-data-analytics',
-        title: 'Shivji Rao Kadam Group of Institute — Data Analytics',
-        tag: 'Sessions',
+        title: 'Data Analytics Workshop',
+        tag: 'Workshop',
         tagline: 'Decoding Data for Smarter Decisions',
         shortDescription: 'A practical workshop at Shivji Rao Kadam Group of Institute covering Data Analytics pipelines, statistical modeling, data visualization, and real-world insight generation.',
         date: 'March 2023',
@@ -1412,7 +1393,36 @@ export const eventsData: EventData[] = [
                         learningOutcome: 'Understand the legal and ethical framework for responsible data management and protection.'
                     }
                 ],
-                images: [SRKGI_5, SRKGI_1, SRKGI_2, SRKGI_3, SRKGI_6, SRKGI_7, SRKGI_4]
+                images: [SRKGI_5, SRKGI_1, SRKGI_2, SRKGI_3, SRKGI_6, SRKGI_7]
+            }
+        ]
+    },
+    {
+        id: 'himalayan-blockchain-workshop',
+        title: 'BLOCKCHAIN & WEB3 BOOTCAMP',
+        tag: 'Bootcamp',
+        tagline: 'Decentralizing the Himalayas',
+        shortDescription: 'A comprehensive workshop at Himalayan University exploring Blockchain technology, Web3 fundamentals, and decentralized application development.',
+        date: 'December 2024',
+        venue: 'Himalayan University, Arunachal Pradesh',
+        organizedBy: 'Geeks of Gurukul × Himalayan University',
+        inAssociationWith: 'Himalayan University',
+        cardImage: Himalayan_4,
+        isActive: false,
+        subEvents: [
+            {
+                id: 'himalayan-web3',
+                title: 'Blockchain & Web3 Foundations',
+                summary: 'A technical workshop covering the essentials of blockchain architecture and the transition to Web3.',
+                sessions: [
+                    { title: 'Introduction to Web3', learningOutcome: 'Understand the core concepts of the decentralized web.' },
+                    { title: 'Smart Contract Basics', learningOutcome: 'Learn the fundamentals of writing smart contracts.' },
+                    { title: 'DeFi and Yield Farming', learningOutcome: 'Understand decentralized liquidity pools and modern financial instruments.' },
+                    { title: 'Web3 Infrastructure and Nodes', learningOutcome: 'Explore the hardware and software layers that support decentralized networks.' },
+                    { title: 'Governance and Consensus Models', learningOutcome: 'A deep dive into how decisions are made across distributed communities.' },
+                    { title: 'Building Your First dApp', learningOutcome: 'Learn the end-to-end process of developing and deploying a decentralized application.' }
+                ],
+                images: [Himalayan_1, Himalayan_2, Himalayan_3, Himalayan_4, Himalayan_5, Himalayan_6]
             }
         ]
     },
