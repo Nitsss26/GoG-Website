@@ -1355,7 +1355,7 @@ const EventModal: React.FC<{ event: EventData; onClose: () => void }> = ({ event
                                             >
                                                 <div className="flex items-center gap-2">
                                                     <div className="w-2 h-2 rounded-full bg-[#34D562] animate-pulse" />
-                                                    <span className="text-white/80 text-[10px] font-black tracking-widest uppercase">PM-USHA</span>
+                                                    <span className="text-white/80 text-[10px] font-black tracking-widest">PM-UShA</span>
                                                 </div>
                                                 {sub.date && (
                                                     <span className="text-[#34D562] text-[9px] font-bold tracking-tighter uppercase italic">{sub.date}</span>
@@ -1364,7 +1364,7 @@ const EventModal: React.FC<{ event: EventData; onClose: () => void }> = ({ event
 
                                             <div className="w-full mt-auto">
                                                 {/* Title - Reduced size more for perfection */}
-                                                <h3 className="text-lg md:text-xl font-black text-white leading-tight tracking-tight uppercase italic mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,1)] group-hover:text-[#34D562] transition-colors duration-500">
+                                                <h3 className="text-lg md:text-xl font-black text-white leading-tight tracking-tight italic mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,1)] group-hover:text-[#34D562] transition-colors duration-500">
                                                     {sub.title}
                                                 </h3>
 
@@ -1621,7 +1621,7 @@ const EventCard: React.FC<{ event: EventData; onClick: () => void }> = ({ event,
                         {/* Tech Badges Row */}
                         <div className="flex items-center gap-3 mb-4">
                             <div className="px-3 py-1 bg-[#34D562] border border-[#34D562] shadow-[0_0_15px_rgba(52,213,98,0.4)]">
-                                <span className="text-black text-[9px] font-black uppercase tracking-tighter italic">{event.tag}</span>
+                                <span className="text-black text-[9px] font-black tracking-tighter uppercase italic">{event.tag}</span>
                             </div>
                             <div className="h-4 w-px bg-white/10" />
                             <div className="flex items-center gap-1.5 opacity-80">
@@ -1639,7 +1639,7 @@ const EventCard: React.FC<{ event: EventData; onClick: () => void }> = ({ event,
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-base md:text-lg font-black text-white leading-[1.1] tracking-tighter uppercase italic group-hover:text-[#34D562] transition-colors duration-400">
+                        <h3 className="text-base md:text-lg font-black text-white leading-[1.1] tracking-tighter italic group-hover:text-[#34D562] transition-colors duration-400">
                             {event.title}
                         </h3>
                     </div>

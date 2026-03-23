@@ -15,6 +15,7 @@ export const NAV_ITEMS: NavItem[] = [
       { label: 'Aptos', href: '/blockchain/aptos' },
     ]
   },
+  { label: 'Events', href: '/events' },
   { label: 'Our Partnered Institutes', href: '/partnered-colleges' },
   { label: 'Our Team', href: '/teams' },
   { label: 'B2G Initiatives', href: '/our-social-impact' },
@@ -22,7 +23,6 @@ export const NAV_ITEMS: NavItem[] = [
     label: 'More',
     href: '#',
     children: [
-      { label: 'Events', href: '/events' },
       { label: 'Our Culture', href: '/culture' },
       { label: 'Careers', href: '/careers' },
       { label: 'Programs', href: '/programs' },

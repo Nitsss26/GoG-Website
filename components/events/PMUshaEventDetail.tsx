@@ -67,7 +67,7 @@ const PMUshaEventDetail: React.FC<PMUshaEventDetailProps> = ({ event, selectedSu
                         animate={{ opacity: 1, scale: 1 }}
                         className="max-w-6xl"
                     >
-                        <h3 className="text-3xl md:text-4xl lg:text-6xl font-black text-white mb-6 md:mb-24 leading-[0.9] tracking-tighter italic drop-shadow-[0_0_50px_rgba(255,255,255,0.2)]">
+                        <h3 className="text-3xl md:text-4xl lg:text-6xl font-black text-white mb-6 md:mb-24 leading-[0.9] tracking-tighter italic drop-shadow-[0_0_50px_rgba(255,255,255,0.2)] normal-case">
                             BARKATULLAH UNIVERSITY BHOPAL <br /> PM-UShA PROGRAM
                         </h3>
                         {/* <span className="inline-block px-8 py-2 md:py-3 rounded-full bg-[#34D562] text-black text-[9px] md:text-[10px] font-black tracking-[0.4em] uppercase mb-6 md:mb-10 shadow-[0_0_30px_#34D562]">

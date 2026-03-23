@@ -406,7 +406,7 @@ import Career_Gf_4 from '../assets/PM-USHA/Training_Program_on_Career_Guidance_a
 import Career_Rf_1 from '../assets/PM-USHA/Training_Program_on_Career_Guidance_and_Placement/Rf1.jpg';
 import Career_Rf_2 from '../assets/PM-USHA/Training_Program_on_Career_Guidance_and_Placement/Rf2.jpg';
 import Career_Rf_3 from '../assets/PM-USHA/Training_Program_on_Career_Guidance_and_Placement/Rf3.jpg';
-import Career_Rf_4 from '../assets/PM-USHA/Training_Program_on_Career_Guidance_and_Placement/Rf4.jpg';
+import Career_Rf_4 from '../assets/PM-USHA/Training_Program_on_Career_Guidance_and_Placement/Rf4.png';
 import Career_Train_1 from '../assets/PM-USHA/Training_Program_on_Career_Guidance_and_Placement/T1.jpg';
 import Career_Train_2 from '../assets/PM-USHA/Training_Program_on_Career_Guidance_and_Placement/T2.jpg';
 import Career_Train_3 from '../assets/PM-USHA/Training_Program_on_Career_Guidance_and_Placement/T3.jpg';
@@ -417,7 +417,7 @@ import Career_Val_1 from '../assets/PM-USHA/Training_Program_on_Career_Guidance_
 import Career_Val_2 from '../assets/PM-USHA/Training_Program_on_Career_Guidance_and_Placement/2nd.png';
 import Career_Val_3 from '../assets/PM-USHA/Training_Program_on_Career_Guidance_and_Placement/3rd.png';
 import Career_Val_4 from '../assets/PM-USHA/Training_Program_on_Career_Guidance_and_Placement/4th.jpg';
-import Career_Val_5 from '../assets/PM-USHA/Training_Program_on_Career_Guidance_and_Placement/5th.jpg';
+import Career_Val_5 from '../assets/PM-USHA/Training_Program_on_Career_Guidance_and_Placement/5th.png';
 import Career_Val_6 from '../assets/PM-USHA/Training_Program_on_Career_Guidance_and_Placement/6th.png';
 import Career_Press from '../assets/PM-USHA/Training_Program_on_Career_Guidance_and_Placement/N1.jpg';
 import Career_Ref_1 from '../assets/PM-USHA/Training_Program_on_Career_Guidance_and_Placement/Ref1.png';
@@ -508,7 +508,7 @@ import Irfan_Img from '../assets/PM-USHA/International_Seminar_on_Education,_Emp
 export const eventsData: EventData[] = [
     {
         id: 'pm-usha-bu-2026',
-        title: 'Barkatullah University Bhopal — PM-UShA Program',
+        title: 'BARKATULLAH UNIVERSITY BHOPAL — PM-UShA PROGRAM',
         tag: 'Workshop',
         tagline: 'Empowering the Future: Green Energy, IKS & AI',
         shortDescription: 'A flagship series of training workshops organized under the PM-UShA scheme at Barkatullah University, focusing on Green Energy, Indian Knowledge Systems, Artificial Intelligence, Career Counselling, Faculty Development Program, and Research Methodology, International Seminar on Education, Employment and Entrepreneurship for Vikshit Bharat 2047.',
@@ -1143,7 +1143,7 @@ export const eventsData: EventData[] = [
     },
     {
         id: 'bansal-blockchain-bootcamp',
-        title: 'Bansal Group of Institutions — Blockchain Bootcamp',
+        title: 'BANSAL GROUP OF INSTITUTIONS — BLOCKCHAIN BOOTCAMP',
         tag: 'Bootcamp',
         tagline: 'Decentralized Future Starts Here',
         shortDescription: 'An intensive hands-on bootcamp at Bansal Group of Institutions covering Blockchain fundamentals, distributed ledger technology, consensus mechanisms, and smart contract development with real-world industry use cases.',
@@ -1190,7 +1190,7 @@ export const eventsData: EventData[] = [
     },
     {
         id: 'iit-mandi-web3-blockchain',
-        title: 'IIT Mandi — Web 3.0 & Blockchain Workshop',
+        title: 'IIT MANDI — WEB 3.0 & BLOCKCHAIN WORKSHOP',
         tag: 'Workshop',
         tagline: 'Building the Decentralized Future',
         shortDescription: 'An exclusive dual-track programme at IIT Mandi delving into the core of Web 3.0 and Blockchain technology. Featuring expert-led sessions on decentralized systems and smart contract audits.',
@@ -1220,7 +1220,7 @@ export const eventsData: EventData[] = [
     },
     {
         id: 'ips-academy-ai-seminar',
-        title: 'Institute of Engineering and Science IPS Academy — Artificial Intelligence Seminar',
+        title: 'INSTITUTE OF ENGINEERING AND SCIENCE IPS ACADEMY — ARTIFICIAL INTELLIGENCE SEMINAR',
         tag: 'Seminar',
         tagline: 'Intelligence Reimagined',
         shortDescription: 'A focused seminar at Institute of Engineering and Science IPS Academy exploring the foundations of Artificial Intelligence, neural networks, and its transformative impact on modern engineering industries.',
@@ -1259,7 +1259,7 @@ export const eventsData: EventData[] = [
     },
     {
         id: 'iiit-bhopal-blockchain',
-        title: 'IIIT Bhopal — Blockchain Technical Session',
+        title: 'IIIT BHOPAL — BLOCKCHAIN TECHNICAL SESSION',
         tag: 'Session',
         tagline: 'Future of Fintech',
         shortDescription: 'A specialized session at IIIT Bhopal exploring the intersection of Blockchain and Financial Technology.',
@@ -1286,7 +1286,7 @@ export const eventsData: EventData[] = [
     },
     {
         id: 'chirayu-blockchain-bootcamp',
-        title: 'Chirayu University — Blockchain Bootcamp',
+        title: 'CHIRAYU UNIVERSITY — BLOCKCHAIN BOOTCAMP',
         tag: 'Bootcamp',
         tagline: 'Architecting Trust',
         shortDescription: 'An intensive bootcamp focusing on blockchain architecture, cryptographic proofs, and enterprise blockchain solutions at Chirayu University.',

@@ -259,7 +259,7 @@ const EventDetail: React.FC = () => {
                                                         <div className="px-4 py-1.5 bg-black/40 backdrop-blur-xl border border-white/10 rounded-full flex items-center justify-between w-full">
                                                             <div className="flex items-center gap-2">
                                                                 <div className="w-2 h-2 rounded-full bg-[#34D562] animate-pulse" />
-                                                                <span className="text-white/80 text-[10px] font-black tracking-widest uppercase">PM-UShA</span>
+                                                                <span className="text-white/80 text-[10px] font-black tracking-widest">PM-UShA</span>
                                                             </div>
                                                             {sub.date && (
                                                                 <span className="text-[#34D562] text-[9px] font-bold tracking-tighter uppercase italic">{sub.date}</span>
@@ -267,7 +267,7 @@ const EventDetail: React.FC = () => {
                                                         </div>
 
                                                         <div className="w-full mt-auto">
-                                                            <h3 className="text-base md:text-lg font-black text-white leading-tight tracking-tight uppercase italic mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,1)] group-hover:text-[#34D562] transition-colors duration-500 line-clamp-3 min-h-[3.3em]">
+                                                            <h3 className="text-base md:text-lg font-black text-white leading-tight tracking-tight italic mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,1)] group-hover:text-[#34D562] transition-colors duration-500 line-clamp-3 min-h-[3.3em]">
                                                                 {sub.title}
                                                             </h3>
                                                             <div className="relative group/btn w-full">

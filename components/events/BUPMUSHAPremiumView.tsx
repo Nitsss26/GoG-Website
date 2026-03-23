@@ -77,7 +77,7 @@ const BUPMUSHAPremiumView: React.FC<BUPMUSHAPremiumViewProps> = ({ event }) => {
               <RevealText>
                 <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-12">
                    <span className="text-[#34D562] animate-pulse"><FiStar /></span>
-                   <span className="text-white font-mono text-[10px] uppercase tracking-[0.3em]">Barkatullah University x PM-UShA</span>
+                   <span className="text-white font-mono text-[10px] tracking-[0.3em]">Barkatullah University x PM-UShA</span>
                 </div>
               </RevealText>
 
@@ -375,7 +375,7 @@ const BUPMUSHAPremiumView: React.FC<BUPMUSHAPremiumViewProps> = ({ event }) => {
             <div className="flex gap-20 font-mono text-[10px] uppercase tracking-[0.5em] text-gray-500 relative z-10">
                <span>BU BHOPAL</span>
                <span>CRISP</span>
-               <span>PM-USHA</span>
+               <span>PM-UShA</span>
             </div>
         </section>
 
