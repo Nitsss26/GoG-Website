@@ -8,12 +8,12 @@ import {
 } from 'lucide-react';
 import { EventData, Trainer } from '../../data/eventsData';
 import GreenEmbers from '../ui/GreenEmbers';
-import BU_1st from '../../assets/PM-UShA/Application_of_AI_(Artifical_Intelligence)/BU-1st.png';
-import BU_3rd from '../../assets/PM-UShA/Application_of_AI_(Artifical_Intelligence)/BU-3rd.jpg';
-import BU_4th from '../../assets/PM-UShA/Application_of_AI_(Artifical_Intelligence)/BU-4th.png';
-import BU_5th from '../../assets/PM-UShA/Application_of_AI_(Artifical_Intelligence)/BU-5th.png';
-import BU_6th from '../../assets/PM-UShA/Application_of_AI_(Artifical_Intelligence)/BU-6th.png';
-import Life_Science from '../../assets/PM-UShA/Application_of_AI_(Artifical_Intelligence)/lifesciences.jpg';
+import BU_1st from '../../assets/PM-USHA/Application_of_AI_(Artifical_Intelligence)/BU-1st.png';
+import BU_3rd from '../../assets/PM-USHA/Application_of_AI_(Artifical_Intelligence)/BU-3rd.jpg';
+import BU_4th from '../../assets/PM-USHA/Application_of_AI_(Artifical_Intelligence)/BU-4th.png';
+import BU_5th from '../../assets/PM-USHA/Application_of_AI_(Artifical_Intelligence)/BU-5th.png';
+import BU_6th from '../../assets/PM-USHA/Application_of_AI_(Artifical_Intelligence)/BU-6th.png';
+import Life_Science from '../../assets/PM-USHA/Application_of_AI_(Artifical_Intelligence)/lifesciences.jpg';
 
 interface PMUshaEventDetailProps {
     event: EventData;
@@ -111,7 +111,7 @@ const PMUshaEventDetail: React.FC<PMUshaEventDetailProps> = ({ event, selectedSu
                         </motion.div>
                         <div className="grid grid-cols-2 gap-4 relative">
                             <div className="absolute inset-0 bg-[#34D562]/5 blur-3xl rounded-full" />
-                            { (pd.galleryGroups.find(g => g.title.toLowerCase().includes('inaug'))?.images || []).slice(0, 4).map((img, idx) => (
+                            {(pd.galleryGroups.find(g => g.title.toLowerCase().includes('inaug'))?.images || []).slice(0, 4).map((img, idx) => (
                                 <motion.div
                                     key={idx}
                                     initial={{ opacity: 0, scale: 0.8, rotate: idx % 2 === 0 ? -5 : 5 }}
@@ -208,7 +208,7 @@ const PMUshaEventDetail: React.FC<PMUshaEventDetailProps> = ({ event, selectedSu
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                        { (pd.galleryGroups.find(g => g.title.toLowerCase().includes('guest'))?.images || []).map((img, idx) => (
+                        {(pd.galleryGroups.find(g => g.title.toLowerCase().includes('guest'))?.images || []).map((img, idx) => (
                             <motion.div
                                 key={idx}
                                 initial={{ opacity: 0, scale: 0.9 }}
@@ -285,7 +285,7 @@ const PMUshaEventDetail: React.FC<PMUshaEventDetailProps> = ({ event, selectedSu
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                        { (pd.galleryGroups.find(g => g.title.toLowerCase().includes('resource'))?.images || []).map((img, idx) => (
+                        {(pd.galleryGroups.find(g => g.title.toLowerCase().includes('resource'))?.images || []).map((img, idx) => (
                             <motion.div
                                 key={idx}
                                 initial={{ opacity: 0, scale: 0.9 }}
