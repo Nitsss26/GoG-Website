@@ -335,7 +335,7 @@ const AboutGoG: React.FC = () => {
                                 <img src={VivekImg} alt="Mr Vivek Yadav" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
                             </div>
                             <h3 className="text-2xl font-bold text-white mb-2">Mr. Vivek Yadav</h3>
-                            <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">HR and Admin Head</p>
+                            <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">HR Admin & Finance Head</p>
                             <div className="relative max-w-xl">
                                 <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
                                 <p className="text-gray-400 italic relative z-10 leading-relaxed">"Building a culture of excellence and inclusivity for our team and students."</p>
@@ -358,7 +358,7 @@ const AboutGoG: React.FC = () => {
                                 <img src={NiteshImg} alt="Mr. Nitesh" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
                             </div>
                             <h3 className="text-2xl font-bold text-white mb-2">Mr. Nitesh</h3>
-                            <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">Tech Lead</p>
+                            <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">Technology & Marketing Head</p>
                             <div className="relative max-w-xl">
                                 <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
                                 <p className="text-gray-400 italic relative z-10 leading-relaxed">"Building products to empower students and drive the growth of Bharat."</p>
