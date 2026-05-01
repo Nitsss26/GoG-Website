@@ -13,7 +13,7 @@ import SAGESlide from "../assets/Partnered_College_Pics/SAGE.jpg";
 import SAGEIndoreSlide from "../assets/Partnered_College_Pics/SAGE_Indore.jpg";
 import CenturionSlide from "../assets/Partnered_College_Pics/Centurion_University.jpeg";
 import ScopeCampus from "../assets/Partnered_College_Pics/SCOPE_Campus.png";
-import GyanveerCampus from "../assets/Partnered_College_Pics/Gyanveer_Campus.png";
+import GyanveerCampus from "../assets/Partnered_College_Pics/Gyanveer_Campus.jpg";
 import SAMSlide from "../assets/Partnered_College_Pics/SAM.jpeg"; // SAM Global Campus Image
 
 export interface CourseCardData {
