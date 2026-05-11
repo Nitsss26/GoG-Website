@@ -40,7 +40,8 @@ export const courseInfo = {
 export const courses = [
     { id: "btech-aids", name: "B.Tech AI-DS", duration: "4 Years (8 Semesters)", fee: "₹95,000/Year" },
     { id: "bca-cyber", name: "BCA Cyber Security", duration: "3 Years (6 Semesters)", fee: "₹50,000/Year" },
-    { id: "bca-aiml", name: "BCA AI-ML", duration: "3 Years (6 Semesters)", fee: "₹50,000/Year" }
+    { id: "bca-aiml", name: "BCA AI-ML", duration: "3 Years (6 Semesters)", fee: "₹50,000/Year" },
+    { id: "bba-ba", name: "BBA Business Analytics/BI with AI", duration: "3 Years (6 Semesters)", fee: "₹50,000/Year" }
 ];
 
 // --- UNIVERSITY VISION & MISSION ---
@@ -138,6 +139,21 @@ export const feeStructures: Record<string, {
         }
     },
     "bca-aiml": {
+        qualifierFee: "₹99",
+        seatBooking: "₹5,000",
+        tuitionPerYear: "₹50,000",
+        hostelPerYear: "₹50,000 - ₹70,000",
+        scholarships: [
+            { percentage: "15% OFF", type: "Merit Based", criteria: "Score > 95% in 12th" },
+            { percentage: "10% OFF", type: "Merit Based", criteria: "Score > 90% in 12th" }
+        ],
+        emiOptions: {
+            provider: "GrayQuest / Propelld",
+            amount: "₹4,167 / month",
+            tenure: "12 Months"
+        }
+    },
+    "bba-ba": {
         qualifierFee: "₹99",
         seatBooking: "₹5,000",
         tuitionPerYear: "₹50,000",
@@ -485,6 +501,95 @@ export const curricula: Record<string, {
             ],
             labs: ["Final Project Presentation", "Portfolio Development"],
             activities: ["CAMPUS PLACEMENTS", "Farewell Party", "Alumni Connect"],
+            phase: "Career Launch",
+            guidance: "Final Placement Drive"
+        }
+    ],
+    "bba-ba": [
+        {
+            semester: "Semester 1",
+            theme: "Business Foundations & Python",
+            subjects: [
+                { title: "Principles of Management", code: "BBA101" },
+                { title: "Business Mathematics", code: "BBA102" },
+                { title: "Python for Business Analytics", code: "BBA103" },
+                { title: "Business Communication", code: "BBA104" },
+                { title: "Micro Economics", code: "BBA105" }
+            ],
+            labs: ["Python for Analytics Lab", "Advanced Excel Lab"],
+            activities: ["Business Simulation Game", "Orientation Week"],
+            phase: "Foundation",
+            guidance: "Career in Analytics Roadmap"
+        },
+        {
+            semester: "Semester 2",
+            theme: "Statistics & Data Management",
+            subjects: [
+                { title: "Business Statistics", code: "BBA201" },
+                { title: "Marketing Management", code: "BBA202" },
+                { title: "Database Management (SQL)", code: "BBA203" },
+                { title: "Macro Economics", code: "BBA204" },
+                { title: "Organizational Behavior", code: "BBA205" }
+            ],
+            labs: ["SQL Lab", "Statistics with Excel/R Lab"],
+            activities: ["Market Research Project", "Data Visualization Workshop"],
+            phase: "Core Business",
+            guidance: "Mentorship Allocation"
+        },
+        {
+            semester: "Semester 3",
+            theme: "BI Tools & Data Visualization",
+            subjects: [
+                { title: "Business Intelligence Fundamentals", code: "BBA301" },
+                { title: "Data Visualization (Tableau/Power BI)", code: "BBA302" },
+                { title: "Financial Management", code: "BBA303" },
+                { title: "Operations Research", code: "BBA304" },
+                { title: "Digital Marketing Analytics", code: "BBA305" }
+            ],
+            labs: ["Power BI Lab", "Tableau Workshop"],
+            activities: ["BI Dashboard Challenge", "Industry Guest Lecture"],
+            phase: "BI Specialization",
+            guidance: "Internship Preparation"
+        },
+        {
+            semester: "Semester 4",
+            theme: "AI in Business & ML Basics",
+            subjects: [
+                { title: "Introduction to AI in Business", code: "BBA401" },
+                { title: "Machine Learning for Managers", code: "BBA402" },
+                { title: "Predictive Modeling", code: "BBA403" },
+                { title: "Supply Chain Analytics", code: "BBA404" },
+                { title: "Human Resource Analytics", code: "BBA405" }
+            ],
+            labs: ["Predictive Analytics Lab", "Orange/RapidMiner Lab"],
+            activities: ["LIVE INDUSTRY INTERNSHIP", "AI Strategy Case Study"],
+            phase: "AI Integration",
+            guidance: "Industry Mentor Connect"
+        },
+        {
+            semester: "Semester 5",
+            theme: "Strategy & Advanced Analytics",
+            subjects: [
+                { title: "Strategic Management", code: "BBA501" },
+                { title: "Big Data in Business", code: "BBA502" },
+                { title: "Consumer Behavior Analytics", code: "BBA503" },
+                { title: "Entrepreneurship", code: "BBA504" }
+            ],
+            labs: ["Big Data Lab", "Capstone Phase 1"],
+            activities: ["Mock Interviews", "Business Plan Pitch"],
+            phase: "Strategy & Advanced",
+            guidance: "Placement Training"
+        },
+        {
+            semester: "Semester 6",
+            theme: "Career Launch & Capstone",
+            subjects: [
+                { title: "Business Ethics & Corporate Governance", code: "BBA601" },
+                { title: "Industry Internship Project", code: "BBA602" },
+                { title: "Major Capstone Project", code: "BBA603" }
+            ],
+            labs: ["Final Project Presentation"],
+            activities: ["CAMPUS PLACEMENTS", "Graduation Day"],
             phase: "Career Launch",
             guidance: "Final Placement Drive"
         }

@@ -153,7 +153,7 @@ const CourseCard = ({ course, index, onClick }: { course: any, index: number, on
                     {course.location}
                 </div>
 
-                <h4 className="text-lg font-medium text-gray-200 mb-2 border-b border-white/10 pb-3 whitespace-pre-line">
+                <h4 className="text-lg font-medium text-gray-200 mb-2 border-b border-white/10 pb-3 whitespace-pre-line min-h-[90px]">
                     {course.programName}
                 </h4>
 

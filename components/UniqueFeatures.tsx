@@ -8,13 +8,13 @@ import {
 } from '../data/admissionsData';
 
 // @ts-ignore
-export const StudentVlogs = () => {
+export const StudentVlogs = ({ data = studentVlogs }: { data?: typeof studentVlogs }) => {
     const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
     return (
         <>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                {studentVlogs.map((vlog) => (
+                {data.map((vlog) => (
                     <div
                         key={vlog.id}
                         onClick={() => setActiveVideo(vlog.video || null)}
@@ -245,9 +245,9 @@ export const ScholarshipStats = ({ tuitionFee = 130000 }: { tuitionFee?: number 
     );
 };
 
-export const AlumniNetwork = () => (
+export const AlumniNetwork = ({ data = alumniSuccess }: { data?: typeof alumniSuccess }) => (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
-        {alumniSuccess.map((alum, i) => (
+        {data.map((alum, i) => (
             <div key={i} className="bg-[#111] border border-white/10 p-3 md:p-5 rounded-xl md:rounded-2xl hover:border-[#34D562]/50 transition-all hover:bg-white/5 group flex flex-col h-full">
                 <div className="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-4 mb-3 md:mb-4 text-center md:text-left">
                     <div className="relative shrink-0">
@@ -282,9 +282,9 @@ export const AlumniNetwork = () => (
     </div>
 );
 
-export const RecruiterTestimonials = () => (
+export const RecruiterTestimonials = ({ data = recruiterTestimonials }: { data?: typeof recruiterTestimonials }) => (
     <div className="grid md:grid-cols-3 gap-6">
-        {recruiterTestimonials.map((item, i) => (
+        {data.map((item, i) => (
             <div key={i} className="bg-[#111] border border-white/10 p-8 rounded-2xl shadow-xl relative mt-8 hover:border-[#34D562]/50 transition-all duration-300 hover:bg-white/5 group">
                 <div className="absolute -top-6 -left-4 w-12 h-12 bg-[#34D562] rounded-full flex items-center justify-center text-black font-serif text-3xl font-bold shadow-lg shadow-[#34D562]/20">"</div>
 
@@ -315,9 +315,9 @@ export const RecruiterTestimonials = () => (
     </div>
 );
 
-export const BlogUpdates = () => (
+export const BlogUpdates = ({ data = blogUpdates }: { data?: typeof blogUpdates }) => (
     <div className="grid md:grid-cols-3 gap-8">
-        {blogUpdates.map((post, i) => (
+        {data.map((post, i) => (
             <a
                 key={i}
                 href={(post as any).link}

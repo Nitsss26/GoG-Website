@@ -385,7 +385,7 @@ const Scope = () => {
                 isOpen={isApplyOpen}
                 onClose={() => setIsApplyOpen(false)}
                 universityName="SCOPE Global Skills University"
-                courses={["B.Tech AI-DS", "BCA Cyber Security", "BCA AI-ML"]}
+                courses={["B.Tech AI-DS", "BCA Cyber Security", "BCA AI-ML", "BBA Business Analytics/BI with AI"]}
                 redirectUrl="https://sgsuniversity.ac.in/enquire-now/"
             />
 
@@ -411,11 +411,11 @@ const Scope = () => {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.1, duration: 0.8 }}
-                            className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight md:leading-[0.95] mb-6 md:mb-6 tracking-tighter drop-shadow-[0_4px_30px_rgba(0,0,0,0.8)]"
+                            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight md:leading-[1.1] mb-6 md:mb-6 tracking-tighter drop-shadow-[0_4px_30px_rgba(0,0,0,0.8)]"
                         >
                             B.Tech <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">AI-DS</span> | BCA <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">Cyber Security</span>
                             <br />
-                            BCA <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">AI-ML</span>
+                            BCA <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">AI-ML</span> | BBA <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">Business Analytics</span>
                         </motion.h1>
 
 

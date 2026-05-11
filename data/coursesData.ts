@@ -107,7 +107,7 @@ export const coursesData: CourseCardData[] = [
         id: "scope",
         universityName: "SCOPE Global Skills University",
         location: "Bhopal, MP",
-        programName: "B.Tech Al-DS & BCA Cyber Security \n BCA AI-ML",
+        programName: "B.Tech Al-DS & BCA Cyber Security \n BCA AI-ML \n BBA Business Analytics/BI with AI",
         approvals: "NSDC Partner",
         logo: SGSU, // Correct Scope Logo
         image: ScopeCampus,
@@ -115,6 +115,20 @@ export const coursesData: CourseCardData[] = [
         certifications: 15,
         fees: "₹50,000/Year Starting..",
         link: "/scope",
+        isExternal: false
+    },
+    {
+        id: "oriental",
+        universityName: "Oriental University",
+        location: "Indore, MP",
+        programName: "BCA Artificial Intelligence & Data Science",
+        approvals: "UGC Approved",
+        logo: "https://admission.oui.edu.in/storage/2024/02/OUI-Logo-png-01.png",
+        image: "https://admission.oui.edu.in/admissions_open_2024/img/slider2.jpg",
+        specialisations: 2,
+        certifications: 10,
+        fees: "₹50,000/Year",
+        link: "/orientaluniversity",
         isExternal: false
     }
 ];
