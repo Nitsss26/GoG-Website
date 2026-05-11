@@ -231,20 +231,21 @@ export const curricula: Record<string, any[]> = {
 export const campusHighlights = [
     { src: "https://media.collegedekho.com/media/img/institute/crawled_images/None/DJI_0227_1.JPG", label: "Green Campus" },
     { src: "https://admission.oui.edu.in/admissions_open_2024/img/slider2.jpg", label: "Main Administrative Building" },
-    { src: "https://oui.edu.in/wp-content/uploads/2021/04/hostel.jpg", label: "Hostel" },
-    { src: "https://oui.edu.in/wp-content/uploads/2021/04/lab.jpg", label: "Advanced Tech & CAD/CAM Labs" },
+    { src: "https://image-static.collegedunia.com/public/dashboard_upload/1770042999_IMG20251003133458-AlkaDwivedi.jpg", label: "Hostel" },
+    { src: "https://image-static.collegedunia.com/public/college_data/images/campusimage/1769589124MIC-LAB-2.jpg", label: "Advanced Tech & CAD/CAM Labs" },
     { src: "https://oui.edu.in/wp-content/uploads/2021/04/cafeteria.jpg", label: "Central Cafeteria" }
 ];
 
 // --- AMENITIES (Campus Life) ---
 export const amenities = [
-    { icon: Home, name: "Hostels", desc: "Separate AC/Non-AC hostels for boys and girls with 24/7 security and Wi-Fi." },
-    { icon: Bus, name: "Transport", desc: "Full-fledged transport department with 15+ buses covering major city routes." },
-    { icon: Layout, name: "Design Studio", desc: "Modern labs including a Centre for Excellence in CAD/CAM." },
-    { icon: Coffee, name: "Cafeteria", desc: "Central cafeteria and mess serving North Indian, South Indian, and Chinese food." },
-    { icon: Microscope, name: "Laboratory", desc: "State-of-the-art science and departmental laboratories." },
-    { icon: MonitorPlay, name: "Computer Lab", desc: "IT-enabled labs with high-speed connectivity and smart classroom tech." },
-    { icon: Building, name: "Auditorium", desc: "Three modern auditoriums for management, engineering, and pharmacy events." }
+    { icon: Home, name: "Hostels", desc: "Separate AC/Non-AC hostels for boys and girls with 24/7 security and Wi-Fi.", image: "https://image-static.collegedunia.com/public/dashboard_upload/1770043000_82df91db-e61a-4ded-a12d-802b014389a5.jpg" },
+    { icon: Bus, name: "Transport", desc: "Full-fledged transport department with 15+ buses covering major city routes.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPYW8-SxHSmvtHeif6HJ_U7X2QXacbmJlb4A&s" },
+    { icon: Layout, name: "Design Studio", desc: "Modern labs including a Centre for Excellence in CAD/CAM.", image: "https://image-static.collegedunia.com/public/college_data/images/campusimage/1769589124MIC-LAB-2.jpg" },
+    { icon: Coffee, name: "Cafeteria", desc: "Central cafeteria and mess serving North Indian, South Indian, and Chinese food.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA64te8oYa4I2Vto7P1usQJzAKsRoP7LVmbQ&s" },
+    { icon: Microscope, name: "Laboratory", desc: "State-of-the-art science and departmental laboratories.", image: "https://www.collegebatch.com/static/clg-gallery/oriental-university-indore-366174.webp" },
+    { icon: MonitorPlay, name: "Computer Lab", desc: "IT-enabled labs with high-speed connectivity and smart classroom tech.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRByaMGJsQ0gZLnLGKuBnuzUTR3rG_Cv2dUYg&s" },
+    { icon: Building, name: "Auditorium", desc: "Three modern auditoriums for management, engineering, and pharmacy events.", image: "https://www.collegebatch.com/static/clg-gallery/oriental-university-indore-366167.webp" },
+    { icon: Dumbbell, name: "Gymnasiums", desc: "Indoor & open-air fitness centers", image: "https://image-static.collegedunia.com/public/dashboard_upload/1770043000_2fb687d4-afb0-4509-8987-6d12d56fd81e.jpg" },
 ];
 
 // --- STUDENT CLUBS ---
@@ -267,17 +268,17 @@ export const mediaLinks = [
 
 // --- WEEKEND GETAWAYS ---
 export const nearbyPlaces = [
-    { name: "Ralamandal Wildlife Sanctuary", dist: "19 KM", type: "Nature & Trekking", desc: "Scenic nature trails and wildlife spotting.", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_S_y1_N_k0Q0_Y_C_w_V_Q_Y_Q_Y_Q_Y_Q_Y_Q&s" },
+    { name: "Ralamandal Wildlife Sanctuary", dist: "19 KM", type: "Nature & Trekking", desc: "Scenic nature trails and wildlife spotting.", img: "https://www.trawell.in/admin/images/upload/183831741Indore_Ralamandal_Wildlife_Sanctuary_Main.jpg" },
     {
         "name": "Gulawat Lotus Valley",
         "dist": "25 KM",
         "type": "Nature & Photography",
         "desc": "A serene valley famous for its vast lotus lake and bamboo forests.",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz-7v9X8L9_Q2Z1W3E4R5T6Y7U8I9O0P1A2S3&s"
+        "img": "https://images.moneycontrol.com/static-mcnews/2025/02/20250204142505_2.jpg?impolicy=website&width=1600&height=900"
     },
-    { name: "Patalpani Waterfalls", dist: "35 KM", type: "Nature & Picnic Spot", desc: "A popular monsoon destination with breathtaking views.", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_V_Q_Y_Q_Y_Q_Y_Q_Y_Q_Y_Q_Y_Q_Y_Q_Y_Q&s" },
-    { name: "Rajwada Palace", dist: "In City", type: "Heritage & Culture", desc: "Historical palace of the Holkar dynasty.", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_V_Q_Y_Q_Y_Q_Y_Q_Y_Q_Y_Q_Y_Q_Y_Q_Y_Q&s" },
-    { name: "Mahakaleshwar Temple (Ujjain)", dist: "55 KM", type: "Spiritual Heritage", desc: "One of the 12 Jyotirlingas, a major spiritual center.", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_V_Q_Y_Q_Y_Q_Y_Q_Y_Q_Y_Q_Y_Q_Y_Q_Y_Q&s" }
+    { name: "Patalpani Waterfalls", dist: "35 KM", type: "Nature & Picnic Spot", desc: "A popular monsoon destination with breathtaking views.", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/ee/dd/8c/caption.jpg?w=900&h=500&s=1" },
+    { name: "Rajwada Palace", dist: "In City", type: "Heritage & Culture", desc: "Historical palace of the Holkar dynasty.", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvYIYft6_DaiGnXjWOGznyMwBl8dzpFONIsQ&s" },
+    { name: "Mahakaleshwar Temple (Ujjain)", dist: "55 KM", type: "Spiritual Heritage", desc: "One of the 12 Jyotirlingas, a major spiritual center.", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfbp2eEbeR31XpSWXVnuR0IDsVSrUGFl7YqA&s" }
 ];
 
 // --- COMPARISON ---
