@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
   const location = useLocation();
 
   // Check if on Admissions page where StickyNav exists
-  const isAdmissionsPage = ['/centurion', '/sagebhopal', '/gyanveer', '/sageindore', '/scope'].includes(location.pathname);
+  const isAdmissionsPage = ['/centurion', '/sagebhopal', '/gyanveer', '/sageindore', '/scope', '/orientaluniversity'].includes(location.pathname);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -92,6 +92,12 @@ const Navbar: React.FC = () => {
               ) : location.pathname === '/sageindore' ? (
                 <div className="flex items-center gap-1.5 md:gap-4 bg-white backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
                   <img src={SageIndoreLogo} alt="SAGE University Indore" className="h-9 md:h-12 object-contain" />
+                  <span className="text-gray-400 font-bold text-[8px] md:text-sm">X</span>
+                  <img src={GoGLogo} alt="Geeks of Gurukul" className="h-6 md:h-8 object-contain" />
+                </div>
+              ) : location.pathname === '/orientaluniversity' ? (
+                <div className="flex items-center gap-1.5 md:gap-4 bg-white backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
+                  <img src="https://admission.oui.edu.in/storage/2024/02/OUI-Logo-png-01.png" alt="Oriental University" className="h-9 md:h-12 object-contain" />
                   <span className="text-gray-400 font-bold text-[8px] md:text-sm">X</span>
                   <img src={GoGLogo} alt="Geeks of Gurukul" className="h-6 md:h-8 object-contain" />
                 </div>
