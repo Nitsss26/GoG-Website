@@ -67,11 +67,7 @@ const GovernmentOfficialCard: React.FC<OfficialCardProps> = ({ image, name, desi
 
 const OurSocialImpact: React.FC = () => {
     const officials = [
-        {
-            image: CharanDasMahant,
-            name: "Dr. Charan Das Mahant",
-            designation: "Former Lok Sabha Speaker, Government of Chhattisgarh | Former Cabinet Minister, Government of India"
-        },
+
         {
             image: EduMinAssam,
             name: "Dr. Ranoj Pegu",
@@ -111,6 +107,10 @@ const OurSocialImpact: React.FC = () => {
             image: IAS_Awanish,
             name: "IAS Mr. Awanish Sharan",
             designation: "Chief Executive Officer, Skill Development Mission | Government of Chhattisgarh"
+        }, {
+            image: CharanDasMahant,
+            name: "Dr. Charan Das Mahant",
+            designation: "Former Lok Sabha Speaker, Government of Chhattisgarh | Former Cabinet Minister, Government of India"
         }
     ];
 
