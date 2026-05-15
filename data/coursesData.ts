@@ -31,21 +31,10 @@ export interface CourseCardData {
     isExternal: boolean;
 }
 
+const CUTMimage = "https://content.jdmagicbox.com/v2/comp/vizianagaram/p7/9999p8922.8922.221229232032.e9p7/catalogue/centurion-university-vizianagaram-universities-gj9y7xxfnc.jpg"
+
 export const coursesData: CourseCardData[] = [
-    // {
-    //     id: "centurion-btech",
-    //     universityName: "Centurion University",
-    //     location: "Vizianagaram, AP",
-    //     programName: "B.Tech CSE (AI & ML)",
-    //     approvals: "NAAC 'A+' | UGC Approved",
-    //     logo: Centurion,
-    //     image: CenturionSlide,
-    //     specialisations: 5,
-    //     certifications: 12,
-    //     fees: "₹1.75 Lakhs/Year",
-    //     link: "/centurion",
-    //     isExternal: false
-    // },
+
     {
         id: "sage-bhopal",
         universityName: "SAGE University, Bhopal",
@@ -115,6 +104,20 @@ export const coursesData: CourseCardData[] = [
         certifications: 15,
         fees: "₹50,000/Year Starting..",
         link: "/scope",
+        isExternal: false
+    },
+    {
+        id: "centurion-btech",
+        universityName: "Centurion University",
+        location: "Vizianagaram, AP",
+        programName: "B.Tech CSE In Artificial Intelligence",
+        approvals: "NAAC 'A+' | UGC Approved",
+        logo: Centurion,
+        image: CUTMimage,
+        specialisations: 5,
+        certifications: 12,
+        fees: "₹1.7 Lakhs/Year",
+        link: "/centurion",
         isExternal: false
     },
     {

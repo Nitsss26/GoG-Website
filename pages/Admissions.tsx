@@ -22,7 +22,7 @@ import { SuccessTicker } from '@/components/SuccessTicker';
 import CUTMLogo from "../assets/PartneredColleges/CUTM.svg";
 import GoGLogo from "../assets/gog-logo.png";
 import {
-    StudentVlogs, VirtualTour, CareerVisualizer, ScholarshipStats, AlumniNetwork, RecruiterTestimonials, BlogUpdates, ChatBot
+    StudentVlogs, VirtualTour, CareerVisualizer, ScholarshipStats, AlumniNetwork, RecruiterTestimonials, BlogUpdates, ChatBot, CurrentYearUpgrades
 } from '../components/UniqueFeatures';
 import { HeroSlider } from '../components/HeroSlider';
 import { ApplyForm } from '../components/ApplyForm';
@@ -290,7 +290,8 @@ const StickyBottomActions = ({ isVisible, onApplyClick }: { isVisible: boolean, 
                     Apply Now
                 </button>
                 <a
-                    href="/assets/CenturionUniversity/2-brochure-1.pdf"
+                    href=""
+                    // href="/assets/CenturionUniversity/2-brochure-1.pdf"
                     download="Centurion_University_Brochure.pdf"
                     className="flex-1 py-3 bg-white/10 text-white font-bold rounded-lg border border-white/10 text-center flex items-center justify-center"
                 >
@@ -388,10 +389,10 @@ const Admissions = () => {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.1, duration: 0.8 }}
-                            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight md:leading-[0.9] mb-6 md:mb-6 tracking-tighter"
+                            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-tight md:leading-[0.9] mb-6 md:mb-6 tracking-tighter"
                         >
-                            B.Tech in Computer Science<br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">(AI & ML)</span>
+                            B.Tech In CSE
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]"> Artificial Intelligence</span>
                         </motion.h1>
 
 
@@ -405,7 +406,7 @@ const Admissions = () => {
                             <button onClick={() => setIsApplyOpen(true)} className="flex-1 py-3 md:py-4 bg-[#34D562] text-black font-extrabold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,213,98,0.3)] whitespace-nowrap">
                                 Apply Now
                             </button>
-                            <a href="/assets/CenturionUniversity/2-brochure-1.pdf" download="Centurion_University_Brochure.pdf" className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap">
+                            <a href="" download="Centurion_University_Brochure.pdf" className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap">
                                 Download Brochure
                             </a>
                         </motion.div>
@@ -512,6 +513,23 @@ const Admissions = () => {
 
                     {/* Stacked 3D Feature Carousel */}
                     <StackedCarousel />
+
+                    {/* 2026 Session Upgrades - NEW */}
+                    <div className="mt-32">
+                        <div className="text-center mb-12">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#34D562]/10 border border-[#34D562]/20 mb-4"
+                            >
+                                <Sparkles size={16} className="text-[#34D562]" />
+                                <span className="text-[#34D562] text-xs font-bold uppercase tracking-widest">2026 Session Enhancements</span>
+                            </motion.div>
+                            <h3 className="text-3xl md:text-5xl font-bold text-white mb-4">The GOG Edge </h3>
+                            <p className="text-gray-400 max-w-2xl mx-auto">We've upgraded our program execution for the 2026 session to ensure direct industry exposure and prestigious certifications.</p>
+                        </div>
+                        <CurrentYearUpgrades />
+                    </div>
 
                     {/* Comparison Table */}
                     <div className="mt-24 relative max-w-6xl mx-auto">
@@ -693,19 +711,19 @@ const Admissions = () => {
             </section >
 
             {/* ===== 5. CERTIFICATE PREVIEW (Moved & Resized) ===== */}
-            < section className="py-24 bg-[#050505] overflow-hidden" >
+            {/* < section className="py-24 bg-[#050505] overflow-hidden" >
                 <div className="container mx-auto px-4 max-w-7xl text-center">
                     <SectionHeader title="Earn a Degree that Matters" subtitle="UGC Recognized. NAAC 'A+' Accredited. Industry Trusted." />
 
                     <div className="relative mt-12 mx-auto max-w-5xl">
-                        {/* Ambient Glow */}
+                        
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[#34D562]/20 blur-[120px] rounded-full pointer-events-none" />
                         <div className="transform scale-100 md:scale-110">
                             <CertificatePreview />
                         </div>
                     </div>
                 </div>
-            </section >
+            </section > */}
 
             {/* ===== 5. PLACEMENTS & PARTNERS (New High-Impact Section) ===== */}
             < section id="placements" className="py-20 bg-[#020202] border-y border-white/5 relative overflow-hidden scroll-mt-[300px]" >
@@ -1203,7 +1221,7 @@ const Admissions = () => {
             </section >
 
 
-            <ChatBot universityName="Centurion University" tuitionFee="₹1,75,000" />
+            <ChatBot universityName="Centurion University" tuitionFee="₹1,70,000" />
         </div >
     );
 };

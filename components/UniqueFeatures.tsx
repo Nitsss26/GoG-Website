@@ -1,11 +1,293 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-    Play, MonitorPlay, Globe, ArrowRight, TrendingUp, Calculator, MessageCircle, X, Calendar, Send, Loader2, Sparkles
+    Play, MonitorPlay, Globe, ArrowRight, TrendingUp, Calculator, MessageCircle, X, Calendar, Send, Loader2, Sparkles,
+    ShieldCheck, Laptop, GraduationCap, Zap, Award, Users, Trophy, FileText, Briefcase
 } from 'lucide-react';
 import {
     studentVlogs, careerPathData, alumniSuccess, recruiterTestimonials, blogUpdates
 } from '../data/admissionsData';
+
+export const CurrentYearUpgrades = () => {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [cycleCount, setCycleCount] = useState(0);
+    const [isManual, setIsManual] = useState(false);
+
+    const upgrades = [
+        {
+            id: "01",
+            title: "Live IIT Internship via Anudaksh",
+            subtitle: "3-Month Exclusive Program",
+            desc: "Gain a massive competitive edge with a 3-month live internship directly under active IIT Guwahati professors. Engage with elite faculty through immersive guided sessions.",
+            status: "GAME CHANGER",
+            icon: Laptop,
+            color: "emerald",
+            hex: "#34D562"
+        },
+        {
+            id: "02",
+            title: "Active IIT Guwahati Professor Interaction",
+            subtitle: "Personalized Expert Guidance",
+            desc: "Step beyond standard learning. Receive dedicated, personalized mentorship directly from IIT Guwahati professors to dramatically accelerate your technical mastery and career readiness.",
+            status: "UPGRADED",
+            icon: Users,
+            color: "blue",
+            hex: "#3B82F6"
+        },
+        {
+            id: "03",
+            title: "Research & Industry Projects",
+            subtitle: "Solve Real-World Problems",
+            desc: "Don't just learn theory. Contribute to cutting-edge research, get technical papers published and solve complex real-world industry problems through rigorous hands-on projects.",
+            status: "EXCLUSIVE",
+            icon: Briefcase,
+            color: "orange",
+            hex: "#F97316"
+        },
+        {
+            id: "04",
+            title: "Direct IIT Certification",
+            subtitle: "Unmatched Credibility",
+            desc: "Elevate your resume instantly. Upon completion of your internship, you earn a highly prestigious internship certificate officially signed by IIT Guwahati professors.",
+            status: "NEW",
+            icon: Award,
+            color: "yellow",
+            hex: "#EAB308"
+        },
+        {
+            id: "05",
+            title: "Geeks of Gurukul Credentials",
+            subtitle: "Premium Academic Identity",
+            desc: "Represent the future of tech. Your Student ID Card, Semester Mark Sheets, and Completion Certificates are now exclusively issued and recognized as premier Geeks of Gurukul (GOG) credentials.",
+            status: "REBRANDED",
+            icon: ShieldCheck,
+            color: "pink",
+            hex: "#EC4899"
+        },
+        {
+            id: "06",
+            title: "Dual-Credential Superiority",
+            subtitle: "The Ultimate Portfolio",
+            desc: "Dominate the job market with the ultimate credential combo: GOG's presence on all your core academic records, alongside the signed IIT Guwahati internship certificate.",
+            status: "MAJOR USP",
+            icon: Trophy,
+            color: "cyan",
+            hex: "#06B6D4"
+        }
+    ];
+
+    // Auto-play logic
+    useEffect(() => {
+        if (isManual) return; // Stop if user interacts manually
+
+        // Fast first pass (2s), slower subsequent passes (4s)
+        const speed = cycleCount === 0 ? 2000 : 4000;
+
+        const timer = setInterval(() => {
+            setActiveIndex((prev) => {
+                const next = prev + 1;
+                if (next >= upgrades.length) {
+                    setCycleCount(c => c + 1);
+                    return 0;
+                }
+                return next;
+            });
+        }, speed);
+
+        return () => clearInterval(timer);
+    }, [cycleCount, isManual, upgrades.length]);
+
+    const activeItem = upgrades[activeIndex];
+
+    return (
+        <div className="mt-16 max-w-7xl mx-auto px-4">
+            {/* 
+                We use items-stretch so the right side box grows exactly to the height of the left side column. 
+                We also ensure the right side content is vertically centered and doesn't force a larger height.
+            */}
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch">
+
+                {/* Left: Command Menu */}
+                <div className="lg:w-1/3 flex flex-col gap-3 z-10 shrink-0">
+                    {upgrades.map((item, index) => {
+                        const isActive = index === activeIndex;
+                        return (
+                            <button
+                                key={item.id}
+                                onClick={() => {
+                                    setActiveIndex(index);
+                                    setIsManual(true);
+                                }}
+                                className={`relative flex items-center gap-4 p-4 rounded-2xl text-left transition-all duration-500 overflow-hidden group ${isActive
+                                    ? 'bg-[#111]/80 shadow-2xl scale-[1.02] backdrop-blur-md'
+                                    : 'bg-transparent hover:bg-white/5'
+                                    }`}
+                                style={{
+                                    borderWidth: '1px',
+                                    borderColor: isActive ? `${item.hex}30` : 'transparent'
+                                }}
+                            >
+                                {/* Active Background Glow */}
+                                {isActive && (
+                                    <motion.div
+                                        layoutId="activeGlow"
+                                        className="absolute inset-0 opacity-20"
+                                        style={{ background: `linear-gradient(90deg, ${item.hex}40, transparent)` }}
+                                        initial={false}
+                                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                    />
+                                )}
+
+                                {/* Status Indicator Line */}
+                                <div
+                                    className={`absolute left-0 top-0 bottom-0 w-1 transition-all duration-500 ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-30 group-hover:bg-white'}`}
+                                    style={{
+                                        backgroundColor: isActive ? item.hex : '',
+                                        boxShadow: isActive ? `0 0 15px ${item.hex}` : 'none'
+                                    }}
+                                />
+
+                                <div
+                                    className={`font-mono text-sm font-black transition-colors duration-300 ${isActive ? 'opacity-100' : 'opacity-30 group-hover:opacity-60 text-gray-400'}`}
+                                    style={{ color: isActive ? item.hex : '' }}
+                                >
+                                    {item.id}
+                                </div>
+
+                                <div className="relative z-10 w-full pr-2">
+                                    <h4
+                                        className={`font-bold transition-all duration-300 truncate ${isActive ? 'text-lg' : 'text-base text-gray-400 group-hover:text-gray-200'}`}
+                                        style={isActive ? {
+                                            background: `linear-gradient(90deg, #ffffff 30%, ${item.hex})`,
+                                            WebkitBackgroundClip: 'text',
+                                            WebkitTextFillColor: 'transparent',
+                                            textShadow: `0 0 30px ${item.hex}40`
+                                        } : {}}
+                                    >
+                                        {item.title}
+                                    </h4>
+                                    <AnimatePresence>
+                                        {isActive && (
+                                            <motion.p
+                                                initial={{ opacity: 0, height: 0, y: -5 }}
+                                                animate={{ opacity: 1, height: 'auto', y: 0 }}
+                                                exit={{ opacity: 0, height: 0 }}
+                                                className="text-[10px] mt-1 uppercase tracking-[0.2em] font-black"
+                                                style={{ color: item.hex }}
+                                            >
+                                                {item.status}
+                                            </motion.p>
+                                        )}
+                                    </AnimatePresence>
+                                </div>
+                            </button>
+                        );
+                    })}
+                </div>
+
+                {/* Right: Holographic Display Area */}
+                <div className="lg:w-2/3 relative rounded-[2.5rem] bg-[#0A0A0A] border border-white/10 overflow-hidden flex items-center [perspective:2000px] shadow-2xl">
+
+                    {/* Ambient Background Grid */}
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20 pointer-events-none" />
+
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={activeIndex}
+                            initial={{ opacity: 0, scale: 0.95, rotateX: 5, rotateY: -5 }}
+                            animate={{ opacity: 1, scale: 1, rotateX: 0, rotateY: 0 }}
+                            exit={{ opacity: 0, scale: 1.02, filter: "blur(5px)" }}
+                            transition={{ duration: 0.4, type: "spring", bounce: 0.1 }}
+                            className="relative w-full h-full p-8 lg:p-12 flex flex-col justify-center [transform-style:preserve-3d]"
+                        >
+                            {/* Dynamic Glowing Background Sphere */}
+                            <div
+                                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] opacity-15 blur-[100px] rounded-full pointer-events-none transition-colors duration-1000"
+                                style={{ backgroundColor: activeItem.hex }}
+                            />
+
+                            {/* Floating Tech Elements */}
+                            <div className="absolute top-8 right-8 flex gap-1.5 opacity-50">
+                                <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                                <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse delay-75" />
+                                <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: activeItem.hex, boxShadow: `0 0 8px ${activeItem.hex}` }} />
+                            </div>
+
+                            <div className="relative z-10 flex flex-col md:flex-row gap-8 lg:gap-10 items-center">
+                                {/* 3D Icon Container */}
+                                <motion.div
+                                    initial={{ y: 10 }}
+                                    animate={{ y: [0, -8, 0] }}
+                                    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                                    className="shrink-0 relative"
+                                >
+                                    <div className="w-28 h-28 md:w-40 md:h-40 rounded-3xl border border-white/20 bg-black/60 backdrop-blur-xl flex items-center justify-center relative overflow-hidden shadow-2xl" style={{ borderColor: `${activeItem.hex}40` }}>
+                                        {/* Scanner Line */}
+                                        <motion.div
+                                            animate={{ top: ['-20%', '120%'] }}
+                                            transition={{ repeat: Infinity, duration: 2.5, ease: "linear" }}
+                                            className="absolute left-0 right-0 h-0.5 blur-[1px] z-0"
+                                            style={{ backgroundColor: activeItem.hex, boxShadow: `0 0 20px 2px ${activeItem.hex}` }}
+                                        />
+                                        <activeItem.icon size={64} strokeWidth={1.5} style={{ color: activeItem.hex }} className="relative z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]" />
+                                    </div>
+                                    <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-20 h-3 rounded-full blur-xl opacity-60" style={{ backgroundColor: activeItem.hex }} />
+                                </motion.div>
+
+                                {/* Content Details */}
+                                <div className="flex-1 text-center md:text-left">
+                                    <motion.div
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: 0.1 }}
+                                        className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full border bg-black/50 backdrop-blur-md mb-4 shadow-lg"
+                                        style={{ borderColor: `${activeItem.hex}40` }}
+                                    >
+                                        <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: activeItem.hex }} />
+                                        <span className="text-[10px] font-bold uppercase tracking-[0.2em]" style={{ color: activeItem.hex }}>{activeItem.status}</span>
+                                    </motion.div>
+
+                                    <motion.h3
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.2 }}
+                                        className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-2 leading-tight"
+                                    >
+                                        {activeItem.title}
+                                    </motion.h3>
+
+                                    <motion.h4
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ delay: 0.3 }}
+                                        className="text-lg md:text-xl font-light text-gray-400 mb-5"
+                                    >
+                                        {activeItem.subtitle}
+                                    </motion.h4>
+
+                                    <motion.p
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ delay: 0.4 }}
+                                        className="text-gray-300 text-base md:text-lg leading-relaxed max-w-xl"
+                                    >
+                                        {activeItem.desc}
+                                    </motion.p>
+                                </div>
+                            </div>
+
+                        </motion.div>
+                    </AnimatePresence>
+
+                    {/* High-tech Borders */}
+                    <div className="absolute top-0 left-0 w-12 h-12 border-t border-l border-white/20 rounded-tl-[2.5rem] pointer-events-none" />
+                    <div className="absolute bottom-0 right-0 w-12 h-12 border-b border-r border-white/20 rounded-br-[2.5rem] pointer-events-none" />
+                </div>
+
+            </div>
+        </div>
+    );
+};
 
 // @ts-ignore
 export const StudentVlogs = ({ data = studentVlogs }: { data?: typeof studentVlogs }) => {

@@ -12,7 +12,7 @@ import {
 
 // --- BASIC INFO ---
 export const courseInfo = {
-    name: "B.Tech in Computer Science & Engineering",
+    name: "B.Tech CSE In Artificial Intelligence",
     specialization: "Artificial Intelligence & Machine Learning",
     university: "Centurion University",
     universitySub: "of Technology and Management",
@@ -138,107 +138,112 @@ export const admissionSteps = [
 export const curriculum = [
     {
         semester: "Semester 1",
-        theme: "Foundations of Computing",
+        theme: "Foundations of Computer Science & AI",
         subjects: [
-            { title: "Intro to AI & ML", code: "AM25B101" },
-            { title: "Programming in C++", code: "AM25B102" },
-            { title: "Engineering Mathematics I", code: "AM25B103" },
-            { title: "Digital Logic Design", code: "AM25B104" }
+            { title: "Intro to AI & ML Ecosystem", code: "AM26B101" },
+            { title: "Programming for Problem Solving (C++)", code: "AM26B102" },
+            { title: "Calculus & Linear Algebra (Math for AI)", code: "AM26B103" },
+            { title: "Digital Logic Design", code: "AM26B104" }
         ],
-        labs: ["Python Basics for AI/ML", "C Programming Lab"],
-        activities: ["Freshers Party", "Ice Breaking Session", "Club Orientation"],
-        phase: "Admission Phase",
+        labs: ["Python Programming for AI", "Digital Logic Lab"],
+        activities: ["AI-Powered Productivity Workshop", "Logic Building Contests", "Club Orientation"],
+        phase: "Foundations",
         guidance: "Orientation & Goal Setting"
     },
     {
         semester: "Semester 2",
-        theme: "Data Structures & Core Python",
+        theme: "Advanced Programming & Data Foundations",
         subjects: [
-            { title: "Data Structures & Algorithms", code: "AM25B201" },
-            { title: "Advanced Python for AI", code: "AM25B202" },
-            { title: "Probability & Statistics", code: "AM25B203" },
-            { title: "Computer Organization", code: "AM25B204" }
+            { title: "Data Structures & Algorithms (DSA)", code: "AM26B201" },
+            { title: "Object Oriented Programming (Java/Python)", code: "AM26B202" },
+            { title: "Probability & Statistics for Data Science", code: "AM26B203" },
+            { title: "Computer Organization & Architecture", code: "AM26B204" }
         ],
-        labs: ["Matrix Ops in Python", "Advanced Python Lab"],
-        activities: ["24-Hour Hackathon", "Coding Contest", "Gaming Night"],
-        phase: "Foundations",
+        labs: ["Advanced DSA Lab", "OOPs Lab (Python/Java)"],
+        activities: ["24-Hour Code-a-thon", "Open Source Contribution Intro", "Gaming Night"],
+        phase: "Core Strength",
         guidance: "Mentorship Allocation"
     },
     {
         semester: "Semester 3",
-        theme: "Machine Learning Fundamentals",
+        theme: "Core CS & Machine Learning Foundations",
         subjects: [
-            { title: "Supervised Learning", code: "AM25B301" },
-            { title: "Database Mgmt Systems", code: "AM25B302" },
-            { title: "Operating Systems", code: "AM25B303" },
-            { title: "Exploratory Data Analysis", code: "AM25B304" }
+            { title: "Supervised Learning (Regression/Class.)", code: "AM26B301" },
+            { title: "Database Management Systems (SQL/NoSQL)", code: "AM26B302" },
+            { title: "Operating Systems & Shell Scripting", code: "AM26B303" },
+            { title: "Discrete Mathematics", code: "AM26B304" }
         ],
-        labs: ["DSA Lab", "Data Cleaning Pipelines"],
-        activities: ["Industrial Visit to Vizag Steel Plant", "Tech Talk by Industry Experts"],
-        phase: "Practical Learning",
+        labs: ["ML Model Building (Scikit-learn)", "SQL for Data Analytics"],
+        activities: ["Kaggle Competition Kickoff", "Tech Talk by Industry Experts", "Industry Visit"],
+        phase: "Practical Skills",
         guidance: "Live Projects & Labs"
     },
     {
         semester: "Semester 4",
-        theme: "Deep Learning & Neural Networks",
+        theme: "Deep Learning & Data Engineering",
         subjects: [
-            { title: "Deep Learning with PyTorch", code: "AM25B401" },
-            { title: "Computer Networks", code: "AM25B402" },
-            { title: "Software Engineering", code: "AM25B403" },
-            { title: "Big Data Technologies", code: "AM25B404" }
+            { title: "Neural Networks & Deep Learning", code: "AM26B401" },
+            { title: "Computer Networks & Security", code: "AM26B402" },
+            { title: "Data Engineering & Big Data (Spark)", code: "AM26B403" },
+            { title: "Optimization Techniques in AI", code: "AM26B404" }
         ],
-        labs: ["Regression/Classification Lab", "Neural Networks Lab"],
-        activities: ["LIVE INDUSTRY INTERNSHIP (Paid)", "Project Showcase"],
+        labs: ["Deep Learning Lab (PyTorch/TF)", "Big Data Processing Lab"],
+        activities: ["LIVE INDUSTRY INTERNSHIP (Paid)", "Project Showcase", "GitHub Portfolio Audit"],
         phase: "Industry Exposure",
         guidance: "Internship Guide & Prep"
     },
     {
         semester: "Semester 5",
-        theme: "Advanced AI Specialization",
+        theme: "AI Specialization & MLOps",
         subjects: [
-            { title: "Natural Language Processing", code: "AM25B501" },
-            { title: "Unsupervised Learning", code: "AM25B502" },
-            { title: "Cloud Computing for AI", code: "AM25B503" }
+            { title: "Natural Language Processing (NLP)", code: "AM26B501" },
+            { title: "Cloud Computing for AI Deployment", code: "AM26B503" },
+            { title: "MLOps (CI/CD for ML, MLflow, DVC)", code: "AM26B504" },
+            { title: "Design & Analysis of Algorithms", code: "AM26B502" }
         ],
-        labs: ["NLP with Transformers", "Clustering & Dim. Reduction"],
-        activities: ["Robotics Workshop", "Annual Tech Fest", "AI Model Deployment"],
-        phase: "Specialization",
+        labs: ["NLP with HuggingFace Transformers", "Cloud AI Services Lab (AWS/Azure)"],
+        activities: ["AI Model Deployment Workshop", "Annual Tech Fest", "System Design Mock Drills"],
+        phase: "Advanced Tech",
         guidance: "Research Methodology"
     },
     {
         semester: "Semester 6",
-        theme: "Applied AI & Ethics",
+        theme: "Advanced Applied AI & Vision",
         subjects: [
-            { title: "Computer Vision", code: "AM25B601" },
-            { title: "Reinforcement Learning", code: "AM25B602" },
-            { title: "AI Ethics & Governance", code: "AM25B603" }
+            { title: "Computer Vision (OpenCV, YOLO, GANs)", code: "AM26B601" },
+            { title: "Reinforcement Learning & Robotics", code: "AM26B602" },
+            { title: "AI Ethics, Bias & Governance", code: "AM26B603" },
+            { title: "Agile Software Development", code: "AM26B604" }
         ],
-        labs: ["RL Agents Workshop", "Big Data Pipelines"],
-        activities: ["Research Paper Publication", "Patent Filing Support"],
+        labs: ["Computer Vision Lab", "Robotics Simulation Lab"],
+        activities: ["Research Paper Publication", "Patent Filing Workshop", "Hackathon for Social Good"],
         phase: "Innovation",
         guidance: "Patent & Paper Support"
     },
     {
         semester: "Semester 7",
-        theme: "Emerging Tech & Capstone",
+        theme: "Generative AI, LLMs & Edge Computing",
         subjects: [
-            { title: "Generative AI & LLMs", code: "AM25B701" },
-            { title: "Edge AI & IoT", code: "AM25B702" }
+            { title: "Generative AI & Large Language Models", code: "AM26B701" },
+            { title: "Edge AI & IoT Systems", code: "AM26B702" },
+            { title: "System Design for AI Apps", code: "AM26B703" },
+            { title: "AI Product Management", code: "AM26B704" }
         ],
-        labs: ["IoT Deployment", "Ethical AI Audit"],
-        activities: ["Startup Pitch Day", "Funding Round", "Incubation Support"],
-        phase: "Pre-Placement",
+        labs: ["LLM Fine-tuning & Prompt Eng.", "Edge AI Deployment Lab"],
+        activities: ["Startup Pitch Day", "Funding Round", "Pre-Placement Training"],
+        phase: "Career Ready",
         guidance: "Resume Building & Mock Interviews"
     },
     {
         semester: "Semester 8",
-        theme: "Industry Immersion",
+        theme: "Industry Immersion & Global Launch",
         subjects: [
-            { title: "Industry Internship", code: "AM25B801" },
-            { title: "Major Capstone Project II", code: "AM25B802" }
+            { title: "Semester-long Industry Internship", code: "AM26B801" },
+            { title: "Major Capstone Project II", code: "AM26B802" },
+            { title: "Emerging Tech (Agentic AI, Quantum)", code: "AM26B803" }
         ],
-        labs: ["GenAI Model Fine-tuning", "Final Project"],
-        activities: ["CAMPUS PLACEMENTS", "Farewell Party", "Alumni Connect"],
+        labs: ["Final Project Delivery", "AI Agent Development"],
+        activities: ["CAMPUS PLACEMENTS", "Farewell Party", "Alumni Networking"],
         phase: "Career Launch",
         guidance: "Final Placement Drive"
     }

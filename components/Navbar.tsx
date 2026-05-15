@@ -45,17 +45,19 @@ const Navbar: React.FC = () => {
   return (
     <>
       {/* Top Right Employee Login - Small & Subtle */}
-      <div className="fixed top-4 right-4 z-[1100] hidden lg:block">
-        <a
-          href="https://oms.geeksofgurukul.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-3 py-1 bg-black/20 backdrop-blur-md border border-[#34D562]/30 rounded-full text-[9px] font-black text-[#34D562] transition-all duration-300 uppercase tracking-[0.2em] shadow-2xl flex items-center gap-2 group"
-        >
-          <div className="w-1 h-1 rounded-full bg-[#34D562] transition-colors" />
-          Employee Login
-        </a>
-      </div>
+      {!isAdmissionsPage && location.pathname !== '/courses' && (
+        <div className="fixed top-4 right-4 z-[1100] hidden lg:block">
+          <a
+            href="https://oms.geeksofgurukul.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-3 py-1 bg-black/20 backdrop-blur-md border border-[#34D562]/30 rounded-full text-[9px] font-black text-[#34D562] transition-all duration-300 uppercase tracking-[0.2em] shadow-2xl flex items-center gap-2 group"
+          >
+            <div className="w-1 h-1 rounded-full bg-[#34D562] transition-colors" />
+            Employee Login
+          </a>
+        </div>
+      )}
 
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
@@ -236,15 +238,17 @@ const Navbar: React.FC = () => {
                 transition={{ delay: 0.5 }}
                 className="w-full flex flex-col items-center gap-4"
               >
-                <a
-                  href="https://oms.geeksofgurukul.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-8 py-3 bg-white/10 text-white border border-white/20 font-bold rounded-full text-lg hover:bg-white/20 transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)]"
-                >
-                  Employee Login
-                </a>
+                {!isAdmissionsPage && location.pathname !== '/courses' && (
+                  <a
+                    href="https://oms.geeksofgurukul.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="px-8 py-3 bg-white/10 text-white border border-white/20 font-bold rounded-full text-lg hover:bg-white/20 transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+                  >
+                    Employee Login
+                  </a>
+                )}
                 <Link
                   to="/courses"
                   onClick={() => setMobileMenuOpen(false)}
