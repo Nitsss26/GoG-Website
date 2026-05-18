@@ -106,20 +106,20 @@ export const coursesData: CourseCardData[] = [
         link: "/scope",
         isExternal: false
     },
-    {
-        id: "centurion-btech",
-        universityName: "Centurion University",
-        location: "Vizianagaram, AP",
-        programName: "B.Tech CSE In Artificial Intelligence",
-        approvals: "NAAC 'A+' | UGC Approved",
-        logo: Centurion,
-        image: CUTMimage,
-        specialisations: 5,
-        certifications: 12,
-        fees: "₹1.7 Lakhs/Year",
-        link: "/centurion",
-        isExternal: false
-    },
+    // {
+    //     id: "centurion-btech",
+    //     universityName: "Centurion University",
+    //     location: "Vizianagaram, AP",
+    //     programName: "B.Tech CSE In Artificial Intelligence",
+    //     approvals: "NAAC 'A+' | UGC Approved",
+    //     logo: Centurion,
+    //     image: CUTMimage,
+    //     specialisations: 5,
+    //     certifications: 12,
+    //     fees: "₹1.7 Lakhs/Year",
+    //     link: "/centurion",
+    //     isExternal: false
+    // },
     {
         id: "oriental",
         universityName: "Oriental University",
