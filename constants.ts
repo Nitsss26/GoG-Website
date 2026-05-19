@@ -16,6 +16,7 @@ export const NAV_ITEMS: NavItem[] = [
     ]
   },
   { label: 'Events', href: '/events' },
+  { label: 'Winners', href: '/winners' },
   { label: 'Our Partnered Institutes', href: '/partnered-colleges' },
   { label: 'Our Team', href: '/teams' },
   { label: 'B2G Initiatives', href: '/our-social-impact' },

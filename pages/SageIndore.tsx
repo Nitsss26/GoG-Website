@@ -22,7 +22,7 @@ import {
 import SageLogo from "../assets/PartneredColleges/Sage_Indore.png";
 import GoGLogo from "../assets/gog-logo.png";
 import {
-    StudentVlogs, VirtualTour, CareerVisualizer, ScholarshipStats, AlumniNetwork, RecruiterTestimonials, BlogUpdates, ChatBot
+    StudentVlogs, VirtualTour, CareerVisualizer, ScholarshipStats, AlumniNetwork, RecruiterTestimonials, BlogUpdates, ChatBot, CurrentYearUpgrades
 } from '../components/UniqueFeatures';
 import { HeroSlider } from '../components/HeroSlider';
 import { ApplyForm } from '../components/ApplyForm';
@@ -410,10 +410,48 @@ const SageIndore = () => {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.1, duration: 0.8 }}
-                            className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight md:leading-[0.95] mb-6 md:mb-6 tracking-tighter whitespace-nowrap drop-shadow-[0_4px_30px_rgba(0,0,0,0.8)]"
+                            className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight md:leading-[0.95] mb-4 md:mb-6 tracking-tighter whitespace-nowrap drop-shadow-[0_4px_30px_rgba(0,0,0,0.8)]"
                         >
                             B.Tech <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">Full Stack Development</span>
                         </motion.h1>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2, duration: 0.8 }}
+                            className="inline-flex items-center justify-center mt-2 mb-8 md:mt-4 md:mb-10 px-4 py-2 md:px-6 md:py-3 rounded-xl bg-gradient-to-r from-[#FFD700]/10 via-[#FFD700]/20 to-[#FFD700]/10 border border-[#FFD700]/40 shadow-[0_0_20px_rgba(255,215,0,0.2)] backdrop-blur-sm gap-4 md:gap-6"
+                        >
+                            {/* Left Logos */}
+                            <div className="hidden lg:flex items-center gap-2">
+                                <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center p-1.5 shadow-md">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Indian_Institute_of_Technology_Delhi_Logo.svg/250px-Indian_Institute_of_Technology_Delhi_Logo.svg.png" alt="IIT Delhi" className="w-full h-full object-contain" />
+                                </div>
+                                <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center p-1.5 shadow-md">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1d/Indian_Institute_of_Technology_Bombay_Logo.svg/250px-Indian_Institute_of_Technology_Bombay_Logo.svg.png" alt="IIT Bombay" className="w-full h-full object-contain" />
+                                </div>
+                                <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center p-1.5 shadow-md">
+                                    <img src="https://upload.wikimedia.org/wikipedia/sa/4/47/IIT_Kanpur_Logo.png" alt="IIT Kanpur" className="w-full h-full object-contain" />
+                                </div>
+                            </div>
+
+                            <span className="text-white text-sm md:text-lg lg:text-xl font-medium tracking-wide flex items-center justify-center gap-2 whitespace-nowrap">
+                                <Award className="text-[#FFD700] flex-shrink-0" size={24} />
+                                Guarantee Internship at <span className="text-[#FFD700] font-bold">Indian Institute of Technology (IIT)</span>
+                            </span>
+
+                            {/* Right Logos */}
+                            <div className="hidden lg:flex items-center gap-2">
+                                <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center p-1.5 shadow-md">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2d/Indian_Institute_of_Technology_Roorkee_Logo.svg/1280px-Indian_Institute_of_Technology_Roorkee_Logo.svg.png" alt="IIT Roorkee" className="w-full h-full object-contain" />
+                                </div>
+                                <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center p-1.5 shadow-md">
+                                    <img src="https://www.iitg.ac.in/cif/CIF/thumbs/generic-logo.png" alt="IIT Guwahati" className="w-full h-full object-contain" />
+                                </div>
+                                <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center p-1.5 shadow-md">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/IIT_Madras_Logo.svg/500px-IIT_Madras_Logo.svg.png" alt="IIT Madras" className="w-full h-full object-contain" />
+                                </div>
+                            </div>
+                        </motion.div>
 
 
 
@@ -536,6 +574,23 @@ const SageIndore = () => {
 
                     {/* Stacked 3D Feature Carousel */}
                     <StackedCarousel />
+
+                    {/* 2026 Session Upgrades - NEW */}
+                    <div className="mt-32">
+                        <div className="text-center mb-12">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#34D562]/10 border border-[#34D562]/20 mb-4"
+                            >
+                                <Sparkles size={16} className="text-[#34D562]" />
+                                <span className="text-[#34D562] text-xs font-bold uppercase tracking-widest">2026 Session Enhancements</span>
+                            </motion.div>
+                            <h3 className="text-3xl md:text-5xl font-bold text-white mb-4">The GOG Edge </h3>
+                            <p className="text-gray-400 max-w-2xl mx-auto">We've upgraded our program execution for the 2026 session to ensure direct industry exposure and prestigious certifications.</p>
+                        </div>
+                        <CurrentYearUpgrades />
+                    </div>
 
                     {/* Comparison Table */}
                     <div className="mt-24 relative max-w-6xl mx-auto">

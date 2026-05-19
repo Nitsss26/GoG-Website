@@ -80,7 +80,7 @@ const Navbar: React.FC = () => {
                   <img src="https://i.ibb.co/84zfk4cR/logo-2.png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />
                 </div>
               ) : location.pathname === '/sagebhopal' ? (
-                <div className="flex items-center gap-1.5 md:gap-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
+                <div className="flex items-center gap-1.5 md:gap-4 bg-white backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
                   <img src="/assets/SAGE/sage-bhopal-logo.png" alt="SAGE University" className="h-9 md:h-12 object-contain" />
                   <span className="text-gray-400 font-bold text-[8px] md:text-sm">X</span>
                   <img src="https://i.ibb.co/84zfk4cR/logo-2.png" alt="Geeks of Gurukul" className="h-6 md:h-6 object-contain" />

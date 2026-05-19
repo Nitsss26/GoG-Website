@@ -3,6 +3,7 @@ import HomeHero from '../components/HomeHero';
 import HomeAwardsPremium from '../components/HomeAwardsPremium';
 import FutureWithTech from '../components/FutureWithTech';
 import TeamVideos from '../components/TeamVideos';
+import PressArticles from '../components/PressArticles';
 import SEO from '../components/SEO';
 
 const Home: React.FC = () => {
@@ -20,6 +21,7 @@ const Home: React.FC = () => {
             <HomeAwardsPremium />
             <FutureWithTech />
             <TeamVideos />
+            <PressArticles />
         </main>
     );
 };
