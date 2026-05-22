@@ -157,9 +157,10 @@ const Navbar: React.FC = () => {
                           <Link
                             key={child.label}
                             to={child.href}
-                            className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-[#34D562]/10 rounded-lg transition-colors"
+                            className="flex items-center gap-3 px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-[#34D562]/10 rounded-lg transition-colors"
                           >
-                            {child.label}
+                            {child.image && <img src={child.image} alt={child.label} className="w-5 h-5 object-contain" />}
+                            <span>{child.label}</span>
                           </Link>
                         ))}
                       </motion.div>
@@ -210,14 +211,15 @@ const Navbar: React.FC = () => {
                       <span className="text-2xl font-display font-bold text-white/50">{item.label}</span>
                       <div className="flex flex-col items-center gap-3 w-full bg-white/5 rounded-2xl p-4">
                         {item.children.map((child) => (
-                          <Link
-                            key={child.label}
-                            to={child.href}
-                            className="text-lg font-medium text-white hover:text-[#34D562]"
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            {child.label}
-                          </Link>
+                            <Link
+                              key={child.label}
+                              to={child.href}
+                              className="flex items-center gap-3 text-lg font-medium text-white hover:text-[#34D562]"
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              {child.image && <img src={child.image} alt={child.label} className="w-6 h-6 object-contain" />}
+                              <span>{child.label}</span>
+                            </Link>
                         ))}
                       </div>
                     </div>

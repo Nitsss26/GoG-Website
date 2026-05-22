@@ -16,7 +16,8 @@ const PRESS_ARTICLES = [
     { id: 11, src: '/assets/Press/Screenshot 2026-05-19 075003.png', alt: 'Press Coverage 7' },
     { id: 12, src: '/assets/Press/Screenshot 2026-05-19 075115.png', alt: 'Press Coverage 8' },
     { id: 13, src: '/assets/Press/Screenshot 2026-05-19 075143.png', alt: 'Press Coverage 9' },
-    { id: 14, src: '/assets/Press/Screenshot 2026-05-19 075254.png', alt: 'Press Coverage 10' }
+    { id: 14, src: '/assets/Press/Screenshot 2026-05-19 075254.png', alt: 'Press Coverage 10' },
+    { id: 15, src: '/assets/Press/bansal-news.png', alt: 'Bansal News Coverage' }
 ];
 
 // Duplicate for infinite marquee effect

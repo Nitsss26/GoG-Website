@@ -47,6 +47,64 @@ const winnersData: WinnerData[] = [
             { icon: <Medal size={16} className="text-[#34D562]" />, text: "₹25,000 Cash Prize" },
             { icon: <Award size={16} className="text-[#34D562]" />, text: "Best Technical Proficiency" }
         ]
+    },
+    {
+        id: "2",
+        awardName: "NATIONAL LEVEL HACKATHON",
+        titleStart: "GoG x SGSU Bhopal Students",
+        titleHighlight: "got 1st Prize of Rs 25,000",
+        titleEnd: "at BGI National Level Hackathon",
+        eventName: "BGI NATIONAL LEVEL HACKATHON",
+        teamName: "ChargeIn",
+        description: (
+            <>
+                <p className="mb-4">
+                    At the two-day National Level BGI Hackathon, <span className="text-[#34D562] font-semibold">Geeks of Gurukul</span> students from SGSU, Bhopal delivered an outstanding performance, clinching the coveted first place.
+                </p>
+                <p className="mb-4">
+                    Our brilliant students outperformed 400+ teams from across the India, presenting superior solutions for challenges based on the <span className="text-white font-semibold">'Viksit Bharat'</span> theme Smart Mobility EVs & Logistics.
+                </p>
+                <p className="italic border-l-2 border-[#34D562] pl-3 text-gray-400">
+                    "With the right guidance, every student can become a winner." - Faculty, Geeks of Gurukul
+                </p>
+            </>
+        ),
+        image: "/assets/chargein-hackathon.jpg",
+        stars: 5,
+        bottomBadges: [
+            { icon: <Trophy size={16} className="text-[#34D562]" />, text: "1st Prize Winner" },
+            { icon: <Medal size={16} className="text-[#34D562]" />, text: "₹25,000 Cash Prize" },
+            { icon: <Award size={16} className="text-[#34D562]" />, text: "Smart Mobility EVs" }
+        ]
+    },
+    {
+        id: "3",
+        awardName: "NATIONAL LEVEL HACKATHON",
+        titleStart: "GoG x SGSU Bhopal Students",
+        titleHighlight: "got 1st Prize of Rs 25,000",
+        titleEnd: "at BGI National Level Hackathon",
+        eventName: "BGI NATIONAL LEVEL HACKATHON",
+        teamName: "The Vibe Coders",
+        description: (
+            <>
+                <p className="mb-4">
+                    At the two-day National Level BGI Hackathon, <span className="text-[#34D562] font-semibold">Geeks of Gurukul</span> students from SGSU Bhopal delivered an outstanding performance, clinching the coveted first place.
+                </p>
+                <p className="mb-4">
+                    Our brilliant students outperformed 400+ teams from across the India, presenting superior solutions for challenges based on the <span className="text-white font-semibold">'Viksit Bharat'</span> theme Mobile & Next-Gen App Innovation.
+                </p>
+                <p className="italic border-l-2 border-[#34D562] pl-3 text-gray-400">
+                    "With the right guidance, every student can become a winner." - Faculty, Geeks of Gurukul
+                </p>
+            </>
+        ),
+        image: "/assets/vibecoders-hackathon.jpg",
+        stars: 5,
+        bottomBadges: [
+            { icon: <Trophy size={16} className="text-[#34D562]" />, text: "1st Prize Winner" },
+            { icon: <Medal size={16} className="text-[#34D562]" />, text: "₹25,000 Cash Prize" },
+            { icon: <Award size={16} className="text-[#34D562]" />, text: "App Innovation" }
+        ]
     }
 ];
 

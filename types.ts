@@ -6,6 +6,7 @@ export interface NavItem {
   isButton?: boolean;
   isPrimary?: boolean;
   children?: NavItem[];
+  image?: string;
 }
 
 export interface Feature {

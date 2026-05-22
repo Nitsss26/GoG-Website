@@ -7,12 +7,12 @@ export const NAV_ITEMS: NavItem[] = [
     label: 'Web 3.0',
     href: '#',
     children: [
-      { label: 'Koii Labs', href: '/blockchain/koii-labs' },
-      { label: 'Agoric', href: '/blockchain/agoric' },
-      { label: 'Core Dao', href: '/blockchain/core-dao' },
-      { label: 'Educhain', href: '/blockchain/educhain' },
-      { label: 'Stellar', href: '/blockchain/stellar' },
-      { label: 'Aptos', href: '/blockchain/aptos' },
+      { label: 'Koii Labs', href: '/blockchain/koii-labs', image: '/assets/koii-logo.png' },
+      { label: 'Agoric', href: '/blockchain/agoric', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO7mO81MqcK_mVARTt1QMm0h7hm75MIO1UMA&s' },
+      { label: 'Core Dao', href: '/blockchain/core-dao', image: 'https://s2.coinmarketcap.com/static/img/coins/200x200/23254.png' },
+      { label: 'Educhain', href: '/blockchain/educhain', image: 'https://public.bnbstatic.com/static/academy/uploads/0adc5aeca69b42d3928b5f1f47a801b4.png' },
+      { label: 'Stellar', href: '/blockchain/stellar', image: 'https://s2.coinmarketcap.com/static/img/coins/200x200/512.png' },
+      { label: 'Aptos', href: '/blockchain/aptos', image: 'https://cryptoslate.com/wp-content/uploads/2022/10/Aptos-logo.jpg' },
     ]
   },
   { label: 'Events', href: '/events' },
