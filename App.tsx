@@ -35,6 +35,7 @@ const Careers = lazy(() => import('./pages/Careers'));
 const Tech = lazy(() => import('./pages/Tech'));
 const EventDetail = lazy(() => import('./pages/EventDetail'));
 const OrientalUniversity = lazy(() => import('./pages/OrientalUniversity'));
+const IESUniversity = lazy(() => import('./pages/IESUniversity'));
 const Winners = lazy(() => import('./pages/Winners'));
 
 const LoadingFallback = () => (
@@ -101,6 +102,7 @@ const App: React.FC = () => {
               <Route path="/gyanveer" element={<Gyanveer />} />
               <Route path="/scope" element={<Scope />} />
               <Route path="/orientaluniversity" element={<OrientalUniversity />} />
+              <Route path="/ies-university" element={<IESUniversity />} />
               <Route path="/winners" element={<Winners />} />
               <Route path="/events" element={<Events />} />
               <Route path="/events/:id" element={<EventDetail />} />

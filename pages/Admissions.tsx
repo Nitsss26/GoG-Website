@@ -932,12 +932,12 @@ const Admissions = () => {
                         <h4 className="text-white font-bold mb-6 text-xl flex items-center gap-2">
                             <span className="text-[#34D562]">Your Journey</span> to Success
                         </h4>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div className="flex flex-wrap gap-4 justify-center">
                             {curriculum.map((sem, i) => (
                                 <button
                                     key={i}
                                     onClick={() => setActiveSem(i)}
-                                    className={`p-5 rounded-2xl border transition-all duration-300 relative group text-left flex flex-col h-full ${activeSem === i
+                                    className={`p-5 rounded-2xl border transition-all duration-300 relative group text-left flex flex-col h-full w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-12px)] ${activeSem === i
                                         ? 'bg-[#111] border-[#34D562] shadow-[0_0_20px_rgba(52,213,98,0.2)] scale-105 z-10'
                                         : 'bg-[#111] border-white/10 hover:border-[#34D562]/30 text-gray-400 hover:bg-[#1a1a1a]'
                                         }`}
