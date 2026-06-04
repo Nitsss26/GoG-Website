@@ -290,17 +290,14 @@ const StickyBottomActions = ({ isVisible, onApplyClick }: { isVisible: boolean, 
                 >
                     Apply Now
                 </button>
-                <button
-                    onClick={() => {
-                        const link = document.createElement('a');
-                        link.href = '#';
-                        link.click();
-                        alert('Admission guide will be sent to your email.');
-                    }}
+                <a
+                    href="https://drive.google.com/file/d/1LEyuFYPnoc1wcAzKSB4AEEQDCuqonAP_/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1 py-3 bg-white/10 text-white font-bold rounded-lg border border-white/10 text-center flex items-center justify-center"
                 >
                     Brochure
-                </button>
+                </a>
             </div>
         </div>
     );
@@ -464,12 +461,14 @@ const SageBhopal = () => {
                             <button onClick={() => setIsApplyOpen(true)} className="flex-1 py-3 md:py-4 bg-[#34D562] text-black font-extrabold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,213,98,0.3)] whitespace-nowrap">
                                 Apply Now
                             </button>
-                            <button
-                                onClick={() => alert('Brochure will be available soon.')}
+                            <a
+                                href="https://drive.google.com/file/d/1LEyuFYPnoc1wcAzKSB4AEEQDCuqonAP_/view"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap"
                             >
                                 <Download size={20} className="mr-2" /> Download Brochure
-                            </button>
+                            </a>
                         </motion.div>
                     </div>
 

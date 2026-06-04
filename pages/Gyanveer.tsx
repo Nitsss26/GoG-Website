@@ -285,7 +285,9 @@ const StickyBottomActions = ({ isVisible, onApplyClick }: { isVisible: boolean, 
                     Apply Now
                 </button>
                 <a
-                    href="#"
+                    href="https://drive.google.com/file/d/1tj9y7zn1EsHjqfzII0VZCi3hcHOpjfig/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1 py-3 bg-white/10 text-white font-bold rounded-lg border border-white/10 text-center flex items-center justify-center"
                 >
                     Admission Guide
@@ -414,8 +416,13 @@ const Gyanveer = () => {
                             <button onClick={() => setIsApplyOpen(true)} className="flex-1 py-3 md:py-4 bg-[#34D562] text-black font-extrabold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,213,98,0.3)] whitespace-nowrap">
                                 Apply Now
                             </button>
-                            <a href="#" className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap">
-                                Admission Guide
+                            <a 
+                                href="https://drive.google.com/file/d/1tj9y7zn1EsHjqfzII0VZCi3hcHOpjfig/view"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap"
+                            >
+                                <Download size={20} className="mr-2" /> Download Brochure
                             </a>
                         </motion.div>
                     </div>

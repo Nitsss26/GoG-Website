@@ -105,6 +105,64 @@ const winnersData: WinnerData[] = [
             { icon: <Medal size={16} className="text-[#34D562]" />, text: "₹25,000 Cash Prize" },
             { icon: <Award size={16} className="text-[#34D562]" />, text: "App Innovation" }
         ]
+    },
+    {
+        id: "4",
+        awardName: "NATIONAL LEVEL HACKATHON",
+        titleStart: "GoG x Oriental University Indore Students",
+        titleHighlight: "got 2nd Prize of Rs 12,000",
+        titleEnd: "at BGI National Level Hackathon",
+        eventName: "BGI NATIONAL LEVEL HACKATHON",
+        teamName: "Yokai",
+        description: (
+            <>
+                <p className="mb-4">
+                    At the two-day National Level BGI Hackathon, <span className="text-[#34D562] font-semibold">Geeks of Gurukul</span> students from Oriental University Indore delivered an outstanding performance, clinching the coveted second place.
+                </p>
+                <p className="mb-4">
+                    Our brilliant students outperformed 400+ teams from across the India, presenting superior solutions for challenges based on the <span className="text-white font-semibold">'Viksit Bharat'</span> themes: Cyber Security, Healthcare, BioTech and Digital Trust.
+                </p>
+                <p className="italic border-l-2 border-[#34D562] pl-3 text-gray-400">
+                    "With the right guidance, every student can become a winner." - Faculty, Geeks of Gurukul
+                </p>
+            </>
+        ),
+        image: "/assets/2nd-3000Rs-Yokai-Oriental.JPG",
+        stars: 5,
+        bottomBadges: [
+            { icon: <Trophy size={16} className="text-[#34D562]" />, text: "2nd Prize Winner" },
+            { icon: <Medal size={16} className="text-[#34D562]" />, text: "₹12,000 Cash Prize" },
+            { icon: <Award size={16} className="text-[#34D562]" />, text: "Cyber Security & Digital Trust" }
+        ]
+    },
+    {
+        id: "5",
+        awardName: "NATIONAL LEVEL HACKATHON",
+        titleStart: "GoG x Oriental University Indore Students",
+        titleHighlight: "got 3rd Prize of Rs 3,000",
+        titleEnd: "at BGI National Level Hackathon",
+        eventName: "BGI NATIONAL LEVEL HACKATHON",
+        teamName: "Medio Mates",
+        description: (
+            <>
+                <p className="mb-4">
+                    At the two-day National Level BGI Hackathon, <span className="text-[#34D562] font-semibold">Geeks of Gurukul</span> students from Oriental University Indore delivered an outstanding performance, clinching the coveted third place.
+                </p>
+                <p className="mb-4">
+                    Their remarkable performance reflected months of dedication, technical depth, and innovative thinking that set them apart from the competition. It was a proud moment that highlighted the caliber and potential of Oriental University and GoG's student community of winning on a national stage.
+                </p>
+                <p className="italic border-l-2 border-[#34D562] pl-3 text-gray-400">
+                    "With the right guidance, every student can become a winner." - Faculty, Geeks of Gurukul
+                </p>
+            </>
+        ),
+        image: "/assets/3rd-12000-MedicoMates-Oriental.jpg",
+        stars: 5,
+        bottomBadges: [
+            { icon: <Trophy size={16} className="text-[#34D562]" />, text: "3rd Prize Winner" },
+            { icon: <Medal size={16} className="text-[#34D562]" />, text: "₹3,000 Cash Prize" },
+            { icon: <Award size={16} className="text-[#34D562]" />, text: "Healthcare & BioTech" }
+        ]
     }
 ];
 

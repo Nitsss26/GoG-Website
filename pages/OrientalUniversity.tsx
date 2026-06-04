@@ -171,12 +171,14 @@ const StickyBottomActions = ({ isVisible, onApplyClick }: { isVisible: boolean, 
                 >
                     Apply Now
                 </button>
-                <button
-                    onClick={() => alert('Admission guide will be available soon.')}
+                <a
+                    href="https://drive.google.com/file/d/13DuRAsdWL3SGtdX3PtzkxeobiTQ17yRO/view?usp=drive_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1 py-3 bg-white/10 text-white font-bold rounded-lg border border-white/10 text-center flex items-center justify-center"
                 >
                     Admission Guide
-                </button>
+                </a>
             </div>
         </div>
     );
@@ -315,9 +317,14 @@ const OrientalUniversity = () => {
                         </motion.h1>
                         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="flex flex-row justify-center gap-3 w-full max-w-lg mx-auto -mb-8 md:-mb-16 mt-6 md:mt-4 px-4 md:px-0">
                             <button onClick={() => setIsApplyOpen(true)} className="flex-1 py-3 md:py-4 bg-[#34D562] text-black font-extrabold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,213,98,0.3)] whitespace-nowrap">Apply Now</button>
-                            <button onClick={() => alert('Brochure will be available soon.')} className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap">
+                            <a
+                                href="https://drive.google.com/file/d/13DuRAsdWL3SGtdX3PtzkxeobiTQ17yRO/view?usp=drive_link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap"
+                            >
                                 <Download size={20} className="mr-2" /> Download Brochure
-                            </button>
+                            </a>
                         </motion.div>
                     </div>
                     <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} className="mt-12 md:mt-20 border-y border-white/5 bg-white/5 backdrop-blur-sm">
