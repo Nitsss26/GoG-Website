@@ -36,7 +36,7 @@ const winnersData: WinnerData[] = [
                     Our brilliant students outperformed numerous teams from across the nation, presenting superior solutions for challenges based on the <span className="text-white font-semibold">'Viksit Bharat'</span> theme spanning AI, EV, and App Development.
                 </p>
                 <p className="italic border-l-2 border-[#34D562] pl-3 text-gray-400">
-                    "With the right guidance, every student can become a winner." - Faculty, Geeks of Gurukul
+                    "True potential shines brightest when guided by the right mentors." - Faculty, Geeks of Gurukul
                 </p>
             </>
         ),
@@ -65,7 +65,7 @@ const winnersData: WinnerData[] = [
                     Our brilliant students outperformed 400+ teams from across the India, presenting superior solutions for challenges based on the <span className="text-white font-semibold">'Viksit Bharat'</span> theme Smart Mobility EVs & Logistics.
                 </p>
                 <p className="italic border-l-2 border-[#34D562] pl-3 text-gray-400">
-                    "With the right guidance, every student can become a winner." - Faculty, Geeks of Gurukul
+                    "Success is the natural outcome of dedication and expert mentorship." - Faculty, Geeks of Gurukul
                 </p>
             </>
         ),
@@ -94,7 +94,7 @@ const winnersData: WinnerData[] = [
                     Our brilliant students outperformed 400+ teams from across the India, presenting superior solutions for challenges based on the <span className="text-white font-semibold">'Viksit Bharat'</span> theme Mobile & Next-Gen App Innovation.
                 </p>
                 <p className="italic border-l-2 border-[#34D562] pl-3 text-gray-400">
-                    "With the right guidance, every student can become a winner." - Faculty, Geeks of Gurukul
+                    "Empowering minds to turn innovative ideas into winning solutions." - Faculty, Geeks of Gurukul
                 </p>
             </>
         ),
@@ -123,7 +123,7 @@ const winnersData: WinnerData[] = [
                     Our brilliant students outperformed 400+ teams from across the India, presenting superior solutions for challenges based on the <span className="text-white font-semibold">'Viksit Bharat'</span> themes: Cyber Security, Healthcare, BioTech and Digital Trust.
                 </p>
                 <p className="italic border-l-2 border-[#34D562] pl-3 text-gray-400">
-                    "With the right guidance, every student can become a winner." - Faculty, Geeks of Gurukul
+                    "Our greatest achievement is watching our students conquer national stages." - Faculty, Geeks of Gurukul
                 </p>
             </>
         ),
@@ -152,7 +152,7 @@ const winnersData: WinnerData[] = [
                     Their remarkable performance reflected months of dedication, technical depth, and innovative thinking that set them apart from the competition. It was a proud moment that highlighted the caliber and potential of Oriental University and GoG's student community of winning on a national stage.
                 </p>
                 <p className="italic border-l-2 border-[#34D562] pl-3 text-gray-400">
-                    "With the right guidance, every student can become a winner." - Faculty, Geeks of Gurukul
+                    "Transforming raw talent into industry-ready champions." - Faculty, Geeks of Gurukul
                 </p>
             </>
         ),

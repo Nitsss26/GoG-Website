@@ -127,7 +127,7 @@ export const coursesData: CourseCardData[] = [
         programName: "B.Tech CSE AI-ML \n BCA AI-ML",
         approvals: "AICTE Approved | NBA Accredited",
         logo: "https://cdn.prod.website-files.com/67fe6c64a51431b49c38a7bd/67fe6c64a51431b49c38abaa_WhatsApp%20Image%202024-11-28%20at%2017.46.46%20(1).webp",
-        image: "https://scontent.fluh1-2.fna.fbcdn.net/v/t39.30808-6/481270857_616312684353248_5288063765120398116_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=vxXPk6FC6vkQ7kNvwGtJulO&_nc_oc=Ado1ArBNn6NrPL4zKRIBogN2_oEpphMjvvVbbUssow8Rkh3qxMxy4OCh1LWVJQC3gYmdulC3HOwKqpitWv2bxbUI&_nc_zt=23&_nc_ht=scontent.fluh1-2.fna&_nc_gid=scseHJBANMBn9v8EC5KBNQ&_nc_ss=78289&oh=00_Af7de_lYiyFvNXm-Flxt8HVGVAxfwfrWalAZhUtWPMj-Ow&oe=6A1A40E2",
+        image: "https://content.jdmagicbox.com/comp/bhopal/65/0755p755std2700465/catalogue/ies-university-bhopal-kalkheda-bhopal-institutes-9h4364j1aw.jpg",
         specialisations: 5,
         certifications: 12,
         fees: "₹80,000/Year Starting...",
