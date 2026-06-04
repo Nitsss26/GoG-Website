@@ -12,22 +12,20 @@ import GreenEmbers from '../components/ui/GreenEmbers';
 import SEO from '../components/SEO';
 import {
     courseInfo, rankings, mediaLinks, amenities,
-    nearbyPlaces, curriculum, faculty, comparisonData,
-    heroStats, admissionSteps, feeStructure, placementStats,
+    nearbyPlaces, curricula, courses, faculty, comparisonData,
+    heroStats, admissionSteps, feeStructures, placementStats,
     clubs, faqs, testimonials, universityAbout,
     studentVlogs, alumniSuccess, recruiterTestimonials, careerPathData, blogUpdates, heroImages
-} from '../data/sageIndoreData';
+} from '../data/iesData';
 
 // Import assets
-import SageLogo from "../assets/PartneredColleges/Sage_Indore.png";
 import GoGLogo from "../assets/gog-logo.png";
 import {
-    StudentVlogs, VirtualTour, CareerVisualizer, ScholarshipStats, AlumniNetwork, RecruiterTestimonials, BlogUpdates, ChatBot, CurrentYearUpgrades
+    StudentVlogs, VirtualTour, CareerVisualizer, ScholarshipStats, AlumniNetwork, RecruiterTestimonials, BlogUpdates, ChatBot
 } from '../components/UniqueFeatures';
 import { HeroSlider } from '../components/HeroSlider';
 import { ApplyForm } from '../components/ApplyForm';
 import { StickyNav } from '../components/StickyNav';
-import { SuccessTicker } from '@/components/SuccessTicker';
 
 // --- SUB-COMPONENTS ---
 const SectionHeader = ({ title, subtitle, light = false }: { title: string; subtitle?: string; light?: boolean }) => (
@@ -54,30 +52,14 @@ const SectionHeader = ({ title, subtitle, light = false }: { title: string; subt
     </div>
 );
 
-const VideoPlaceholder = ({ label }: { label: string }) => (
-    <div className="relative aspect-video bg-gray-900 rounded-xl overflow-hidden border border-white/10 group cursor-pointer hover:border-[#34D562]/50 transition-all shadow-lg">
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-            <div className="w-14 h-14 bg-[#34D562]/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform border border-[#34D562]/50">
-                <Play size={24} className="text-[#34D562] fill-[#34D562]" />
-            </div>
-        </div>
-        <img
-            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800"
-            alt={label}
-            className="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-500"
-        />
-        <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent text-white font-bold">{label}</div>
-    </div>
-);
-
 const StackedCarousel = () => {
     const [centerIndex, setCenterIndex] = useState(4);
 
     const features = [
         { title: "Future-Proof Career", desc: "Launch into high-growth AI roles.", icon: Rocket },
-        { title: "Prestigious Certification", desc: "Degree from NAAC 'A+' University.", icon: Award },
+        { title: "Prestigious Certification", desc: "Degree from NBA Accredited & NAAC A+ University.", icon: Award },
         { title: "Advanced Curriculum", desc: "Real-time project implementation.", icon: BookOpen },
-        { title: "Faculty of IITians", desc: "Learn from IIT experts.", icon: Users },
+        { title: "Industry Mentors", desc: "Learn from experts.", icon: Users },
         { title: "Vibrant Networking", desc: "Connect with industry leaders.", icon: Globe },
         { title: "Internship Assurance", desc: "100% internship support.", icon: Building },
         { title: "Placement Assurance", desc: "100% placement support.", icon: Shield },
@@ -114,21 +96,20 @@ const StackedCarousel = () => {
                     <motion.div
                         key={i}
                         animate={{
-                            x: pos * (window.innerWidth < 768 ? 180 : 280), // Adjusted spacing
-                            scale: absPos === 0 ? 1.1 : 0.8 - absPos * 0.1, // Slightly smaller scale
+                            x: pos * (window.innerWidth < 768 ? 180 : 280),
+                            scale: absPos === 0 ? 1.1 : 0.8 - absPos * 0.1,
                             zIndex: 10 - absPos,
                             opacity: 1 - absPos * 0.4,
                             rotateY: pos * -20,
                             y: absPos * 20,
-                            // Removed blur for sharpness
                         }}
                         transition={{
                             type: "spring",
-                            stiffness: 400, // Even stiffer for faster snap
-                            damping: 30,   // Damped to prevent oscillation at high speed
-                            mass: 0.6      // Lighter for quicker starts
+                            stiffness: 400,
+                            damping: 30,
+                            mass: 0.6
                         }}
-                        className={`absolute w-[260px] md:w-[320px] p-8 rounded-[2rem] border transition-all duration-300 cursor-pointer ${absPos === 0 ? 'bg-[#151515] border-[#34D562] shadow-[0_20px_50px_rgba(52,213,98,0.2)]' : 'bg-[#111] border-white/5 opacity-50'}`} // Reduced width/padding/radius
+                        className={`absolute w-[260px] md:w-[320px] p-8 rounded-[2rem] border transition-all duration-300 cursor-pointer ${absPos === 0 ? 'bg-[#151515] border-[#34D562] shadow-[0_20px_50px_rgba(52,213,98,0.2)]' : 'bg-[#111] border-white/5 opacity-50'}`}
                         onClick={() => setCenterIndex(i)}
                     >
                         <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 mx-auto transition-all duration-700 ${absPos === 0 ? 'bg-[#34D562] text-black scale-110 rotate-3 shadow-[0_0_30px_rgba(52,213,98,0.4)]' : 'bg-white/5 text-gray-600'}`}>
@@ -150,14 +131,6 @@ const StackedCarousel = () => {
         </div>
     );
 };
-const GlowCard = ({ children, className = "" }: { children: React.ReactNode, className?: string; key?: React.Key }) => (
-    <div className={`relative group ${className}`}>
-        <div className="absolute -inset-0.5 bg-gradient-to-r from-[#34D562] to-emerald-600 rounded-2xl opacity-20 group-hover:opacity-100 transition duration-500 blur-md group-hover:blur-lg"></div>
-        <div className="relative h-full bg-[#0a0a0a] rounded-2xl border border-white/10 p-6 overflow-hidden">
-            {children}
-        </div>
-    </div>
-);
 
 const ImageCard = ({ img, title, subtitle }: { img?: string; title: string; subtitle?: string; key?: React.Key }) => (
     <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-[#111] h-full shadow-lg hover:shadow-[#34D562]/10 transition-shadow">
@@ -178,101 +151,12 @@ const ImageCard = ({ img, title, subtitle }: { img?: string; title: string; subt
     </div>
 );
 
-const CertificatePreview = () => (
-    <div className="relative bg-white text-black py-6 px-6 md:py-10 md:px-16 rounded-lg shadow-2xl border-4 border-[#34D562]/20 max-w-6xl mx-auto overflow-hidden transform scale-[0.85] md:scale-110 origin-center transition-transform duration-500">
-        {/* Borders */}
-        <div className="absolute top-0 left-0 w-8 h-8 md:w-16 md:h-16 border-t-8 border-l-8 border-[#003366] rounded-tl-2xl md:rounded-tl-3xl" />
-        <div className="absolute top-0 right-0 w-8 h-8 md:w-16 md:h-16 border-t-8 border-r-8 border-[#003366] rounded-tr-2xl md:rounded-tr-3xl" />
-        <div className="absolute bottom-0 left-0 w-8 h-8 md:w-16 md:h-16 border-b-8 border-l-8 border-[#003366] rounded-bl-2xl md:rounded-bl-3xl" />
-        <div className="absolute bottom-0 right-0 w-8 h-8 md:w-16 md:h-16 border-b-8 border-r-8 border-[#003366] rounded-br-2xl md:rounded-br-3xl" />
-
-        {/* Content */}
-        <div className="text-center relative z-10">
-            <div className="flex justify-center mb-4 md:mb-6 gap-4 md:gap-8 items-center">
-                {/* University Logo Mockup */}
-                <div className="text-[#1e3a5f] font-serif font-bold text-xl md:text-2xl border-2 border-[#1e3a5f] p-1 md:p-2 flex flex-col items-center scale-90">
-                    <span>SAGE</span>
-                    <span className="text-[8px] md:text-[10px] uppercase tracking-widest text-black">Estd 2020</span>
-                </div>
-            </div>
-
-            <h3 className="text-[#003366] font-serif font-bold text-xl md:text-4xl mb-1">CERTIFICATE OF COMPLETION</h3>
-            <p className="text-gray-600 italic text-xs md:text-base mb-2 md:mb-4">This is to certify that Mr./Ms.</p>
-
-            <div className="text-3xl md:text-5xl font-script text-[#34D562] font-bold mb-2 md:mb-4">Aditya Verma</div>
-
-            <p className="text-gray-700 text-sm md:text-lg max-w-2xl mx-auto mb-4 md:mb-6 leading-tight">
-                has successfully completed the 4-Year B.Tech Program in <br />
-                <span className="font-bold text-black">Computer Science & Engineering (Full Stack Development)</span>
-            </p>
-
-            <div className="flex justify-between items-end mt-4 md:mt-8 px-2 md:px-10">
-                <div className="text-center">
-                    <div className="h-8 w-16 md:h-12 md:w-24 border-b-2 border-black mb-1 md:mb-2 mx-auto"></div>
-                    <p className="font-bold text-[#1e3a5f] text-[10px] md:text-base">Registrar</p>
-                    <p className="text-[8px] md:text-xs text-gray-500">SAGE University</p>
-                </div>
-                {/* Geeks of Gurukul Badge */}
-                <div className="text-center">
-                    <span className="text-sm md:text-xl font-bold text-black flex items-center gap-1">
-                        <span className="text-[#34D562]">Geeks</span>ofGurukul
-                    </span>
-                </div>
-                <div className="text-center">
-                    <div className="h-8 w-16 md:h-12 md:w-24 border-b-2 border-black mb-1 md:mb-2 mx-auto"></div>
-                    <p className="font-bold text-[#003366] text-[10px] md:text-base">Program Director</p>
-                    <p className="text-[8px] md:text-xs text-gray-500">Geeks of Gurukul</p>
-                </div>
-            </div>
-        </div>
-
-        {/* Shine Effect */}
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 animate-shine pointer-events-none" />
-    </div>
-);
-
-
-
-
-
-
-const AboutSlideshow = ({ images, delay = 0 }: { images: string[], delay?: number }) => {
-    const [index, setIndex] = useState(0);
-    React.useEffect(() => {
-        const timer = setTimeout(() => {
-            const interval = setInterval(() => {
-                setIndex((prev) => (prev + 1) % images.length);
-            }, 4000);
-            return () => clearInterval(interval);
-        }, delay);
-        return () => clearTimeout(timer);
-    }, [delay]);
-
-    return (
-        <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl group flex-1">
-            <AnimatePresence mode="wait">
-                <motion.img
-                    key={index}
-                    src={images[index]}
-                    alt="Campus"
-                    initial={{ opacity: 0, scale: 1.1 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 1 }}
-                    className="absolute inset-0 w-full h-full object-cover"
-                />
-            </AnimatePresence>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />
-        </div>
-    );
-};
 
 const StickyBottomActions = ({ isVisible, onApplyClick }: { isVisible: boolean, onApplyClick: () => void }) => {
     const [show, setShow] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            // Show after scrolling past hero (1 full viewport height)
             setShow(window.scrollY > window.innerHeight);
         };
         window.addEventListener('scroll', handleScroll);
@@ -290,20 +174,20 @@ const StickyBottomActions = ({ isVisible, onApplyClick }: { isVisible: boolean, 
                 >
                     Apply Now
                 </button>
-                <a
-                    href="https://drive.google.com/file/d/1LEyuFYPnoc1wcAzKSB4AEEQDCuqonAP_/view"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <button
+                    onClick={() => {
+                        alert('Admission guide will be available soon.');
+                    }}
                     className="flex-1 py-3 bg-white/10 text-white font-bold rounded-lg border border-white/10 text-center flex items-center justify-center"
                 >
                     Brochure
-                </a>
+                </button>
             </div>
         </div>
     );
 };
+
 const PlacementSlideshow = () => {
-    // Explicit imports to ensure Vite bundles them correctly
     const images = [
         "/assets/GoG/placement-1.png",
         "/assets/GoG/placement-2.png",
@@ -311,7 +195,7 @@ const PlacementSlideshow = () => {
     ];
     const [index, setIndex] = useState(0);
 
-    React.useEffect(() => {
+    useEffect(() => {
         const timer = setInterval(() => {
             setIndex((prev) => (prev + 1) % images.length);
         }, 4000);
@@ -333,7 +217,6 @@ const PlacementSlideshow = () => {
                 />
             </AnimatePresence>
 
-            {/* Dots */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
                 {images.map((_, i) => (
                     <button
@@ -347,18 +230,23 @@ const PlacementSlideshow = () => {
     );
 };
 
-const SageIndore = () => {
+const IESUniversity = () => {
     const [activeFaq, setActiveFaq] = useState<number | null>(null);
     const [activeSem, setActiveSem] = useState(0);
+    const [activeCourse, setActiveCourse] = useState('btech-cse-aiml');
     const [isApplyOpen, setIsApplyOpen] = useState(false);
-    const [selectedAmenity, setSelectedAmenity] = useState<typeof amenities[0] | null>(null);
+    const [selectedAmenity, setSelectedAmenity] = useState<any>(null);
+
+    const currentCurriculum = curricula[activeCourse] || [];
+    const currentFee = feeStructures[activeCourse];
+    const logoUrl = "https://cdn.prod.website-files.com/67fe6c64a51431b49c38a7bd/67fe6c64a51431b49c38abaa_WhatsApp%20Image%202024-11-28%20at%2017.46.46%20(1).webp";
 
     return (
         <div className="min-h-screen bg-[#000000] text-white font-sans selection:bg-[#34D562] selection:text-black overflow-x-hidden">
             <SEO
-                title="B.Tech Full Stack Development 2026 | SAGE University Indore"
-                description="Apply for SAGE University Indore's industry-integrated B.Tech in CSE (Full Stack Development). NAAC A+ Accredited. 100% placement support and curriculum designed by IIT mentors."
-                canonical="/sageindore"
+                title="B.Tech CSE AI-ML & BCA AI-ML Programs 2026 | IES University Bhopal"
+                description="Apply for IES University's industry-integrated B.Tech CSE AI-ML and BCA AI-ML programs in association with Geeks of Gurukul. 100% placement support."
+                canonical="/ies-university"
             />
 
             <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
@@ -369,7 +257,7 @@ const SageIndore = () => {
                 onApplyClick={() => setIsApplyOpen(true)}
                 logo={
                     <div className="flex items-center gap-1.5 md:gap-4 bg-white backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
-                        <img src={SageLogo} alt="SAGE University Indore" className="h-9 md:h-12 object-contain" />
+                        <img src={logoUrl} alt="IES University" className="h-6 md:h-8 object-contain" />
                         <span className="text-gray-400 font-bold text-[8px] md:text-sm">X</span>
                         <img src={GoGLogo} alt="Geeks of Gurukul" className="h-6 md:h-8 object-contain" />
                     </div>
@@ -378,79 +266,36 @@ const SageIndore = () => {
             <ApplyForm
                 isOpen={isApplyOpen}
                 onClose={() => setIsApplyOpen(false)}
-                universityName="Sage University Indore"
-                courses={["B.Tech Full Stack Development"]}
-                redirectUrl="https://sageuniversity.in/admission/"
+                universityName="IES University"
+                courses={["B.Tech CSE AI-ML", "BCA AI-ML"]}
+                redirectUrl="https://iesuniversity.ac.in/"
             />
 
-            {/* ===== 1. HERO SECTION (PROFESSIONAL & FULL WIDTH) ===== */}
+            {/* ===== 1. HERO SECTION ===== */}
             <section className="relative min-h-[68vh] md:min-h-[110vh] lg:min-h-[115vh] flex items-center justify-center overflow-hidden">
-                {/* Background Effects */}
                 <HeroSlider images={heroImages} />
-                {/* Extra dark overlay to hide text baked into SAGE Indore banner images */}
-                <div className="absolute inset-0 bg-black/50 z-[1]" />
 
                 <div className="container mx-auto px-4 relative z-10 w-full max-w-7xl">
-                    <div className="flex flex-col items-center text-center max-w-5xl mx-auto pt-32 md:pt-52 pb-12 md:pb-32">
-                        {/* 1. Badge */}
+                    <div className="flex flex-col items-center text-center max-w-5xl mx-auto pt-28 md:pt-48 pb-12 md:pb-32">
                         <motion.div
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="hidden md:inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-black/40 border border-white/20 mb-6 md:mb-8 backdrop-blur-md"
+                            className="hidden md:inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-white/10 border border-white/20 mb-8 md:mb-12 backdrop-blur-md"
                         >
                             <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#34D562] animate-pulse" />
                             <span className="text-white text-[10px] md:text-xs font-bold tracking-widest uppercase">Admissions Open 2026</span>
                         </motion.div>
 
-
                         <motion.h1
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.1, duration: 0.8 }}
-                            className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight md:leading-[0.95] mb-4 md:mb-6 tracking-tighter whitespace-nowrap drop-shadow-[0_4px_30px_rgba(0,0,0,0.8)]"
+                            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight md:leading-[1.1] mb-6 md:mb-6 tracking-tighter drop-shadow-[0_4px_30px_rgba(0,0,0,0.8)]"
                         >
-                            B.Tech <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">Full Stack Development</span>
+                            B.Tech <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">CSE AI-ML</span>
+                            <br />
+                            BCA <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">AI-ML Specialisation</span>
                         </motion.h1>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2, duration: 0.8 }}
-                            className="inline-flex items-center justify-center mt-2 mb-8 md:mt-4 md:mb-10 px-4 py-2 md:px-6 md:py-3 rounded-xl bg-gradient-to-r from-[#FFD700]/10 via-[#FFD700]/20 to-[#FFD700]/10 border border-[#FFD700]/40 shadow-[0_0_20px_rgba(255,215,0,0.2)] backdrop-blur-sm gap-4 md:gap-6"
-                        >
-                            {/* Left Logos */}
-                            <div className="hidden lg:flex items-center gap-2">
-                                <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center p-1.5 shadow-md">
-                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Indian_Institute_of_Technology_Delhi_Logo.svg/250px-Indian_Institute_of_Technology_Delhi_Logo.svg.png" alt="IIT Delhi" className="w-full h-full object-contain" />
-                                </div>
-                                <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center p-1.5 shadow-md">
-                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1d/Indian_Institute_of_Technology_Bombay_Logo.svg/250px-Indian_Institute_of_Technology_Bombay_Logo.svg.png" alt="IIT Bombay" className="w-full h-full object-contain" />
-                                </div>
-                                <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center p-1.5 shadow-md">
-                                    <img src="https://upload.wikimedia.org/wikipedia/sa/4/47/IIT_Kanpur_Logo.png" alt="IIT Kanpur" className="w-full h-full object-contain" />
-                                </div>
-                            </div>
-
-                            <span className="text-white text-sm md:text-lg lg:text-xl font-medium tracking-wide flex items-center justify-center gap-2 whitespace-nowrap">
-                                <Award className="text-[#FFD700] flex-shrink-0" size={24} />
-                                Guarantee Internship at <span className="text-[#FFD700] font-bold">Indian Institute of Technology (IIT)</span>
-                            </span>
-
-                            {/* Right Logos */}
-                            <div className="hidden lg:flex items-center gap-2">
-                                <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center p-1.5 shadow-md">
-                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2d/Indian_Institute_of_Technology_Roorkee_Logo.svg/1280px-Indian_Institute_of_Technology_Roorkee_Logo.svg.png" alt="IIT Roorkee" className="w-full h-full object-contain" />
-                                </div>
-                                <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center p-1.5 shadow-md">
-                                    <img src="https://www.iitg.ac.in/cif/CIF/thumbs/generic-logo.png" alt="IIT Guwahati" className="w-full h-full object-contain" />
-                                </div>
-                                <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center p-1.5 shadow-md">
-                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/IIT_Madras_Logo.svg/500px-IIT_Madras_Logo.svg.png" alt="IIT Madras" className="w-full h-full object-contain" />
-                                </div>
-                            </div>
-                        </motion.div>
-
-
 
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -461,14 +306,12 @@ const SageIndore = () => {
                             <button onClick={() => setIsApplyOpen(true)} className="flex-1 py-3 md:py-4 bg-[#34D562] text-black font-extrabold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,213,98,0.3)] whitespace-nowrap">
                                 Apply Now
                             </button>
-                            <a
-                                href="https://drive.google.com/file/d/1LEyuFYPnoc1wcAzKSB4AEEQDCuqonAP_/view"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <button
+                                onClick={() => alert('Brochure will be available soon.')}
                                 className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap"
                             >
                                 <Download size={20} className="mr-2" /> Download Brochure
-                            </a>
+                            </button>
                         </motion.div>
                     </div>
 
@@ -491,28 +334,28 @@ const SageIndore = () => {
                 </div>
             </section>
 
-            {/* Sticky Bottom Actions (Mobile) */}
+            {/* Sticky Bottom Actions */}
             <StickyBottomActions isVisible={!isApplyOpen} onApplyClick={() => setIsApplyOpen(true)} />
 
-            {/* ===== 2. ABOUT UNIVERSITY (New Section) ===== */}
+            {/* ===== 2. ABOUT UNIVERSITY ===== */}
             <section id="about" className="py-20 bg-[#050505] border-b border-white/5 scroll-mt-[300px]">
                 <div className="container mx-auto px-4 max-w-7xl">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div>
                             <div className="flex items-center gap-4 mb-6">
-                                <img src={SageLogo} alt="SAGE University Indore" className="h-16 w-auto rounded-2xl bg-white p-2" />
+                                <img src={logoUrl} alt="IES University" className="h-16 w-auto rounded-2xl bg-white p-2" />
                                 <div className="h-10 w-px bg-white/20" />
-                                <span className="text-xl font-bold text-amber-400">NAAC A+ | UGC Approved</span>
+                                <span className="text-xl font-bold text-amber-400">NAAC A+ & NBA Accredited</span>
                             </div>
                             <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-                                The <span className="text-[#34D562]">Youngest NAAC A+</span> <br />University in India.
+                                Academic Brilliance in <span className="text-[#34D562]">Central India</span>
                             </h2>
                             <p className="text-gray-400 mb-6 leading-relaxed text-lg">
                                 {universityAbout.vision}
                             </p>
                             <div className="space-y-4 mb-8">
                                 <div className="p-4 bg-white/5 rounded-xl border-l-4 border-[#34D562]">
-                                    <h4 className="font-bold text-white text-sm uppercase mb-1">Vision 2025</h4>
+                                    <h4 className="font-bold text-white text-sm uppercase mb-1">Vision 2026</h4>
                                     <p className="text-gray-400 text-sm">{universityAbout.vision2025}</p>
                                 </div>
                             </div>
@@ -532,13 +375,12 @@ const SageIndore = () => {
                         </div>
                         <div className="relative">
                             <div className="relative py-8">
-                                {/* 2x2 Grid Layout */}
                                 <div className="grid grid-cols-2 gap-4 w-full">
                                     {[
-                                        { src: "https://sageuniversity.in/assets/life8sage/ds/ds1.jpg", label: "Design Studio" },
-                                        { src: "https://sageuniversity.in/assets/life8sage/sports/4.jpg", label: "Sports Complex" },
-                                        { src: "https://sageuniversity.in/assets/life8sage/audi/audi1.jpg", label: "Auditorium" },
-                                        { src: "https://sageuniversity.in/assets/life8sage/itlab/itlab2.jpg", label: "IT Labs" }
+                                        { src: "https://ies.ipsacademy.org/wp-content/uploads/2016/12/Networking-Lab-N-203.jpg", label: "Smart Computing Lab" },
+                                        { src: "https://cdn.prod.website-files.com/67fe6c64a51431b49c38a7bd/6990cb60565e04592a6babde_77715ad8.jpeg", label: "Advanced R&D Center" },
+                                        { src: "https://cdn.prod.website-files.com/67fe6c64a51431b49c38a7bd/67fe6c64a51431b49c38a9dc_icot1_p.webp", label: "Academic Block" },
+                                        { src: "https://iesbpl.ac.in/uploads/library1.jpg", label: "Central Library" }
                                     ].map((img, idx) => (
                                         <div key={idx} className="rounded-2xl overflow-hidden border border-white/10 shadow-xl aspect-square relative group">
                                             <img
@@ -562,34 +404,16 @@ const SageIndore = () => {
             {/* ===== VIRTUAL CAMPUS TOUR ===== */}
             <section className="py-16 bg-[#050505]">
                 <div className="container mx-auto px-4 max-w-7xl">
-                    <VirtualTour bgImage={heroImages[0]} tourUrl="https://sageuniversity.in/virtual-tour" />
+                    <VirtualTour bgImage={heroImages[0]} tourUrl="https://www.iesuniversity.ac.in/video-gallery" />
                 </div>
             </section>
 
-            {/* ===== 3. WHY CHOOSE / BENEFITS (Psychological) ===== */}
+            {/* ===== 3. WHY CHOOSE / BENEFITS ===== */}
             <section id="program-highlights" className="py-24 bg-[#080808] scroll-mt-[300px]">
                 <div className="container mx-auto px-4 max-w-7xl">
                     <SectionHeader title="Why Choose This Program?" subtitle="A future-proof degree designed for the AI era." />
 
-                    {/* Stacked 3D Feature Carousel */}
                     <StackedCarousel />
-
-                    {/* 2026 Session Upgrades - NEW */}
-                    <div className="mt-32">
-                        <div className="text-center mb-12">
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#34D562]/10 border border-[#34D562]/20 mb-4"
-                            >
-                                <Sparkles size={16} className="text-[#34D562]" />
-                                <span className="text-[#34D562] text-xs font-bold uppercase tracking-widest">2026 Session Enhancements</span>
-                            </motion.div>
-                            <h3 className="text-3xl md:text-5xl font-bold text-white mb-4">The GOG Edge </h3>
-                            <p className="text-gray-400 max-w-2xl mx-auto">We've upgraded our program execution for the 2026 session to ensure direct industry exposure and prestigious certifications.</p>
-                        </div>
-                        <CurrentYearUpgrades />
-                    </div>
 
                     {/* Comparison Table */}
                     <div className="mt-24 relative max-w-6xl mx-auto">
@@ -601,11 +425,11 @@ const SageIndore = () => {
                                 <div className="col-span-4 text-[#34D562] font-bold text-lg p-6 bg-[#34D562]/10 border-x border-[#34D562]/20 relative flex items-center gap-6 justify-center">
                                     <div className="absolute top-0 left-0 w-full h-1 bg-[#34D562]" />
                                     <div className="bg-white px-4 py-2 rounded-2xl shadow-xl border border-white/20 flex items-center justify-center h-14 w-32 shrink-0">
-                                        <img src={SageLogo} className="h-full w-auto object-contain" alt="SAGE Indore" />
+                                        <img src={logoUrl} className="h-full w-auto object-contain" alt="IES" />
                                     </div>
                                     <X size={16} className="text-gray-400 shrink-0" />
                                     <div className="bg-white px-4 py-2 rounded-2xl shadow-xl border border-white/20 flex items-center justify-center h-14 w-32 shrink-0">
-                                        <img src={GoGLogo} className="h-9 w-auto object-contain text-black" alt="Geeks of Gurukul" />
+                                        <img src={GoGLogo} className="h-9 w-auto object-contain text-black" alt="GoG" />
                                     </div>
                                 </div>
                                 <div className="col-span-4 text-gray-500 font-bold text-sm p-6">Traditional Colleges</div>
@@ -614,17 +438,14 @@ const SageIndore = () => {
                             {
                                 comparisonData.map((row, i) => (
                                     <div key={i} className="flex flex-col md:grid md:grid-cols-12 border-b border-white/5 last:border-0 items-stretch bg-[#111] md:bg-transparent">
-                                        {/* Feature (Mobile Header for the card) */}
                                         <div className="col-span-4 font-bold text-white p-4 md:p-6 flex items-center border-b md:border-b-0 border-white/5 bg-white/5 md:bg-transparent">
                                             {row.feature}
                                         </div>
 
-                                        {/* GOG Column (Highlighted) */}
                                         <div className="col-span-4 p-4 md:p-6 bg-[#34D562]/10 md:bg-[#34D562]/5 border-x border-[#34D562]/10 flex flex-col md:flex-row items-center justify-between gap-4 relative">
-                                            {/* Mobile Logo Label */}
                                             <div className="md:hidden flex items-center gap-4 mb-6 border-b border-[#34D562]/10 pb-6 w-full justify-center">
                                                 <div className="bg-white px-2 py-1 rounded-xl shadow-lg border border-white/10 flex items-center justify-center h-12 w-24 shrink-0">
-                                                    <img src={SageLogo} className="h-full w-auto object-contain" alt="SAGE Indore" />
+                                                    <img src={logoUrl} className="h-full w-auto object-contain" alt="IES" />
                                                 </div>
                                                 <X size={16} className="text-gray-400 shrink-0" />
                                                 <div className="bg-white px-1 py-1.5 rounded-xl shadow-lg border border-white/10 flex items-center justify-center h-12 w-24 shrink-0">
@@ -640,7 +461,6 @@ const SageIndore = () => {
                                             </div>
                                         </div>
 
-                                        {/* Traditional Column */}
                                         <div className="col-span-4 p-4 md:p-6 flex flex-col md:flex-row items-center justify-between gap-4 opacity-70 md:opacity-100">
                                             <div className="md:hidden text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-1">Traditional Colleges</div>
                                             <div className="flex items-center justify-between w-full md:w-full gap-4">
@@ -656,17 +476,26 @@ const SageIndore = () => {
                 </div >
             </section >
 
-
-            {/* ===== 4. FEE & ADMISSIONS (Detailed) ===== */}
+            {/* ===== 4. FEE & ADMISSIONS ===== */}
             < section id="fee" className="py-24 bg-[#000000] border-t border-white/5 relative overflow-hidden scroll-mt-[300px]" >
-                {/* Background decorative blob */}
                 < div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#34D562]/5 rounded-full blur-[120px] pointer-events-none" />
 
                 <div className="container mx-auto px-4 max-w-7xl relative z-10">
                     <div className="grid lg:grid-cols-2 gap-20">
-                        {/* Fee Structure */}
                         <div className="flex flex-col h-full">
                             <SectionHeader title="Fee Structure" subtitle="Transparent & Value-Driven." />
+                            {/* Course Tabs */}
+                            <div className="flex flex-wrap gap-2 mb-6">
+                                {courses.map((c) => (
+                                    <button
+                                        key={c.id}
+                                        onClick={() => { setActiveCourse(c.id); setActiveSem(0); }}
+                                        className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${activeCourse === c.id ? 'bg-[#34D562] text-black' : 'bg-white/10 text-gray-400 hover:bg-white/20'}`}
+                                    >
+                                        {c.name}
+                                    </button>
+                                ))}
+                            </div>
                             <div className="flex-1 p-6 bg-[#0a0a0a] border border-white/10 rounded-3xl shadow-2xl relative group overflow-hidden flex flex-col justify-between">
                                 <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
 
@@ -674,11 +503,11 @@ const SageIndore = () => {
                                     <div className="flex justify-between items-end mb-4">
                                         <div>
                                             <h4 className="text-gray-400 text-xs uppercase tracking-widest font-bold mb-1">Annual Tuition Fee</h4>
-                                            <div className="text-4xl font-display font-bold text-white">{feeStructure.tuitionPerYear}</div>
+                                            <div className="text-4xl font-display font-bold text-white">{currentFee.tuitionPerYear}</div>
                                         </div>
                                         <div className="text-right">
                                             <div className="inline-block px-3 py-1 bg-[#34D562]/20 text-[#34D562] text-xs font-bold rounded-full border border-[#34D562]/30 mb-1">
-                                                <span className="text-amber-400">NAAC 'A+'</span> Accredited
+                                                AICTE Approved
                                             </div>
                                         </div>
                                     </div>
@@ -687,16 +516,15 @@ const SageIndore = () => {
                                     <div className="grid grid-cols-2 gap-4">
                                         <div className="p-3 bg-white/5 rounded-xl border border-white/5">
                                             <span className="text-gray-400 text-[10px] uppercase tracking-wider block mb-1">Seat Booking Fee</span>
-                                            <span className="text-white text-lg font-bold">{feeStructure.seatBooking}</span>
+                                            <span className="text-white text-lg font-bold">{currentFee.seatBooking}</span>
                                         </div>
                                         <div className="p-3 bg-[#34D562]/10 rounded-xl border border-[#34D562]/20">
                                             <span className="text-[#34D562] text-[10px] uppercase tracking-wider block mb-1">Qualifier Test Fee</span>
-                                            <span className="text-[#34D562] text-lg font-bold">{feeStructure.qualifierFee}</span>
+                                            <span className="text-[#34D562] text-lg font-bold">{currentFee.qualifierFee}</span>
                                         </div>
                                     </div>
                                 </div>
 
-                                {/* Financial Aid / Bottom Filler */}
                                 <div className="mt-6 pt-6 border-t border-white/10 relative z-10 flex-1 flex flex-col gap-6">
                                     <div>
                                         <h4 className="text-white text-base font-bold mb-4 flex items-center gap-2">
@@ -718,18 +546,18 @@ const SageIndore = () => {
                                         </div>
                                     </div>
                                     <div className="mt-auto">
-                                        <ScholarshipStats tuitionFee={parseInt(feeStructure.tuitionPerYear.replace(/[₹,]/g, ''))} />
+                                        <ScholarshipStats tuitionFee={parseInt(currentFee.tuitionPerYear.replace(/[₹,]/g, ''))} />
                                         <div className="mt-4 flex flex-wrap items-center justify-between gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl shadow-xl relative overflow-hidden group">
                                             <div className="absolute top-0 right-0 w-24 h-24 bg-[#34D562]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
                                             <div className="flex-1 min-w-[200px]">
                                                 <p className="text-[11px] text-gray-400 uppercase tracking-[0.2em] font-bold mb-2">Avail Discounts</p>
                                                 <p className="text-xs text-gray-300 leading-relaxed">
-                                                    Contact <span className="text-[#34D562] font-bold">+91 91524 72392</span> or <span className="text-[#34D562] font-bold">+91 93371 89115</span> to know more about <span className="text-white font-semibold">Early Bird & Merit</span>.
+                                                    Contact <span className="text-[#34D562] font-bold">+91 91524 72392</span> to know more about <span className="text-white font-semibold">Early Bird & Merit Scholarship</span> policies.
                                                 </p>
                                             </div>
                                             <button
                                                 onClick={() => setIsApplyOpen(true)}
-                                                className="whitespace-nowrap px-6 py-2.5 text-xs font-bold bg-[#34D562] text-black rounded-full hover:bg-[#28a74b] hover:scale-105 transition-all duration-300 shadow-[0_0_15px_rgba(52,213,98,0.3)]"
+                                                className="whitespace-nowrap px-6 py-2.5 text-xs font-bold bg-[#34D562] text-black rounded-full hover:bg-[#28a74b] shadow-[0_0_15px_rgba(52,213,98,0.3)]"
                                             >
                                                 Apply Now
                                             </button>
@@ -737,45 +565,14 @@ const SageIndore = () => {
                                     </div>
                                 </div>
                             </div>
-
-                            {/* Fast Contact Card (Added to fill space) */}
-                            {/* <div className="mt-6 p-6 bg-[#111] border border-white/5 rounded-2xl relative overflow-hidden group">
-                                <div className="absolute top-0 right-0 w-24 h-24 bg-[#34D562]/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 group-hover:bg-[#34D562]/20 transition-all pointer-events-none" />
-
-                                <div className="flex items-center gap-4 mb-4">
-                                    <div className="w-10 h-10 rounded-full bg-[#34D562] flex items-center justify-center text-black shadow-lg shadow-[#34D562]/20">
-                                        <Phone size={20} />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-white leading-tight">Admissions Helpline</h4>
-                                        <p className="text-xs text-[#34D562] font-semibold uppercase tracking-wider">Available 24/7</p>
-                                    </div>
-                                </div>
-
-                                <div className="space-y-3 pl-14">
-                                    <p className="text-gray-300 font-medium text-lg">+91 91524 72392</p>
-                                    <p className="text-gray-400 text-sm flex items-center gap-2">
-                                        <Mail size={14} className="text-[#34D562]" /> admin@geeksofgurukul.com
-                                    </p>
-                                    <button className="mt-2 text-xs font-bold bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg transition-colors border border-white/5 w-full text-left flex justify-between items-center group-hover:border-[#34D562]/30">
-                                        Request Call Back <ArrowRight size={14} className="text-[#34D562]" />
-                                    </button>
-                                </div>
-                            </div> */}
                         </div>
-
-                        {/* Admission Timeline */}
                         <div>
-                            <SectionHeader title="Admission Process" subtitle="Simple 4-Step Journey." />
+                            <SectionHeader title="Admission Process" subtitle="Simple 5-Step Journey." />
                             <div className="relative pl-8 pt-4">
-                                {/* Vertical Line */}
                                 <div className="absolute left-[11px] top-4 bottom-4 w-0.5 bg-gradient-to-b from-[#34D562] to-transparent opacity-50" />
-
                                 {admissionSteps.map((step, i) => (
                                     <div key={i} className="mb-12 last:mb-0 relative group">
-                                        {/* Dot */}
                                         <div className="absolute -left-[29px] top-1 w-6 h-6 rounded-full bg-black border-4 border-[#34D562] z-10 shadow-[0_0_15px_rgba(52,213,98,0.4)] group-hover:scale-125 transition-transform" />
-
                                         <div className="p-6 bg-[#111] border border-white/10 rounded-2xl hover:border-[#34D562]/30 transition-colors relative">
                                             <div className="text-[#34D562] text-xs font-bold uppercase tracking-wider mb-2">Step 0{i + 1}</div>
                                             <h4 className="text-xl font-bold text-white mb-2">{step.title}</h4>
@@ -787,15 +584,11 @@ const SageIndore = () => {
                         </div>
                     </div>
                 </div>
-            </section >
+            </section>
 
-
-
-
-            {/* ===== 5. PLACEMENTS & PARTNERS (New High-Impact Section) ===== */}
-            < section id="placements" className="py-20 bg-[#020202] border-y border-white/5 relative overflow-hidden scroll-mt-[300px]" >
+            {/* ===== 5. PLACEMENTS & PARTNERS ===== */}
+            <section id="placements" className="py-20 bg-[#020202] border-y border-white/5 relative overflow-hidden scroll-mt-[300px]">
                 <div className="absolute top-0 right-0 w-1/3 h-full bg-[#34D562]/5 skew-x-12 blur-3xl" />
-
                 <div className="container mx-auto px-4 max-w-7xl relative z-10">
                     <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
                         <div>
@@ -805,24 +598,17 @@ const SageIndore = () => {
                             <p className="text-gray-400 text-lg mb-8">
                                 Our 100% Placement Protection plan ensures you launch your career in top-tier product companies.
                             </p>
-
-                            {/* Placement Poster */}
-
-
                             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 mb-8">
                                 <p className="text-gray-300 text-base leading-relaxed">
                                     Our students consistently secure positions at <span className="text-[#34D562] font-semibold">leading MNCs and Fortune 500 companies</span> with highly competitive salary packages. The industry-integrated curriculum, combined with intensive hands-on training and personalized mentorship, ensures that every graduate is <span className="text-white font-semibold">job-ready from Day 1</span>. With a proven track record of successful placements and strong recruiter relationships, your dream career is within reach.
                                 </p>
                             </div>
-
                             <button
                                 onClick={() => alert('Placement report will be available soon.')}
                                 className="flex items-center gap-2 px-6 py-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors text-white font-semibold w-fit"
                             >
                                 <Download size={18} /> Download Placement Report 2025
                             </button>
-
-
                         </div>
 
                         {/* Recruiter Grid - LOGOS */}
@@ -847,35 +633,6 @@ const SageIndore = () => {
 
                     {/* Full Width Industry Validation Section */}
                     <div className="mt-8 space-y-12 pt-0">
-                        {/* Career Trajectory */}
-                        <div>
-                            {/* Placement & Internship Records Row */}
-                            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-20">
-                                <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
-                                    <img
-                                        src="/assets/GoG/placement-record-2025.png"
-                                        alt="Placement Records 2025"
-                                        className="w-full h-auto object-cover transform group-hover:scale-[1.02] transition duration-500"
-                                    />
-                                </div>
-                                <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
-                                    <img
-                                        src="/assets/GoG/internship-record-2025.png"
-                                        alt="Internship Selections 2025"
-                                        className="w-full h-auto object-cover transform group-hover:scale-[1.02] transition duration-500"
-                                    />
-                                </div>
-                            </div> */}
-                        </div>
-
-
-                        {/* Alumni */}
-                        {/* <div>
-                            <SectionHeader title="Alumni Hall of Fame" subtitle="Our graduates work at the world's best companies." />
-                            <AlumniNetwork />
-                        </div> */}
-
-                        {/* Recruiters */}
                         <div>
                             <div className="text-center mb-12">
                                 <h3 className="text-3xl font-bold text-white mb-2">Industry Validation</h3>
@@ -886,24 +643,37 @@ const SageIndore = () => {
                     </div>
                 </div>
             </section >
-            {/* <SuccessTicker /> */}
-            {/* ===== 8. BLOG & UPDATES (Moved Here) ===== */}
-            < section className="py-24 bg-[#050505] border-t border-white/5" >
+
+            {/* ===== 8. BLOG & UPDATES ===== */}
+            <section className="py-24 bg-[#050505] border-t border-white/5" >
                 <div className="container mx-auto px-4 max-w-7xl">
                     <SectionHeader title="GOG Insider" subtitle="Latest News, Achievements & Events." />
-                    <BlogUpdates />
+                    <BlogUpdates data={blogUpdates} />
                 </div>
             </section >
 
-            {/* ===== 4. DENSE CURRICULUM (Funkie Roadmap) ===== */}
-            < section id="curriculum" className="py-24 bg-[#050505] scroll-mt-[300px]" >
+            {/* ===== 4. DENSE CURRICULUM ===== */}
+            <section id="curriculum" className="py-24 bg-[#050505] scroll-mt-[300px]" >
                 <div className="container mx-auto px-4 max-w-7xl">
-                    <SectionHeader title="8 Semester Roadmap" subtitle="Detailed breakdown of your 4-year journey." />
+                    <SectionHeader title={`${courses.find(c => c.id === activeCourse)?.name || 'Course'} Roadmap`} subtitle="Detailed breakdown of your academic journey." />
+
+                    {/* Course Tabs for Curriculum */}
+                    <div className="flex flex-wrap gap-2 mb-8">
+                        {courses.map((c) => (
+                            <button
+                                key={c.id}
+                                onClick={() => { setActiveCourse(c.id); setActiveSem(0); }}
+                                className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${activeCourse === c.id ? 'bg-[#34D562] text-black' : 'bg-white/10 text-gray-400 hover:bg-white/20'}`}
+                            >
+                                {c.name}
+                            </button>
+                        ))}
+                    </div>
 
                     <div className="flex flex-col lg:flex-row gap-6">
                         {/* Sidebar Tabs */}
                         <div className="lg:w-1/4 flex lg:flex-col gap-1 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 h-full">
-                            {curriculum.map((sem, i) => (
+                            {currentCurriculum.map((sem, i) => (
                                 <button
                                     key={i}
                                     onClick={() => setActiveSem(i)}
@@ -929,13 +699,12 @@ const SageIndore = () => {
                                     transition={{ duration: 0.2 }}
                                     className={`bg-[#111] border border-white/10 rounded-2xl p-8 min-h-[400px] relative overflow-hidden ${activeSem === 3 ? 'border-[#34D562]/50 shadow-[0_0_30px_rgba(52,213,98,0.1)]' : ''} ${activeSem === 7 ? 'border-yellow-400/50 shadow-[0_0_30px_rgba(250,204,21,0.1)]' : ''}`}
                                 >
-                                    {/* Fun Background Icon per sem */}
                                     <div className="absolute top-4 right-4 opacity-10 pointer-events-none">
                                         {(activeSem === 3 || activeSem === 7) && <Star size={120} className={activeSem === 7 ? "text-yellow-400" : "text-[#34D562]"} />}
                                     </div>
 
                                     <div className="flex justify-between items-baseline mb-6 border-b border-white/10 pb-4 relative z-10">
-                                        <h3 className="text-2xl font-bold text-white">{curriculum[activeSem].theme}</h3>
+                                        <h3 className="text-2xl font-bold text-white">{currentCurriculum[activeSem]?.theme}</h3>
                                         <span className="text-[#34D562] font-mono text-sm px-3 py-1 bg-[#34D562]/10 rounded-full">24 Credits</span>
                                     </div>
 
@@ -945,9 +714,8 @@ const SageIndore = () => {
                                                 <BookOpen size={16} className="text-[#34D562]" /> Core Subjects
                                             </h4>
                                             <div className="grid gap-2">
-                                                {curriculum[activeSem].subjects.map((sub, i) => (
+                                                {currentCurriculum[activeSem]?.subjects.map((sub, i) => (
                                                     <div key={i} className="flex justify-between items-center p-3 bg-black/40 rounded border border-white/5 hover:border-[#34D562]/20 transition-colors">
-
                                                         <span className="text-gray-300 text-sm font-medium flex items-center gap-2">
                                                             <div className="w-1.5 h-1.5 rounded-full bg-[#34D562] shrink-0" />
                                                             {sub.title}
@@ -964,7 +732,7 @@ const SageIndore = () => {
                                                     <Code size={16} className="text-[#34D562]" /> Practical Labs
                                                 </h4>
                                                 <div className="grid gap-2">
-                                                    {curriculum[activeSem].labs.map((lab, i) => (
+                                                    {currentCurriculum[activeSem]?.labs.map((lab, i) => (
                                                         <div key={i} className="flex items-center gap-3 p-3 bg-black/40 rounded border border-white/5 hover:bg-[#34D562]/5 transition-colors">
                                                             <div className="w-1.5 h-1.5 rounded-full bg-[#34D562]" />
                                                             <span className="text-gray-300 text-sm">{lab}</span>
@@ -975,7 +743,7 @@ const SageIndore = () => {
                                         </div>
                                     </div>
 
-                                    {/* Activities Section (Moved to Bottom) */}
+                                    {/* Activities Section */}
                                     <div className="p-6 bg-[#1a1a1a] rounded-xl border border-white/10 relative overflow-hidden group">
                                         <div className="absolute top-0 left-0 w-1 h-full bg-[#34D562]" />
                                         <div className="absolute inset-0 bg-gradient-to-r from-[#34D562]/5 to-transparent opacity-50 pointer-events-none" />
@@ -984,26 +752,45 @@ const SageIndore = () => {
                                                 <Activity size={16} /> Activities & Highlights
                                             </h4>
                                             <div className="flex flex-wrap gap-3">
-                                                {/* @ts-ignore - activities added in data */}
-                                                {curriculum[activeSem].activities && curriculum[activeSem].activities.map((act: string, i: number) => (
-                                                    <span key={i} className="px-4 py-2 bg-black/40 border border-white/10 rounded-lg text-sm text-gray-300 flex items-center gap-2 group-hover:border-[#34D562]/30 transition-colors">
-                                                        <CheckCircle size={14} className="text-[#34D562]" /> {act}
+                                                {currentCurriculum[activeSem]?.activities.map((act, i) => (
+                                                    <span key={i} className="px-3.5 py-1.5 bg-[#0a0a0a] text-gray-300 text-xs font-semibold rounded-lg border border-white/5 hover:border-[#34D562]/20 hover:text-white transition-all cursor-default">
+                                                        {act}
                                                     </span>
                                                 ))}
                                             </div>
                                         </div>
                                     </div>
+
+                                    {/* Sub Guidance Info */}
+                                    <div className="mt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 p-4 bg-white/5 border border-white/5 rounded-2xl relative overflow-hidden group">
+                                        <div className="flex-1">
+                                            <p className="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-1">
+                                                {currentCurriculum[activeSem]?.phase} Phase
+                                            </p>
+                                            <h5 className="text-sm font-bold text-white">
+                                                {currentCurriculum[activeSem]?.guidance}
+                                            </h5>
+                                        </div>
+                                        <button
+                                            onClick={() => setIsApplyOpen(true)}
+                                            className="px-5 py-2 text-xs font-bold bg-white/10 hover:bg-[#34D562] hover:text-black text-white rounded-full transition-all flex items-center gap-2 border border-white/10 hover:border-[#34D562] shrink-0"
+                                        >
+                                            Enquire Phase Details
+                                            <ArrowRight size={14} />
+                                        </button>
+                                    </div>
                                 </motion.div>
                             </AnimatePresence>
                         </div>
                     </div>
-                    {/* NEW: Journey Grid (No Overflow) */}
+
+                    {/* Journey Grid */}
                     <div className="mt-12 pt-8 border-t border-white/5">
                         <h4 className="text-white font-bold mb-6 text-xl flex items-center gap-2">
                             <span className="text-[#34D562]">Your Journey</span> to Success
                         </h4>
                         <div className="flex flex-wrap gap-4 justify-center">
-                            {curriculum.map((sem, i) => (
+                            {currentCurriculum.map((sem, i) => (
                                 <button
                                     key={i}
                                     onClick={() => setActiveSem(i)}
@@ -1016,25 +803,20 @@ const SageIndore = () => {
                                         <div className={`px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider ${activeSem === i ? 'bg-[#34D562] text-black' : 'bg-black/40 text-[#34D562]'}`}>
                                             {sem.semester}
                                         </div>
-                                        {/* @ts-ignore */}
                                         {sem.phase && (
                                             <span className={`text-[10px] font-bold ${activeSem === i ? 'text-[#34D562]' : 'text-gray-500'}`}>
-                                                {/* @ts-ignore */}
                                                 {sem.phase}
                                             </span>
                                         )}
                                     </div>
 
-                                    {/* @ts-ignore - Guidance is now the main headline */}
                                     {sem.guidance && (
                                         <h4 className={`font-bold text-base mb-2 leading-tight flex items-center gap-2 ${activeSem === i ? 'text-white' : 'text-amber-400'}`}>
-                                            <Sparkles size={14} className={activeSem === i ? 'text-[#34D562]' : 'text-[#34D562]'} />
-                                            {/* @ts-ignore */}
+                                            <Sparkles size={14} className="text-[#34D562]" />
                                             {sem.guidance}
                                         </h4>
                                     )}
 
-                                    {/* Theme is now secondary/smaller */}
                                     <p className={`mt-auto pt-2 text-[11px] font-medium border-t ${activeSem === i ? 'border-white/10 text-gray-300' : 'border-white/5 text-gray-400'}`}>
                                         {sem.theme}
                                     </p>
@@ -1043,160 +825,63 @@ const SageIndore = () => {
                         </div>
                     </div>
                 </div>
-            </section >
+            </section>
 
-            {/* ===== 5. CAMPUS LIFE & CLUBS (Updated) ===== */}
-            < section id="campus-life" className="py-24 bg-[#0A0A0A] scroll-mt-[300px]" >
+
+            {/* ===== 7. CAMPUS LIFE & AMENITIES ===== */}
+            <section id="campus-life" className="py-24 bg-[#0A0A0A] scroll-mt-[300px]">
                 <div className="container mx-auto px-4 max-w-7xl">
-                    <SectionHeader title="Campus Life" subtitle="Explore Indore & Beyond." />
-
-                    {/* Amenities Grid */}
-                    <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-16">
+                    <SectionHeader title="Campus Life" subtitle="World-class infrastructure for your growth." />
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
                         {amenities.map((item, i) => (
-                            <div
-                                key={i}
-                                className="relative group cursor-pointer h-full"
-                                onClick={() => setSelectedAmenity(item)}
-                            >
+                            <div key={i} className="relative group cursor-pointer h-full" onClick={() => setSelectedAmenity(item)}>
                                 <div className="h-full bg-[#0F0F0F] rounded-2xl overflow-hidden border border-white/5 group-hover:border-[#34D562]/50 transition-all duration-500 shadow-lg group-hover:shadow-[0_0_30px_rgba(52,213,98,0.15)] relative">
-
-                                    {/* Image Section */}
                                     <div className="relative h-40 overflow-hidden">
-                                        <img
-                                            src={item.image}
-                                            alt={item.name}
-                                            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                                        />
+                                        <img src={item.image || "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=800"} alt={item.name} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
                                         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500" />
                                         <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F] via-transparent to-transparent opacity-90" />
-
-                                        {/* Floating Icon */}
-                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-black/30 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 text-white opacity-0 group-hover:opacity-100 group-hover:scale-100 scale-50 transition-all duration-500 delay-100 group-hover:bg-[#34D562] group-hover:text-black group-hover:border-[#34D562]">
-                                            <item.icon size={20} />
-                                        </div>
+                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-black/30 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 text-white opacity-0 group-hover:opacity-100 group-hover:scale-100 scale-50 transition-all duration-500 delay-100 group-hover:bg-[#34D562] group-hover:text-black group-hover:border-[#34D562]"><item.icon size={20} /></div>
                                     </div>
-
-                                    {/* Content Section */}
                                     <div className="p-5 flex flex-col items-center text-center relative z-10 -mt-6">
-                                        {/* Static Icon (Visible initially) */}
-                                        <div className="w-12 h-12 bg-[#1A1A1A] rounded-xl border border-white/5 flex items-center justify-center text-[#34D562] mb-3 group-hover:w-0 group-hover:opacity-0 overflow-hidden transition-all duration-300 shadow-lg">
-                                            <item.icon size={22} />
-                                        </div>
-
-                                        <h3 className="text-white font-bold text-lg mb-1 group-hover:text-[#34D562] transition-colors duration-300">
-                                            {item.name}
-                                        </h3>
-                                        <p className="text-gray-500 text-xs font-medium leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
-                                            {item.desc}
-                                        </p>
+                                        <div className="w-12 h-12 bg-[#1A1A1A] rounded-xl border border-white/5 flex items-center justify-center text-[#34D562] mb-3 group-hover:w-0 group-hover:opacity-0 overflow-hidden transition-all duration-300 shadow-lg"><item.icon size={22} /></div>
+                                        <h3 className="text-white font-bold text-lg mb-1 group-hover:text-[#34D562] transition-colors duration-300">{item.name}</h3>
+                                        <p className="text-gray-500 text-xs font-medium leading-relaxed group-hover:text-gray-300 transition-colors duration-300">{item.desc}</p>
                                     </div>
-
-                                    {/* Bottom Detail */}
                                     <div className="absolute bottom-0 left-0 w-full h-1 bg-[#34D562] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
                                 </div>
                             </div>
                         ))}
                     </div>
 
-                    {/* Amenity Image Modal - Centered with Blur Background */}
-                    <AnimatePresence>
-                        {selectedAmenity && (
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                className="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-black/70 backdrop-blur-md"
-                                onClick={() => setSelectedAmenity(null)}
-                            >
-                                <motion.div
-                                    initial={{ scale: 0.7, opacity: 0 }}
-                                    animate={{ scale: 1, opacity: 1 }}
-                                    exit={{ scale: 0.7, opacity: 0 }}
-                                    transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                                    className="relative w-[90%] md:w-[70%] lg:w-[60%] max-h-[85vh] bg-[#111] rounded-3xl overflow-hidden border border-[#34D562]/30 shadow-[0_0_80px_rgba(52,213,98,0.3)]"
-                                    onClick={(e) => e.stopPropagation()}
-                                >
-                                    {/* Close Button */}
-                                    <button
-                                        onClick={() => setSelectedAmenity(null)}
-                                        className="absolute top-4 right-4 z-20 w-12 h-12 bg-black/60 hover:bg-[#34D562] text-white hover:text-black rounded-full flex items-center justify-center transition-all border border-white/20"
-                                    >
-                                        <X size={24} />
-                                    </button>
-
-                                    {/* Large Image */}
-                                    <div className="relative h-[50vh] md:h-[60vh] bg-black overflow-hidden">
-                                        {/* Blurred Background */}
-                                        <div
-                                            className="absolute inset-0 bg-cover bg-center opacity-40 blur-2xl scale-110"
-                                            style={{ backgroundImage: `url(${selectedAmenity.image})` }}
-                                        />
-
-                                        {/* Main Image - Full View */}
-                                        <img
-                                            src={selectedAmenity.image}
-                                            alt={selectedAmenity.name}
-                                            className="relative w-full h-full object-contain z-10 p-4"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent z-20" />
-                                    </div>
-
-                                    {/* Content */}
-                                    <div className="p-6 md:p-8">
-                                        <div className="flex items-center gap-4 mb-3">
-                                            <div className="w-14 h-14 bg-[#34D562]/20 rounded-xl flex items-center justify-center text-[#34D562]">
-                                                <selectedAmenity.icon size={28} />
-                                            </div>
-                                            <h3 className="text-2xl md:text-3xl font-bold text-white">{selectedAmenity.name}</h3>
-                                        </div>
-                                        <p className="text-gray-400 text-lg">{selectedAmenity.desc}</p>
-                                    </div>
-                                </motion.div>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
-
-                    {/* Success Ticker (Interns & Placements) */}
-
-
-                    {/* Video / Testimonials Section */}
                     <div className="mb-24">
                         <div className="flex items-center justify-between mb-8">
                             <h3 className="text-2xl font-bold text-white">Student Testimonials</h3>
-                            <button className="text-[#34D562] text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all">
-                                View All Stories <ArrowRight size={16} />
-                            </button>
+                            <button className="text-[#34D562] text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all">View All Stories <ArrowRight size={16} /></button>
                         </div>
                         <StudentVlogs />
                     </div>
 
                     <div className="grid lg:grid-cols-2 gap-16">
-                        {/* Clubs */}
                         <div>
                             <h3 className="text-2xl font-bold text-white mb-6">Student Clubs</h3>
                             <div className="space-y-3">
                                 {clubs.map((club, i) => (
                                     <div key={i} className="flex items-start gap-4 p-4 bg-[#111] rounded-xl border border-white/5 hover:bg-white/5 transition-colors">
                                         <div className="mt-1 text-[#34D562]"><club.icon size={20} /></div>
-                                        <div>
-                                            <h4 className="font-bold text-white">{club.name} <span className="text-xs font-normal text-gray-500 ml-2">({club.type})</span></h4>
-                                            <p className="text-sm text-gray-400">{club.desc}</p>
-                                        </div>
+                                        <div><h4 className="font-bold text-white">{club.name}</h4><p className="text-sm text-gray-400">{club.desc}</p></div>
                                     </div>
                                 ))}
                             </div>
                         </div>
-                        {/* Media Links */}
                         <div>
                             <h3 className="text-2xl font-bold text-white mb-6">In the Media</h3>
                             <div className="space-y-4">
                                 {mediaLinks.map((news, i) => (
-                                    <a href={news.link} key={i} className="block group">
+                                    <a href={news.link} key={i} className="block group" target="_blank" rel="noopener noreferrer">
                                         <div className="flex justify-between items-start border-b border-white/10 pb-4 group-hover:border-[#34D562]/50 transition-colors">
                                             <div>
                                                 <div className="text-xs text-[#34D562] font-bold mb-1 uppercase">{news.source} • {news.date}</div>
                                                 <h4 className="font-bold text-white group-hover:text-[#34D562] transition-colors">{news.title}</h4>
-                                                <p className="text-sm text-gray-500 mt-1">{news.desc}</p>
                                             </div>
                                             <ExternalLink size={16} className="text-gray-600 group-hover:text-white transition-colors" />
                                         </div>
@@ -1206,7 +891,6 @@ const SageIndore = () => {
                         </div>
                     </div>
 
-                    {/* Nearby Places */}
                     <div className="mt-20">
                         <h3 className="text-2xl font-bold text-white mb-8">Weekend Getaways</h3>
                         <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -1216,34 +900,23 @@ const SageIndore = () => {
                         </div>
                     </div>
                 </div>
-            </section >
+            </section>
 
-
-            {/* ===== 7. FAQ ===== */}
-            < section id="faq" className="py-24 bg-[#050505] scroll-mt-[300px]" >
+            {/* ===== 8. FAQ ===== */}
+            <section id="faq" className="py-24 bg-[#050505] scroll-mt-[300px]">
                 <div className="container mx-auto px-4 max-w-3xl">
                     <SectionHeader title="FAQ" />
                     <div className="space-y-3">
                         {faqs.map((faq, i) => (
                             <div key={i} className="bg-[#111] rounded-lg overflow-hidden border border-white/5">
-                                <button
-                                    onClick={() => setActiveFaq(activeFaq === i ? null : i)}
-                                    className="w-full flex justify-between items-center p-5 text-left hover:bg-white/5 transition-colors"
-                                >
+                                <button onClick={() => setActiveFaq(activeFaq === i ? null : i)} className="w-full flex justify-between items-center p-5 text-left hover:bg-white/5 transition-colors">
                                     <span className="font-medium text-white">{faq.q}</span>
                                     {activeFaq === i ? <ChevronUp size={20} className="text-[#34D562]" /> : <ChevronDown size={20} className="text-gray-500" />}
                                 </button>
                                 <AnimatePresence>
                                     {activeFaq === i && (
-                                        <motion.div
-                                            initial={{ height: 0 }}
-                                            animate={{ height: "auto" }}
-                                            exit={{ height: 0 }}
-                                            className="overflow-hidden"
-                                        >
-                                            <div className="p-5 pt-0 text-sm text-gray-400 border-t border-white/5 leading-relaxed">
-                                                {faq.a}
-                                            </div>
+                                        <motion.div initial={{ height: 0 }} animate={{ height: "auto" }} exit={{ height: 0 }} className="overflow-hidden">
+                                            <div className="p-5 pt-0 text-sm text-gray-400 border-t border-white/5 leading-relaxed">{faq.a}</div>
                                         </motion.div>
                                     )}
                                 </AnimatePresence>
@@ -1251,51 +924,59 @@ const SageIndore = () => {
                         ))}
                     </div>
                 </div>
-            </section >
-
-
+            </section>
 
             {/* ===== 9. CONTACT ===== */}
-            < section id="contact" className="py-24 bg-[#0a0a0a] scroll-mt-[300px]" >
+            <section id="contact" className="py-24 bg-[#0a0a0a] scroll-mt-[300px]">
                 <div className="container mx-auto px-4 max-w-4xl text-center">
                     <SectionHeader title="Still have questions?" subtitle="Our admissions team is here to help you." />
-
                     <div className="grid md:grid-cols-3 gap-6 mt-12">
                         <div className="p-6 bg-[#111] border border-white/5 rounded-2xl hover:border-[#34D562]/50 transition-colors group">
-                            <div className="w-12 h-12 bg-[#34D562]/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#34D562] group-hover:text-black transition-colors">
-                                <Phone size={24} />
-                            </div>
+                            <div className="w-12 h-12 bg-[#34D562]/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#34D562] group-hover:text-black transition-colors"><Phone size={24} /></div>
                             <h4 className="text-white font-bold mb-2">Call Us</h4>
                             <p className="text-gray-400 text-sm">+91 91524 72392</p>
-                            <p className="text-gray-400 text-sm">+91 93371 89115</p>
                         </div>
-
                         <div className="p-6 bg-[#111] border border-white/5 rounded-2xl hover:border-[#34D562]/50 transition-colors group">
-                            <div className="w-12 h-12 bg-[#34D562]/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#34D562] group-hover:text-black transition-colors">
-                                <Mail size={24} />
-                            </div>
+                            <div className="w-12 h-12 bg-[#34D562]/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#34D562] group-hover:text-black transition-colors"><Mail size={24} /></div>
                             <h4 className="text-white font-bold mb-2">Email Us</h4>
                             <p className="text-gray-400 text-sm">admin@geeksofgurukul.com</p>
                         </div>
-
                         <div className="p-6 bg-[#111] border border-white/5 rounded-2xl hover:border-[#34D562]/50 transition-colors group">
-                            <div className="w-12 h-12 bg-[#34D562]/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#34D562] group-hover:text-black transition-colors">
-                                <MapPin size={24} />
-                            </div>
+                            <div className="w-12 h-12 bg-[#34D562]/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#34D562] group-hover:text-black transition-colors"><MapPin size={24} /></div>
                             <h4 className="text-white font-bold mb-2">Visit Campus</h4>
-                            <p className="text-gray-400 text-sm">SAGE University,</p>
-                            <p className="text-gray-400 text-sm">Indore, Madhya Pradesh</p>
+                            <p className="text-gray-400 text-sm">IES University,</p>
+                            <p className="text-gray-400 text-sm">Kalkheda, Ratibad Main Road, Bhopal, MP</p>
                         </div>
                     </div>
                 </div>
-            </section >
+            </section>
 
+            {/* Amenity Image Modal */}
+            <AnimatePresence>
+                {selectedAmenity && (
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-black/70 backdrop-blur-md" onClick={() => setSelectedAmenity(null)}>
+                        <motion.div initial={{ scale: 0.7, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.7, opacity: 0 }} transition={{ type: "spring", damping: 25, stiffness: 300 }} className="relative w-[90%] md:w-[70%] lg:w-[60%] max-h-[85vh] bg-[#111] rounded-3xl overflow-hidden border border-[#34D562]/30 shadow-[0_0_80px_rgba(52,213,98,0.3)]" onClick={(e) => e.stopPropagation()}>
+                            <button onClick={() => setSelectedAmenity(null)} className="absolute top-4 right-4 z-20 w-12 h-12 bg-black/60 hover:bg-[#34D562] text-white hover:text-black rounded-full flex items-center justify-center transition-all border border-white/20"><X size={24} /></button>
+                            <div className="relative h-[50vh] md:h-[60vh] bg-black overflow-hidden">
+                                <div className="absolute inset-0 bg-cover bg-center opacity-40 blur-2xl scale-110" style={{ backgroundImage: `url(${selectedAmenity.image})` }} />
+                                <img src={selectedAmenity.image || "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=800"} alt={selectedAmenity.name} className="relative w-full h-full object-contain z-10 p-4" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent z-20" />
+                            </div>
+                            <div className="p-6 md:p-8">
+                                <div className="flex items-center gap-4 mb-3">
+                                    <div className="w-14 h-14 bg-[#34D562]/20 rounded-xl flex-shrink-0 flex items-center justify-center text-[#34D562]"><selectedAmenity.icon size={28} /></div>
+                                    <h3 className="text-2xl md:text-3xl font-bold text-white">{selectedAmenity.name}</h3>
+                                </div>
+                                <p className="text-gray-400 text-lg">{selectedAmenity.desc}</p>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
-            <ChatBot universityName="SAGE University Indore" tuitionFee="₹1,30,000" />
-        </div >
+            <ChatBot universityName="IES University Bhopal" tuitionFee={currentFee.tuitionPerYear} />
+        </div>
     );
 };
 
-
-
-export default SageIndore;
+export default IESUniversity;
