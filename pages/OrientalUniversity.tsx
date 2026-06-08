@@ -26,6 +26,7 @@ import {
 import { HeroSlider } from '../components/HeroSlider';
 import { ApplyForm } from '../components/ApplyForm';
 import { StickyNav } from '../components/StickyNav';
+import PressArticles from '@/components/PressArticles';
 
 // --- SUB-COMPONENTS ---
 const SectionHeader = ({ title, subtitle, light = false }: { title: string; subtitle?: string; light?: boolean }) => (
@@ -269,6 +270,7 @@ const OrientalUniversity = () => {
     const [activeFaq, setActiveFaq] = useState<number | null>(null);
     const [activeSem, setActiveSem] = useState(0);
     const [isApplyOpen, setIsApplyOpen] = useState(false);
+    const [applyRedirectUrl, setApplyRedirectUrl] = useState("https://admission.oui.edu.in/registration");
     const [selectedAmenity, setSelectedAmenity] = useState<typeof amenities[0] | null>(null);
 
     const logoUrl = "https://admission.oui.edu.in/storage/2024/02/OUI-Logo-png-01.png";
@@ -286,7 +288,7 @@ const OrientalUniversity = () => {
             </div>
 
             <StickyNav
-                onApplyClick={() => setIsApplyOpen(true)}
+                onApplyClick={() => { setApplyRedirectUrl("https://admission.oui.edu.in/registration"); setIsApplyOpen(true); }}
                 logo={
                     <div className="flex items-center gap-1.5 md:gap-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
                         <img src={logoUrl} alt="Oriental University" className="h-9 md:h-12 object-contain" />
@@ -300,7 +302,7 @@ const OrientalUniversity = () => {
                 onClose={() => setIsApplyOpen(false)}
                 universityName="Oriental University"
                 courses={["BCA Artificial Intelligence & Data Science"]}
-                redirectUrl="https://admission.oui.edu.in/registration"
+                redirectUrl={applyRedirectUrl}
             />
 
             {/* ===== 1. HERO SECTION ===== */}
@@ -316,15 +318,13 @@ const OrientalUniversity = () => {
                             BCA <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] via-emerald-200 to-[#34D562]">Artificial Intelligence & Data Science</span>
                         </motion.h1>
                         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="flex flex-row justify-center gap-3 w-full max-w-lg mx-auto -mb-8 md:-mb-16 mt-6 md:mt-4 px-4 md:px-0">
-                            <button onClick={() => setIsApplyOpen(true)} className="flex-1 py-3 md:py-4 bg-[#34D562] text-black font-extrabold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,213,98,0.3)] whitespace-nowrap">Apply Now</button>
-                            <a
-                                href="https://drive.google.com/file/d/13DuRAsdWL3SGtdX3PtzkxeobiTQ17yRO/view?usp=drive_link"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <button onClick={() => { setApplyRedirectUrl("https://admission.oui.edu.in/registration"); setIsApplyOpen(true); }} className="flex-1 py-3 md:py-4 bg-[#34D562] text-black font-extrabold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,213,98,0.3)] whitespace-nowrap">Apply Now</button>
+                            <button
+                                onClick={() => { setApplyRedirectUrl("https://drive.google.com/file/d/13DuRAsdWL3SGtdX3PtzkxeobiTQ17yRO/view?usp=drive_link"); setIsApplyOpen(true); }}
                                 className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap"
                             >
                                 <Download size={20} className="mr-2" /> Download Brochure
-                            </a>
+                            </button>
                         </motion.div>
                     </div>
                     <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} className="mt-12 md:mt-20 border-y border-white/5 bg-white/5 backdrop-blur-sm">
@@ -560,8 +560,9 @@ const OrientalUniversity = () => {
 
             <section className="py-24 bg-[#050505] border-t border-white/5">
                 <div className="container mx-auto px-4 max-w-7xl">
-                    <SectionHeader title="GOG Insider" subtitle="Latest News, Achievements & Events." />
-                    <BlogUpdates />
+                    {/* <SectionHeader title="GOG Insider" subtitle="Latest News, Achievements & Events." />
+                    <BlogUpdates /> */}
+                    <PressArticles />
                 </div>
             </section>
 

@@ -27,6 +27,7 @@ import { HeroSlider } from '../components/HeroSlider';
 import { ApplyForm } from '../components/ApplyForm';
 import { StickyNav } from '../components/StickyNav';
 import { SuccessTicker } from '@/components/SuccessTicker';
+import PressArticles from '@/components/PressArticles';
 
 // --- SUB-COMPONENTS ---
 const SectionHeader = ({ title, subtitle, light = false }: { title: string; subtitle?: string; light?: boolean }) => (
@@ -345,6 +346,7 @@ const Gyanveer = () => {
     const [activeFaq, setActiveFaq] = useState<number | null>(null);
     const [activeSem, setActiveSem] = useState(0);
     const [isApplyOpen, setIsApplyOpen] = useState(false);
+    const [applyRedirectUrl, setApplyRedirectUrl] = useState("https://www.gyanveeruniversity.edu.in/Pages/Registration.aspx");
     const [selectedAmenity, setSelectedAmenity] = useState<typeof amenities[0] | null>(null);
 
     return (
@@ -360,7 +362,7 @@ const Gyanveer = () => {
             </div>
 
             <StickyNav
-                onApplyClick={() => setIsApplyOpen(true)}
+                onApplyClick={() => { setApplyRedirectUrl("https://www.gyanveeruniversity.edu.in/Pages/Registration.aspx"); setIsApplyOpen(true); }}
                 logo={
                     <div className="flex items-center gap-1.5 md:gap-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
                         <img src="https://www.gyanveeruniversity.edu.in/assets/img/logo/logo-gv.png" alt="Gyanveer University" className="h-9 md:h-12 object-contain" />
@@ -374,7 +376,7 @@ const Gyanveer = () => {
                 onClose={() => setIsApplyOpen(false)}
                 universityName="Gyanveer University"
                 courses={["B.Tech CSE", "B.Tech CSE (AI-ML)"]}
-                redirectUrl="https://www.gyanveeruniversity.edu.in/Pages/Registration.aspx"
+                redirectUrl={applyRedirectUrl}
             />
 
             {/* ===== 1. HERO SECTION (PROFESSIONAL & FULL WIDTH) ===== */}
@@ -413,17 +415,15 @@ const Gyanveer = () => {
                             transition={{ delay: 0.4 }}
                             className="flex flex-row justify-center gap-3 w-full max-w-lg mx-auto -mb-8 md:-mb-16 mt-6 md:mt-4 px-4 md:px-0"
                         >
-                            <button onClick={() => setIsApplyOpen(true)} className="flex-1 py-3 md:py-4 bg-[#34D562] text-black font-extrabold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,213,98,0.3)] whitespace-nowrap">
+                            <button onClick={() => { setApplyRedirectUrl("https://www.gyanveeruniversity.edu.in/Pages/Registration.aspx"); setIsApplyOpen(true); }} className="flex-1 py-3 md:py-4 bg-[#34D562] text-black font-extrabold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,213,98,0.3)] whitespace-nowrap">
                                 Apply Now
                             </button>
-                            <a 
-                                href="https://drive.google.com/file/d/1tj9y7zn1EsHjqfzII0VZCi3hcHOpjfig/view"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <button
+                                onClick={() => { setApplyRedirectUrl("https://drive.google.com/file/d/1tj9y7zn1EsHjqfzII0VZCi3hcHOpjfig/view"); setIsApplyOpen(true); }}
                                 className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap"
                             >
                                 <Download size={20} className="mr-2" /> Download Brochure
-                            </a>
+                            </button>
                         </motion.div>
                     </div>
 
@@ -832,10 +832,11 @@ const Gyanveer = () => {
             </section >
             {/* <SuccessTicker /> */}
             {/* ===== 8. BLOG & UPDATES (Moved Here) ===== */}
-            < section className="py-24 bg-[#050505] border-t border-white/5" >
+            < section className="py-2 bg-[#050505] border-t border-white/5" >
                 <div className="container mx-auto px-4 max-w-7xl">
-                    <SectionHeader title="GOG Insider" subtitle="Latest News, Achievements & Events." />
-                    <BlogUpdates />
+                    {/* <SectionHeader title="GOG Insider" subtitle="Latest News, Achievements & Events." /> */}
+                    {/* <BlogUpdates /> */}
+                    <PressArticles />
                 </div>
             </section >
 

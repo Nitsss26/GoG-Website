@@ -28,6 +28,7 @@ import { HeroSlider } from '../components/HeroSlider';
 import { ApplyForm } from '../components/ApplyForm';
 import { StickyNav } from '../components/StickyNav';
 import { SuccessTicker } from '@/components/SuccessTicker';
+import PressArticles from '@/components/PressArticles';
 
 // --- SUB-COMPONENTS ---
 const SectionHeader = ({ title, subtitle, light = false }: { title: string; subtitle?: string; light?: boolean }) => (
@@ -352,6 +353,7 @@ const Scope = () => {
     const [activeSem, setActiveSem] = useState(0);
     const [activeCourse, setActiveCourse] = useState('btech-aids');
     const [isApplyOpen, setIsApplyOpen] = useState(false);
+    const [applyRedirectUrl, setApplyRedirectUrl] = useState("https://sgsuniversity.ac.in/enquire-now/");
 
     const currentCurriculum = curricula[activeCourse] || [];
     const currentFee = feeStructures[activeCourse];
@@ -369,7 +371,7 @@ const Scope = () => {
             </div>
 
             <StickyNav
-                onApplyClick={() => setIsApplyOpen(true)}
+                onApplyClick={() => { setApplyRedirectUrl("https://sgsuniversity.ac.in/enquire-now/"); setIsApplyOpen(true); }}
                 logo={
                     <div className="flex items-center gap-1.5 md:gap-4 bg-white backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
                         <img src={ScopeLogo} alt="SCOPE Global Skills University" className="h-9 md:h-12 object-contain" />
@@ -383,7 +385,7 @@ const Scope = () => {
                 onClose={() => setIsApplyOpen(false)}
                 universityName="SCOPE Global Skills University"
                 courses={["B.Tech AI-DS", "BCA Cyber Security", "BCA AI-ML", "BBA Business Analytics/BI with AI"]}
-                redirectUrl="https://sgsuniversity.ac.in/enquire-now/"
+                redirectUrl={applyRedirectUrl}
             />
 
             {/* ===== 1. HERO SECTION (PROFESSIONAL & FULL WIDTH) ===== */}
@@ -423,17 +425,15 @@ const Scope = () => {
                             transition={{ delay: 0.4 }}
                             className="flex flex-row justify-center gap-3 w-full max-w-lg mx-auto -mb-8 md:-mb-16 mt-6 md:mt-4 px-4 md:px-0"
                         >
-                            <button onClick={() => setIsApplyOpen(true)} className="flex-1 py-3 md:py-4 bg-[#34D562] text-black font-extrabold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,213,98,0.3)] whitespace-nowrap">
+                            <button onClick={() => { setApplyRedirectUrl("https://sgsuniversity.ac.in/enquire-now/"); setIsApplyOpen(true); }} className="flex-1 py-3 md:py-4 bg-[#34D562] text-black font-extrabold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,213,98,0.3)] whitespace-nowrap">
                                 Apply Now
                             </button>
-                            <a
-                                href="https://drive.google.com/file/d/1t_hhyxKEaoc7BrNzBTrLbvhDjYVtEKKS/view"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <button
+                                onClick={() => { setApplyRedirectUrl("https://drive.google.com/file/d/1t_hhyxKEaoc7BrNzBTrLbvhDjYVtEKKS/view"); setIsApplyOpen(true); }}
                                 className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap"
                             >
                                 <Download size={20} className="mr-2" /> Download Brochure
-                            </a>
+                            </button>
                         </motion.div>
                     </div>
 
@@ -848,8 +848,9 @@ const Scope = () => {
             {/* ===== 8. BLOG & UPDATES (Moved Here) ===== */}
             < section className="py-24 bg-[#050505] border-t border-white/5" >
                 <div className="container mx-auto px-4 max-w-7xl">
-                    <SectionHeader title="GOG Insider" subtitle="Latest News, Achievements & Events." />
-                    <BlogUpdates />
+                    {/* <SectionHeader title="GOG Insider" subtitle="Latest News, Achievements & Events." />
+                    <BlogUpdates /> */}
+                    <PressArticles />
                 </div>
             </section >
 

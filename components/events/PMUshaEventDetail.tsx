@@ -215,9 +215,9 @@ const PMUshaEventDetail: React.FC<PMUshaEventDetailProps> = ({ event, selectedSu
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
-                                className="aspect-video rounded-3xl overflow-hidden border border-[#34D562]/30 shadow-[0_0_30px_rgba(52,213,98,0.1)] group"
+                                className="aspect-[4/3] bg-black/40 rounded-3xl overflow-hidden border border-[#34D562]/30 shadow-[0_0_30px_rgba(52,213,98,0.1)] group"
                             >
-                                <img src={img} alt={`Guest ${idx}`} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" />
+                                <img src={img} alt={`Guest ${idx}`} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" />
                             </motion.div>
                         ))}
                     </div>
@@ -292,9 +292,9 @@ const PMUshaEventDetail: React.FC<PMUshaEventDetailProps> = ({ event, selectedSu
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
-                                className="aspect-video rounded-3xl overflow-hidden border border-[#34D562]/30 shadow-[0_0_30px_rgba(52,213,98,0.1)] group"
+                                className="aspect-[4/3] bg-black/40 rounded-3xl overflow-hidden border border-[#34D562]/30 shadow-[0_0_30px_rgba(52,213,98,0.1)] group"
                             >
-                                <img src={img} alt={`Resource ${idx}`} className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" />
+                                <img src={img} alt={`Resource ${idx}`} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" />
                             </motion.div>
                         ))}
                     </div>

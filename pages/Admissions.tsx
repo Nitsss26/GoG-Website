@@ -350,6 +350,7 @@ const Admissions = () => {
     const [activeFaq, setActiveFaq] = useState<number | null>(null);
     const [activeSem, setActiveSem] = useState(0);
     const [isApplyOpen, setIsApplyOpen] = useState(false);
+    const [applyRedirectUrl, setApplyRedirectUrl] = useState("");
     const [selectedAmenity, setSelectedAmenity] = useState<typeof amenities[0] | null>(null);
 
     return (
@@ -365,7 +366,7 @@ const Admissions = () => {
             </div>
 
             <StickyNav onApplyClick={() => setIsApplyOpen(true)} />
-            <ApplyForm isOpen={isApplyOpen} onClose={() => setIsApplyOpen(false)} />
+            <ApplyForm isOpen={isApplyOpen} onClose={() => setIsApplyOpen(false)} redirectUrl={applyRedirectUrl} />
 
             {/* ===== 1. HERO SECTION (PROFESSIONAL & FULL WIDTH) ===== */}
             <section className="relative min-h-[68vh] md:min-h-[110vh] lg:min-h-[115vh] flex items-center justify-center overflow-hidden">
@@ -403,12 +404,12 @@ const Admissions = () => {
                             transition={{ delay: 0.4 }}
                             className="flex flex-row justify-center gap-3 w-full max-w-lg mx-auto -mb-8 md:-mb-16 mt-6 md:mt-4 px-4 md:px-0"
                         >
-                            <button onClick={() => setIsApplyOpen(true)} className="flex-1 py-3 md:py-4 bg-[#34D562] text-black font-extrabold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,213,98,0.3)] whitespace-nowrap">
+                            <button onClick={() => { setApplyRedirectUrl(""); setIsApplyOpen(true); }} className="flex-1 py-3 md:py-4 bg-[#34D562] text-black font-extrabold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,213,98,0.3)] whitespace-nowrap">
                                 Apply Now
                             </button>
-                            <a href="" download="Centurion_University_Brochure.pdf" className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap">
+                            <button onClick={() => { setApplyRedirectUrl("/assets/Centurion_University_Brochure.pdf"); setIsApplyOpen(true); }} className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap">
                                 Download Brochure
-                            </a>
+                            </button>
                         </motion.div>
                     </div>
 

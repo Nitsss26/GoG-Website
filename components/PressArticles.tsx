@@ -5,7 +5,7 @@ import { X, ExternalLink } from 'lucide-react';
 const PRESS_ARTICLES = [
     { id: 1, src: '/assets/Press/itdc.png', alt: 'ITDC News Coverage' },
     { id: 2, src: '/assets/Press/opencampus.png', alt: 'Open Campus Coverage' },
-    { id: 3, src: '/assets/Press/oriental-hackathon.png', alt: 'Oriental Hackathon News' },
+    // { id: 3, src: '/assets/Press/oriental-hackathon.png', alt: 'Oriental Hackathon News' },
     { id: 4, src: '/assets/Press/theprint.png', alt: 'The Print Article' },
     { id: 5, src: '/assets/Press/Screenshot 2026-05-19 074333.png', alt: 'Press Coverage 1' },
     { id: 6, src: '/assets/Press/Screenshot 2026-05-19 074636.png', alt: 'Press Coverage 2' },

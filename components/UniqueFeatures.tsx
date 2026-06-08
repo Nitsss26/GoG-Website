@@ -295,26 +295,18 @@ export const StudentVlogs = ({ data = studentVlogs }: { data?: typeof studentVlo
 
     return (
         <>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
                 {data.map((vlog) => (
                     <div
                         key={vlog.id}
                         onClick={() => setActiveVideo(vlog.video || null)}
                         className="relative aspect-[9/16] rounded-2xl overflow-hidden group cursor-pointer border border-white/10 hover:border-[#34D562] hover:shadow-[0_0_40px_rgba(52,213,98,0.3)] transition-all duration-500 shadow-xl"
                     >
-                        {/* Video Preview (First Frame / Hover Play) */}
-                        <video
-                            src={`${vlog.video}#t=1`}
+                        {/* Video Preview */}
+                        <img
+                            src={vlog.thumbnail}
+                            alt={vlog.title}
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                            muted
-                            loop
-                            playsInline
-                            preload="metadata"
-                            onMouseEnter={(e) => e.currentTarget.play()}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.pause();
-                                e.currentTarget.currentTime = 1;
-                            }}
                         />
 
                         {/* Overlays */}
@@ -327,9 +319,9 @@ export const StudentVlogs = ({ data = studentVlogs }: { data?: typeof studentVlo
                         <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none">
                             <p className="text-white font-bold text-sm leading-tight mb-1 line-clamp-2">{vlog.title}</p>
                             <div className="flex items-center justify-between">
-                                <span className="text-xs text-gray-300 flex items-center gap-1">
-                                    <MonitorPlay size={10} className="text-[#34D562]" /> {vlog.duration}
-                                </span>
+                                {/* <span className="text-xs text-gray-300 flex items-center gap-1">
+                                    <MonitorPlay size={10} className="text-[#34D562]" />
+                                </span> */}
                                 <div className="h-0.5 w-0 group-hover:w-12 bg-[#34D562] transition-all duration-500 rounded-full" />
                             </div>
                         </div>
@@ -360,12 +352,22 @@ export const StudentVlogs = ({ data = studentVlogs }: { data?: typeof studentVlo
                             >
                                 <X size={20} />
                             </button>
-                            <video
-                                src={activeVideo}
-                                controls
-                                autoPlay
-                                className="w-full h-full object-contain"
-                            />
+                            {activeVideo.includes('vimeo.com') ? (
+                                <iframe
+                                    src={activeVideo}
+                                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                                    allowFullScreen
+                                    className="w-full h-full border-0"
+                                    title="Student Testimonial"
+                                ></iframe>
+                            ) : (
+                                <video
+                                    src={activeVideo}
+                                    controls
+                                    autoPlay
+                                    className="w-full h-full object-contain"
+                                />
+                            )}
                         </motion.div>
                     </motion.div>
                 )}
