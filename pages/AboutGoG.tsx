@@ -410,28 +410,7 @@ const AboutGoG: React.FC = () => {
                             </a>
                         </motion.div>
 
- {/* Jyotiprakash Maharana */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.3 }}
-                            className="flex flex-col items-center text-center group bg-[#0F1310]/100 backdrop-blur-xl p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/60 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_0_30px_rgba(52,213,98,0.2)]"
-                        >
-                            <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
-                                <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
-                                <img src={PrakashImg} alt="Jyotiprakash Maharana" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
-                            </div>
-                            <h3 className="text-2xl font-bold text-white mb-2">Mr. Jyotiprakash Maharana</h3>
-                            <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">Senior Operation Manger</p>
-                            <div className="relative max-w-xl">
-                                <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
-                                <p className="text-gray-400 italic relative z-10 leading-relaxed">"Leading with a focus on efficient management and empowering our academic teams."</p>
-                            </div>
-                            <a href="#" className="mt-4 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg">
-                                <Linkedin size={20} />
-                            </a>
-                        </motion.div>
+
 
                         {/* Sachin Kumar Gupta */}
                         <motion.div
@@ -456,7 +435,28 @@ const AboutGoG: React.FC = () => {
                             </a>
                         </motion.div>
 
-                       
+                        {/* Jyotiprakash Maharana */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.3 }}
+                            className="flex flex-col items-center text-center group bg-[#0F1310]/100 backdrop-blur-xl p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/60 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_0_30px_rgba(52,213,98,0.2)]"
+                        >
+                            <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
+                                <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
+                                <img src={PrakashImg} alt="Jyotiprakash Maharana" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
+                            </div>
+                            <h3 className="text-2xl font-bold text-white mb-2">Mr. Jyotiprakash Maharana</h3>
+                            <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">Head of Institute</p>
+                            <div className="relative max-w-xl">
+                                <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
+                                <p className="text-gray-400 italic relative z-10 leading-relaxed">"Leading with a focus on efficient management and empowering our academic teams."</p>
+                            </div>
+                            <a href="#" className="mt-4 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg">
+                                <Linkedin size={20} />
+                            </a>
+                        </motion.div>
                     </div>
                 </div>
 
