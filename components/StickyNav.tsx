@@ -16,10 +16,11 @@ const sections = [
 
 interface StickyNavProps {
     onApplyClick?: () => void;
+    onBrochureClick?: () => void;
     logo?: React.ReactNode;
 }
 
-export const StickyNav = ({ onApplyClick, logo }: StickyNavProps) => {
+export const StickyNav = ({ onApplyClick, onBrochureClick, logo }: StickyNavProps) => {
     const [isVisible, setIsVisible] = useState(false);
     const [activeSection, setActiveSection] = useState('about');
 
@@ -129,21 +130,13 @@ export const StickyNav = ({ onApplyClick, logo }: StickyNavProps) => {
 
                                 {/* Buttons */}
                                 <div className="flex items-center gap-3">
+
                                     <button
                                         onClick={onApplyClick}
                                         className="px-4 py-2 text-sm font-bold bg-[#34D562] text-black rounded-full hover:bg-[#28a74b] hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(52,213,98,0.4)]"
                                     >
                                         Apply Now
                                     </button>
-
-                                    {/* <a 
-                                        href="https://oms.geeksofgurukul.com" 
-                                        target="_blank" 
-                                        rel="noopener noreferrer" 
-                                        className="px-4 py-2 text-sm font-bold bg-[#34D562]/10 text-white border border-[#34D562]/30 rounded-full hover:bg-[#34D562]/20 hover:scale-105 transition-all duration-300 shadow-[0_0_15px_rgba(52,213,98,0.2)]"
-                                    >
-                                        OMS Portal
-                                    </a> */}
                                 </div>
 
                             </div>

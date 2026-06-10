@@ -8,9 +8,12 @@ interface ApplyFormProps {
     universityName?: string;
     courses?: string[];
     redirectUrl?: string;
+    onSuccess?: () => void;
 }
 
-export const ApplyForm = ({ isOpen, onClose, universityName, courses, redirectUrl }: ApplyFormProps) => {
+export const ApplyForm = ({ isOpen, onClose, universityName, courses, redirectUrl, onSuccess }: ApplyFormProps) => {
+    const isBrochure = redirectUrl && (redirectUrl.includes('drive.google.com') || redirectUrl.includes('.pdf') || redirectUrl.toLowerCase().includes('brochure'));
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -58,11 +61,18 @@ export const ApplyForm = ({ isOpen, onClose, universityName, courses, redirectUr
             });
 
             if (!response.ok) {
-                throw new Error('Something went wrong. Please contact +91 91524 72392 or +91 93371 89115');
+                console.warn('Webhook returned non-ok response, but proceeding gracefully.');
+            } else {
+                console.log('n8n submission successful');
             }
-
-            console.log('n8n submission successful');
+        } catch (err: any) {
+            console.error('Submission error (proceeding gracefully):', err);
+        } finally {
+            // We always proceed to the redirect/success state even if the webhook fails, 
+            // to ensure users can still download the brochure or reach the application portal.
             setIsSubmitted(true);
+            if (onSuccess) onSuccess();
+            
             setTimeout(() => {
                 if (redirectUrl) {
                     window.location.href = redirectUrl;
@@ -74,12 +84,8 @@ export const ApplyForm = ({ isOpen, onClose, universityName, courses, redirectUr
                         college: universityName || '', remarks: ''
                     });
                 }
+                setIsSubmitting(false);
             }, 2000);
-        } catch (err: any) {
-            console.error('Submission error:', err);
-            setError('Something went wrong. Please contact +91 91524 72392 or +91 93371 89115');
-        } finally {
-            setIsSubmitting(false);
         }
     };
 
@@ -112,7 +118,9 @@ export const ApplyForm = ({ isOpen, onClose, universityName, courses, redirectUr
                         </button>
 
                         <div className="p-8">
-                            <h2 className="text-2xl font-bold text-white mb-2">Apply Now</h2>
+                            <h2 className="text-2xl font-bold text-white mb-2">
+                                Apply Now
+                            </h2>
                             <p className="text-gray-400 text-sm mb-6">
                                 {universityName ? `Start your journey with ${universityName}.` : "Start your journey with India's Skilled University."}
                             </p>
@@ -122,9 +130,13 @@ export const ApplyForm = ({ isOpen, onClose, universityName, courses, redirectUr
                                     <div className="w-16 h-16 rounded-full bg-[#34D562]/20 flex items-center justify-center text-[#34D562] mb-4">
                                         <CheckCircle size={40} />
                                     </div>
-                                    <h3 className="text-xl font-bold text-white mb-2">Application Received!</h3>
+                                    <h3 className="text-xl font-bold text-white mb-2">
+                                        {isBrochure ? 'Details Received!' : 'Application Received!'}
+                                    </h3>
                                     <p className="text-gray-400">
-                                        {redirectUrl ? "Redirecting you to the university portal..." : "Our admissions team will contact you shortly."}
+                                        {isBrochure 
+                                            ? "Downloading your brochure..." 
+                                            : (redirectUrl ? "Redirecting you to the university portal..." : "Our admissions team will contact you shortly.")}
                                     </p>
                                 </div>
                             ) : (
@@ -267,13 +279,10 @@ export const ApplyForm = ({ isOpen, onClose, universityName, courses, redirectUr
                                     <button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className={`w-full py-4 bg-[#34D562] text-black font-bold text-lg rounded-xl transition-all hover:scale-[1.02] shadow-[0_0_20px_rgba(52,213,98,0.3)] mt-4 flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[#2dbd56]'}`}
+                                        className="w-full py-4 bg-[#34D562] text-black font-bold rounded-xl hover:bg-[#2dbd56] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 mt-6 shadow-[0_0_20px_rgba(52,213,98,0.2)]"
                                     >
                                         {isSubmitting ? (
-                                            <>
-                                                <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin" />
-                                                Submitting...
-                                            </>
+                                            <div className="w-6 h-6 border-2 border-black border-t-transparent rounded-full animate-spin" />
                                         ) : (
                                             'Submit Application'
                                         )}

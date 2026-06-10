@@ -303,7 +303,7 @@ const HeroSection = () => {
 const CanvasScrollSection = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const totalFrames = 222;
+    const totalFrames = 280;
     const { frames, isReady } = useFramePreloader(totalFrames);
     const currentFrameRef = useRef(0);
 

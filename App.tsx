@@ -38,6 +38,7 @@ const OrientalUniversity = lazy(() => import('./pages/OrientalUniversity'));
 const IESUniversity = lazy(() => import('./pages/IESUniversity'));
 const Winners = lazy(() => import('./pages/Winners'));
 const NewTech = lazy(() => import('./pages/NewTech'));
+const Media = lazy(() => import('./pages/Media'));
 
 const LoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center bg-[#030303] text-white">
@@ -112,6 +113,7 @@ const App: React.FC = () => {
               <Route path="/winners" element={<Winners />} />
               <Route path="/events" element={<Events />} />
               <Route path="/events/:id" element={<EventDetail />} />
+              <Route path="/media" element={<Media />} />
               <Route path="/courses" element={<Courses />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />

@@ -27,6 +27,7 @@ import {
 import { HeroSlider } from '../components/HeroSlider';
 import { ApplyForm } from '../components/ApplyForm';
 import { StickyNav } from '../components/StickyNav';
+import { useBrochurePopup } from '../hooks/useBrochurePopup';
 import { SuccessTicker } from '@/components/SuccessTicker';
 import PressArticles from '@/components/PressArticles';
 
@@ -355,6 +356,8 @@ const Scope = () => {
     const [isApplyOpen, setIsApplyOpen] = useState(false);
     const [applyRedirectUrl, setApplyRedirectUrl] = useState("https://sgsuniversity.ac.in/enquire-now/");
 
+    const { isBrochureOpen, openBrochure, closeBrochure, markBrochureSubmitted } = useBrochurePopup(600);
+
     const currentCurriculum = curricula[activeCourse] || [];
     const currentFee = feeStructures[activeCourse];
 
@@ -372,6 +375,7 @@ const Scope = () => {
 
             <StickyNav
                 onApplyClick={() => { setApplyRedirectUrl("https://sgsuniversity.ac.in/enquire-now/"); setIsApplyOpen(true); }}
+                onBrochureClick={openBrochure}
                 logo={
                     <div className="flex items-center gap-1.5 md:gap-4 bg-white backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
                         <img src={ScopeLogo} alt="SCOPE Global Skills University" className="h-9 md:h-12 object-contain" />
@@ -386,6 +390,14 @@ const Scope = () => {
                 universityName="SCOPE Global Skills University"
                 courses={["B.Tech AI-DS", "BCA Cyber Security", "BCA AI-ML", "BBA Business Analytics/BI with AI"]}
                 redirectUrl={applyRedirectUrl}
+            />
+            <ApplyForm 
+                isOpen={isBrochureOpen} 
+                onClose={closeBrochure} 
+                universityName="SCOPE Global Skills University"
+                courses={["B.Tech CSE", "B.Tech CSE (AI-ML)", "BCA"]}
+                redirectUrl="https://drive.google.com/file/d/1t_hhyxKEaoc7BrNzBTrLbvhDjYVtEKKS/view" 
+                onSuccess={markBrochureSubmitted}
             />
 
             {/* ===== 1. HERO SECTION (PROFESSIONAL & FULL WIDTH) ===== */}
@@ -429,8 +441,8 @@ const Scope = () => {
                                 Apply Now
                             </button>
                             <button
-                                onClick={() => { setApplyRedirectUrl("https://drive.google.com/file/d/1t_hhyxKEaoc7BrNzBTrLbvhDjYVtEKKS/view"); setIsApplyOpen(true); }}
-                                className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap"
+                                onClick={openBrochure}
+                                className="flex-1 py-3 md:py-4 bg-white text-black font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-gray-200 transition-all text-center flex items-center justify-center whitespace-nowrap shadow-lg"
                             >
                                 <Download size={20} className="mr-2" /> Download Brochure
                             </button>

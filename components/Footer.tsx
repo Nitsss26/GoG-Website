@@ -41,6 +41,7 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-[#34D562] font-bold text-lg mb-6 uppercase tracking-wider">Resources</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
+              <li><Link to="/media" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Media Presence</Link></li>
               <li><Link to="/faq" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> FAQ</Link></li>
               <li><Link to="/privacy-policy" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Privacy & Policy</Link></li>
               <li><Link to="/terms-conditions" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Terms & Conditions</Link></li>

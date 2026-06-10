@@ -26,6 +26,7 @@ import {
 import { HeroSlider } from '../components/HeroSlider';
 import { ApplyForm } from '../components/ApplyForm';
 import { StickyNav } from '../components/StickyNav';
+import { useBrochurePopup } from '../hooks/useBrochurePopup';
 import PressArticles from '@/components/PressArticles';
 
 // --- SUB-COMPONENTS ---
@@ -273,6 +274,8 @@ const OrientalUniversity = () => {
     const [applyRedirectUrl, setApplyRedirectUrl] = useState("https://admission.oui.edu.in/registration");
     const [selectedAmenity, setSelectedAmenity] = useState<typeof amenities[0] | null>(null);
 
+    const { isBrochureOpen, openBrochure, closeBrochure, markBrochureSubmitted } = useBrochurePopup(600);
+
     const logoUrl = "https://admission.oui.edu.in/storage/2024/02/OUI-Logo-png-01.png";
 
     return (
@@ -289,6 +292,7 @@ const OrientalUniversity = () => {
 
             <StickyNav
                 onApplyClick={() => { setApplyRedirectUrl("https://admission.oui.edu.in/registration"); setIsApplyOpen(true); }}
+                onBrochureClick={openBrochure}
                 logo={
                     <div className="flex items-center gap-1.5 md:gap-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
                         <img src={logoUrl} alt="Oriental University" className="h-9 md:h-12 object-contain" />
@@ -303,6 +307,14 @@ const OrientalUniversity = () => {
                 universityName="Oriental University"
                 courses={["BCA Artificial Intelligence & Data Science"]}
                 redirectUrl={applyRedirectUrl}
+            />
+            <ApplyForm 
+                isOpen={isBrochureOpen} 
+                onClose={closeBrochure} 
+                universityName="Oriental University"
+                courses={["BCA Artificial Intelligence & Data Science"]}
+                redirectUrl="https://drive.google.com/file/d/13DuRAsdWL3SGtdX3PtzkxeobiTQ17yRO/view?usp=drive_link" 
+                onSuccess={markBrochureSubmitted}
             />
 
             {/* ===== 1. HERO SECTION ===== */}
@@ -320,8 +332,8 @@ const OrientalUniversity = () => {
                         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="flex flex-row justify-center gap-3 w-full max-w-lg mx-auto -mb-8 md:-mb-16 mt-6 md:mt-4 px-4 md:px-0">
                             <button onClick={() => { setApplyRedirectUrl("https://admission.oui.edu.in/registration"); setIsApplyOpen(true); }} className="flex-1 py-3 md:py-4 bg-[#34D562] text-black font-extrabold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,213,98,0.3)] whitespace-nowrap">Apply Now</button>
                             <button
-                                onClick={() => { setApplyRedirectUrl("https://drive.google.com/file/d/13DuRAsdWL3SGtdX3PtzkxeobiTQ17yRO/view?usp=drive_link"); setIsApplyOpen(true); }}
-                                className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap"
+                                onClick={openBrochure}
+                                className="flex-1 py-3 md:py-4 bg-white text-black font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-gray-200 transition-all text-center flex items-center justify-center whitespace-nowrap shadow-lg"
                             >
                                 <Download size={20} className="mr-2" /> Download Brochure
                             </button>

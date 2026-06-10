@@ -27,6 +27,7 @@ import {
 import { HeroSlider } from '../components/HeroSlider';
 import { ApplyForm } from '../components/ApplyForm';
 import { StickyNav } from '../components/StickyNav';
+import { useBrochurePopup } from '../hooks/useBrochurePopup';
 
 // --- SUB-COMPONENTS ---
 const SectionHeader = ({ title, subtitle, light = false }: { title: string; subtitle?: string; light?: boolean }) => (
@@ -353,6 +354,8 @@ const Admissions = () => {
     const [applyRedirectUrl, setApplyRedirectUrl] = useState("");
     const [selectedAmenity, setSelectedAmenity] = useState<typeof amenities[0] | null>(null);
 
+    const { isBrochureOpen, openBrochure, closeBrochure, markBrochureSubmitted } = useBrochurePopup(600);
+
     return (
         <div className="min-h-screen bg-[#000000] text-white font-sans selection:bg-[#34D562] selection:text-black overflow-x-hidden">
             <SEO
@@ -365,8 +368,16 @@ const Admissions = () => {
                 <GreenEmbers />
             </div>
 
-            <StickyNav onApplyClick={() => setIsApplyOpen(true)} />
+            <StickyNav onApplyClick={() => setIsApplyOpen(true)} onBrochureClick={openBrochure} />
             <ApplyForm isOpen={isApplyOpen} onClose={() => setIsApplyOpen(false)} redirectUrl={applyRedirectUrl} />
+            <ApplyForm 
+                isOpen={isBrochureOpen} 
+                onClose={closeBrochure} 
+                universityName="Centurion University"
+                courses={["B.Tech CSE", "B.Tech CSE (AI-ML)", "B.Tech CSE (Data Science)"]}
+                redirectUrl="/assets/Centurion_University_Brochure.pdf" 
+                onSuccess={markBrochureSubmitted}
+            />
 
             {/* ===== 1. HERO SECTION (PROFESSIONAL & FULL WIDTH) ===== */}
             <section className="relative min-h-[68vh] md:min-h-[110vh] lg:min-h-[115vh] flex items-center justify-center overflow-hidden">
@@ -407,7 +418,7 @@ const Admissions = () => {
                             <button onClick={() => { setApplyRedirectUrl(""); setIsApplyOpen(true); }} className="flex-1 py-3 md:py-4 bg-[#34D562] text-black font-extrabold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-[#2dbd56] transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,213,98,0.3)] whitespace-nowrap">
                                 Apply Now
                             </button>
-                            <button onClick={() => { setApplyRedirectUrl("/assets/Centurion_University_Brochure.pdf"); setIsApplyOpen(true); }} className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap">
+                            <button onClick={openBrochure} className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap">
                                 Download Brochure
                             </button>
                         </motion.div>

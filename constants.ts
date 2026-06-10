@@ -25,6 +25,7 @@ export const NAV_ITEMS: NavItem[] = [
     href: '#',
     children: [
       { label: 'Our Culture', href: '/culture' },
+      { label: 'Media Presence', href: '/media' },
       { label: 'Careers', href: '/careers' },
       { label: 'Programs', href: '/programs' },
     ]

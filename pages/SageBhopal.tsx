@@ -27,6 +27,7 @@ import {
 import { HeroSlider } from '../components/HeroSlider';
 import { ApplyForm } from '../components/ApplyForm';
 import { StickyNav } from '../components/StickyNav';
+import { useBrochurePopup } from '../hooks/useBrochurePopup';
 import { SuccessTicker } from '@/components/SuccessTicker';
 import PressArticles from '@/components/PressArticles';
 
@@ -355,6 +356,8 @@ const SageBhopal = () => {
     const [applyRedirectUrl, setApplyRedirectUrl] = useState("https://admission.sageuniversity.edu.in/?utm_source=Website-Lead&utm_medium=Google&utm_campaign=Admissions-2024&_gl=1*f5pca6*_gcl_au*NjA5MjUwMTY4LjE3NzEwNzgwNTYuNjY0NjQyMzQuMTc3MTA3ODA1Ny4xNzcxMDc4MDY2");
     const [selectedAmenity, setSelectedAmenity] = useState<typeof amenities[0] | null>(null);
 
+    const { isBrochureOpen, openBrochure, closeBrochure, markBrochureSubmitted } = useBrochurePopup(600);
+
     return (
         <div className="min-h-screen bg-[#000000] text-white font-sans selection:bg-[#34D562] selection:text-black overflow-x-hidden">
             <SEO
@@ -369,6 +372,7 @@ const SageBhopal = () => {
 
             <StickyNav
                 onApplyClick={() => { setApplyRedirectUrl("https://admission.sageuniversity.edu.in/?utm_source=Website-Lead&utm_medium=Google&utm_campaign=Admissions-2024&_gl=1*f5pca6*_gcl_au*NjA5MjUwMTY4LjE3NzEwNzgwNTYuNjY0NjQyMzQuMTc3MTA3ODA1Ny4xNzcxMDc4MDY2"); setIsApplyOpen(true); }}
+                onBrochureClick={openBrochure}
                 logo={
                     <div className="flex items-center gap-1.5 md:gap-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 md:px-4 md:py-2 rounded-full shadow-xl border border-white/20">
                         <img src="/assets/SAGE/sage-bhopal-logo.png" alt="SAGE University" className="h-9 md:h-12 object-contain" />
@@ -383,6 +387,14 @@ const SageBhopal = () => {
                 universityName="Sage University Bhopal"
                 courses={["B.Tech Full Stack Development", "B.Tech AI-ML"]}
                 redirectUrl={applyRedirectUrl}
+            />
+            <ApplyForm 
+                isOpen={isBrochureOpen} 
+                onClose={closeBrochure} 
+                universityName="Sage University Bhopal"
+                courses={["B.Tech CSE", "B.Tech CSE (AI)"]}
+                redirectUrl="https://drive.google.com/file/d/1LEyuFYPnoc1wcAzKSB4AEEQDCuqonAP_/view" 
+                onSuccess={markBrochureSubmitted}
             />
 
             {/* ===== 1. HERO SECTION (PROFESSIONAL & FULL WIDTH) ===== */}
@@ -464,8 +476,8 @@ const SageBhopal = () => {
                                 Apply Now
                             </button>
                             <button
-                                onClick={() => { setApplyRedirectUrl("https://drive.google.com/file/d/1LEyuFYPnoc1wcAzKSB4AEEQDCuqonAP_/view"); setIsApplyOpen(true); }}
-                                className="flex-1 py-3 md:py-4 bg-white/5 border border-white/10 text-white font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm text-center flex items-center justify-center whitespace-nowrap"
+                                onClick={openBrochure}
+                                className="flex-1 py-3 md:py-4 bg-white text-black font-bold text-sm md:text-lg rounded-xl md:rounded-xl hover:bg-gray-200 transition-all text-center flex items-center justify-center whitespace-nowrap shadow-lg"
                             >
                                 <Download size={20} className="mr-2" /> Download Brochure
                             </button>
