@@ -39,6 +39,7 @@ const IESUniversity = lazy(() => import('./pages/IESUniversity'));
 const Winners = lazy(() => import('./pages/Winners'));
 const NewTech = lazy(() => import('./pages/NewTech'));
 const Media = lazy(() => import('./pages/Media'));
+const Admin = lazy(() => import('./pages/Admin'));
 
 const LoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center bg-[#030303] text-white">
@@ -80,6 +81,11 @@ const App: React.FC = () => {
             <Route path="/tech" element={
               <Suspense fallback={<LoadingFallback />}>
                 <NewTech />
+              </Suspense>
+            } />
+            <Route path="/admin" element={
+              <Suspense fallback={<LoadingFallback />}>
+                <Admin />
               </Suspense>
             } />
             <Route path="/oldtech" element={
