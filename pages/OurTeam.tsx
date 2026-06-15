@@ -70,7 +70,7 @@ import BaddigamSiddardhareddy from '../assets/Team of IITians/Baddigam_Siddardha
 import RaviRanjanKumar from '../assets/Team of IITians/Ravi_Ranjan_Kumar_IIT_Guwahati.jpg';
 
 // Operation Managers
-import JyotiprakashImg from '../assets/Operation_Managers/Jyotiprakash_Maharana.jpg';
+import JyotiprakashImg from '../assets/Satendra Chouhan.png';
 import MayankImg from '../assets/Operation_Managers/Mayank_Sharma.png';
 import SakshiImg from '../assets/Operation_Managers/Sakshi_Rathore.png';
 import SatishImg from '../assets/Operation_Managers/Satish_Nagar.png';
@@ -181,7 +181,7 @@ const operationManagers = [
     { name: "Mr. Swayam Meshram", image: SwayamImg },
     { name: "Ms. Yamini Ziniwal", image: YaminiImg },
     { name: "Mr. Zaid Ahmad Khan", image: ZaidImg },
-    { name: "Mr. Jyotiprakash Maharana", image: JyotiprakashImg },
+    { name: "Mr. Satendra Chouhan", image: JyotiprakashImg },
     { name: "Mr. Mayank Sharma", image: MayankImg },
     { name: "Ms. Sakshi Rathore", image: SakshiImg },
     { name: "Mr. Satish Nagar", image: SatishImg },
