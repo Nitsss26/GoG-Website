@@ -1,70 +1,49 @@
-export type BlockType = 'heading' | 'text' | 'image' | 'faculty-cards' | 'felicitation-images';
+// Event Builder Types
+export type EventType = 
+  | 'Monthly Hackathons' 
+  | 'Monthly Marathons' 
+  | 'Monthly Test' 
+  | 'Monthly Workshops' 
+  | 'Industry Expert Session' 
+  | 'Monthly Seminar';
 
-export interface BaseBlock {
+export interface EventSessionForm {
   id: string;
-  type: BlockType;
+  title: string;
+  learningOutcome: string;
 }
 
-export interface HeadingBlock extends BaseBlock {
-  type: 'heading';
-  data: {
-    text: string;
-    level: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-    alignment: 'left' | 'center' | 'right';
-  };
+export interface SubEventForm {
+  id: string;
+  title: string;
+  date: string;
+  duration: string;
+  summary: string;
+  sessions: EventSessionForm[];
+  images: string[]; // Base64 or Object URLs for preview
 }
 
-export interface TextBlock extends BaseBlock {
-  type: 'text';
-  data: {
-    content: string;
-    alignment: 'left' | 'center' | 'right';
-  };
-}
-
-export interface ImageBlock extends BaseBlock {
-  type: 'image';
-  data: {
-    url: string;
-    alignment: 'left' | 'center' | 'right';
-    width?: string;
-    height?: string;
-  };
-}
-
-export interface FacultyCard {
+export interface TrainerForm {
   id: string;
   name: string;
   role: string;
-  imageUrl: string;
+  image: string; // Base64 or Object URL
+  isIITAlumni: boolean;
 }
 
-export interface FacultyCardsBlock extends BaseBlock {
-  type: 'faculty-cards';
-  data: {
-    cards: FacultyCard[];
-    columns?: number;
-    nameColor?: string;
-    nameSize?: string;
-    roleColor?: string;
-    roleSize?: string;
-    cardBgColor?: string;
-    cardBorderColor?: string;
-    textAlign?: 'left' | 'center' | 'right';
-  };
+export interface EventDataForm {
+  id: string; // generated
+  title: string;
+  eventType: EventType;
+  tag: string;
+  tagline: string;
+  shortDescription: string;
+  date: string;
+  venue: string;
+  organizedBy: string;
+  inAssociationWith: string;
+  cardImage: string; // Main preview image
+  isActive: boolean;
+  trainers: TrainerForm[];
+  subEvents: SubEventForm[];
 }
-
-export interface FelicitationImage {
-  id: string;
-  url: string;
-  caption: string;
-}
-
-export interface FelicitationImagesBlock extends BaseBlock {
-  type: 'felicitation-images';
-  data: {
-    images: FelicitationImage[];
-  };
-}
-
-export type Block = HeadingBlock | TextBlock | ImageBlock | FacultyCardsBlock | FelicitationImagesBlock;
