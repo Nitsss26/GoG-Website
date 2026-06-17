@@ -9,6 +9,7 @@ import { CyberHexagon, CyberSquare } from '../components/ui/CyberShapes';
 import FounderImg from '../assets/images/founder.png';
 import F1Img from '../assets/images/f1.png';
 import F2Img from '../assets/images/f2.png';
+import COOImg from '../COO.png';
 import S1Img from '../assets/team/1st.jpg';
 import S2Img from '../assets/team/2nd.jpg';
 import S3Img from '../assets/team/3rd.jpg';
@@ -55,6 +56,7 @@ const AboutGoG: React.FC = () => {
             badge: "Founder",
             linkedin: "https://www.linkedin.com/in/chintan-vatsa-jha-0a7496a8/"
         },
+           
         {
             image: F2Img,
             name: "Mr. Ajay Katana",
@@ -64,15 +66,15 @@ const AboutGoG: React.FC = () => {
             badge: "CTO",
             linkedin: "https://www.linkedin.com/in/ajay987/"
         },
-        {
-            image: F1Img,
+     {
+            image: COOImg,
             name: "Mr. Neeraj Sahu",
             role: "Chief Operating Officer",
             quote: " Our Vision Is To Create A Modern-Day Gurukul That Provides You With The Skills, Resources, And Opportunities To Excel. We Are Committed To Ensuring That You Have Access To Quality Education And The Tools Needed To Succeed In Today's Competitive World.",
             highlight: "Stay Curious, Stay Committed, And Together, Let's Achieve Greatness.",
             badge: "COO",
             linkedin: "#"
-        }
+        },
     ];
 
 
@@ -453,7 +455,7 @@ const AboutGoG: React.FC = () => {
                                 <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
                                 <p className="text-gray-400 italic relative z-10 leading-relaxed">"Leading with a focus on efficient management and empowering our academic teams."</p>
                             </div>
-                            <a href="#" className="mt-4 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg">
+                            <a href="https://www.linkedin.com/in/jyoti-prakash-maharana-a82a57252/" className="mt-4 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg">
                                 <Linkedin size={20} />
                             </a>
                         </motion.div>
