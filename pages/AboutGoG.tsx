@@ -10,6 +10,7 @@ import FounderImg from '../assets/images/founder.png';
 import F1Img from '../assets/images/f1.png';
 import F2Img from '../assets/images/f2.png';
 import COOImg from '../COO.png';
+import CTOImg from '../CTO.png';
 import S1Img from '../assets/team/1st.jpg';
 import S2Img from '../assets/team/2nd.jpg';
 import S3Img from '../assets/team/3rd.jpg';
@@ -58,7 +59,7 @@ const AboutGoG: React.FC = () => {
         },
            
         {
-            image: F2Img,
+            image: CTOImg,
             name: "Mr. Ajay Katana",
             role: "Chief Technology Officer",
             quote: " In Today's Rapidly Evolving Technological Landscape, It's Crucial To Stay Appropriately Skilled And Up-To-Date With Dynamic Market Trends. At Geeks Of Gurukul, We Pride GoG On Teaching Students The Latest, Most In-Demand Technologies, So That You Are Well-Prepared For Your Dream Job.",
