@@ -31,6 +31,11 @@ export interface TrainerForm {
   isIITAlumni: boolean;
 }
 
+export interface EventOutcome {
+  title: string;
+  description: string;
+}
+
 export interface EventDataForm {
   id: string; // generated
   title: string;
@@ -40,10 +45,16 @@ export interface EventDataForm {
   shortDescription: string;
   date: string;
   venue: string;
+  location: string; // Location for program details
   organizedBy: string;
   inAssociationWith: string;
   cardImage: string; // Main preview image
   isActive: boolean;
   trainers: TrainerForm[];
   subEvents: SubEventForm[];
+  // Program Details (Page 3)
+  programImages: string[]; // Min 4, multiples of 2
+  eventModuleTitle: string;
+  eventModuleSummary: string;
+  eventOutcomes: EventOutcome[];
 }

@@ -4,18 +4,29 @@ import { Calendar, MapPin, Eye, BookOpen, ArrowRight } from 'lucide-react';
 
 interface EventLivePreviewProps {
   formData: EventDataForm;
-  activeTab?: 'basic' | 'modules';
+  activeTab?: 'basic' | 'gallery' | 'details';
 }
 
 const EventLivePreview: React.FC<EventLivePreviewProps> = ({ formData, activeTab = 'basic' }) => {
-  const [selectedModuleId, setSelectedModuleId] = useState<string | null>(null);
+  const [slideshowIndex, setSlideshowIndex] = useState(0);
 
-  // Reset selected module when switching back to basic tab
+  // Auto-advance slideshow for Program Details
   useEffect(() => {
-    if (activeTab === 'basic') {
-      setSelectedModuleId(null);
-    }
-  }, [activeTab]);
+    if (formData.programImages.length <= 1) return;
+    const timer = setInterval(() => {
+      setSlideshowIndex(prev => (prev + 1) % formData.programImages.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [formData.programImages.length]);
+
+  useEffect(() => {
+    setSlideshowIndex(0);
+  }, [formData.programImages.length]);
+
+  const visibleOutcomesCount = formData.programImages.length >= 6 ? 6 : 4;
+
+  // Get the single card data
+  const cardData = formData.subEvents[0] || { title: '', date: '' };
 
   const renderBasicPreview = () => (
     <div className="space-y-12 animate-in fade-in duration-300">
@@ -125,113 +136,216 @@ const EventLivePreview: React.FC<EventLivePreviewProps> = ({ formData, activeTab
     </div>
   );
 
-  const renderGalleryPreview = () => (
-    <div className="animate-in fade-in zoom-in-95 duration-300 pb-12">
-      <h3 className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">2. Event Gallery Preview</h3>
-      
-      {formData.subEvents.length === 0 ? (
-        <div className="text-center py-12 bg-white/[0.02] rounded-2xl border border-white/5">
-          <p className="text-gray-500 text-sm">No modules found. Please generate modules first.</p>
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {formData.subEvents.map(sub => (
-            <div 
-              key={sub.id} 
-              className="bg-[#1a1a1a] rounded-3xl overflow-hidden border border-gray-800 hover:border-[#34D562]/50 transition-colors cursor-pointer group flex flex-col h-[280px]"
-              onClick={() => setSelectedModuleId(sub.id)}
-            >
-              {/* Top Banner (PM-UShA style) */}
-              <div className="bg-[#2a2a2a] py-2 px-4 flex justify-between items-center z-10 mx-4 mt-4 rounded-full shadow-lg relative">
-                 <div className="flex items-center gap-2">
-                     <div className="w-2 h-2 rounded-full bg-[#34D562]" />
-                     <span className="text-[9px] font-bold text-white tracking-widest uppercase">{formData.tag}</span>
-                 </div>
-                 <span className="text-[9px] font-bold text-[#34D562] tracking-widest">{sub.date || 'DATE TBD'}</span>
+  // ── Gallery Preview — EXACT PM-UShA card style ──
+  const renderGalleryPreview = () => {
+    return (
+      <div className="animate-in fade-in zoom-in-95 duration-300 h-full flex flex-col pb-8">
+        <h3 className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-6 border-b border-gray-800 pb-2 shrink-0">2. Event Gallery Preview</h3>
+        
+        {/* Single Centered Card — exact PM-UShA style */}
+        <div className="flex-1 flex items-center justify-center min-h-[450px]">
+          <div 
+            className="group relative cursor-pointer aspect-square rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.6)] bg-[#0a0a0a]"
+            style={{ width: '100%', maxWidth: '380px' }}
+          >
+            {/* Dynamic Border Glow */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#34D562]/20 via-transparent to-[#34D562]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+            {/* Background Image Layer */}
+            <div className="absolute inset-0 z-0 scale-105 group-hover:scale-110 transition-transform duration-[2s]">
+              {cardData.images && cardData.images.length > 0 ? (
+                <img
+                  src={cardData.images[0]}
+                  alt={cardData.title || 'Card'}
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+                />
+              ) : formData.cardImage ? (
+                <img
+                  src={formData.cardImage}
+                  alt={cardData.title || 'Card'}
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+                />
+              ) : (
+                <div className="w-full h-full bg-[#111] flex items-center justify-center text-gray-700 font-bold uppercase text-xs">
+                  Upload an image
+                </div>
+              )}
+              {/* Mirror-like Glass Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent opacity-80" />
+            </div>
+
+            {/* Floating Content Layer */}
+            <div className="relative z-10 h-full p-8 flex flex-col justify-between items-start">
+              {/* Top Pill Badge — Event Type + Date */}
+              <div className="px-4 py-1.5 bg-black/40 backdrop-blur-xl border border-white/10 rounded-full flex items-center justify-between w-full">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-[#34D562] animate-pulse" />
+                  <span className="text-white/80 text-[10px] font-black tracking-widest uppercase">{formData.eventType}</span>
+                </div>
+                <span className="text-[#34D562] text-[9px] font-bold tracking-tighter uppercase italic">
+                  {cardData.date || 'DATE TBD'}
+                </span>
               </div>
 
-              <div className="relative flex-1 -mt-10 overflow-hidden">
-                {sub.images.length > 0 ? (
-                   <img src={sub.images[0]} alt={sub.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                ) : formData.cardImage ? (
-                   <img src={formData.cardImage} alt={sub.title} className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" />
-                ) : (
-                   <div className="w-full h-full bg-[#111] flex items-center justify-center text-gray-700 font-bold uppercase text-xs">No Image</div>
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent" />
-                
-                <div className="absolute bottom-0 left-0 right-0 p-5 flex flex-col items-center text-center">
-                   <h3 className="text-sm font-black text-white italic tracking-tight leading-tight mb-4 uppercase">{sub.title}</h3>
-                   <button className="bg-[#34D562] hover:bg-green-400 text-black px-4 py-2 rounded-full text-[10px] font-bold w-full max-w-[180px] flex items-center justify-center gap-2 uppercase tracking-wider transition-colors shadow-[0_0_10px_rgba(52,213,98,0.3)]">
-                     VIEW PROGRAM DETAILS
-                     <ArrowRight size={12} />
-                   </button>
+              {/* Bottom Content */}
+              <div className="w-full mt-auto">
+                {/* Title — variable white text */}
+                <h3 className="text-base md:text-lg font-black text-white leading-tight tracking-tight uppercase italic mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,1)] group-hover:text-[#34D562] transition-colors duration-500 line-clamp-3 min-h-[3.3em]">
+                  {cardData.title || 'Card Title Text'}
+                </h3>
+
+                {/* VIEW PROGRAM DETAILS button — single line */}
+                <div className="relative group/btn w-full">
+                  <div className="absolute -inset-1 bg-[#34D562]/40 rounded-xl blur-md opacity-20 group-hover:opacity-100 transition duration-500" />
+                  <button className="relative w-full py-3.5 bg-gradient-to-r from-[#34D562] to-[#2eb554] text-black rounded-xl font-black text-[10px] uppercase tracking-[0.25em] flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_4px_15px_rgba(0,0,0,0.3)] group-hover:shadow-[0_8px_25px_rgba(52,213,98,0.5)] group-hover:scale-[1.03] whitespace-nowrap">
+                    View Program Details
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
 
-  const renderModuleDetailPreview = () => {
-    const sub = formData.subEvents.find(s => s.id === selectedModuleId);
-    if (!sub) return null;
+            {/* Outer Glass Frame */}
+            <div className="absolute inset-0 border-[3px] border-white/5 rounded-[2.5rem] group-hover:border-[#34D562]/30 transition-colors duration-500 pointer-events-none z-20" />
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  // ── Program Details Preview — PM-UShA detail page style ──
+  const renderProgramDetailsPreview = () => {
+    const hasImages = formData.programImages.length > 0;
+    const currentImage = hasImages ? formData.programImages[slideshowIndex % formData.programImages.length] : null;
 
     return (
-      <div className="space-y-8 animate-in slide-in-from-right-4 duration-300 pb-12">
-        <button 
-          onClick={() => setSelectedModuleId(null)}
-          className="text-[#34D562] hover:text-green-400 text-xs font-bold uppercase tracking-widest flex items-center gap-2 mb-6 transition-colors bg-[#34D562]/10 px-4 py-2 rounded-lg"
-        >
-          <ArrowRight className="rotate-180" size={14} /> Back to Gallery
-        </button>
+      <div className="space-y-10 animate-in fade-in duration-300 pb-12">
+        <h3 className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-4 border-b border-gray-800 pb-2">3. Program Details Preview</h3>
 
+        {/* ── Hero Section with Event Type Badge, Title, Date, Location ── */}
         <div>
-          <h3 className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-4 border-b border-gray-800 pb-2">3. Module Details Preview</h3>
-          <h2 className="text-2xl font-black text-white italic tracking-tight leading-tight mb-2 uppercase">{sub.title}</h2>
-          {sub.date && (
-              <div className="flex items-center gap-2 mb-4">
-                  <Calendar className="w-4 h-4 text-[#34D562]" />
-                  <span className="text-[#34D562] font-semibold text-sm italic">{sub.date}</span>
-              </div>
-          )}
-          <p className="text-gray-300 bg-white/[0.02] p-5 rounded-xl border border-white/5 leading-relaxed text-sm">{sub.summary}</p>
+          {/* Event Type Badge */}
+          <div className="mb-4">
+            <span className="px-3 py-1 bg-[#34D562]/10 text-[#34D562] text-[10px] font-semibold rounded-full border border-[#34D562]/20 tracking-wider">
+              {formData.eventType}
+            </span>
+          </div>
+          
+          {/* Event Title */}
+          <h2 className="text-2xl md:text-3xl font-black text-white leading-tight tracking-tight uppercase mb-4">
+            {cardData.title || formData.title || 'Event Title'}
+          </h2>
+
+          {/* Date (mapped from Page 2) + Location */}
+          <div className="flex flex-wrap items-center gap-6 text-sm text-gray-400 mb-8">
+            <span className="flex items-center gap-2">
+              <Calendar className="w-4 h-4 text-[#34D562]" />
+              {cardData.date || 'Date TBD'}
+            </span>
+            <span className="flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-[#34D562]" />
+              {formData.location || formData.venue || 'Location TBD'}
+            </span>
+          </div>
         </div>
 
-        {sub.images.length > 0 && (
-            <div>
-                <h4 className="text-xs font-semibold text-white uppercase tracking-wider flex items-center gap-2 mb-4">
-                    <Eye className="w-4 h-4 text-[#34D562]" /> Gallery / Slideshow
-                </h4>
-                <div className="flex gap-4 overflow-x-auto pb-4 custom-scrollbar">
-                    {sub.images.map((img, i) => (
-                        <img key={i} src={img} alt={`Slide ${i}`} className="w-48 h-32 object-cover rounded-xl border border-white/10 shrink-0 shadow-lg" />
-                    ))}
+        {/* ── Image Slideshow ── */}
+        <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
+          {currentImage ? (
+            <>
+              <img 
+                key={slideshowIndex}
+                src={currentImage} 
+                alt="Event" 
+                className="w-full h-full object-cover opacity-80 transition-opacity duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30" />
+              
+              {/* Event Highlights badge */}
+              <div className="absolute top-4 left-4 z-10">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-[#34D562] shadow-[0_0_15px_rgba(52,213,98,0.4)]">
+                  <div className="w-2 h-2 rounded-full bg-black animate-pulse" />
+                  <span className="text-black text-[9px] font-black uppercase tracking-tighter italic">Event Highlights</span>
                 </div>
+              </div>
+
+              {/* Pagination Dots */}
+              {formData.programImages.length > 1 && (
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                  {formData.programImages.map((_, idx) => (
+                    <div
+                      key={idx}
+                      className={`h-1.5 transition-all duration-500 rounded-full ${idx === slideshowIndex % formData.programImages.length ? 'w-8 bg-[#34D562] shadow-[0_0_10px_rgba(52,213,98,0.5)]' : 'w-2 bg-white/30'}`}
+                    />
+                  ))}
+                </div>
+              )}
+            </>
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-gray-700 flex-col gap-2">
+              <Eye className="w-6 h-6" />
+              <span className="text-xs uppercase font-bold">Upload images to preview</span>
             </div>
+          )}
+        </div>
+
+        {/* ── Event Module Section ── */}
+        <div>
+          <div className="flex items-center gap-3 mb-3">
+            <span className="w-7 h-7 rounded-lg bg-[#34D562]/10 border border-[#34D562]/20 flex items-center justify-center text-[#34D562] font-bold text-xs">1</span>
+            <span className="text-[#34D562]/60 text-xs font-semibold uppercase tracking-[0.2em]">Event Module</span>
+          </div>
+          <h3 className="text-xl md:text-2xl font-bold text-white leading-tight mb-3">
+            {formData.eventModuleTitle || 'Module Title'}
+          </h3>
+          <div className="relative">
+            <div className="absolute left-0 top-0 bottom-0 w-1 rounded-full bg-gradient-to-b from-[#34D562] via-[#34D562]/40 to-transparent" />
+            <p className="pl-5 text-gray-400 leading-relaxed text-sm">
+              {formData.eventModuleSummary || 'Module summary will appear here...'}
+            </p>
+          </div>
+        </div>
+
+        {/* ── Event Gallery (2-column grid) ── */}
+        {hasImages && (
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <Eye className="w-4 h-4 text-[#34D562]" />
+              <span className="text-xs font-semibold text-white uppercase tracking-wider">Event Gallery</span>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {formData.programImages.slice(0, 4).map((img, idx) => (
+                <div key={idx} className="aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 group">
+                  <img src={img} alt={`Gallery ${idx}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+              ))}
+            </div>
+          </div>
         )}
 
-        {sub.sessions.length > 0 && (
-            <div>
-                <h4 className="text-xs font-semibold text-white uppercase tracking-wider flex items-center gap-2 mb-4">
-                    <BookOpen className="w-4 h-4 text-[#34D562]" /> Learning Outcomes
-                </h4>
-                <div className="grid grid-cols-1 gap-3">
-                    {sub.sessions.map((session, idx) => (
-                        <div key={session.id} className="bg-white/[0.02] border border-white/5 rounded-xl p-4 flex gap-4 items-start hover:border-[#34D562]/30 transition-colors">
-                            <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#34D562]/10 flex items-center justify-center text-[#34D562] font-bold text-sm shadow-[0_0_10px_rgba(52,213,98,0.2)]">
-                                {idx + 1}
-                            </span>
-                            <div>
-                                <h5 className="text-white font-bold text-sm mb-1 uppercase tracking-tight">{session.title}</h5>
-                                <p className="text-gray-400 text-sm leading-relaxed">{session.learningOutcome}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+        {/* ── Event Outcomes ── */}
+        {formData.eventOutcomes.length > 0 && (
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <BookOpen className="w-4 h-4 text-[#34D562]" />
+              <span className="text-xs font-semibold text-white uppercase tracking-wider">Event Outcomes</span>
             </div>
+            <div className="grid grid-cols-2 gap-4">
+              {formData.eventOutcomes.slice(0, visibleOutcomesCount).map((outcome, idx) => (
+                <div key={idx} className="bg-white/[0.02] border border-white/5 rounded-xl p-4 hover:border-[#34D562]/30 transition-colors">
+                  <div className="flex items-start gap-3">
+                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-[#34D562]/10 flex items-center justify-center text-[#34D562] font-bold text-xs shadow-[0_0_10px_rgba(52,213,98,0.2)]">
+                      {idx + 1}
+                    </span>
+                    <div>
+                      <h5 className="text-white font-bold text-sm mb-1">{outcome.title}</h5>
+                      <p className="text-gray-500 text-xs leading-relaxed">{outcome.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         )}
       </div>
     );
@@ -245,10 +359,10 @@ const EventLivePreview: React.FC<EventLivePreviewProps> = ({ formData, activeTab
         Live Preview
       </div>
 
-      <div className="max-w-3xl mx-auto pt-4">
+      <div className={`max-w-3xl mx-auto pt-4 ${activeTab === 'gallery' ? 'h-full flex flex-col' : ''}`}>
         {activeTab === 'basic' && renderBasicPreview()}
-        {activeTab === 'modules' && !selectedModuleId && renderGalleryPreview()}
-        {activeTab === 'modules' && selectedModuleId && renderModuleDetailPreview()}
+        {activeTab === 'gallery' && renderGalleryPreview()}
+        {activeTab === 'details' && renderProgramDetailsPreview()}
       </div>
     </div>
   );
