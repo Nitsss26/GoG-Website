@@ -52,7 +52,14 @@ export const ApplyForm = ({ isOpen, onClose, universityName, courses, redirectUr
 
         try {
             // Updated to production URL
-            const response = await fetch('https://gog.app.n8n.cloud/webhook/submit-form', {
+            // const response = await fetch('https://gog.app.n8n.cloud/webhook/submit-form', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify(formData),
+            // });
+              const response = await fetch('https://n8n.geeksofgurukul.com/webhook/submit-form', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
