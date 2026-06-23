@@ -104,6 +104,10 @@ import GYANVEER_LOGO from "./GYANVEER_LOGO.png"
 import GYANVEER_SLIDE from "./GYANVEER.jpg"
 import GYANVEERMou from "./GYANVEERMoU.jpeg"
 
+import IES_Logo from "./IES_Logo.png"
+import IES_Campus from "./IES_Campus.jpg"
+import IES_MoU from "./IES_MoU.jpeg"
+
 interface InstituteItem {
     images: {
         mou: string;
@@ -144,6 +148,7 @@ const rawItems: InstituteItem[] = [
     { images: { mou: SITEMou, campus: SITESlidePic2, event: SITESlidePic3 }, logo: SITE, name: "SITE, Nathdwara", category: "Institute", location: "Nathdwara, Rajasthan" },
     { images: { mou: LNCTMou, campus: LNCTSLidePic2, event: LNCTThirdPic3 }, logo: LNCTLogo, name: "LNCT, Indore", category: "LNCT", location: "Indore, MP" },
     { images: { mou: WilliamCarreyMou, campus: WilliamCareySlidePic2, event: WilliamCareySlidePic3 }, logo: WCU, name: "William Carey University", category: "University", location: "Shillong, Meghalaya" },
+    { images: { mou: IES_MoU, campus: IES_Campus, event: IES_Logo }, logo: IES_Logo, name: "IES College of Technology", category: "Institute", location: "Bhopal, MP" },
 ];
 
 // Shuffle function that separates similar categories
