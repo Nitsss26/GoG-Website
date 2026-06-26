@@ -3,23 +3,23 @@ import { motion } from 'framer-motion';
 import { Users, Target, ShieldCheck, Cpu } from 'lucide-react';
 
 import FounderImg from '../../assets/tech/Founders.jpg';
-import COOImg from '../../../COO.png'; // CTO and COO might be swapped in filename
-import CTOImg from '../../../CTO.png';
-import S1Img from '../../../assets/images/founder.png';
+import COOImg from '../../COO.png'; // CTO and COO might be swapped in filename
+import CTOImg from '../../CTO.png';
+import S1Img from '../../assets/images/founder.png';
 
-import RajImg from '../../../assets/team/raj-kumar-sahoo.jpg';
-import VivekImg from '../../../assets/team/vivek-yadav.jpg';
-import NiteshImg from '../../../assets/team/Nitesh.jpg';
+import RajImg from '../../assets/team/raj-kumar-sahoo.jpg';
+import VivekImg from '../../assets/team/vivek-yadav.jpg';
+import NiteshImg from '../../assets/team/Nitesh.jpg';
 
-import AmritaImg from '../../../assets/tech-team/Amrita_Sinha.png';
-import AshuImg from '../../../assets/tech-team/Ashu_Patel.png';
-import AyushiImg from '../../../assets/tech-team/Ayushi_Rai.png';
-import DiyanshuImg from '../../../assets/tech-team/Diyanshu_Kumar_Sahu.png';
-import GouriImg from '../../../assets/tech-team/Gouri_Thapa.png';
-import KrishnaSaratheImg from '../../../assets/tech-team/Krishna_Sarathe.png';
-import RuchitaImg from '../../../assets/tech-team/Ruchita_Singh.png';
-import SaurabImg from '../../../assets/tech-team/Saurab_Yadav.png';
-import VishalImg from '../../../assets/tech-team/Vishal_Maurya.png';
+import AmritaImg from '../../assets/tech-team/Amrita_Sinha.png';
+import AshuImg from '../../assets/tech-team/Ashu_Patel.png';
+import AyushiImg from '../../assets/tech-team/Ayushi_Rai.png';
+import DiyanshuImg from '../../assets/tech-team/Diyanshu_Kumar_Sahu.png';
+import GouriImg from '../../assets/tech-team/Gouri_Thapa.png';
+import KrishnaSaratheImg from '../../assets/tech-team/Krishna_Sarathe.png';
+import RuchitaImg from '../../assets/tech-team/Ruchita_Singh.png';
+import SaurabImg from '../../assets/tech-team/Saurab_Yadav.png';
+import VishalImg from '../../assets/tech-team/Vishal_Maurya.png';
 
 const Embers = () => {
     const [embers] = React.useState(() => Array.from({ length: 40 }).map(() => ({
