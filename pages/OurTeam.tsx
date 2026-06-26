@@ -96,6 +96,17 @@ import SwatiImg from '../assets/Operation_Managers/Swati_Rai.png';
 import AnkitImg from '../assets/Operation_Managers/Ankit_Nagdiya.png';
 import ShivaniImg from '../assets/Operation_Managers/Shivani_Chourasiya.png';
 
+// Tech Team
+import AmritaImg from '../assets/tech-team/Amrita_Sinha.png';
+import AshuImg from '../assets/tech-team/Ashu_Patel.png';
+import AyushiImg from '../assets/tech-team/Ayushi_Rai.png';
+import DiyanshuImg from '../assets/tech-team/Diyanshu_Kumar_Sahu.png';
+import GouriImg from '../assets/tech-team/Gouri_Thapa.png';
+import KrishnaSaratheImg from '../assets/tech-team/Krishna_Sarathe.png';
+import RuchitaImg from '../assets/tech-team/Ruchita_Singh.png';
+import SaurabImg from '../assets/tech-team/Saurab_Yadav.png';
+import VishalImg from '../assets/tech-team/Vishal_Maurya.png';
+
 // Import Logos
 import IITKharagpurLogo from '../assets/IITLogo/IITKharagpurLogo.png';
 import IITGuwahatiLogo from '../assets/IITLogo/IITGuwahatiLogo.png';
@@ -204,6 +215,18 @@ const operationManagers = [
     { name: "Ms. Shivani Chourasiya", image: ShivaniImg }
 ];
 
+const techTeam = [
+    { name: "Amrita Sinha", image: AmritaImg },
+    { name: "Ashu Patel", image: AshuImg },
+    { name: "Ayushi Rai", image: AyushiImg },
+    { name: "Diyanshu Kumar Sahu", image: DiyanshuImg },
+    { name: "Gouri Thapa", image: GouriImg },
+    { name: "Krishna Sarathe", image: KrishnaSaratheImg },
+    { name: "Ruchita Singh", image: RuchitaImg },
+    { name: "Saurab Yadav", image: SaurabImg },
+    { name: "Vishal Maurya", image: VishalImg }
+];
+
 const OurTeam: React.FC = () => {
     return (
         <main className="relative min-h-screen bg-[#030303] text-white overflow-hidden pt-40 pb-20">
@@ -277,6 +300,48 @@ const OurTeam: React.FC = () => {
                             </div>
                         </motion.div>
                     ))}
+                </div>
+
+                {/* --- Tech Team --- */}
+                <div className="mt-40 mb-5">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-16"
+                    >
+                        <div className="inline-flex items-center gap-2 mb-6 px-6 py-2 rounded-full border border-[#34D562]/30 bg-[#34D562]/10">
+                            <Target size={18} className="text-[#34D562]" />
+                            <span className="text-[#34D562] font-mono tracking-widest uppercase text-sm font-bold">Core Tech Team</span>
+                        </div>
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Software Development <span className="text-[#34D562]">Engineers</span></h2>
+                    </motion.div>
+
+                    <div className="flex flex-wrap justify-center gap-2 md:gap-6 max-w-[1600px] mx-auto">
+                        {techTeam.map((tech, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
+                                className="group relative bg-[#0A0A0A] rounded-xl md:rounded-2xl overflow-hidden border border-white/5 hover:border-[#34D562]/30 transition-all duration-500 shadow-lg hover:shadow-[0_0_30px_rgba(52,213,98,0.15)] w-[calc((100%-1rem)/3)] sm:w-[calc((100%-1.5rem)/4)] md:w-[calc((100%-4.5rem)/4)] lg:w-[calc((100%-6rem)/5)]"
+                            >
+                                <div className="h-32 md:h-80 overflow-hidden relative">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-80" />
+                                    <img
+                                        src={tech.image}
+                                        alt={tech.name}
+                                        className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105"
+                                    />
+                                </div>
+                                <div className="absolute bottom-0 left-0 right-0 p-1.5 md:p-4 z-20 text-center transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+                                    <div className="hidden md:inline-block px-3 py-0.5 bg-[#34D562] text-black font-bold text-[8px] tracking-wider uppercase rounded-full mb-2 shadow-[0_0_10px_rgba(52,213,98,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Software Development Engineer</div>
+                                    <h3 className="text-[7px] md:text-lg font-bold text-white leading-tight">{tech.name}</h3>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
 
                 {/* --- Operation Managers (OMs) --- */}

@@ -40,6 +40,7 @@ const Winners = lazy(() => import('./pages/Winners'));
 const NewTech = lazy(() => import('./pages/NewTech'));
 const Media = lazy(() => import('./pages/Media'));
 const Admin = lazy(() => import('./pages/Admin'));
+const AboutNexa = lazy(() => import('./pages/AboutNexa'));
 
 const LoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center bg-[#030303] text-white">
@@ -78,11 +79,14 @@ const App: React.FC = () => {
 
           <Routes>
             {/* Standalone Routes without Navbar/Footer */}
-            <Route path="/tech" element={
+            <Route element={
               <Suspense fallback={<LoadingFallback />}>
                 <NewTech />
               </Suspense>
-            } />
+            }>
+              <Route path="/tech" />
+              <Route path="/aboutnexa" />
+            </Route>
             <Route path="/admin" element={
               <Suspense fallback={<LoadingFallback />}>
                 <Admin />
