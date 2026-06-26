@@ -48,21 +48,21 @@ export default function Hero() {
             <img 
               src={heroImgLogo} 
               alt="QuantNexa" 
-              className="w-[280px] md:w-[45vw] max-w-[550px] h-auto block mb-0 md:mb-0 mt-4 md:mt-0"
+              className="w-[380px] md:w-[55vw] max-w-[650px] h-auto block mb-0 md:mb-0 mt-4 md:mt-10"
             />
-            <span className="block text-2xl md:text-[2.5rem] mt-2 text-[#e5e7eb]">
+            {/* <span className="block text-2xl md:text-[2.5rem] mt-2 text-[#e5e7eb]">
               Next-Gen Tech Solutions
-            </span>
+            </span> */}
           </h1>
 
           <p style={{
-            color: '#e5e7eb',
-            fontWeight: 500,
-            fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
+            fontSize: 'clamp(0.85rem, 1.2vw, 1rem)',
             lineHeight: 1.7,
             maxWidth: 600,
-            marginTop: '1rem',
-          }}>
+           marginTop: '-2rem',
+          }}
+          className='uppercase font-mono tracking-wider font-bold mt-4 md:mt-0 lg:-mt-2'
+          >
             We build next-generation digital products and AI-powered platforms that turn ideas into real-world impact.
           </p>
 
