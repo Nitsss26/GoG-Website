@@ -116,12 +116,21 @@
               dark: '#050505',
               'dark-card': '#0A0A0A',
               'dark-border': '#222222',
+              'neon-green': '#22ff66',
+              'neon-emerald': '#00ff88',
+              'cyber-bg': '#020703',
+              'cyber-card': '#050b08',
+              'cyber-border': '#0b3d1f',
+              'cyber-text': '#a3b8cc',
+              'cyber-glow': 'rgba(34, 255, 102, 0.15)',
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
               display: ['Rajdhani', 'sans-serif'],
               slab: ['Zilla Slab', 'serif'], 
               anton: ['Anton', 'sans-serif'],
+              cyber: ['"Clash Display"', 'Inter', 'system-ui', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
             },
             animation: {
               'spin-slow': 'spin 10s linear infinite',
@@ -144,6 +153,8 @@
       }
     </script>
     <style>
+      @import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap');
+      
       body {
         background-color: #030303;
         color: #ffffff;
@@ -210,6 +221,99 @@
           animation-iteration-count: 1 !important;
           transition-duration: 0.01ms !important;
         }
+      }
+
+      /* Glowing Neon Text */
+      .text-neon-glow {
+        text-shadow: 0 0 5px rgba(34, 255, 102, 0.5), 0 0 10px rgba(34, 255, 102, 0.3);
+      }
+
+      .text-emerald-glow {
+        text-shadow: 0 0 5px rgba(0, 255, 136, 0.5), 0 0 10px rgba(0, 255, 136, 0.3);
+      }
+
+      /* Futuristic Scanline Effect */
+      .scanline::before {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(34, 255, 102, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+        z-index: 20;
+        background-size: 100% 3px, 3px 100%;
+        pointer-events: none;
+        opacity: 0.4;
+      }
+
+      /* Cyber grid background */
+      .cyber-grid {
+        background-size: 40px 40px;
+        background-image: 
+          linear-gradient(to right, rgba(34, 255, 102, 0.03) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(34, 255, 102, 0.03) 1px, transparent 1px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      /* Glassmorphism Panel */
+      .glass-panel {
+        background: rgba(5, 11, 8, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(34, 255, 102, 0.1);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8), inset 0 0 12px rgba(34, 255, 102, 0.05);
+      }
+
+      .glass-panel-glow {
+        border: 1px solid rgba(34, 255, 102, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8), 0 0 15px rgba(34, 255, 102, 0.1), inset 0 0 12px rgba(34, 255, 102, 0.05);
+      }
+
+      /* Animated cyber border */
+      @keyframes border-glow {
+        0%, 100% { border-color: rgba(34, 255, 102, 0.15); }
+        50% { border-color: rgba(34, 255, 102, 0.6); }
+      }
+
+      .cyber-border-pulse {
+        animation: border-glow 4s infinite ease-in-out;
+      }
+
+      /* Custom glow utility */
+      .glow-shadow-green {
+        box-shadow: 0 0 20px rgba(34, 255, 102, 0.15);
+      }
+
+      .glow-shadow-green-strong {
+        box-shadow: 0 0 30px rgba(34, 255, 102, 0.35);
+      }
+
+      /* Hologram Scanning Line Animation */
+      @keyframes scan {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(100%); }
+      }
+
+      .hologram-scanner {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #22ff66, transparent);
+        box-shadow: 0 0 8px #22ff66, 0 0 12px #22ff66;
+        animation: scan 3s infinite linear;
+      }
+
+      /* Radial tech layout */
+      .tech-orbit {
+        border: 1px dashed rgba(34, 255, 102, 0.15);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     </style>
   <script type="importmap">

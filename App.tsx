@@ -40,8 +40,9 @@ const Winners = lazy(() => import('./pages/Winners'));
 const NewTech = lazy(() => import('./pages/NewTech'));
 const Media = lazy(() => import('./pages/Media'));
 const Admin = lazy(() => import('./pages/Admin'));
-const AboutNexa = lazy(() => import('./pages/AboutNexa'));
-
+const TechLayout = lazy(() => import('./components/tech/TechLayout'));
+const TechHome = lazy(() => import('./pages/tech/Home'));
+const TechAboutNexa = lazy(() => import('./pages/tech/AboutNexa'));
 const LoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center bg-[#030303] text-white">
     <div className="animate-pulse text-[#34D562] font-mono text-xl">Loading...</div>
@@ -81,11 +82,19 @@ const App: React.FC = () => {
             {/* Standalone Routes without Navbar/Footer */}
             <Route element={
               <Suspense fallback={<LoadingFallback />}>
-                <NewTech />
+                <TechLayout />
               </Suspense>
             }>
-              <Route path="/tech" />
-              <Route path="/aboutnexa" />
+              <Route path="/tech" element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <TechHome />
+                </Suspense>
+              } />
+              <Route path="/aboutnexa" element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <TechAboutNexa />
+                </Suspense>
+              } />
             </Route>
             <Route path="/admin" element={
               <Suspense fallback={<LoadingFallback />}>
