@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import heroImgLogo from '../../assets/tech/HeroImg.png';
+import heroBg from '../../Hero-Nexa.png';
+
 export default function Hero() {
   const scrollTo = (id) => (e) => {
     e.preventDefault();
@@ -14,7 +16,7 @@ export default function Hero() {
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(/tech/Hero.png)` }}
+        style={{ backgroundImage: `url(${heroBg})` }}
       />
       
       {/* Atmosphere / Overlays */}
