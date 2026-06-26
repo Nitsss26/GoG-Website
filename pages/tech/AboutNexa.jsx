@@ -69,21 +69,21 @@ export default function AboutNexa() {
         {
             image: S1Img,
             name: "Mr. \u00A0 Chintan \u00A0Vatsa\u00A0 Jha",
-            role: "Founder\u00A0 & \u00A0 CEO",
+            role: "Founder",
             quote: "Our Vision Is To Empower Innovators By Building A Future-Ready Technical Ecosystem. At QuantNexa, We Believe In Architecting Next-Gen Platforms That Turn Groundbreaking Ideas Into Tangible Reality.",
             // badge: "SYS FOUNDER"
         },
         {
             image: CTOImg,
             name: "Mr. \u00A0 Ajay \u00A0 Katana",
-            role: "Chief \u00A0Technology\u00A0 Officer",
+            role: "Co-Founder",
             quote: "In Today's Rapidly Evolving Technological Landscape, Scalability And Reliability Are Key. At QuantNexa, We Take Pride In Engineering Advanced Solutions Utilizing The Latest Technologies To Drive Global Impact.",
             // badge: "CHIEF TECH"
         },
         {
             image: COOImg,
             name: "Mr.\u00A0 Neeraj \u00A0Sahu",
-            role: "Chief \u00A0 Operating \u00A0 Officer",
+            role: "Co-Founder",
             quote: "Our Goal Is To Streamline Complex Technical Operations Into Seamless Experiences. We Are Committed To Ensuring That Every Product We Launch Excels In Performance, Usability, And Reach.",
             // badge: "CHIEF OPS"
         },

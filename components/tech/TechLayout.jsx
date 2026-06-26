@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import SplashScreen from './SplashScreen';
 import ParticleBackground from './ParticleBackground';
@@ -7,6 +7,15 @@ import Footer from './Footer';
 
 export default function TechLayout() {
   const [splashDone, setSplashDone] = useState(false);
+
+  useEffect(() => {
+    const originalZoom = document.body.style.zoom;
+    document.body.style.zoom = '1';
+    
+    return () => {
+      document.body.style.zoom = originalZoom || '';
+    };
+  }, []);
 
   return (
     <>

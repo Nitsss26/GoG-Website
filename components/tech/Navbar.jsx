@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import logoImg from '../../assets/tech/QuantNexafinal.png';
 
 const NAV_ITEMS = [
-  { label: 'Home', href: '/', isRoute: true },
+  { label: 'Home', href: '/tech', isRoute: true },
   { label: 'About', href: '/aboutnexa', isRoute: true },
   { label: 'Products', href: '#products' },
   { label: 'AI Labs', href: '#ai-labs' },
@@ -16,7 +16,7 @@ const NAV_ITEMS = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeItem, setActiveItem] = useState('/');
+  const [activeItem, setActiveItem] = useState('/tech');
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -26,10 +26,10 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
       
-      if (location.pathname !== '/') return;
+      if (location.pathname !== '/tech') return;
 
       if (window.scrollY < window.innerHeight / 3) {
-        setActiveItem('/');
+        setActiveItem('/tech');
         return;
       }
 
@@ -52,38 +52,24 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [location.pathname]);
 
-  // Listen for sync messages from parent window
-  useEffect(() => {
-    const handleMessage = (event) => {
-      if (event.data && event.data.type === 'SYNC ROUTE') {
-        navigate(event.data.path);
-      }
-    };
-    window.addEventListener('message', handleMessage);
-    return () => window.removeEventListener('message', handleMessage);
-  }, [navigate]);
-
   const handleClick = (e, item) => {
     e.preventDefault();
     setIsOpen(false);
     
     if (item.isRoute) {
-      if (item.href === '/') {
-        window.parent.postMessage({ type: 'CHANGE URL', path: '/tech' }, '*');
-        navigate('/');
+      if (item.href === '/tech') {
+        navigate('/tech');
         setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 50);
       } else if (item.href === '/aboutnexa') {
-        window.parent.postMessage({ type: 'CHANGE URL', path: '/aboutnexa' }, '*');
         navigate('/aboutnexa');
       }
       return;
     }
     
-    if (location.pathname !== '/') {
+    if (location.pathname !== '/tech') {
       // If we are on about page and click a scroll link, go to home first
-      window.parent.postMessage({ type: 'CHANGE URL', path: '/tech' }, '*');
-      navigate('/');
-      // Wait for navigation and then scroll (hacky but works for SPA)
+      navigate('/tech');
+      // Wait for navigation and then scroll
       setTimeout(() => {
         const target = document.querySelector(item.href);
         if (target) {
@@ -111,7 +97,7 @@ export default function Navbar() {
     }`}>
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
         {/* Logo block */}
-        <a href="/tech" onClick={(e) => handleClick(e, { href: '/', isRoute: true })} className="flex items-center gap-3 group select-none">
+        <a href="/tech" onClick={(e) => handleClick(e, { href: '/tech', isRoute: true })} className="flex items-center gap-3 group select-none">
           <img src={logoImg} alt="QuantNexa" className="h-10 md:h-11 w-auto object-contain transition-transform duration-300 transform scale-150 md:scale-[1.75] origin-left group-hover:scale-[1.80]" />
         </a>
 

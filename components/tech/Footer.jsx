@@ -5,7 +5,7 @@ import logoImg from '../../assets/tech/QuantNexafinal.png';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const FOOTER_LINKS = [
-  { label: 'Home', href: '/', isRoute: true },
+  { label: 'Home', href: '/tech', isRoute: true },
   { label: 'Products', href: '#products' },
   { label: 'AI Labs', href: '#ai-labs' },
   { label: 'Metrics', href: '#metrics' },
@@ -31,20 +31,17 @@ export default function Footer() {
     e.preventDefault();
     
     if (item.isRoute) {
-      if (item.href === '/') {
-        window.parent.postMessage({ type: 'CHANGE URL', path: '/tech' }, '*');
-        navigate('/');
+      if (item.href === '/tech') {
+        navigate('/tech');
         setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 50);
       } else if (item.href === '/aboutnexa') {
-        window.parent.postMessage({ type: 'CHANGE URL', path: '/aboutnexa' }, '*');
         navigate('/aboutnexa');
       }
       return;
     }
     
-    if (location.pathname !== '/') {
-      window.parent.postMessage({ type: 'CHANGE URL', path: '/tech' }, '*');
-      navigate('/');
+    if (location.pathname !== '/tech') {
+      navigate('/tech');
       setTimeout(() => {
         const target = document.querySelector(item.href);
         if (target) {
@@ -72,7 +69,7 @@ export default function Footer() {
         
         {/* Left Side: Brand details */}
         <div className="md:col-span-4 space-y-4">
-          <a href="/" onClick={(e) => handleClick(e, { href: '/', isRoute: true })} className="flex items-center gap-3 group select-none">
+          <a href="/tech" onClick={(e) => handleClick(e, { href: '/tech', isRoute: true })} className="flex items-center gap-3 group select-none">
             <img src={logoImg} alt="QuantNexa" className="h-11 md:h-12 w-auto object-contain transition-all transform scale-[1.3] origin-left group-hover:scale-[1.35]" />
           </a>
 
