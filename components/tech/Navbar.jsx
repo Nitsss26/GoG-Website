@@ -28,7 +28,8 @@ export default function Navbar() {
       setScrolled(window.scrollY > 20);
       setShowLogo(window.scrollY > window.innerHeight * 0.25);
       
-      if (location.pathname !== '/tech') return;
+      const isHomePage = location.pathname === '/tech' || location.pathname === '/tech/';
+      if (!isHomePage) return;
 
       if (window.scrollY < window.innerHeight / 3) {
         setActiveItem('/tech');
@@ -68,7 +69,8 @@ export default function Navbar() {
       return;
     }
     
-    if (location.pathname !== '/tech') {
+    const isHomePageClick = location.pathname === '/tech' || location.pathname === '/tech/';
+    if (!isHomePageClick) {
       // If we are on about page and click a scroll link, go to home first
       navigate('/tech');
       // Wait for navigation and then scroll
@@ -91,7 +93,8 @@ export default function Navbar() {
     }
   };
 
-  const shouldShowLogo = location.pathname !== '/tech' || showLogo;
+  const isHome = location.pathname === '/tech' || location.pathname === '/tech/';
+  const shouldShowLogo = !isHome || showLogo;
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
