@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronDown } from 'lucide-react';
-import heroImgLogo from '../../assets/tech/HeroImg.png';
+import heroImgLogo from '../../assets/tech/QuantNexafinal.png';
 import heroBg from '../../Hero-Nexa.png';
 
 export default function Hero() {
@@ -48,9 +48,9 @@ export default function Hero() {
             <img 
               src={heroImgLogo} 
               alt="QuantNexa" 
-              className="w-[280px] md:w-[45vw] max-w-[550px] h-auto block mb-0 md:mb-12 mt-[5px] md:mt-0 transform translate-y-12 md:translate-y-0"
+              className="w-[280px] md:w-[45vw] max-w-[550px] h-auto block mb-0 md:mb-0 mt-4 md:mt-0"
             />
-            <span className="block text-2xl md:text-[2.5rem] mt-4 md:-mt-[10rem] text-[#e5e7eb]">
+            <span className="block text-2xl md:text-[2.5rem] mt-2 text-[#e5e7eb]">
               Next-Gen Tech Solutions
             </span>
           </h1>

@@ -16,6 +16,7 @@ const NAV_ITEMS = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showLogo, setShowLogo] = useState(false);
   const [activeItem, setActiveItem] = useState('/tech');
   const location = useLocation();
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ export default function Navbar() {
     
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+      setShowLogo(window.scrollY > window.innerHeight * 0.25);
       
       if (location.pathname !== '/tech') return;
 
@@ -89,6 +91,8 @@ export default function Navbar() {
     }
   };
 
+  const shouldShowLogo = location.pathname !== '/tech' || showLogo;
+
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
       scrolled 
@@ -97,9 +101,11 @@ export default function Navbar() {
     }`}>
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
         {/* Logo block */}
-        <a href="/tech" onClick={(e) => handleClick(e, { href: '/tech', isRoute: true })} className="flex items-center gap-3 group select-none">
-          <img src={logoImg} alt="QuantNexa" className="h-10 md:h-11 w-auto object-contain transition-transform duration-300 transform scale-150 md:scale-[1.75] origin-left group-hover:scale-[1.80]" />
-        </a>
+        <div className={`transition-all duration-500 ease-in-out ${shouldShowLogo ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none w-0 md:w-auto overflow-hidden'}`}>
+          <a href="/tech" onClick={(e) => handleClick(e, { href: '/tech', isRoute: true })} className="flex items-center gap-3 group select-none">
+            <img src={logoImg} alt="QuantNexa" className="h-10 md:h-11 w-auto object-contain transition-transform duration-300 transform scale-150 md:scale-[1.75] origin-left group-hover:scale-[1.80]" />
+          </a>
+        </div>
 
         {/* Desktop nav menu */}
         <div className="hidden lg:flex items-center gap-1">
