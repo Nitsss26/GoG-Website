@@ -46,7 +46,7 @@ export default function AIScannerMockup() {
   };
 
   return (
-    <div className="w-full relative glass-panel rounded-xl overflow-hidden shadow-2xl border border-cyber-border/40 bg-black/60 font-sans">
+    <div className="w-full relative glass-panel rounded-xl overflow-hidden shadow-2xl border border-cyber-border/30 bg-black/30 backdrop-blur-md font-sans">
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-4 py-3 bg-[#050b08] border-b border-cyber-border/30">
         <div className="flex items-center gap-2">

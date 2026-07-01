@@ -11,14 +11,23 @@ import RajImg from '../../assets/team/raj-kumar-sahoo.jpg';
 import VivekImg from '../../assets/team/vivek-yadav.jpg';
 import NiteshImg from '../../assets/team/Nitesh.jpg';
 
+import AdityaImg from '../../assets/tech-team/Aditya_Sharma.png';
 import AmritaImg from '../../assets/tech-team/Amrita_Sinha.png';
+import AnandImg from '../../assets/tech-team/Anand_Kumar.png';
 import AshuImg from '../../assets/tech-team/Ashu_Patel.png';
 import AyushiImg from '../../assets/tech-team/Ayushi_Rai.png';
 import DiyanshuImg from '../../assets/tech-team/Diyanshu_Kumar_Sahu.png';
 import GouriImg from '../../assets/tech-team/Gouri_Thapa.png';
+import HarshImg from '../../assets/tech-team/Harsh_Sahu.png';
 import KrishnaSaratheImg from '../../assets/tech-team/Krishna_Sarathe.png';
+import LavinshImg from '../../assets/tech-team/Lavinsh_Rathor.png';
+import MustafaImg from '../../assets/tech-team/Mustafa.png';
+import RiyaImg from '../../assets/tech-team/Riya_Soni.png';
 import RuchitaImg from '../../assets/tech-team/Ruchita_Singh.png';
+import SatishImg from '../../assets/tech-team/Satish_Nagar.png';
 import SaurabImg from '../../assets/tech-team/Saurab_Yadav.png';
+import ShwetaImg from '../../assets/tech-team/Shweta_Keshari.png';
+import SonaliImg from '../../assets/tech-team/Sonali_Kumari.png';
 import VishalImg from '../../assets/tech-team/Vishal_Maurya.png';
 
 const Embers = () => {
@@ -90,14 +99,22 @@ export default function AboutNexa() {
     ];
 
     const techTeam = [
+        { name: "Aditya Sharma", image: AdityaImg },
         { name: "Amrita Sinha", image: AmritaImg },
         { name: "Ashu Patel", image: AshuImg },
         { name: "Ayushi Rai", image: AyushiImg },
         { name: "Diyanshu Kumar Sahu", image: DiyanshuImg },
         { name: "Gouri Thapa", image: GouriImg },
+        { name: "Harsh Sahu", image: HarshImg },
         { name: "Krishna Sarathe", image: KrishnaSaratheImg },
+        { name: "Lavinsh Rathor", image: LavinshImg },
+        { name: "Mustafa", image: MustafaImg },
+        { name: "Riya Soni", image: RiyaImg },
         { name: "Ruchita Singh", image: RuchitaImg },
+        { name: "Satish Nagar", image: SatishImg },
         { name: "Saurab Yadav", image: SaurabImg },
+        { name: "Shweta Keshari", image: ShwetaImg },
+        { name: "Sonali Kumari", image: SonaliImg },
         { name: "Vishal Maurya", image: VishalImg }
     ];
 
@@ -214,14 +231,15 @@ export default function AboutNexa() {
                 <div className="mb-32">
                     <div className="flex items-center gap-4 mb-12">
                         <div className="h-8 w-1.5 bg-neon-green shadow-[0_0_8px_#22ff66]" />
-                        <h2 className="text-3xl md:text-5xl font-cyber font-black text-white uppercase tracking-tight">The &nbsp; Management &nbsp; <span className="text-neon-green text-neon-glow">Team</span></h2>
+                        <h2 className="text-3xl md:text-5xl font-cyber font-black text-white uppercase tracking-tight">The &nbsp; Core &nbsp; <span className="text-neon-green text-neon-glow">Tech &nbsp; Team</span></h2>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
                         {[
-                            { name: "Mr. \u00A0 Raj\u00A0 Kumar\u00A0 Sahoo", role: "Associate Director Business & Operations", quote: "Scaling our development operations by standardizing advanced software pipelines.", img: RajImg, },
-                            { name: "Mr.\u00A0 Vivek\u00A0 Yadav", role: "HR Admin & Finance Head", quote: "Cultivating an environment where deep tech research and development thrives.", img: VivekImg, },
-                            { name: "Mr.\u00A0 Nitesh", role: "Technology & Marketing Head", quote: "Designing robust cloud architectures and ensuring perfect execution of our products.", img: NiteshImg, }
+                            // { name: "Mr. \u00A0 Raj\u00A0 Kumar\u00A0 Sahoo", role: "Associate Director Business & Operations", quote: "Scaling our development operations by standardizing advanced software pipelines.", img: RajImg, },
+                            // { name: "Mr.\u00A0 Vivek\u00A0 Yadav", role: "HR Admin & Finance Head", quote: "Cultivating an environment where deep tech research and development thrives.", img: VivekImg, },
+                            { name: "Mr.\u00A0 Nitesh", role: "Technology Head", quote: "Designing robust cloud architectures and ensuring perfect execution of our products.", img: NiteshImg, },
+                            { name: "Mr.\u00A0 Anand\u00A0 Kumar", role: "Senior SDE & Curriculum Lead", quote: "Empowering developers through rigorous curriculum and cutting-edge software practices.", img: AnandImg, }
                         ].map((mgr, i) => (
                             <motion.div
                                 key={i}

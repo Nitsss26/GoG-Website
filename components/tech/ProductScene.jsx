@@ -20,46 +20,63 @@ export default function ProductScene({ product, index }) {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className={`lg:col-span-5 flex flex-col gap-6 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}
+          className={`lg:col-span-5 flex flex-col ${isEven ? 'lg:order-1' : 'lg:order-2'} relative z-20`}
+          style={{ perspective: '1000px' }}
         >
-          {/* Header & Status Indicator */}
-          <div className="flex items-center gap-3">
-            <span className="font-mono text-xs text-neon-green tracking-widest">FLAGSHIP PRODUCT {index + 1}</span>
-            <div className="w-1.5 h-1.5 rounded-full bg-neon-green animate-ping" />
-            {/* <span className="font-mono text-[10px] text-cyber-text tracking-widest uppercase border border-cyber-border/40 px-2 py-0.5 rounded bg-black/40">
-              SYS - {status}
-            </span> */}
-          </div>
+          {/* Inner Floating 3D Panel */}
+          <motion.div
+            animate={{ y: [-8, 8, -8] }}
+            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+            whileHover={{ scale: 1.02, rotateX: 2, rotateY: isEven ? 2 : -2 }}
+            className="w-full relative p-6 sm:p-8 rounded-2xl bg-[#030906]/70 backdrop-blur-xl border border-neon-green/20 shadow-[0_20px_50px_-10px_rgba(0,255,136,0.2),inset_0_0_20px_rgba(0,255,136,0.05)] overflow-hidden transform-gpu"
+          >
+            {/* Holographic Glowing Accents */}
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-neon-green/50 to-transparent opacity-50" />
+            <div className="absolute -left-10 top-20 w-32 h-32 bg-neon-green/20 rounded-full blur-[50px] pointer-events-none" />
+            <div className="absolute -right-10 bottom-10 w-32 h-32 bg-amber-400/10 rounded-full blur-[50px] pointer-events-none" />
 
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white font-cyber">
-            {title}
-          </h2>
-
-          <p className="text-cyber-text text-sm md:text-base leading-relaxed">
-            {description}
-          </p>
-
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2">
-            {tags.map((tag) => (
-              <span 
-                key={tag} 
-                className="font-mono text-[10px] text-neon-emerald border border-neon-emerald/20 px-2.5 py-1 rounded bg-[#0b3d1f]/10 shadow-[inset_0_0_6px_rgba(0,255,136,0.05)]"
-              >
-                #{tag.toUpperCase()}
-              </span>
-            ))}
-          </div>
-
-          {/* Features checklist */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 border-t border-b border-cyber-border/20 py-4 my-2">
-            {features.map((feature, i) => (
-              <div key={i} className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-neon-green flex-shrink-0 mt-0.5" />
-                <span className="font-mono text-[11px] text-white/95 leading-normal tracking-wide">{feature}</span>
+            <div className="relative z-10 flex flex-col gap-6">
+              {/* Header & Status Indicator */}
+              <div className="flex items-center gap-3">
+                <span className="font-mono text-xs text-amber-400 tracking-widest font-bold">FLAGSHIP PRODUCT {index + 1}</span>
+                <div className="w-2 h-2 rounded-full bg-amber-400 animate-pulse shadow-[0_0_8px_#fbbf24]" />
               </div>
-            ))}
-          </div>
+
+              <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/60 font-cyber drop-shadow-[0_2px_15px_rgba(0,255,136,0.3)]">
+                {title}
+              </h2>
+
+              <p className="text-cyber-text text-sm md:text-base leading-relaxed font-medium">
+                {description}
+              </p>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2.5">
+                {tags.map((tag) => (
+                  <span 
+                    key={tag} 
+                    className="font-mono text-[10px] font-bold text-amber-400 border border-amber-400/40 px-3 py-1.5 rounded bg-amber-400/10 shadow-[0_0_10px_rgba(251,191,36,0.15)] hover:bg-amber-400/20 hover:shadow-[0_0_15px_rgba(251,191,36,0.3)] hover:-translate-y-0.5 transition-all cursor-default"
+                  >
+                    #{tag.toUpperCase()}
+                  </span>
+                ))}
+              </div>
+
+              {/* Features checklist */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 border-t border-neon-green/20 pt-5 mt-2 relative">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-neon-green/40 to-transparent" />
+                {features.map((feature, i) => (
+                  <div key={i} className="flex items-center gap-3 p-2 rounded-lg hover:bg-neon-green/5 transition-colors group cursor-default">
+                    <div className="relative flex items-center justify-center">
+                      <div className="absolute inset-0 bg-amber-400/20 rounded-full blur-[4px] group-hover:bg-amber-400/40 transition-colors" />
+                      <CheckCircle2 className="w-4 h-4 text-amber-400 relative z-10 group-hover:scale-110 transition-transform" />
+                    </div>
+                    <span className="font-mono text-[11px] text-white/90 font-semibold leading-normal tracking-wide group-hover:text-white transition-colors">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
 
         {/* Right Side: Mockup Frame */}

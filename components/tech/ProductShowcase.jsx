@@ -94,7 +94,7 @@ export default function ProductShowcase() {
       <div className="pt-24 pb-8 px-4 text-center max-w-4xl mx-auto relative z-10">
         <span className="font-mono text-xs text-neon-green tracking-widest block mb-3 animate-pulse">SYSTEM APPLICATIONS</span>
         <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase font-cyber mb-4">
-          Flagship &nbsp; Technologies
+          Our &nbsp; Products
         </h2>
         <div className="h-0.5 w-24 bg-neon-green mx-auto mb-6 shadow-[0_0_8px_#22ff66]" />
         <p className="text-cyber-text text-sm md:text-base font-mono">
