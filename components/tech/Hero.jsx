@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import heroImgLogo from '../../assets/tech/QuantNexafinal.png';
-import heroBg from '../../Hero-Nexa.png';
+import heroBg from '../../Nexa_Img.png';
 
 export default function Hero() {
   const scrollTo = (id) => (e) => {

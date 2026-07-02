@@ -80,21 +80,30 @@ function DomainCard({ domain, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.6, delay: index * 0.08 }}
-      style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
-      className="perspective-1000 h-full w-full group cursor-pointer"
+      className="perspective-1000 h-full w-full group cursor-pointer relative"
     >
-      <div 
-        style={{ transform: 'translateZ(30px)' }}
-        className="relative h-full glass-panel rounded-2xl p-6 md:p-8 border border-cyber-border/40 group-hover:border-neon-green/60 transition-all duration-300 flex flex-col justify-between gap-6 hover:shadow-[0_0_35px_rgba(34,255,102,0.15)] overflow-hidden"
-      >
-        {/* Neon Green Rim Light overlay */}
-        <div className="absolute inset-0 border border-transparent group-hover:border-neon-green/30 rounded-2xl pointer-events-none transition-all duration-300" />
-        
-        {/* Laser scanner line on hover */}
-        <div className="absolute top-0 left-0 w-full h-[1.5px] bg-neon-green opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_8px_#22ff66] hologram-scanner" />
+      {/* 3D Floor Shadow under the floating card */}
+      <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[80%] h-12 bg-black/80 blur-[20px] rounded-full pointer-events-none transition-all duration-500 group-hover:w-[70%] group-hover:blur-[25px]" />
+      <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[60%] h-10 bg-neon-green/10 blur-[30px] rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-        {/* Glowing Background Orb */}
-        <div className="absolute -top-12 -right-12 w-28 h-28 bg-neon-green/5 rounded-full blur-2xl group-hover:bg-neon-green/10 transition-all duration-300 pointer-events-none" />
+      <motion.div
+        animate={{ y: [-8, 8, -8] }}
+        transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: index * 0.3 }}
+        style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
+        className="relative h-full w-full"
+      >
+        <div 
+          style={{ transform: 'translateZ(60px)' }}
+          className="relative h-full glass-panel bg-[#030705]/90 bg-gradient-to-br from-white/[0.08] to-transparent rounded-2xl p-6 md:p-8 border-t border-l border-white/20 border-r border-b border-black/80 group-hover:border-neon-green/80 transition-all duration-500 flex flex-col justify-between gap-6 shadow-[0_30px_60px_-15px_rgba(0,0,0,1)] group-hover:shadow-[0_40px_80px_-10px_rgba(0,0,0,1),0_0_40px_rgba(34,255,102,0.15),inset_0_0_20px_rgba(34,255,102,0.05)] overflow-hidden"
+        >
+          {/* Neon Green Rim Light overlay */}
+          <div className="absolute inset-0 border border-transparent group-hover:border-neon-green/40 rounded-2xl pointer-events-none transition-all duration-500" />
+          
+          {/* Laser scanner line on hover */}
+          <div className="absolute top-0 left-0 w-full h-[1.5px] bg-neon-green opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[0_0_12px_#22ff66] hologram-scanner" />
+
+          {/* Glowing Background Orb */}
+          <div className="absolute -top-12 -right-12 w-32 h-32 bg-neon-green/10 rounded-full blur-3xl group-hover:bg-neon-green/25 transition-all duration-500 pointer-events-none" />
 
         {/* Header Section */}
         <div className="flex items-center justify-between">
@@ -120,9 +129,9 @@ function DomainCard({ domain, index }) {
         </div>
 
         {/* Cinematic Animated Visual Area */}
-        <div className="h-48 my-2 relative rounded-xl bg-gradient-to-br from-black/90 to-cyber-card/75 border border-cyber-border/30 overflow-hidden flex items-center justify-center">
+        <div className="h-48 my-2 relative rounded-xl bg-gradient-to-br from-[#020503] to-[#0a120e]/80 border border-white/5 overflow-hidden flex items-center justify-center group-hover:border-neon-green/30 group-hover:shadow-[inset_0_0_30px_rgba(34,255,102,0.06)] transition-all duration-500">
           {/* Subtle Grid overlay */}
-          <div className="cyber-grid opacity-10 absolute inset-0 pointer-events-none" />
+          <div className="cyber-grid opacity-20 absolute inset-0 pointer-events-none" />
           
           {/* Mockup Renderer */}
           <CardMockup type={domain.mockup} />
@@ -168,7 +177,8 @@ function DomainCard({ domain, index }) {
           </div>
         </div>
 
-      </div>
+        </div>
+      </motion.div>
     </motion.div>
   );
 }
