@@ -15,6 +15,7 @@ const Educhain = lazy(() => import('./pages/Educhain'));
 const Stellar = lazy(() => import('./pages/Stellar'));
 const Aptos = lazy(() => import('./pages/Aptos'));
 const Agoric = lazy(() => import('./pages/Agoric'));
+const Chainlink = lazy(() => import('./pages/Chainlink'));
 const Programs = lazy(() => import('./pages/Programs'));
 const OurSocialImpact = lazy(() => import('./pages/OurSocialImpact'));
 const OurTeam = lazy(() => import('./pages/OurTeam'));
@@ -85,7 +86,7 @@ const App: React.FC = () => {
                 <TechLayout />
               </Suspense>
             }>
-              <Route path="/tech" element={
+              <Route path="/new-tech" element={
                 <Suspense fallback={<LoadingFallback />}>
                   <TechHome />
                 </Suspense>
@@ -104,6 +105,11 @@ const App: React.FC = () => {
             <Route path="/oldtech" element={
               <Suspense fallback={<LoadingFallback />}>
                 <Tech />
+              </Suspense>
+            } />
+            <Route path="/blockchain/chainlink" element={
+              <Suspense fallback={<LoadingFallback />}>
+                <Chainlink />
               </Suspense>
             } />
 

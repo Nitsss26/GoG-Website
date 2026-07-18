@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import logoImg from '../../assets/tech/QuantNexafinal.png';
 
 const NAV_ITEMS = [
-  { label: 'Home', href: '/tech', isRoute: true },
+  { label: 'Home', href: '/new-tech', isRoute: true },
   { label: 'About', href: '/aboutnexa', isRoute: true },
   { label: 'Products', href: '#products' },
   { label: 'AI Labs', href: '#ai-labs' },
@@ -105,7 +105,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
         {/* Logo block */}
         <div className={`transition-all duration-500 ease-in-out ${shouldShowLogo ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none w-0 md:w-auto overflow-hidden'}`}>
-          <a href="/tech" onClick={(e) => handleClick(e, { href: '/tech', isRoute: true })} className="flex items-center gap-3 group select-none">
+          <a href="/new-tech" onClick={(e) => handleClick(e, { href: '/new-tech', isRoute: true })} className="flex items-center gap-3 group select-none">
             <img src={logoImg} alt="QuantNexa" className="h-10 md:h-11 w-auto object-contain transition-transform duration-300 transform scale-150 md:scale-[1.75] origin-left group-hover:scale-[1.80]" />
           </a>
         </div>

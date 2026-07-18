@@ -30,21 +30,21 @@ const Footer: React.FC = () => {
           {/* Connect Column */}
           <div className="lg:ml-24">
             <h4 className="text-[#34D562] font-bold text-lg mb-6 uppercase tracking-wider">Connect</h4>
-            <ul className="space-y-3 text-gray-400 text-sm">
-              <li><Link to="/contact-us" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Contact</Link></li>
-              <li><Link to="/about-gog" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> About Us</Link></li>
-              <li><Link to="/programs" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Programs</Link></li>
+            <ul className="space-y-3 text-gray-400 text-sm pl-4 md:pl-0">
+              <li><Link to="/contact-us" className="hover:text-white transition-colors relative group flex items-center"><span className="absolute -left-4 w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Contact</Link></li>
+              <li><Link to="/about-gog" className="hover:text-white transition-colors relative group flex items-center"><span className="absolute -left-4 w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> About Us</Link></li>
+              <li><Link to="/programs" className="hover:text-white transition-colors relative group flex items-center"><span className="absolute -left-4 w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Programs</Link></li>
             </ul>
           </div>
 
           {/* Resources Column */}
           <div>
             <h4 className="text-[#34D562] font-bold text-lg mb-6 uppercase tracking-wider">Resources</h4>
-            <ul className="space-y-3 text-gray-400 text-sm">
-              <li><Link to="/media" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Media Presence</Link></li>
-              <li><Link to="/faq" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> FAQ</Link></li>
-              <li><Link to="/privacy-policy" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Privacy & Policy</Link></li>
-              <li><Link to="/terms-conditions" className="hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Terms & Conditions</Link></li>
+            <ul className="space-y-3 text-gray-400 text-sm pl-4 md:pl-0">
+              <li><Link to="/media" className="hover:text-white transition-colors relative group flex items-center"><span className="absolute -left-4 w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Media Presence</Link></li>
+              <li><Link to="/faq" className="hover:text-white transition-colors relative group flex items-center"><span className="absolute -left-4 w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> FAQ</Link></li>
+              <li><Link to="/privacy-policy" className="hover:text-white transition-colors relative group flex items-center"><span className="absolute -left-4 w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Privacy & Policy</Link></li>
+              <li><Link to="/terms-conditions" className="hover:text-white transition-colors relative group flex items-center"><span className="absolute -left-4 w-1.5 h-1.5 bg-[#34D562] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span> Terms & Conditions</Link></li>
             </ul>
           </div>
 

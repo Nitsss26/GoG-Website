@@ -236,10 +236,10 @@ export default function AboutNexa() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
                         {[
-                            // { name: "Mr. \u00A0 Raj\u00A0 Kumar\u00A0 Sahoo", role: "Associate Director Business & Operations", quote: "Scaling our development operations by standardizing advanced software pipelines.", img: RajImg, },
-                            // { name: "Mr.\u00A0 Vivek\u00A0 Yadav", role: "HR Admin & Finance Head", quote: "Cultivating an environment where deep tech research and development thrives.", img: VivekImg, },
+                            { name: "Mr. \u00A0 Raj\u00A0 Kumar\u00A0 Sahoo", role: "Associate Director Business & Operations", quote: "Scaling our development operations by standardizing advanced software pipelines.", img: RajImg, },
+                            { name: "Mr.\u00A0 Vivek\u00A0 Yadav", role: "HR Admin & Finance Head", quote: "Cultivating an environment where deep tech research and development thrives.", img: VivekImg, },
                             { name: "Mr.\u00A0 Nitesh", role: "Technology Head", quote: "Designing robust cloud architectures and ensuring perfect execution of our products.", img: NiteshImg, },
-                            { name: "Mr.\u00A0 Anand\u00A0 Kumar", role: "Senior SDE & Curriculum Lead", quote: "Empowering developers through rigorous curriculum and cutting-edge software practices.", img: AnandImg, }
+                            // { name: "Mr.\u00A0 Anand\u00A0 Kumar", role: "Senior SDE & Curriculum Lead", quote: "Empowering developers through rigorous curriculum and cutting-edge software practices.", img: AnandImg, }
                         ].map((mgr, i) => (
                             <motion.div
                                 key={i}

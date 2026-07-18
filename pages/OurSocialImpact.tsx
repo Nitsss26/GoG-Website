@@ -19,6 +19,8 @@ import JYOTSNA from '../assets/Gov/JYOTSNA.png';
 // @ts-ignore
 import JitendraParashar from '../assets/Gov/Jitendra Parashar.jpg';
 // @ts-ignore
+import RaoUdayPratap from '../assets/Gov/Rao_Uday_Pratap_Singh.jpeg';
+// @ts-ignore
 import IAS_Awanish from '../assets/Gov/IAS Awanish Sharan.jpg';
 
 interface OfficialCardProps {
@@ -26,25 +28,34 @@ interface OfficialCardProps {
     name: string;
     designation: string;
     index: number;
+    imageScale?: number;
+    objectPosition?: string;
+    className?: string;
 }
 
-const GovernmentOfficialCard: React.FC<OfficialCardProps> = ({ image, name, designation, index }) => {
+const GovernmentOfficialCard: React.FC<OfficialCardProps> = ({ image, name, designation, index, imageScale = 1, objectPosition = "top", className = "" }) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ delay: index * 0.1, duration: 0.5 }}
-            className="group relative bg-[#0A0A0A]/60 backdrop-blur-sm rounded-2xl overflow-hidden border-4 border-[#34D562] hover:border-[#34D562] hover:shadow-[0_0_40px_rgba(52,213,98,0.4)] transition-all duration-500"
+            className={`group relative bg-[#0A0A0A]/60 backdrop-blur-sm rounded-2xl overflow-hidden border-4 border-[#34D562] hover:border-[#34D562] hover:shadow-[0_0_40px_rgba(52,213,98,0.4)] transition-all duration-500 ${className}`}
         >
             {/* Image Container */}
-            <div className="relative h-80 overflow-hidden">
-                <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay" />
-                <img
-                    src={image}
-                    alt={name}
-                    className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transform group-hover:scale-110 transition-all duration-700"
-                />
+            <div className="relative h-80 overflow-hidden flex items-center justify-center">
+                <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay pointer-events-none" />
+                <div className="w-full h-full transition-transform duration-700 group-hover:scale-105">
+                    <img
+                        src={image}
+                        alt={name}
+                        style={{
+                            transform: `scale(${imageScale})`,
+                            objectPosition: objectPosition
+                        }}
+                        className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700"
+                    />
+                </div>
                 {/* Lighter Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
             </div>
@@ -77,6 +88,13 @@ const OurSocialImpact: React.FC = () => {
             image: MrKeshabMahanta,
             name: "Mr. Keshab Mahanta",
             designation: "Hon'ble Minister of Revenue & Disaster Management, IT, Science & Technology, Government of Assam"
+        },
+        {
+            image: RaoUdayPratap,
+            name: "Rao Uday Pratap Singh",
+            designation: "Hon'ble Minister of School Education | Minister of Road and Transport",
+            imageScale: 1.15,
+            objectPosition: "center 10%"
         },
         {
             image: AnilFirojiya,
@@ -147,6 +165,9 @@ const OurSocialImpact: React.FC = () => {
                             image={official.image}
                             name={official.name}
                             designation={official.designation}
+                            imageScale={(official as any).imageScale}
+                            objectPosition={(official as any).objectPosition}
+                            className={index === officials.length - 1 && officials.length % 3 === 1 ? "lg:col-start-2" : ""}
                         />
                     ))}
                 </div>
