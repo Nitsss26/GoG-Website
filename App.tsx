@@ -44,6 +44,7 @@ const Admin = lazy(() => import('./pages/Admin'));
 const TechLayout = lazy(() => import('./components/tech/TechLayout'));
 const TechHome = lazy(() => import('./pages/tech/Home'));
 const TechAboutNexa = lazy(() => import('./pages/tech/AboutNexa'));
+const TechGovPartnerships = lazy(() => import('./pages/tech/GovPartnerships'));
 const LoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center bg-[#030303] text-white">
     <div className="animate-pulse text-[#34D562] font-mono text-xl">Loading...</div>
@@ -94,6 +95,11 @@ const App: React.FC = () => {
               <Route path="/aboutnexa" element={
                 <Suspense fallback={<LoadingFallback />}>
                   <TechAboutNexa />
+                </Suspense>
+              } />
+              <Route path="/gov-partnerships" element={
+                <Suspense fallback={<LoadingFallback />}>
+                  <TechGovPartnerships />
                 </Suspense>
               } />
             </Route>

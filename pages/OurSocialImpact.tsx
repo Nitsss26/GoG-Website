@@ -22,6 +22,8 @@ import JitendraParashar from '../assets/Gov/Jitendra Parashar.jpg';
 import RaoUdayPratap from '../assets/Gov/Rao_Uday_Pratap_Singh.jpeg';
 // @ts-ignore
 import IAS_Awanish from '../assets/Gov/IAS Awanish Sharan.jpg';
+// @ts-ignore
+import DrHemantKhandelwal from '../assets/Gov/Dr.-Hemant-Khandelwal.jpg';
 
 interface OfficialCardProps {
     image: string;
@@ -96,6 +98,11 @@ const OurSocialImpact: React.FC = () => {
             imageScale: 1.15,
             objectPosition: "center 10%"
         },
+          {
+            image: DrHemantKhandelwal,
+            name: "Dr. Hemant Khandelwal",
+            designation: "Hon'ble State President, Bharatiya Janata Party (BJP), Madhya Pradesh"
+        },
         {
             image: AnilFirojiya,
             name: "Shri Anil Firojiya",
@@ -156,20 +163,30 @@ const OurSocialImpact: React.FC = () => {
                     </motion.p>
                 </div>
 
-                {/* 3x3 Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {officials.map((official, index) => (
-                        <GovernmentOfficialCard
-                            key={index}
-                            index={index}
-                            image={official.image}
-                            name={official.name}
-                            designation={official.designation}
-                            imageScale={(official as any).imageScale}
-                            objectPosition={(official as any).objectPosition}
-                            className={index === officials.length - 1 && officials.length % 3 === 1 ? "lg:col-start-2" : ""}
-                        />
-                    ))}
+                {/* Centered Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+                    {officials.map((official, index) => {
+                        let extraClasses = "md:col-span-1 lg:col-span-2";
+                        
+                        if (index === officials.length - 1 && officials.length % 3 === 1) {
+                            extraClasses += " lg:col-start-3";
+                        } else if (index === officials.length - 2 && officials.length % 3 === 2) {
+                            extraClasses += " lg:col-start-2";
+                        }
+
+                        return (
+                            <GovernmentOfficialCard
+                                key={index}
+                                index={index}
+                                image={official.image}
+                                name={official.name}
+                                designation={official.designation}
+                                imageScale={(official as any).imageScale}
+                                objectPosition={(official as any).objectPosition}
+                                className={extraClasses}
+                            />
+                        );
+                    })}
                 </div>
             </div>
         </main>
