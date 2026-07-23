@@ -24,6 +24,8 @@ import RaoUdayPratap from '../assets/Gov/Rao_Uday_Pratap_Singh.jpeg';
 import IAS_Awanish from '../assets/Gov/IAS Awanish Sharan.jpg';
 // @ts-ignore
 import DrHemantKhandelwal from '../assets/Gov/Dr.-Hemant-Khandelwal.jpg';
+// @ts-ignore
+import ShriJishnuDevVarma from '../assets/Gov/Shri-Jishnu-Dev-Varma.jpg';
 
 interface OfficialCardProps {
     image: string;
@@ -80,7 +82,11 @@ const GovernmentOfficialCard: React.FC<OfficialCardProps> = ({ image, name, desi
 
 const OurSocialImpact: React.FC = () => {
     const officials = [
-
+        {
+            image: ShriJishnuDevVarma,
+            name: "Shri Jishnu Dev Varma",
+            designation: "Hon'ble Governor of Maharashtra"
+        },
         {
             image: EduMinAssam,
             name: "Dr. Ranoj Pegu",

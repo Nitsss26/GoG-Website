@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 // Image Imports Removed (using static paths now)
 const Embers = () => {
-    const [embers, setEmbers] = React.useState([]);
+    const [embers, setEmbers] = React.useState<any[]>([]);
 
     React.useEffect(() => {
         setEmbers(Array.from({ length: 40 }).map(() => ({
@@ -46,7 +46,7 @@ const Embers = () => {
     );
 };
 
-const CyberOfficialCard = ({ image, name, designation, index, imageScale = 1, objectPosition = "top", className = "" }) => {
+const CyberOfficialCard = ({ image, name, designation, index, imageScale = 1, objectPosition = "top", className = "" }: any) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -104,6 +104,11 @@ export default function GovPartnerships() {
     }, []);
 
 const officials = [
+        {
+            image: '/assets/Gov/Shri-Jishnu-Dev-Varma.jpg',
+            name: "Shri Jishnu Dev Varma",
+            designation: "Hon'ble Governor of Maharashtra"
+        },
         // {
         //     image: '/assets/OurSocialImpact/EduMinAssam.jpg',
         //     name: "Dr. Ranoj Pegu",
