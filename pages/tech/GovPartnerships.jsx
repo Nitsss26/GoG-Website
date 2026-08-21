@@ -12,6 +12,7 @@ import JYOTSNA from '../../assets/Gov/JYOTSNA.png';
 import JitendraParashar from '../../assets/Gov/Jitendra Parashar.jpg';
 import RaoUdayPratap from '../../assets/Gov/Rao_Uday_Pratap_Singh.jpeg';
 import IAS_Awanish from '../../assets/Gov/IAS Awanish Sharan.jpg';
+import DrRamanSingh from '../../assets/OurSocialImpact/Dr._Raman_Singh.jpg';
 
 const Embers = () => {
     const [embers] = React.useState(() => Array.from({ length: 40 }).map(() => ({
@@ -157,6 +158,11 @@ const GovPartnerships = () => {
             image: CharanDasMahant,
             name: "Dr. Charan Das Mahant",
             designation: "Former Lok Sabha Speaker, Government of Chhattisgarh | Former Cabinet Minister, Government of India"
+        },
+        {
+            image: DrRamanSingh,
+            name: "Dr. Raman Singh",
+            designation: "Vidhansabha Speaker, Government of Chhattisgarh"
         }
     ];
 

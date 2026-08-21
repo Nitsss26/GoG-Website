@@ -26,6 +26,8 @@ import IAS_Awanish from '../assets/Gov/IAS Awanish Sharan.jpg';
 import DrHemantKhandelwal from '../assets/Gov/Dr.-Hemant-Khandelwal.jpg';
 // @ts-ignore
 import ShriJishnuDevVarma from '../assets/Gov/Shri-Jishnu-Dev-Varma.jpg';
+// @ts-ignore
+import DrRamanSingh from '../assets/OurSocialImpact/Dr._Raman_Singh.jpg';
 
 interface OfficialCardProps {
     image: string;
@@ -87,15 +89,16 @@ const OurSocialImpact: React.FC = () => {
             name: "Shri Jishnu Dev Varma",
             designation: "Hon'ble Governor of Maharashtra"
         },
-        {
-            image: EduMinAssam,
-            name: "Dr. Ranoj Pegu",
-            designation: "Hon'ble Education Minister, Government of Assam | Transforming Education Through Technology"
+        ,
+      {
+            image: DrHemantKhandelwal,
+            name: "Dr. Hemant Khandelwal",
+            designation: "Hon'ble State President, Bharatiya Janata Party (BJP), Madhya Pradesh"
         },
-        {
-            image: MrKeshabMahanta,
-            name: "Mr. Keshab Mahanta",
-            designation: "Hon'ble Minister of Revenue & Disaster Management, IT, Science & Technology, Government of Assam"
+          {
+            image: DrRamanSingh,
+            name: "Dr. Raman Singh",
+            designation: "Vidhansabha Speaker, Government of Chhattisgarh"
         },
         {
             image: RaoUdayPratap,
@@ -104,45 +107,54 @@ const OurSocialImpact: React.FC = () => {
             imageScale: 1.15,
             objectPosition: "center 10%"
         },
-          {
-            image: DrHemantKhandelwal,
-            name: "Dr. Hemant Khandelwal",
-            designation: "Hon'ble State President, Bharatiya Janata Party (BJP), Madhya Pradesh"
-        },
-        {
+         {
             image: AnilFirojiya,
             name: "Shri Anil Firojiya",
             designation: "Member of Parliament | Parliamentary Committee on Tourism and Culture, Government of India"
         },
-        {
+          {
+            image: JitendraParashar,
+            name: "Mr. Jitendra Parashar",
+            designation: "Joint Director, Information Technology Department | Government of Madhya Pradesh"
+        },
+          {
             image: JYOTSNA,
             name: "Smt. Jyotsna Charandas Mahant",
             designation: "Member of Parliament (Lok Sabha), Korba | Standing Committee on Coal, Mines and Steel"
         },
-        {
-            image: MP_Assam,
-            name: "Shri Ranjit Dutta",
-            designation: "Hon'ble Member of Parliament, Assam | Former Minister of Sericulture, Handloom & Textiles"
+         {
+            image: CharanDasMahant,
+            name: "Dr. Charan Das Mahant",
+            designation: "Former Lok Sabha Speaker, Government of Chhattisgarh | Former Cabinet Minister, Government of India"
         },
-        {
+         {
             image: IAS_Anil_Kumar_Jha,
             name: "IAS Mr. Anil Kumar Jha",
             designation: "Cane Commissioner, Government of India | Former Joint Secretary, Ministry of Agriculture"
         },
         {
-            image: JitendraParashar,
-            name: "Mr. Jitendra Parashar",
-            designation: "Joint Director, Information Technology Department | Government of Madhya Pradesh"
-        },
-        {
             image: IAS_Awanish,
             name: "IAS Mr. Awanish Sharan",
             designation: "Chief Executive Officer, Skill Development Mission | Government of Chhattisgarh"
-        }, {
-            image: CharanDasMahant,
-            name: "Dr. Charan Das Mahant",
-            designation: "Former Lok Sabha Speaker, Government of Chhattisgarh | Former Cabinet Minister, Government of India"
-        }
+        },
+         {
+            image: MrKeshabMahanta,
+            name: "Mr. Keshab Mahanta",
+            designation: "Hon'ble Minister of Revenue & Disaster Management, IT, Science & Technology, Government of Assam"
+        },
+        {
+            image: EduMinAssam,
+            name: "Dr. Ranoj Pegu",
+            designation: "Hon'ble Education Minister, Government of Assam | Transforming Education Through Technology"
+        },  
+        {
+            image: MP_Assam,
+            name: "Shri Ranjit Dutta",
+            designation: "Hon'ble Member of Parliament, Assam | Former Minister of Sericulture, Handloom & Textiles"
+        },
+       
+      
+        
     ];
 
     return (
