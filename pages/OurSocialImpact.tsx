@@ -89,13 +89,12 @@ const OurSocialImpact: React.FC = () => {
             name: "Shri Jishnu Dev Varma",
             designation: "Hon'ble Governor of Maharashtra"
         },
-        ,
-      {
+        {
             image: DrHemantKhandelwal,
             name: "Dr. Hemant Khandelwal",
             designation: "Hon'ble State President, Bharatiya Janata Party (BJP), Madhya Pradesh"
         },
-          {
+        {
             image: DrRamanSingh,
             name: "Dr. Raman Singh",
             designation: "Vidhansabha Speaker, Government of Chhattisgarh"
