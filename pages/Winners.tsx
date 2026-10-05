@@ -22,6 +22,35 @@ const winnersData: WinnerData[] = [
     {
         id: "1",
         awardName: "NATIONAL LEVEL HACKATHON",
+        titleStart: "GoG x Oriental University Indore Students",
+        titleHighlight: "won 1st Prize of ₹40,000",
+        titleEnd: "at SISTec Innovation Hackathon 4.0",
+        eventName: "SISTEC INNOVATION HACKATHON 4.0",
+        teamName: "The Mentalist",
+        description: (
+            <>
+                <p className="mb-4">
+                    Team <span className="text-white font-semibold">"The Mentalist"</span> from <span className="text-[#34D562] font-semibold">Oriental University, Indore</span>, emerged as the champion <span className="text-[#34D562] font-semibold">Winner</span> at the prestigious <span className="text-white font-semibold">SISTec Innovation Hackathon 4.0</span> held in Bhopal, securing a grand cash prize of <span className="text-[#34D562] font-bold">₹40,000</span>!
+                </p>
+                <p className="mb-4">
+                    Tackling real-world challenges under <span className="text-white font-semibold">Problem Statement DT-17</span>, team members <span className="text-gray-200">Aaditya Sinha</span> (B.Tech CSE 5th Sem), <span className="text-gray-200">Sakshi Mishra</span> (B.Tech CSE 5th Sem), <span className="text-gray-200">Sheikh Shamim</span> (B.Tech CSE 5th Sem), and <span className="text-gray-200">Sakshi Patel</span> (B.Tech CSE 3rd Sem) delivered exceptional technical depth, innovation, and teamwork.
+                </p>
+                <p className="italic border-l-2 border-[#34D562] pl-3 text-gray-400">
+                    "This win reflects the combined efforts of students, faculty, and Geeks of Gurukul mentorship in fostering real-world problem solving and innovation." - Geeks of Gurukul & Oriental University
+                </p>
+            </>
+        ),
+        image: "/assets/SISTec_Hackathon_Winners.jpg",
+        stars: 5,
+        bottomBadges: [
+            { icon: <Trophy size={16} className="text-[#34D562]" />, text: "1st Prize Winner" },
+            { icon: <Medal size={16} className="text-[#34D562]" />, text: "₹40,000 Cash Prize" },
+            { icon: <Award size={16} className="text-[#34D562]" />, text: "Problem Statement DT-17" }
+        ]
+    },
+    {
+        id: "2",
+        awardName: "NATIONAL LEVEL HACKATHON",
         titleStart: "GoG x Sage University Bhopal Students",
         titleHighlight: "got 1st Prize of Rs 25,000",
         titleEnd: "at BGI National Level Hackathon",
@@ -49,7 +78,7 @@ const winnersData: WinnerData[] = [
         ]
     },
     {
-        id: "2",
+        id: "3",
         awardName: "NATIONAL LEVEL HACKATHON",
         titleStart: "GoG x SGSU Bhopal Students",
         titleHighlight: "got 1st Prize of Rs 25,000",
@@ -78,7 +107,7 @@ const winnersData: WinnerData[] = [
         ]
     },
     {
-        id: "3",
+        id: "4",
         awardName: "NATIONAL LEVEL HACKATHON",
         titleStart: "GoG x SGSU Bhopal Students",
         titleHighlight: "got 1st Prize of Rs 25,000",
@@ -107,7 +136,7 @@ const winnersData: WinnerData[] = [
         ]
     },
     {
-        id: "4",
+        id: "5",
         awardName: "NATIONAL LEVEL HACKATHON",
         titleStart: "GoG x Oriental University Indore Students",
         titleHighlight: "got 2nd Prize of Rs 12,000",
@@ -136,7 +165,7 @@ const winnersData: WinnerData[] = [
         ]
     },
     {
-        id: "5",
+        id: "6",
         awardName: "NATIONAL LEVEL HACKATHON",
         titleStart: "GoG x Oriental University Indore Students",
         titleHighlight: "got 3rd Prize of Rs 3,000",
