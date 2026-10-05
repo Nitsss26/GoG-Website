@@ -54,7 +54,7 @@ const AboutGoG: React.FC = () => {
             role: "Founder",
             quote: "Our Vision Is To Empower Learners Across India By Building A Future-Ready Ecosystem That Blends Ancient Wisdom With Modern Technology. At Geeks of Gurukul, We Believe In Equipping You With Real-World Skills, Industry Exposure, And Mentorship That Truly Makes A Difference.",
             highlight: "Keep Exploring, Keep Building, And Let's Redefine Education Together.",
-            badge: "Founder",
+            badge: "Founder & CEO",
             linkedin: "https://www.linkedin.com/in/chintan-vatsa-jha-0a7496a8/"
         },
            
@@ -64,7 +64,7 @@ const AboutGoG: React.FC = () => {
             role: "Chief Technology Officer",
             quote: " In Today's Rapidly Evolving Technological Landscape, It's Crucial To Stay Appropriately Skilled And Up-To-Date With Dynamic Market Trends. At Geeks Of Gurukul, We Pride GoG On Teaching Students The Latest, Most In-Demand Technologies, So That You Are Well-Prepared For Your Dream Job.",
             highlight: "Stay Innovative, Stay Determined, And Together, Let's Shape A Brighter Future.",
-            badge: "CTO",
+            badge: "Co-Founder & CTO",
             linkedin: "https://www.linkedin.com/in/ajay987/"
         },
      {
@@ -73,7 +73,7 @@ const AboutGoG: React.FC = () => {
             role: "Chief Operating Officer",
             quote: " Our Vision Is To Create A Modern-Day Gurukul That Provides You With The Skills, Resources, And Opportunities To Excel. We Are Committed To Ensuring That You Have Access To Quality Education And The Tools Needed To Succeed In Today's Competitive World.",
             highlight: "Stay Curious, Stay Committed, And Together, Let's Achieve Greatness.",
-            badge: "COO",
+            badge: "Co-Founder & COO",
             linkedin: "#"
         },
     ];
