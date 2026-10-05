@@ -197,7 +197,7 @@ const operationManagers = [
     { name: "Ms. Sakshi Rathore", image: SakshiImg },
     { name: "Mr. Satish Nagar", image: SatishImg },
     { name: "Mr. Vinayak Soni", image: VinayakImg },
-    { name: "Mr. Aniket Chouhan", image: AniketImg },
+    // { name: "Mr. Aniket Chouhan", image: AniketImg },
     { name: "Mr. Arpit Pandey", image: ArpitImg },
     { name: "Mr. Devendra Yadav", image: DevendraImg },
     { name: "Mr. Harsh Sahu", image: HarshImg },

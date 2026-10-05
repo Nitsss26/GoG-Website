@@ -19,8 +19,8 @@ import VivekImg from '../assets/team/vivek-yadav.jpg';
 import NiteshImg from '../assets/team/Nitesh.jpg';
 import AyushImg from '../assets/team/ayush-chauhan.jpg';
 import SachinImg from '../assets/team/sachin-kumar-gupta.png';
-import VipulImg from '../assets/team/sid2.png';
-import PrakashImg from '../assets/Operation_Managers/Jyotiprakash_Maharana.jpg';
+import AniketImg from '../assets/team/Aniket_Chouhan.png';
+import AyushiPanwarImg from '../assets/team/Ayushi_Panwar.png';
 
 
 
@@ -389,31 +389,31 @@ const AboutGoG: React.FC = () => {
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Leadership <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D562] to-[#28a74b]">Team</span></h2>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 xl:gap-6 max-w-[1600px] mx-auto px-4">
                         {/* Ayush Chauhan */}
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="flex flex-col items-center text-center group bg-[#0F1310]/100 backdrop-blur-xl p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/60 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_0_30px_rgba(52,213,98,0.2)]"
+                            className="flex flex-col items-center justify-between text-center group bg-[#0F1310]/100 backdrop-blur-xl p-5 xl:p-6 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/60 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_0_30px_rgba(52,213,98,0.2)]"
                         >
-                            <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
-                                <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
-                                <img src={AyushImg} alt="Ayush Chauhan" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
+                            <div className="flex flex-col items-center w-full">
+                                <div className="relative w-44 h-44 sm:w-48 sm:h-48 xl:w-56 xl:h-56 mb-6 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500 shadow-[0_0_20px_rgba(52,213,98,0.2)]">
+                                    <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
+                                    <img src={AyushImg} alt="Ayush Chauhan" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
+                                </div>
+                                <h3 className="text-base md:text-lg xl:text-xl font-bold text-white mb-2 whitespace-nowrap">Mr. Ayush Chauhan</h3>
+                                <p className="text-[#34D562] font-mono text-xs xl:text-sm mb-4 uppercase tracking-wider font-semibold">Head of Institute</p>
+                                <div className="relative max-w-sm px-2">
+                                    <Quote className="absolute -top-3 -left-2 text-[#34D562]/20 w-5 h-5" />
+                                    <p className="text-gray-400 italic relative z-10 text-xs sm:text-sm leading-relaxed min-h-[54px] flex items-center justify-center">"Driving operational excellence and empowering our educators to deliver their best."</p>
+                                </div>
                             </div>
-                            <h3 className="text-2xl font-bold text-white mb-2">Mr. Ayush Chauhan</h3>
-                            <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">Head of Institute</p>
-                            <div className="relative max-w-xl">
-                                <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
-                                <p className="text-gray-400 italic relative z-10 leading-relaxed">"Driving operational excellence and empowering our educators to deliver their best."</p>
-                            </div>
-                            <a href="https://www.linkedin.com/in/ayush-chouhan-8b68a2287/" target="_blank" rel="noopener noreferrer" className="mt-4 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg">
+                            <a href="https://www.linkedin.com/in/ayush-chouhan-8b68a2287/" target="_blank" rel="noopener noreferrer" className="mt-6 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg">
                                 <Linkedin size={20} />
                             </a>
                         </motion.div>
-
-
 
                         {/* Sachin Kumar Gupta */}
                         <motion.div
@@ -421,42 +421,71 @@ const AboutGoG: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="flex flex-col items-center text-center group bg-[#0F1310]/100 backdrop-blur-xl p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/60 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_0_30px_rgba(52,213,98,0.2)]"
+                            className="flex flex-col items-center justify-between text-center group bg-[#0F1310]/100 backdrop-blur-xl p-5 xl:p-6 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/60 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_0_30px_rgba(52,213,98,0.2)]"
                         >
-                            <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
-                                <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
-                                <img src={SachinImg} alt="Sachin Kumar Gupta" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
+                            <div className="flex flex-col items-center w-full">
+                                <div className="relative w-44 h-44 sm:w-48 sm:h-48 xl:w-56 xl:h-56 mb-6 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500 shadow-[0_0_20px_rgba(52,213,98,0.2)]">
+                                    <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
+                                    <img src={SachinImg} alt="Sachin Kumar Gupta" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
+                                </div>
+                                <h3 className="text-base md:text-lg xl:text-xl font-bold text-white mb-2 whitespace-nowrap">Mr. Sachin Kumar Gupta</h3>
+                                <p className="text-[#34D562] font-mono text-xs xl:text-sm mb-4 uppercase tracking-wider font-semibold">Head of Institute</p>
+                                <div className="relative max-w-sm px-2">
+                                    <Quote className="absolute -top-3 -left-2 text-[#34D562]/20 w-5 h-5" />
+                                    <p className="text-gray-400 italic relative z-10 text-xs sm:text-sm leading-relaxed min-h-[54px] flex items-center justify-center">"Ensuring seamless institute operations and fostering a collaborative academic environment."</p>
+                                </div>
                             </div>
-                            <h3 className="text-2xl font-bold text-white mb-2">Mr. Sachin Kumar Gupta</h3>
-                            <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">Head of Institute</p>
-                            <div className="relative max-w-xl">
-                                <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
-                                <p className="text-gray-400 italic relative z-10 leading-relaxed">"Ensuring seamless institute operations and fostering a collaborative academic environment."</p>
-                            </div>
-                            <a href="https://www.linkedin.com/in/sachin-kumar-gupta-12bbb427a/" target="_blank" rel="noopener noreferrer" className="mt-4 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg">
+                            <a href="https://www.linkedin.com/in/sachin-kumar-gupta-12bbb427a/" target="_blank" rel="noopener noreferrer" className="mt-6 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg">
                                 <Linkedin size={20} />
                             </a>
                         </motion.div>
 
-                        {/* Jyotiprakash Maharana */}
+                        {/* Aniket Chouhan */}
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.3 }}
-                            className="flex flex-col items-center text-center group bg-[#0F1310]/100 backdrop-blur-xl p-8 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/60 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_0_30px_rgba(52,213,98,0.2)]"
+                            className="flex flex-col items-center justify-between text-center group bg-[#0F1310]/100 backdrop-blur-xl p-5 xl:p-6 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/60 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_0_30px_rgba(52,213,98,0.2)]"
                         >
-                            <div className="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500">
-                                <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
-                                <img src={PrakashImg} alt="Jyotiprakash Maharana" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
+                            <div className="flex flex-col items-center w-full">
+                                <div className="relative w-44 h-44 sm:w-48 sm:h-48 xl:w-56 xl:h-56 mb-6 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500 shadow-[0_0_20px_rgba(52,213,98,0.2)]">
+                                    <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
+                                    <img src={AniketImg} alt="Aniket Chouhan" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
+                                </div>
+                                <h3 className="text-base md:text-lg xl:text-xl font-bold text-white mb-2 whitespace-nowrap">Mr. Aniket Chouhan</h3>
+                                <p className="text-[#34D562] font-mono text-xs xl:text-sm mb-4 uppercase tracking-wider font-semibold">Head of Institute</p>
+                                <div className="relative max-w-sm px-2">
+                                    <Quote className="absolute -top-3 -left-2 text-[#34D562]/20 w-5 h-5" />
+                                    <p className="text-gray-400 italic relative z-10 text-xs sm:text-sm leading-relaxed min-h-[54px] flex items-center justify-center">"Leading institute operations with strategic vision, student mentorship, and academic excellence."</p>
+                                </div>
                             </div>
-                            <h3 className="text-2xl font-bold text-white mb-2">Mr. Jyotiprakash Maharana</h3>
-                            <p className="text-[#34D562] font-mono text-sm mb-6 uppercase tracking-wider font-semibold">Head of Institute</p>
-                            <div className="relative max-w-xl">
-                                <Quote className="absolute -top-3 -left-4 text-[#34D562]/20 w-6 h-6" />
-                                <p className="text-gray-400 italic relative z-10 leading-relaxed">"Leading with a focus on efficient management and empowering our academic teams."</p>
+                            <a href="https://www.linkedin.com/in/aniketchouhan?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" className="mt-6 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg">
+                                <Linkedin size={20} />
+                            </a>
+                        </motion.div>
+
+                        {/* Ayushi Panwar */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.4 }}
+                            className="flex flex-col items-center justify-between text-center group bg-[#0F1310]/100 backdrop-blur-xl p-5 xl:p-6 rounded-3xl border border-[#34D562]/30 hover:border-[#34D562]/60 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_0_30px_rgba(52,213,98,0.2)]"
+                        >
+                            <div className="flex flex-col items-center w-full">
+                                <div className="relative w-44 h-44 sm:w-48 sm:h-48 xl:w-56 xl:h-56 mb-6 rounded-full overflow-hidden border-4 border-[#34D562] transition-all duration-500 shadow-[0_0_20px_rgba(52,213,98,0.2)]">
+                                    <div className="absolute inset-0 bg-[#34D562]/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
+                                    <img src={AyushiPanwarImg} alt="Ayushi Panwar" className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
+                                </div>
+                                <h3 className="text-base md:text-lg xl:text-xl font-bold text-white mb-2 whitespace-nowrap">Ms. Ayushi Panwar</h3>
+                                <p className="text-[#34D562] font-mono text-xs xl:text-sm mb-4 uppercase tracking-wider font-semibold">Curriculum Lead</p>
+                                <div className="relative max-w-sm px-2">
+                                    <Quote className="absolute -top-3 -left-2 text-[#34D562]/20 w-5 h-5" />
+                                    <p className="text-gray-400 italic relative z-10 text-xs sm:text-sm leading-relaxed min-h-[54px] flex items-center justify-center">"Designing industry-aligned curricula to empower educators and inspire future tech leaders."</p>
+                                </div>
                             </div>
-                            <a href="https://www.linkedin.com/in/jyoti-prakash-maharana-a82a57252/" className="mt-4 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg">
+                            <a href="https://www.linkedin.com/in/ayushi-panwar-765942262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" className="mt-6 p-2 bg-[#34D562] hover:bg-[#28a74b] rounded-lg text-black transition-colors duration-300 shadow-lg">
                                 <Linkedin size={20} />
                             </a>
                         </motion.div>
