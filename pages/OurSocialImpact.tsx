@@ -25,6 +25,8 @@ import IAS_Awanish from '../assets/Gov/IAS Awanish Sharan.jpg';
 // @ts-ignore
 import DrHemantKhandelwal from '../assets/Gov/Dr.-Hemant-Khandelwal.jpg';
 // @ts-ignore
+import ShriShivrajSinghChouhan from '../assets/Gov/Shri_Shivraj_Singh_Chouhan_Ji.jpg';
+// @ts-ignore
 import ShriJishnuDevVarma from '../assets/Gov/Shri-Jishnu-Dev-Varma.jpg';
 // @ts-ignore
 import DrRamanSingh from '../assets/OurSocialImpact/Dr._Raman_Singh.jpg';
@@ -84,6 +86,11 @@ const GovernmentOfficialCard: React.FC<OfficialCardProps> = ({ image, name, desi
 
 const OurSocialImpact: React.FC = () => {
     const officials = [
+        {
+            image: ShriShivrajSinghChouhan,
+            name: "Shri Shivraj Singh Chouhan",
+            designation: "Hon'ble Union Minister of Agriculture & Farmers' Welfare, Government of India"
+        },
         {
             image: ShriJishnuDevVarma,
             name: "Shri Jishnu Dev Varma",
@@ -146,11 +153,11 @@ const OurSocialImpact: React.FC = () => {
             name: "Dr. Ranoj Pegu",
             designation: "Hon'ble Education Minister, Government of Assam | Transforming Education Through Technology"
         },  
-        {
-            image: MP_Assam,
-            name: "Shri Ranjit Dutta",
-            designation: "Hon'ble Member of Parliament, Assam | Former Minister of Sericulture, Handloom & Textiles"
-        },
+        // {
+        //     image: MP_Assam,
+        //     name: "Shri Ranjit Dutta",
+        //     designation: "Hon'ble Member of Parliament, Assam | Former Minister of Sericulture, Handloom & Textiles"
+        // },
        
       
         

@@ -105,6 +105,11 @@ export default function GovPartnerships() {
 
 const officials = [
         {
+            image: '/assets/Gov/Shri_Shivraj_Singh_Chouhan_Ji.jpg',
+            name: "Shri Shivraj Singh Chouhan",
+            designation: "Hon'ble Union Minister of Agriculture & Farmers' Welfare, Government of India"
+        },
+        {
             image: '/assets/Gov/Shri-Jishnu-Dev-Varma.jpg',
             name: "Shri Jishnu Dev Varma",
             designation: "Hon'ble Governor of Maharashtra"

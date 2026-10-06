@@ -13,6 +13,7 @@ import JitendraParashar from '../../assets/Gov/Jitendra Parashar.jpg';
 import RaoUdayPratap from '../../assets/Gov/Rao_Uday_Pratap_Singh.jpeg';
 import IAS_Awanish from '../../assets/Gov/IAS Awanish Sharan.jpg';
 import DrRamanSingh from '../../assets/OurSocialImpact/Dr._Raman_Singh.jpg';
+import ShriShivrajSinghChouhan from '../../assets/Gov/Shri_Shivraj_Singh_Chouhan_Ji.jpg';
 
 const Embers = () => {
     const [embers] = React.useState(() => Array.from({ length: 40 }).map(() => ({
@@ -107,6 +108,11 @@ const CyberOfficialCard = ({ image, name, designation, index, imageScale = 1, ob
 
 const GovPartnerships = () => {
     const officials = [
+        {
+            image: ShriShivrajSinghChouhan,
+            name: "Shri Shivraj Singh Chouhan",
+            designation: "Hon'ble Union Minister of Agriculture & Farmers' Welfare, Government of India"
+        },
         // {
         //     image: EduMinAssam,
         //     name: "Dr. Ranoj Pegu",
